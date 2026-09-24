@@ -1,0 +1,13 @@
+{
+  "Name": "final_main_scene",
+  "ExitCode": 0,
+  "Checks": 0,
+  "EngineError": false,
+  "Arguments": [
+    "--headless",
+    "--path",
+    "D:\\autolysis",
+    "--quit-after",
+    "180"
+  ]
+}

@@ -78,36 +78,36 @@ func run_checks() -> void:
 	var mesh_node := MeshInstance3D.new()
 	var mesh := BoxMesh.new()
 	mesh.size = Vector3(100, 1, 100)
-	mesh.material = load("res://DynamicFootstepSystem/Assets/Materials/Example_Dirt.tres")
+	mesh.material = load("res://main-autolysis/systems/dynamic-footstep-system/assets/materials/example_dirt.tres")
 	mesh_node.mesh = mesh
-	mesh_node.material_override = load("res://DynamicFootstepSystem/Assets/Materials/Example_Wood.tres")
+	mesh_node.material_override = load("res://main-autolysis/systems/dynamic-footstep-system/assets/materials/example_wood.tres")
 	floor_body.add_child(mesh_node)
 	await frames(2)
 	events.clear()
 	player.footstep_player.play_footstep()
-	check(events.size() == 1 and events[0].profile == load("res://DynamicFootstepSystem/FootstepProfiles/wood_footstep_profile.tres"), "节点覆盖材质正确映射木质音效")
+	check(events.size() == 1 and events[0].profile == load("res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/wood_footstep_profile.tres"), "节点覆盖材质正确映射木质音效")
 	mesh_node.material_override = null
-	mesh_node.set_surface_override_material(0, load("res://DynamicFootstepSystem/Assets/Materials/Example_Stone.tres"))
+	mesh_node.set_surface_override_material(0, load("res://main-autolysis/systems/dynamic-footstep-system/assets/materials/example_stone.tres"))
 	events.clear()
 	player.footstep_player.play_footstep()
-	check(events.size() == 1 and events[0].profile == load("res://DynamicFootstepSystem/FootstepProfiles/stone_footstep_profile.tres"), "表面覆盖材质正确映射石质音效")
+	check(events.size() == 1 and events[0].profile == load("res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/stone_footstep_profile.tres"), "表面覆盖材质正确映射石质音效")
 	mesh_node.set_surface_override_material(0, null)
 	events.clear()
 	player.footstep_player.play_footstep()
-	check(events.size() == 1 and events[0].profile == load("res://DynamicFootstepSystem/FootstepProfiles/dirt_footstep_profile.tres"), "网格基础材质正确映射泥土音效")
+	check(events.size() == 1 and events[0].profile == load("res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/dirt_footstep_profile.tres"), "网格基础材质正确映射泥土音效")
 	var surface = floor_body.get_child(0)
-	surface.set_script(load("res://DynamicFootstepSystem/Scripts/footstep_surface.gd"))
-	surface.footstep_profile = load("res://DynamicFootstepSystem/FootstepProfiles/grass_footstep_profile.tres")
+	surface.set_script(load("res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_surface.gd"))
+	surface.footstep_profile = load("res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/grass_footstep_profile.tres")
 	events.clear()
 	player.footstep_player.play_footstep()
 	check(events.size() == 1 and events[0].profile == surface.footstep_profile, "碰撞形状上的脚步配置优先于材质映射")
 	player.footstep_player.play_landing(-4.0)
 	check(events.back().landing and events.back().profile == surface.footstep_profile, "落地使用同一地面配置")
 	var resource_failures: int = 0
-	for file in DirAccess.get_files_at("res://DynamicFootstepSystem/FootstepProfiles"):
+	for file in DirAccess.get_files_at("res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles"):
 		if not file.ends_with(".tres"):
 			continue
-		var profile: AudioStreamRandomizer = load("res://DynamicFootstepSystem/FootstepProfiles/" + file)
+		var profile: AudioStreamRandomizer = load("res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/" + file)
 		if profile == null or profile.streams_count == 0:
 			resource_failures += 1
 		else:
@@ -143,7 +143,7 @@ func run_checks() -> void:
 		if not floor_node.name.begins_with("floor_stone_"):
 			continue
 		var collision = floor_node.get_node("CollisionShape3D")
-		if collision is CollisionShape3D and collision.get_script() == load("res://DynamicFootstepSystem/Scripts/footstep_surface.gd") and collision.footstep_profile != null:
+		if collision is CollisionShape3D and collision.get_script() == load("res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_surface.gd") and collision.footstep_profile != null:
 			collision_profiles += 1
 		if floor_node.has_node("FootstepSurface"):
 			extra_nodes += 1
@@ -154,10 +154,10 @@ func run_checks() -> void:
 	player.footstep_player.sound_played.connect(heard)
 	events.clear()
 	player.footstep_player.play_footstep()
-	check(events.size() == 1 and events[0].profile == load("res://DynamicFootstepSystem/FootstepProfiles/stone_footstep_profile.tres"), "默认场景出生地面使用石质脚步音效")
+	check(events.size() == 1 and events[0].profile == load("res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/stone_footstep_profile.tres"), "默认场景出生地面使用石质脚步音效")
 	scene.queue_free()
 	await frames(3)
-	var demo: PackedScene = load("res://DynamicFootstepSystem/DynamicFootstepDemoScene.tscn")
+	var demo: PackedScene = load("res://main-autolysis/systems/dynamic-footstep-system/dynamic_footstep_demo_scene.tscn")
 	check(demo != null and demo.can_instantiate(), "脚步演示场景可以独立加载")
 	print("失败总数：", failures)
 	quit(1 if failures else 0)

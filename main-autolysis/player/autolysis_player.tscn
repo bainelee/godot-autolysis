@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://br87edn5s6nes" path="res://main-autolysis/player/autolysis_player.gd" id="1_player"]
 [ext_resource type="AnimationLibrary" uid="uid://cdchpsv104er2" path="res://main-autolysis/player/assets/player_eyes.tres" id="10_tp6cj"]
-[ext_resource type="Script" uid="uid://b1qja1tbw5e1j" path="res://DynamicFootstepSystem/Scripts/footstep_surface_detector.gd" id="20_detector"]
-[ext_resource type="AudioStream" uid="uid://dc03jiw2a6y3j" path="res://DynamicFootstepSystem/FootstepProfiles/generic_footstep_profile.tres" id="21_generic"]
-[ext_resource type="Resource" uid="uid://ca0q2t6w08ubh" path="res://DynamicFootstepSystem/FootstepMaterialLibrary/sample_footstep_material_library.tres" id="22_library"]
+[ext_resource type="Script" uid="uid://b1qja1tbw5e1j" path="res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_surface_detector.gd" id="20_detector"]
+[ext_resource type="AudioStream" uid="uid://dc03jiw2a6y3j" path="res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/generic_footstep_profile.tres" id="21_generic"]
+[ext_resource type="Resource" uid="uid://ca0q2t6w08ubh" path="res://main-autolysis/systems/dynamic-footstep-system/footstep-material-library/sample_footstep_material_library.tres" id="22_library"]
 
 [ext_resource type="PackedScene" uid="uid://cbd2ojah4nun6" path="res://main-autolysis/player/components/interaction_raycast.tscn" id="10_2dndr"]
 [ext_resource type="Script" uid="uid://ua63m2y35w46" path="res://main-autolysis/player/components/item_drop_shape_cast.gd" id="14_bpb0d"]

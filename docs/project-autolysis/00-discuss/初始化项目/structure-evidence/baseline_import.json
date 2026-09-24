@@ -1,0 +1,13 @@
+{
+  "Name": "baseline_import",
+  "ExitCode": 0,
+  "Checks": 0,
+  "EngineError": false,
+  "Arguments": [
+    "--headless",
+    "--path",
+    "D:\\autolysis",
+    "--editor",
+    "--quit"
+  ]
+}

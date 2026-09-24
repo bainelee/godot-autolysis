@@ -1,0 +1,134 @@
+# 此文件记录实际执行的只读核查命令，属于审查证据，不作为工程执行脚本。
+# 执行目录：D:\autolysis
+# 核查时间：2026-09-24T14:45:00+08:00
+$ErrorActionPreference = 'Stop'
+$root = 'D:\autolysis'
+$systemRoot = Join-Path $root 'main-autolysis\systems\dynamic-footstep-system'
+$mappingFile = Join-Path $root 'docs\project-autolysis\00-discuss\初始化项目\structure-evidence\path_mapping.json'
+$mapping = @(Get-Content -Raw -LiteralPath $mappingFile | ConvertFrom-Json)
+$items = @(Get-ChildItem -LiteralPath $systemRoot -Force -Recurse)
+$badNames = @($items | Where-Object {
+    if ($_.PSIsContainer) { $_.Name -cnotmatch '^[a-z]+(?:-[a-z]+)*$' }
+    else { $_.Name -cnotmatch '^[a-z0-9]+(?:_[a-z0-9]+)*(?:\.[a-z0-9]+)+$' }
+} | ForEach-Object { $_.FullName })
+$missing = @($mapping | Where-Object { -not (Test-Path -LiteralPath $_.New) } | ForEach-Object { $_.New })
+$leftovers = @($mapping | Where-Object { Test-Path -LiteralPath $_.Old } | ForEach-Object { $_.Old })
+$audio = @($mapping | Where-Object { $_.New -match '\.(wav|ogg)$' })
+$badAudio = @($audio | Where-Object { (Get-FileHash -Algorithm SHA256 -LiteralPath $_.New).Hash -ne $_.HashBefore } | ForEach-Object { $_.New })
+$uids = @($mapping | Where-Object { $_.New -match '\.uid$' })
+$badUids = @($uids | Where-Object { (Get-FileHash -Algorithm SHA256 -LiteralPath $_.New).Hash -ne $_.HashBefore } | ForEach-Object { $_.New })
+$scripts = @($mapping | Where-Object { $_.New -match '\.gd$' })
+$changedScripts = @($scripts | Where-Object { (Get-FileHash -Algorithm SHA256 -LiteralPath $_.New).Hash -ne $_.HashBefore } | ForEach-Object { $_.New })
+
+$actualPaths = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+Get-ChildItem -LiteralPath $root -Recurse -Force | ForEach-Object {
+    [void]$actualPaths.Add($_.FullName.Substring($root.Length + 1).Replace('\', '/'))
+}
+$targets = @($mapping.New | Where-Object { $_ -match '\.(gd|tscn|tres|import)$' }) + @(
+    (Join-Path $root 'project.godot'),
+    (Join-Path $root 'main-autolysis\player\autolysis_player.tscn'),
+    (Join-Path $root 'main-autolysis\player\tests\footstep_smoke_test.gd'),
+    (Join-Path $root 'main-autolysis\scenes\01-autolysis-test.tscn')
+)
+$references = 0
+$referenceFailures = @()
+foreach ($file in $targets) {
+    $lineNumber = 0
+    foreach ($line in [System.IO.File]::ReadLines($file)) {
+        $lineNumber++
+        foreach ($match in [regex]::Matches($line, '"res://([^"]+)"')) {
+            $path = $match.Groups[1].Value.TrimEnd('/')
+            if ($path.StartsWith('.godot/')) { continue }
+            $references++
+            if (-not $actualPaths.Contains($path)) {
+                $referenceFailures += [pscustomobject]@{ '文件' = $file; '行号' = $lineNumber; '路径' = $path }
+            }
+        }
+    }
+}
+$allActiveFiles = @(rg --files --hidden --no-ignore -g '*.gd' -g '*.tscn' -g '*.tres' -g '*.import' -g '*.godot' -g '*.cfg' -g '!docs/**' -g '!.godot/**' -g '!.git/**' -g '!.codex/**' -g '!.agents/**')
+$oldPaths = @($mapping.Old | ForEach-Object { 'res://' + $_.Substring($root.Length + 1).Replace('\', '/') })
+$remainingOldReferences = @()
+foreach ($file in $allActiveFiles) {
+    $fileText = Get-Content -Raw -LiteralPath $file
+    foreach ($oldPath in $oldPaths) {
+        if ($fileText.Contains($oldPath)) {
+            $remainingOldReferences += [pscustomobject]@{ '文件' = $file; '路径' = $oldPath }
+        }
+    }
+}
+
+$resourceChecked = 0
+$uidChanges = @()
+$baselineUnavailable = @()
+foreach ($entry in $mapping | Where-Object { $_.New -match '\.(tscn|tres|import)$' }) {
+    $originalRelative = $entry.Old.Substring($root.Length + 1).Replace('\', '/')
+    $oldText = (& git show ('HEAD:' + $originalRelative) 2>$null) -join [Environment]::NewLine
+    if ($LASTEXITCODE -ne 0) {
+        $baselineUnavailable += $originalRelative
+        continue
+    }
+    $newText = Get-Content -Raw -LiteralPath $entry.New
+    $oldUid = [regex]::Match($oldText, '(?m)^(?:\[(?:gd_scene|gd_resource)[^\r\n]*\buid="(uid://[^"]+)"|uid="(uid://[^"]+)")')
+    $newUid = [regex]::Match($newText, '(?m)^(?:\[(?:gd_scene|gd_resource)[^\r\n]*\buid="(uid://[^"]+)"|uid="(uid://[^"]+)")')
+    $resourceChecked++
+    if (($oldUid.Groups[1].Value + $oldUid.Groups[2].Value) -cne ($newUid.Groups[1].Value + $newUid.Groups[2].Value)) {
+        $uidChanges += $entry.New
+    }
+}
+$resourceTargets = @($mapping.New | Where-Object { $_ -match '\.(tscn|tres)$' }) + @(
+    (Join-Path $root 'main-autolysis\player\autolysis_player.tscn'),
+    (Join-Path $root 'main-autolysis\scenes\01-autolysis-test.tscn')
+)
+$externalUidCount = 0
+$externalUidFailures = @()
+foreach ($file in $resourceTargets) {
+    $lineNumber = 0
+    foreach ($line in [System.IO.File]::ReadLines($file)) {
+        $lineNumber++
+        if ($line -notmatch '^\[ext_resource ') { continue }
+        $declared = [regex]::Match($line, '\buid="([^"]+)"').Groups[1].Value
+        $relative = [regex]::Match($line, '\bpath="res://([^"]+)"').Groups[1].Value
+        if (-not $declared -or -not $relative) { continue }
+        $target = Join-Path $root $relative
+        if (Test-Path -LiteralPath ($target + '.uid')) {
+            $actual = (Get-Content -Raw -LiteralPath ($target + '.uid')).Trim()
+        } elseif (Test-Path -LiteralPath ($target + '.import')) {
+            $actual = [regex]::Match((Get-Content -Raw -LiteralPath ($target + '.import')), '(?m)^uid="([^"]+)"').Groups[1].Value
+        } else {
+            $actual = [regex]::Match((Get-Content -LiteralPath $target -TotalCount 1), '\buid="([^"]+)"').Groups[1].Value
+        }
+        $externalUidCount++
+        if ($actual -cne $declared) {
+            $externalUidFailures += [pscustomobject]@{ '文件' = $file; '行号' = $lineNumber; '目标' = $relative; '声明标识' = $declared; '实际标识' = $actual }
+        }
+    }
+}
+$projectText = Get-Content -Raw -LiteralPath (Join-Path $root 'project.godot')
+$busReferenceMatches = [regex]::Matches($projectText, '(?m)^buses/default_bus_layout="res://main-autolysis/assets/audio/buses/default_bus_layout.tres"')
+$checks = [ordered]@{
+    '迁移目标存在' = [ordered]@{ '检查数量' = $mapping.Count; '通过' = ($missing.Count -eq 0); '异常' = $missing }
+    '迁移源位置已移除' = [ordered]@{ '检查数量' = $mapping.Count; '通过' = ($leftovers.Count -eq 0); '异常' = $leftovers }
+    '脚步目录命名' = [ordered]@{ '检查数量' = $items.Count; '文件数量' = @($items | Where-Object { -not $_.PSIsContainer }).Count; '子目录数量' = @($items | Where-Object { $_.PSIsContainer }).Count; '通过' = ($badNames.Count -eq 0); '异常' = $badNames }
+    '音频二进制未改变' = [ordered]@{ '检查数量' = $audio.Count; '通过' = ($badAudio.Count -eq 0); '异常' = $badAudio }
+    '脚本内容未改变' = [ordered]@{ '检查数量' = $scripts.Count; '通过' = ($changedScripts.Count -eq 0); '异常' = $changedScripts }
+    '脚本标识旁附文件未改变' = [ordered]@{ '检查数量' = $uids.Count; '通过' = ($badUids.Count -eq 0); '异常' = $badUids }
+    '资源路径存在且大小写一致' = [ordered]@{ '检查数量' = $references; '检查文件数量' = $targets.Count; '通过' = ($referenceFailures.Count -eq 0); '异常' = $referenceFailures }
+    '旧资源路径无残留' = [ordered]@{ '检查数量' = $allActiveFiles.Count; '旧路径数量' = $oldPaths.Count; '通过' = ($remainingOldReferences.Count -eq 0); '异常' = $remainingOldReferences }
+    '场景资源导入标识保持' = [ordered]@{ '检查数量' = $resourceChecked; '通过' = ($uidChanges.Count -eq 0 -and $baselineUnavailable.Count -eq 0); '异常' = $uidChanges; '版本库基线不可用' = $baselineUnavailable }
+    '外部资源标识匹配目标' = [ordered]@{ '检查数量' = $externalUidCount; '通过' = ($externalUidFailures.Count -eq 0); '异常' = $externalUidFailures }
+    '音频总线配置指向新位置' = [ordered]@{ '检查数量' = 1; '匹配数量' = $busReferenceMatches.Count; '通过' = ($busReferenceMatches.Count -eq 1) }
+}
+$allPassed = @($checks.Values | Where-Object { -not $_['通过'] }).Count -eq 0
+[ordered]@{
+    '核查时间' = (Get-Date -Format 'yyyy-MM-ddTHH:mm:sszzz')
+    '项目目录' = $root
+    '迁移清单' = $mappingFile
+    '核查性质' = '只读静态审查；未启动引擎；未修改工程文件'
+    '音频脚本基线' = '迁移清单中的迁移前哈希'
+    '场景资源标识基线' = '版本库当前提交对应原路径内容'
+    '资源路径范围说明' = '迁移清单内工程文本及四个直接引用文件；排除引擎生成缓存路径；目录路径也验证存在及大小写'
+    '旧路径范围说明' = '六种工程文本扩展名；排除文档、引擎缓存、版本库和智能体元数据目录'
+    '全部通过' = $allPassed
+    '检查项' = $checks
+} | ConvertTo-Json -Depth 10

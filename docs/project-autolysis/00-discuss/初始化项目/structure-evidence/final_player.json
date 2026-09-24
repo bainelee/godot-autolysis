@@ -1,0 +1,13 @@
+{
+  "Name": "final_player",
+  "ExitCode": 0,
+  "Checks": 20,
+  "EngineError": false,
+  "Arguments": [
+    "--headless",
+    "--path",
+    "D:\\autolysis",
+    "--script",
+    "res://main-autolysis/player/tests/player_smoke_test.gd"
+  ]
+}

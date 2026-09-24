@@ -1,0 +1,84 @@
+[
+  {
+    "Name": "baseline_import",
+    "ExitCode": 0,
+    "Checks": 0,
+    "EngineError": false,
+    "Arguments": [
+      "--headless",
+      "--path",
+      "D:\\autolysis",
+      "--editor",
+      "--quit"
+    ]
+  },
+  {
+    "Name": "baseline_footstep",
+    "ExitCode": 0,
+    "Checks": 25,
+    "EngineError": false,
+    "Arguments": [
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "--path",
+      "D:\\autolysis",
+      "--script",
+      "res://main-autolysis/player/tests/footstep_smoke_test.gd"
+    ]
+  },
+  {
+    "Name": "final_import",
+    "ExitCode": 0,
+    "Checks": 0,
+    "EngineError": false,
+    "Arguments": [
+      "--headless",
+      "--path",
+      "D:\\autolysis",
+      "--editor",
+      "--quit"
+    ]
+  },
+  {
+    "Name": "final_footstep",
+    "ExitCode": 0,
+    "Checks": 25,
+    "EngineError": false,
+    "Arguments": [
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "--path",
+      "D:\\autolysis",
+      "--script",
+      "res://main-autolysis/player/tests/footstep_smoke_test.gd"
+    ]
+  },
+  {
+    "Name": "final_player",
+    "ExitCode": 0,
+    "Checks": 20,
+    "EngineError": false,
+    "Arguments": [
+      "--headless",
+      "--path",
+      "D:\\autolysis",
+      "--script",
+      "res://main-autolysis/player/tests/player_smoke_test.gd"
+    ]
+  },
+  {
+    "Name": "final_main_scene",
+    "ExitCode": 0,
+    "Checks": 0,
+    "EngineError": false,
+    "Arguments": [
+      "--headless",
+      "--path",
+      "D:\\autolysis",
+      "--quit-after",
+      "180"
+    ]
+  }
+]

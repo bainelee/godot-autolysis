@@ -1,0 +1,502 @@
+[
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\DynamicFootstepDemoScene.tscn",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\dynamic_footstep_demo_scene.tscn",
+    "HashBefore": "C8E1C5BA2F8B73AEF9E4489EE0B6A4CF7DCF90CBCD5604A380B430EAB7ABC4C9"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Readme.md",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\readme.md",
+    "HashBefore": "0962D154A513E92647D7A7BC936FCB63CB7D137DEA2473B8CD99E20C569BA057"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Dirt\\footstep_dirt-01.ogg",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\dirt\\footstep_dirt_01.ogg",
+    "HashBefore": "B026249B695C823BEDCEB1B04AEEEE69213FC06840EFF3435FA6E6390A9B79F8"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Dirt\\footstep_dirt-01.ogg.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\dirt\\footstep_dirt_01.ogg.import",
+    "HashBefore": "B172BA9A355843F0B2932D0635CB657B7C62AF351D5C2CE560938EBA669344B0"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Dirt\\footstep_dirt-02.ogg",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\dirt\\footstep_dirt_02.ogg",
+    "HashBefore": "18768704B1AA38F1719B49EC3427954912FBF29E07EFE4F6C84E72CF12E1F38D"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Dirt\\footstep_dirt-02.ogg.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\dirt\\footstep_dirt_02.ogg.import",
+    "HashBefore": "748282EA0FA8971462CC1C0E26BB27983FAC349755265E701039C2DB88D85D48"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Dirt\\footstep_dirt-03.ogg",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\dirt\\footstep_dirt_03.ogg",
+    "HashBefore": "28184E5BE7E72F330208F768F59F377FC87B5DFBBDC4F369878B9A0B87A6B4CD"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Dirt\\footstep_dirt-03.ogg.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\dirt\\footstep_dirt_03.ogg.import",
+    "HashBefore": "FFB935D9D2C36932649C1EA71EC8745A24A8E31A597344E00071767E48D05E65"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Dirt\\footstep_dirt-04.ogg",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\dirt\\footstep_dirt_04.ogg",
+    "HashBefore": "E4401ECE8E35CE286C3725E2AA7AFF6848169CF358A76F3AA943FED425A07B5B"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Dirt\\footstep_dirt-04.ogg.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\dirt\\footstep_dirt_04.ogg.import",
+    "HashBefore": "91C943209AB263CD058E4A81793EFBC097418E9F587FB144894971B11B24A188"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Generic\\footstep00.ogg",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\generic\\footstep_generic_00.ogg",
+    "HashBefore": "D0DAF7BC4BEE8633E6D20AAD1F88798F2BD7B948BE0F644C2F21C41A42C1E3C5"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Generic\\footstep00.ogg.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\generic\\footstep_generic_00.ogg.import",
+    "HashBefore": "951E258D07E18C0306F66360BF96FCAFCCEBED1BBBCE7D8163FDA102D57F95BF"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Generic\\footstep01.ogg",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\generic\\footstep_generic_01.ogg",
+    "HashBefore": "99514F67612034154C1A5F152B029FCA130FDCD1594527257988AD9619052D34"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Generic\\footstep01.ogg.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\generic\\footstep_generic_01.ogg.import",
+    "HashBefore": "8AB7372E96A34E955E4F828DDFE96CD7574468EBEC0787604ACDD7A37EF232A2"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Generic\\footstep02.ogg",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\generic\\footstep_generic_02.ogg",
+    "HashBefore": "4114ECB7BB1A939B65896FBA95AF09D1DC0FE89FABAF63C4D2934E60BFA35AC6"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Generic\\footstep02.ogg.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\generic\\footstep_generic_02.ogg.import",
+    "HashBefore": "6A3771682CC0E49281538A2910AE59BFF042EF53EEAFCA4A888481915EF31ABC"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Generic\\footstep03.ogg",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\generic\\footstep_generic_03.ogg",
+    "HashBefore": "6CB4DDFD75EC915B3DE63B742999B9A4CD647CD2F23180DDF33ABC3962CC90B6"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Generic\\footstep03.ogg.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\generic\\footstep_generic_03.ogg.import",
+    "HashBefore": "FAB108FD4840BB57BC909FB1A3543420A8AD4EF330489C1CDB28819B2F7820CF"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Generic\\footstep04.ogg",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\generic\\footstep_generic_04.ogg",
+    "HashBefore": "D5FC12C4EB2DF153957C4726309297C5C5228C79B5A97C562E6FFDD0B7E4829B"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Generic\\footstep04.ogg.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\generic\\footstep_generic_04.ogg.import",
+    "HashBefore": "EE28CD2BEDFFA68F781C20B7057ACB0022ADE507631E91400C5873A2CCB87D8A"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Grass\\footstep_Grass-01.ogg",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\grass\\footstep_grass_01.ogg",
+    "HashBefore": "2C3482CA15744C2A6F9E696F1B019D524822E9C04B216FB3FADD6616BDDE61E6"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Grass\\footstep_Grass-01.ogg.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\grass\\footstep_grass_01.ogg.import",
+    "HashBefore": "E954BE28826C07D15877A2B38C4BC520BC76D53E6E735F26F71848ECF4EBAB28"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Grass\\footstep_Grass-02.ogg",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\grass\\footstep_grass_02.ogg",
+    "HashBefore": "2731C6BA0DC8B049341A7BFDEF46545BBD700A34DAB4B1AD5010EF7F7E408DE4"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Grass\\footstep_Grass-02.ogg.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\grass\\footstep_grass_02.ogg.import",
+    "HashBefore": "3C4C3F0846B0075F922145F21FEF633B885987A72606F017E86C4E99341F9111"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Grass\\footstep_Grass-03.ogg",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\grass\\footstep_grass_03.ogg",
+    "HashBefore": "B224045D7BAFE9C01D8C9F1E809209379710EDA68D16CC8415E6FD81F602DA1C"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Grass\\footstep_Grass-03.ogg.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\grass\\footstep_grass_03.ogg.import",
+    "HashBefore": "14B60FC55317B8841EE1D1B8B5E2BA24D44DA0D1795447DEB3B4A3C31F08436C"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Grass\\footstep_Grass-04.ogg",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\grass\\footstep_grass_04.ogg",
+    "HashBefore": "BF5328F74844E242E57958BC05130DDC921178D32A1F6BF13F6EBEE25F1A21A7"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Grass\\footstep_Grass-04.ogg.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\grass\\footstep_grass_04.ogg.import",
+    "HashBefore": "63B548461FE8B719A38D22BF93B9307B761A177B9D828F5D91D7C0EA6D37FAD0"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Stone\\footstep_stone-01.ogg",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\stone\\footstep_stone_01.ogg",
+    "HashBefore": "DEC5A28B148EEB28355D2B6B7CC679AD5687D3A5AF1B67B131A26F326117FEE6"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Stone\\footstep_stone-01.ogg.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\stone\\footstep_stone_01.ogg.import",
+    "HashBefore": "93F79F696998B70B1D6096ECE1FF8B6B7EB976F8EE99632B4C7E562226D7206B"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Stone\\footstep_stone-02.ogg",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\stone\\footstep_stone_02.ogg",
+    "HashBefore": "3299705B6FE0FAE0F6C1069645AEFA4ED35C96983E728E0E10FC455281F9211E"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Stone\\footstep_stone-02.ogg.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\stone\\footstep_stone_02.ogg.import",
+    "HashBefore": "32A01BFA088A437DFA4A407E707F13591F1DA76A5493BF20B623B9164B798A0F"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Stone\\footstep_stone-03.ogg",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\stone\\footstep_stone_03.ogg",
+    "HashBefore": "A722F2859C018ABA3E4A8F2D10D7D8DB7DD33FAC262B4E2F1C3CA7F0EDD41CDA"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Stone\\footstep_stone-03.ogg.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\stone\\footstep_stone_03.ogg.import",
+    "HashBefore": "8A8A6808D566A6D72B8000482D622140406C28CB97ED009C62F71828A7BA41B2"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Stone\\footstep_stone-04.ogg",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\stone\\footstep_stone_04.ogg",
+    "HashBefore": "829084F1EFC702E2C7CC6E221A686835DE327CAA6A44CB1CEDC8C1F5D37829B5"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Stone\\footstep_stone-04.ogg.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\stone\\footstep_stone_04.ogg.import",
+    "HashBefore": "E4C327665BA99AD25E66A060F50E29B11BF8C8A69FC14E20ADA874B61D00CD41"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Wood\\footstep_wood-01.ogg",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\wood\\footstep_wood_01.ogg",
+    "HashBefore": "3E472A8AB8A6F195739E7E2E7FAFADFEA3D917D7F22CF8A090330F329426B665"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Wood\\footstep_wood-01.ogg.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\wood\\footstep_wood_01.ogg.import",
+    "HashBefore": "8B24E80B133BB484DA0B57CA700FF250758DCA54D97C5BE63EC2D07364525224"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Wood\\footstep_wood-02.ogg",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\wood\\footstep_wood_02.ogg",
+    "HashBefore": "49D91F30BA6360960067AFB6A1F68F9A524CD6A5F30FE3955B45E144168CC32B"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Wood\\footstep_wood-02.ogg.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\wood\\footstep_wood_02.ogg.import",
+    "HashBefore": "4DF972D0D94FC51A75FFC43F0EB7067A0C0B4472D392179980C989E2AF902661"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Wood\\footstep_wood-03.ogg",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\wood\\footstep_wood_03.ogg",
+    "HashBefore": "77E77F982BCDBFF0D7CAE9C3F746BACC99AE191D025DE38AE3D2EBA18FC45A73"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Wood\\footstep_wood-03.ogg.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\wood\\footstep_wood_03.ogg.import",
+    "HashBefore": "49535209A5D03C1A46E76FDFF3A1833BF5B5FEA78AC4CF42E138865FB9E21495"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Wood\\footstep_wood-04.ogg",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\wood\\footstep_wood_04.ogg",
+    "HashBefore": "A3F819453BAEDB6B1AF42A3011B14A6144DF2AF6EC6DD6E94BD33C215BFD222E"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Audio\\Wood\\footstep_wood-04.ogg.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\wood\\footstep_wood_04.ogg.import",
+    "HashBefore": "42531BBC555B7E17DC8CC4929459379F06DC2178903BD3FD13E3BAB2AD7F5B35"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Materials\\Example_Dirt.tres",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_dirt.tres",
+    "HashBefore": "57443A5549DEA011FD1F52CC50DFD4D3E36C0499407FA955B6A90AF95D19A221"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Materials\\Example_Grass.tres",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_grass.tres",
+    "HashBefore": "DBED9DEF9153F3B32FC348CA89A8386FA2773D99161AC70792CC554274F2EC26"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Materials\\Example_Stone.tres",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_stone.tres",
+    "HashBefore": "846E07893FC25D50FD56E9FC2D5A4C3D5ABD86186ECECBC231B9DDC9986420C7"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Materials\\Example_Wood.tres",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_wood.tres",
+    "HashBefore": "714FC73BE2D43613B554F2B601BD2CD9FA801EB65D96CDA76A3438A42ED1A7F4"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Materials\\Prototype_Brown.tres",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_brown.tres",
+    "HashBefore": "FB889FCC689F0323EB5B1EBC04C07B8D61044EAAD55D56CE773FCB674BCB86FA"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Materials\\Prototype_DarkGrey.tres",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_dark_grey.tres",
+    "HashBefore": "F29DBB94EA76F2761EFDE42212F466351DCA7EA03259E299385C5076317AF505"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Materials\\Prototype_Green.tres",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_green.tres",
+    "HashBefore": "931D1C8212F1387ABDAEB593563E027796DD0434A6524AF2B406D46F280268BF"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Materials\\Prototype_LightGrey.tres",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_light_grey.tres",
+    "HashBefore": "354CDF329FC5F54724B2619CC180EA3A6997A294A8318BADCE0E7EBC49DF84F8"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Assets\\Materials\\Prototype_Orange.tres",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_orange.tres",
+    "HashBefore": "4DD34B83CFD29B6FD596F1E2FBA369E80F412D5164E39B10A1AEC5C2CEBA955C"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\FootstepMaterialLibrary\\sample_footstep_material_library.tres",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-material-library\\sample_footstep_material_library.tres",
+    "HashBefore": "4303986B318A47D2464B9AD43E87571DF533E6DE941515AD7399300ED63CC528"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\FootstepProfiles\\dirt_footstep_profile.tres",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\dirt_footstep_profile.tres",
+    "HashBefore": "2836299674C03B21B59625DE6C09FEA87393FFC1D5D79F2822B9E7648D3E40AC"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\FootstepProfiles\\generic_footstep_profile.tres",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\generic_footstep_profile.tres",
+    "HashBefore": "F6B8CF184ED593763AF094BFB74B315312C0C87F480D71DF06FD809B9252E499"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\FootstepProfiles\\grass_footstep_profile.tres",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\grass_footstep_profile.tres",
+    "HashBefore": "06E4A77F1DAAC790D11BFFA86CCE1E6C4A2F07ADE4E6D6AF0B30D119F7680479"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\FootstepProfiles\\metal_footstep_hard_profile.tres",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\metal_footstep_hard_profile.tres",
+    "HashBefore": "9A687378B8444DBD22718137661660AC069168A0DBF495FFA00966883A3AD901"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\FootstepProfiles\\metal_footstep_light_profile.tres",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\metal_footstep_light_profile.tres",
+    "HashBefore": "E51C96B52B4F4661C3699CEBDF4E006EFD3B94BE35F163B728CB0AFA2CA30471"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\FootstepProfiles\\stone_footstep_profile.tres",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\stone_footstep_profile.tres",
+    "HashBefore": "A2A1AF0E0FF149CB43F2A4ADF6888AA670C4E30A26E3684A33F6250A9182CB18"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\FootstepProfiles\\wood_footstep_profile.tres",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\wood_footstep_profile.tres",
+    "HashBefore": "D243F6494FE2FA4FC869FE2A0EAA0DB2C861CC24F3207433C6B103C8EEB6B035"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Scripts\\footstep_material_library.gd",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_material_library.gd",
+    "HashBefore": "55F6C68FA5BD83A154A1FF9C230C81F5B9ABD7E4F9A8E58BF9856EC9BDD2DC25"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Scripts\\footstep_material_library.gd.uid",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_material_library.gd.uid",
+    "HashBefore": "EE8278B23FCAFA916A87942B9F073F982E9A26A973662681FC290952D48BB64E"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Scripts\\footstep_material_profile.gd",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_material_profile.gd",
+    "HashBefore": "B36F723AE97F1340556DD9C5B0491AA63737604717833D2D21689D660A54E82D"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Scripts\\footstep_material_profile.gd.uid",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_material_profile.gd.uid",
+    "HashBefore": "3272525EBFFF883D38989E3E71BFB34BE0C84FDCD8AFDBD5B7B600FA1BC56502"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Scripts\\footstep_surface_detector.gd",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_surface_detector.gd",
+    "HashBefore": "61FF789A1AA640A2505D087B4C11FD165AD17F7F72474FD8803F87B0D3259552"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Scripts\\footstep_surface_detector.gd.uid",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_surface_detector.gd.uid",
+    "HashBefore": "1C2CB4D648A333EC17D09588FBEE1DDE23171BDFD6C57A9715A3ED9D4D5F635C"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Scripts\\footstep_surface.gd",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_surface.gd",
+    "HashBefore": "6346CBD1020A16B186326155179D7ABE1C79BE6807BC87D47F4A7E43B1399703"
+  },
+  {
+    "Old": "D:\\autolysis\\DynamicFootstepSystem\\Scripts\\footstep_surface.gd.uid",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_surface.gd.uid",
+    "HashBefore": "9EF8E2637550D98267FF86C57611167984794B73CCC1953AA60CC25C806B8AE6"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Light__Metal_footsteps_1.WAV",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\light_metal_footsteps_1.wav",
+    "HashBefore": "04CA56F210DEE3DEC737F6B50AA6904FD1718D2ABAF6BD3FC3797BFB5BAE245E"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Light__Metal_footsteps_1.WAV.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\light_metal_footsteps_1.wav.import",
+    "HashBefore": "2C8262D39BF1770C96629505918FD3C8BE4E4C0D9755EE8E749D0F30D9E47FA6"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Light__Metal_footsteps_2.WAV",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\light_metal_footsteps_2.wav",
+    "HashBefore": "747428AB13A411DE67758EC0B598464DADBC1B311A436F58658549140D1BFF3F"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Light__Metal_footsteps_2.WAV.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\light_metal_footsteps_2.wav.import",
+    "HashBefore": "B5327A5A84B47CCEAC88020C1D882855B6BEDF3D952CCD6A9F7B908A2C83FFE5"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Light__Metal_footsteps_3.WAV",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\light_metal_footsteps_3.wav",
+    "HashBefore": "394AE3692058E14B5017B9E7E02CDAFB6D84BEDFC3D9044852A7DC986DE90795"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Light__Metal_footsteps_3.WAV.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\light_metal_footsteps_3.wav.import",
+    "HashBefore": "84D2CAF990483682FBA5CBE32DB9E2D55877C4DB2D9A4E05AFA18B91A13F0CC9"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Light__Metal_footsteps_4.WAV",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\light_metal_footsteps_4.wav",
+    "HashBefore": "1927E0AFAF65E6B3977E221551FE6D5B8D51F77697F01763E5AA56C6530033E0"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Light__Metal_footsteps_4.WAV.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\light_metal_footsteps_4.wav.import",
+    "HashBefore": "67AE556A02330CFCD726BF01D6F64BD28C5F15C9D33CFA9014C8A8146B01C418"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Light__Metal_footsteps_5.WAV",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\light_metal_footsteps_5.wav",
+    "HashBefore": "420834ED6A7A0819E1D3E5D619FE95E4A5E0C9FCCD16B605B62F24C8C67868B1"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Light__Metal_footsteps_5.WAV.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\light_metal_footsteps_5.wav.import",
+    "HashBefore": "43BD9F3C691505FA37E469266E47EF7691FFA69BCD403BE8CFEFAD5B05F007CB"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Metal_footsteps_1.WAV",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\metal_footsteps_1.wav",
+    "HashBefore": "DC191B008273404A8DBE2C7AD8AA9C6E04EB7DA7C0BF84A2F483823BDCB2311E"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Metal_footsteps_1.WAV.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\metal_footsteps_1.wav.import",
+    "HashBefore": "81DCC75F5E6AE5998C4419888026792D611F6CD053E07CE3208DEF854E8813E0"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Metal_footsteps_10.WAV",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\metal_footsteps_10.wav",
+    "HashBefore": "5FA5AA8936DFAC46F946CC421FBAF3972C7AE3987FF3CCF49EAD1E6E72359461"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Metal_footsteps_10.WAV.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\metal_footsteps_10.wav.import",
+    "HashBefore": "FF825F1996601E549C6D48FB0B2CAB048423627FB2164D3FA44C73EDDD2C7FC3"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Metal_footsteps_2.WAV",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\metal_footsteps_2.wav",
+    "HashBefore": "BAE7B330053AA03846690BA03E0C43ABE8F89991E7E1D1F324C48D6F6250DD39"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Metal_footsteps_2.WAV.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\metal_footsteps_2.wav.import",
+    "HashBefore": "2834587D6E1F8BBE5BAEAAB9B292F2FE9485AD4E1D1D96F4459775DCCA45EFF4"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Metal_footsteps_3.WAV",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\metal_footsteps_3.wav",
+    "HashBefore": "809F04618C3BD09824371A969ED59293CA2444A19A094F0917B6C921DE2A5D89"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Metal_footsteps_3.WAV.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\metal_footsteps_3.wav.import",
+    "HashBefore": "76727ABF9B5324309C7319C676D4A079E030A8D75F892BFA047BC1E87BEF3445"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Metal_footsteps_4.WAV",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\metal_footsteps_4.wav",
+    "HashBefore": "2DD820375FBAB887D4C437346B6330FC4C5A962364C943FE244A90D43ECBDBE9"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Metal_footsteps_4.WAV.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\metal_footsteps_4.wav.import",
+    "HashBefore": "AC87276FA5E0067AFE0B76F10C664E9FF07279D23B3746D6B1B9C37022D65E33"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Metal_footsteps_5.WAV",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\metal_footsteps_5.wav",
+    "HashBefore": "8B9821096CF32D2B08CDA0C8D3A7C12354FD47CDBD940D5A44CC6660A51A69F5"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Metal_footsteps_5.WAV.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\metal_footsteps_5.wav.import",
+    "HashBefore": "5D99278ADE7A4B4D6C0E4835FF507150449124B83E00823A796537DB9B893DDB"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Metal_footsteps_6.WAV",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\metal_footsteps_6.wav",
+    "HashBefore": "886B0CA60F71E62BA5D2A43F257D0DE4DF349C70F7848EB36CF0AA12CC9F82D2"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Metal_footsteps_6.WAV.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\metal_footsteps_6.wav.import",
+    "HashBefore": "115DCB5EEBB4C1C5422E311BFE9FDE041B177238F44EF8A86D28573175F04557"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Metal_footsteps_7.WAV",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\metal_footsteps_7.wav",
+    "HashBefore": "5C8D6A6C69052164D7CFE70AD8EA8C71A6DA961786FC573B2BC64A62B42B4242"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Metal_footsteps_7.WAV.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\metal_footsteps_7.wav.import",
+    "HashBefore": "239223F79D11E97A44B4942B8A392270181FF80E157DEB2E5CBA4167D8F2E545"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Metal_footsteps_8.WAV",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\metal_footsteps_8.wav",
+    "HashBefore": "5AB88FB3C05F6B5906A4B1028CAFB416858BA064CAACC6AB8AE1F267CB923F9D"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Metal_footsteps_8.WAV.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\metal_footsteps_8.wav.import",
+    "HashBefore": "6418A50E31E98CAA11B4A102E340E54E6CAE89F382B9B8E19431B933AF4B37BC"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Metal_footsteps_9.WAV",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\metal_footsteps_9.wav",
+    "HashBefore": "A64DF2549E9705649C6E696983DB761077F218C742735D96673EF50D5EB1E134"
+  },
+  {
+    "Old": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\footsteps\\metal\\Metal_footsteps_9.WAV.import",
+    "New": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\audio\\metal\\metal_footsteps_9.wav.import",
+    "HashBefore": "EF75CE22D9AA59D78E172A9C90C7C3897A0FF87831497080EA3EB45A92E24A0F"
+  },
+  {
+    "Old": "D:\\autolysis\\default_bus_layout.tres",
+    "New": "D:\\autolysis\\main-autolysis\\assets\\audio\\buses\\default_bus_layout.tres",
+    "HashBefore": "1D9C2AE1F24CDA404461DB643CFE412234B20FEAC477ACDCEF47C27E6D1F34A3"
+  }
+]

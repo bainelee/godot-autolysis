@@ -1,0 +1,15 @@
+{
+  "Name": "final_footstep",
+  "ExitCode": 0,
+  "Checks": 25,
+  "EngineError": false,
+  "Arguments": [
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--path",
+    "D:\\autolysis",
+    "--script",
+    "res://main-autolysis/player/tests/footstep_smoke_test.gd"
+  ]
+}
