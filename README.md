@@ -1,0 +1,2 @@
+# godot-autolysis
+autolysis
