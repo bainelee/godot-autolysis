@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://dru5xulylgt07"]
+
+[ext_resource type="PackedScene" uid="uid://dtsjcbeaeibks" path="res://main-autolysis/player/autolysis_player.tscn" id="1_player"]
+[ext_resource type="PackedScene" path="res://main-autolysis/components/interactions/autolysis_interaction_component.tscn" id="2_interaction"]
+[ext_resource type="Script" uid="uid://bjkllb7c31m1r" path="res://main-autolysis/player/tests/fixtures/direct_interaction_demo.gd" id="3_demo"]
+
+[sub_resource type="Environment" id="Environment_room"]
+background_mode = 1
+background_color = Color(0.035, 0.055, 0.08, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.7, 0.8, 1, 1)
+ambient_light_energy = 0.7
+
+[sub_resource type="BoxShape3D" id="Shape_floor"]
+size = Vector3(12, 0.2, 12)
+
+[sub_resource type="StandardMaterial3D" id="Material_floor"]
+albedo_color = Color(0.13, 0.18, 0.23, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="Mesh_floor"]
+size = Vector3(12, 0.2, 12)
+
+[sub_resource type="BoxShape3D" id="Shape_door"]
+size = Vector3(1, 2.3, 0.12)
+
+[sub_resource type="BoxMesh" id="Mesh_door"]
+size = Vector3(1, 2.3, 0.12)
+
+[sub_resource type="BoxShape3D" id="Shape_switch"]
+size = Vector3(0.3, 0.3, 0.12)
+
+[sub_resource type="StandardMaterial3D" id="Material_switch"]
+albedo_color = Color(0.12, 0.22, 0.29, 1)
+
+[sub_resource type="BoxMesh" id="Mesh_switch"]
+size = Vector3(0.3, 0.3, 0.12)
+
+[sub_resource type="StandardMaterial3D" id="Material_indicator"]
+shading_mode = 0
+albedo_color = Color(0.1, 0.8, 0.45, 1)
+
+[sub_resource type="StandardMaterial3D" id="Material_door"]
+albedo_color = Color(0.65, 0.3, 0.12, 1)
+
+[node name="DirectInteractionDemo" type="Node3D" unique_id=112878777]
+script = ExtResource("3_demo")
+
+[node name="Environment" type="WorldEnvironment" parent="." unique_id=1114148774]
+environment = SubResource("Environment_room")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1732285018]
+transform = Transform3D(0.8660254, 0.38302222, -0.32139382, 0, 0.64278764, 0.76604444, 0.5, -0.66341394, 0.5566704, 0, 0, 0)
+light_energy = 1.2
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1021885860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1308354119]
+shape = SubResource("Shape_floor")
+
+[node name="Mesh" type="MeshInstance3D" parent="Floor" unique_id=140707549]
+material_override = SubResource("Material_floor")
+mesh = SubResource("Mesh_floor")
+
+[node name="Wall" type="StaticBody3D" parent="." unique_id=1695287144]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 1.15, -3.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall" unique_id=1681477167]
+shape = SubResource("Shape_door")
+
+[node name="Mesh" type="MeshInstance3D" parent="Wall" unique_id=414439247]
+material_override = SubResource("Material_floor")
+mesh = SubResource("Mesh_door")
+
+[node name="SwitchA" type="StaticBody3D" parent="." unique_id=1787629329 groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1.2)
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SwitchA" unique_id=28205319]
+shape = SubResource("Shape_switch")
+
+[node name="Mesh" type="MeshInstance3D" parent="SwitchA" unique_id=1172992538]
+material_override = SubResource("Material_switch")
+mesh = SubResource("Mesh_switch")
+
+[node name="Indicator" type="MeshInstance3D" parent="SwitchA" unique_id=1276482176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.008)
+visible = false
+material_override = SubResource("Material_indicator")
+mesh = SubResource("Mesh_switch")
+
+[node name="Interaction" parent="SwitchA" unique_id=1374025237 instance=ExtResource("2_interaction")]
+
+[node name="SwitchB" type="StaticBody3D" parent="." unique_id=808340770 groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 1.5, -1.2)
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SwitchB" unique_id=2005188185]
+shape = SubResource("Shape_switch")
+
+[node name="Mesh" type="MeshInstance3D" parent="SwitchB" unique_id=511924654]
+material_override = SubResource("Material_switch")
+mesh = SubResource("Mesh_switch")
+
+[node name="Indicator" type="MeshInstance3D" parent="SwitchB" unique_id=1648915727]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.008)
+visible = false
+material_override = SubResource("Material_indicator")
+mesh = SubResource("Mesh_switch")
+
+[node name="Interaction" parent="SwitchB" unique_id=1060350811 instance=ExtResource("2_interaction")]
+
+[node name="Door" type="AnimatableBody3D" parent="." unique_id=997770901 groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 0, -1.2)
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door" unique_id=1252046118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.15, 0)
+shape = SubResource("Shape_door")
+
+[node name="Mesh" type="MeshInstance3D" parent="Door" unique_id=1814771510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.15, 0)
+material_override = SubResource("Material_door")
+mesh = SubResource("Mesh_door")
+
+[node name="Interaction" parent="Door" unique_id=1098885635 instance=ExtResource("2_interaction")]
+
+[node name="Player" parent="." unique_id=1198815768 instance=ExtResource("1_player")]
+
+[node name="Instructions" type="CanvasLayer" parent="." unique_id=275622878]
+layer = 5
+
+[node name="Guide" type="Label" parent="Instructions" unique_id=1625672264]
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 900.0
+offset_bottom = 80.0
+text = "直接交互验证：瞄准物体后点击鼠标左键
+初始正前方为开关甲；右侧为开关乙；左侧为门。移动至两米内操作。"
+
+[node name="Status" type="Label" parent="Instructions" unique_id=1978765997]
+offset_left = 24.0
+offset_top = 90.0
+offset_right = 900.0
+offset_bottom = 122.0
+
+[connection signal="interaction_requested" from="SwitchA/Interaction" to="." method="_on_switch_a_requested"]
+[connection signal="interaction_requested" from="SwitchB/Interaction" to="." method="_on_switch_b_requested"]
+[connection signal="interaction_requested" from="Door/Interaction" to="." method="_on_door_requested"]

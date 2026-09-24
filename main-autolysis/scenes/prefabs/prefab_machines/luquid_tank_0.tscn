@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bbqs75e8vtnql"]
+
+[ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="1_x1ebw"]
+[ext_resource type="Material" uid="uid://v2cw5dvy875j" path="res://main-autolysis/assets/materials/base_color/mat_base_red_3.tres" id="2_v03ve"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8q27"]
+albedo_color = Color(0.68, 0.7, 0.66, 1)
+roughness = 0.72
+
+[sub_resource type="BoxMesh" id="BoxMesh_p082h"]
+material = SubResource("StandardMaterial3D_i8q27")
+size = Vector3(0.3, 0.24, 0.24)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pa6tl"]
+material = SubResource("StandardMaterial3D_i8q27")
+size = Vector3(0.1, 0.3, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p7yse"]
+material = SubResource("StandardMaterial3D_i8q27")
+size = Vector3(0.1, 0.3, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_x1ebw"]
+material = SubResource("StandardMaterial3D_i8q27")
+size = Vector3(0.2, 0.3, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_v03ve"]
+material = SubResource("StandardMaterial3D_i8q27")
+size = Vector3(0.2, 0.1, 0.3)
+
+[node name="luquid_tank_0" type="MeshInstance3D" unique_id=1823254939]
+material_override = ExtResource("1_x1ebw")
+mesh = SubResource("BoxMesh_p082h")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=181272463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 0)
+material_override = ExtResource("2_v03ve")
+mesh = SubResource("BoxMesh_pa6tl")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="." unique_id=465163527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19999999, 0, 0)
+material_override = ExtResource("2_v03ve")
+mesh = SubResource("BoxMesh_p7yse")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="." unique_id=1352854032]
+material_override = ExtResource("2_v03ve")
+mesh = SubResource("BoxMesh_x1ebw")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="." unique_id=379038915]
+material_override = ExtResource("2_v03ve")
+mesh = SubResource("BoxMesh_v03ve")
+skeleton = NodePath("../..")

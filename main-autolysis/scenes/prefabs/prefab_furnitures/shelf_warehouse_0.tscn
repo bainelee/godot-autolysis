@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://c7180ip5n6m2l"]
+
+[ext_resource type="Material" uid="uid://b1bq2ldu2jmr" path="res://main-autolysis/assets/materials/base_color/mat_base_orange_1.tres" id="2_l5nai"]
+[ext_resource type="Material" uid="uid://ckj13djawam5k" path="res://main-autolysis/assets/materials/base_color/mat_base_darkblue_1.tres" id="2_nxsjv"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nxsjv"]
+data = PackedVector3Array(-1, 0.049999997, 0.29999998, 1, 0.049999997, 0.29999998, -1, -0.049999997, 0.29999998, 1, 0.049999997, 0.29999998, 1, -0.049999997, 0.29999998, -1, -0.049999997, 0.29999998, 1, 0.049999997, -0.29999998, -1, 0.049999997, -0.29999998, 1, -0.049999997, -0.29999998, -1, 0.049999997, -0.29999998, -1, -0.049999997, -0.29999998, 1, -0.049999997, -0.29999998, 1, 0.049999997, 0.29999998, 1, 0.049999997, -0.29999998, 1, -0.049999997, 0.29999998, 1, 0.049999997, -0.29999998, 1, -0.049999997, -0.29999998, 1, -0.049999997, 0.29999998, -1, 0.049999997, -0.29999998, -1, 0.049999997, 0.29999998, -1, -0.049999997, -0.29999998, -1, 0.049999997, 0.29999998, -1, -0.049999997, 0.29999998, -1, -0.049999997, -0.29999998, 1, 0.049999997, 0.29999998, -1, 0.049999997, 0.29999998, 1, 0.049999997, -0.29999998, -1, 0.049999997, 0.29999998, -1, 0.049999997, -0.29999998, 1, 0.049999997, -0.29999998, -1, -0.049999997, 0.29999998, 1, -0.049999997, 0.29999998, -1, -0.049999997, -0.29999998, 1, -0.049999997, 0.29999998, 1, -0.049999997, -0.29999998, -1, -0.049999997, -0.29999998)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4qoi"]
+albedo_color = Color(0.68, 0.7, 0.66, 1)
+roughness = 0.72
+
+[sub_resource type="BoxMesh" id="BoxMesh_l5nai"]
+material = SubResource("StandardMaterial3D_u4qoi")
+size = Vector3(0.1, 2.2, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ygtgl"]
+material = SubResource("StandardMaterial3D_u4qoi")
+size = Vector3(2, 0.1, 0.6)
+
+[node name="shelf_warehouse_0" type="StaticBody3D" unique_id=432328880]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=910369122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.29999998)
+shape = SubResource("ConcavePolygonShape3D_nxsjv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=420837960]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05, 1.1000001, 0.55)
+material_override = ExtResource("2_nxsjv")
+mesh = SubResource("BoxMesh_l5nai")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=1790383044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05, 1.1000001, 0.050000027)
+material_override = ExtResource("2_nxsjv")
+mesh = SubResource("BoxMesh_l5nai")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="." unique_id=1031820767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05, 1.1000001, 0.55)
+material_override = ExtResource("2_nxsjv")
+mesh = SubResource("BoxMesh_l5nai")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="." unique_id=744597385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05, 1.1000001, 0.050000027)
+material_override = ExtResource("2_nxsjv")
+mesh = SubResource("BoxMesh_l5nai")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=36638056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.29999998)
+material_override = ExtResource("2_l5nai")
+mesh = SubResource("BoxMesh_ygtgl")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1046724950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84999996, 0.29999998)
+material_override = ExtResource("2_l5nai")
+mesh = SubResource("BoxMesh_ygtgl")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=219934638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4499999, 0.29999998)
+material_override = ExtResource("2_l5nai")
+mesh = SubResource("BoxMesh_ygtgl")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=217354158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05, 0.29999998)
+material_override = ExtResource("2_l5nai")
+mesh = SubResource("BoxMesh_ygtgl")

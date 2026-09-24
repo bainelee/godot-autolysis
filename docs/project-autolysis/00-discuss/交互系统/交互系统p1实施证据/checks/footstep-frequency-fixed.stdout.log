@@ -1,0 +1,5 @@
+Godot Engine v4.6.1.stable.official.14d19694e - https://godotengine.org
+
+步态诊断：{"controlled_display_stall":true,"count":4,"elapsed_ms":510,"grounded_end":true,"phase_end":23.9999999999999,"phase_start":0.0,"physics_frames":120,"samples":[{"frame":52,"grounded":true,"phase":1.2,"speed":1.66275489330292},{"frame":84,"grounded":true,"phase":7.6,"speed":2.49755120277405},{"frame":115,"grounded":true,"phase":13.8,"speed":2.49999022483826},{"frame":146,"grounded":true,"phase":20.0,"speed":2.500004529953}],"speed_end":2.5,"sprinting":false}
+步态诊断：{"controlled_display_stall":false,"count":5,"elapsed_ms":53,"grounded_end":true,"phase_end":32.0,"phase_start":0.0,"physics_frames":120,"samples":[{"frame":216,"grounded":true,"phase":1.33333333333333,"speed":2.03193140029907},{"frame":239,"grounded":true,"phase":7.46666666666667,"speed":3.96669363975525},{"frame":263,"grounded":true,"phase":13.8666666666667,"speed":3.99958109855652},{"frame":286,"grounded":true,"phase":20.0,"speed":3.99999594688416},{"frame":310,"grounded":true,"phase":26.4,"speed":3.99999594688416}],"speed_end":3.99999999952757,"sprinting":true}
+显示停顿复现：行走4，冲刺5，原断言true

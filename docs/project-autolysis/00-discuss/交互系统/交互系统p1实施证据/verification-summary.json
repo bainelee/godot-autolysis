@@ -1,0 +1,46 @@
+{
+  "Timestamp": "202609241252",
+  "EditorImport": {
+    "Source": "checks/final/editor-import.stderr.log",
+    "ExitCode": 0
+  },
+  "ComponentContracts": {
+    "ExitCode": 0,
+    "Source": "checks/final/component-contracts.stdout.log",
+    "Checks": 15
+  },
+  "ComponentMigration": {
+    "ExitCode": 0,
+    "Source": "checks/final/component-migration.stdout.log",
+    "Checks": 18
+  },
+  "PlayerSmoke": {
+    "ExitCode": 0,
+    "Source": "checks/final/player-smoke.stdout.log",
+    "Checks": 20
+  },
+  "CrosshairRendered": {
+    "ExitCode": 0,
+    "Source": "checks/stage3-crosshair.stdout.log",
+    "Checks": 19
+  },
+  "DirectRendered": {
+    "ExitCode": 0,
+    "Source": "checks/direct-rendered-fixed.stdout.log",
+    "EngineErrors": 0,
+    "Checks": 87
+  },
+  "FootstepSmoke": {
+    "Runs": 3,
+    "ExitCodes": [
+      0,
+      0,
+      0
+    ],
+    "ChecksPerRun": 25,
+    "CommandSource": "checks/footstep-smoke-fixed-commands.txt",
+    "FixedSimulationFps": 60
+  },
+  "EditorUiAcceptance": "用户物理退出键中止，逐项操作未完成",
+  "FullRunnerRerunAfterTimingFix": false
+}

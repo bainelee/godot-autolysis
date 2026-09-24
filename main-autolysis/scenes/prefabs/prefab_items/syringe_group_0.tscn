@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://bnxoym6q4vqb7"]
+
+[ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="1_jeghi"]
+[ext_resource type="PackedScene" uid="uid://c1v0urraq0v1s" path="res://main-autolysis/scenes/prefabs/prefab_items/syringe_0.tscn" id="2_jeghi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hpy8m"]
+albedo_color = Color(0.68, 0.7, 0.66, 1)
+roughness = 0.72
+
+[sub_resource type="BoxMesh" id="BoxMesh_y363y"]
+material = SubResource("StandardMaterial3D_hpy8m")
+size = Vector3(0.3, 0.02, 0.3)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jeghi"]
+data = PackedVector3Array(-0.14999999, 0.01, 0.14999999, 0.14999999, 0.01, 0.14999999, -0.14999999, -0.01, 0.14999999, 0.14999999, 0.01, 0.14999999, 0.14999999, -0.01, 0.14999999, -0.14999999, -0.01, 0.14999999, 0.14999999, 0.01, -0.14999999, -0.14999999, 0.01, -0.14999999, 0.14999999, -0.01, -0.14999999, -0.14999999, 0.01, -0.14999999, -0.14999999, -0.01, -0.14999999, 0.14999999, -0.01, -0.14999999, 0.14999999, 0.01, 0.14999999, 0.14999999, 0.01, -0.14999999, 0.14999999, -0.01, 0.14999999, 0.14999999, 0.01, -0.14999999, 0.14999999, -0.01, -0.14999999, 0.14999999, -0.01, 0.14999999, -0.14999999, 0.01, -0.14999999, -0.14999999, 0.01, 0.14999999, -0.14999999, -0.01, -0.14999999, -0.14999999, 0.01, 0.14999999, -0.14999999, -0.01, 0.14999999, -0.14999999, -0.01, -0.14999999, 0.14999999, 0.01, 0.14999999, -0.14999999, 0.01, 0.14999999, 0.14999999, 0.01, -0.14999999, -0.14999999, 0.01, 0.14999999, -0.14999999, 0.01, -0.14999999, 0.14999999, 0.01, -0.14999999, -0.14999999, -0.01, 0.14999999, 0.14999999, -0.01, 0.14999999, -0.14999999, -0.01, -0.14999999, 0.14999999, -0.01, 0.14999999, 0.14999999, -0.01, -0.14999999, -0.14999999, -0.01, -0.14999999)
+
+[sub_resource type="BoxMesh" id="BoxMesh_e7ndi"]
+material = SubResource("StandardMaterial3D_hpy8m")
+size = Vector3(0.02, 0.02, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_857uc"]
+material = SubResource("StandardMaterial3D_hpy8m")
+size = Vector3(0.26, 0.02, 0.02)
+
+[node name="syringe_group_0" type="StaticBody3D" unique_id=682490163]
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="." unique_id=333111398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.450581e-09, 0.009999976, -7.450581e-09)
+material_override = ExtResource("1_jeghi")
+mesh = SubResource("BoxMesh_y363y")
+skeleton = NodePath("../../shelf_warehouse_1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1507063675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.450581e-09, 0.009999976, -7.450581e-09)
+shape = SubResource("ConcavePolygonShape3D_jeghi")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="." unique_id=1943345965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13999999, 0.12999997, -7.450581e-09)
+material_override = ExtResource("1_jeghi")
+mesh = SubResource("BoxMesh_e7ndi")
+skeleton = NodePath("../../shelf_warehouse_1")
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="." unique_id=583465795]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4901161e-08, 0.12999997, 0.13999999)
+material_override = ExtResource("1_jeghi")
+mesh = SubResource("BoxMesh_857uc")
+skeleton = NodePath("../../shelf_warehouse_1")
+
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="." unique_id=774384795]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4901161e-08, 0.12999997, -0.14)
+material_override = ExtResource("1_jeghi")
+mesh = SubResource("BoxMesh_857uc")
+skeleton = NodePath("../../shelf_warehouse_1")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="." unique_id=1998208076]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14000002, 0.12999997, -7.450581e-09)
+material_override = ExtResource("1_jeghi")
+mesh = SubResource("BoxMesh_e7ndi")
+skeleton = NodePath("../../shelf_warehouse_1")
+
+[node name="syringe_0" parent="." unique_id=1133583461 instance=ExtResource("2_jeghi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+
+[node name="syringe_1" parent="." unique_id=1774988915 instance=ExtResource("2_jeghi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, 0.02, 0)
+
+[node name="syringe_2" parent="." unique_id=122283681 instance=ExtResource("2_jeghi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.02, 0)
+
+[node name="syringe_3" parent="." unique_id=780689820 instance=ExtResource("2_jeghi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0.08)
+
+[node name="syringe_4" parent="." unique_id=313522628 instance=ExtResource("2_jeghi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, 0.02, 0.08)
+
+[node name="syringe_5" parent="." unique_id=2066233196 instance=ExtResource("2_jeghi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.02, 0.08)
+
+[node name="syringe_6" parent="." unique_id=1075753486 instance=ExtResource("2_jeghi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, -0.08)
+
+[node name="syringe_7" parent="." unique_id=489747502 instance=ExtResource("2_jeghi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, 0.02, -0.08)
+
+[node name="syringe_8" parent="." unique_id=1857735094 instance=ExtResource("2_jeghi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.02, -0.08)

@@ -1,0 +1,72 @@
+[
+  {
+    "Name": "editor-import",
+    "ExitCode": 0,
+    "EngineError": false,
+    "Passed": true,
+    "Checks": 0,
+    "Arguments": [
+      "--headless",
+      "--path",
+      "D:\\autolysis",
+      "--editor",
+      "--quit"
+    ]
+  },
+  {
+    "Name": "component-contracts",
+    "ExitCode": 0,
+    "EngineError": false,
+    "Passed": true,
+    "Checks": 15,
+    "Arguments": [
+      "--headless",
+      "--path",
+      "D:\\autolysis",
+      "--script",
+      "res://main-autolysis/player/tests/direct_interaction_test.gd"
+    ]
+  },
+  {
+    "Name": "component-migration",
+    "ExitCode": 0,
+    "EngineError": false,
+    "Passed": true,
+    "Checks": 18,
+    "Arguments": [
+      "--headless",
+      "--path",
+      "D:\\autolysis",
+      "--script",
+      "res://main-autolysis/player/tests/component_migration_test.gd"
+    ]
+  },
+  {
+    "Name": "player-smoke",
+    "ExitCode": 0,
+    "EngineError": false,
+    "Passed": true,
+    "Checks": 20,
+    "Arguments": [
+      "--headless",
+      "--path",
+      "D:\\autolysis",
+      "--script",
+      "res://main-autolysis/player/tests/player_smoke_test.gd"
+    ]
+  },
+  {
+    "Name": "footstep-smoke",
+    "ExitCode": 1,
+    "EngineError": true,
+    "Passed": false,
+    "Checks": 24,
+    "Arguments": [
+      "--headless",
+      "--path",
+      "D:\\autolysis",
+      "--script",
+      "res://main-autolysis/player/tests/footstep_smoke_test.gd"
+    ]
+  }
+]

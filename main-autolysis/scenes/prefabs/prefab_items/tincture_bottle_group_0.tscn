@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://ngdnm4t3lo4a"]
+
+[ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="1_dixaq"]
+[ext_resource type="PackedScene" uid="uid://dcm838yqd0jkt" path="res://main-autolysis/scenes/prefabs/prefab_items/tincture_bottle_0.tscn" id="2_dixaq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hpy8m"]
+albedo_color = Color(0.68, 0.7, 0.66, 1)
+roughness = 0.72
+
+[sub_resource type="BoxMesh" id="BoxMesh_y363y"]
+material = SubResource("StandardMaterial3D_hpy8m")
+size = Vector3(0.3, 0.02, 0.3)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dixaq"]
+data = PackedVector3Array(-0.14999999, 0.01, 0.14999999, 0.14999999, 0.01, 0.14999999, -0.14999999, -0.01, 0.14999999, 0.14999999, 0.01, 0.14999999, 0.14999999, -0.01, 0.14999999, -0.14999999, -0.01, 0.14999999, 0.14999999, 0.01, -0.14999999, -0.14999999, 0.01, -0.14999999, 0.14999999, -0.01, -0.14999999, -0.14999999, 0.01, -0.14999999, -0.14999999, -0.01, -0.14999999, 0.14999999, -0.01, -0.14999999, 0.14999999, 0.01, 0.14999999, 0.14999999, 0.01, -0.14999999, 0.14999999, -0.01, 0.14999999, 0.14999999, 0.01, -0.14999999, 0.14999999, -0.01, -0.14999999, 0.14999999, -0.01, 0.14999999, -0.14999999, 0.01, -0.14999999, -0.14999999, 0.01, 0.14999999, -0.14999999, -0.01, -0.14999999, -0.14999999, 0.01, 0.14999999, -0.14999999, -0.01, 0.14999999, -0.14999999, -0.01, -0.14999999, 0.14999999, 0.01, 0.14999999, -0.14999999, 0.01, 0.14999999, 0.14999999, 0.01, -0.14999999, -0.14999999, 0.01, 0.14999999, -0.14999999, 0.01, -0.14999999, 0.14999999, 0.01, -0.14999999, -0.14999999, -0.01, 0.14999999, 0.14999999, -0.01, 0.14999999, -0.14999999, -0.01, -0.14999999, 0.14999999, -0.01, 0.14999999, 0.14999999, -0.01, -0.14999999, -0.14999999, -0.01, -0.14999999)
+
+[node name="tincture_bottle_group_0" type="StaticBody3D" unique_id=682490163]
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="." unique_id=333111398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.450581e-09, 0.009999976, -7.450581e-09)
+material_override = ExtResource("1_dixaq")
+mesh = SubResource("BoxMesh_y363y")
+skeleton = NodePath("../../shelf_warehouse_1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1737417824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.450581e-09, 0.009999976, -7.450581e-09)
+shape = SubResource("ConcavePolygonShape3D_dixaq")
+
+[node name="tincture_bottle_0" parent="." unique_id=1133583461 instance=ExtResource("2_dixaq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07, 0.02, 0.07)
+
+[node name="tincture_bottle_1" parent="." unique_id=1808655467 instance=ExtResource("2_dixaq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07, 0.02, -0.07)
+
+[node name="tincture_bottle_2" parent="." unique_id=683371692 instance=ExtResource("2_dixaq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, 0.02, 0.07)
+
+[node name="tincture_bottle_3" parent="." unique_id=185416277 instance=ExtResource("2_dixaq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, 0.02, -0.07)

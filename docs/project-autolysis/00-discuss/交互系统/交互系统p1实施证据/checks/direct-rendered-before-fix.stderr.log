@@ -1,0 +1,85 @@
+WARNING: 交互目标必须恰好配置一个直接子交互组件：/root/@Node3D@2/@StaticBody3D@18
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:63)
+       [1] _process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:37)
+ERROR: Object '<Object#95076484702>' was freed or unreferenced while a signal is being emitted from it. Try connecting to the signal using 'CONNECT_DEFERRED' flag, or use queue_free() to free the object (if this object is a Node) to avoid this error and potential crashes.
+   at: ~Object (core/object/object.cpp:2423)
+   GDScript backtrace (most recent call first):
+       [0] receive (res://main-autolysis/player/tests/direct_interaction_test.gd:33)
+       [1] try_interact (res://main-autolysis/components/interactions/autolysis_interaction_component.gd:39)
+       [2] _unhandled_input (res://main-autolysis/player/components/autolysis_interaction_controller.gd:83)
+       [3] mouse_button (res://main-autolysis/player/tests/direct_interaction_test.gd:84)
+       [4] click (res://main-autolysis/player/tests/direct_interaction_test.gd:88)
+       [5] run_effect_release_cases (res://main-autolysis/player/tests/direct_interaction_test.gd:330)
+       [6] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid type in function '_node_is_live' in base 'Node (AutolysisInteractionController)'. The Object-derived class of argument 1 (previously freed) is not a subclass of the expected argument class.
+   at: AutolysisInteractionController._dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+   GDScript backtrace (most recent call first):
+       [0] _dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+       [1] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:43)
+       [2] _process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:37)
+SCRIPT ERROR: Invalid type in function '_node_is_live' in base 'Node (AutolysisInteractionController)'. The Object-derived class of argument 1 (previously freed) is not a subclass of the expected argument class.
+   at: AutolysisInteractionController._dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+   GDScript backtrace (most recent call first):
+       [0] _dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+       [1] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:43)
+       [2] _process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:37)
+SCRIPT ERROR: Invalid type in function '_node_is_live' in base 'Node (AutolysisInteractionController)'. The Object-derived class of argument 1 (previously freed) is not a subclass of the expected argument class.
+   at: AutolysisInteractionController._dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+   GDScript backtrace (most recent call first):
+       [0] _dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+       [1] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:43)
+       [2] _unhandled_input (res://main-autolysis/player/components/autolysis_interaction_controller.gd:79)
+       [3] mouse_button (res://main-autolysis/player/tests/direct_interaction_test.gd:84)
+       [4] click (res://main-autolysis/player/tests/direct_interaction_test.gd:88)
+       [5] run_dependency_release (res://main-autolysis/player/tests/direct_interaction_test.gd:341)
+       [6] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid type in function '_node_is_live' in base 'Node (AutolysisInteractionController)'. The Object-derived class of argument 1 (previously freed) is not a subclass of the expected argument class.
+   at: AutolysisInteractionController._dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+   GDScript backtrace (most recent call first):
+       [0] _dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+       [1] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:43)
+       [2] _process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:37)
+SCRIPT ERROR: Invalid type in function '_node_is_live' in base 'Node (AutolysisInteractionController)'. The Object-derived class of argument 1 (previously freed) is not a subclass of the expected argument class.
+   at: AutolysisInteractionController._dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+   GDScript backtrace (most recent call first):
+       [0] _dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+       [1] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:43)
+       [2] _process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:37)
+SCRIPT ERROR: Invalid type in function '_node_is_live' in base 'Node (AutolysisInteractionController)'. The Object-derived class of argument 1 (previously freed) is not a subclass of the expected argument class.
+   at: AutolysisInteractionController._dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+   GDScript backtrace (most recent call first):
+       [0] _dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+       [1] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:43)
+       [2] _process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:37)
+SCRIPT ERROR: Invalid type in function '_node_is_live' in base 'Node (AutolysisInteractionController)'. The Object-derived class of argument 1 (previously freed) is not a subclass of the expected argument class.
+   at: AutolysisInteractionController._dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+   GDScript backtrace (most recent call first):
+       [0] _dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+       [1] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:43)
+       [2] _process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:37)
+SCRIPT ERROR: Invalid type in function '_node_is_live' in base 'Node (AutolysisInteractionController)'. The Object-derived class of argument 1 (previously freed) is not a subclass of the expected argument class.
+   at: AutolysisInteractionController._dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+   GDScript backtrace (most recent call first):
+       [0] _dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+       [1] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:43)
+       [2] _process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:37)
+SCRIPT ERROR: Invalid type in function '_node_is_live' in base 'Node (AutolysisInteractionController)'. The Object-derived class of argument 1 (previously freed) is not a subclass of the expected argument class.
+   at: AutolysisInteractionController._dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+   GDScript backtrace (most recent call first):
+       [0] _dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+       [1] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:43)
+       [2] _process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:37)
+SCRIPT ERROR: Invalid type in function '_node_is_live' in base 'Node (AutolysisInteractionController)'. The Object-derived class of argument 1 (previously freed) is not a subclass of the expected argument class.
+   at: AutolysisInteractionController._dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+   GDScript backtrace (most recent call first):
+       [0] _dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+       [1] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:43)
+       [2] _process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:37)
+SCRIPT ERROR: Invalid type in function '_node_is_live' in base 'Node (AutolysisInteractionController)'. The Object-derived class of argument 1 (previously freed) is not a subclass of the expected argument class.
+   at: AutolysisInteractionController._dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+   GDScript backtrace (most recent call first):
+       [0] _dependencies_valid (res://main-autolysis/player/components/autolysis_interaction_controller.gd:92)
+       [1] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:43)
+       [2] _process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:37)

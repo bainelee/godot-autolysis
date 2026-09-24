@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://c74illd3w520n"]
+
+[ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="1_r4br4"]
+[ext_resource type="Material" uid="uid://2ojxp1wvlajt" path="res://main-autolysis/assets/materials/glow_color/mat_glow_white_0.tres" id="2_r4br4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3brsp"]
+size = Vector3(1.6, 0.1, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hd4vx"]
+size = Vector3(0.1, 0.1, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_myrie"]
+size = Vector3(1.4, 0.1, 0.1)
+
+[node name="LightPrefabUplight0" type="Node3D" unique_id=145906239]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1476040077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+material_override = ExtResource("1_r4br4")
+mesh = SubResource("BoxMesh_3brsp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1948735885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.15, 0)
+material_override = ExtResource("1_r4br4")
+mesh = SubResource("BoxMesh_hd4vx")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1343322558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, -0.15, 0)
+material_override = ExtResource("1_r4br4")
+mesh = SubResource("BoxMesh_hd4vx")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1535063606]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0.15)
+material_override = ExtResource("1_r4br4")
+mesh = SubResource("BoxMesh_myrie")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=189304827]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, -0.15)
+material_override = ExtResource("1_r4br4")
+mesh = SubResource("BoxMesh_myrie")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1548326937]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
+material_override = ExtResource("2_r4br4")
+mesh = SubResource("BoxMesh_myrie")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D6" unique_id=722861476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.25, 0)
+light_color = Color(1, 0.7403333, 0.62, 1)
+light_energy = 0.225
+light_size = 0.283
+light_specular = 0.0
+shadow_enabled = true
+omni_range = 6.459
+omni_attenuation = 0.2
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="MeshInstance3D6" unique_id=2128834904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.25, 0)
+light_color = Color(1, 0.7403333, 0.62, 1)
+light_energy = 0.225
+light_size = 0.283
+light_specular = 0.0
+shadow_enabled = true
+omni_range = 6.459
+omni_attenuation = 0.2

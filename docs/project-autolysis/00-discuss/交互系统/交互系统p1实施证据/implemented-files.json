@@ -1,0 +1,66 @@
+[
+  {
+    "Path": "project.godot",
+    "Hash": "4E3CD22E5CADA1A0820FCFF38DBD93D932E82E19D1EC4D271B3EB6522A855F73"
+  },
+  {
+    "Path": "main-autolysis\\components\\interactions\\autolysis_interaction_component.gd",
+    "Hash": "92A01E00F0D9C95AE73F5D4148A577CA1B7FFDC51D3224D4C8F240BF5CBFEB05"
+  },
+  {
+    "Path": "main-autolysis\\components\\interactions\\autolysis_interaction_component.tscn",
+    "Hash": "A4F12CB6ADDE0F4343C438C3076CC4AA7E5A0528CABECF29DE825EA2FD38727F"
+  },
+  {
+    "Path": "main-autolysis\\player\\components\\interaction_raycast.gd",
+    "Hash": "8DEB699976CAD195A8EA9B72D99AE2D5DE9B58AA44D9B5C57BFDCABD63BAECAB"
+  },
+  {
+    "Path": "main-autolysis\\player\\components\\interaction_raycast.tscn",
+    "Hash": "0A6CEE8BAD77661893C42F8AD43ABBAC808B1FB16D5CF8905AD9EEE604110614"
+  },
+  {
+    "Path": "main-autolysis\\player\\components\\autolysis_interaction_controller.gd",
+    "Hash": "9478729CCA6D364D5E05009FB2D8EC2FCE0B5925ABAA53DF67D9AB55FCBFFCF2"
+  },
+  {
+    "Path": "main-autolysis\\ui\\autolysis_crosshair.gd",
+    "Hash": "027707EA3F5D526DBDBAF7C0379B0B18487F3E60F14C596C91F4108589BF606D"
+  },
+  {
+    "Path": "main-autolysis\\ui\\autolysis_crosshair.tscn",
+    "Hash": "9958375E76C1E95F6C4248F6FB015DBC265464B7968D06F6D5842F48309FD05B"
+  },
+  {
+    "Path": "main-autolysis\\player\\autolysis_player.gd",
+    "Hash": "8FA87FD4823608D04517E88683F1823BE33D2C131B91528983D0CA389B574838"
+  },
+  {
+    "Path": "main-autolysis\\player\\autolysis_player.tscn",
+    "Hash": "D8ABDC64CBA75B82B214D8115E95319DAC9415A7BB0EFE5AE4577808E451708E"
+  },
+  {
+    "Path": "main-autolysis\\player\\tests\\component_migration_test.gd",
+    "Hash": "94C650D3F4E8ED2E9AD8FB62502BC14E875935E4778A58AFCAE6138A91368F3B"
+  },
+  {
+    "Path": "main-autolysis\\player\\tests\\player_smoke_test.gd",
+    "Hash": "3CAF7ADD4DDC39DD3A32727CDDC49AFC0E609EC66ADB55440376E86B31B0E4AF"
+  },
+  {
+    "Path": "main-autolysis\\player\\tests\\direct_interaction_test.gd",
+    "Hash": "4453C10EAE67592A689F8AD81886CD05939F41C0C137662761E11056DD0C96A3"
+  },
+  {
+    "Path": "main-autolysis\\player\\tests\\direct_interaction_demo.tscn",
+    "Hash": "8F8EDFF176FE04414B7B7CB0ACEA89EBC8AB14A11E607DF5A9CBBE75EFFE73FE"
+  },
+  {
+    "Path": "main-autolysis\\player\\tests\\fixtures\\direct_interaction_demo.gd",
+    "Hash": "4415A21E2FFEF1D0190B17A024E5FD93E1DFC9BCBB853688D4B444D9DDD8CAD9"
+  },
+  {
+    "Path": "main-autolysis\\player\\tests\\run_interaction_verification.ps1",
+    "Hash": "203BD88002F8A34B7F301792E563124B42B22A1154D44F1F813BB44965630860"
+  }
+]

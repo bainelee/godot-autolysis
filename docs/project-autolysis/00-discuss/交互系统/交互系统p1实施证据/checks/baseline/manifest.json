@@ -1,0 +1,37 @@
+[
+  {
+    "Path": "project.godot",
+    "Hash": "1E4EB01E966EFF54593584AF30A6B557C96B63E35C590955DBD1B767A8161BEA",
+    "Modified": "2026-09-24T11:11:36.6193415+08:00"
+  },
+  {
+    "Path": "main-autolysis\\player\\components\\interaction_raycast.gd",
+    "Hash": "A4AE8805684DBAEB49BD5B804DF196FF91C804FC8D858E0130A0F8AA17CDB6E9",
+    "Modified": "2026-04-24T03:33:50.0000000+08:00"
+  },
+  {
+    "Path": "main-autolysis\\player\\components\\interaction_raycast.tscn",
+    "Hash": "7DCED561BA0EC62E7A7F3FBEA66C6B7EDE5A7230C260021F67AB52FB37F92688",
+    "Modified": "2026-09-24T10:26:37.0379152+08:00"
+  },
+  {
+    "Path": "main-autolysis\\player\\autolysis_player.gd",
+    "Hash": "5FEB5D7792FE07975D5F79B870AC82B3B11DCBF30CE7C98840439752A3C71414",
+    "Modified": "2026-09-24T10:26:37.0717129+08:00"
+  },
+  {
+    "Path": "main-autolysis\\player\\autolysis_player.tscn",
+    "Hash": "9ECA2B551710CAB41B15901E3DCC0667A6697D0BE3AB23373F76FF795B0D67E6",
+    "Modified": "2026-09-24T10:26:37.0690785+08:00"
+  },
+  {
+    "Path": "main-autolysis\\player\\tests\\component_migration_test.gd",
+    "Hash": "D7079A2DDBF1A9E7EC4BC7E6A2E3C2645B3C7814739061A9E34F527A649E7983",
+    "Modified": "2026-09-24T10:27:46.2923384+08:00"
+  },
+  {
+    "Path": "main-autolysis\\player\\tests\\player_smoke_test.gd",
+    "Hash": "543BA0AEC6654F9DEEC0D9F1B4580C6C7BC21B337F675CF62F0C239C96FE6508",
+    "Modified": "2026-09-24T07:22:37.0228872+08:00"
+  }
+]

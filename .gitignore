@@ -1,0 +1,9 @@
+# Godot generated cache and editor state
+.godot/
+.mono/
+export_credentials.cfg
+
+# Operating system metadata
+desktop.ini
+Thumbs.db
+.DS_Store
