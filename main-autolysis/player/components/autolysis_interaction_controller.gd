@@ -7,6 +7,7 @@ const DIRECT_ACTION: StringName = &"interact_direct"
 
 var _actor: Node3D
 var _detector: InteractionRayCast
+var _inventory: AutolysisInventoryController
 var _input_allowed: Callable
 var _target: Node3D
 var _component: AutolysisInteractionComponent
@@ -21,10 +22,11 @@ func _init() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 
-func configure(actor: Node3D, detector: InteractionRayCast, input_allowed: Callable) -> void:
+func configure(actor: Node3D, detector: InteractionRayCast, input_allowed: Callable, inventory: AutolysisInventoryController) -> void:
 	_actor = actor
 	_detector = detector
 	_input_allowed = input_allowed
+	_inventory = inventory
 	_has_published = false
 	refresh_state()
 
@@ -43,7 +45,8 @@ func refresh_state() -> void:
 	if not _dependencies_valid():
 		_publish_availability(false)
 		return
-	_target = _detector.refresh_target()
+	var held_item: AutolysisItemDefinition = _inventory.get_focused_item()
+	_target = _detector.refresh_target(held_item != null and held_item.is_raw_material)
 	if not _node_is_live(_target):
 		_reported_target_id = 0
 		_reported_component_ids.clear()
@@ -89,7 +92,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _dependencies_valid() -> bool:
-	if not _node_is_live(_actor) or not _node_is_live(_detector):
+	if not _node_is_live(_actor) or not _node_is_live(_detector) or not _node_is_live(_inventory):
 		return false
 	if not _input_allowed.is_valid():
 		return false

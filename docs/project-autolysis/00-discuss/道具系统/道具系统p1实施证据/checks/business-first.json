@@ -1,0 +1,15 @@
+{
+  "检查": "business-first",
+  "时间": "2026-09-25T08:26:17.6174752+08:00",
+  "进程编号": 24180,
+  "退出码": 0,
+  "通过": true,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/item_system_test.gd"
+  ],
+  "通过断言数": 387
+}

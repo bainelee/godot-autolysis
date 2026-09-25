@@ -1,0 +1,17 @@
+{
+  "检查": "contracts-final",
+  "时间": "2026-09-25T08:33:21.0105668+08:00",
+  "进程编号": 39476,
+  "退出码": 0,
+  "通过": true,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/player/tests/direct_interaction_test.gd"
+  ],
+  "通过断言数": 43
+}

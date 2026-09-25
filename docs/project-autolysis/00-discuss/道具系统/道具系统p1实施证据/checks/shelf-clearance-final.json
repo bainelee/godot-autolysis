@@ -1,0 +1,15 @@
+{
+  "检查": "shelf-clearance-final",
+  "时间": "2026-09-25T08:31:16.7147444+08:00",
+  "进程编号": 20508,
+  "退出码": 0,
+  "通过": true,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/shelf_clearance_test.gd"
+  ],
+  "通过断言数": 0
+}

@@ -103,6 +103,12 @@ func run_checks() -> void:
 	check(events.size() == 1 and events[0].profile == surface.footstep_profile, "碰撞形状上的脚步配置优先于材质映射")
 	player.footstep_player.play_landing(-4.0)
 	check(events.back().landing and events.back().profile == surface.footstep_profile, "落地使用同一地面配置")
+	floor_body.collision_layer = 8
+	await frames(3)
+	events.clear()
+	player.footstep_player.play_footstep()
+	check(player.is_on_floor() and events.size() == 1 and events[0].profile == surface.footstep_profile, "第四层脚下实体维持着地并通过实际脚步射线读取配置")
+	floor_body.collision_layer = 1
 	var resource_failures: int = 0
 	for file in DirAccess.get_files_at("res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles"):
 		if not file.ends_with(".tres"):
@@ -137,17 +143,28 @@ func run_checks() -> void:
 	var scene: Node = load("res://main-autolysis/scenes/01-autolysis-test.tscn").instantiate()
 	root.add_child(scene)
 	await frames(100)
+	var floor_count: int = 0
 	var collision_profiles: int = 0
 	var extra_nodes: int = 0
-	for floor_node in scene.get_node("Environment/floor").get_children():
+	for floor_node: Node in scene.get_node("Environment/floor").get_children():
 		if not floor_node.name.begins_with("floor_stone_"):
 			continue
-		var collision = floor_node.get_node("CollisionShape3D")
-		if collision is CollisionShape3D and collision.get_script() == load("res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_surface.gd") and collision.footstep_profile != null:
-			collision_profiles += 1
+		floor_count += 1
+		var collision: CollisionShape3D = floor_node.get_node_or_null("CollisionShape3D") as CollisionShape3D
+		if collision != null and collision.get_script() == load("res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_surface.gd"):
+			var floor_profile: AudioStreamRandomizer = collision.get("footstep_profile") as AudioStreamRandomizer
+			var has_audio: bool = floor_profile != null and floor_profile.streams_count > 0
+			if has_audio:
+				for stream_index: int in range(floor_profile.streams_count):
+					if floor_profile.get_stream(stream_index) == null:
+						has_audio = false
+						break
+			if has_audio:
+				collision_profiles += 1
 		if floor_node.has_node("FootstepSurface"):
 			extra_nodes += 1
-	check(collision_profiles == 11 and extra_nodes == 0, "十一块地面均在碰撞形状上配置脚步且无额外节点")
+	print("主场景石质地面实测数量：", floor_count, "；正确脚步配置：", collision_profiles, "；额外脚步节点：", extra_nodes)
+	check(floor_count > 0 and collision_profiles == floor_count and extra_nodes == 0, "%d块实际地面均在碰撞形状上配置脚步和非空音效且无额外节点" % floor_count)
 	var local_profile = scene.get_node("Environment/floor/floor_stone_4/CollisionShape3D").footstep_profile
 	check(local_profile.resource_path.contains("::") and local_profile.streams_count == 4, "保留原场景第四块地面的内嵌四音频配置")
 	player = scene.get_node("autolysis_player")

@@ -1,0 +1,16 @@
+{
+  "检查": "main-scene-retest",
+  "时间": "2026-09-25T08:30:08.3565887+08:00",
+  "进程编号": 32880,
+  "退出码": 0,
+  "通过": true,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/item_system_rendered_test.gd",
+    "--",
+    "--main-only"
+  ],
+  "通过断言数": 9
+}

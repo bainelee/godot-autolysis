@@ -1,0 +1,182 @@
+{
+  "汇总时间": "2026-09-25T08:39:20.4817518+08:00",
+  "最终检查组数": 11,
+  "全部通过": true,
+  "说明": "仅汇总最终指定的检查；历史失败与定位日志保留。",
+  "结果": [
+    {
+      "检查": "import-final",
+      "时间": "2026-09-25T08:33:19.1440889+08:00",
+      "进程编号": 51956,
+      "退出码": 0,
+      "通过": true,
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--editor",
+        "--quit"
+      ],
+      "通过断言数": 0
+    },
+    {
+      "检查": "business-final",
+      "时间": "2026-09-25T08:30:36.1052526+08:00",
+      "进程编号": 3140,
+      "退出码": 0,
+      "通过": true,
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/item_system_test.gd"
+      ],
+      "通过断言数": 396
+    },
+    {
+      "检查": "rendered-final",
+      "时间": "2026-09-25T08:32:38.6281202+08:00",
+      "进程编号": 7936,
+      "退出码": 0,
+      "通过": true,
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/item_system_rendered_test.gd"
+      ],
+      "通过断言数": 49
+    },
+    {
+      "检查": "shelf-clearance-final",
+      "时间": "2026-09-25T08:31:16.7147444+08:00",
+      "进程编号": 20508,
+      "退出码": 0,
+      "通过": true,
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/shelf_clearance_test.gd"
+      ],
+      "通过断言数": 0
+    },
+    {
+      "检查": "contracts-final",
+      "时间": "2026-09-25T08:33:21.0105668+08:00",
+      "进程编号": 39476,
+      "退出码": 0,
+      "通过": true,
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/direct_interaction_test.gd"
+      ],
+      "通过断言数": 43
+    },
+    {
+      "检查": "direct-rendered-final",
+      "时间": "2026-09-25T08:33:56.7013782+08:00",
+      "进程编号": 29924,
+      "退出码": 0,
+      "通过": true,
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--script",
+        "res://main-autolysis/player/tests/direct_interaction_test.gd"
+      ],
+      "通过断言数": 115
+    },
+    {
+      "检查": "migration-final",
+      "时间": "2026-09-25T08:33:22.2618296+08:00",
+      "进程编号": 27352,
+      "退出码": 0,
+      "通过": true,
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/component_migration_test.gd"
+      ],
+      "通过断言数": 18
+    },
+    {
+      "检查": "player-final",
+      "时间": "2026-09-25T08:33:24.0949488+08:00",
+      "进程编号": 45396,
+      "退出码": 0,
+      "通过": true,
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/player_smoke_test.gd"
+      ],
+      "通过断言数": 20
+    },
+    {
+      "检查": "footstep-final-retest",
+      "时间": "2026-09-25T08:38:08.4255746+08:00",
+      "进程编号": 8796,
+      "退出码": 0,
+      "通过": true,
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/footstep_smoke_test.gd"
+      ],
+      "通过断言数": 25
+    },
+    {
+      "检查": "prefabs-final",
+      "时间": "2026-09-25T08:35:38.5237187+08:00",
+      "进程编号": 7412,
+      "退出码": 0,
+      "通过": true,
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--script",
+        "res://main-autolysis/scenes/tests/prefab_node_path_test.gd"
+      ],
+      "通过断言数": 0
+    },
+    {
+      "检查": "demo-load-final",
+      "时间": "2026-09-25T08:35:39.0839598+08:00",
+      "进程编号": 15988,
+      "退出码": 0,
+      "通过": true,
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--quit-after",
+        "120",
+        "res://main-autolysis/systems/item-system/tests/item_system_demo.tscn"
+      ],
+      "通过断言数": 0
+    }
+  ]
+}

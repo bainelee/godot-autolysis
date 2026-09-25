@@ -1,0 +1,15 @@
+{
+  "检查": "prefabs-final",
+  "时间": "2026-09-25T08:35:38.5237187+08:00",
+  "进程编号": 7412,
+  "退出码": 0,
+  "通过": true,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/scenes/tests/prefab_node_path_test.gd"
+  ],
+  "通过断言数": 0
+}

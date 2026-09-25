@@ -1,0 +1,1862 @@
+{
+  "说明": "仅文件与场景文本审计；未运行引擎，未修改生产代码。校验算法为安全散列算法256位。",
+  "生成时间": "2026-09-25T08:37:27.4442500+08:00",
+  "工作区精确路径": "D:\\autolysis",
+  "基线精确路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline",
+  "检查脚本精确路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\checks\\preservation_audit.ps1",
+  "覆盖边界": "已有文件保护范围以实施前实际保存的基线副本为准；模型审计比较场景全部网格属性、材质引用与节点变换，不替代实际渲染验收。",
+  "基线文件总数": 106,
+  "变化文件数": 13,
+  "缺失文件数": 0,
+  "保持原样文件数": 93,
+  "变化文件": [
+    {
+      "相对路径": "main-autolysis\\components\\interactions\\autolysis_interaction_component.gd",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\components\\interactions\\autolysis_interaction_component.gd",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\components\\interactions\\autolysis_interaction_component.gd",
+      "基线校验值": "92A01E00F0D9C95AE73F5D4148A577CA1B7FFDC51D3224D4C8F240BF5CBFEB05",
+      "当前校验值": "C0E250B28B609374DB4F7AB002D3413750E8C03CF4632658B21FB829AEBBC00A"
+    },
+    {
+      "相对路径": "main-autolysis\\player\\autolysis_player.gd",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\autolysis_player.gd",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.gd",
+      "基线校验值": "8FA87FD4823608D04517E88683F1823BE33D2C131B91528983D0CA389B574838",
+      "当前校验值": "6C062DC9294520742D075E2231AC9E6B3469819577910388C36055ADD4AD5281"
+    },
+    {
+      "相对路径": "main-autolysis\\player\\autolysis_player.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\autolysis_player.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.tscn",
+      "基线校验值": "117544D8C1F00A60E9597B0A8ABE04E5B93877F0C6E72F81560B8D6CBD95284C",
+      "当前校验值": "0F802CF9C0DB5EEB262F3C4BCC8117A1BF30B7F729431DC95CA566D9E2FEAE49"
+    },
+    {
+      "相对路径": "main-autolysis\\player\\tests\\direct_interaction_test.gd",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\tests\\direct_interaction_test.gd",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\player\\tests\\direct_interaction_test.gd",
+      "基线校验值": "4453C10EAE67592A689F8AD81886CD05939F41C0C137662761E11056DD0C96A3",
+      "当前校验值": "042FA3E530EDBBBEA0DA463919D33A69D8CA4A11C40131D0C63D27CD68B35E90"
+    },
+    {
+      "相对路径": "main-autolysis\\player\\tests\\footstep_smoke_test.gd",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\tests\\footstep_smoke_test.gd",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\player\\tests\\footstep_smoke_test.gd",
+      "基线校验值": "B95BD1A0E431535B9A143FEF1C94597587672AE430260A8C2B2F652791B10E26",
+      "当前校验值": "E70294D96F34501C41217B69C2D7EE6FD95579BA803C80014C84535E950B966A"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\01-autolysis-test.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\01-autolysis-test.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\01-autolysis-test.tscn",
+      "基线校验值": "3898D92C0F26EACB480913A4B8A03DC77F7C1CD8754DF51EF18CDB0B812EBCFC",
+      "当前校验值": "554477FAAB33724A791C5D4C0D697B540BFD86F0EB69F2BBC3EB7AC6D808DF1D"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_furnitures\\store_shelf_warehouse_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\store_shelf_warehouse_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\store_shelf_warehouse_0.tscn",
+      "基线校验值": "2353D6FD3182CFAB059945DF3945C8855CB49DCA6E65FF94585CE0E396AF3340",
+      "当前校验值": "99E8162CC271C96447E9B3DEE6DCC424982A6B3D9872E51D077E654EA478C0DD"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\place_shelf_workroom_rm_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\place_shelf_workroom_rm_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\place_shelf_workroom_rm_0.tscn",
+      "基线校验值": "28E3453A0BBA9B438C46958F8DB6E29E88A05DB1BAA7B40961129B2F9DC1D18F",
+      "当前校验值": "ADF3B6CF05C91915991E1C02259187E3AF3580287C7E003C82471F8DF76F2B1D"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_0.tscn",
+      "基线校验值": "1D50987EF7A2A944E34B70088C1309BDA4AA3BFC41E6BBE51C8F34845CDAFF98",
+      "当前校验值": "96DEBF163F7408F8B369BC7C04D9753E6E656E15F8064CCA4A74D8CE347A1870"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_group_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_group_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_group_0.tscn",
+      "基线校验值": "D6D5D31EA88317B3D79504F4B052CC7D24B9EACC160C13E82A8393AAF2827941",
+      "当前校验值": "050E16ED01CB18C569F7A6E04F09CD8F1B2197C8897B01A1D21CE296B99A13A9"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_0.tscn",
+      "基线校验值": "3F13272F3AEF6F5BDB9D4F73995E882EA19C1EEBFFCFF93CD9533734CB9B2A4D",
+      "当前校验值": "708CB8D8BA935BE39D9F2AAE21902BE7A1295E4BEC15F6FFB7111F0234D6A1F9"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_group_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_group_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_group_0.tscn",
+      "基线校验值": "F40FB4CC573004204CE641D72C71DCF676B792BBBC4E5CC908B44CC94E80344E",
+      "当前校验值": "B23C3312E1775BF00DFE42908BCCA85DB4E735DFB1E9A4E852D9E0D7A7265747"
+    },
+    {
+      "相对路径": "project.godot",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\project.godot",
+      "当前源路径": "D:\\autolysis\\project.godot",
+      "基线校验值": "D751899E533AE0152DD1A7BB941CF7BC74B456D836CEC945AEDC6118BD7B7D1C",
+      "当前校验值": "1CD021C3D4387802E7C5B4D0983E4B896254CCDB6C7E888A0BC315922FE75786"
+    }
+  ],
+  "缺失文件": [],
+  "保持原样文件": [
+    {
+      "相对路径": "main-autolysis\\assets\\audio\\buses\\default_bus_layout.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\audio\\buses\\default_bus_layout.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\buses\\default_bus_layout.tres",
+      "基线校验值": "1D9C2AE1F24CDA404461DB643CFE412234B20FEAC477ACDCEF47C27E6D1F34A3",
+      "当前校验值": "1D9C2AE1F24CDA404461DB643CFE412234B20FEAC477ACDCEF47C27E6D1F34A3"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_black_0.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_black_0.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_black_0.tres",
+      "基线校验值": "28A72D5F853E6BEB549FEDE54351C8EDD4B33B3B553449B4E79C09AFD83AFF1D",
+      "当前校验值": "28A72D5F853E6BEB549FEDE54351C8EDD4B33B3B553449B4E79C09AFD83AFF1D"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_black_1.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_black_1.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_black_1.tres",
+      "基线校验值": "4D559BC3A3517DAB9ECCA77C7834EA46FBC48F08A03351797E29145EE4463A36",
+      "当前校验值": "4D559BC3A3517DAB9ECCA77C7834EA46FBC48F08A03351797E29145EE4463A36"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_blue_0.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_blue_0.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_blue_0.tres",
+      "基线校验值": "59CC8AB4318260AA1F3AA5A305A73B1AC5E6804C13EE1F48B41763657315DEE3",
+      "当前校验值": "59CC8AB4318260AA1F3AA5A305A73B1AC5E6804C13EE1F48B41763657315DEE3"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_blue_1.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_blue_1.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_blue_1.tres",
+      "基线校验值": "752A1B04F07C6B77B7EA0A3A9F5655DC496F10CD0A9107CC4983E2BDA79AAA5E",
+      "当前校验值": "752A1B04F07C6B77B7EA0A3A9F5655DC496F10CD0A9107CC4983E2BDA79AAA5E"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_blue_2.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_blue_2.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_blue_2.tres",
+      "基线校验值": "646D8F6C9AAE112CF50EEF155D9D5A1C8303F29A86CAD86DC0A505EADD12529C",
+      "当前校验值": "646D8F6C9AAE112CF50EEF155D9D5A1C8303F29A86CAD86DC0A505EADD12529C"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_brown_0.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_brown_0.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_brown_0.tres",
+      "基线校验值": "688788B1867A722168039FB4895FF81C2DA22EEE0E84CCA373F964E56808819B",
+      "当前校验值": "688788B1867A722168039FB4895FF81C2DA22EEE0E84CCA373F964E56808819B"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_brown_1.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_brown_1.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_brown_1.tres",
+      "基线校验值": "4BF9748E54A5F1A264201ADA96D933E9875B595DEFAF424262816D724EDA415B",
+      "当前校验值": "4BF9748E54A5F1A264201ADA96D933E9875B595DEFAF424262816D724EDA415B"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_brown_2.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_brown_2.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_brown_2.tres",
+      "基线校验值": "E2CED69540324AC3385362D915A7EEE33AE709C7C36AD6C181D39273F851862E",
+      "当前校验值": "E2CED69540324AC3385362D915A7EEE33AE709C7C36AD6C181D39273F851862E"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_darkblue_0.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_darkblue_0.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_darkblue_0.tres",
+      "基线校验值": "5C856012B9B8FA9180B1A64D2735E63613716670A244896C0469EE9D2EF7694A",
+      "当前校验值": "5C856012B9B8FA9180B1A64D2735E63613716670A244896C0469EE9D2EF7694A"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_darkblue_1.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_darkblue_1.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_darkblue_1.tres",
+      "基线校验值": "955596A23A98D7389C524E4AA7170E4A606F1C4691A6D1034415E231E123FC13",
+      "当前校验值": "955596A23A98D7389C524E4AA7170E4A606F1C4691A6D1034415E231E123FC13"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_green_0.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_green_0.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_green_0.tres",
+      "基线校验值": "66C496022926E5B7CFB16CEE37A4723545737B615CA76CD98745B12291A0C77E",
+      "当前校验值": "66C496022926E5B7CFB16CEE37A4723545737B615CA76CD98745B12291A0C77E"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_green_1.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_green_1.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_green_1.tres",
+      "基线校验值": "962E4FD39C506C8922A01B660F9F16103675936A5D74E1B896184A05E1751D62",
+      "当前校验值": "962E4FD39C506C8922A01B660F9F16103675936A5D74E1B896184A05E1751D62"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_green_2.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_green_2.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_green_2.tres",
+      "基线校验值": "CB8924130CDCF6C507D44DDF1433A8F3C479B97510C2BD79CCA5A73B2299AB84",
+      "当前校验值": "CB8924130CDCF6C507D44DDF1433A8F3C479B97510C2BD79CCA5A73B2299AB84"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_green_3.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_green_3.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_green_3.tres",
+      "基线校验值": "C57473DCA97A92130BB88B4AD5548224534AA0BAB6976F7338DA218425253CF4",
+      "当前校验值": "C57473DCA97A92130BB88B4AD5548224534AA0BAB6976F7338DA218425253CF4"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_green_4.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_green_4.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_green_4.tres",
+      "基线校验值": "F9DB619BA397A2D4F6A738D49B818AB1F1A352A69F037D44336D89C0CB7C9209",
+      "当前校验值": "F9DB619BA397A2D4F6A738D49B818AB1F1A352A69F037D44336D89C0CB7C9209"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_grey_0.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_0.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_0.tres",
+      "基线校验值": "30BCF9CD9F944626A4993739EE82F583D7D5127A3138E291FFC553FBCEBCC3D1",
+      "当前校验值": "30BCF9CD9F944626A4993739EE82F583D7D5127A3138E291FFC553FBCEBCC3D1"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_grey_1.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_1.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_1.tres",
+      "基线校验值": "3102FC42495CFED10B8AAFCD8EA1A09D468CDDB9E8BF0E0168269B693C637755",
+      "当前校验值": "3102FC42495CFED10B8AAFCD8EA1A09D468CDDB9E8BF0E0168269B693C637755"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_grey_2.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_2.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_2.tres",
+      "基线校验值": "F2FC94256509361694B85AA3C95A6DABDA9CE0656CDBBCE50C972ADDAE5F08AA",
+      "当前校验值": "F2FC94256509361694B85AA3C95A6DABDA9CE0656CDBBCE50C972ADDAE5F08AA"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_grey_3.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_3.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_3.tres",
+      "基线校验值": "01908DE7C1DB8FE5A5D4A7217B5D6AEECAFB90AA7A3A2489D5620B5F10905DA6",
+      "当前校验值": "01908DE7C1DB8FE5A5D4A7217B5D6AEECAFB90AA7A3A2489D5620B5F10905DA6"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_grey_4.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_4.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_4.tres",
+      "基线校验值": "8219517EFE79E0627DD686974C2AF8E3B93419CD0F65BE24D986BF595F5504D0",
+      "当前校验值": "8219517EFE79E0627DD686974C2AF8E3B93419CD0F65BE24D986BF595F5504D0"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_orange_0.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_orange_0.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_orange_0.tres",
+      "基线校验值": "084587A4A0B45CC2621B127E431BE22633C0D4A2CA1A0D45BCFB44FF51E07DAE",
+      "当前校验值": "084587A4A0B45CC2621B127E431BE22633C0D4A2CA1A0D45BCFB44FF51E07DAE"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_orange_1.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_orange_1.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_orange_1.tres",
+      "基线校验值": "0078071B1F79797E35596ECD030AF2E945269B49A604A2AFC29D94DD3ED88C7F",
+      "当前校验值": "0078071B1F79797E35596ECD030AF2E945269B49A604A2AFC29D94DD3ED88C7F"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_red_0.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_red_0.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_red_0.tres",
+      "基线校验值": "C1D33DA642850376D6755331C5987EB1070C26D03D39FCAA7F9A6FD2012A5D67",
+      "当前校验值": "C1D33DA642850376D6755331C5987EB1070C26D03D39FCAA7F9A6FD2012A5D67"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_red_1.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_red_1.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_red_1.tres",
+      "基线校验值": "A5D81F68C04B2BF3BB8D303A24B7600ECA33C9A278904F4D35C7ABE30DC58768",
+      "当前校验值": "A5D81F68C04B2BF3BB8D303A24B7600ECA33C9A278904F4D35C7ABE30DC58768"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_red_2.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_red_2.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_red_2.tres",
+      "基线校验值": "2B956E95C8789E9EAEDD2FC9DB69630DE8028ED772C6EFFEBF77AA61320D8F30",
+      "当前校验值": "2B956E95C8789E9EAEDD2FC9DB69630DE8028ED772C6EFFEBF77AA61320D8F30"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_red_3.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_red_3.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_red_3.tres",
+      "基线校验值": "36FEB008DC3A0355C0582E188D8F0A23DAD52BC1BC126E1B7224985844135EB9",
+      "当前校验值": "36FEB008DC3A0355C0582E188D8F0A23DAD52BC1BC126E1B7224985844135EB9"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_white_0.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_white_0.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_white_0.tres",
+      "基线校验值": "210A7E6A205C5C18211D4FE69E199F9CFA9C77AB7AD7C80916A0EDD5761918C0",
+      "当前校验值": "210A7E6A205C5C18211D4FE69E199F9CFA9C77AB7AD7C80916A0EDD5761918C0"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\base_color\\mat_base_white_1.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_white_1.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_white_1.tres",
+      "基线校验值": "D4D5B9E0D5A76C00F85710BECF6D5D07468E6678CB7374F3AD4E2A8DB9352D76",
+      "当前校验值": "D4D5B9E0D5A76C00F85710BECF6D5D07468E6678CB7374F3AD4E2A8DB9352D76"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\glow_color\\mat_glow_green_0.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\glow_color\\mat_glow_green_0.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\glow_color\\mat_glow_green_0.tres",
+      "基线校验值": "00353ED730580402F99E4EBE28077DF08CFBBFCF246767B4A17D73C1D3ADA052",
+      "当前校验值": "00353ED730580402F99E4EBE28077DF08CFBBFCF246767B4A17D73C1D3ADA052"
+    },
+    {
+      "相对路径": "main-autolysis\\assets\\materials\\glow_color\\mat_glow_white_0.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\glow_color\\mat_glow_white_0.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\glow_color\\mat_glow_white_0.tres",
+      "基线校验值": "030D0B2F149F4D173343DCA345F0B62D2C44E6CA139013182391818B906D753A",
+      "当前校验值": "030D0B2F149F4D173343DCA345F0B62D2C44E6CA139013182391818B906D753A"
+    },
+    {
+      "相对路径": "main-autolysis\\components\\interactions\\autolysis_interaction_component.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\components\\interactions\\autolysis_interaction_component.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\components\\interactions\\autolysis_interaction_component.tscn",
+      "基线校验值": "A4F12CB6ADDE0F4343C438C3076CC4AA7E5A0528CABECF29DE825EA2FD38727F",
+      "当前校验值": "A4F12CB6ADDE0F4343C438C3076CC4AA7E5A0528CABECF29DE825EA2FD38727F"
+    },
+    {
+      "相对路径": "main-autolysis\\player\\assets\\player_eyes.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\assets\\player_eyes.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\player\\assets\\player_eyes.tres",
+      "基线校验值": "40E155AE4C5735A0AC837CF71B4B9A0CB19CB125375419760687D64350A743D1",
+      "当前校验值": "40E155AE4C5735A0AC837CF71B4B9A0CB19CB125375419760687D64350A743D1"
+    },
+    {
+      "相对路径": "main-autolysis\\player\\components\\autolysis_interaction_controller.gd",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\components\\autolysis_interaction_controller.gd",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_interaction_controller.gd",
+      "基线校验值": "9478729CCA6D364D5E05009FB2D8EC2FCE0B5925ABAA53DF67D9AB55FCBFFCF2",
+      "当前校验值": "9478729CCA6D364D5E05009FB2D8EC2FCE0B5925ABAA53DF67D9AB55FCBFFCF2"
+    },
+    {
+      "相对路径": "main-autolysis\\player\\components\\interaction_raycast.gd",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\components\\interaction_raycast.gd",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\player\\components\\interaction_raycast.gd",
+      "基线校验值": "8DEB699976CAD195A8EA9B72D99AE2D5DE9B58AA44D9B5C57BFDCABD63BAECAB",
+      "当前校验值": "8DEB699976CAD195A8EA9B72D99AE2D5DE9B58AA44D9B5C57BFDCABD63BAECAB"
+    },
+    {
+      "相对路径": "main-autolysis\\player\\components\\interaction_raycast.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\components\\interaction_raycast.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\player\\components\\interaction_raycast.tscn",
+      "基线校验值": "0A6CEE8BAD77661893C42F8AD43ABBAC808B1FB16D5CF8905AD9EEE604110614",
+      "当前校验值": "0A6CEE8BAD77661893C42F8AD43ABBAC808B1FB16D5CF8905AD9EEE604110614"
+    },
+    {
+      "相对路径": "main-autolysis\\player\\components\\item_drop_shape_cast.gd",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\components\\item_drop_shape_cast.gd",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\player\\components\\item_drop_shape_cast.gd",
+      "基线校验值": "8303C2EFA35EB8ACEF2E9B82CBB1D219C93D994CC91A4D8B6593ABD81D627F4A",
+      "当前校验值": "8303C2EFA35EB8ACEF2E9B82CBB1D219C93D994CC91A4D8B6593ABD81D627F4A"
+    },
+    {
+      "相对路径": "main-autolysis\\player\\components\\wieldables_sway.gd",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\components\\wieldables_sway.gd",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\player\\components\\wieldables_sway.gd",
+      "基线校验值": "26C9EC6363551E822D8FA356195C9F8E8D68D9BB1353DB8132EE9891367421FD",
+      "当前校验值": "26C9EC6363551E822D8FA356195C9F8E8D68D9BB1353DB8132EE9891367421FD"
+    },
+    {
+      "相对路径": "main-autolysis\\player\\tests\\component_migration_test.gd",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\tests\\component_migration_test.gd",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\player\\tests\\component_migration_test.gd",
+      "基线校验值": "94C650D3F4E8ED2E9AD8FB62502BC14E875935E4778A58AFCAE6138A91368F3B",
+      "当前校验值": "94C650D3F4E8ED2E9AD8FB62502BC14E875935E4778A58AFCAE6138A91368F3B"
+    },
+    {
+      "相对路径": "main-autolysis\\player\\tests\\direct_interaction_demo.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\tests\\direct_interaction_demo.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\player\\tests\\direct_interaction_demo.tscn",
+      "基线校验值": "EFB858E3DB753DBDE4101930CFCEC57108AFA1B668F4DBAEEACCEA66502FAF28",
+      "当前校验值": "EFB858E3DB753DBDE4101930CFCEC57108AFA1B668F4DBAEEACCEA66502FAF28"
+    },
+    {
+      "相对路径": "main-autolysis\\player\\tests\\fixtures\\direct_interaction_demo.gd",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\tests\\fixtures\\direct_interaction_demo.gd",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\player\\tests\\fixtures\\direct_interaction_demo.gd",
+      "基线校验值": "4415A21E2FFEF1D0190B17A024E5FD93E1DFC9BCBB853688D4B444D9DDD8CAD9",
+      "当前校验值": "4415A21E2FFEF1D0190B17A024E5FD93E1DFC9BCBB853688D4B444D9DDD8CAD9"
+    },
+    {
+      "相对路径": "main-autolysis\\player\\tests\\player_smoke_test.gd",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\tests\\player_smoke_test.gd",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\player\\tests\\player_smoke_test.gd",
+      "基线校验值": "3CAF7ADD4DDC39DD3A32727CDDC49AFC0E609EC66ADB55440376E86B31B0E4AF",
+      "当前校验值": "3CAF7ADD4DDC39DD3A32727CDDC49AFC0E609EC66ADB55440376E86B31B0E4AF"
+    },
+    {
+      "相对路径": "main-autolysis\\player\\tests\\run_interaction_verification.ps1",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\tests\\run_interaction_verification.ps1",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\player\\tests\\run_interaction_verification.ps1",
+      "基线校验值": "203BD88002F8A34B7F301792E563124B42B22A1154D44F1F813BB44965630860",
+      "当前校验值": "203BD88002F8A34B7F301792E563124B42B22A1154D44F1F813BB44965630860"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\confessional_and_trade_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\confessional_and_trade_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\confessional_and_trade_0.tscn",
+      "基线校验值": "CE93D191CFD2025207E687B549F67925D9F098593FE72AE69613958884DDED93",
+      "当前校验值": "CE93D191CFD2025207E687B549F67925D9F098593FE72AE69613958884DDED93"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_furnitures\\bed_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\bed_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\bed_0.tscn",
+      "基线校验值": "C32C2AB084F46BE0E7224BA496B22F8ED8A91F33F3ED51124B57C0CCAD1EC2E7",
+      "当前校验值": "C32C2AB084F46BE0E7224BA496B22F8ED8A91F33F3ED51124B57C0CCAD1EC2E7"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_furnitures\\light_prefab_small_wall_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\light_prefab_small_wall_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\light_prefab_small_wall_0.tscn",
+      "基线校验值": "D09B66067422E2969FABBDEC6D3B623431B4C78E66230644E2CF175C9EAB19A0",
+      "当前校验值": "D09B66067422E2969FABBDEC6D3B623431B4C78E66230644E2CF175C9EAB19A0"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_furnitures\\light_prefab_uplight_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\light_prefab_uplight_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\light_prefab_uplight_0.tscn",
+      "基线校验值": "8C3A31C9C98C36BDA22289F8CE086A439810512FCA5C7CA727C618A5C189566D",
+      "当前校验值": "8C3A31C9C98C36BDA22289F8CE086A439810512FCA5C7CA727C618A5C189566D"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_furnitures\\wall_air_vent_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\wall_air_vent_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\wall_air_vent_0.tscn",
+      "基线校验值": "2F79C6481B58F40E4441737FF58302EC3F611FE9B0036A400F892E1BB8F986B8",
+      "当前校验值": "2F79C6481B58F40E4441737FF58302EC3F611FE9B0036A400F892E1BB8F986B8"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_items\\syringe_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_items\\syringe_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_items\\syringe_0.tscn",
+      "基线校验值": "461F0AA9D2A7A5525E78D0E9317A162A27EC18213F891E1822D614E96E231320",
+      "当前校验值": "461F0AA9D2A7A5525E78D0E9317A162A27EC18213F891E1822D614E96E231320"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_items\\syringe_group_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_items\\syringe_group_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_items\\syringe_group_0.tscn",
+      "基线校验值": "A76DF9FD546E2D95A376E949DE993F3DC81BF7BBC3E49E65F37823F179961781",
+      "当前校验值": "A76DF9FD546E2D95A376E949DE993F3DC81BF7BBC3E49E65F37823F179961781"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_items\\tincture_bottle_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_items\\tincture_bottle_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_items\\tincture_bottle_0.tscn",
+      "基线校验值": "4BD21ABD9554615347382EEF907283B7356CDFAD1FC786FB96B37C112C950396",
+      "当前校验值": "4BD21ABD9554615347382EEF907283B7356CDFAD1FC786FB96B37C112C950396"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_items\\tincture_bottle_group_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_items\\tincture_bottle_group_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_items\\tincture_bottle_group_0.tscn",
+      "基线校验值": "25DE9B8CC028F32DBDE213F7473336D0DDA8FFEE32A136510D39B148483D8AF6",
+      "当前校验值": "25DE9B8CC028F32DBDE213F7473336D0DDA8FFEE32A136510D39B148483D8AF6"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_machines\\luquid_tank_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\luquid_tank_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\luquid_tank_0.tscn",
+      "基线校验值": "3860F0D39BDF37D8308BF38C5B8EB93D0F82DB2A039AC33676BDA182CB5E03A7",
+      "当前校验值": "3860F0D39BDF37D8308BF38C5B8EB93D0F82DB2A039AC33676BDA182CB5E03A7"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_blend_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_blend_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_blend_0.tscn",
+      "基线校验值": "0ABCA22768F31F54196A6D1C9D7C16AAFB38E76809865AC77CB3CFCBEDAA1CF2",
+      "当前校验值": "0ABCA22768F31F54196A6D1C9D7C16AAFB38E76809865AC77CB3CFCBEDAA1CF2"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_daily_test_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_daily_test_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_daily_test_0.tscn",
+      "基线校验值": "DEF9ABE6AD269FCB1BF6912C6A6BBECEA276016314C1D908D9F19D9351FC5519",
+      "当前校验值": "DEF9ABE6AD269FCB1BF6912C6A6BBECEA276016314C1D908D9F19D9351FC5519"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_extraction_tank_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_extraction_tank_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_extraction_tank_0.tscn",
+      "基线校验值": "0BBC98A6E5EA6E67DD8DD64160AF4C3D43483DD41CAECDBB23B1EEAC1E39FDD8",
+      "当前校验值": "0BBC98A6E5EA6E67DD8DD64160AF4C3D43483DD41CAECDBB23B1EEAC1E39FDD8"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_packing_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_packing_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_packing_0.tscn",
+      "基线校验值": "B7AC10CDD73908E1E3EEF34F37BDC372A927C752BB4DCE138B37C8A0D3B1A3CB",
+      "当前校验值": "B7AC10CDD73908E1E3EEF34F37BDC372A927C752BB4DCE138B37C8A0D3B1A3CB"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_phase_separator_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_phase_separator_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_phase_separator_0.tscn",
+      "基线校验值": "AC28679D9BE8D9EFE8A92D6466CC79CDDD0092518C7D1F570CB55E34809DFDCF",
+      "当前校验值": "AC28679D9BE8D9EFE8A92D6466CC79CDDD0092518C7D1F570CB55E34809DFDCF"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_pneumatic_tube_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_pneumatic_tube_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_pneumatic_tube_0.tscn",
+      "基线校验值": "F3271F69EA905A980B68CE943475EFC113A5928AC3473A03C2493161DC7764D8",
+      "当前校验值": "F3271F69EA905A980B68CE943475EFC113A5928AC3473A03C2493161DC7764D8"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_ration_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_ration_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_ration_0.tscn",
+      "基线校验值": "BF4195E6848E1A1B23C15DBFD18AE06875E2E3581FD4520DDC6A3220B4C73624",
+      "当前校验值": "BF4195E6848E1A1B23C15DBFD18AE06875E2E3581FD4520DDC6A3220B4C73624"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+      "基线校验值": "9F4465630115E54050151FCF1F09AA721DC5A3DFF9D8C7EFFE6EB869C1CC258B",
+      "当前校验值": "9F4465630115E54050151FCF1F09AA721DC5A3DFF9D8C7EFFE6EB869C1CC258B"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_wave_rebuilder_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_wave_rebuilder_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_wave_rebuilder_0.tscn",
+      "基线校验值": "5340DFC30E0F1DD84E8E814A6C277ED889A6C1BE6AB57D734519620D4C47F7CE",
+      "当前校验值": "5340DFC30E0F1DD84E8E814A6C277ED889A6C1BE6AB57D734519620D4C47F7CE"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_machines\\manual_shelf_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\manual_shelf_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\manual_shelf_0.tscn",
+      "基线校验值": "576EFEB129FAEAA5A607A46D34853D7D1B09D186BFC6F5028A2662A15290FA08",
+      "当前校验值": "576EFEB129FAEAA5A607A46D34853D7D1B09D186BFC6F5028A2662A15290FA08"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_machines\\pneumatic_tube_capsules_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\pneumatic_tube_capsules_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\pneumatic_tube_capsules_0.tscn",
+      "基线校验值": "9F4E149F97C2262C0A31CCD2874F8F4233E34F7BDD7C66012FE6D6478B1616DD",
+      "当前校验值": "9F4E149F97C2262C0A31CCD2874F8F4233E34F7BDD7C66012FE6D6478B1616DD"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_board_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_board_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_board_0.tscn",
+      "基线校验值": "B47B9522BC190CD212BB881576792DE9DE5A49EF0D189259A765CA5988D9FF80",
+      "当前校验值": "B47B9522BC190CD212BB881576792DE9DE5A49EF0D189259A765CA5988D9FF80"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_machine_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_machine_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_machine_0.tscn",
+      "基线校验值": "23AF84037357C0B7FEA48D6F17CFDB643D5477D73910CF926AC9452D4C424328",
+      "当前校验值": "23AF84037357C0B7FEA48D6F17CFDB643D5477D73910CF926AC9452D4C424328"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_machines\\waste_liquid_storage_tank_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\waste_liquid_storage_tank_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\waste_liquid_storage_tank_0.tscn",
+      "基线校验值": "751065A547226923B06DFB6CEEC927722E67DAB3423BD8CCAC53E9D625B6ED72",
+      "当前校验值": "751065A547226923B06DFB6CEEC927722E67DAB3423BD8CCAC53E9D625B6ED72"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\place_shelf_workroom_bottle_0.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\place_shelf_workroom_bottle_0.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\place_shelf_workroom_bottle_0.tscn",
+      "基线校验值": "8B309C1AAB61AF8CB063A27BAF5C419000A349075346158676755574767A3FD3",
+      "当前校验值": "8B309C1AAB61AF8CB063A27BAF5C419000A349075346158676755574767A3FD3"
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\tests\\prefab_node_path_test.gd",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\tests\\prefab_node_path_test.gd",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\tests\\prefab_node_path_test.gd",
+      "基线校验值": "E9B4AFE729C63E1E22CBC00E3CF2C91131B1663F764CE9B7B4AA99A42CFE58C2",
+      "当前校验值": "E9B4AFE729C63E1E22CBC00E3CF2C91131B1663F764CE9B7B4AA99A42CFE58C2"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_dirt.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_dirt.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_dirt.tres",
+      "基线校验值": "57443A5549DEA011FD1F52CC50DFD4D3E36C0499407FA955B6A90AF95D19A221",
+      "当前校验值": "57443A5549DEA011FD1F52CC50DFD4D3E36C0499407FA955B6A90AF95D19A221"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_grass.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_grass.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_grass.tres",
+      "基线校验值": "DBED9DEF9153F3B32FC348CA89A8386FA2773D99161AC70792CC554274F2EC26",
+      "当前校验值": "DBED9DEF9153F3B32FC348CA89A8386FA2773D99161AC70792CC554274F2EC26"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_stone.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_stone.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_stone.tres",
+      "基线校验值": "846E07893FC25D50FD56E9FC2D5A4C3D5ABD86186ECECBC231B9DDC9986420C7",
+      "当前校验值": "846E07893FC25D50FD56E9FC2D5A4C3D5ABD86186ECECBC231B9DDC9986420C7"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_wood.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_wood.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_wood.tres",
+      "基线校验值": "714FC73BE2D43613B554F2B601BD2CD9FA801EB65D96CDA76A3438A42ED1A7F4",
+      "当前校验值": "714FC73BE2D43613B554F2B601BD2CD9FA801EB65D96CDA76A3438A42ED1A7F4"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_brown.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_brown.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_brown.tres",
+      "基线校验值": "FB889FCC689F0323EB5B1EBC04C07B8D61044EAAD55D56CE773FCB674BCB86FA",
+      "当前校验值": "FB889FCC689F0323EB5B1EBC04C07B8D61044EAAD55D56CE773FCB674BCB86FA"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_dark_grey.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_dark_grey.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_dark_grey.tres",
+      "基线校验值": "F29DBB94EA76F2761EFDE42212F466351DCA7EA03259E299385C5076317AF505",
+      "当前校验值": "F29DBB94EA76F2761EFDE42212F466351DCA7EA03259E299385C5076317AF505"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_green.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_green.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_green.tres",
+      "基线校验值": "931D1C8212F1387ABDAEB593563E027796DD0434A6524AF2B406D46F280268BF",
+      "当前校验值": "931D1C8212F1387ABDAEB593563E027796DD0434A6524AF2B406D46F280268BF"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_light_grey.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_light_grey.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_light_grey.tres",
+      "基线校验值": "354CDF329FC5F54724B2619CC180EA3A6997A294A8318BADCE0E7EBC49DF84F8",
+      "当前校验值": "354CDF329FC5F54724B2619CC180EA3A6997A294A8318BADCE0E7EBC49DF84F8"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_orange.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_orange.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_orange.tres",
+      "基线校验值": "4DD34B83CFD29B6FD596F1E2FBA369E80F412D5164E39B10A1AEC5C2CEBA955C",
+      "当前校验值": "4DD34B83CFD29B6FD596F1E2FBA369E80F412D5164E39B10A1AEC5C2CEBA955C"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\dynamic_footstep_demo_scene.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\dynamic_footstep_demo_scene.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\dynamic_footstep_demo_scene.tscn",
+      "基线校验值": "38E68274EC4EB4024685B341635A1E4B8FD3CA98FD81DB361168A99F4D7202B0",
+      "当前校验值": "38E68274EC4EB4024685B341635A1E4B8FD3CA98FD81DB361168A99F4D7202B0"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-material-library\\sample_footstep_material_library.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-material-library\\sample_footstep_material_library.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-material-library\\sample_footstep_material_library.tres",
+      "基线校验值": "D0F62A1D04CBC4897D68311C3E29F5DB37DA9365D9FABACF96762BA03C7AFC30",
+      "当前校验值": "D0F62A1D04CBC4897D68311C3E29F5DB37DA9365D9FABACF96762BA03C7AFC30"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\dirt_footstep_profile.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\dirt_footstep_profile.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\dirt_footstep_profile.tres",
+      "基线校验值": "1655C6EB425866C2B8C446DA240C02035A86F93CB0D26147F649E29FC85921AA",
+      "当前校验值": "1655C6EB425866C2B8C446DA240C02035A86F93CB0D26147F649E29FC85921AA"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\generic_footstep_profile.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\generic_footstep_profile.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\generic_footstep_profile.tres",
+      "基线校验值": "9F7E38AF65B1CD7949A9BC482EA988A2712669E9523835A20FF3A8F486FA8673",
+      "当前校验值": "9F7E38AF65B1CD7949A9BC482EA988A2712669E9523835A20FF3A8F486FA8673"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\grass_footstep_profile.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\grass_footstep_profile.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\grass_footstep_profile.tres",
+      "基线校验值": "5B61A29366F3A19D7426218875FBB1E2AD6EEC42F9B0342348C01B22F4CCD384",
+      "当前校验值": "5B61A29366F3A19D7426218875FBB1E2AD6EEC42F9B0342348C01B22F4CCD384"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\metal_footstep_hard_profile.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\metal_footstep_hard_profile.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\metal_footstep_hard_profile.tres",
+      "基线校验值": "8BAD28F2E518596D41BC4255F131EFBA18FC9D7AC2E8A8FCDB84D7B00B4E6431",
+      "当前校验值": "8BAD28F2E518596D41BC4255F131EFBA18FC9D7AC2E8A8FCDB84D7B00B4E6431"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\metal_footstep_light_profile.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\metal_footstep_light_profile.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\metal_footstep_light_profile.tres",
+      "基线校验值": "4846E40AD4F8BD2D94AA51C3421C5A4B507A4852B28E5206F4B0011585D0F3A4",
+      "当前校验值": "4846E40AD4F8BD2D94AA51C3421C5A4B507A4852B28E5206F4B0011585D0F3A4"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\stone_footstep_profile.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\stone_footstep_profile.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\stone_footstep_profile.tres",
+      "基线校验值": "4F31FC21D414A7EEE163A1BB5C902F29D60C15C9AC346AFBC4C4646412E0E50A",
+      "当前校验值": "4F31FC21D414A7EEE163A1BB5C902F29D60C15C9AC346AFBC4C4646412E0E50A"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\wood_footstep_profile.tres",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\wood_footstep_profile.tres",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\wood_footstep_profile.tres",
+      "基线校验值": "F4FEB344F9A20D2716253BC1BACC0E0E22F2EA0094DED8192C6094091F27054D",
+      "当前校验值": "F4FEB344F9A20D2716253BC1BACC0E0E22F2EA0094DED8192C6094091F27054D"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_material_library.gd",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_material_library.gd",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_material_library.gd",
+      "基线校验值": "55F6C68FA5BD83A154A1FF9C230C81F5B9ABD7E4F9A8E58BF9856EC9BDD2DC25",
+      "当前校验值": "55F6C68FA5BD83A154A1FF9C230C81F5B9ABD7E4F9A8E58BF9856EC9BDD2DC25"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_material_profile.gd",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_material_profile.gd",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_material_profile.gd",
+      "基线校验值": "B36F723AE97F1340556DD9C5B0491AA63737604717833D2D21689D660A54E82D",
+      "当前校验值": "B36F723AE97F1340556DD9C5B0491AA63737604717833D2D21689D660A54E82D"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_surface_detector.gd",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_surface_detector.gd",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_surface_detector.gd",
+      "基线校验值": "61FF789A1AA640A2505D087B4C11FD165AD17F7F72474FD8803F87B0D3259552",
+      "当前校验值": "61FF789A1AA640A2505D087B4C11FD165AD17F7F72474FD8803F87B0D3259552"
+    },
+    {
+      "相对路径": "main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_surface.gd",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_surface.gd",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_surface.gd",
+      "基线校验值": "6346CBD1020A16B186326155179D7ABE1C79BE6807BC87D47F4A7E43B1399703",
+      "当前校验值": "6346CBD1020A16B186326155179D7ABE1C79BE6807BC87D47F4A7E43B1399703"
+    },
+    {
+      "相对路径": "main-autolysis\\ui\\autolysis_crosshair.gd",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\ui\\autolysis_crosshair.gd",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\ui\\autolysis_crosshair.gd",
+      "基线校验值": "027707EA3F5D526DBDBAF7C0379B0B18487F3E60F14C596C91F4108589BF606D",
+      "当前校验值": "027707EA3F5D526DBDBAF7C0379B0B18487F3E60F14C596C91F4108589BF606D"
+    },
+    {
+      "相对路径": "main-autolysis\\ui\\autolysis_crosshair.tscn",
+      "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\ui\\autolysis_crosshair.tscn",
+      "当前源路径": "D:\\autolysis\\main-autolysis\\ui\\autolysis_crosshair.tscn",
+      "基线校验值": "9958375E76C1E95F6C4248F6FB015DBC265464B7968D06F6D5842F48309FD05B",
+      "当前校验值": "9958375E76C1E95F6C4248F6FB015DBC265464B7968D06F6D5842F48309FD05B"
+    }
+  ],
+  "检查数量": 13,
+  "失败数量": 0,
+  "检查": [
+    {
+      "项目": "基线副本与实施前已登记校验值一致",
+      "通过": true,
+      "实际源路径": [
+        "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline",
+        "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline-hashes.json"
+      ],
+      "数据": [
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\audio\\buses\\default_bus_layout.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\buses\\default_bus_layout.tres",
+          "基线实际校验值": "1D9C2AE1F24CDA404461DB643CFE412234B20FEAC477ACDCEF47C27E6D1F34A3",
+          "先前登记校验值": "1D9C2AE1F24CDA404461DB643CFE412234B20FEAC477ACDCEF47C27E6D1F34A3",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_black_0.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_black_0.tres",
+          "基线实际校验值": "28A72D5F853E6BEB549FEDE54351C8EDD4B33B3B553449B4E79C09AFD83AFF1D",
+          "先前登记校验值": "28A72D5F853E6BEB549FEDE54351C8EDD4B33B3B553449B4E79C09AFD83AFF1D",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_black_1.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_black_1.tres",
+          "基线实际校验值": "4D559BC3A3517DAB9ECCA77C7834EA46FBC48F08A03351797E29145EE4463A36",
+          "先前登记校验值": "4D559BC3A3517DAB9ECCA77C7834EA46FBC48F08A03351797E29145EE4463A36",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_blue_0.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_blue_0.tres",
+          "基线实际校验值": "59CC8AB4318260AA1F3AA5A305A73B1AC5E6804C13EE1F48B41763657315DEE3",
+          "先前登记校验值": "59CC8AB4318260AA1F3AA5A305A73B1AC5E6804C13EE1F48B41763657315DEE3",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_blue_1.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_blue_1.tres",
+          "基线实际校验值": "752A1B04F07C6B77B7EA0A3A9F5655DC496F10CD0A9107CC4983E2BDA79AAA5E",
+          "先前登记校验值": "752A1B04F07C6B77B7EA0A3A9F5655DC496F10CD0A9107CC4983E2BDA79AAA5E",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_blue_2.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_blue_2.tres",
+          "基线实际校验值": "646D8F6C9AAE112CF50EEF155D9D5A1C8303F29A86CAD86DC0A505EADD12529C",
+          "先前登记校验值": "646D8F6C9AAE112CF50EEF155D9D5A1C8303F29A86CAD86DC0A505EADD12529C",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_brown_0.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_brown_0.tres",
+          "基线实际校验值": "688788B1867A722168039FB4895FF81C2DA22EEE0E84CCA373F964E56808819B",
+          "先前登记校验值": "688788B1867A722168039FB4895FF81C2DA22EEE0E84CCA373F964E56808819B",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_brown_1.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_brown_1.tres",
+          "基线实际校验值": "4BF9748E54A5F1A264201ADA96D933E9875B595DEFAF424262816D724EDA415B",
+          "先前登记校验值": "4BF9748E54A5F1A264201ADA96D933E9875B595DEFAF424262816D724EDA415B",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_brown_2.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_brown_2.tres",
+          "基线实际校验值": "E2CED69540324AC3385362D915A7EEE33AE709C7C36AD6C181D39273F851862E",
+          "先前登记校验值": "E2CED69540324AC3385362D915A7EEE33AE709C7C36AD6C181D39273F851862E",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_darkblue_0.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_darkblue_0.tres",
+          "基线实际校验值": "5C856012B9B8FA9180B1A64D2735E63613716670A244896C0469EE9D2EF7694A",
+          "先前登记校验值": "5C856012B9B8FA9180B1A64D2735E63613716670A244896C0469EE9D2EF7694A",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_darkblue_1.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_darkblue_1.tres",
+          "基线实际校验值": "955596A23A98D7389C524E4AA7170E4A606F1C4691A6D1034415E231E123FC13",
+          "先前登记校验值": "955596A23A98D7389C524E4AA7170E4A606F1C4691A6D1034415E231E123FC13",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_green_0.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_green_0.tres",
+          "基线实际校验值": "66C496022926E5B7CFB16CEE37A4723545737B615CA76CD98745B12291A0C77E",
+          "先前登记校验值": "66C496022926E5B7CFB16CEE37A4723545737B615CA76CD98745B12291A0C77E",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_green_1.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_green_1.tres",
+          "基线实际校验值": "962E4FD39C506C8922A01B660F9F16103675936A5D74E1B896184A05E1751D62",
+          "先前登记校验值": "962E4FD39C506C8922A01B660F9F16103675936A5D74E1B896184A05E1751D62",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_green_2.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_green_2.tres",
+          "基线实际校验值": "CB8924130CDCF6C507D44DDF1433A8F3C479B97510C2BD79CCA5A73B2299AB84",
+          "先前登记校验值": "CB8924130CDCF6C507D44DDF1433A8F3C479B97510C2BD79CCA5A73B2299AB84",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_green_3.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_green_3.tres",
+          "基线实际校验值": "C57473DCA97A92130BB88B4AD5548224534AA0BAB6976F7338DA218425253CF4",
+          "先前登记校验值": "C57473DCA97A92130BB88B4AD5548224534AA0BAB6976F7338DA218425253CF4",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_green_4.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_green_4.tres",
+          "基线实际校验值": "F9DB619BA397A2D4F6A738D49B818AB1F1A352A69F037D44336D89C0CB7C9209",
+          "先前登记校验值": "F9DB619BA397A2D4F6A738D49B818AB1F1A352A69F037D44336D89C0CB7C9209",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_0.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_0.tres",
+          "基线实际校验值": "30BCF9CD9F944626A4993739EE82F583D7D5127A3138E291FFC553FBCEBCC3D1",
+          "先前登记校验值": "30BCF9CD9F944626A4993739EE82F583D7D5127A3138E291FFC553FBCEBCC3D1",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_1.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_1.tres",
+          "基线实际校验值": "3102FC42495CFED10B8AAFCD8EA1A09D468CDDB9E8BF0E0168269B693C637755",
+          "先前登记校验值": "3102FC42495CFED10B8AAFCD8EA1A09D468CDDB9E8BF0E0168269B693C637755",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_2.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_2.tres",
+          "基线实际校验值": "F2FC94256509361694B85AA3C95A6DABDA9CE0656CDBBCE50C972ADDAE5F08AA",
+          "先前登记校验值": "F2FC94256509361694B85AA3C95A6DABDA9CE0656CDBBCE50C972ADDAE5F08AA",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_3.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_3.tres",
+          "基线实际校验值": "01908DE7C1DB8FE5A5D4A7217B5D6AEECAFB90AA7A3A2489D5620B5F10905DA6",
+          "先前登记校验值": "01908DE7C1DB8FE5A5D4A7217B5D6AEECAFB90AA7A3A2489D5620B5F10905DA6",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_4.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_4.tres",
+          "基线实际校验值": "8219517EFE79E0627DD686974C2AF8E3B93419CD0F65BE24D986BF595F5504D0",
+          "先前登记校验值": "8219517EFE79E0627DD686974C2AF8E3B93419CD0F65BE24D986BF595F5504D0",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_orange_0.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_orange_0.tres",
+          "基线实际校验值": "084587A4A0B45CC2621B127E431BE22633C0D4A2CA1A0D45BCFB44FF51E07DAE",
+          "先前登记校验值": "084587A4A0B45CC2621B127E431BE22633C0D4A2CA1A0D45BCFB44FF51E07DAE",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_orange_1.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_orange_1.tres",
+          "基线实际校验值": "0078071B1F79797E35596ECD030AF2E945269B49A604A2AFC29D94DD3ED88C7F",
+          "先前登记校验值": "0078071B1F79797E35596ECD030AF2E945269B49A604A2AFC29D94DD3ED88C7F",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_red_0.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_red_0.tres",
+          "基线实际校验值": "C1D33DA642850376D6755331C5987EB1070C26D03D39FCAA7F9A6FD2012A5D67",
+          "先前登记校验值": "C1D33DA642850376D6755331C5987EB1070C26D03D39FCAA7F9A6FD2012A5D67",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_red_1.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_red_1.tres",
+          "基线实际校验值": "A5D81F68C04B2BF3BB8D303A24B7600ECA33C9A278904F4D35C7ABE30DC58768",
+          "先前登记校验值": "A5D81F68C04B2BF3BB8D303A24B7600ECA33C9A278904F4D35C7ABE30DC58768",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_red_2.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_red_2.tres",
+          "基线实际校验值": "2B956E95C8789E9EAEDD2FC9DB69630DE8028ED772C6EFFEBF77AA61320D8F30",
+          "先前登记校验值": "2B956E95C8789E9EAEDD2FC9DB69630DE8028ED772C6EFFEBF77AA61320D8F30",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_red_3.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_red_3.tres",
+          "基线实际校验值": "36FEB008DC3A0355C0582E188D8F0A23DAD52BC1BC126E1B7224985844135EB9",
+          "先前登记校验值": "36FEB008DC3A0355C0582E188D8F0A23DAD52BC1BC126E1B7224985844135EB9",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_white_0.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_white_0.tres",
+          "基线实际校验值": "210A7E6A205C5C18211D4FE69E199F9CFA9C77AB7AD7C80916A0EDD5761918C0",
+          "先前登记校验值": "210A7E6A205C5C18211D4FE69E199F9CFA9C77AB7AD7C80916A0EDD5761918C0",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\base_color\\mat_base_white_1.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_white_1.tres",
+          "基线实际校验值": "D4D5B9E0D5A76C00F85710BECF6D5D07468E6678CB7374F3AD4E2A8DB9352D76",
+          "先前登记校验值": "D4D5B9E0D5A76C00F85710BECF6D5D07468E6678CB7374F3AD4E2A8DB9352D76",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\glow_color\\mat_glow_green_0.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\glow_color\\mat_glow_green_0.tres",
+          "基线实际校验值": "00353ED730580402F99E4EBE28077DF08CFBBFCF246767B4A17D73C1D3ADA052",
+          "先前登记校验值": "00353ED730580402F99E4EBE28077DF08CFBBFCF246767B4A17D73C1D3ADA052",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\assets\\materials\\glow_color\\mat_glow_white_0.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\glow_color\\mat_glow_white_0.tres",
+          "基线实际校验值": "030D0B2F149F4D173343DCA345F0B62D2C44E6CA139013182391818B906D753A",
+          "先前登记校验值": "030D0B2F149F4D173343DCA345F0B62D2C44E6CA139013182391818B906D753A",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\components\\interactions\\autolysis_interaction_component.gd",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\components\\interactions\\autolysis_interaction_component.gd",
+          "基线实际校验值": "92A01E00F0D9C95AE73F5D4148A577CA1B7FFDC51D3224D4C8F240BF5CBFEB05",
+          "先前登记校验值": "92A01E00F0D9C95AE73F5D4148A577CA1B7FFDC51D3224D4C8F240BF5CBFEB05",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\components\\interactions\\autolysis_interaction_component.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\components\\interactions\\autolysis_interaction_component.tscn",
+          "基线实际校验值": "A4F12CB6ADDE0F4343C438C3076CC4AA7E5A0528CABECF29DE825EA2FD38727F",
+          "先前登记校验值": "A4F12CB6ADDE0F4343C438C3076CC4AA7E5A0528CABECF29DE825EA2FD38727F",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\assets\\player_eyes.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\player\\assets\\player_eyes.tres",
+          "基线实际校验值": "40E155AE4C5735A0AC837CF71B4B9A0CB19CB125375419760687D64350A743D1",
+          "先前登记校验值": "40E155AE4C5735A0AC837CF71B4B9A0CB19CB125375419760687D64350A743D1",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\autolysis_player.gd",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.gd",
+          "基线实际校验值": "8FA87FD4823608D04517E88683F1823BE33D2C131B91528983D0CA389B574838",
+          "先前登记校验值": "8FA87FD4823608D04517E88683F1823BE33D2C131B91528983D0CA389B574838",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\autolysis_player.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.tscn",
+          "基线实际校验值": "117544D8C1F00A60E9597B0A8ABE04E5B93877F0C6E72F81560B8D6CBD95284C",
+          "先前登记校验值": "117544D8C1F00A60E9597B0A8ABE04E5B93877F0C6E72F81560B8D6CBD95284C",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\components\\autolysis_interaction_controller.gd",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_interaction_controller.gd",
+          "基线实际校验值": "9478729CCA6D364D5E05009FB2D8EC2FCE0B5925ABAA53DF67D9AB55FCBFFCF2",
+          "先前登记校验值": "9478729CCA6D364D5E05009FB2D8EC2FCE0B5925ABAA53DF67D9AB55FCBFFCF2",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\components\\interaction_raycast.gd",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\player\\components\\interaction_raycast.gd",
+          "基线实际校验值": "8DEB699976CAD195A8EA9B72D99AE2D5DE9B58AA44D9B5C57BFDCABD63BAECAB",
+          "先前登记校验值": "8DEB699976CAD195A8EA9B72D99AE2D5DE9B58AA44D9B5C57BFDCABD63BAECAB",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\components\\interaction_raycast.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\player\\components\\interaction_raycast.tscn",
+          "基线实际校验值": "0A6CEE8BAD77661893C42F8AD43ABBAC808B1FB16D5CF8905AD9EEE604110614",
+          "先前登记校验值": "0A6CEE8BAD77661893C42F8AD43ABBAC808B1FB16D5CF8905AD9EEE604110614",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\components\\item_drop_shape_cast.gd",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\player\\components\\item_drop_shape_cast.gd",
+          "基线实际校验值": "8303C2EFA35EB8ACEF2E9B82CBB1D219C93D994CC91A4D8B6593ABD81D627F4A",
+          "先前登记校验值": "8303C2EFA35EB8ACEF2E9B82CBB1D219C93D994CC91A4D8B6593ABD81D627F4A",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\components\\wieldables_sway.gd",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\player\\components\\wieldables_sway.gd",
+          "基线实际校验值": "26C9EC6363551E822D8FA356195C9F8E8D68D9BB1353DB8132EE9891367421FD",
+          "先前登记校验值": "26C9EC6363551E822D8FA356195C9F8E8D68D9BB1353DB8132EE9891367421FD",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\tests\\component_migration_test.gd",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\player\\tests\\component_migration_test.gd",
+          "基线实际校验值": "94C650D3F4E8ED2E9AD8FB62502BC14E875935E4778A58AFCAE6138A91368F3B",
+          "先前登记校验值": "94C650D3F4E8ED2E9AD8FB62502BC14E875935E4778A58AFCAE6138A91368F3B",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\tests\\direct_interaction_demo.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\player\\tests\\direct_interaction_demo.tscn",
+          "基线实际校验值": "EFB858E3DB753DBDE4101930CFCEC57108AFA1B668F4DBAEEACCEA66502FAF28",
+          "先前登记校验值": "EFB858E3DB753DBDE4101930CFCEC57108AFA1B668F4DBAEEACCEA66502FAF28",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\tests\\direct_interaction_test.gd",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\player\\tests\\direct_interaction_test.gd",
+          "基线实际校验值": "4453C10EAE67592A689F8AD81886CD05939F41C0C137662761E11056DD0C96A3",
+          "先前登记校验值": "4453C10EAE67592A689F8AD81886CD05939F41C0C137662761E11056DD0C96A3",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\tests\\fixtures\\direct_interaction_demo.gd",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\player\\tests\\fixtures\\direct_interaction_demo.gd",
+          "基线实际校验值": "4415A21E2FFEF1D0190B17A024E5FD93E1DFC9BCBB853688D4B444D9DDD8CAD9",
+          "先前登记校验值": "4415A21E2FFEF1D0190B17A024E5FD93E1DFC9BCBB853688D4B444D9DDD8CAD9",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\tests\\footstep_smoke_test.gd",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\player\\tests\\footstep_smoke_test.gd",
+          "基线实际校验值": "B95BD1A0E431535B9A143FEF1C94597587672AE430260A8C2B2F652791B10E26",
+          "先前登记校验值": "B95BD1A0E431535B9A143FEF1C94597587672AE430260A8C2B2F652791B10E26",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\tests\\player_smoke_test.gd",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\player\\tests\\player_smoke_test.gd",
+          "基线实际校验值": "3CAF7ADD4DDC39DD3A32727CDDC49AFC0E609EC66ADB55440376E86B31B0E4AF",
+          "先前登记校验值": "3CAF7ADD4DDC39DD3A32727CDDC49AFC0E609EC66ADB55440376E86B31B0E4AF",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\player\\tests\\run_interaction_verification.ps1",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\player\\tests\\run_interaction_verification.ps1",
+          "基线实际校验值": "203BD88002F8A34B7F301792E563124B42B22A1154D44F1F813BB44965630860",
+          "先前登记校验值": "203BD88002F8A34B7F301792E563124B42B22A1154D44F1F813BB44965630860",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\01-autolysis-test.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\01-autolysis-test.tscn",
+          "基线实际校验值": "3898D92C0F26EACB480913A4B8A03DC77F7C1CD8754DF51EF18CDB0B812EBCFC",
+          "先前登记校验值": "3898D92C0F26EACB480913A4B8A03DC77F7C1CD8754DF51EF18CDB0B812EBCFC",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\confessional_and_trade_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\confessional_and_trade_0.tscn",
+          "基线实际校验值": "CE93D191CFD2025207E687B549F67925D9F098593FE72AE69613958884DDED93",
+          "先前登记校验值": "CE93D191CFD2025207E687B549F67925D9F098593FE72AE69613958884DDED93",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\bed_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\bed_0.tscn",
+          "基线实际校验值": "C32C2AB084F46BE0E7224BA496B22F8ED8A91F33F3ED51124B57C0CCAD1EC2E7",
+          "先前登记校验值": "C32C2AB084F46BE0E7224BA496B22F8ED8A91F33F3ED51124B57C0CCAD1EC2E7",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\light_prefab_small_wall_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\light_prefab_small_wall_0.tscn",
+          "基线实际校验值": "D09B66067422E2969FABBDEC6D3B623431B4C78E66230644E2CF175C9EAB19A0",
+          "先前登记校验值": "D09B66067422E2969FABBDEC6D3B623431B4C78E66230644E2CF175C9EAB19A0",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\light_prefab_uplight_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\light_prefab_uplight_0.tscn",
+          "基线实际校验值": "8C3A31C9C98C36BDA22289F8CE086A439810512FCA5C7CA727C618A5C189566D",
+          "先前登记校验值": "8C3A31C9C98C36BDA22289F8CE086A439810512FCA5C7CA727C618A5C189566D",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\store_shelf_warehouse_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\store_shelf_warehouse_0.tscn",
+          "基线实际校验值": "2353D6FD3182CFAB059945DF3945C8855CB49DCA6E65FF94585CE0E396AF3340",
+          "先前登记校验值": "2353D6FD3182CFAB059945DF3945C8855CB49DCA6E65FF94585CE0E396AF3340",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\wall_air_vent_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\wall_air_vent_0.tscn",
+          "基线实际校验值": "2F79C6481B58F40E4441737FF58302EC3F611FE9B0036A400F892E1BB8F986B8",
+          "先前登记校验值": "2F79C6481B58F40E4441737FF58302EC3F611FE9B0036A400F892E1BB8F986B8",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_items\\syringe_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_items\\syringe_0.tscn",
+          "基线实际校验值": "461F0AA9D2A7A5525E78D0E9317A162A27EC18213F891E1822D614E96E231320",
+          "先前登记校验值": "461F0AA9D2A7A5525E78D0E9317A162A27EC18213F891E1822D614E96E231320",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_items\\syringe_group_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_items\\syringe_group_0.tscn",
+          "基线实际校验值": "A76DF9FD546E2D95A376E949DE993F3DC81BF7BBC3E49E65F37823F179961781",
+          "先前登记校验值": "A76DF9FD546E2D95A376E949DE993F3DC81BF7BBC3E49E65F37823F179961781",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_items\\tincture_bottle_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_items\\tincture_bottle_0.tscn",
+          "基线实际校验值": "4BD21ABD9554615347382EEF907283B7356CDFAD1FC786FB96B37C112C950396",
+          "先前登记校验值": "4BD21ABD9554615347382EEF907283B7356CDFAD1FC786FB96B37C112C950396",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_items\\tincture_bottle_group_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_items\\tincture_bottle_group_0.tscn",
+          "基线实际校验值": "25DE9B8CC028F32DBDE213F7473336D0DDA8FFEE32A136510D39B148483D8AF6",
+          "先前登记校验值": "25DE9B8CC028F32DBDE213F7473336D0DDA8FFEE32A136510D39B148483D8AF6",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\luquid_tank_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\luquid_tank_0.tscn",
+          "基线实际校验值": "3860F0D39BDF37D8308BF38C5B8EB93D0F82DB2A039AC33676BDA182CB5E03A7",
+          "先前登记校验值": "3860F0D39BDF37D8308BF38C5B8EB93D0F82DB2A039AC33676BDA182CB5E03A7",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_blend_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_blend_0.tscn",
+          "基线实际校验值": "0ABCA22768F31F54196A6D1C9D7C16AAFB38E76809865AC77CB3CFCBEDAA1CF2",
+          "先前登记校验值": "0ABCA22768F31F54196A6D1C9D7C16AAFB38E76809865AC77CB3CFCBEDAA1CF2",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_daily_test_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_daily_test_0.tscn",
+          "基线实际校验值": "DEF9ABE6AD269FCB1BF6912C6A6BBECEA276016314C1D908D9F19D9351FC5519",
+          "先前登记校验值": "DEF9ABE6AD269FCB1BF6912C6A6BBECEA276016314C1D908D9F19D9351FC5519",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_extraction_tank_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_extraction_tank_0.tscn",
+          "基线实际校验值": "0BBC98A6E5EA6E67DD8DD64160AF4C3D43483DD41CAECDBB23B1EEAC1E39FDD8",
+          "先前登记校验值": "0BBC98A6E5EA6E67DD8DD64160AF4C3D43483DD41CAECDBB23B1EEAC1E39FDD8",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_packing_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_packing_0.tscn",
+          "基线实际校验值": "B7AC10CDD73908E1E3EEF34F37BDC372A927C752BB4DCE138B37C8A0D3B1A3CB",
+          "先前登记校验值": "B7AC10CDD73908E1E3EEF34F37BDC372A927C752BB4DCE138B37C8A0D3B1A3CB",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_phase_separator_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_phase_separator_0.tscn",
+          "基线实际校验值": "AC28679D9BE8D9EFE8A92D6466CC79CDDD0092518C7D1F570CB55E34809DFDCF",
+          "先前登记校验值": "AC28679D9BE8D9EFE8A92D6466CC79CDDD0092518C7D1F570CB55E34809DFDCF",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_pneumatic_tube_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_pneumatic_tube_0.tscn",
+          "基线实际校验值": "F3271F69EA905A980B68CE943475EFC113A5928AC3473A03C2493161DC7764D8",
+          "先前登记校验值": "F3271F69EA905A980B68CE943475EFC113A5928AC3473A03C2493161DC7764D8",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_ration_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_ration_0.tscn",
+          "基线实际校验值": "BF4195E6848E1A1B23C15DBFD18AE06875E2E3581FD4520DDC6A3220B4C73624",
+          "先前登记校验值": "BF4195E6848E1A1B23C15DBFD18AE06875E2E3581FD4520DDC6A3220B4C73624",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+          "基线实际校验值": "9F4465630115E54050151FCF1F09AA721DC5A3DFF9D8C7EFFE6EB869C1CC258B",
+          "先前登记校验值": "9F4465630115E54050151FCF1F09AA721DC5A3DFF9D8C7EFFE6EB869C1CC258B",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_wave_rebuilder_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_wave_rebuilder_0.tscn",
+          "基线实际校验值": "5340DFC30E0F1DD84E8E814A6C277ED889A6C1BE6AB57D734519620D4C47F7CE",
+          "先前登记校验值": "5340DFC30E0F1DD84E8E814A6C277ED889A6C1BE6AB57D734519620D4C47F7CE",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\manual_shelf_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\manual_shelf_0.tscn",
+          "基线实际校验值": "576EFEB129FAEAA5A607A46D34853D7D1B09D186BFC6F5028A2662A15290FA08",
+          "先前登记校验值": "576EFEB129FAEAA5A607A46D34853D7D1B09D186BFC6F5028A2662A15290FA08",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\pneumatic_tube_capsules_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\pneumatic_tube_capsules_0.tscn",
+          "基线实际校验值": "9F4E149F97C2262C0A31CCD2874F8F4233E34F7BDD7C66012FE6D6478B1616DD",
+          "先前登记校验值": "9F4E149F97C2262C0A31CCD2874F8F4233E34F7BDD7C66012FE6D6478B1616DD",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_board_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_board_0.tscn",
+          "基线实际校验值": "B47B9522BC190CD212BB881576792DE9DE5A49EF0D189259A765CA5988D9FF80",
+          "先前登记校验值": "B47B9522BC190CD212BB881576792DE9DE5A49EF0D189259A765CA5988D9FF80",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_machine_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_machine_0.tscn",
+          "基线实际校验值": "23AF84037357C0B7FEA48D6F17CFDB643D5477D73910CF926AC9452D4C424328",
+          "先前登记校验值": "23AF84037357C0B7FEA48D6F17CFDB643D5477D73910CF926AC9452D4C424328",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_machines\\waste_liquid_storage_tank_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\waste_liquid_storage_tank_0.tscn",
+          "基线实际校验值": "751065A547226923B06DFB6CEEC927722E67DAB3423BD8CCAC53E9D625B6ED72",
+          "先前登记校验值": "751065A547226923B06DFB6CEEC927722E67DAB3423BD8CCAC53E9D625B6ED72",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\place_shelf_workroom_bottle_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\place_shelf_workroom_bottle_0.tscn",
+          "基线实际校验值": "8B309C1AAB61AF8CB063A27BAF5C419000A349075346158676755574767A3FD3",
+          "先前登记校验值": "8B309C1AAB61AF8CB063A27BAF5C419000A349075346158676755574767A3FD3",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\place_shelf_workroom_rm_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\place_shelf_workroom_rm_0.tscn",
+          "基线实际校验值": "28E3453A0BBA9B438C46958F8DB6E29E88A05DB1BAA7B40961129B2F9DC1D18F",
+          "先前登记校验值": "28E3453A0BBA9B438C46958F8DB6E29E88A05DB1BAA7B40961129B2F9DC1D18F",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_0.tscn",
+          "基线实际校验值": "1D50987EF7A2A944E34B70088C1309BDA4AA3BFC41E6BBE51C8F34845CDAFF98",
+          "先前登记校验值": "1D50987EF7A2A944E34B70088C1309BDA4AA3BFC41E6BBE51C8F34845CDAFF98",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_group_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_group_0.tscn",
+          "基线实际校验值": "D6D5D31EA88317B3D79504F4B052CC7D24B9EACC160C13E82A8393AAF2827941",
+          "先前登记校验值": "D6D5D31EA88317B3D79504F4B052CC7D24B9EACC160C13E82A8393AAF2827941",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_0.tscn",
+          "基线实际校验值": "3F13272F3AEF6F5BDB9D4F73995E882EA19C1EEBFFCFF93CD9533734CB9B2A4D",
+          "先前登记校验值": "3F13272F3AEF6F5BDB9D4F73995E882EA19C1EEBFFCFF93CD9533734CB9B2A4D",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_group_0.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_group_0.tscn",
+          "基线实际校验值": "F40FB4CC573004204CE641D72C71DCF676B792BBBC4E5CC908B44CC94E80344E",
+          "先前登记校验值": "F40FB4CC573004204CE641D72C71DCF676B792BBBC4E5CC908B44CC94E80344E",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\tests\\prefab_node_path_test.gd",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\scenes\\tests\\prefab_node_path_test.gd",
+          "基线实际校验值": "E9B4AFE729C63E1E22CBC00E3CF2C91131B1663F764CE9B7B4AA99A42CFE58C2",
+          "先前登记校验值": "E9B4AFE729C63E1E22CBC00E3CF2C91131B1663F764CE9B7B4AA99A42CFE58C2",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_dirt.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_dirt.tres",
+          "基线实际校验值": "57443A5549DEA011FD1F52CC50DFD4D3E36C0499407FA955B6A90AF95D19A221",
+          "先前登记校验值": "57443A5549DEA011FD1F52CC50DFD4D3E36C0499407FA955B6A90AF95D19A221",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_grass.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_grass.tres",
+          "基线实际校验值": "DBED9DEF9153F3B32FC348CA89A8386FA2773D99161AC70792CC554274F2EC26",
+          "先前登记校验值": "DBED9DEF9153F3B32FC348CA89A8386FA2773D99161AC70792CC554274F2EC26",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_stone.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_stone.tres",
+          "基线实际校验值": "846E07893FC25D50FD56E9FC2D5A4C3D5ABD86186ECECBC231B9DDC9986420C7",
+          "先前登记校验值": "846E07893FC25D50FD56E9FC2D5A4C3D5ABD86186ECECBC231B9DDC9986420C7",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_wood.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_wood.tres",
+          "基线实际校验值": "714FC73BE2D43613B554F2B601BD2CD9FA801EB65D96CDA76A3438A42ED1A7F4",
+          "先前登记校验值": "714FC73BE2D43613B554F2B601BD2CD9FA801EB65D96CDA76A3438A42ED1A7F4",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_brown.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_brown.tres",
+          "基线实际校验值": "FB889FCC689F0323EB5B1EBC04C07B8D61044EAAD55D56CE773FCB674BCB86FA",
+          "先前登记校验值": "FB889FCC689F0323EB5B1EBC04C07B8D61044EAAD55D56CE773FCB674BCB86FA",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_dark_grey.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_dark_grey.tres",
+          "基线实际校验值": "F29DBB94EA76F2761EFDE42212F466351DCA7EA03259E299385C5076317AF505",
+          "先前登记校验值": "F29DBB94EA76F2761EFDE42212F466351DCA7EA03259E299385C5076317AF505",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_green.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_green.tres",
+          "基线实际校验值": "931D1C8212F1387ABDAEB593563E027796DD0434A6524AF2B406D46F280268BF",
+          "先前登记校验值": "931D1C8212F1387ABDAEB593563E027796DD0434A6524AF2B406D46F280268BF",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_light_grey.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_light_grey.tres",
+          "基线实际校验值": "354CDF329FC5F54724B2619CC180EA3A6997A294A8318BADCE0E7EBC49DF84F8",
+          "先前登记校验值": "354CDF329FC5F54724B2619CC180EA3A6997A294A8318BADCE0E7EBC49DF84F8",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_orange.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_orange.tres",
+          "基线实际校验值": "4DD34B83CFD29B6FD596F1E2FBA369E80F412D5164E39B10A1AEC5C2CEBA955C",
+          "先前登记校验值": "4DD34B83CFD29B6FD596F1E2FBA369E80F412D5164E39B10A1AEC5C2CEBA955C",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\dynamic_footstep_demo_scene.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\dynamic_footstep_demo_scene.tscn",
+          "基线实际校验值": "38E68274EC4EB4024685B341635A1E4B8FD3CA98FD81DB361168A99F4D7202B0",
+          "先前登记校验值": "38E68274EC4EB4024685B341635A1E4B8FD3CA98FD81DB361168A99F4D7202B0",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-material-library\\sample_footstep_material_library.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-material-library\\sample_footstep_material_library.tres",
+          "基线实际校验值": "D0F62A1D04CBC4897D68311C3E29F5DB37DA9365D9FABACF96762BA03C7AFC30",
+          "先前登记校验值": "D0F62A1D04CBC4897D68311C3E29F5DB37DA9365D9FABACF96762BA03C7AFC30",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\dirt_footstep_profile.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\dirt_footstep_profile.tres",
+          "基线实际校验值": "1655C6EB425866C2B8C446DA240C02035A86F93CB0D26147F649E29FC85921AA",
+          "先前登记校验值": "1655C6EB425866C2B8C446DA240C02035A86F93CB0D26147F649E29FC85921AA",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\generic_footstep_profile.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\generic_footstep_profile.tres",
+          "基线实际校验值": "9F7E38AF65B1CD7949A9BC482EA988A2712669E9523835A20FF3A8F486FA8673",
+          "先前登记校验值": "9F7E38AF65B1CD7949A9BC482EA988A2712669E9523835A20FF3A8F486FA8673",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\grass_footstep_profile.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\grass_footstep_profile.tres",
+          "基线实际校验值": "5B61A29366F3A19D7426218875FBB1E2AD6EEC42F9B0342348C01B22F4CCD384",
+          "先前登记校验值": "5B61A29366F3A19D7426218875FBB1E2AD6EEC42F9B0342348C01B22F4CCD384",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\metal_footstep_hard_profile.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\metal_footstep_hard_profile.tres",
+          "基线实际校验值": "8BAD28F2E518596D41BC4255F131EFBA18FC9D7AC2E8A8FCDB84D7B00B4E6431",
+          "先前登记校验值": "8BAD28F2E518596D41BC4255F131EFBA18FC9D7AC2E8A8FCDB84D7B00B4E6431",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\metal_footstep_light_profile.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\metal_footstep_light_profile.tres",
+          "基线实际校验值": "4846E40AD4F8BD2D94AA51C3421C5A4B507A4852B28E5206F4B0011585D0F3A4",
+          "先前登记校验值": "4846E40AD4F8BD2D94AA51C3421C5A4B507A4852B28E5206F4B0011585D0F3A4",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\stone_footstep_profile.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\stone_footstep_profile.tres",
+          "基线实际校验值": "4F31FC21D414A7EEE163A1BB5C902F29D60C15C9AC346AFBC4C4646412E0E50A",
+          "先前登记校验值": "4F31FC21D414A7EEE163A1BB5C902F29D60C15C9AC346AFBC4C4646412E0E50A",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\wood_footstep_profile.tres",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\wood_footstep_profile.tres",
+          "基线实际校验值": "F4FEB344F9A20D2716253BC1BACC0E0E22F2EA0094DED8192C6094091F27054D",
+          "先前登记校验值": "F4FEB344F9A20D2716253BC1BACC0E0E22F2EA0094DED8192C6094091F27054D",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_material_library.gd",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_material_library.gd",
+          "基线实际校验值": "55F6C68FA5BD83A154A1FF9C230C81F5B9ABD7E4F9A8E58BF9856EC9BDD2DC25",
+          "先前登记校验值": "55F6C68FA5BD83A154A1FF9C230C81F5B9ABD7E4F9A8E58BF9856EC9BDD2DC25",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_material_profile.gd",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_material_profile.gd",
+          "基线实际校验值": "B36F723AE97F1340556DD9C5B0491AA63737604717833D2D21689D660A54E82D",
+          "先前登记校验值": "B36F723AE97F1340556DD9C5B0491AA63737604717833D2D21689D660A54E82D",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_surface_detector.gd",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_surface_detector.gd",
+          "基线实际校验值": "61FF789A1AA640A2505D087B4C11FD165AD17F7F72474FD8803F87B0D3259552",
+          "先前登记校验值": "61FF789A1AA640A2505D087B4C11FD165AD17F7F72474FD8803F87B0D3259552",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_surface.gd",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_surface.gd",
+          "基线实际校验值": "6346CBD1020A16B186326155179D7ABE1C79BE6807BC87D47F4A7E43B1399703",
+          "先前登记校验值": "6346CBD1020A16B186326155179D7ABE1C79BE6807BC87D47F4A7E43B1399703",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\ui\\autolysis_crosshair.gd",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\ui\\autolysis_crosshair.gd",
+          "基线实际校验值": "027707EA3F5D526DBDBAF7C0379B0B18487F3E60F14C596C91F4108589BF606D",
+          "先前登记校验值": "027707EA3F5D526DBDBAF7C0379B0B18487F3E60F14C596C91F4108589BF606D",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\ui\\autolysis_crosshair.tscn",
+          "当前源路径": "D:\\autolysis\\main-autolysis\\ui\\autolysis_crosshair.tscn",
+          "基线实际校验值": "9958375E76C1E95F6C4248F6FB015DBC265464B7968D06F6D5842F48309FD05B",
+          "先前登记校验值": "9958375E76C1E95F6C4248F6FB015DBC265464B7968D06F6D5842F48309FD05B",
+          "基线副本未变": true
+        },
+        {
+          "基线源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\project.godot",
+          "当前源路径": "D:\\autolysis\\project.godot",
+          "基线实际校验值": "D751899E533AE0152DD1A7BB941CF7BC74B456D836CEC945AEDC6118BD7B7D1C",
+          "先前登记校验值": "D751899E533AE0152DD1A7BB941CF7BC74B456D836CEC945AEDC6118BD7B7D1C",
+          "基线副本未变": true
+        }
+      ]
+    },
+    {
+      "项目": "实施前已有文件未缺失",
+      "通过": true,
+      "实际源路径": [
+        "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline",
+        "D:\\autolysis"
+      ],
+      "数据": {
+        "缺失数量": 0
+      }
+    },
+    {
+      "项目": "主场景仅上架高度由1.2改为1.3",
+      "通过": true,
+      "实际源路径": [
+        "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\01-autolysis-test.tscn",
+        "D:\\autolysis\\main-autolysis\\scenes\\01-autolysis-test.tscn"
+      ],
+      "数据": {
+        "现变换": "transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2000003, 1.3, 11.999999)",
+        "精确替换出现次数": 1,
+        "原行号": 1307,
+        "节点路径": "interaction_prefabs/item_groups/place_shelf_workroom_rm_0",
+        "原变换": "transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2000003, 1.2, 11.999999)"
+      }
+    },
+    {
+      "项目": "咖啡因：纯显示场景与旧模型子树等价",
+      "通过": true,
+      "实际源路径": [
+        "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_0.tscn",
+        "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\visuals\\rm_caffeine_visual.tscn"
+      ],
+      "数据": {
+        "旧节点文本": [
+          "[node name=\"mesh\" type=\"Node3D\" parent=\".\" unique_id=832619275]",
+          "[node name=\"MeshInstance3D\" type=\"MeshInstance3D\" parent=\"mesh\" unique_id=346434174]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.089999996, 0)\nmaterial_override = ExtResource(\"1_gguto\")\nmesh = SubResource(\"CylinderMesh_1qthy\")",
+          "[node name=\"MeshInstance3D4\" type=\"MeshInstance3D\" parent=\"mesh\" unique_id=221553861]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16999999, 0)\nmaterial_override = ExtResource(\"2_0qxi6\")\nmesh = SubResource(\"CylinderMesh_wa71k\")",
+          "[node name=\"MeshInstance3D2\" type=\"MeshInstance3D\" parent=\"mesh\" unique_id=806797912]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)\nmaterial_override = ExtResource(\"2_0qxi6\")\nmesh = SubResource(\"CylinderMesh_mo0aw\")",
+          "[node name=\"MeshInstance3D3\" type=\"MeshInstance3D\" parent=\"mesh\" unique_id=2117612324]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)\nmaterial_override = ExtResource(\"3_5vxuc\")\nmesh = SubResource(\"CylinderMesh_r8n0b\")"
+        ],
+        "旧网格资源数": 4,
+        "外部材质资源路径及唯一标识逐段一致": true,
+        "节点变换材质引用及唯一标识逐段一致": true,
+        "旧模型节点数": 5,
+        "网格几何全部属性逐段一致": true,
+        "新节点文本": [
+          "[node name=\"mesh\" type=\"Node3D\" unique_id=832619275]",
+          "[node name=\"MeshInstance3D\" type=\"MeshInstance3D\" parent=\".\" unique_id=346434174]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.089999996, 0)\nmaterial_override = ExtResource(\"1_gguto\")\nmesh = SubResource(\"CylinderMesh_1qthy\")",
+          "[node name=\"MeshInstance3D4\" type=\"MeshInstance3D\" parent=\".\" unique_id=221553861]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16999999, 0)\nmaterial_override = ExtResource(\"2_0qxi6\")\nmesh = SubResource(\"CylinderMesh_wa71k\")",
+          "[node name=\"MeshInstance3D2\" type=\"MeshInstance3D\" parent=\".\" unique_id=806797912]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)\nmaterial_override = ExtResource(\"2_0qxi6\")\nmesh = SubResource(\"CylinderMesh_mo0aw\")",
+          "[node name=\"MeshInstance3D3\" type=\"MeshInstance3D\" parent=\".\" unique_id=2117612324]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)\nmaterial_override = ExtResource(\"3_5vxuc\")\nmesh = SubResource(\"CylinderMesh_r8n0b\")"
+        ],
+        "新网格资源数": 4,
+        "新模型节点数": 5,
+        "唯一结构归一化": "旧模型根从物理体子节点提升为纯显示场景根；原子节点父路径随此前缀变化。没有改写数值或材质。"
+      }
+    },
+    {
+      "项目": "咖啡因：世界单体根身份与碰撞保持原样",
+      "通过": true,
+      "实际源路径": [
+        "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_0.tscn",
+        "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_0.tscn"
+      ],
+      "数据": {
+        "模型挂点变换父路径及唯一标识原样": true,
+        "现模型挂点原文": "[node name=\"mesh\" parent=\".\" unique_id=832619275 instance=ExtResource(\"3_visual\")]",
+        "原身份": {
+          "场景唯一标识": "uid://ckecp5cgmdrww",
+          "根节点名称": "rm_caffeine_0",
+          "根节点类型": "StaticBody3D",
+          "根节点唯一标识": "1003444052",
+          "根节点变换": ""
+        },
+        "共享模型绑定实际路径正确且无旧世界唯一标识": true,
+        "现身份": {
+          "场景唯一标识": "uid://ckecp5cgmdrww",
+          "根节点名称": "rm_caffeine_0",
+          "根节点类型": "StaticBody3D",
+          "根节点唯一标识": "1003444052",
+          "根节点变换": ""
+        },
+        "碰撞逐段一致": true
+      }
+    },
+    {
+      "项目": "咖啡因：组内四瓶及托盘外观保持原样",
+      "通过": true,
+      "实际源路径": [
+        "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_group_0.tscn",
+        "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_group_0.tscn",
+        "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\visuals\\rm_caffeine_visual.tscn"
+      ],
+      "数据": {
+        "旧世界场景唯一标识已从替换后的纯显示引用清除": true,
+        "四瓶变换名称父路径唯一标识均逐段一致": true,
+        "原身份": {
+          "场景唯一标识": "uid://c0lj86k2dghrm",
+          "根节点名称": "rm_caffeine_group_0",
+          "根节点类型": "StaticBody3D",
+          "根节点唯一标识": "589747057",
+          "根节点变换": ""
+        },
+        "共享纯显示资源引用": [
+          "[ext_resource type=\"PackedScene\" path=\"res://main-autolysis/scenes/prefabs/prefab_raw_materials/visuals/rm_caffeine_visual.tscn\" id=\"2_tqe44\"]"
+        ],
+        "托盘节点与内嵌资源逐段一致": true,
+        "旧四瓶节点": [
+          "[node name=\"rm_caffeine_0\" parent=\"MeshInstance3D15\" unique_id=2065228073 instance=ExtResource(\"2_tqe44\")]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.01, 0.08)",
+          "[node name=\"rm_caffeine_1\" parent=\"MeshInstance3D15\" unique_id=646897224 instance=ExtResource(\"2_tqe44\")]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, 0.01, -0.07999999)",
+          "[node name=\"rm_caffeine_3\" parent=\"MeshInstance3D15\" unique_id=492517728 instance=ExtResource(\"2_tqe44\")]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, 0.01, 0.080000006)",
+          "[node name=\"rm_caffeine_2\" parent=\"MeshInstance3D15\" unique_id=1172925997 instance=ExtResource(\"2_tqe44\")]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.01, -0.07999999)"
+        ],
+        "现四瓶节点": [
+          "[node name=\"rm_caffeine_0\" parent=\"MeshInstance3D15\" unique_id=2065228073 instance=ExtResource(\"2_tqe44\")]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.01, 0.08)",
+          "[node name=\"rm_caffeine_1\" parent=\"MeshInstance3D15\" unique_id=646897224 instance=ExtResource(\"2_tqe44\")]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, 0.01, -0.07999999)",
+          "[node name=\"rm_caffeine_3\" parent=\"MeshInstance3D15\" unique_id=492517728 instance=ExtResource(\"2_tqe44\")]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, 0.01, 0.080000006)",
+          "[node name=\"rm_caffeine_2\" parent=\"MeshInstance3D15\" unique_id=1172925997 instance=ExtResource(\"2_tqe44\")]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.01, -0.07999999)"
+        ],
+        "现身份": {
+          "场景唯一标识": "uid://c0lj86k2dghrm",
+          "根节点名称": "rm_caffeine_group_0",
+          "根节点类型": "StaticBody3D",
+          "根节点唯一标识": "589747057",
+          "根节点变换": ""
+        }
+      }
+    },
+    {
+      "项目": "苯甲酸钠：纯显示场景与旧模型子树等价",
+      "通过": true,
+      "实际源路径": [
+        "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_0.tscn",
+        "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\visuals\\rm_sodium_benzoate_visual.tscn"
+      ],
+      "数据": {
+        "旧节点文本": [
+          "[node name=\"mesh\" type=\"Node3D\" parent=\".\" unique_id=339975707]",
+          "[node name=\"MeshInstance3D\" type=\"MeshInstance3D\" parent=\"mesh\" unique_id=967901650]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15999998, 0)\nmaterial_override = ExtResource(\"1_ie3hh\")\nmesh = SubResource(\"CylinderMesh_mdi6w\")",
+          "[node name=\"MeshInstance3D4\" type=\"MeshInstance3D\" parent=\"mesh\" unique_id=152507294]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07999998, 0)\nmaterial_override = ExtResource(\"2_7k5c6\")\nmesh = SubResource(\"CylinderMesh_736cf\")",
+          "[node name=\"MeshInstance3D2\" type=\"MeshInstance3D\" parent=\"mesh\" unique_id=1699844447]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.059999995, 0)\nmaterial_override = ExtResource(\"3_pws5e\")\nmesh = SubResource(\"CylinderMesh_bsf43\")",
+          "[node name=\"MeshInstance3D3\" type=\"MeshInstance3D\" parent=\"mesh\" unique_id=660267636]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13, 0)\nmaterial_override = ExtResource(\"3_pws5e\")\nmesh = SubResource(\"CylinderMesh_0e5bt\")"
+        ],
+        "旧网格资源数": 4,
+        "外部材质资源路径及唯一标识逐段一致": true,
+        "节点变换材质引用及唯一标识逐段一致": true,
+        "旧模型节点数": 5,
+        "网格几何全部属性逐段一致": true,
+        "新节点文本": [
+          "[node name=\"mesh\" type=\"Node3D\" unique_id=339975707]",
+          "[node name=\"MeshInstance3D\" type=\"MeshInstance3D\" parent=\".\" unique_id=967901650]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15999998, 0)\nmaterial_override = ExtResource(\"1_ie3hh\")\nmesh = SubResource(\"CylinderMesh_mdi6w\")",
+          "[node name=\"MeshInstance3D4\" type=\"MeshInstance3D\" parent=\".\" unique_id=152507294]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07999998, 0)\nmaterial_override = ExtResource(\"2_7k5c6\")\nmesh = SubResource(\"CylinderMesh_736cf\")",
+          "[node name=\"MeshInstance3D2\" type=\"MeshInstance3D\" parent=\".\" unique_id=1699844447]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.059999995, 0)\nmaterial_override = ExtResource(\"3_pws5e\")\nmesh = SubResource(\"CylinderMesh_bsf43\")",
+          "[node name=\"MeshInstance3D3\" type=\"MeshInstance3D\" parent=\".\" unique_id=660267636]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13, 0)\nmaterial_override = ExtResource(\"3_pws5e\")\nmesh = SubResource(\"CylinderMesh_0e5bt\")"
+        ],
+        "新网格资源数": 4,
+        "新模型节点数": 5,
+        "唯一结构归一化": "旧模型根从物理体子节点提升为纯显示场景根；原子节点父路径随此前缀变化。没有改写数值或材质。"
+      }
+    },
+    {
+      "项目": "苯甲酸钠：世界单体根身份与碰撞保持原样",
+      "通过": true,
+      "实际源路径": [
+        "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_0.tscn",
+        "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_0.tscn"
+      ],
+      "数据": {
+        "模型挂点变换父路径及唯一标识原样": true,
+        "现模型挂点原文": "[node name=\"mesh\" parent=\".\" unique_id=339975707 instance=ExtResource(\"3_visual\")]",
+        "原身份": {
+          "场景唯一标识": "uid://dxw4qeo54kkwp",
+          "根节点名称": "rm_sodium_benzoate_0",
+          "根节点类型": "StaticBody3D",
+          "根节点唯一标识": "1747403966",
+          "根节点变换": ""
+        },
+        "共享模型绑定实际路径正确且无旧世界唯一标识": true,
+        "现身份": {
+          "场景唯一标识": "uid://dxw4qeo54kkwp",
+          "根节点名称": "rm_sodium_benzoate_0",
+          "根节点类型": "StaticBody3D",
+          "根节点唯一标识": "1747403966",
+          "根节点变换": ""
+        },
+        "碰撞逐段一致": true
+      }
+    },
+    {
+      "项目": "苯甲酸钠：组内四瓶及托盘外观保持原样",
+      "通过": true,
+      "实际源路径": [
+        "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_group_0.tscn",
+        "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_group_0.tscn",
+        "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\visuals\\rm_sodium_benzoate_visual.tscn"
+      ],
+      "数据": {
+        "旧世界场景唯一标识已从替换后的纯显示引用清除": true,
+        "四瓶变换名称父路径唯一标识均逐段一致": true,
+        "原身份": {
+          "场景唯一标识": "uid://b7ig87n5phibu",
+          "根节点名称": "rm_sodium_benzoate_group_0",
+          "根节点类型": "StaticBody3D",
+          "根节点唯一标识": "589747057",
+          "根节点变换": ""
+        },
+        "共享纯显示资源引用": [
+          "[ext_resource type=\"PackedScene\" path=\"res://main-autolysis/scenes/prefabs/prefab_raw_materials/visuals/rm_sodium_benzoate_visual.tscn\" id=\"2_511nl\"]"
+        ],
+        "托盘节点与内嵌资源逐段一致": true,
+        "旧四瓶节点": [
+          "[node name=\"rm_sodium_benzoate_0\" parent=\"meshes\" unique_id=2117740375 instance=ExtResource(\"2_511nl\")]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07, 0, 0.07)",
+          "[node name=\"rm_sodium_benzoate_1\" parent=\"meshes\" unique_id=995923593 instance=ExtResource(\"2_511nl\")]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07, 0, -0.07)",
+          "[node name=\"rm_sodium_benzoate_2\" parent=\"meshes\" unique_id=1819891113 instance=ExtResource(\"2_511nl\")]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, 0, 0.07)",
+          "[node name=\"rm_sodium_benzoate_3\" parent=\"meshes\" unique_id=1923187452 instance=ExtResource(\"2_511nl\")]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, 0, -0.07)"
+        ],
+        "现四瓶节点": [
+          "[node name=\"rm_sodium_benzoate_0\" parent=\"meshes\" unique_id=2117740375 instance=ExtResource(\"2_511nl\")]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07, 0, 0.07)",
+          "[node name=\"rm_sodium_benzoate_1\" parent=\"meshes\" unique_id=995923593 instance=ExtResource(\"2_511nl\")]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07, 0, -0.07)",
+          "[node name=\"rm_sodium_benzoate_2\" parent=\"meshes\" unique_id=1819891113 instance=ExtResource(\"2_511nl\")]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, 0, 0.07)",
+          "[node name=\"rm_sodium_benzoate_3\" parent=\"meshes\" unique_id=1923187452 instance=ExtResource(\"2_511nl\")]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, 0, -0.07)"
+        ],
+        "现身份": {
+          "场景唯一标识": "uid://b7ig87n5phibu",
+          "根节点名称": "rm_sodium_benzoate_group_0",
+          "根节点类型": "StaticBody3D",
+          "根节点唯一标识": "589747057",
+          "根节点变换": ""
+        }
+      }
+    },
+    {
+      "项目": "原药架36槽位及视觉根变换保持原样",
+      "通过": true,
+      "实际源路径": [
+        "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\place_shelf_workroom_rm_0.tscn",
+        "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\place_shelf_workroom_rm_0.tscn"
+      ],
+      "数据": {
+        "槽位实际文本": [
+          "[node name=\"rm_place_shelf_slot_0\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=1073469069]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.223919e-08, 0.03999999, -0.14000002)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_1\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=660879165]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11999998, 0.03999999, -0.14000003)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_2\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=1745844090]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11000001, 0.03999999, -0.14)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_3\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=1378243516]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6226834e-08, 0.03999999, -0.3)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_4\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=1207309004]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11999997, 0.03999999, -0.3)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_5\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=809468521]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11000002, 0.03999999, -0.3)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_6\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=904833165]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41, 0.03999999, -0.14000005)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_7\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=127368274]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53, 0.03999999, -0.14000006)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_8\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=434112707]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.03999999, -0.14000005)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_9\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=107823541]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40999997, 0.03999999, -0.30000004)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_10\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=79426018]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53, 0.03999999, -0.30000007)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_11\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=529290346]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29999998, 0.03999999, -0.30000004)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_12\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=1477165320]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41, 0.03999999, -0.13999999)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_13\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=2134328053]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29000002, 0.03999999, -0.13999999)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_14\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=523159496]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52, 0.03999999, -0.13999997)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_15\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=1599905327]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41000003, 0.03999999, -0.29999998)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_16\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=1315882518]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29000005, 0.03999999, -0.29999998)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_17\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=944529620]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52, 0.03999999, -0.29999995)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_18\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=897973183]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.223919e-08, 0.38, -0.14000002)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_19\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=815266770]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11999998, 0.38, -0.14000003)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_20\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=1581754591]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11000001, 0.38, -0.14)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_21\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=1757309433]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6226834e-08, 0.38, -0.3)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_22\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=42784309]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11999997, 0.38, -0.3)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_23\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=1731372242]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11000002, 0.38, -0.3)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_24\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=2102733719]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41, 0.38, -0.14000005)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_25\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=124983552]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53, 0.38, -0.14000006)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_26\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=917936202]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.38, -0.14000005)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_27\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=1666069160]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40999997, 0.38, -0.30000004)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_28\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=104907254]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53, 0.38, -0.30000007)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_29\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=2132247234]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29999998, 0.38, -0.30000004)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_30\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=331255172]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41, 0.38, -0.13999999)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_31\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=1988073144]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29000002, 0.38, -0.13999999)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_32\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=1053105314]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52, 0.38, -0.13999997)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_33\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=1930042628]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41000003, 0.38, -0.29999998)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_34\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=2081588303]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29000005, 0.38, -0.29999998)\nmetadata/_edit_group_ = true",
+          "[node name=\"rm_place_shelf_slot_35\" type=\"Node3D\" parent=\"rm_place_shelf_slots\" unique_id=108015215]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52, 0.38, -0.29999995)\nmetadata/_edit_group_ = true"
+        ],
+        "原身份": {
+          "场景唯一标识": "uid://cvmu7bsx641mc",
+          "根节点名称": "place_shelf_workroom_rm_0",
+          "根节点类型": "StaticBody3D",
+          "根节点唯一标识": "309850352",
+          "根节点变换": "Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)"
+        },
+        "模型材质几何及槽位容器全文一致": true,
+        "旧槽位数": 36,
+        "所有槽位全文逐段一致": true,
+        "现槽位数": 36,
+        "现身份": {
+          "场景唯一标识": "uid://cvmu7bsx641mc",
+          "根节点名称": "place_shelf_workroom_rm_0",
+          "根节点类型": "StaticBody3D",
+          "根节点唯一标识": "309850352",
+          "根节点变换": "Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)"
+        }
+      }
+    },
+    {
+      "项目": "仓库架仅将整体碰撞拆成8个结构碰撞其余全部原样",
+      "通过": true,
+      "实际源路径": [
+        "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\道具系统p1实施证据\\baseline\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\store_shelf_warehouse_0.tscn",
+        "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_furnitures\\store_shelf_warehouse_0.tscn"
+      ],
+      "数据": {
+        "当前8碰撞实际文本": [
+          "[node name=\"CollisionShape3D\" type=\"CollisionShape3D\" parent=\".\" unique_id=910369122]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05, 1.1000001, 0.55)\nshape = SubResource(\"BoxShape3D_v72ra\")",
+          "[node name=\"PillarCollision1\" type=\"CollisionShape3D\" parent=\".\"]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05, 1.1000001, 0.050000027)\nshape = SubResource(\"BoxShape3D_v72ra\")",
+          "[node name=\"PillarCollision2\" type=\"CollisionShape3D\" parent=\".\"]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05, 1.1000001, 0.55)\nshape = SubResource(\"BoxShape3D_v72ra\")",
+          "[node name=\"PillarCollision3\" type=\"CollisionShape3D\" parent=\".\"]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05, 1.1000001, 0.050000027)\nshape = SubResource(\"BoxShape3D_v72ra\")",
+          "[node name=\"ShelfCollision0\" type=\"CollisionShape3D\" parent=\".\"]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.29999998)\nshape = SubResource(\"BoxShape3D_layer\")",
+          "[node name=\"ShelfCollision1\" type=\"CollisionShape3D\" parent=\".\"]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84999996, 0.29999998)\nshape = SubResource(\"BoxShape3D_layer\")",
+          "[node name=\"ShelfCollision2\" type=\"CollisionShape3D\" parent=\".\"]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4499999, 0.29999998)\nshape = SubResource(\"BoxShape3D_layer\")",
+          "[node name=\"ShelfCollision3\" type=\"CollisionShape3D\" parent=\".\"]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05, 0.29999998)\nshape = SubResource(\"BoxShape3D_layer\")"
+        ],
+        "原碰撞节点唯一标识保留": "910369122",
+        "现碰撞节点数": 8,
+        "非碰撞全部场景段含场景根身份视觉与材质逐段一致": true,
+        "旧碰撞节点数": 1,
+        "新增碰撞节点数": 7
+      }
+    },
+    {
+      "项目": "参考资产复制前后字节内容一致",
+      "通过": true,
+      "实际源路径": [
+        "D:\\cogito\\assets\\textures\\ui\\inventory\\degauss_inventory_slot_border.png",
+        "D:\\autolysis\\main-autolysis\\assets\\ui\\inventory\\degauss_inventory_slot_border.png"
+      ],
+      "数据": {
+        "迁入资产校验值": "8C71351919E8428956B8AE020C1DB6040CFF6BAFF2B1F6D6253DC9D0C42AFDBE",
+        "原资产校验值": "8C71351919E8428956B8AE020C1DB6040CFF6BAFF2B1F6D6253DC9D0C42AFDBE"
+      }
+    },
+    {
+      "项目": "参考资产复制前后字节内容一致",
+      "通过": true,
+      "实际源路径": [
+        "D:\\cogito\\addons\\cogito\\Assets\\Audio\\Kenney\\UiAudio\\mouseclick1.ogg",
+        "D:\\autolysis\\main-autolysis\\assets\\ui\\inventory\\mouseclick1.ogg"
+      ],
+      "数据": {
+        "迁入资产校验值": "31C41260F928BFB3B08D413F336953131D3D2AB5C1D17B747DA95CA509F70438",
+        "原资产校验值": "31C41260F928BFB3B08D413F336953131D3D2AB5C1D17B747DA95CA509F70438"
+      }
+    }
+  ]
+}

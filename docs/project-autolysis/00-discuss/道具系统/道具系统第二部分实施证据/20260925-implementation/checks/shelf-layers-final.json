@@ -1,0 +1,18 @@
+{
+  "检查": "shelf-layers-final",
+  "时间": "2026-09-25T09:28:25.6222967+08:00",
+  "进程编号": 29004,
+  "退出码": 0,
+  "通过": true,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/shelf_layers_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/道具系统/道具系统第二部分实施证据/20260925-implementation/checks"
+  ],
+  "通过断言数": 185
+}

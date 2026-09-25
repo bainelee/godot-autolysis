@@ -1,0 +1,209 @@
+[gd_scene format=3 uid="uid://cvmu7bsx641mc"]
+
+[ext_resource type="Material" uid="uid://v2cw5dvy875j" path="res://main-autolysis/assets/materials/base_color/mat_base_red_3.tres" id="1_8qplx"]
+[ext_resource type="Material" uid="uid://b1bq2ldu2jmr" path="res://main-autolysis/assets/materials/base_color/mat_base_orange_1.tres" id="2_il7gp"]
+[ext_resource type="Script" path="res://main-autolysis/systems/item-system/autolysis_raw_material_shelf.gd" id="3_shelf"]
+[ext_resource type="PackedScene" path="res://main-autolysis/components/interactions/autolysis_interaction_component.tscn" id="4_interaction"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7yfwx"]
+size = Vector3(1.2, 0.04, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_back"]
+size = Vector3(1.2, 0.3, 0.04)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4qoi"]
+albedo_color = Color(0.68, 0.7, 0.66, 1)
+roughness = 0.72
+
+[sub_resource type="BoxMesh" id="BoxMesh_x5oke"]
+material = SubResource("StandardMaterial3D_u4qoi")
+size = Vector3(1.2, 0.04, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_h1w5n"]
+material = SubResource("StandardMaterial3D_u4qoi")
+size = Vector3(1.2, 0.04, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_knwlm"]
+material = SubResource("StandardMaterial3D_u4qoi")
+size = Vector3(1.2, 0.3, 0.04)
+
+[node name="place_shelf_workroom_rm_0" type="StaticBody3D" unique_id=309850352 groups=["interactable"]]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+script = ExtResource("3_shelf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1503833778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7484554e-08, 0.35999998, -0.19999999)
+shape = SubResource("BoxShape3D_7yfwx")
+
+[node name="LowerShelfCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7484554e-08, 0.019999998, -0.19999999)
+shape = SubResource("BoxShape3D_7yfwx")
+
+[node name="BackCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7484552e-09, 0.18999998, -0.019999996)
+shape = SubResource("BoxShape3D_back")
+
+[node name="InteractionComponent" parent="." instance=ExtResource("4_interaction")]
+
+[node name="mesh" type="Node3D" parent="." unique_id=1268540637]
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="mesh" unique_id=1028767509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7484554e-08, 0.35999998, -0.19999999)
+material_override = ExtResource("1_8qplx")
+mesh = SubResource("BoxMesh_x5oke")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="mesh" unique_id=566799022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7484554e-08, 0.019999998, -0.19999999)
+material_override = ExtResource("1_8qplx")
+mesh = SubResource("BoxMesh_h1w5n")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="mesh" unique_id=1311800820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7484552e-09, 0.18999998, -0.019999996)
+material_override = ExtResource("2_il7gp")
+mesh = SubResource("BoxMesh_knwlm")
+
+[node name="rm_place_shelf_slots" type="Node3D" parent="." unique_id=554617509]
+
+[node name="rm_place_shelf_slot_0" type="Node3D" parent="rm_place_shelf_slots" unique_id=1073469069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.223919e-08, 0.03999999, -0.14000002)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_1" type="Node3D" parent="rm_place_shelf_slots" unique_id=660879165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11999998, 0.03999999, -0.14000003)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_2" type="Node3D" parent="rm_place_shelf_slots" unique_id=1745844090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11000001, 0.03999999, -0.14)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_3" type="Node3D" parent="rm_place_shelf_slots" unique_id=1378243516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6226834e-08, 0.03999999, -0.3)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_4" type="Node3D" parent="rm_place_shelf_slots" unique_id=1207309004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11999997, 0.03999999, -0.3)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_5" type="Node3D" parent="rm_place_shelf_slots" unique_id=809468521]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11000002, 0.03999999, -0.3)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_6" type="Node3D" parent="rm_place_shelf_slots" unique_id=904833165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41, 0.03999999, -0.14000005)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_7" type="Node3D" parent="rm_place_shelf_slots" unique_id=127368274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53, 0.03999999, -0.14000006)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_8" type="Node3D" parent="rm_place_shelf_slots" unique_id=434112707]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.03999999, -0.14000005)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_9" type="Node3D" parent="rm_place_shelf_slots" unique_id=107823541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40999997, 0.03999999, -0.30000004)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_10" type="Node3D" parent="rm_place_shelf_slots" unique_id=79426018]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53, 0.03999999, -0.30000007)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_11" type="Node3D" parent="rm_place_shelf_slots" unique_id=529290346]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29999998, 0.03999999, -0.30000004)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_12" type="Node3D" parent="rm_place_shelf_slots" unique_id=1477165320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41, 0.03999999, -0.13999999)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_13" type="Node3D" parent="rm_place_shelf_slots" unique_id=2134328053]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29000002, 0.03999999, -0.13999999)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_14" type="Node3D" parent="rm_place_shelf_slots" unique_id=523159496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52, 0.03999999, -0.13999997)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_15" type="Node3D" parent="rm_place_shelf_slots" unique_id=1599905327]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41000003, 0.03999999, -0.29999998)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_16" type="Node3D" parent="rm_place_shelf_slots" unique_id=1315882518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29000005, 0.03999999, -0.29999998)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_17" type="Node3D" parent="rm_place_shelf_slots" unique_id=944529620]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52, 0.03999999, -0.29999995)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_18" type="Node3D" parent="rm_place_shelf_slots" unique_id=897973183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.223919e-08, 0.38, -0.14000002)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_19" type="Node3D" parent="rm_place_shelf_slots" unique_id=815266770]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11999998, 0.38, -0.14000003)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_20" type="Node3D" parent="rm_place_shelf_slots" unique_id=1581754591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11000001, 0.38, -0.14)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_21" type="Node3D" parent="rm_place_shelf_slots" unique_id=1757309433]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6226834e-08, 0.38, -0.3)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_22" type="Node3D" parent="rm_place_shelf_slots" unique_id=42784309]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11999997, 0.38, -0.3)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_23" type="Node3D" parent="rm_place_shelf_slots" unique_id=1731372242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11000002, 0.38, -0.3)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_24" type="Node3D" parent="rm_place_shelf_slots" unique_id=2102733719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41, 0.38, -0.14000005)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_25" type="Node3D" parent="rm_place_shelf_slots" unique_id=124983552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53, 0.38, -0.14000006)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_26" type="Node3D" parent="rm_place_shelf_slots" unique_id=917936202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.38, -0.14000005)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_27" type="Node3D" parent="rm_place_shelf_slots" unique_id=1666069160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40999997, 0.38, -0.30000004)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_28" type="Node3D" parent="rm_place_shelf_slots" unique_id=104907254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53, 0.38, -0.30000007)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_29" type="Node3D" parent="rm_place_shelf_slots" unique_id=2132247234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29999998, 0.38, -0.30000004)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_30" type="Node3D" parent="rm_place_shelf_slots" unique_id=331255172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41, 0.38, -0.13999999)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_31" type="Node3D" parent="rm_place_shelf_slots" unique_id=1988073144]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29000002, 0.38, -0.13999999)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_32" type="Node3D" parent="rm_place_shelf_slots" unique_id=1053105314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52, 0.38, -0.13999997)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_33" type="Node3D" parent="rm_place_shelf_slots" unique_id=1930042628]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41000003, 0.38, -0.29999998)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_34" type="Node3D" parent="rm_place_shelf_slots" unique_id=2081588303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29000005, 0.38, -0.29999998)
+metadata/_edit_group_ = true
+
+[node name="rm_place_shelf_slot_35" type="Node3D" parent="rm_place_shelf_slots" unique_id=108015215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52, 0.38, -0.29999995)
+metadata/_edit_group_ = true

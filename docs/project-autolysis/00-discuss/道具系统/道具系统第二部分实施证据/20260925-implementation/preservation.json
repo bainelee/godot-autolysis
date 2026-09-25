@@ -1,0 +1,233 @@
+{
+  "时间": "2026-09-25T09:37:48.4985015+08:00",
+  "通过": true,
+  "全部快照数量": 126,
+  "改动文件": [
+    {
+      "路径": "project.godot",
+      "实施前摘要": "7FD2503EA476B6B31BCB4139DF659A51E6145460EEE01AAE14108A2837E11AE5",
+      "实施后摘要": "9F6BE3973B6741787E486C0650D8220B62D93FE827FB27035FB3DF71E5436737",
+      "保持一致": false
+    },
+    {
+      "路径": "main-autolysis\\systems\\item-system\\tests\\shelf_clearance_test.gd",
+      "实施前摘要": "A730B3AB2ACEFF97DAC0B8591DBF6C089611A75FA5550E9DCCA6FC48C59AE50A",
+      "实施后摘要": "221E517D784A9865BB0B53A695A57F74149964A0D1F839C1B1B5703625048FA5",
+      "保持一致": false
+    },
+    {
+      "路径": "main-autolysis\\systems\\item-system\\tests\\run_item_check.ps1",
+      "实施前摘要": "5D3E15321C2517EAB9F2AAA1D1EEA140F2D2C9F548511692A8101E343FF42B57",
+      "实施后摘要": "937F5CA56C9906FFB222436F4AF89BCBDFDC0E48D629BCDDE3BEF50422EA5553",
+      "保持一致": false
+    },
+    {
+      "路径": "main-autolysis\\systems\\item-system\\tests\\item_system_test.gd",
+      "实施前摘要": "98204BC22F4C1AA51A99834D812DEB59088980D2A16BC4C9A0863A0CA5CF7251",
+      "实施后摘要": "2BB76D5166075D473158DFFFD0E34C60B17447FD90E9CC8267C08B7D7448881F",
+      "保持一致": false
+    },
+    {
+      "路径": "main-autolysis\\systems\\item-system\\tests\\item_system_rendered_test.gd",
+      "实施前摘要": "4443EDF1D1E31B7C606C7E5625F019D759F4B68FCC13792529BCC05CB905E24C",
+      "实施后摘要": "539267521B4A5DC5C843A43FE875F033C5AFFAC37385529522DBD4D320BC3E4C",
+      "保持一致": false
+    },
+    {
+      "路径": "main-autolysis\\player\\tests\\player_smoke_test.gd",
+      "实施前摘要": "3CAF7ADD4DDC39DD3A32727CDDC49AFC0E609EC66ADB55440376E86B31B0E4AF",
+      "实施后摘要": "3314A86E043902F342BD023959DEF85C68A87FCD657587651F626B1655E768ED",
+      "保持一致": false
+    },
+    {
+      "路径": "main-autolysis\\player\\tests\\footstep_smoke_test.gd",
+      "实施前摘要": "E70294D96F34501C41217B69C2D7EE6FD95579BA803C80014C84535E950B966A",
+      "实施后摘要": "20FE108A04F75A6029F3D2C92263D14CAE5F19E16DCEB053EAEC5F901EAC1005",
+      "保持一致": false
+    },
+    {
+      "路径": "main-autolysis\\player\\tests\\direct_interaction_test.gd",
+      "实施前摘要": "042FA3E530EDBBBEA0DA463919D33A69D8CA4A11C40131D0C63D27CD68B35E90",
+      "实施后摘要": "65CB710263B78FCAF1DCE0B6E69698F8CE86970F703F9F23C5F636FA4CB602FF",
+      "保持一致": false
+    },
+    {
+      "路径": "main-autolysis\\player\\tests\\component_migration_test.gd",
+      "实施前摘要": "94C650D3F4E8ED2E9AD8FB62502BC14E875935E4778A58AFCAE6138A91368F3B",
+      "实施后摘要": "1EB2A6656CB6808371DF3B5C366760E5C2CE26735E93724FDF2E530F6A874CE9",
+      "保持一致": false
+    },
+    {
+      "路径": "main-autolysis\\player\\components\\interaction_raycast.tscn",
+      "实施前摘要": "0A6CEE8BAD77661893C42F8AD43ABBAC808B1FB16D5CF8905AD9EEE604110614",
+      "实施后摘要": "564A4F1B594A16390AC5BA088010B400F8CA14F2A1A6FB437C24611E9CF9435F",
+      "保持一致": false
+    },
+    {
+      "路径": "main-autolysis\\player\\components\\interaction_raycast.gd",
+      "实施前摘要": "8DEB699976CAD195A8EA9B72D99AE2D5DE9B58AA44D9B5C57BFDCABD63BAECAB",
+      "实施后摘要": "01186DAE444818B4948F5E6E50E83BEB495D3FC3ADF9E07DEAEAA802DCF4CC69",
+      "保持一致": false
+    },
+    {
+      "路径": "main-autolysis\\player\\components\\autolysis_interaction_controller.gd",
+      "实施前摘要": "9478729CCA6D364D5E05009FB2D8EC2FCE0B5925ABAA53DF67D9AB55FCBFFCF2",
+      "实施后摘要": "77390E749F963A45C8743A9C6350A7286A897726914770D8F626D6E2A2D06B04",
+      "保持一致": false
+    },
+    {
+      "路径": "main-autolysis\\player\\autolysis_player.tscn",
+      "实施前摘要": "0F802CF9C0DB5EEB262F3C4BCC8117A1BF30B7F729431DC95CA566D9E2FEAE49",
+      "实施后摘要": "0F521C749CF2B02CDCB71BE913849BCEE26E0EF6DBE9A71365E0473399B76565",
+      "保持一致": false
+    },
+    {
+      "路径": "main-autolysis\\player\\autolysis_player.gd",
+      "实施前摘要": "6C062DC9294520742D075E2231AC9E6B3469819577910388C36055ADD4AD5281",
+      "实施后摘要": "59E34BDD8B5D31C849F35C4884EC52CBABD9F6BB10C1DE0EF8A224DCB34258D4",
+      "保持一致": false
+    },
+    {
+      "路径": "main-autolysis\\scenes\\prefabs\\prefab_furnitures\\store_shelf_warehouse_0.tscn",
+      "实施前摘要": "99E8162CC271C96447E9B3DEE6DCC424982A6B3D9872E51D077E654EA478C0DD",
+      "实施后摘要": "DC510E16B0F511E424958B4D1AFAE1E50030662C9EE1166B072552EFF8F55389",
+      "保持一致": false
+    },
+    {
+      "路径": "main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\place_shelf_workroom_rm_0.tscn",
+      "实施前摘要": "ADF3B6CF05C91915991E1C02259187E3AF3580287C7E003C82471F8DF76F2B1D",
+      "实施后摘要": "681D7FF294509B1E00EFABA2AA6BD2AA934331A0F7FE310D3886F3443599D999",
+      "保持一致": false
+    }
+  ],
+  "保护对象": [
+    {
+      "路径": "main-autolysis\\ui\\inventory\\autolysis_inventory_slot.tscn",
+      "实施前摘要": "ED1C218D76A3FC60BBE7C9589B0E2078F7213741CFEDE510775E92A668A88322",
+      "实施后摘要": "ED1C218D76A3FC60BBE7C9589B0E2078F7213741CFEDE510775E92A668A88322",
+      "保持一致": true
+    },
+    {
+      "路径": "main-autolysis\\ui\\inventory\\autolysis_inventory_bar.tscn",
+      "实施前摘要": "DAB4AB54ACDAB540D856A09ADB366AB3817DBA1231C30F5CD13A2A14DEBA7E6D",
+      "实施后摘要": "DAB4AB54ACDAB540D856A09ADB366AB3817DBA1231C30F5CD13A2A14DEBA7E6D",
+      "保持一致": true
+    },
+    {
+      "路径": "main-autolysis\\ui\\inventory\\autolysis_inventory_bar.gd",
+      "实施前摘要": "233B302CF6763D100F25BA51D6DA05624F303944DCA54308E6D26657996CC6D3",
+      "实施后摘要": "233B302CF6763D100F25BA51D6DA05624F303944DCA54308E6D26657996CC6D3",
+      "保持一致": true
+    },
+    {
+      "路径": "main-autolysis\\ui\\autolysis_crosshair.tscn",
+      "实施前摘要": "9958375E76C1E95F6C4248F6FB015DBC265464B7968D06F6D5842F48309FD05B",
+      "实施后摘要": "9958375E76C1E95F6C4248F6FB015DBC265464B7968D06F6D5842F48309FD05B",
+      "保持一致": true
+    },
+    {
+      "路径": "main-autolysis\\ui\\autolysis_crosshair.gd",
+      "实施前摘要": "027707EA3F5D526DBDBAF7C0379B0B18487F3E60F14C596C91F4108589BF606D",
+      "实施后摘要": "027707EA3F5D526DBDBAF7C0379B0B18487F3E60F14C596C91F4108589BF606D",
+      "保持一致": true
+    },
+    {
+      "路径": "main-autolysis\\systems\\item-system\\items\\sodium_benzoate.tres",
+      "实施前摘要": "E1BCB9420622E8DFC5D0546ECFBB02D8E3709F9969BD50C2FD62C505D97E0210",
+      "实施后摘要": "E1BCB9420622E8DFC5D0546ECFBB02D8E3709F9969BD50C2FD62C505D97E0210",
+      "保持一致": true
+    },
+    {
+      "路径": "main-autolysis\\systems\\item-system\\items\\caffeine.tres",
+      "实施前摘要": "128E7B6C7BD9DCA6BE0D6B374BF057F40302B8222775E134D57D9DA5DC0A2446",
+      "实施后摘要": "128E7B6C7BD9DCA6BE0D6B374BF057F40302B8222775E134D57D9DA5DC0A2446",
+      "保持一致": true
+    },
+    {
+      "路径": "main-autolysis\\systems\\item-system\\autolysis_raw_material_shelf.gd",
+      "实施前摘要": "C3B7BF9529A6F1B752ABEAD5C573208395807BECA191A879A6DD3AC8A0396A9C",
+      "实施后摘要": "C3B7BF9529A6F1B752ABEAD5C573208395807BECA191A879A6DD3AC8A0396A9C",
+      "保持一致": true
+    },
+    {
+      "路径": "main-autolysis\\systems\\item-system\\autolysis_raw_material_group.gd",
+      "实施前摘要": "72881E1EDCA1F00A96B1B6A644156C21FDE949794FBFC04367EE88710725064C",
+      "实施后摘要": "72881E1EDCA1F00A96B1B6A644156C21FDE949794FBFC04367EE88710725064C",
+      "保持一致": true
+    },
+    {
+      "路径": "main-autolysis\\systems\\item-system\\autolysis_raw_material.gd",
+      "实施前摘要": "A97ACEB654327172BD562A6AD66B066442286FD23B81736EA931C0CEDD0F564D",
+      "实施后摘要": "A97ACEB654327172BD562A6AD66B066442286FD23B81736EA931C0CEDD0F564D",
+      "保持一致": true
+    },
+    {
+      "路径": "main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+      "实施前摘要": "AC1A9AF7282D9471538279E356966AB08426743088668CC2C788462B957654FE",
+      "实施后摘要": "AC1A9AF7282D9471538279E356966AB08426743088668CC2C788462B957654FE",
+      "保持一致": true
+    },
+    {
+      "路径": "main-autolysis\\player\\components\\autolysis_held_item_presenter.gd",
+      "实施前摘要": "23482A135325ED03C9243381E29274FFE9D49D20BDC1E5A0A5799E5FC20F9B80",
+      "实施后摘要": "23482A135325ED03C9243381E29274FFE9D49D20BDC1E5A0A5799E5FC20F9B80",
+      "保持一致": true
+    },
+    {
+      "路径": "main-autolysis\\scenes\\01-autolysis-test.tscn",
+      "实施前摘要": "554477FAAB33724A791C5D4C0D697B540BFD86F0EB69F2BBC3EB7AC6D808DF1D",
+      "实施后摘要": "554477FAAB33724A791C5D4C0D697B540BFD86F0EB69F2BBC3EB7AC6D808DF1D",
+      "保持一致": true
+    },
+    {
+      "路径": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_0.tscn",
+      "实施前摘要": "96DEBF163F7408F8B369BC7C04D9753E6E656E15F8064CCA4A74D8CE347A1870",
+      "实施后摘要": "96DEBF163F7408F8B369BC7C04D9753E6E656E15F8064CCA4A74D8CE347A1870",
+      "保持一致": true
+    },
+    {
+      "路径": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\visuals\\rm_sodium_benzoate_visual.tscn",
+      "实施前摘要": "F88B642590C1C5ACD99A3170B9182CF7455158AE540C03774975955FC44A7CCA",
+      "实施后摘要": "F88B642590C1C5ACD99A3170B9182CF7455158AE540C03774975955FC44A7CCA",
+      "保持一致": true
+    },
+    {
+      "路径": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\visuals\\rm_caffeine_visual.tscn",
+      "实施前摘要": "4BEF48B7322A1089C8CD4B5C4B53A72549E8F75163217A8DC8B64E3DB324D0EE",
+      "实施后摘要": "4BEF48B7322A1089C8CD4B5C4B53A72549E8F75163217A8DC8B64E3DB324D0EE",
+      "保持一致": true
+    },
+    {
+      "路径": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_group_0.tscn",
+      "实施前摘要": "B23C3312E1775BF00DFE42908BCCA85DB4E735DFB1E9A4E852D9E0D7A7265747",
+      "实施后摘要": "B23C3312E1775BF00DFE42908BCCA85DB4E735DFB1E9A4E852D9E0D7A7265747",
+      "保持一致": true
+    },
+    {
+      "路径": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_group_0.tscn",
+      "实施前摘要": "050E16ED01CB18C569F7A6E04F09CD8F1B2197C8897B01A1D21CE296B99A13A9",
+      "实施后摘要": "050E16ED01CB18C569F7A6E04F09CD8F1B2197C8897B01A1D21CE296B99A13A9",
+      "保持一致": true
+    },
+    {
+      "路径": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_0.tscn",
+      "实施前摘要": "708CB8D8BA935BE39D9F2AAE21902BE7A1295E4BEC15F6FFB7111F0234D6A1F9",
+      "实施后摘要": "708CB8D8BA935BE39D9F2AAE21902BE7A1295E4BEC15F6FFB7111F0234D6A1F9",
+      "保持一致": true
+    }
+  ],
+  "架体保护": [
+    {
+      "路径": "main-autolysis/scenes/prefabs/prefab_place_shelf/place_shelf_workroom_rm_0.tscn",
+      "非碰撞内容保持一致": true,
+      "主碰撞节点标识保持一致": true,
+      "当前碰撞形状数": 1
+    },
+    {
+      "路径": "main-autolysis/scenes/prefabs/prefab_furnitures/store_shelf_warehouse_0.tscn",
+      "非碰撞内容保持一致": true,
+      "主碰撞节点标识保持一致": true,
+      "当前碰撞形状数": 1
+    }
+  ]
+}

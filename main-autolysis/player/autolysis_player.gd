@@ -124,6 +124,9 @@ var _active_found_shape: StringName = &""
 @onready var interaction_controller: AutolysisInteractionController = $InteractionController
 @onready var interaction_crosshair: AutolysisCrosshair = $InteractionHUD/Crosshair
 @onready var wieldables: Node3D = %Wieldables
+@onready var inventory_controller: AutolysisInventoryController = $InventoryController
+@onready var held_item_presenter: AutolysisHeldItemPresenter = %HeldItemPresenter
+@onready var inventory_bar: AutolysisInventoryBar = $InventoryBar
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 
 func _ready() -> void:
@@ -138,7 +141,10 @@ func _ready() -> void:
 	item_drop_shapecast.add_exception_rid(get_rid())
 	item_drop_shapecast.add_exception_rid(_found_area.get_rid())
 	interaction_controller.direct_availability_changed.connect(interaction_crosshair.set_direct_available)
-	interaction_controller.configure(self, interaction_raycast, is_interaction_input_allowed)
+	inventory_controller.configure(held_item_presenter, is_interaction_input_allowed)
+	inventory_bar.configure(inventory_controller)
+	inventory_controller.inventory_changed.connect(interaction_controller.refresh_state)
+	interaction_controller.configure(self, interaction_raycast, is_interaction_input_allowed, inventory_controller)
 
 func is_interaction_input_allowed() -> bool:
 	return is_inside_tree() and not is_queued_for_deletion() and not get_tree().paused and not is_movement_paused and not is_showing_ui and not is_landing_stunned and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED

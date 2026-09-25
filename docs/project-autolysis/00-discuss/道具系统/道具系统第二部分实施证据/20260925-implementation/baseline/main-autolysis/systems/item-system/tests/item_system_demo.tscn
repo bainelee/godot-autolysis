@@ -1,0 +1,110 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://main-autolysis/player/autolysis_player.tscn" id="1_player"]
+[ext_resource type="PackedScene" path="res://main-autolysis/scenes/prefabs/prefab_raw_materials/rm_caffeine_group_0.tscn" id="2_caffeine"]
+[ext_resource type="PackedScene" path="res://main-autolysis/scenes/prefabs/prefab_raw_materials/rm_sodium_benzoate_group_0.tscn" id="3_sodium"]
+[ext_resource type="PackedScene" path="res://main-autolysis/scenes/prefabs/prefab_place_shelf/place_shelf_workroom_rm_0.tscn" id="4_shelf"]
+
+[sub_resource type="Environment" id="Environment_demo"]
+background_mode = 1
+background_color = Color(0.10, 0.13, 0.17, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.8, 0.86, 1, 1)
+ambient_light_energy = 0.65
+
+[sub_resource type="StandardMaterial3D" id="Material_floor"]
+albedo_color = Color(0.28, 0.31, 0.35, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="Material_bench"]
+albedo_color = Color(0.43, 0.47, 0.51, 1)
+roughness = 0.8
+
+[sub_resource type="BoxMesh" id="Mesh_floor"]
+material = SubResource("Material_floor")
+size = Vector3(20, 0.5, 16)
+
+[sub_resource type="BoxShape3D" id="Shape_floor"]
+size = Vector3(20, 0.5, 16)
+
+[sub_resource type="BoxMesh" id="Mesh_bench"]
+material = SubResource("Material_bench")
+size = Vector3(6.5, 0.72, 1)
+
+[sub_resource type="BoxShape3D" id="Shape_bench"]
+size = Vector3(6.5, 0.72, 1)
+
+[node name="ItemSystemDemo" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_demo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+rotation = Vector3(-0.8, -0.5, 0)
+light_color = Color(1, 0.94, 0.84, 1)
+light_energy = 1.25
+shadow_enabled = true
+
+[node name="FillLight" type="OmniLight3D" parent="."]
+position = Vector3(0, 3, 1.5)
+light_color = Color(0.76, 0.86, 1, 1)
+light_energy = 1.5
+omni_range = 9.0
+
+[node name="Floor" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.25, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("Mesh_floor")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("Shape_floor")
+
+[node name="Bench" type="StaticBody3D" parent="."]
+position = Vector3(0, 0.36, -0.4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bench"]
+mesh = SubResource("Mesh_bench")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bench"]
+shape = SubResource("Shape_bench")
+
+[node name="CaffeineGroup" parent="." instance=ExtResource("2_caffeine")]
+position = Vector3(-0.45, 0.72, -0.2)
+
+[node name="SodiumBenzoateGroup" parent="." instance=ExtResource("3_sodium")]
+position = Vector3(0.45, 0.72, -0.2)
+
+[node name="RawMaterialShelfLeft" parent="." instance=ExtResource("4_shelf")]
+position = Vector3(-2.1, 0.72, -0.4)
+
+[node name="RawMaterialShelfRight" parent="." instance=ExtResource("4_shelf")]
+position = Vector3(2.1, 0.72, -0.4)
+
+[node name="Title" type="Label3D" parent="."]
+position = Vector3(0, 2.3, -0.85)
+text = "道具系统演示"
+font_size = 48
+outline_size = 8
+modulate = Color(0.88, 0.94, 1, 1)
+
+[node name="Instructions" type="Label3D" parent="."]
+position = Vector3(0, 1.98, -0.85)
+text = "滚轮切格 · 空手点击原药组取药\n手持原药点击架体放入 · 空手瞄准瓶体取回"
+font_size = 28
+outline_size = 6
+
+[node name="CaffeineLabel" type="Label3D" parent="."]
+position = Vector3(-0.45, 1.05, -0.35)
+text = "咖啡因"
+font_size = 24
+outline_size = 5
+
+[node name="SodiumBenzoateLabel" type="Label3D" parent="."]
+position = Vector3(0.45, 1.05, -0.35)
+text = "苯甲酸钠"
+font_size = 24
+outline_size = 5
+
+[node name="autolysis_player" parent="." instance=ExtResource("1_player")]
+position = Vector3(0, 0.85, 1.3)

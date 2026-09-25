@@ -1,0 +1,20 @@
+{
+  "检查": "footsteps",
+  "时间": "2026-09-25T09:29:43.2267481+08:00",
+  "进程编号": 51176,
+  "退出码": 0,
+  "通过": true,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/player/tests/footstep_smoke_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/道具系统/道具系统第二部分实施证据/20260925-implementation/checks"
+  ],
+  "通过断言数": 26
+}

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b7ig87n5phibu"]
+
+[ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="1_511nl"]
+[ext_resource type="PackedScene" uid="uid://dxw4qeo54kkwp" path="res://main-autolysis/scenes/prefabs/prefab_raw_materials/rm_sodium_benzoate_0.tscn" id="2_511nl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tqe44"]
+size = Vector3(0.29999998, 0.19999999, 0.29999998)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hpy8m"]
+albedo_color = Color(0.68, 0.7, 0.66, 1)
+roughness = 0.72
+
+[sub_resource type="BoxMesh" id="BoxMesh_tqe44"]
+material = SubResource("StandardMaterial3D_hpy8m")
+size = Vector3(0.3, 0.02, 0.3)
+
+[node name="rm_sodium_benzoate_group_0" type="StaticBody3D" unique_id=589747057]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=261867134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4901161e-08, 0.099999994, -1.4901161e-08)
+shape = SubResource("BoxShape3D_tqe44")
+
+[node name="meshes" type="MeshInstance3D" parent="." unique_id=735685735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.450581e-09, 0.009999976, -7.450581e-09)
+material_override = ExtResource("1_511nl")
+mesh = SubResource("BoxMesh_tqe44")
+
+[node name="rm_sodium_benzoate_0" parent="meshes" unique_id=2117740375 instance=ExtResource("2_511nl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07, 0, 0.07)
+
+[node name="rm_sodium_benzoate_1" parent="meshes" unique_id=995923593 instance=ExtResource("2_511nl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07, 0, -0.07)
+
+[node name="rm_sodium_benzoate_2" parent="meshes" unique_id=1819891113 instance=ExtResource("2_511nl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, 0, 0.07)
+
+[node name="rm_sodium_benzoate_3" parent="meshes" unique_id=1923187452 instance=ExtResource("2_511nl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, 0, -0.07)

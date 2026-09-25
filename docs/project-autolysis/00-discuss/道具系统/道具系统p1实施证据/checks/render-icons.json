@@ -1,0 +1,14 @@
+{
+  "检查": "render-icons",
+  "时间": "2026-09-25T08:17:03.2814116+08:00",
+  "进程编号": 18136,
+  "退出码": 0,
+  "通过": true,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/render_item_icons.gd"
+  ],
+  "通过断言数": 0
+}

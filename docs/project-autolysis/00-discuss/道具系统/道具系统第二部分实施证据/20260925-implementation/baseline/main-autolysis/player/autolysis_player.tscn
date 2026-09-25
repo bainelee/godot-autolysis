@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://dtsjcbeaeibks"]
+
+[ext_resource type="Script" uid="uid://br87edn5s6nes" path="res://main-autolysis/player/autolysis_player.gd" id="1_player"]
+[ext_resource type="AnimationLibrary" uid="uid://cdchpsv104er2" path="res://main-autolysis/player/assets/player_eyes.tres" id="10_tp6cj"]
+[ext_resource type="Script" uid="uid://b1qja1tbw5e1j" path="res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_surface_detector.gd" id="20_detector"]
+[ext_resource type="AudioStream" uid="uid://dc03jiw2a6y3j" path="res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/generic_footstep_profile.tres" id="21_generic"]
+[ext_resource type="Resource" uid="uid://ca0q2t6w08ubh" path="res://main-autolysis/systems/dynamic-footstep-system/footstep-material-library/sample_footstep_material_library.tres" id="22_library"]
+
+[ext_resource type="PackedScene" uid="uid://cbd2ojah4nun6" path="res://main-autolysis/player/components/interaction_raycast.tscn" id="10_2dndr"]
+[ext_resource type="Script" uid="uid://ua63m2y35w46" path="res://main-autolysis/player/components/item_drop_shape_cast.gd" id="14_bpb0d"]
+[ext_resource type="Script" uid="uid://017wlbrnndy0" path="res://main-autolysis/player/components/wieldables_sway.gd" id="12_lr21i"]
+
+[ext_resource type="Script" path="res://main-autolysis/player/components/autolysis_interaction_controller.gd" id="30_interaction"]
+[ext_resource type="PackedScene" path="res://main-autolysis/ui/autolysis_crosshair.tscn" id="31_crosshair"]
+[ext_resource type="Script" path="res://main-autolysis/player/components/autolysis_inventory_controller.gd" id="32_inventory"]
+[ext_resource type="Script" path="res://main-autolysis/player/components/autolysis_held_item_presenter.gd" id="33_held"]
+[ext_resource type="PackedScene" path="res://main-autolysis/ui/inventory/autolysis_inventory_bar.tscn" id="34_bar"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8vem4"]
+size = Vector3(0.6, 1.7, 0.6)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_m05wr"]
+height = 1.0
+radius = 0.4
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_s725a"]
+radius = 0.6
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wx2rv"]
+radius = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gieh4"]
+radius = 3.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ut3wm"]
+size = Vector3(0.6, 0.7, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bpb0d"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="autolysis_player" type="CharacterBody3D" unique_id=602416880 node_paths=PackedStringArray("item_drop_shapecast") groups=["Player"]]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+script = ExtResource("1_player")
+item_drop_shapecast = NodePath("Body/Neck/Head/Eyes/Camera/ItemDropShapeCast")
+WALKING_SPEED = 2.5
+SPRINTING_SPEED = 4.0
+CROUCHING_SPEED = 2.0
+SLIDE_JUMP_MOD = 1.3
+INVERT_Y_AXIS = false
+TOGGLE_CROUCH = true
+HEADBOBBLE = 2
+STEP_HEIGHT_DEFAULT = Vector3(0, 0.35, 0)
+STEP_MAX_SLOPE_DEGREE = 1.0
+
+[node name="StandingCollisionShape" type="CollisionShape3D" parent="." unique_id=460132306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+shape = SubResource("BoxShape3D_8vem4")
+debug_color = Color(6.256998e-07, 0.63358766, 0.44232926, 0.41960785)
+
+[node name="DegaussPlayerFoundArea" type="StaticBody3D" parent="." unique_id=1987654321]
+collision_layer = 4
+collision_mask = 0
+
+[node name="found_collision_crouching" type="CollisionShape3D" parent="DegaussPlayerFoundArea" unique_id=1240567729]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+shape = SubResource("CylinderShape3D_m05wr")
+disabled = true
+debug_color = Color(0.8436037, 0.37584272, 0, 0.84705883)
+
+[node name="found_collision_standing" type="CollisionShape3D" parent="DegaussPlayerFoundArea" unique_id=1532251392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19999999, 0)
+shape = SubResource("CylinderShape3D_s725a")
+disabled = true
+debug_color = Color(6.256998e-07, 0.62638843, 0.49166477, 0.84705883)
+
+[node name="found_collision_walking" type="CollisionShape3D" parent="DegaussPlayerFoundArea" unique_id=2775080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19999999, 0)
+shape = SubResource("CylinderShape3D_wx2rv")
+disabled = true
+debug_color = Color(6.256998e-07, 0.62638843, 0.49166477, 0.84705883)
+
+[node name="found_collision_running" type="CollisionShape3D" parent="DegaussPlayerFoundArea" unique_id=1488740042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19999999, 0)
+shape = SubResource("CylinderShape3D_gieh4")
+disabled = true
+debug_color = Color(0.9883905, 0, 0.2652645, 0.84705883)
+
+[node name="CrouchingCollisionShape" type="CollisionShape3D" parent="." unique_id=1510468957]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45, 0)
+shape = SubResource("BoxShape3D_ut3wm")
+disabled = true
+
+[node name="StaircheckRayCast3D" type="RayCast3D" parent="." unique_id=397937254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+target_position = Vector3(0, -0.5, 0)
+
+[node name="CrouchRayCast" type="RayCast3D" parent="." unique_id=532184779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+target_position = Vector3(0, 1.6, 0)
+collision_mask = 3
+
+[node name="Body" type="Node3D" parent="." unique_id=244894796]
+
+[node name="Neck" type="Node3D" parent="Body" unique_id=147329215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="Head" type="Node3D" parent="Body/Neck" unique_id=1290410134]
+
+[node name="Eyes" type="Node3D" parent="Body/Neck/Head" unique_id=1103863427]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Body/Neck/Head/Eyes" unique_id=1826802886]
+reset_on_save = false
+root_node = NodePath("../..")
+libraries/ = ExtResource("10_tp6cj")
+
+[node name="Camera" type="Camera3D" parent="Body/Neck/Head/Eyes" unique_id=1299952309]
+
+[node name="SlidingTimer" type="Timer" parent="." unique_id=275588874]
+wait_time = 1.5
+one_shot = true
+
+[node name="JumpCooldownTimer" type="Timer" parent="." unique_id=411737257]
+wait_time = 0.5
+one_shot = true
+
+[node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1923883232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.488, 0)
+volume_db = -25.0
+max_polyphony = 8
+bus = &"SFX"
+script = ExtResource("20_detector")
+generic_fallback_footstep_profile = ExtResource("21_generic")
+footstep_material_library = ExtResource("22_library")
+generic_fallback_landing_profile = ExtResource("21_generic")
+landing_material_library = ExtResource("22_library")
+
+[node name="LandingPlayer" type="AudioStreamPlayer3D" parent="FootstepPlayer" unique_id=1241389005]
+max_polyphony = 4
+bus = &"SFX"
+
+[node name="InteractionRaycast" parent="Body/Neck/Head/Eyes/Camera" unique_id=165015461 instance=ExtResource("10_2dndr")]
+
+[node name="CarryablePosition" type="Marker3D" parent="Body/Neck/Head/Eyes/Camera" unique_id=952068958]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.8)
+
+[node name="ItemDropShapeCast" type="ShapeCast3D" parent="Body/Neck/Head/Eyes/Camera" unique_id=197960388]
+shape = SubResource("BoxShape3D_bpb0d")
+target_position = Vector3(0, 0, -2)
+collision_mask = 3
+debug_shape_custom_color = Color(1, 0.368977, 0.687569, 1)
+script = ExtResource("14_bpb0d")
+
+[node name="Wieldables" type="Node3D" parent="Body/Neck/Head" unique_id=1926892206]
+unique_name_in_owner = true
+script = ExtResource("12_lr21i")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=43298444]
+
+[node name="HeldItemPresenter" type="Node3D" parent="Body/Neck/Head/Wieldables"]
+unique_name_in_owner = true
+script = ExtResource("33_held")
+
+[node name="InventoryController" type="Node" parent="."]
+script = ExtResource("32_inventory")
+
+[node name="InventoryBar" parent="." instance=ExtResource("34_bar")]
+
+[node name="InteractionController" type="Node" parent="."]
+script = ExtResource("30_interaction")
+
+[node name="InteractionHUD" parent="." instance=ExtResource("31_crosshair")]
+
+[connection signal="timeout" from="SlidingTimer" to="." method="_on_sliding_timer_timeout"]
+
+[connection signal="mouse_movement" from="." to="Body/Neck/Head/Wieldables" method="sway"]
+
+[connection signal="animation_finished" from="Body/Neck/Head/Eyes/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

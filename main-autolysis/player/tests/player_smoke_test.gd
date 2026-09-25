@@ -114,6 +114,7 @@ func run_checks() -> void:
 	ceiling.queue_free()
 	await frames(40)
 	check(not player.is_crouching, "离开低顶后恢复站立")
+	await check_shelf_physics()
 	world.queue_free()
 	await frames(3)
 	var scene: Node = load("res://main-autolysis/scenes/01-autolysis-test.tscn").instantiate()
@@ -125,8 +126,68 @@ func run_checks() -> void:
 	check(scene.get_script() == null, "默认场景不再挂载原框架场景脚本")
 	if DisplayServer.get_name() != "headless":
 		await RenderingServer.frame_post_draw
-		root.get_texture().get_image().save_png("res://.godot/player-scene-verification.png")
+		var evidence: String = preload("res://main-autolysis/systems/item-system/tests/test_evidence.gd").directory("res://.godot")
+		root.get_texture().get_image().save_png(evidence.path_join("player-scene-verification.png"))
 	scene.queue_free()
 	await frames(2)
 	print("失败总数：", failures)
 	quit(1 if failures else 0)
+
+
+func check_shelf_physics() -> void:
+	var records: Array[Dictionary] = []
+	for scene_path: String in ["res://main-autolysis/scenes/prefabs/prefab_place_shelf/place_shelf_workroom_rm_0.tscn", "res://main-autolysis/scenes/prefabs/prefab_furnitures/store_shelf_warehouse_0.tscn"]:
+		await reset_player()
+		var shelf: StaticBody3D = load(scene_path).instantiate() as StaticBody3D
+		world.add_child(shelf)
+		shelf.position = Vector3(0, 0, -2)
+		# 原药架半米高度高于可跨台阶，实际玩家持续运动检测应停在架外。
+		var start: Vector3 = player.position
+		var touched: bool = false
+		Input.action_press("forward")
+		for frame: int in range(120):
+			await frames(1)
+			for index: int in range(player.get_slide_collision_count()):
+				if player.get_slide_collision(index).get_collider() == shelf:
+					touched = true
+		Input.action_release("forward")
+		check(player.position.z > -1.6 and player.position.z < start.z - 0.3 and touched, "实际物理处理持续行走被整体架体阻挡并记录接触")
+		records.append({"架子": scene_path, "起点": str(start), "终点": str(player.position), "接触架体": touched, "物理处理启用": player.is_physics_processing()})
+		shelf.queue_free()
+		await frames(3)
+	await reset_player()
+	var step: StaticBody3D = box(Vector3(5, 0.2, 4), Vector3(0, 0.1, -3))
+	step.collision_layer = 8
+	Input.action_press("forward")
+	await frames(60)
+	Input.action_release("forward")
+	var stair: RayCast3D = player.get_node("StaircheckRayCast3D")
+	stair.force_raycast_update()
+	check(player.position.z < -1.5 and player.position.y > 0.95 and stair.get_collider() == step, "实际运动跨上第四层台阶且台阶射线命中")
+	records.append({"检查": "第四层台阶", "终点": str(player.position), "台阶命中": stair.get_collider() == step})
+	step.queue_free()
+	await reset_player()
+	await tap("crouch")
+	var ceiling: StaticBody3D = box(Vector3(4, 0.2, 4), Vector3(0, 1.25, 0))
+	ceiling.collision_layer = 8
+	await frames(3)
+	await tap("crouch")
+	check(player.is_crouching and player.crouch_raycast.get_collider() == ceiling, "第四层头顶实体阻止实际玩家起身")
+	records.append({"检查": "第四层头顶", "蹲伏": player.is_crouching, "头顶命中": player.crouch_raycast.get_collider() == ceiling})
+	ceiling.queue_free()
+	await frames(40)
+	check(not player.is_crouching, "移除第四层头顶实体后恢复站立")
+	await reset_player()
+	var target: StaticBody3D = box(Vector3(0.4, 0.4, 0.2), player.camera.global_position + Vector3(0, 0, -1))
+	target.collision_layer = 8
+	await frames(3)
+	player.item_drop_shapecast.force_shapecast_update()
+	check(player.item_drop_shapecast.is_colliding() and player.item_drop_shapecast.get_collider(0) == target, "投放形状实际命中第四层实体")
+	target.queue_free()
+	await frames(3)
+	var evidence: String = preload("res://main-autolysis/systems/item-system/tests/test_evidence.gd").directory("res://.godot")
+	var file: FileAccess = FileAccess.open(evidence.path_join("shelf-physics.json"), FileAccess.WRITE)
+	check(file != null, "保存实际移动与接触记录")
+	if file != null:
+		file.store_string(JSON.stringify(records, "\t"))
+		file.close()

@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://b57srlut3yw3j"]
+
+[ext_resource type="Material" uid="uid://5yjf2yjo2u7l" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_1.tres" id="1_p3aev"]
+[ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="2_je7p2"]
+[ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="3_5vnea"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4qoi"]
+albedo_color = Color(0.68, 0.7, 0.66, 1)
+roughness = 0.72
+
+[sub_resource type="BoxMesh" id="BoxMesh_u2h4r"]
+material = SubResource("StandardMaterial3D_u4qoi")
+size = Vector3(0.4, 0.5, 0.4)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_p3aev"]
+data = PackedVector3Array(-0.19999999, 0.25, 0.19999999, 0.19999999, 0.25, 0.19999999, -0.19999999, -0.25, 0.19999999, 0.19999999, 0.25, 0.19999999, 0.19999999, -0.25, 0.19999999, -0.19999999, -0.25, 0.19999999, 0.19999999, 0.25, -0.19999999, -0.19999999, 0.25, -0.19999999, 0.19999999, -0.25, -0.19999999, -0.19999999, 0.25, -0.19999999, -0.19999999, -0.25, -0.19999999, 0.19999999, -0.25, -0.19999999, 0.19999999, 0.25, 0.19999999, 0.19999999, 0.25, -0.19999999, 0.19999999, -0.25, 0.19999999, 0.19999999, 0.25, -0.19999999, 0.19999999, -0.25, -0.19999999, 0.19999999, -0.25, 0.19999999, -0.19999999, 0.25, -0.19999999, -0.19999999, 0.25, 0.19999999, -0.19999999, -0.25, -0.19999999, -0.19999999, 0.25, 0.19999999, -0.19999999, -0.25, 0.19999999, -0.19999999, -0.25, -0.19999999, 0.19999999, 0.25, 0.19999999, -0.19999999, 0.25, 0.19999999, 0.19999999, 0.25, -0.19999999, -0.19999999, 0.25, 0.19999999, -0.19999999, 0.25, -0.19999999, 0.19999999, 0.25, -0.19999999, -0.19999999, -0.25, 0.19999999, 0.19999999, -0.25, 0.19999999, -0.19999999, -0.25, -0.19999999, 0.19999999, -0.25, 0.19999999, 0.19999999, -0.25, -0.19999999, -0.19999999, -0.25, -0.19999999)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yg5ly"]
+material = SubResource("StandardMaterial3D_u4qoi")
+size = Vector3(0.44, 0.1, 0.44)
+
+[sub_resource type="BoxMesh" id="BoxMesh_07keh"]
+material = SubResource("StandardMaterial3D_u4qoi")
+size = Vector3(0.3, 0.04, 0.04)
+
+[sub_resource type="BoxMesh" id="BoxMesh_h53my"]
+material = SubResource("StandardMaterial3D_u4qoi")
+size = Vector3(0.04, 0.04, 0.04)
+
+[node name="waste_liquid_storage_tank_0" type="StaticBody3D" unique_id=647522578]
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=61027256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.19999999)
+material_override = ExtResource("1_p3aev")
+mesh = SubResource("BoxMesh_u2h4r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1217657102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.19999999)
+shape = SubResource("ConcavePolygonShape3D_p3aev")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="." unique_id=1606019668]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54999995, 0.19999999)
+material_override = ExtResource("2_je7p2")
+mesh = SubResource("BoxMesh_yg5ly")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="." unique_id=1115690065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66, 0.35999998)
+material_override = ExtResource("3_5vnea")
+mesh = SubResource("BoxMesh_07keh")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="." unique_id=1119953233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13, 0.62000006, 0.35999998)
+material_override = ExtResource("3_5vnea")
+mesh = SubResource("BoxMesh_h53my")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="." unique_id=2037352507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13, 0.62000006, 0.35999998)
+material_override = ExtResource("3_5vnea")
+mesh = SubResource("BoxMesh_h53my")

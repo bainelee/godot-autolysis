@@ -1,0 +1,18 @@
+{
+  "检查": "demo-load-final",
+  "时间": "2026-09-25T08:35:39.0839598+08:00",
+  "进程编号": 15988,
+  "退出码": 0,
+  "通过": true,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--quit-after",
+    "120",
+    "res://main-autolysis/systems/item-system/tests/item_system_demo.tscn"
+  ],
+  "通过断言数": 0
+}

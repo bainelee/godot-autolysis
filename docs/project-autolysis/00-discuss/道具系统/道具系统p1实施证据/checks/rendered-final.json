@@ -1,0 +1,14 @@
+{
+  "检查": "rendered-final",
+  "时间": "2026-09-25T08:32:38.6281202+08:00",
+  "进程编号": 7936,
+  "退出码": 0,
+  "通过": true,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/item_system_rendered_test.gd"
+  ],
+  "通过断言数": 49
+}

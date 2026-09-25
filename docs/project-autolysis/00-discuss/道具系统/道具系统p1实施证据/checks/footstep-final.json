@@ -1,0 +1,17 @@
+{
+  "检查": "footstep-final",
+  "时间": "2026-09-25T08:33:26.6672009+08:00",
+  "进程编号": 30652,
+  "退出码": 1,
+  "通过": false,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/player/tests/footstep_smoke_test.gd"
+  ],
+  "通过断言数": 24
+}

@@ -1,0 +1,506 @@
+[
+  {
+    "Path": "project.godot",
+    "SHA256": "7FD2503EA476B6B31BCB4139DF659A51E6145460EEE01AAE14108A2837E11AE5"
+  },
+  {
+    "Path": "AGENTS.md",
+    "SHA256": "F63E306347A4B4F41D957978633078B67D1DF8F5DFE4940F61B7C93CBC65E72A"
+  },
+  {
+    "Path": "main-autolysis\\ui\\inventory\\autolysis_inventory_slot.tscn",
+    "SHA256": "ED1C218D76A3FC60BBE7C9589B0E2078F7213741CFEDE510775E92A668A88322"
+  },
+  {
+    "Path": "main-autolysis\\ui\\inventory\\autolysis_inventory_bar.tscn",
+    "SHA256": "DAB4AB54ACDAB540D856A09ADB366AB3817DBA1231C30F5CD13A2A14DEBA7E6D"
+  },
+  {
+    "Path": "main-autolysis\\ui\\inventory\\autolysis_inventory_bar.gd",
+    "SHA256": "233B302CF6763D100F25BA51D6DA05624F303944DCA54308E6D26657996CC6D3"
+  },
+  {
+    "Path": "main-autolysis\\ui\\autolysis_crosshair.tscn",
+    "SHA256": "9958375E76C1E95F6C4248F6FB015DBC265464B7968D06F6D5842F48309FD05B"
+  },
+  {
+    "Path": "main-autolysis\\ui\\autolysis_crosshair.gd",
+    "SHA256": "027707EA3F5D526DBDBAF7C0379B0B18487F3E60F14C596C91F4108589BF606D"
+  },
+  {
+    "Path": "main-autolysis\\systems\\item-system\\tests\\shelf_clearance_test.gd",
+    "SHA256": "A730B3AB2ACEFF97DAC0B8591DBF6C089611A75FA5550E9DCCA6FC48C59AE50A"
+  },
+  {
+    "Path": "main-autolysis\\systems\\item-system\\tests\\run_item_check.ps1",
+    "SHA256": "5D3E15321C2517EAB9F2AAA1D1EEA140F2D2C9F548511692A8101E343FF42B57"
+  },
+  {
+    "Path": "main-autolysis\\systems\\item-system\\tests\\render_item_icons.gd",
+    "SHA256": "94F0DE442CA099A5D30E9AA4591E2E1AAD687F9A1623CA16C5513521428AB6E6"
+  },
+  {
+    "Path": "main-autolysis\\systems\\item-system\\tests\\item_system_test.gd",
+    "SHA256": "98204BC22F4C1AA51A99834D812DEB59088980D2A16BC4C9A0863A0CA5CF7251"
+  },
+  {
+    "Path": "main-autolysis\\systems\\item-system\\tests\\item_system_rendered_test.gd",
+    "SHA256": "4443EDF1D1E31B7C606C7E5625F019D759F4B68FCC13792529BCC05CB905E24C"
+  },
+  {
+    "Path": "main-autolysis\\systems\\item-system\\tests\\item_system_demo.tscn",
+    "SHA256": "3139F0A9D62558D781B845C6C5A95F1D11A8A8C7B29E967242F321251AEC3978"
+  },
+  {
+    "Path": "main-autolysis\\systems\\item-system\\items\\sodium_benzoate.tres",
+    "SHA256": "E1BCB9420622E8DFC5D0546ECFBB02D8E3709F9969BD50C2FD62C505D97E0210"
+  },
+  {
+    "Path": "main-autolysis\\systems\\item-system\\items\\caffeine.tres",
+    "SHA256": "128E7B6C7BD9DCA6BE0D6B374BF057F40302B8222775E134D57D9DA5DC0A2446"
+  },
+  {
+    "Path": "main-autolysis\\systems\\item-system\\autolysis_raw_material_shelf.gd",
+    "SHA256": "C3B7BF9529A6F1B752ABEAD5C573208395807BECA191A879A6DD3AC8A0396A9C"
+  },
+  {
+    "Path": "main-autolysis\\systems\\item-system\\autolysis_raw_material_group.gd",
+    "SHA256": "72881E1EDCA1F00A96B1B6A644156C21FDE949794FBFC04367EE88710725064C"
+  },
+  {
+    "Path": "main-autolysis\\systems\\item-system\\autolysis_raw_material.gd",
+    "SHA256": "A97ACEB654327172BD562A6AD66B066442286FD23B81736EA931C0CEDD0F564D"
+  },
+  {
+    "Path": "main-autolysis\\systems\\item-system\\autolysis_item_definition.gd",
+    "SHA256": "0B351468E056185CAFD4DC12318EACDC164F66D8E1E6681E6AF7536CB7561191"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_surface_detector.gd",
+    "SHA256": "61FF789A1AA640A2505D087B4C11FD165AD17F7F72474FD8803F87B0D3259552"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_surface.gd",
+    "SHA256": "6346CBD1020A16B186326155179D7ABE1C79BE6807BC87D47F4A7E43B1399703"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_material_profile.gd",
+    "SHA256": "B36F723AE97F1340556DD9C5B0491AA63737604717833D2D21689D660A54E82D"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_material_library.gd",
+    "SHA256": "55F6C68FA5BD83A154A1FF9C230C81F5B9ABD7E4F9A8E58BF9856EC9BDD2DC25"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\wood_footstep_profile.tres",
+    "SHA256": "F4FEB344F9A20D2716253BC1BACC0E0E22F2EA0094DED8192C6094091F27054D"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\stone_footstep_profile.tres",
+    "SHA256": "4F31FC21D414A7EEE163A1BB5C902F29D60C15C9AC346AFBC4C4646412E0E50A"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\metal_footstep_light_profile.tres",
+    "SHA256": "4846E40AD4F8BD2D94AA51C3421C5A4B507A4852B28E5206F4B0011585D0F3A4"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\metal_footstep_hard_profile.tres",
+    "SHA256": "8BAD28F2E518596D41BC4255F131EFBA18FC9D7AC2E8A8FCDB84D7B00B4E6431"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\grass_footstep_profile.tres",
+    "SHA256": "5B61A29366F3A19D7426218875FBB1E2AD6EEC42F9B0342348C01B22F4CCD384"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\generic_footstep_profile.tres",
+    "SHA256": "9F7E38AF65B1CD7949A9BC482EA988A2712669E9523835A20FF3A8F486FA8673"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\dirt_footstep_profile.tres",
+    "SHA256": "1655C6EB425866C2B8C446DA240C02035A86F93CB0D26147F649E29FC85921AA"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-material-library\\sample_footstep_material_library.tres",
+    "SHA256": "D0F62A1D04CBC4897D68311C3E29F5DB37DA9365D9FABACF96762BA03C7AFC30"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\dynamic_footstep_demo_scene.tscn",
+    "SHA256": "38E68274EC4EB4024685B341635A1E4B8FD3CA98FD81DB361168A99F4D7202B0"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_orange.tres",
+    "SHA256": "4DD34B83CFD29B6FD596F1E2FBA369E80F412D5164E39B10A1AEC5C2CEBA955C"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_light_grey.tres",
+    "SHA256": "354CDF329FC5F54724B2619CC180EA3A6997A294A8318BADCE0E7EBC49DF84F8"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_green.tres",
+    "SHA256": "931D1C8212F1387ABDAEB593563E027796DD0434A6524AF2B406D46F280268BF"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_dark_grey.tres",
+    "SHA256": "F29DBB94EA76F2761EFDE42212F466351DCA7EA03259E299385C5076317AF505"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_brown.tres",
+    "SHA256": "FB889FCC689F0323EB5B1EBC04C07B8D61044EAAD55D56CE773FCB674BCB86FA"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_wood.tres",
+    "SHA256": "714FC73BE2D43613B554F2B601BD2CD9FA801EB65D96CDA76A3438A42ED1A7F4"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_stone.tres",
+    "SHA256": "846E07893FC25D50FD56E9FC2D5A4C3D5ABD86186ECECBC231B9DDC9986420C7"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_grass.tres",
+    "SHA256": "DBED9DEF9153F3B32FC348CA89A8386FA2773D99161AC70792CC554274F2EC26"
+  },
+  {
+    "Path": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_dirt.tres",
+    "SHA256": "57443A5549DEA011FD1F52CC50DFD4D3E36C0499407FA955B6A90AF95D19A221"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\tests\\prefab_node_path_test.gd",
+    "SHA256": "E9B4AFE729C63E1E22CBC00E3CF2C91131B1663F764CE9B7B4AA99A42CFE58C2"
+  },
+  {
+    "Path": "main-autolysis\\player\\tests\\run_interaction_verification.ps1",
+    "SHA256": "203BD88002F8A34B7F301792E563124B42B22A1154D44F1F813BB44965630860"
+  },
+  {
+    "Path": "main-autolysis\\components\\interactions\\autolysis_interaction_component.tscn",
+    "SHA256": "A4F12CB6ADDE0F4343C438C3076CC4AA7E5A0528CABECF29DE825EA2FD38727F"
+  },
+  {
+    "Path": "main-autolysis\\player\\tests\\player_smoke_test.gd",
+    "SHA256": "3CAF7ADD4DDC39DD3A32727CDDC49AFC0E609EC66ADB55440376E86B31B0E4AF"
+  },
+  {
+    "Path": "main-autolysis\\player\\tests\\footstep_smoke_test.gd",
+    "SHA256": "E70294D96F34501C41217B69C2D7EE6FD95579BA803C80014C84535E950B966A"
+  },
+  {
+    "Path": "main-autolysis\\components\\interactions\\autolysis_interaction_component.gd",
+    "SHA256": "C0E250B28B609374DB4F7AB002D3413750E8C03CF4632658B21FB829AEBBC00A"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\glow_color\\mat_glow_white_0.tres",
+    "SHA256": "030D0B2F149F4D173343DCA345F0B62D2C44E6CA139013182391818B906D753A"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\glow_color\\mat_glow_green_0.tres",
+    "SHA256": "00353ED730580402F99E4EBE28077DF08CFBBFCF246767B4A17D73C1D3ADA052"
+  },
+  {
+    "Path": "main-autolysis\\player\\tests\\fixtures\\direct_interaction_demo.gd",
+    "SHA256": "4415A21E2FFEF1D0190B17A024E5FD93E1DFC9BCBB853688D4B444D9DDD8CAD9"
+  },
+  {
+    "Path": "main-autolysis\\player\\tests\\direct_interaction_test.gd",
+    "SHA256": "042FA3E530EDBBBEA0DA463919D33A69D8CA4A11C40131D0C63D27CD68B35E90"
+  },
+  {
+    "Path": "main-autolysis\\player\\tests\\direct_interaction_demo.tscn",
+    "SHA256": "EFB858E3DB753DBDE4101930CFCEC57108AFA1B668F4DBAEEACCEA66502FAF28"
+  },
+  {
+    "Path": "main-autolysis\\player\\tests\\component_migration_test.gd",
+    "SHA256": "94C650D3F4E8ED2E9AD8FB62502BC14E875935E4778A58AFCAE6138A91368F3B"
+  },
+  {
+    "Path": "main-autolysis\\player\\components\\wieldables_sway.gd",
+    "SHA256": "26C9EC6363551E822D8FA356195C9F8E8D68D9BB1353DB8132EE9891367421FD"
+  },
+  {
+    "Path": "main-autolysis\\player\\components\\item_drop_shape_cast.gd",
+    "SHA256": "8303C2EFA35EB8ACEF2E9B82CBB1D219C93D994CC91A4D8B6593ABD81D627F4A"
+  },
+  {
+    "Path": "main-autolysis\\player\\components\\interaction_raycast.tscn",
+    "SHA256": "0A6CEE8BAD77661893C42F8AD43ABBAC808B1FB16D5CF8905AD9EEE604110614"
+  },
+  {
+    "Path": "main-autolysis\\player\\components\\interaction_raycast.gd",
+    "SHA256": "8DEB699976CAD195A8EA9B72D99AE2D5DE9B58AA44D9B5C57BFDCABD63BAECAB"
+  },
+  {
+    "Path": "main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+    "SHA256": "AC1A9AF7282D9471538279E356966AB08426743088668CC2C788462B957654FE"
+  },
+  {
+    "Path": "main-autolysis\\player\\components\\autolysis_interaction_controller.gd",
+    "SHA256": "9478729CCA6D364D5E05009FB2D8EC2FCE0B5925ABAA53DF67D9AB55FCBFFCF2"
+  },
+  {
+    "Path": "main-autolysis\\player\\components\\autolysis_held_item_presenter.gd",
+    "SHA256": "23482A135325ED03C9243381E29274FFE9D49D20BDC1E5A0A5799E5FC20F9B80"
+  },
+  {
+    "Path": "main-autolysis\\player\\autolysis_player.tscn",
+    "SHA256": "0F802CF9C0DB5EEB262F3C4BCC8117A1BF30B7F729431DC95CA566D9E2FEAE49"
+  },
+  {
+    "Path": "main-autolysis\\player\\autolysis_player.gd",
+    "SHA256": "6C062DC9294520742D075E2231AC9E6B3469819577910388C36055ADD4AD5281"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\01-autolysis-test.tscn",
+    "SHA256": "554477FAAB33724A791C5D4C0D697B540BFD86F0EB69F2BBC3EB7AC6D808DF1D"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\confessional_and_trade_0.tscn",
+    "SHA256": "CE93D191CFD2025207E687B549F67925D9F098593FE72AE69613958884DDED93"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_0.tscn",
+    "SHA256": "96DEBF163F7408F8B369BC7C04D9753E6E656E15F8064CCA4A74D8CE347A1870"
+  },
+  {
+    "Path": "main-autolysis\\player\\assets\\player_eyes.tres",
+    "SHA256": "40E155AE4C5735A0AC837CF71B4B9A0CB19CB125375419760687D64350A743D1"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\visuals\\rm_sodium_benzoate_visual.tscn",
+    "SHA256": "F88B642590C1C5ACD99A3170B9182CF7455158AE540C03774975955FC44A7CCA"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\visuals\\rm_caffeine_visual.tscn",
+    "SHA256": "4BEF48B7322A1089C8CD4B5C4B53A72549E8F75163217A8DC8B64E3DB324D0EE"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_furnitures\\bed_0.tscn",
+    "SHA256": "C32C2AB084F46BE0E7224BA496B22F8ED8A91F33F3ED51124B57C0CCAD1EC2E7"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_group_0.tscn",
+    "SHA256": "B23C3312E1775BF00DFE42908BCCA85DB4E735DFB1E9A4E852D9E0D7A7265747"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_group_0.tscn",
+    "SHA256": "050E16ED01CB18C569F7A6E04F09CD8F1B2197C8897B01A1D21CE296B99A13A9"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_0.tscn",
+    "SHA256": "708CB8D8BA935BE39D9F2AAE21902BE7A1295E4BEC15F6FFB7111F0234D6A1F9"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_furnitures\\wall_air_vent_0.tscn",
+    "SHA256": "2F79C6481B58F40E4441737FF58302EC3F611FE9B0036A400F892E1BB8F986B8"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_furnitures\\store_shelf_warehouse_0.tscn",
+    "SHA256": "99E8162CC271C96447E9B3DEE6DCC424982A6B3D9872E51D077E654EA478C0DD"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_furnitures\\light_prefab_uplight_0.tscn",
+    "SHA256": "8C3A31C9C98C36BDA22289F8CE086A439810512FCA5C7CA727C618A5C189566D"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_furnitures\\light_prefab_small_wall_0.tscn",
+    "SHA256": "D09B66067422E2969FABBDEC6D3B623431B4C78E66230644E2CF175C9EAB19A0"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\place_shelf_workroom_rm_0.tscn",
+    "SHA256": "ADF3B6CF05C91915991E1C02259187E3AF3580287C7E003C82471F8DF76F2B1D"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\place_shelf_workroom_bottle_0.tscn",
+    "SHA256": "8B309C1AAB61AF8CB063A27BAF5C419000A349075346158676755574767A3FD3"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_white_1.tres",
+    "SHA256": "D4D5B9E0D5A76C00F85710BECF6D5D07468E6678CB7374F3AD4E2A8DB9352D76"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_white_0.tres",
+    "SHA256": "210A7E6A205C5C18211D4FE69E199F9CFA9C77AB7AD7C80916A0EDD5761918C0"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_red_3.tres",
+    "SHA256": "36FEB008DC3A0355C0582E188D8F0A23DAD52BC1BC126E1B7224985844135EB9"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_red_2.tres",
+    "SHA256": "2B956E95C8789E9EAEDD2FC9DB69630DE8028ED772C6EFFEBF77AA61320D8F30"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_red_1.tres",
+    "SHA256": "A5D81F68C04B2BF3BB8D303A24B7600ECA33C9A278904F4D35C7ABE30DC58768"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_red_0.tres",
+    "SHA256": "C1D33DA642850376D6755331C5987EB1070C26D03D39FCAA7F9A6FD2012A5D67"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_orange_1.tres",
+    "SHA256": "0078071B1F79797E35596ECD030AF2E945269B49A604A2AFC29D94DD3ED88C7F"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_orange_0.tres",
+    "SHA256": "084587A4A0B45CC2621B127E431BE22633C0D4A2CA1A0D45BCFB44FF51E07DAE"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_grey_4.tres",
+    "SHA256": "8219517EFE79E0627DD686974C2AF8E3B93419CD0F65BE24D986BF595F5504D0"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_grey_3.tres",
+    "SHA256": "01908DE7C1DB8FE5A5D4A7217B5D6AEECAFB90AA7A3A2489D5620B5F10905DA6"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_grey_2.tres",
+    "SHA256": "F2FC94256509361694B85AA3C95A6DABDA9CE0656CDBBCE50C972ADDAE5F08AA"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_grey_1.tres",
+    "SHA256": "3102FC42495CFED10B8AAFCD8EA1A09D468CDDB9E8BF0E0168269B693C637755"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_grey_0.tres",
+    "SHA256": "30BCF9CD9F944626A4993739EE82F583D7D5127A3138E291FFC553FBCEBCC3D1"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_green_4.tres",
+    "SHA256": "F9DB619BA397A2D4F6A738D49B818AB1F1A352A69F037D44336D89C0CB7C9209"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_green_3.tres",
+    "SHA256": "C57473DCA97A92130BB88B4AD5548224534AA0BAB6976F7338DA218425253CF4"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_green_2.tres",
+    "SHA256": "CB8924130CDCF6C507D44DDF1433A8F3C479B97510C2BD79CCA5A73B2299AB84"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_green_1.tres",
+    "SHA256": "962E4FD39C506C8922A01B660F9F16103675936A5D74E1B896184A05E1751D62"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_green_0.tres",
+    "SHA256": "66C496022926E5B7CFB16CEE37A4723545737B615CA76CD98745B12291A0C77E"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_darkblue_1.tres",
+    "SHA256": "955596A23A98D7389C524E4AA7170E4A606F1C4691A6D1034415E231E123FC13"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_darkblue_0.tres",
+    "SHA256": "5C856012B9B8FA9180B1A64D2735E63613716670A244896C0469EE9D2EF7694A"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_brown_2.tres",
+    "SHA256": "E2CED69540324AC3385362D915A7EEE33AE709C7C36AD6C181D39273F851862E"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_brown_1.tres",
+    "SHA256": "4BF9748E54A5F1A264201ADA96D933E9875B595DEFAF424262816D724EDA415B"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_brown_0.tres",
+    "SHA256": "688788B1867A722168039FB4895FF81C2DA22EEE0E84CCA373F964E56808819B"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_blue_2.tres",
+    "SHA256": "646D8F6C9AAE112CF50EEF155D9D5A1C8303F29A86CAD86DC0A505EADD12529C"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_blue_1.tres",
+    "SHA256": "752A1B04F07C6B77B7EA0A3A9F5655DC496F10CD0A9107CC4983E2BDA79AAA5E"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_blue_0.tres",
+    "SHA256": "59CC8AB4318260AA1F3AA5A305A73B1AC5E6804C13EE1F48B41763657315DEE3"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_black_1.tres",
+    "SHA256": "4D559BC3A3517DAB9ECCA77C7834EA46FBC48F08A03351797E29145EE4463A36"
+  },
+  {
+    "Path": "main-autolysis\\assets\\materials\\base_color\\mat_base_black_0.tres",
+    "SHA256": "28A72D5F853E6BEB549FEDE54351C8EDD4B33B3B553449B4E79C09AFD83AFF1D"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\waste_liquid_storage_tank_0.tscn",
+    "SHA256": "751065A547226923B06DFB6CEEC927722E67DAB3423BD8CCAC53E9D625B6ED72"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_machine_0.tscn",
+    "SHA256": "23AF84037357C0B7FEA48D6F17CFDB643D5477D73910CF926AC9452D4C424328"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_board_0.tscn",
+    "SHA256": "B47B9522BC190CD212BB881576792DE9DE5A49EF0D189259A765CA5988D9FF80"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\pneumatic_tube_capsules_0.tscn",
+    "SHA256": "9F4E149F97C2262C0A31CCD2874F8F4233E34F7BDD7C66012FE6D6478B1616DD"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\manual_shelf_0.tscn",
+    "SHA256": "576EFEB129FAEAA5A607A46D34853D7D1B09D186BFC6F5028A2662A15290FA08"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_wave_rebuilder_0.tscn",
+    "SHA256": "5340DFC30E0F1DD84E8E814A6C277ED889A6C1BE6AB57D734519620D4C47F7CE"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+    "SHA256": "9F4465630115E54050151FCF1F09AA721DC5A3DFF9D8C7EFFE6EB869C1CC258B"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_ration_0.tscn",
+    "SHA256": "BF4195E6848E1A1B23C15DBFD18AE06875E2E3581FD4520DDC6A3220B4C73624"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_pneumatic_tube_0.tscn",
+    "SHA256": "F3271F69EA905A980B68CE943475EFC113A5928AC3473A03C2493161DC7764D8"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_phase_separator_0.tscn",
+    "SHA256": "AC28679D9BE8D9EFE8A92D6466CC79CDDD0092518C7D1F570CB55E34809DFDCF"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_packing_0.tscn",
+    "SHA256": "B7AC10CDD73908E1E3EEF34F37BDC372A927C752BB4DCE138B37C8A0D3B1A3CB"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_extraction_tank_0.tscn",
+    "SHA256": "0BBC98A6E5EA6E67DD8DD64160AF4C3D43483DD41CAECDBB23B1EEAC1E39FDD8"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_daily_test_0.tscn",
+    "SHA256": "DEF9ABE6AD269FCB1BF6912C6A6BBECEA276016314C1D908D9F19D9351FC5519"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_blend_0.tscn",
+    "SHA256": "0ABCA22768F31F54196A6D1C9D7C16AAFB38E76809865AC77CB3CFCBEDAA1CF2"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\luquid_tank_0.tscn",
+    "SHA256": "3860F0D39BDF37D8308BF38C5B8EB93D0F82DB2A039AC33676BDA182CB5E03A7"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_items\\tincture_bottle_group_0.tscn",
+    "SHA256": "25DE9B8CC028F32DBDE213F7473336D0DDA8FFEE32A136510D39B148483D8AF6"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_items\\tincture_bottle_0.tscn",
+    "SHA256": "4BD21ABD9554615347382EEF907283B7356CDFAD1FC786FB96B37C112C950396"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_items\\syringe_group_0.tscn",
+    "SHA256": "A76DF9FD546E2D95A376E949DE993F3DC81BF7BBC3E49E65F37823F179961781"
+  },
+  {
+    "Path": "main-autolysis\\scenes\\prefabs\\prefab_items\\syringe_0.tscn",
+    "SHA256": "461F0AA9D2A7A5525E78D0E9317A162A27EC18213F891E1822D614E96E231320"
+  },
+  {
+    "Path": "main-autolysis\\assets\\audio\\buses\\default_bus_layout.tres",
+    "SHA256": "1D9C2AE1F24CDA404461DB643CFE412234B20FEAC477ACDCEF47C27E6D1F34A3"
+  }
+]

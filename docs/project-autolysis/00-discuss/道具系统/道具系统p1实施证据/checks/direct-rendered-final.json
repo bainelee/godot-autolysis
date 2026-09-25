@@ -1,0 +1,14 @@
+{
+  "检查": "direct-rendered-final",
+  "时间": "2026-09-25T08:33:56.7013782+08:00",
+  "进程编号": 29924,
+  "退出码": 0,
+  "通过": true,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--script",
+    "res://main-autolysis/player/tests/direct_interaction_test.gd"
+  ],
+  "通过断言数": 115
+}

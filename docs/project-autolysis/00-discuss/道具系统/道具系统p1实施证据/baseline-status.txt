@@ -1,0 +1,20 @@
+ M main-autolysis/scenes/01-autolysis-test.tscn
+ D main-autolysis/scenes/prefabs/prefab_furnitures/shelf_bottle_0.tscn
+ D main-autolysis/scenes/prefabs/prefab_furnitures/shelf_warehouse_0.tscn
+ M main-autolysis/scenes/prefabs/prefab_items/syringe_0.tscn
+ M main-autolysis/scenes/prefabs/prefab_items/syringe_group_0.tscn
+ M main-autolysis/scenes/prefabs/prefab_items/tincture_bottle_0.tscn
+ M main-autolysis/scenes/prefabs/prefab_items/tincture_bottle_group_0.tscn
+ M main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn
+ M main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn
+ M main-autolysis/scenes/prefabs/prefab_machines/machine_wave_rebuilder_0.tscn
+ M main-autolysis/scenes/prefabs/prefab_machines/pneumatic_tube_capsules_0.tscn
+ M main-autolysis/scenes/prefabs/prefab_raw_materials/rm_caffeine_0.tscn
+ M main-autolysis/scenes/prefabs/prefab_raw_materials/rm_caffeine_group_0.tscn
+?? "docs/project-autolysis/00-discuss/\351\201\223\345\205\267\347\263\273\347\273\237/"
+?? "docs/project-autolysis/\350\212\202\347\202\271\350\267\257\345\276\204\344\277\256\345\244\215\350\256\260\345\275\225.md"
+?? main-autolysis/scenes/prefabs/prefab_furnitures/store_shelf_warehouse_0.tscn
+?? main-autolysis/scenes/prefabs/prefab_place_shelf/
+?? main-autolysis/scenes/prefabs/prefab_raw_materials/rm_sodium_benzoate_0.tscn
+?? main-autolysis/scenes/prefabs/prefab_raw_materials/rm_sodium_benzoate_group_0.tscn
+?? main-autolysis/scenes/tests/

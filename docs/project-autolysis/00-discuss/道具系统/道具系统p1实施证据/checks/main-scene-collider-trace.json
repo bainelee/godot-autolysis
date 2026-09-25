@@ -1,0 +1,16 @@
+{
+  "检查": "main-scene-collider-trace",
+  "时间": "2026-09-25T08:29:05.9733081+08:00",
+  "进程编号": 9972,
+  "退出码": 1,
+  "通过": false,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/item_system_rendered_test.gd",
+    "--",
+    "--main-only"
+  ],
+  "通过断言数": 3
+}

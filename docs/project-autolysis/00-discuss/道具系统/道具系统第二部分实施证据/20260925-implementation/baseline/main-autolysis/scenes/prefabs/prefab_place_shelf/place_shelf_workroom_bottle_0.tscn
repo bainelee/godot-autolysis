@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://d2wykgt75v8oo"]
+
+[ext_resource type="Material" uid="uid://v2cw5dvy875j" path="res://main-autolysis/assets/materials/base_color/mat_base_red_3.tres" id="1_h1w5n"]
+[ext_resource type="Material" uid="uid://b1bq2ldu2jmr" path="res://main-autolysis/assets/materials/base_color/mat_base_orange_1.tres" id="2_b2gmv"]
+[ext_resource type="PackedScene" uid="uid://ngdnm4t3lo4a" path="res://main-autolysis/scenes/prefabs/prefab_items/tincture_bottle_group_0.tscn" id="3_5o7qm"]
+[ext_resource type="PackedScene" uid="uid://bnxoym6q4vqb7" path="res://main-autolysis/scenes/prefabs/prefab_items/syringe_group_0.tscn" id="4_85fc0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7yfwx"]
+size = Vector3(1.1999999, 0.59999996, 0.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4qoi"]
+albedo_color = Color(0.68, 0.7, 0.66, 1)
+roughness = 0.72
+
+[sub_resource type="BoxMesh" id="BoxMesh_x5oke"]
+material = SubResource("StandardMaterial3D_u4qoi")
+size = Vector3(1.2, 0.04, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_h1w5n"]
+material = SubResource("StandardMaterial3D_u4qoi")
+size = Vector3(1.2, 0.04, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_knwlm"]
+material = SubResource("StandardMaterial3D_u4qoi")
+size = Vector3(1.2, 0.3, 0.04)
+
+[node name="place_shelf_workroom_bottle_0" type="StaticBody3D" unique_id=309850352]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1503833778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.212009e-08, 0.3, -0.2)
+shape = SubResource("BoxShape3D_7yfwx")
+
+[node name="mesh" type="Node3D" parent="." unique_id=1268540637]
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="mesh" unique_id=1028767509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7484554e-08, 0.35999998, -0.19999999)
+material_override = ExtResource("1_h1w5n")
+mesh = SubResource("BoxMesh_x5oke")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="mesh" unique_id=566799022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7484554e-08, 0.019999998, -0.19999999)
+material_override = ExtResource("1_h1w5n")
+mesh = SubResource("BoxMesh_h1w5n")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="mesh" unique_id=1311800820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7484552e-09, 0.18999998, -0.019999996)
+material_override = ExtResource("2_b2gmv")
+mesh = SubResource("BoxMesh_knwlm")
+
+[node name="place_shelf_shelf_slots" type="Node3D" parent="." unique_id=554617509]
+
+[node name="place_shelf_slot_0" type="Node3D" parent="place_shelf_shelf_slots" unique_id=1073469069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37999997, 0.03999999, -0.21000004)
+
+[node name="syringe_group_0" parent="place_shelf_shelf_slots/place_shelf_slot_0" unique_id=1828984348 instance=ExtResource("4_85fc0")]
+
+[node name="place_shelf_slot_1" type="Node3D" parent="place_shelf_shelf_slots" unique_id=139614665]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6766855e-10, 0.03999999, -0.21000001)
+
+[node name="tincture_bottle_group_0" parent="place_shelf_shelf_slots/place_shelf_slot_1" unique_id=682490163 instance=ExtResource("3_5o7qm")]
+
+[node name="place_shelf_slot_2" type="Node3D" parent="place_shelf_shelf_slots" unique_id=2056217470]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.03999999, -0.20999998)
+
+[node name="tincture_bottle_group_1" parent="place_shelf_shelf_slots/place_shelf_slot_2" unique_id=585941643 instance=ExtResource("3_5o7qm")]
+
+[node name="place_shelf_slot_3" type="Node3D" parent="place_shelf_shelf_slots" unique_id=1089810023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.37999997, -0.21000004)
+
+[node name="tincture_bottle_group_4" parent="place_shelf_shelf_slots/place_shelf_slot_3" unique_id=1108685472 instance=ExtResource("3_5o7qm")]
+
+[node name="place_shelf_slot_4" type="Node3D" parent="place_shelf_shelf_slots" unique_id=1744928322]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6766855e-10, 0.37999997, -0.21000001)
+
+[node name="tincture_bottle_group_2" parent="place_shelf_shelf_slots/place_shelf_slot_4" unique_id=1192130904 instance=ExtResource("3_5o7qm")]
+
+[node name="place_shelf_slot_5" type="Node3D" parent="place_shelf_shelf_slots" unique_id=1007241153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.37999997, -0.20999998)
+
+[node name="tincture_bottle_group_3" parent="place_shelf_shelf_slots/place_shelf_slot_5" unique_id=1387265586 instance=ExtResource("3_5o7qm")]

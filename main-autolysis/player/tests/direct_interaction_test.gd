@@ -3,7 +3,7 @@ extends "res://main-autolysis/player/tests/player_smoke_test.gd"
 # 本测试以真实鼠标事件经过玩家、射线、控制器与物体效果。
 # 无图形运行只覆盖行为；像素验证仅在真实渲染器下执行。
 const COMPONENT_SCENE: PackedScene = preload("res://main-autolysis/components/interactions/autolysis_interaction_component.tscn")
-const ARTIFACT_DIR: String = "res://.godot/interaction-verification"
+var ARTIFACT_DIR: String = preload("res://main-autolysis/systems/item-system/tests/test_evidence.gd").directory("res://.godot/interaction-verification")
 
 class ProbeBody extends StaticBody3D:
 	var request_count: int = 0
@@ -41,6 +41,42 @@ class ClickConsumer extends Control:
 			if event.pressed:
 				consumed += 1
 			accept_event()
+
+class AvailabilityReceiver extends Node3D:
+	var allowed: bool = true
+	var query_count: int = 0
+	var received_actor: Node3D = null
+	var component: AutolysisInteractionComponent = null
+	var recurse: bool = false
+	var recursive_query_result: bool = true
+	var recursive_dispatch_result: bool = true
+	var release_target: Node = null
+
+	func permits(actor: Node3D) -> bool:
+		query_count += 1
+		received_actor = actor
+		if recurse:
+			recursive_query_result = component.can_interact(actor)
+			recursive_dispatch_result = component.try_interact(actor)
+		# 定向故障注入：正常业务查询不得释放节点。
+		if is_instance_valid(release_target):
+			release_target.queue_free()
+		return allowed
+
+	func permits_zero() -> bool:
+		query_count += 1
+		return true
+
+	func permits_two(_actor: Node3D, _other: Node3D) -> bool:
+		query_count += 1
+		return true
+
+	func permits_wrong_result(_actor: Node3D) -> String:
+		return "允许"
+
+class NonNodeAvailabilityReceiver extends RefCounted:
+	func permits(_actor: Node3D) -> bool:
+		return true
 
 var available: bool = false
 var availability_notifications: int = 0
@@ -158,6 +194,86 @@ func run_component_contracts() -> void:
 	probe.queue_free()
 	await frames(2)
 
+func run_availability_contracts() -> void:
+	var actor: Node3D = Node3D.new()
+	world.add_child(actor)
+	var probe: ProbeBody = new_probe(Vector3(20, 20, 20))
+	var component: AutolysisInteractionComponent = probe.component
+	var receiver: AvailabilityReceiver = AvailabilityReceiver.new()
+	world.add_child(receiver)
+	receiver.component = component
+	check(component.can_interact(actor), "未配置业务查询时保留原组件可用行为")
+	component.set_availability_check(receiver.permits)
+	var child_count: int = world.get_child_count()
+	for query_index: int in range(3):
+		check(component.can_interact(actor), "业务查询允许时第%d次仍可用" % (query_index + 1))
+	check(receiver.query_count == 3 and receiver.received_actor == actor, "业务查询每次接收当前发起者")
+	check(probe.request_count == 0 and not probe.state and world.get_child_count() == child_count, "重复业务查询不分发效果、不改变物体状态、不创建节点")
+	component.is_enabled = false
+	check(not component.can_interact(actor) and receiver.query_count == 3, "基础许可拒绝时不调用业务查询")
+	component.is_enabled = true
+	receiver.allowed = false
+	check(not component.can_interact(actor) and not component.try_interact(actor) and probe.request_count == 0, "业务拒绝同时阻止可用显示和请求分发")
+	receiver.allowed = true
+	check(component.can_interact(actor), "业务状态恢复后原地恢复可用")
+	receiver.allowed = false
+	check(not component.try_interact(actor) and probe.request_count == 0, "显示查询之后业务状态改变时分发前重新拒绝")
+	receiver.allowed = true
+	check(component.try_interact(actor) and probe.request_count == 1 and probe.state, "业务允许时仍只分发一次效果请求")
+	component.set_availability_check(receiver.permits_wrong_result)
+	check(not component.can_interact(actor) and not component.try_interact(actor), "业务查询返回非布尔值时拒绝而不隐式转换")
+	var query_count: int = receiver.query_count
+	component.set_availability_check(receiver.permits_zero)
+	check(not component.can_interact(actor) and receiver.query_count == query_count, "零参数业务查询在执行前被拒绝")
+	component.set_availability_check(receiver.permits_two)
+	check(not component.can_interact(actor) and receiver.query_count == query_count, "双参数业务查询在执行前被拒绝")
+	var non_node: NonNodeAvailabilityReceiver = NonNodeAvailabilityReceiver.new()
+	component.set_availability_check(non_node.permits)
+	check(not component.can_interact(actor), "非节点业务查询接收者被拒绝")
+	component.set_availability_check(Callable())
+	check(not component.can_interact(actor) and not component.try_interact(actor), "已经配置的空查询不可伪装为从未配置")
+	component.clear_availability_check()
+	check(component.can_interact(actor), "明确清除业务查询后恢复兼容行为")
+	component.set_availability_check(receiver.permits)
+	receiver.recurse = true
+	check(component.can_interact(actor) and not receiver.recursive_query_result and not receiver.recursive_dispatch_result, "业务查询再次查询或请求自身时拒绝重入且外层正常返回")
+	check(probe.request_count == 1, "业务查询重入不产生额外效果")
+	receiver.recurse = false
+	world.remove_child(receiver)
+	check(not component.can_interact(actor), "离树的业务查询接收者不可用")
+	world.add_child(receiver)
+	receiver.queue_free()
+	check(not component.can_interact(actor) and not component.try_interact(actor), "业务查询接收者排队释放时立即拒绝")
+	await frames(2)
+	check(not component.can_interact(actor) and not component.try_interact(actor), "业务查询接收者释放后保持配置失效并拒绝请求")
+	component.clear_availability_check()
+	check(component.can_interact(actor), "失效配置只在明确清除后恢复原契约")
+	probe.queue_free()
+	actor.queue_free()
+	await frames(2)
+	await run_availability_lifetime_contracts()
+
+func run_availability_lifetime_contracts() -> void:
+	# 查询故障不得造成随后向失效依赖发射请求。
+	for target_kind: int in range(5):
+		var actor: Node3D = Node3D.new()
+		world.add_child(actor)
+		var probe: ProbeBody = new_probe(Vector3(20, 20, 20), false)
+		var effect_receiver: EffectReceiver = EffectReceiver.new()
+		world.add_child(effect_receiver)
+		probe.component.interaction_requested.connect(effect_receiver.receive)
+		var receiver: AvailabilityReceiver = AvailabilityReceiver.new()
+		world.add_child(receiver)
+		probe.component.set_availability_check(receiver.permits)
+		var targets: Array[Node] = [actor, probe, probe.component, receiver, effect_receiver]
+		receiver.release_target = targets[target_kind]
+		check(not probe.component.try_interact(actor) and effect_receiver.count == 0, "查询期间第%d类依赖排队释放时取消分发" % target_kind)
+		probe.queue_free()
+		actor.queue_free()
+		receiver.queue_free()
+		effect_receiver.queue_free()
+		await frames(2)
+
 func run_geometry_and_input() -> void:
 	var origin: Vector3 = player.camera.global_position
 	var probe: ProbeBody = new_probe(origin + Vector3(0, 0, -1.2))
@@ -185,6 +301,11 @@ func run_geometry_and_input() -> void:
 	await frames(3)
 	await click()
 	check(not available and detector.get_collider() == wall and probe.request_count == 2, "普通墙体首个命中阻挡后方交互")
+	var ray_origin: Vector3 = detector.global_position
+	detector.global_position = wall.global_position
+	for holding: bool in [false, true]:
+		check(detector.refresh_target(holding) == null and detector.get_collider() == wall, "墙体内部起点在两种查询状态下均阻挡后方交互")
+	detector.global_position = ray_origin
 	wall.queue_free()
 	await frames(3)
 	check(available, "移除墙体后恢复直接交互")
@@ -376,6 +497,11 @@ func run_actual_demo() -> void:
 	var collision: CollisionShape3D = demo.door.get_node("CollisionShape3D")
 	var closed_position: Vector3 = collision.global_position
 	check(detector.refresh_target() == demo.door, "真实门的关闭碰撞形状被中心射线命中")
+	var ray_origin: Vector3 = detector.global_position
+	detector.global_position = collision.global_position
+	for holding: bool in [false, true]:
+		check(detector.refresh_target(holding) == demo.door, "门碰撞盒内部起点在两种查询状态下均命中门")
+	detector.global_position = ray_origin
 	mouse_button(true)
 	check(not demo.door_component.is_enabled, "门请求立即置忙避免等待物理帧期间重复请求")
 	mouse_button(false)
@@ -465,6 +591,7 @@ func run_checks() -> void:
 	world = Node3D.new()
 	root.add_child(world)
 	await run_component_contracts()
+	await run_availability_contracts()
 	if "--component-only" in OS.get_cmdline_user_args() or DisplayServer.get_name() == "headless":
 		world.queue_free()
 		await frames(2)

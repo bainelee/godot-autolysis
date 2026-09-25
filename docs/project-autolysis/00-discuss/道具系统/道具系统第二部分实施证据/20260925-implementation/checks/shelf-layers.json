@@ -1,0 +1,18 @@
+{
+  "检查": "shelf-layers",
+  "时间": "2026-09-25T09:26:50.0051811+08:00",
+  "进程编号": 5416,
+  "退出码": 1,
+  "通过": false,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/shelf_layers_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/道具系统/道具系统第二部分实施证据/20260925-implementation/checks"
+  ],
+  "通过断言数": 184
+}

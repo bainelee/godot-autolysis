@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dxw4qeo54kkwp"]
+
+[ext_resource type="Script" path="res://main-autolysis/systems/item-system/autolysis_raw_material.gd" id="1_raw_material"]
+[ext_resource type="Resource" path="res://main-autolysis/systems/item-system/items/sodium_benzoate.tres" id="2_item"]
+[ext_resource type="PackedScene" path="res://main-autolysis/scenes/prefabs/prefab_raw_materials/visuals/rm_sodium_benzoate_visual.tscn" id="3_visual"]
+[ext_resource type="PackedScene" path="res://main-autolysis/components/interactions/autolysis_interaction_component.tscn" id="4_interaction"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ie3hh"]
+size = Vector3(0.099999994, 0.17999999, 0.099999994)
+
+[node name="rm_sodium_benzoate_0" type="StaticBody3D" unique_id=1747403966 groups=["interactable"]]
+script = ExtResource("1_raw_material")
+item_definition = ExtResource("2_item")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2025406789]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.450581e-09, 0.09, 1.4901161e-08)
+shape = SubResource("BoxShape3D_ie3hh")
+
+[node name="mesh" parent="." unique_id=339975707 instance=ExtResource("3_visual")]
+
+[node name="InteractionComponent" parent="." instance=ExtResource("4_interaction")]

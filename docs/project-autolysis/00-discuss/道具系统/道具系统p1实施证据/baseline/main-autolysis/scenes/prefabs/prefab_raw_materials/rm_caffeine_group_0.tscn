@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c0lj86k2dghrm"]
+
+[ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="1_08cgm"]
+[ext_resource type="PackedScene" uid="uid://ckecp5cgmdrww" path="res://main-autolysis/scenes/prefabs/prefab_raw_materials/rm_caffeine_0.tscn" id="2_tqe44"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tqe44"]
+size = Vector3(0.29999998, 0.19999999, 0.29999998)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hpy8m"]
+albedo_color = Color(0.68, 0.7, 0.66, 1)
+roughness = 0.72
+
+[sub_resource type="BoxMesh" id="BoxMesh_tqe44"]
+material = SubResource("StandardMaterial3D_hpy8m")
+size = Vector3(0.3, 0.02, 0.3)
+
+[node name="rm_caffeine_group_0" type="StaticBody3D" unique_id=589747057]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=261867134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4901161e-08, 0.099999994, -1.4901161e-08)
+shape = SubResource("BoxShape3D_tqe44")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="." unique_id=735685735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.450581e-09, 0.009999976, -7.450581e-09)
+material_override = ExtResource("1_08cgm")
+mesh = SubResource("BoxMesh_tqe44")
+
+[node name="rm_caffeine_0" parent="MeshInstance3D15" unique_id=2065228073 instance=ExtResource("2_tqe44")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.01, 0.08)
+
+[node name="rm_caffeine_1" parent="MeshInstance3D15" unique_id=646897224 instance=ExtResource("2_tqe44")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, 0.01, -0.07999999)
+
+[node name="rm_caffeine_3" parent="MeshInstance3D15" unique_id=492517728 instance=ExtResource("2_tqe44")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, 0.01, 0.080000006)
+
+[node name="rm_caffeine_2" parent="MeshInstance3D15" unique_id=1172925997 instance=ExtResource("2_tqe44")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.01, -0.07999999)

@@ -1,0 +1,5 @@
+WARNING: 交互目标必须恰好配置一个直接子交互组件：/root/@Node3D@2/@StaticBody3D@47
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:63)
+       [1] _process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:37)
