@@ -1,0 +1,17 @@
+{
+  "检查": "scene-paths",
+  "时间": "2026-09-26T11:43:45.4286163+08:00",
+  "进程编号": 35204,
+  "退出码": 0,
+  "通过": true,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/scenes/tests/prefab_node_path_test.gd",
+    "--",
+    "--report=res://docs/project-autolysis/00-discuss/交互系统/聚焦交互与原药混合器p1实施证据/checks/scene-paths/report.json"
+  ],
+  "通过断言数": 0
+}

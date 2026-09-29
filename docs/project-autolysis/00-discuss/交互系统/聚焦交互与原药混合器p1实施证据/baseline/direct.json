@@ -1,0 +1,18 @@
+{
+  "检查": "direct",
+  "时间": "2026-09-26T11:22:09.3019312+08:00",
+  "进程编号": 47660,
+  "退出码": -1073741819,
+  "通过": false,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/player/tests/direct_interaction_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/交互系统/聚焦交互与原药混合器p1实施证据/baseline/direct"
+  ],
+  "通过断言数": 0
+}

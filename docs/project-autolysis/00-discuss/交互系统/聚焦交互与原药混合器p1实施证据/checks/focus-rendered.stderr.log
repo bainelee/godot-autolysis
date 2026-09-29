@@ -1,0 +1,63 @@
+SCRIPT ERROR: Invalid type in function '_node_is_live' in base 'Node3D (AutolysisFocusTarget)'. The Object-derived class of argument 1 (previously freed) is not a subclass of the expected argument class.
+   at: AutolysisFocusTarget.is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:34)
+   GDScript backtrace (most recent call first):
+       [0] is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:34)
+       [1] _has_matching_focus_target (res://main-autolysis/player/components/autolysis_interaction_controller.gd:125)
+       [2] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:89)
+       [3] _process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:49)
+SCRIPT ERROR: Invalid type in function '_node_is_live' in base 'Node3D (AutolysisFocusTarget)'. The Object-derived class of argument 1 (previously freed) is not a subclass of the expected argument class.
+   at: AutolysisFocusTarget.is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:34)
+   GDScript backtrace (most recent call first):
+       [0] is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:34)
+       [1] _has_matching_focus_target (res://main-autolysis/player/components/autolysis_interaction_controller.gd:125)
+       [2] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:89)
+       [3] _process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:49)
+SCRIPT ERROR: Invalid type in function '_node_is_live' in base 'Node3D (AutolysisFocusTarget)'. The Object-derived class of argument 1 (previously freed) is not a subclass of the expected argument class.
+   at: AutolysisFocusTarget.is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:34)
+   GDScript backtrace (most recent call first):
+       [0] is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:34)
+       [1] _has_matching_focus_target (res://main-autolysis/player/components/autolysis_interaction_controller.gd:125)
+       [2] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:89)
+       [3] _process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:49)
+SCRIPT ERROR: Invalid type in function '_node_is_live' in base 'Node3D (AutolysisFocusTarget)'. The Object-derived class of argument 1 (previously freed) is not a subclass of the expected argument class.
+   at: AutolysisFocusTarget.is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:34)
+   GDScript backtrace (most recent call first):
+       [0] is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:34)
+       [1] _has_matching_focus_target (res://main-autolysis/player/components/autolysis_interaction_controller.gd:125)
+       [2] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:89)
+       [3] _process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:49)
+SCRIPT ERROR: Invalid type in function '_node_is_live' in base 'Node3D (AutolysisFocusTarget)'. The Object-derived class of argument 1 (previously freed) is not a subclass of the expected argument class.
+   at: AutolysisFocusTarget.is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:34)
+   GDScript backtrace (most recent call first):
+       [0] is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:34)
+       [1] _has_matching_focus_target (res://main-autolysis/player/components/autolysis_interaction_controller.gd:125)
+       [2] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:89)
+       [3] _process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:49)
+SCRIPT ERROR: Invalid type in function '_node_is_live' in base 'Node3D (AutolysisFocusTarget)'. The Object-derived class of argument 1 (previously freed) is not a subclass of the expected argument class.
+   at: AutolysisFocusTarget.is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:34)
+   GDScript backtrace (most recent call first):
+       [0] is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:34)
+       [1] _has_matching_focus_target (res://main-autolysis/player/components/autolysis_interaction_controller.gd:125)
+       [2] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:89)
+       [3] _process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:49)
+SCRIPT ERROR: Invalid type in function '_node_is_live' in base 'Node3D (AutolysisFocusTarget)'. The Object-derived class of argument 1 (previously freed) is not a subclass of the expected argument class.
+   at: AutolysisFocusTarget.is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:34)
+   GDScript backtrace (most recent call first):
+       [0] is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:34)
+       [1] _has_matching_focus_target (res://main-autolysis/player/components/autolysis_interaction_controller.gd:125)
+       [2] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:89)
+       [3] _process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:49)
+SCRIPT ERROR: Invalid type in function '_node_is_live' in base 'Node3D (AutolysisFocusTarget)'. The Object-derived class of argument 1 (previously freed) is not a subclass of the expected argument class.
+   at: AutolysisFocusTarget.is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:34)
+   GDScript backtrace (most recent call first):
+       [0] is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:34)
+       [1] _has_matching_focus_target (res://main-autolysis/player/components/autolysis_interaction_controller.gd:125)
+       [2] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:89)
+       [3] _process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:49)
+SCRIPT ERROR: Invalid type in function '_node_is_live' in base 'Node3D (AutolysisFocusTarget)'. The Object-derived class of argument 1 (previously freed) is not a subclass of the expected argument class.
+   at: AutolysisFocusTarget.is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:34)
+   GDScript backtrace (most recent call first):
+       [0] is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:34)
+       [1] _has_matching_focus_target (res://main-autolysis/player/components/autolysis_interaction_controller.gd:125)
+       [2] refresh_state (res://main-autolysis/player/components/autolysis_interaction_controller.gd:89)
+       [3] _process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:49)

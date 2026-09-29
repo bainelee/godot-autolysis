@@ -1,0 +1,4 @@
+ERROR: 原药混合器槽位配置失败：/root/machine_blend_0/blend_slot_0
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd:35)

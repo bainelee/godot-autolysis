@@ -3,6 +3,33 @@ extends Node3D
 ## 固定手持姿态应用到子模型，父容器继续负责原有鼠标摆动。
 
 var _display: Node3D
+var _following_camera: Camera3D
+var _saved_transform: Transform3D
+var _saved_top_level: bool = false
+var _camera_relative: Transform3D
+
+
+func begin_camera_follow(camera: Camera3D) -> bool:
+	if not is_instance_valid(camera) or not camera.is_inside_tree() or is_instance_valid(_following_camera):
+		return false
+	_saved_transform = transform
+	_saved_top_level = top_level
+	_camera_relative = camera.global_transform.affine_inverse() * global_transform
+	_following_camera = camera
+	top_level = true
+	sync_camera_follow()
+	return true
+
+
+func sync_camera_follow() -> void:
+	if is_instance_valid(_following_camera) and _following_camera.is_inside_tree() and is_inside_tree():
+		global_transform = _following_camera.global_transform * _camera_relative
+
+
+func end_camera_follow() -> void:
+	_following_camera = null
+	top_level = _saved_top_level
+	transform = _saved_transform
 
 
 func prepare_item(item: AutolysisItemDefinition) -> Node3D:

@@ -128,6 +128,12 @@ var _active_found_shape: StringName = &""
 @onready var held_item_presenter: AutolysisHeldItemPresenter = %HeldItemPresenter
 @onready var inventory_bar: AutolysisInventoryBar = $InventoryBar
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
+@onready var focus_controller: AutolysisFocusController = $FocusController
+var _focus_sway_processing: bool = false
+var _focus_animation_active: bool = false
+var _focus_animation_playing: bool = false
+var _focus_animation_speed: float = 1.0
+var _focus_ladder_timeout: bool = false
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -141,19 +147,78 @@ func _ready() -> void:
 	item_drop_shapecast.add_exception_rid(get_rid())
 	item_drop_shapecast.add_exception_rid(_found_area.get_rid())
 	interaction_controller.direct_availability_changed.connect(interaction_crosshair.set_direct_available)
-	inventory_controller.configure(held_item_presenter, is_interaction_input_allowed)
+	inventory_controller.configure(held_item_presenter, is_inventory_input_allowed)
 	inventory_bar.configure(inventory_controller)
 	inventory_controller.inventory_changed.connect(interaction_controller.refresh_state)
-	interaction_controller.configure(self, interaction_raycast, is_interaction_input_allowed, inventory_controller)
+	inventory_controller.inventory_changed.connect(interaction_controller.clear_pending_clicks)
+	focus_controller.configure(self, camera, held_item_presenter, is_interaction_input_allowed)
+	interaction_controller.configure(self, interaction_raycast, is_interaction_input_allowed, inventory_controller, focus_controller)
 
 func is_interaction_input_allowed() -> bool:
-	return is_inside_tree() and not is_queued_for_deletion() and not get_tree().paused and not is_movement_paused and not is_showing_ui and not is_landing_stunned and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
+	return _base_input_allowed() and not focus_controller.has_control() and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
+
+func _base_input_allowed() -> bool:
+	return is_inside_tree() and not is_queued_for_deletion() and not get_tree().paused and not is_movement_paused and not is_showing_ui and not is_landing_stunned
+
+func is_focus_input_allowed() -> bool:
+	return is_focus_business_allowed() and Input.mouse_mode == Input.MOUSE_MODE_VISIBLE
+
+func is_focus_business_allowed() -> bool:
+	return _base_input_allowed() and focus_controller.state == AutolysisFocusController.FocusState.FOCUSED
+
+func is_focus_exit_allowed() -> bool:
+	return _base_input_allowed() and focus_controller.has_control() and Input.mouse_mode == Input.MOUSE_MODE_VISIBLE
+
+func is_inventory_input_allowed() -> bool:
+	return _base_input_allowed() and (Input.mouse_mode == Input.MOUSE_MODE_VISIBLE if focus_controller.has_control() else Input.mouse_mode == Input.MOUSE_MODE_CAPTURED)
+
+func update_mouse_mode() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if is_movement_paused or is_showing_ui or focus_controller.has_control() else Input.MOUSE_MODE_CAPTURED
+
+func begin_focus_control() -> void:
+	joystick_h_event = null
+	joystick_v_event = null
+	velocity = Vector3.ZERO
+	main_velocity = Vector3.ZERO
+	last_velocity = Vector3.ZERO
+	direction = Vector3.ZERO
+	gravity_vec = Vector3.ZERO
+	slide_vector = Vector2.ZERO
+	sliding_timer.stop()
+	_focus_sway_processing = wieldables.is_processing()
+	wieldables.set_process(false)
+	_focus_animation_active = animationPlayer.active
+	_focus_animation_playing = animationPlayer.is_playing()
+	_focus_animation_speed = animationPlayer.get_playing_speed()
+	animationPlayer.pause()
+	animationPlayer.active = false
+
+func can_begin_focus_control() -> bool:
+	return is_instance_valid(wieldables) and wieldables.is_inside_tree() and not wieldables.is_queued_for_deletion() and is_instance_valid(animationPlayer) and animationPlayer.is_inside_tree() and not animationPlayer.is_queued_for_deletion()
+
+func end_focus_control() -> void:
+	if _focus_ladder_timeout:
+		ladder_on_cooldown = false
+		_focus_ladder_timeout = false
+	if is_instance_valid(wieldables):
+		wieldables.set_process(_focus_sway_processing)
+	if is_instance_valid(animationPlayer):
+		animationPlayer.active = _focus_animation_active
+		if _focus_animation_playing:
+			var custom_speed: float = _focus_animation_speed / animationPlayer.speed_scale if not is_zero_approx(animationPlayer.speed_scale) else 1.0
+			animationPlayer.play(&"", -1.0, custom_speed)
+
+func _exit_tree() -> void:
+	if is_instance_valid(focus_controller):
+		focus_controller.abort_session(false)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("menu"):
 		is_movement_paused = not is_movement_paused
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if is_movement_paused else Input.MOUSE_MODE_CAPTURED
-	if is_movement_paused or is_landing_stunned:
+		update_mouse_mode()
+		focus_controller.sync_pause_state()
+		interaction_controller.clear_pending_clicks()
+	if is_movement_paused or is_landing_stunned or focus_controller.has_control() or get_tree().paused:
 		return
 	if event is InputEventMouseMotion:
 		var look_movement: Vector2 = Vector2.ZERO
@@ -175,10 +240,15 @@ func _input(event: InputEvent) -> void:
 			joystick_h_event = event
 
 func ladder_buffer_finished():
+	if focus_controller.has_control():
+		_focus_ladder_timeout = true
+		return
 	ladder_on_cooldown = false
 
 
 func enter_ladder(ladder: CollisionShape3D, ladderDir: Vector3):
+	if focus_controller.has_control():
+		return
 	var look_vector = camera.get_camera_transform().basis
 	var looking_away = look_vector.z.dot(ladderDir) < 0.33
 	var looking_down = look_vector.z.dot(Vector3.UP) > 0.5
@@ -236,6 +306,8 @@ func _process_on_ladder(_delta):
 
 
 func _physics_process(delta: float) -> void:
+	if focus_controller.has_control() or get_tree().paused:
+		return
 	var grounded_before_move: bool = is_on_floor()
 	last_velocity = main_velocity
 	if is_on_floor():
@@ -636,6 +708,8 @@ func step_check(delta: float, is_jumping_: bool, step_result: StepResult):
 	
 	
 func _on_sliding_timer_timeout():
+	if focus_controller.has_control():
+		return
 	is_free_looking = false
 
 
@@ -644,6 +718,8 @@ func _on_animation_player_animation_finished(_anim_name):
 
 
 func _start_fall_stun(duration: float, pitch_deg: float, head_duck: bool) -> void:
+	if focus_controller.has_control():
+		return
 	is_landing_stunned = true
 	stun_time_total = duration
 	stun_time_left = duration

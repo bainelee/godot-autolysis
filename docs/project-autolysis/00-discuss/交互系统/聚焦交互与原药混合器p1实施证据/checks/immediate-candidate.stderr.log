@@ -1,0 +1,63 @@
+ERROR: Parameter "get_viewport()" is null.
+   at: _notification (scene/main/node.cpp:187)
+   GDScript backtrace (most recent call first):
+       [0] <anonymous lambda> (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:312)
+       [1] try_attach_prepared_item (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd:111)
+       [2] try_place_in_blend_slot (res://main-autolysis/player/components/autolysis_inventory_controller.gd:169)
+       [3] _test_immediate_free_probe (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:314)
+       [4] _fixture (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:96)
+       [5] _frames (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:60)
+ERROR: Parameter "get_viewport()" is null.
+   at: _notification (scene/main/node.cpp:187)
+   GDScript backtrace (most recent call first):
+       [0] <anonymous lambda> (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:312)
+       [1] try_attach_prepared_item (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd:111)
+       [2] try_place_in_blend_slot (res://main-autolysis/player/components/autolysis_inventory_controller.gd:169)
+       [3] _test_immediate_free_probe (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:314)
+       [4] _fixture (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:96)
+       [5] _frames (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:60)
+ERROR: Parameter "get_viewport()" is null.
+   at: _notification (scene/main/node.cpp:187)
+   GDScript backtrace (most recent call first):
+       [0] <anonymous lambda> (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:312)
+       [1] try_attach_prepared_item (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd:111)
+       [2] try_place_in_blend_slot (res://main-autolysis/player/components/autolysis_inventory_controller.gd:169)
+       [3] _test_immediate_free_probe (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:314)
+       [4] _fixture (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:96)
+       [5] _frames (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:60)
+ERROR: Parameter "get_viewport()" is null.
+   at: _notification (scene/main/node.cpp:187)
+   GDScript backtrace (most recent call first):
+       [0] <anonymous lambda> (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:312)
+       [1] try_attach_prepared_item (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd:111)
+       [2] try_place_in_blend_slot (res://main-autolysis/player/components/autolysis_inventory_controller.gd:169)
+       [3] _test_immediate_free_probe (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:314)
+       [4] _fixture (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:96)
+       [5] _frames (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:60)
+ERROR: Parameter "get_viewport()" is null.
+   at: _notification (scene/main/node.cpp:187)
+   GDScript backtrace (most recent call first):
+       [0] <anonymous lambda> (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:312)
+       [1] try_attach_prepared_item (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd:111)
+       [2] try_place_in_blend_slot (res://main-autolysis/player/components/autolysis_inventory_controller.gd:169)
+       [3] _test_immediate_free_probe (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:314)
+       [4] _fixture (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:96)
+       [5] _frames (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:60)
+ERROR: Parameter "get_viewport()" is null.
+   at: _notification (scene/main/node.cpp:187)
+   GDScript backtrace (most recent call first):
+       [0] <anonymous lambda> (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:312)
+       [1] try_attach_prepared_item (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd:111)
+       [2] try_place_in_blend_slot (res://main-autolysis/player/components/autolysis_inventory_controller.gd:169)
+       [3] _test_immediate_free_probe (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:314)
+       [4] _fixture (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:96)
+       [5] _frames (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:60)
+ERROR: Parameter "get_viewport()" is null.
+   at: _notification (scene/main/node.cpp:187)
+   GDScript backtrace (most recent call first):
+       [0] <anonymous lambda> (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:312)
+       [1] try_attach_prepared_item (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd:111)
+       [2] try_place_in_blend_slot (res://main-autolysis/player/components/autolysis_inventory_controller.gd:169)
+       [3] _test_immediate_free_probe (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:314)
+       [4] _fixture (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:96)
+       [5] _frames (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:60)

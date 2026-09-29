@@ -1,0 +1,20 @@
+{
+  "检查": "transfer-regression",
+  "时间": "2026-09-26T15:01:07.7687016+08:00",
+  "进程编号": 9040,
+  "退出码": 0,
+  "通过": true,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/交互系统/聚焦碰撞跟随修复证据/transfer-regression"
+  ],
+  "通过断言数": 266
+}

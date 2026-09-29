@@ -1,0 +1,12 @@
+{
+  "检查": "当前正式混合器与实施前快照的制作数据保留检查",
+  "基线场景": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\聚焦交互与原药混合器p1实施证据\\baseline\\machine_blend_0.tscn.snapshot",
+  "当前场景": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_blend_0.tscn",
+  "原节点数量": 84,
+  "原制作资源数量": 32,
+  "原节点属性行数量": 245,
+  "新增节点数量": 10,
+  "内部层40数量": 10,
+  "差异问题数量": 0,
+  "差异问题": []
+}

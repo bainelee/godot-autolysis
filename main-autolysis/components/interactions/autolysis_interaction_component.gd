@@ -31,8 +31,8 @@ func clear_availability_check() -> void:
 
 
 ## 仅查询当前请求能否分发，不产生物体效果。
-func can_interact(actor: Node3D) -> bool:
-	if _is_querying_availability or not _has_base_permission(actor):
+func can_interact(actor: Node3D, requested_mode: InteractionMode = InteractionMode.DIRECT) -> bool:
+	if _is_querying_availability or not _has_base_permission(actor, requested_mode):
 		return false
 	if not _availability_check_configured:
 		return true
@@ -50,11 +50,11 @@ func can_interact(actor: Node3D) -> bool:
 	if not _availability_check_configured or _availability_check != configured_check:
 		return false
 	# 回调边界后复核，禁止向排队释放或刚失效的对象分发请求。
-	return _has_base_permission(actor) and _has_live_availability_check()
+	return _has_base_permission(actor, requested_mode) and _has_live_availability_check()
 
 
-func _has_base_permission(actor: Node3D) -> bool:
-	if _is_dispatching or not is_enabled or interaction_mode != InteractionMode.DIRECT:
+func _has_base_permission(actor: Node3D, requested_mode: InteractionMode) -> bool:
+	if _is_dispatching or not is_enabled or interaction_mode != requested_mode:
 		return false
 	if not is_inside_tree() or is_queued_for_deletion():
 		return false
@@ -69,8 +69,8 @@ func _has_base_permission(actor: Node3D) -> bool:
 
 
 ## 返回真仅表示请求已分发，不表示动画或其他延迟效果已完成。
-func try_interact(actor: Node3D) -> bool:
-	if not can_interact(actor):
+func try_interact(actor: Node3D, requested_mode: InteractionMode = InteractionMode.DIRECT) -> bool:
+	if not can_interact(actor, requested_mode):
 		return false
 	_is_dispatching = true
 	interaction_requested.emit(actor)

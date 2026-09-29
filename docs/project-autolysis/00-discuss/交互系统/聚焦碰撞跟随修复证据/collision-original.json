@@ -1,0 +1,21 @@
+{
+  "检查": "collision-original",
+  "时间": "2026-09-26T14:56:11.7256792+08:00",
+  "进程编号": 8020,
+  "退出码": 1,
+  "通过": false,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/player/tests/blend_collision_follow_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/交互系统/聚焦碰撞跟随修复证据/original",
+    "--repair-fixture-reference"
+  ],
+  "通过断言数": 10
+}

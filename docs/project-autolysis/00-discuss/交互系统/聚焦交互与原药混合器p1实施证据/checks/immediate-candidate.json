@@ -1,0 +1,22 @@
+{
+  "检查": "immediate-candidate",
+  "时间": "2026-09-26T11:41:02.5292440+08:00",
+  "进程编号": 8380,
+  "退出码": 0,
+  "通过": false,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/交互系统/聚焦交互与原药混合器p1实施证据/checks/immediate-candidate",
+    "--immediate-free-probe",
+    "candidate"
+  ],
+  "通过断言数": 12
+}

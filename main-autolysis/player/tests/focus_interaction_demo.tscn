@@ -1,0 +1,91 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://main-autolysis/player/autolysis_player.tscn" id="1_player"]
+[ext_resource type="PackedScene" path="res://main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn" id="2_machine"]
+[ext_resource type="PackedScene" path="res://main-autolysis/scenes/prefabs/prefab_raw_materials/rm_caffeine_group_0.tscn" id="3_caffeine"]
+[ext_resource type="PackedScene" path="res://main-autolysis/scenes/prefabs/prefab_raw_materials/rm_sodium_benzoate_group_0.tscn" id="4_sodium"]
+
+[sub_resource type="Environment" id="Environment_demo"]
+background_mode = 1
+background_color = Color(0.1, 0.13, 0.16, 1)
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.85
+reflected_light_source = 2
+
+[sub_resource type="StandardMaterial3D" id="Material_floor"]
+albedo_color = Color(0.17, 0.2, 0.23, 1)
+roughness = 0.85
+
+[sub_resource type="BoxShape3D" id="Shape_floor"]
+size = Vector3(15, 1, 15)
+
+[sub_resource type="BoxMesh" id="Mesh_floor"]
+size = Vector3(15, 1, 15)
+material = SubResource("Material_floor")
+
+[sub_resource type="BoxShape3D" id="Shape_wall"]
+size = Vector3(8, 3, 0.2)
+
+[sub_resource type="BoxMesh" id="Mesh_wall"]
+size = Vector3(8, 3, 0.2)
+material = SubResource("Material_floor")
+
+[sub_resource type="BoxShape3D" id="Shape_table"]
+size = Vector3(5.8, 0.75, 1.3)
+
+[sub_resource type="BoxMesh" id="Mesh_table"]
+size = Vector3(5.8, 0.75, 1.3)
+material = SubResource("Material_floor")
+
+[node name="FocusInteractionDemo" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_demo")
+
+[node name="KeyLight" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-35, -28, 0)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="Floor" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("Shape_floor")
+
+[node name="Mesh" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("Mesh_floor")
+
+[node name="Wall" type="StaticBody3D" parent="."]
+position = Vector3(0.7, 1.5, -2)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
+shape = SubResource("Shape_wall")
+
+[node name="Mesh" type="MeshInstance3D" parent="Wall"]
+mesh = SubResource("Mesh_wall")
+
+[node name="Table" type="StaticBody3D" parent="."]
+position = Vector3(1, 0.375, -0.6)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table"]
+shape = SubResource("Shape_table")
+
+[node name="Mesh" type="MeshInstance3D" parent="Table"]
+mesh = SubResource("Mesh_table")
+
+[node name="MachineA" parent="." instance=ExtResource("2_machine")]
+position = Vector3(0, 1.15, -0.6)
+
+[node name="MachineB" parent="." instance=ExtResource("2_machine")]
+position = Vector3(2.2, 1.15, -0.6)
+
+[node name="CaffeineSource" parent="." instance=ExtResource("3_caffeine")]
+position = Vector3(-1.35, 0.78, 0.35)
+
+[node name="SodiumSource" parent="." instance=ExtResource("4_sodium")]
+position = Vector3(-0.95, 0.78, 0.35)
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+position = Vector3(0, 0.8, 1.25)

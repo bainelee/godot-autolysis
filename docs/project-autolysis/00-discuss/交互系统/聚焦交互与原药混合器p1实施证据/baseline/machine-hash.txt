@@ -1,0 +1,5 @@
+
+Algorithm : SHA256
+Hash      : 9518CDC064E76AE16D7135C96979E3B63541E3D5387483384AB09F2702020E82
+Path      : D:\autolysis\main-autolysis\scenes\prefabs\prefab_machines\machine_blend_0.tscn
+

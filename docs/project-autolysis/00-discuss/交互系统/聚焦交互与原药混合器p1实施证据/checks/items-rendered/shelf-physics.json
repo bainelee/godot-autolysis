@@ -1,0 +1,26 @@
+[
+	{
+		"接触架体": true,
+		"架子": "res://main-autolysis/scenes/prefabs/prefab_place_shelf/place_shelf_workroom_rm_0.tscn",
+		"物理处理启用": true,
+		"终点": "(0.0, 0.800195, -1.291961)",
+		"起点": "(0.0, 0.800195, 0.0)"
+	},
+	{
+		"接触架体": true,
+		"架子": "res://main-autolysis/scenes/prefabs/prefab_furnitures/store_shelf_warehouse_0.tscn",
+		"物理处理启用": true,
+		"终点": "(0.0, 0.800195, -1.084065)",
+		"起点": "(0.0, 0.800195, 0.0)"
+	},
+	{
+		"台阶命中": true,
+		"检查": "第四层台阶",
+		"终点": "(0.0, 1.001172, -2.278886)"
+	},
+	{
+		"头顶命中": true,
+		"检查": "第四层头顶",
+		"蹲伏": true
+	}
+]

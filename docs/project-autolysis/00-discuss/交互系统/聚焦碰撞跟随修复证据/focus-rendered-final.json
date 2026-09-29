@@ -1,0 +1,19 @@
+{
+  "检查": "focus-rendered-final",
+  "时间": "2026-09-26T15:05:39.6910385+08:00",
+  "进程编号": 45112,
+  "退出码": 1,
+  "通过": false,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/player/tests/focus_interaction_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/交互系统/聚焦碰撞跟随修复证据/focus-rendered-final"
+  ],
+  "通过断言数": 200
+}

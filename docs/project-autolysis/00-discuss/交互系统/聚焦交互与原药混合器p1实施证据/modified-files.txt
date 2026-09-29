@@ -1,0 +1,10 @@
+main-autolysis/components/interactions/autolysis_interaction_component.gd
+main-autolysis/player/autolysis_player.gd
+main-autolysis/player/autolysis_player.tscn
+main-autolysis/player/components/autolysis_held_item_presenter.gd
+main-autolysis/player/components/autolysis_interaction_controller.gd
+main-autolysis/player/components/autolysis_inventory_controller.gd
+main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn
+main-autolysis/systems/item-system/autolysis_raw_material.gd
+main-autolysis/systems/item-system/autolysis_raw_material_shelf.gd
+project.godot

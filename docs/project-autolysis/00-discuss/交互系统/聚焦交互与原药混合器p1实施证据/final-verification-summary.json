@@ -1,0 +1,291 @@
+[
+  {
+    "检查": "import-final",
+    "时间": "2026-09-26T11:43:53.3110023+08:00",
+    "进程编号": 21188,
+    "退出码": 0,
+    "通过": true,
+    "命令参数": [
+      "--path",
+      "D:\\autolysis",
+      "--headless",
+      "--editor",
+      "--quit"
+    ],
+    "通过断言数": 0
+  },
+  {
+    "检查": "direct-headless",
+    "时间": "2026-09-26T11:34:32.5790857+08:00",
+    "进程编号": 30428,
+    "退出码": 0,
+    "通过": true,
+    "命令参数": [
+      "--path",
+      "D:\\autolysis",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://main-autolysis/player/tests/direct_interaction_test.gd",
+      "--",
+      "--evidence-dir",
+      "res://docs/project-autolysis/00-discuss/交互系统/聚焦交互与原药混合器p1实施证据/checks/direct-headless"
+    ],
+    "通过断言数": 43
+  },
+  {
+    "检查": "direct-rendered",
+    "时间": "2026-09-26T11:29:41.4383063+08:00",
+    "进程编号": 39940,
+    "退出码": 0,
+    "通过": true,
+    "命令参数": [
+      "--path",
+      "D:\\autolysis",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://main-autolysis/player/tests/direct_interaction_test.gd",
+      "--",
+      "--evidence-dir",
+      "res://docs/project-autolysis/00-discuss/交互系统/聚焦交互与原药混合器p1实施证据/checks/direct-rendered"
+    ],
+    "通过断言数": 119
+  },
+  {
+    "检查": "player-retry",
+    "时间": "2026-09-26T11:32:14.9325893+08:00",
+    "进程编号": 22020,
+    "退出码": 0,
+    "通过": true,
+    "命令参数": [
+      "--path",
+      "D:\\autolysis",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://main-autolysis/player/tests/player_smoke_test.gd",
+      "--",
+      "--evidence-dir",
+      "res://docs/project-autolysis/00-discuss/交互系统/聚焦交互与原药混合器p1实施证据/checks/player"
+    ],
+    "通过断言数": 27
+  },
+  {
+    "检查": "components",
+    "时间": "2026-09-26T11:33:52.9063893+08:00",
+    "进程编号": 28400,
+    "退出码": 0,
+    "通过": true,
+    "命令参数": [
+      "--path",
+      "D:\\autolysis",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://main-autolysis/player/tests/component_migration_test.gd",
+      "--",
+      "--evidence-dir",
+      "res://docs/project-autolysis/00-discuss/交互系统/聚焦交互与原药混合器p1实施证据/checks/components"
+    ],
+    "通过断言数": 20
+  },
+  {
+    "检查": "footsteps",
+    "时间": "2026-09-26T11:33:58.73469+08:00",
+    "进程编号": 42928,
+    "退出码": 0,
+    "通过": true,
+    "命令参数": [
+      "--path",
+      "D:\\autolysis",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://main-autolysis/player/tests/footstep_smoke_test.gd",
+      "--",
+      "--evidence-dir",
+      "res://docs/project-autolysis/00-discuss/交互系统/聚焦交互与原药混合器p1实施证据/checks/footsteps"
+    ],
+    "通过断言数": 26
+  },
+  {
+    "检查": "items",
+    "时间": "2026-09-26T11:34:13.8454123+08:00",
+    "进程编号": 38068,
+    "退出码": 0,
+    "通过": true,
+    "命令参数": [
+      "--path",
+      "D:\\autolysis",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://main-autolysis/systems/item-system/tests/item_system_test.gd",
+      "--",
+      "--evidence-dir",
+      "res://docs/project-autolysis/00-discuss/交互系统/聚焦交互与原药混合器p1实施证据/checks/items"
+    ],
+    "通过断言数": 471
+  },
+  {
+    "检查": "shelf-layers",
+    "时间": "2026-09-26T11:34:23.2017549+08:00",
+    "进程编号": 10416,
+    "退出码": 0,
+    "通过": true,
+    "命令参数": [
+      "--path",
+      "D:\\autolysis",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://main-autolysis/systems/item-system/tests/shelf_layers_test.gd",
+      "--",
+      "--evidence-dir",
+      "res://docs/project-autolysis/00-discuss/交互系统/聚焦交互与原药混合器p1实施证据/checks/shelf-layers"
+    ],
+    "通过断言数": 193
+  },
+  {
+    "检查": "shelf-clearance",
+    "时间": "2026-09-26T11:34:27.2597758+08:00",
+    "进程编号": 3744,
+    "退出码": 0,
+    "通过": true,
+    "命令参数": [
+      "--path",
+      "D:\\autolysis",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://main-autolysis/systems/item-system/tests/shelf_clearance_test.gd",
+      "--",
+      "--evidence-dir",
+      "res://docs/project-autolysis/00-discuss/交互系统/聚焦交互与原药混合器p1实施证据/checks/shelf-clearance"
+    ],
+    "通过断言数": 0
+  },
+  {
+    "检查": "items-rendered",
+    "时间": "2026-09-26T11:40:07.5453978+08:00",
+    "进程编号": 51932,
+    "退出码": 0,
+    "通过": true,
+    "命令参数": [
+      "--path",
+      "D:\\autolysis",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://main-autolysis/systems/item-system/tests/item_system_rendered_test.gd",
+      "--",
+      "--evidence-dir",
+      "res://docs/project-autolysis/00-discuss/交互系统/聚焦交互与原药混合器p1实施证据/checks/items-rendered"
+    ],
+    "通过断言数": 64
+  },
+  {
+    "检查": "focus-rendered-final",
+    "时间": "2026-09-26T11:41:57.8769727+08:00",
+    "进程编号": 45320,
+    "退出码": 0,
+    "通过": true,
+    "命令参数": [
+      "--path",
+      "D:\\autolysis",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://main-autolysis/player/tests/focus_interaction_test.gd",
+      "--",
+      "--evidence-dir",
+      "res://docs/project-autolysis/00-discuss/交互系统/聚焦交互与原药混合器p1实施证据/checks/focus-rendered-final"
+    ],
+    "通过断言数": 203
+  },
+  {
+    "检查": "focus-headless",
+    "时间": "2026-09-26T11:43:14.2252896+08:00",
+    "进程编号": 24892,
+    "退出码": 0,
+    "通过": true,
+    "命令参数": [
+      "--path",
+      "D:\\autolysis",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://main-autolysis/player/tests/focus_interaction_test.gd",
+      "--",
+      "--evidence-dir",
+      "res://docs/project-autolysis/00-discuss/交互系统/聚焦交互与原药混合器p1实施证据/checks/focus-headless"
+    ],
+    "通过断言数": 218
+  },
+  {
+    "检查": "focus-queued",
+    "时间": "2026-09-26T11:43:22.438579+08:00",
+    "进程编号": 34116,
+    "退出码": 0,
+    "通过": true,
+    "命令参数": [
+      "--path",
+      "D:\\autolysis",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://main-autolysis/player/tests/focus_interaction_test.gd",
+      "--",
+      "--evidence-dir",
+      "res://docs/project-autolysis/00-discuss/交互系统/聚焦交互与原药混合器p1实施证据/checks/focus-queued",
+      "--queued-only"
+    ],
+    "通过断言数": 7
+  },
+  {
+    "检查": "blend-transfer-final",
+    "时间": "2026-09-26T11:42:50.0618475+08:00",
+    "进程编号": 29312,
+    "退出码": 0,
+    "通过": true,
+    "命令参数": [
+      "--path",
+      "D:\\autolysis",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd",
+      "--",
+      "--evidence-dir",
+      "res://docs/project-autolysis/00-discuss/交互系统/聚焦交互与原药混合器p1实施证据/checks/blend-transfer-final"
+    ],
+    "通过断言数": 266
+  },
+  {
+    "检查": "scene-paths",
+    "时间": "2026-09-26T11:43:45.4286163+08:00",
+    "进程编号": 35204,
+    "退出码": 0,
+    "通过": true,
+    "命令参数": [
+      "--path",
+      "D:\\autolysis",
+      "--headless",
+      "--script",
+      "res://main-autolysis/scenes/tests/prefab_node_path_test.gd",
+      "--",
+      "--report=res://docs/project-autolysis/00-discuss/交互系统/聚焦交互与原药混合器p1实施证据/checks/scene-paths/report.json"
+    ],
+    "通过断言数": 0
+  }
+]

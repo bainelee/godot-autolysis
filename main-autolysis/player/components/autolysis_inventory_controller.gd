@@ -74,7 +74,7 @@ func try_receive_item(item: AutolysisItemDefinition) -> bool:
 
 
 func can_take_world_item(item: AutolysisRawMaterial) -> bool:
-	if not _node_is_live(item) or not item.is_available_for_pickup():
+	if not _node_is_live(item) or item.device_stored or is_instance_valid(item.blend_slot) or not item.is_available_for_pickup():
 		return false
 	if not can_receive_item(item.item_definition):
 		return false
@@ -93,7 +93,7 @@ func try_take_world_item(item: AutolysisRawMaterial) -> bool:
 		_busy = false
 		return false
 	# 模型准备期间不提交任何占用；准备完成后再次核对来源。
-	if not _node_is_live(item) or not item.is_available_for_pickup():
+	if not _node_is_live(item) or item.device_stored or is_instance_valid(item.blend_slot) or not item.is_available_for_pickup():
 		visual.free()
 		_busy = false
 		return false
@@ -140,6 +140,115 @@ func try_place_on_shelf(shelf: AutolysisRawMaterialShelf) -> bool:
 	_presenter.commit_prepared(null)
 	_publish_change()
 	return true
+
+
+func can_place_in_blend_slot(actor: Node3D, slot: AutolysisBlendSlot) -> bool:
+	if not _can_query_blend_slot(actor, slot):
+		return false
+	var definition: AutolysisItemDefinition = get_focused_item()
+	return slot.get_stored_item() == null and definition != null and definition.is_raw_material and definition.is_valid_definition() and _get_world_scene(definition) != null
+
+
+func try_place_in_blend_slot(actor: Node3D, slot: AutolysisBlendSlot) -> bool:
+	if _busy or not can_place_in_blend_slot(actor, slot):
+		return false
+	var original_index: int = _focused_index
+	var definition: AutolysisItemDefinition = get_focused_item()
+	var anchor: Node3D = slot.raw_material_anchor
+	_busy = true
+	if not slot.try_begin_transfer(actor):
+		_busy = false
+		return false
+	var candidate: AutolysisRawMaterial = _prepare_world_item(definition)
+	if candidate == null:
+		_end_blend_transfer(slot)
+		return false
+	if not _blend_transaction_valid(actor, slot, anchor, original_index, definition) or not candidate.prepare_device_storage(slot):
+		_rollback_blend_candidate(slot, candidate)
+		return false
+	if not slot.try_attach_prepared_item(candidate):
+		_rollback_blend_candidate(slot, candidate)
+		return false
+	# 入树回调可能删除设备、改变会话或搬走原药，提交前重新核对全部来源。
+	if not _blend_transaction_valid(actor, slot, anchor, original_index, definition) or not _node_is_live(candidate):
+		_rollback_blend_candidate(slot, candidate)
+		return false
+	if candidate.item_definition != definition or not slot.owns_item(candidate) or candidate.get_parent() != anchor:
+		_rollback_blend_candidate(slot, candidate)
+		return false
+	_slots[original_index] = null
+	_presenter.commit_prepared(null)
+	_publish_change()
+	_end_blend_transfer(slot)
+	return true
+
+
+func can_take_from_blend_slot(actor: Node3D, slot: AutolysisBlendSlot) -> bool:
+	if not _can_query_blend_slot(actor, slot) or get_focused_item() != null:
+		return false
+	var item: AutolysisRawMaterial = slot.get_stored_item()
+	return _node_is_live(item) and slot.owns_item(item) and item.item_definition != null and item.item_definition.is_raw_material and item.item_definition.is_valid_definition()
+
+
+func try_take_from_blend_slot(actor: Node3D, slot: AutolysisBlendSlot) -> bool:
+	if _busy or not can_take_from_blend_slot(actor, slot):
+		return false
+	var original_index: int = _focused_index
+	var item: AutolysisRawMaterial = slot.get_stored_item()
+	var definition: AutolysisItemDefinition = item.item_definition
+	var anchor: Node3D = slot.raw_material_anchor
+	_busy = true
+	if not slot.try_begin_transfer(actor):
+		_busy = false
+		return false
+	var visual: Node3D = _prepare_visual(definition)
+	if visual == null:
+		_end_blend_transfer(slot)
+		return false
+	if not _blend_transaction_valid(actor, slot, anchor, original_index, null) or not _node_is_live(item):
+		visual.free()
+		_end_blend_transfer(slot)
+		return false
+	if item.item_definition != definition or not slot.owns_item(item) or not slot.release_item(item):
+		visual.free()
+		_end_blend_transfer(slot)
+		return false
+	_slots[original_index] = definition
+	item.finish_pickup()
+	_presenter.commit_prepared(visual)
+	_publish_change()
+	_end_blend_transfer(slot)
+	return true
+
+
+func _can_query_blend_slot(actor: Node3D, slot: AutolysisBlendSlot) -> bool:
+	if (_busy and not _publishing) or not _dependencies_valid() or not _node_is_live(actor) or not _node_is_live(slot):
+		return false
+	return actor.get_node_or_null("InventoryController") == self and slot.can_transfer(actor, _publishing)
+
+
+func _blend_transaction_valid(actor: Variant, slot: Variant, anchor: Variant, original_index: int, original_item: AutolysisItemDefinition) -> bool:
+	if not _dependencies_valid() or not _node_is_live(actor) or not _node_is_live(slot) or not _node_is_live(anchor):
+		return false
+	if not actor is Node3D or not slot is AutolysisBlendSlot or not anchor is Node3D:
+		return false
+	if actor.get_node_or_null("InventoryController") != self or _focused_index != original_index or get_focused_item() != original_item:
+		return false
+	return slot.raw_material_anchor == anchor and slot.can_transfer(actor, true)
+
+
+func _rollback_blend_candidate(slot: Variant, candidate: Variant) -> void:
+	if is_instance_valid(slot) and slot is AutolysisBlendSlot:
+		slot.rollback_prepared_item(candidate)
+	if is_instance_valid(candidate) and candidate is AutolysisRawMaterial:
+		candidate.free()
+	_end_blend_transfer(slot)
+
+
+func _end_blend_transfer(slot: Variant) -> void:
+	if is_instance_valid(slot) and slot is AutolysisBlendSlot:
+		slot.end_transfer()
+	_busy = false
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -214,8 +323,8 @@ func _dependencies_valid() -> bool:
 	return is_inside_tree() and not is_queued_for_deletion() and _node_is_live(_presenter)
 
 
-func _node_is_live(node: Node) -> bool:
-	return is_instance_valid(node) and node.is_inside_tree() and not node.is_queued_for_deletion()
+func _node_is_live(node: Variant) -> bool:
+	return is_instance_valid(node) and node is Node and node.is_inside_tree() and not node.is_queued_for_deletion()
 
 
 func _publish_change() -> void:

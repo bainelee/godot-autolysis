@@ -51,6 +51,8 @@ func get_item_at_slot(index: int) -> AutolysisRawMaterial:
 func owns_item(item: AutolysisRawMaterial) -> bool:
 	if not is_instance_valid(item) or item.is_queued_for_deletion():
 		return false
+	if item.device_stored or is_instance_valid(item.blend_slot):
+		return false
 	if not is_instance_valid(item.shelf) or item.shelf != self:
 		return false
 	var slot: Node3D = get_slot_node(item.slot_index)
@@ -66,6 +68,8 @@ func try_attach_item(index: int, item: AutolysisRawMaterial) -> bool:
 	if not is_inside_tree() or is_queued_for_deletion():
 		return false
 	if not is_instance_valid(item) or item.is_queued_for_deletion():
+		return false
+	if item.device_stored or is_instance_valid(item.blend_slot):
 		return false
 	if is_instance_valid(item.shelf) or item.slot_index != -1:
 		return false
@@ -84,6 +88,8 @@ func try_attach_item(index: int, item: AutolysisRawMaterial) -> bool:
 	if not is_instance_valid(item) or item.is_queued_for_deletion():
 		return false
 	if not is_instance_valid(slot) or slot.is_queued_for_deletion() or item.get_parent() != slot:
+		return false
+	if item.device_stored or is_instance_valid(item.blend_slot):
 		return false
 	# 入树回调可能让另一名玩家先完成放置，不得覆盖其占用。
 	if get_item_at_slot(index) != null:
