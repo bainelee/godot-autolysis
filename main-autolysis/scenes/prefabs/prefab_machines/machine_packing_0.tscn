@@ -309,3 +309,4 @@ skeleton = NodePath("../..")
 
 [node name="luquid_tank_0" parent="." unique_id=1823254939 instance=ExtResource("2_n5rw0")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.5, 0.35, 0.30000004)
+fixed_installation = true

@@ -114,6 +114,7 @@ focus_exit={
 3d_physics/layer_4="交互可穿透实体"
 3d_physics/layer_5="原药架放置入口"
 3d_physics/layer_6="聚焦内部对象"
+3d_physics/layer_7="液体罐柜放置入口"
 
 [physics]
 

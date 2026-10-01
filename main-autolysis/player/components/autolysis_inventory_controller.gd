@@ -1,10 +1,11 @@
 class_name AutolysisInventoryController
 extends Node
-## 四格状态与原药转移的唯一写入入口；通知发出前各处占用已经一致。
+## 四格状态与道具转移的唯一写入入口；通知发出前各处占用已经一致。
 
 signal inventory_changed()
 
 const SLOT_COUNT: int = 4
+const LIQUID_TANK_ID: StringName = &"liquid_tank"
 const NEXT_ACTION: StringName = &"inventory_next"
 const PREVIOUS_ACTION: StringName = &"inventory_previous"
 
@@ -249,6 +250,191 @@ func _end_blend_transfer(slot: Variant) -> void:
 	if is_instance_valid(slot) and slot is AutolysisBlendSlot:
 		slot.end_transfer()
 	_busy = false
+
+
+func can_take_liquid_tank(actor: Node3D, item: AutolysisLiquidTank) -> bool:
+	if not _can_query_liquid_actor(actor) or not _node_is_live(item) or not item.is_available_for_pickup():
+		return false
+	if not _is_liquid_tank_definition(item.item_definition) or not can_receive_item(item.item_definition):
+		return false
+	if item.cabinet_stored:
+		return _node_is_live(item.cabinet) and item.cabinet.can_transfer(actor, _publishing) and item.cabinet.owns_item(item)
+	return item.cabinet == null and item.slot_index == -1
+
+
+func try_take_liquid_tank(actor: Node3D, item: AutolysisLiquidTank) -> bool:
+	if _busy or not can_take_liquid_tank(actor, item):
+		return false
+	var original_index: int = _focused_index
+	var definition: AutolysisItemDefinition = item.item_definition
+	var cabinet: AutolysisLiquidTankCabinet = item.cabinet
+	var slot_index: int = item.slot_index
+	var anchor: Node3D = cabinet.get_slot_node(slot_index) if item.cabinet_stored else null
+	_busy = true
+	if item.cabinet_stored and not cabinet.try_begin_transfer(actor):
+		_busy = false
+		return false
+	var visual: Node3D = _prepare_visual(definition)
+	if visual == null:
+		_end_liquid_transfer(cabinet)
+		return false
+	# 准备显示不释放来源；准备完成后核对指定罐和原空格。
+	if not _liquid_pickup_source_valid(actor, item, cabinet, slot_index, anchor, original_index, definition):
+		visual.free()
+		_end_liquid_transfer(cabinet)
+		return false
+	if cabinet != null and not cabinet.release_item(item):
+		visual.free()
+		_end_liquid_transfer(cabinet)
+		return false
+	_slots[original_index] = definition
+	item.finish_pickup()
+	_presenter.commit_prepared(visual)
+	_publish_change()
+	_end_liquid_transfer(cabinet)
+	return true
+
+
+func can_place_in_liquid_tank_cabinet(actor: Node3D, cabinet: AutolysisLiquidTankCabinet) -> bool:
+	if not _can_query_liquid_actor(actor) or not _node_is_live(cabinet) or not cabinet.can_transfer(actor, _publishing):
+		return false
+	var definition: AutolysisItemDefinition = get_focused_item()
+	return _is_liquid_tank_definition(definition) and cabinet.can_accept_item(definition) and _get_liquid_tank_world_scene(definition) != null
+
+
+func try_place_in_liquid_tank_cabinet(actor: Node3D, cabinet: AutolysisLiquidTankCabinet) -> bool:
+	if _busy or not can_place_in_liquid_tank_cabinet(actor, cabinet):
+		return false
+	var original_index: int = _focused_index
+	var definition: AutolysisItemDefinition = get_focused_item()
+	var slot_index: int = cabinet.find_first_empty_slot()
+	var anchor: Node3D = cabinet.get_slot_node(slot_index)
+	_busy = true
+	if not cabinet.try_begin_transfer(actor):
+		_busy = false
+		return false
+	var candidate: AutolysisLiquidTank = _prepare_liquid_tank_world_item(definition)
+	if candidate == null:
+		_end_liquid_transfer(cabinet)
+		return false
+	if not _liquid_transaction_valid(actor, cabinet, slot_index, anchor, original_index, definition) or not candidate.prepare_cabinet_storage(cabinet, slot_index):
+		_rollback_liquid_candidate(cabinet, candidate)
+		return false
+	if not cabinet.try_attach_prepared_item(slot_index, candidate):
+		_rollback_liquid_candidate(cabinet, candidate)
+		return false
+	# 入树回调可能释放柜子、移动候选或损坏来源，提交前再次核对。
+	if not _liquid_transaction_valid(actor, cabinet, slot_index, anchor, original_index, definition) or not _node_is_live(candidate):
+		_rollback_liquid_candidate(cabinet, candidate)
+		return false
+	if candidate.item_definition != definition or not candidate.is_available_for_pickup() or not cabinet.owns_item(candidate) or candidate.get_parent() != anchor:
+		_rollback_liquid_candidate(cabinet, candidate)
+		return false
+	_slots[original_index] = null
+	_presenter.commit_prepared(null)
+	_publish_change()
+	_end_liquid_transfer(cabinet)
+	return true
+
+
+func _can_query_liquid_actor(actor: Node3D) -> bool:
+	return (not _busy or _publishing) and _liquid_actor_valid(actor)
+
+
+func _liquid_actor_valid(actor: Variant) -> bool:
+	if not _dependencies_valid() or not _node_is_live(actor) or not actor is Node3D or get_tree().paused:
+		return false
+	if actor.get_node_or_null("InventoryController") != self or not _input_allowed.is_valid():
+		return false
+	if actor is AutolysisPlayer and not actor.is_interaction_input_allowed():
+		return false
+	var receiver: Object = _input_allowed.get_object()
+	if not is_instance_valid(receiver) or (receiver is Node and not _node_is_live(receiver)):
+		return false
+	var allowed: Variant = _input_allowed.call()
+	return allowed is bool and allowed and is_instance_valid(self) and _dependencies_valid() and _node_is_live(actor) and actor.get_node_or_null("InventoryController") == self
+
+
+func _liquid_transaction_valid(actor: Variant, cabinet: Variant, slot_index: int, anchor: Variant, original_index: int, original_item: AutolysisItemDefinition) -> bool:
+	if not _liquid_actor_valid(actor) or not _node_is_live(cabinet) or not _node_is_live(anchor):
+		return false
+	if not cabinet is AutolysisLiquidTankCabinet or not anchor is Node3D:
+		return false
+	if _focused_index != original_index or get_focused_item() != original_item:
+		return false
+	if original_item != null and _get_liquid_tank_world_scene(original_item) == null:
+		return false
+	return cabinet.get_slot_node(slot_index) == anchor and cabinet.can_transfer(actor, true)
+
+
+func _liquid_pickup_source_valid(actor: Variant, item: Variant, cabinet: Variant, slot_index: int, anchor: Variant, original_index: int, definition: AutolysisItemDefinition) -> bool:
+	if not _liquid_actor_valid(actor) or not _node_is_live(item) or not item is AutolysisLiquidTank:
+		return false
+	if _focused_index != original_index or get_focused_item() != null or item.item_definition != definition:
+		return false
+	if not item.is_available_for_pickup() or not _is_liquid_tank_definition(definition):
+		return false
+	if cabinet == null:
+		return not item.cabinet_stored and item.cabinet == null and item.slot_index == -1 and slot_index == -1
+	if not _liquid_transaction_valid(actor, cabinet, slot_index, anchor, original_index, null):
+		return false
+	return item.cabinet_stored and item.cabinet == cabinet and item.slot_index == slot_index and cabinet.owns_item(item) and item.get_parent() == anchor
+
+
+func _rollback_liquid_candidate(cabinet: Variant, candidate: Variant) -> void:
+	if is_instance_valid(cabinet) and cabinet is AutolysisLiquidTankCabinet:
+		cabinet.rollback_prepared_item(candidate)
+	if is_instance_valid(candidate) and candidate is AutolysisLiquidTank:
+		candidate.free()
+	_end_liquid_transfer(cabinet)
+
+
+func _end_liquid_transfer(cabinet: Variant) -> void:
+	if is_instance_valid(cabinet) and cabinet is AutolysisLiquidTankCabinet:
+		cabinet.end_transfer()
+	if is_instance_valid(self):
+		_busy = false
+
+
+func _is_liquid_tank_definition(definition: AutolysisItemDefinition) -> bool:
+	return is_instance_valid(definition) and definition.item_id == LIQUID_TANK_ID and not definition.is_raw_material and definition.is_valid_definition()
+
+
+func _prepare_liquid_tank_world_item(definition: AutolysisItemDefinition) -> AutolysisLiquidTank:
+	var scene: PackedScene = _get_liquid_tank_world_scene(definition)
+	if scene == null:
+		return null
+	var node: Node = scene.instantiate()
+	if not node is AutolysisLiquidTank:
+		node.free()
+		return null
+	var item: AutolysisLiquidTank = node as AutolysisLiquidTank
+	if not _is_liquid_tank_definition(item.item_definition) or item.item_definition.item_id != definition.item_id or item.fixed_installation or item.cabinet_stored or item.cabinet != null or item.slot_index != -1:
+		item.free()
+		return null
+	item.item_definition = definition
+	return item
+
+
+func _get_liquid_tank_world_scene(definition: AutolysisItemDefinition) -> PackedScene:
+	if not _is_liquid_tank_definition(definition) or definition.world_scene_path.is_empty() or not ResourceLoader.exists(definition.world_scene_path, "PackedScene"):
+		return null
+	var resource: Resource = load(definition.world_scene_path)
+	if not resource is PackedScene or not resource.can_instantiate():
+		return null
+	var scene: PackedScene = resource as PackedScene
+	var state: SceneState = scene.get_state()
+	var script: Variant = _root_property(state, &"script")
+	var item: Variant = _root_property(state, &"item_definition")
+	var fixed_installation: Variant = _root_property(state, &"fixed_installation")
+	# 许可查询仅读取场景描述，不实例化节点或执行初始化。
+	if not script is Script or script.get_global_name() != &"AutolysisLiquidTank":
+		return null
+	if not item is AutolysisItemDefinition or not _is_liquid_tank_definition(item) or item.item_id != definition.item_id:
+		return null
+	if fixed_installation != null and (not fixed_installation is bool or fixed_installation):
+		return null
+	return scene
 
 
 func _unhandled_input(event: InputEvent) -> void:

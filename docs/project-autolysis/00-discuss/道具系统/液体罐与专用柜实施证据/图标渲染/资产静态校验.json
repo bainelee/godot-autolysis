@@ -1,0 +1,28 @@
+{
+  "纯显示路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\visuals\\liquid_tank_visual.tscn",
+  "网格数量": 5,
+  "物理或碰撞节点数量": 0,
+  "脚本引用数量": 0,
+  "交互分组数量": 0,
+  "定义路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\items\\liquid_tank.tres",
+  "明确为非原药": true,
+  "世界路径保持原拼写": true,
+  "机器实例": [
+    {
+      "场景路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_packing_0.tscn",
+      "固定装配实例数": 1,
+      "罐实例数": 1
+    },
+    {
+      "场景路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_phase_separator_0.tscn",
+      "固定装配实例数": 1,
+      "罐实例数": 1
+    },
+    {
+      "场景路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_wave_rebuilder_0.tscn",
+      "固定装配实例数": 1,
+      "罐实例数": 1
+    }
+  ],
+  "运行说明": "本记录仅保存静态资源结构；图标真实渲染及主场景手持验收另行记录。"
+}

@@ -1,0 +1,45 @@
+ERROR: AnimationPlayer has no current animation.
+   at: get_current_animation_position (scene/animation/animation_player.cpp:706)
+   GDScript backtrace (most recent call first):
+       [0] _record_motion (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:327)
+       [1] _test_initial_configuration (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:148)
+       [2] _run (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:37)
+ERROR: AnimationPlayer has no current animation.
+   at: get_current_animation_position (scene/animation/animation_player.cpp:706)
+   GDScript backtrace (most recent call first):
+       [0] _record_motion (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:327)
+       [1] _test_initial_configuration (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:148)
+       [2] _run (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:38)
+       [3] _test_initial_configuration (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:149)
+       [4] _clear_world (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:74)
+       [5] _frames (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:67)
+ERROR: AnimationPlayer has no current animation.
+   at: get_current_animation_position (scene/animation/animation_player.cpp:706)
+   GDScript backtrace (most recent call first):
+       [0] _record_motion (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:327)
+       [1] _test_initial_configuration (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:148)
+       [2] _run (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:39)
+       [3] _test_initial_configuration (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:149)
+       [4] _clear_world (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:74)
+       [5] _frames (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:67)
+ERROR: AnimationPlayer has no current animation.
+   at: get_current_animation_position (scene/animation/animation_player.cpp:706)
+   GDScript backtrace (most recent call first):
+       [0] _record_motion (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:327)
+       [1] _test_initial_configuration (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:148)
+       [2] _run (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:40)
+       [3] _test_initial_configuration (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:149)
+       [4] _clear_world (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:74)
+       [5] _frames (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:67)
+ERROR: AnimationPlayer has no current animation.
+   at: get_current_animation_position (scene/animation/animation_player.cpp:706)
+   GDScript backtrace (most recent call first):
+       [0] _record_motion (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:327)
+       [1] _test_stopped_animation (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:285)
+       [2] _frames (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:67)
+ERROR: AnimationPlayer has no current animation.
+   at: get_current_animation_position (scene/animation/animation_player.cpp:706)
+   GDScript backtrace (most recent call first):
+       [0] _record_motion (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:327)
+       [1] _test_stopped_animation (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:285)
+       [2] _frames (res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:67)

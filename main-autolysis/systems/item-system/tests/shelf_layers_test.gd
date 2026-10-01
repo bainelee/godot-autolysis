@@ -211,8 +211,8 @@ func _warehouse_checks() -> void:
 func _main_geometry_checks() -> void:
 	var main: Node3D = load("res://main-autolysis/scenes/01-autolysis-test.tscn").instantiate() as Node3D
 	world.add_child(main)
-	var upper: AutolysisRawMaterialShelf = main.get_node("interaction_prefabs/item_groups/place_shelf_workroom_rm_0")
-	var lower: AutolysisRawMaterialShelf = main.get_node("interaction_prefabs/item_groups/place_shelf_workroom_rm_1")
+	var upper: AutolysisRawMaterialShelf = main.get_node("interaction_prefabs/place_shelf_and_cabinet/place_shelf_workroom_rm_0")
+	var lower: AutolysisRawMaterialShelf = main.get_node("interaction_prefabs/place_shelf_and_cabinet/place_shelf_workroom_rm_1")
 	var ray: InteractionRayCast = _ray(Vector3.ZERO, Vector3.FORWARD)
 	await _frames()
 	var bounds: Array[AABB] = []

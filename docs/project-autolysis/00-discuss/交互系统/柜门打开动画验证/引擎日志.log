@@ -1,0 +1,5 @@
+Godot Engine v4.6.1.stable.official.14d19694e - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2570)
+柜门打开动画验证：失败；时长=0.20000000298023；终态角度=(74.99992, 0.0, 0.0)；参考结构一致=true；物理同步=false

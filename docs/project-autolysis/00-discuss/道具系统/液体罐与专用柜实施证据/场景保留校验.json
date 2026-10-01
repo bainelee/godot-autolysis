@@ -1,0 +1,150 @@
+{
+  "检查数": 24,
+  "失败数": 0,
+  "记录": [
+    {
+      "项目": "液体罐场景唯一标识",
+      "通过": true,
+      "比较前": "uid://bbqs75e8vtnql",
+      "比较后": "uid://bbqs75e8vtnql"
+    },
+    {
+      "项目": "专用柜场景唯一标识",
+      "通过": true,
+      "比较前": "uid://b1e6rg62vvuyk",
+      "比较后": "uid://b1e6rg62vvuyk"
+    },
+    {
+      "项目": "液体罐碰撞形状资源",
+      "通过": true,
+      "比较前": "[sub_resource type=\"BoxShape3D\" id=\"BoxShape3D_mu3k4\"]\nsize = Vector3(0.5, 0.29999998, 0.29999998)",
+      "比较后": "[sub_resource type=\"BoxShape3D\" id=\"BoxShape3D_mu3k4\"]\nsize = Vector3(0.5, 0.29999998, 0.29999998)"
+    },
+    {
+      "项目": "液体罐碰撞节点与局部偏移",
+      "通过": true,
+      "比较前": "[node name=\"CollisionShape3D\" type=\"CollisionShape3D\" parent=\".\" unique_id=1573049295]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4901161e-08, -1.4901161e-08)\nshape = SubResource(\"BoxShape3D_mu3k4\")\ndebug_color = Color(0, 0.64005935, 0.36019087, 0.41960785)",
+      "比较后": "[node name=\"CollisionShape3D\" type=\"CollisionShape3D\" parent=\".\" unique_id=1573049295]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4901161e-08, -1.4901161e-08)\nshape = SubResource(\"BoxShape3D_mu3k4\")\ndebug_color = Color(0, 0.64005935, 0.36019087, 0.41960785)"
+    },
+    {
+      "项目": "专用柜已有动画、形状或锚点资源段",
+      "通过": true,
+      "比较前": "[sub_resource type=\"Animation\" id=\"Animation_cabinet_door_left_reset\"]\nlength = 0.001\ntracks/0/type = \"value\"\ntracks/0/imported = false\ntracks/0/enabled = true\ntracks/0/path = NodePath(\"cabinet_door_left_root:rotation\")\ntracks/0/interp = 1\ntracks/0/loop_wrap = true\ntracks/0/keys = {\n\"times\": PackedFloat32Array(0),\n\"transitions\": PackedFloat32Array(1),\n\"update\": 0,\n\"values\": [Vector3(0, 0, 0)]\n}",
+      "比较后": "[sub_resource type=\"Animation\" id=\"Animation_cabinet_door_left_reset\"]\nlength = 0.001\ntracks/0/type = \"value\"\ntracks/0/imported = false\ntracks/0/enabled = true\ntracks/0/path = NodePath(\"cabinet_door_left_root:rotation\")\ntracks/0/interp = 1\ntracks/0/loop_wrap = true\ntracks/0/keys = {\n\"times\": PackedFloat32Array(0),\n\"transitions\": PackedFloat32Array(1),\n\"update\": 0,\n\"values\": [Vector3(0, 0, 0)]\n}"
+    },
+    {
+      "项目": "专用柜已有动画、形状或锚点资源段",
+      "通过": true,
+      "比较前": "[sub_resource type=\"Animation\" id=\"Animation_cabinet_door_left_open\"]\nresource_name = \"open\"\nlength = 0.2\ntracks/0/type = \"value\"\ntracks/0/imported = false\ntracks/0/enabled = true\ntracks/0/path = NodePath(\"cabinet_door_left_root:rotation\")\ntracks/0/interp = 1\ntracks/0/loop_wrap = true\ntracks/0/keys = {\n\"times\": PackedFloat32Array(0, 0.16237015, 0.2),\n\"transitions\": PackedFloat32Array(1, 1, 1),\n\"update\": 0,\n\"values\": [Vector3(0, 0, 0), Vector3(1.3962634, 0, 0), Vector3(1.3089969, 0, 0)]\n}",
+      "比较后": "[sub_resource type=\"Animation\" id=\"Animation_cabinet_door_left_open\"]\nresource_name = \"open\"\nlength = 0.2\ntracks/0/type = \"value\"\ntracks/0/imported = false\ntracks/0/enabled = true\ntracks/0/path = NodePath(\"cabinet_door_left_root:rotation\")\ntracks/0/interp = 1\ntracks/0/loop_wrap = true\ntracks/0/keys = {\n\"times\": PackedFloat32Array(0, 0.16237015, 0.2),\n\"transitions\": PackedFloat32Array(1, 1, 1),\n\"update\": 0,\n\"values\": [Vector3(0, 0, 0), Vector3(1.3962634, 0, 0), Vector3(1.3089969, 0, 0)]\n}"
+    },
+    {
+      "项目": "专用柜已有动画、形状或锚点资源段",
+      "通过": true,
+      "比较前": "[sub_resource type=\"AnimationLibrary\" id=\"AnimationLibrary_cabinet_door_left\"]\n_data = {\n&\"RESET\": SubResource(\"Animation_cabinet_door_left_reset\"),\n&\"open\": SubResource(\"Animation_cabinet_door_left_open\")\n}",
+      "比较后": "[sub_resource type=\"AnimationLibrary\" id=\"AnimationLibrary_cabinet_door_left\"]\n_data = {\n&\"RESET\": SubResource(\"Animation_cabinet_door_left_reset\"),\n&\"open\": SubResource(\"Animation_cabinet_door_left_open\")\n}"
+    },
+    {
+      "项目": "专用柜已有动画、形状或锚点资源段",
+      "通过": true,
+      "比较前": "[sub_resource type=\"ConcavePolygonShape3D\" id=\"ConcavePolygonShape3D_xaexn\"]\ndata = PackedVector3Array(-1.1999999, 0.29999998, 0.5, 1.1999999, 0.29999998, 0.5, -1.1999999, -0.29999998, 0.5, 1.1999999, 0.29999998, 0.5, 1.1999999, -0.29999998, 0.5, -1.1999999, -0.29999998, 0.5, 1.1999999, 0.29999998, -0.5, -1.1999999, 0.29999998, -0.5, 1.1999999, -0.29999998, -0.5, -1.1999999, 0.29999998, -0.5, -1.1999999, -0.29999998, -0.5, 1.1999999, -0.29999998, -0.5, 1.1999999, 0.29999998, 0.5, 1.1999999, 0.29999998, -0.5, 1.1999999, -0.29999998, 0.5, 1.1999999, 0.29999998, -0.5, 1.1999999, -0.29999998, -0.5, 1.1999999, -0.29999998, 0.5, -1.1999999, 0.29999998, -0.5, -1.1999999, 0.29999998, 0.5, -1.1999999, -0.29999998, -0.5, -1.1999999, 0.29999998, 0.5, -1.1999999, -0.29999998, 0.5, -1.1999999, -0.29999998, -0.5, 1.1999999, 0.29999998, 0.5, -1.1999999, 0.29999998, 0.5, 1.1999999, 0.29999998, -0.5, -1.1999999, 0.29999998, 0.5, -1.1999999, 0.29999998, -0.5, 1.1999999, 0.29999998, -0.5, -1.1999999, -0.29999998, 0.5, 1.1999999, -0.29999998, 0.5, -1.1999999, -0.29999998, -0.5, 1.1999999, -0.29999998, 0.5, 1.1999999, -0.29999998, -0.5, -1.1999999, -0.29999998, -0.5)",
+      "比较后": "[sub_resource type=\"ConcavePolygonShape3D\" id=\"ConcavePolygonShape3D_xaexn\"]\ndata = PackedVector3Array(-1.1999999, 0.29999998, 0.5, 1.1999999, 0.29999998, 0.5, -1.1999999, -0.29999998, 0.5, 1.1999999, 0.29999998, 0.5, 1.1999999, -0.29999998, 0.5, -1.1999999, -0.29999998, 0.5, 1.1999999, 0.29999998, -0.5, -1.1999999, 0.29999998, -0.5, 1.1999999, -0.29999998, -0.5, -1.1999999, 0.29999998, -0.5, -1.1999999, -0.29999998, -0.5, 1.1999999, -0.29999998, -0.5, 1.1999999, 0.29999998, 0.5, 1.1999999, 0.29999998, -0.5, 1.1999999, -0.29999998, 0.5, 1.1999999, 0.29999998, -0.5, 1.1999999, -0.29999998, -0.5, 1.1999999, -0.29999998, 0.5, -1.1999999, 0.29999998, -0.5, -1.1999999, 0.29999998, 0.5, -1.1999999, -0.29999998, -0.5, -1.1999999, 0.29999998, 0.5, -1.1999999, -0.29999998, 0.5, -1.1999999, -0.29999998, -0.5, 1.1999999, 0.29999998, 0.5, -1.1999999, 0.29999998, 0.5, 1.1999999, 0.29999998, -0.5, -1.1999999, 0.29999998, 0.5, -1.1999999, 0.29999998, -0.5, 1.1999999, 0.29999998, -0.5, -1.1999999, -0.29999998, 0.5, 1.1999999, -0.29999998, 0.5, -1.1999999, -0.29999998, -0.5, 1.1999999, -0.29999998, 0.5, 1.1999999, -0.29999998, -0.5, -1.1999999, -0.29999998, -0.5)"
+    },
+    {
+      "项目": "专用柜已有动画、形状或锚点资源段",
+      "通过": true,
+      "比较前": "[sub_resource type=\"BoxShape3D\" id=\"BoxShape3D_o063d\"]\nsize = Vector3(1.1999999, 0.59999996, 0.099999994)",
+      "比较后": "[sub_resource type=\"BoxShape3D\" id=\"BoxShape3D_o063d\"]\nsize = Vector3(1.1999999, 0.59999996, 0.099999994)"
+    },
+    {
+      "项目": "专用柜已有动画、形状或锚点资源段",
+      "通过": true,
+      "比较前": "[node name=\"CollisionShape3D\" type=\"CollisionShape3D\" parent=\".\" unique_id=713167724]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999998, 0.5)\nshape = SubResource(\"ConcavePolygonShape3D_xaexn\")",
+      "比较后": "[node name=\"CollisionShape3D\" type=\"CollisionShape3D\" parent=\".\" unique_id=713167724]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999998, 0.5)\nshape = SubResource(\"ConcavePolygonShape3D_xaexn\")"
+    },
+    {
+      "项目": "专用柜已有动画、形状或锚点资源段",
+      "通过": true,
+      "比较前": "[node name=\"CollisionShape3D\" type=\"CollisionShape3D\" parent=\"cabinet_door_left_root\" unique_id=249358950]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 0.29999557, 0.05000156)\nshape = SubResource(\"BoxShape3D_o063d\")\ndebug_color = Color(0.99650306, 0, 0.19427907, 0.41960785)",
+      "比较后": "[node name=\"CollisionShape3D\" type=\"CollisionShape3D\" parent=\"cabinet_door_left_root\" unique_id=249358950]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 0.29999557, 0.05000156)\nshape = SubResource(\"BoxShape3D_o063d\")\ndebug_color = Color(0.99650306, 0, 0.19427907, 0.41960785)"
+    },
+    {
+      "项目": "专用柜已有动画、形状或锚点资源段",
+      "通过": true,
+      "比较前": "[node name=\"luquid_tank_slot_0\" type=\"Node3D\" parent=\".\" unique_id=432606996]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8499999, 0.24999999, 0.65)",
+      "比较后": "[node name=\"luquid_tank_slot_0\" type=\"Node3D\" parent=\".\" unique_id=432606996]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8499999, 0.24999999, 0.65)"
+    },
+    {
+      "项目": "专用柜已有动画、形状或锚点资源段",
+      "通过": true,
+      "比较前": "[node name=\"luquid_tank_slot_1\" type=\"Node3D\" parent=\".\" unique_id=280658325]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30999994, 0.24999999, 0.65)",
+      "比较后": "[node name=\"luquid_tank_slot_1\" type=\"Node3D\" parent=\".\" unique_id=280658325]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30999994, 0.24999999, 0.65)"
+    },
+    {
+      "项目": "纯显示保留罐的网格或材质资源",
+      "通过": true,
+      "比较前": "[sub_resource type=\"StandardMaterial3D\" id=\"StandardMaterial3D_i8q27\"]\nalbedo_color = Color(0.68, 0.7, 0.66, 1)\nroughness = 0.72",
+      "比较后": "[sub_resource type=\"StandardMaterial3D\" id=\"StandardMaterial3D_i8q27\"]\nalbedo_color = Color(0.68, 0.7, 0.66, 1)\nroughness = 0.72"
+    },
+    {
+      "项目": "纯显示保留罐的网格或材质资源",
+      "通过": true,
+      "比较前": "[sub_resource type=\"BoxMesh\" id=\"BoxMesh_rlkyb\"]\nmaterial = SubResource(\"StandardMaterial3D_i8q27\")\nsize = Vector3(0.3, 0.24, 0.24)",
+      "比较后": "[sub_resource type=\"BoxMesh\" id=\"BoxMesh_rlkyb\"]\nmaterial = SubResource(\"StandardMaterial3D_i8q27\")\nsize = Vector3(0.3, 0.24, 0.24)"
+    },
+    {
+      "项目": "纯显示保留罐的网格或材质资源",
+      "通过": true,
+      "比较前": "[sub_resource type=\"BoxMesh\" id=\"BoxMesh_pa6tl\"]\nmaterial = SubResource(\"StandardMaterial3D_i8q27\")\nsize = Vector3(0.1, 0.3, 0.3)",
+      "比较后": "[sub_resource type=\"BoxMesh\" id=\"BoxMesh_pa6tl\"]\nmaterial = SubResource(\"StandardMaterial3D_i8q27\")\nsize = Vector3(0.1, 0.3, 0.3)"
+    },
+    {
+      "项目": "纯显示保留罐的网格或材质资源",
+      "通过": true,
+      "比较前": "[sub_resource type=\"BoxMesh\" id=\"BoxMesh_p7yse\"]\nmaterial = SubResource(\"StandardMaterial3D_i8q27\")\nsize = Vector3(0.1, 0.3, 0.3)",
+      "比较后": "[sub_resource type=\"BoxMesh\" id=\"BoxMesh_p7yse\"]\nmaterial = SubResource(\"StandardMaterial3D_i8q27\")\nsize = Vector3(0.1, 0.3, 0.3)"
+    },
+    {
+      "项目": "纯显示保留罐的网格或材质资源",
+      "通过": true,
+      "比较前": "[sub_resource type=\"BoxMesh\" id=\"BoxMesh_x1ebw\"]\nmaterial = SubResource(\"StandardMaterial3D_i8q27\")\nsize = Vector3(0.2, 0.3, 0.1)",
+      "比较后": "[sub_resource type=\"BoxMesh\" id=\"BoxMesh_x1ebw\"]\nmaterial = SubResource(\"StandardMaterial3D_i8q27\")\nsize = Vector3(0.2, 0.3, 0.1)"
+    },
+    {
+      "项目": "纯显示保留罐的网格或材质资源",
+      "通过": true,
+      "比较前": "[sub_resource type=\"BoxMesh\" id=\"BoxMesh_v03ve\"]\nmaterial = SubResource(\"StandardMaterial3D_i8q27\")\nsize = Vector3(0.2, 0.1, 0.3)",
+      "比较后": "[sub_resource type=\"BoxMesh\" id=\"BoxMesh_v03ve\"]\nmaterial = SubResource(\"StandardMaterial3D_i8q27\")\nsize = Vector3(0.2, 0.1, 0.3)"
+    },
+    {
+      "项目": "纯显示保留罐的网格节点局部变换与材质引用",
+      "通过": true,
+      "比较前": "material_override = ExtResource(\"1_x1ebw\")\nmesh = SubResource(\"BoxMesh_rlkyb\")",
+      "比较后": "material_override = ExtResource(\"1_x1ebw\")\nmesh = SubResource(\"BoxMesh_rlkyb\")"
+    },
+    {
+      "项目": "纯显示保留罐的网格节点局部变换与材质引用",
+      "通过": true,
+      "比较前": "transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 0)\nmaterial_override = ExtResource(\"2_v03ve\")\nmesh = SubResource(\"BoxMesh_pa6tl\")",
+      "比较后": "transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 0)\nmaterial_override = ExtResource(\"2_v03ve\")\nmesh = SubResource(\"BoxMesh_pa6tl\")"
+    },
+    {
+      "项目": "纯显示保留罐的网格节点局部变换与材质引用",
+      "通过": true,
+      "比较前": "transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19999999, 0, 0)\nmaterial_override = ExtResource(\"2_v03ve\")\nmesh = SubResource(\"BoxMesh_p7yse\")",
+      "比较后": "transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19999999, 0, 0)\nmaterial_override = ExtResource(\"2_v03ve\")\nmesh = SubResource(\"BoxMesh_p7yse\")"
+    },
+    {
+      "项目": "纯显示保留罐的网格节点局部变换与材质引用",
+      "通过": true,
+      "比较前": "material_override = ExtResource(\"2_v03ve\")\nmesh = SubResource(\"BoxMesh_x1ebw\")",
+      "比较后": "material_override = ExtResource(\"2_v03ve\")\nmesh = SubResource(\"BoxMesh_x1ebw\")"
+    },
+    {
+      "项目": "纯显示保留罐的网格节点局部变换与材质引用",
+      "通过": true,
+      "比较前": "material_override = ExtResource(\"2_v03ve\")\nmesh = SubResource(\"BoxMesh_v03ve\")",
+      "比较后": "material_override = ExtResource(\"2_v03ve\")\nmesh = SubResource(\"BoxMesh_v03ve\")"
+    }
+  ]
+}

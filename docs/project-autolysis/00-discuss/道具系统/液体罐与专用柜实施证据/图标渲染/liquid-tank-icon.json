@@ -1,0 +1,14 @@
+{
+  "检查": "liquid-tank-icon",
+  "时间": "2026-10-01T17:22:15.2599858+08:00",
+  "进程编号": 8508,
+  "退出码": 0,
+  "通过": true,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/render_liquid_tank_icon.gd"
+  ],
+  "通过断言数": 0
+}

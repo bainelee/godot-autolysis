@@ -1,0 +1,122 @@
+[
+  {
+    "相对路径": "main-autolysis/player/components/autolysis_inventory_controller.gd",
+    "字节数": 20915,
+    "修改时间": "2026-10-01T17:26:00.1308060+08:00",
+    "散列摘要": "3A0DAF6E253E4232F1EB4085837E362B8197C9D1D16B0224773D6C455CDF5E39"
+  },
+  {
+    "相对路径": "main-autolysis/player/components/autolysis_interaction_controller.gd",
+    "字节数": 7440,
+    "修改时间": "2026-10-01T17:14:30.8742232+08:00",
+    "散列摘要": "CCF76D90847C624AB676535628A9635030585B62B5AB9E440FCC0C50002A5405"
+  },
+  {
+    "相对路径": "main-autolysis/player/components/interaction_raycast.gd",
+    "字节数": 1292,
+    "修改时间": "2026-10-01T17:14:30.2303149+08:00",
+    "散列摘要": "C3651C837ABA4773377CFF36B263E22B5BE6321325AA2E92C1AFE1D8E850CE73"
+  },
+  {
+    "相对路径": "main-autolysis/systems/item-system/autolysis_liquid_tank.gd",
+    "字节数": 3009,
+    "修改时间": "2026-10-01T17:25:07.3177404+08:00",
+    "散列摘要": "07DD712B04B360B998B9139347385D96144DA66BCFDD1C532772DE9B46C8F77C"
+  },
+  {
+    "相对路径": "main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd",
+    "字节数": 12439,
+    "修改时间": "2026-10-01T17:31:49.5478221+08:00",
+    "散列摘要": "38816FBDCD59D4802A0FACBAB219AF9669600C1E8745CEA10F171F0ECB441CB8"
+  },
+  {
+    "相对路径": "main-autolysis/systems/item-system/items/liquid_tank.tres",
+    "字节数": 874,
+    "修改时间": "2026-10-01T17:16:41.1296924+08:00",
+    "散列摘要": "D835C021824B1CB5072019F1F273DE49003D614E6B275A477DE77A7B2F8FA70C"
+  },
+  {
+    "相对路径": "main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn",
+    "字节数": 1307,
+    "修改时间": "2026-10-01T17:29:30.4999738+08:00",
+    "散列摘要": "7759D962CD6572791308874E12EB1C3123E53006E05882866CDAC8FC908D1897"
+  },
+  {
+    "相对路径": "main-autolysis/scenes/prefabs/prefab_machines/visuals/liquid_tank_visual.tscn",
+    "字节数": 2105,
+    "修改时间": "2026-10-01T17:16:40.4919344+08:00",
+    "散列摘要": "BC8E5C4D8B81921F816ACBBECBA8CC174EE321B10BC768B7DDD13FF211E97878"
+  },
+  {
+    "相对路径": "main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn",
+    "字节数": 9798,
+    "修改时间": "2026-10-01T17:29:28.6110850+08:00",
+    "散列摘要": "A24E5C379D056FDC0F8F9A494B2615BDB250E1FD1B2B89B0EB348C39565AAE82"
+  },
+  {
+    "相对路径": "main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn",
+    "字节数": 15497,
+    "修改时间": "2026-10-01T17:16:41.7818424+08:00",
+    "散列摘要": "08D649F6B358277E4DE600F85C8CD9FB16DDDD26ABDFEE8DCA421A1FEDB31D73"
+  },
+  {
+    "相对路径": "main-autolysis/scenes/prefabs/prefab_machines/machine_phase_separator_0.tscn",
+    "字节数": 12277,
+    "修改时间": "2026-10-01T17:16:42.4183407+08:00",
+    "散列摘要": "06BD4E3E051DB26BAF4C2DDBE3B5824B0DA62C50D641139C35D736B38D453ED0"
+  },
+  {
+    "相对路径": "main-autolysis/scenes/prefabs/prefab_machines/machine_wave_rebuilder_0.tscn",
+    "字节数": 22030,
+    "修改时间": "2026-10-01T17:16:43.0702851+08:00",
+    "散列摘要": "1C9803C34766995FBF0D8492BBCDD1C55EE36BF09CAE34F7CF58547AD980A2B3"
+  },
+  {
+    "相对路径": "main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd",
+    "字节数": 20938,
+    "修改时间": "2026-10-01T17:26:00.7451404+08:00",
+    "散列摘要": "AEEC76F2C78835318C38C68F2BB6620ED94E4B26C1B058096E6FCCF666C15C13"
+  },
+  {
+    "相对路径": "main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd",
+    "字节数": 22713,
+    "修改时间": "2026-10-01T17:45:29.5487153+08:00",
+    "散列摘要": "87081432016B350733CF534A8550D4E89C2751E0E24B6BE7C95FAA2BA697F8B4"
+  },
+  {
+    "相对路径": "main-autolysis/systems/item-system/tests/liquid_tank_cabinet_rendered_test.gd",
+    "字节数": 17216,
+    "修改时间": "2026-10-01T17:43:28.9331822+08:00",
+    "散列摘要": "88E05210A6C9D7402D9036F024ADC209CD736D7856904705826F7E42CC21F809"
+  },
+  {
+    "相对路径": "main-autolysis/systems/item-system/tests/render_liquid_tank_icon.gd",
+    "字节数": 6478,
+    "修改时间": "2026-10-01T17:18:03.8302567+08:00",
+    "散列摘要": "BDEA6ED42A05C971850C84315B28708FBEB5C2701B83DDBBD238BDCA8256BC4C"
+  },
+  {
+    "相对路径": "main-autolysis/systems/item-system/tests/shelf_layers_test.gd",
+    "字节数": 15100,
+    "修改时间": "2026-10-01T17:41:23.1809178+08:00",
+    "散列摘要": "F100E44BB1005497D54828A175CF50E6B62EB5D5262BB16BE63751115A57F088"
+  },
+  {
+    "相对路径": "main-autolysis/systems/item-system/tests/shelf_clearance_test.gd",
+    "字节数": 10297,
+    "修改时间": "2026-10-01T17:41:23.8294048+08:00",
+    "散列摘要": "6B9220B43E7E968D4660F58DC8B7BEDFB9051A2B221D6D7701DDFC32315A01BF"
+  },
+  {
+    "相对路径": "main-autolysis/assets/ui/item-icons/liquid_tank.png",
+    "字节数": 26733,
+    "修改时间": "2026-10-01T17:22:14.9789672+08:00",
+    "散列摘要": "E69145B8888C07510251C71C3A8E6E4168AB3C30123CB694325CB5566A440BE1"
+  },
+  {
+    "相对路径": "project.godot",
+    "字节数": 7080,
+    "修改时间": "2026-10-01T17:14:31.5181911+08:00",
+    "散列摘要": "76F612D6F46787E983E87BE39561AC3C6AF4AAC06866E0C034E8693C72F039F6"
+  }
+]

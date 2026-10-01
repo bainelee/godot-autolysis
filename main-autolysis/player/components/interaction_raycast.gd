@@ -6,14 +6,16 @@ signal interactable_unseen()
 
 const BASE_COLLISION_MASK: int = 3
 const PLACE_SHELF_LAYER: int = 5
+const LIQUID_TANK_CABINET_LAYER: int = 7
 
 var _target_id: int = 0
 
 
 ## 只接受中心射线的首个碰撞，普通墙体不会被排除后穿透查询。
-func refresh_target(include_place_shelves: bool = false) -> Node3D:
+func refresh_target(include_place_shelves: bool = false, include_liquid_tank_cabinets: bool = false) -> Node3D:
 	collision_mask = BASE_COLLISION_MASK
 	set_collision_mask_value(PLACE_SHELF_LAYER, include_place_shelves)
+	set_collision_mask_value(LIQUID_TANK_CABINET_LAYER, include_liquid_tank_cabinets)
 	var target: Node3D = null
 	if is_inside_tree() and not is_queued_for_deletion():
 		force_raycast_update()

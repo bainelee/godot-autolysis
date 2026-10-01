@@ -1,0 +1,24 @@
+{
+  "检查": "transactions",
+  "引擎": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "工程": "D:\\autolysis",
+  "参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd",
+    "--",
+    "--evidence-dir",
+    "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\液体罐与专用柜实施证据\\checks\\transactions"
+  ],
+  "开始时间": "2026-10-01T17:51:41.7419172+08:00",
+  "用时秒": 10.2233261,
+  "本次进程编号": 31252,
+  "超时": false,
+  "退出码": 0,
+  "脚本异常": false,
+  "引擎错误": false,
+  "标准输出": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\液体罐与专用柜实施证据\\checks\\transactions\\标准输出.log",
+  "错误输出": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\液体罐与专用柜实施证据\\checks\\transactions\\错误输出.log"
+}

@@ -1,0 +1,22 @@
+{
+  "检查": "blend-transfer",
+  "引擎": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "工程": "D:\\autolysis",
+  "参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd",
+    "--",
+    "--evidence-dir",
+    "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\液体罐与专用柜实施证据\\checks\\blend-transfer"
+  ],
+  "开始时间": "2026-10-01T17:39:39.8334566+08:00",
+  "用时秒": 17.1631174,
+  "本次进程编号": 28588,
+  "超时": false,
+  "退出码": 0,
+  "标准输出": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\液体罐与专用柜实施证据\\checks\\blend-transfer\\标准输出.log",
+  "错误输出": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\液体罐与专用柜实施证据\\checks\\blend-transfer\\错误输出.log"
+}

@@ -1,0 +1,21 @@
+ERROR: Node not found: "interaction_prefabs/item_groups/place_shelf_workroom_rm_0" (relative to "/root/@Node3D@2/01-autolysis-test").
+   at: get_node (scene/main/node.cpp:1963)
+   GDScript backtrace (most recent call first):
+       [0] _main_geometry_checks (res://main-autolysis/systems/item-system/tests/shelf_layers_test.gd:214)
+       [1] _run (res://main-autolysis/systems/item-system/tests/shelf_layers_test.gd:14)
+       [2] _warehouse_checks (res://main-autolysis/systems/item-system/tests/shelf_layers_test.gd:208)
+       [3] _clear_world (res://main-autolysis/systems/item-system/tests/item_system_test.gd:109)
+       [4] _frames (res://main-autolysis/systems/item-system/tests/item_system_test.gd:103)
+ERROR: Node not found: "interaction_prefabs/item_groups/place_shelf_workroom_rm_1" (relative to "/root/@Node3D@2/01-autolysis-test").
+   at: get_node (scene/main/node.cpp:1963)
+   GDScript backtrace (most recent call first):
+       [0] _main_geometry_checks (res://main-autolysis/systems/item-system/tests/shelf_layers_test.gd:215)
+       [1] _run (res://main-autolysis/systems/item-system/tests/shelf_layers_test.gd:14)
+       [2] _warehouse_checks (res://main-autolysis/systems/item-system/tests/shelf_layers_test.gd:208)
+       [3] _clear_world (res://main-autolysis/systems/item-system/tests/item_system_test.gd:109)
+       [4] _frames (res://main-autolysis/systems/item-system/tests/item_system_test.gd:103)
+SCRIPT ERROR: Cannot call method 'get_node' on a null value.
+   at: _main_geometry_checks (res://main-autolysis/systems/item-system/tests/shelf_layers_test.gd:220)
+   GDScript backtrace (most recent call first):
+       [0] _main_geometry_checks (res://main-autolysis/systems/item-system/tests/shelf_layers_test.gd:220)
+       [1] _frames (res://main-autolysis/systems/item-system/tests/item_system_test.gd:103)

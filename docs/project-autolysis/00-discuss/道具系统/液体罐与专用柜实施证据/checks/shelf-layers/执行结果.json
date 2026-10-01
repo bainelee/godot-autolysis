@@ -1,0 +1,24 @@
+{
+  "检查": "shelf-layers",
+  "引擎": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "工程": "D:\\autolysis",
+  "参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/shelf_layers_test.gd",
+    "--",
+    "--evidence-dir",
+    "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\液体罐与专用柜实施证据\\checks\\shelf-layers"
+  ],
+  "开始时间": "2026-10-01T17:43:35.4050113+08:00",
+  "用时秒": 5.2135326,
+  "本次进程编号": 9924,
+  "超时": false,
+  "退出码": 0,
+  "脚本异常": false,
+  "引擎错误": false,
+  "标准输出": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\液体罐与专用柜实施证据\\checks\\shelf-layers\\标准输出.log",
+  "错误输出": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\液体罐与专用柜实施证据\\checks\\shelf-layers\\错误输出.log"
+}

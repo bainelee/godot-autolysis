@@ -166,6 +166,7 @@ skeleton = NodePath("../..")
 
 [node name="luquid_tank_0" parent="." unique_id=1823254939 instance=ExtResource("3_7bcwq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21000001, 0.45, 0.29999998)
+fixed_installation = true
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=2021997247]
 transform = Transform3D(1.0552864e-07, -1, 6.181721e-08, 4.172325e-07, 6.181725e-08, 0.99999994, -0.99999994, -1.0552863e-07, 4.172325e-07, -0.21000001, 0.7, 0.53999996)

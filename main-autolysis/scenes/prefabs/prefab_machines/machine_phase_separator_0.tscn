@@ -173,6 +173,7 @@ mesh = SubResource("BoxMesh_isgjk")
 
 [node name="luquid_tank_0" parent="." unique_id=1823254939 instance=ExtResource("3_jhd5k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59999996, 0.19999999)
+fixed_installation = true
 
 [node name="switch_handle" type="Node3D" parent="." unique_id=727727316]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5000008, 0.15000007, 0.4499997)

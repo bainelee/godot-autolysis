@@ -1,0 +1,18 @@
+{
+  "退出码": 0,
+  "引擎错误": false,
+  "参数": [
+    "--headless",
+    "--path",
+    "D:\\autolysis",
+    "--quit-after",
+    "180",
+    "--script",
+    "res://docs/project-autolysis/00-discuss/道具系统/液体罐与专用柜实施证据/door-diagnostic/door_sync_diagnostic.gd",
+    "--",
+    "production-physics",
+    "physics-check"
+  ],
+  "关闭同步对照": false,
+  "按物理回调判定": true
+}

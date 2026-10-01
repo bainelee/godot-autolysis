@@ -4,6 +4,8 @@
 [ext_resource type="Material" uid="uid://blu42xw7rpe7b" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_2.tres" id="2_o063d"]
 [ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="3_82rg3"]
 [ext_resource type="PackedScene" uid="uid://bbqs75e8vtnql" path="res://main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn" id="4_lm03y"]
+[ext_resource type="Script" path="res://main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd" id="5_cabinet"]
+[ext_resource type="PackedScene" path="res://main-autolysis/components/interactions/autolysis_interaction_component.tscn" id="6_interaction"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xaexn"]
 data = PackedVector3Array(-1.1999999, 0.29999998, 0.5, 1.1999999, 0.29999998, 0.5, -1.1999999, -0.29999998, 0.5, 1.1999999, 0.29999998, 0.5, 1.1999999, -0.29999998, 0.5, -1.1999999, -0.29999998, 0.5, 1.1999999, 0.29999998, -0.5, -1.1999999, 0.29999998, -0.5, 1.1999999, -0.29999998, -0.5, -1.1999999, 0.29999998, -0.5, -1.1999999, -0.29999998, -0.5, 1.1999999, -0.29999998, -0.5, 1.1999999, 0.29999998, 0.5, 1.1999999, 0.29999998, -0.5, 1.1999999, -0.29999998, 0.5, 1.1999999, 0.29999998, -0.5, 1.1999999, -0.29999998, -0.5, 1.1999999, -0.29999998, 0.5, -1.1999999, 0.29999998, -0.5, -1.1999999, 0.29999998, 0.5, -1.1999999, -0.29999998, -0.5, -1.1999999, 0.29999998, 0.5, -1.1999999, -0.29999998, 0.5, -1.1999999, -0.29999998, -0.5, 1.1999999, 0.29999998, 0.5, -1.1999999, 0.29999998, 0.5, 1.1999999, 0.29999998, -0.5, -1.1999999, 0.29999998, 0.5, -1.1999999, 0.29999998, -0.5, 1.1999999, 0.29999998, -0.5, -1.1999999, -0.29999998, 0.5, 1.1999999, -0.29999998, 0.5, -1.1999999, -0.29999998, -0.5, 1.1999999, -0.29999998, 0.5, 1.1999999, -0.29999998, -0.5, -1.1999999, -0.29999998, -0.5)
@@ -40,7 +42,59 @@ size = Vector3(1.2, 0.6, 0.1)
 material = SubResource("StandardMaterial3D_u4qoi")
 size = Vector3(1, 0.04, 0.02)
 
-[node name="cabinet_workroom_0" type="StaticBody3D" unique_id=1791832651]
+[sub_resource type="BoxShape3D" id="BoxShape3D_o063d"]
+size = Vector3(1.1999999, 0.59999996, 0.099999994)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_liquid_placement"]
+size = Vector3(1.05, 0.4, 0.02)
+
+[sub_resource type="Animation" id="Animation_cabinet_door_left_reset"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cabinet_door_left_root:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cabinet_door_left_open"]
+resource_name = "open"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cabinet_door_left_root:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16237015, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.3962634, 0, 0), Vector3(1.3089969, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cabinet_door_left"]
+_data = {
+&"RESET": SubResource("Animation_cabinet_door_left_reset"),
+&"open": SubResource("Animation_cabinet_door_left_open")
+}
+
+[node name="cabinet_workroom_0" type="StaticBody3D" unique_id=1791832651 node_paths=PackedStringArray("slot_0", "slot_1", "door_body", "toggle_interaction", "placement_body", "placement_interaction", "animation_player")]
+collision_layer = 8
+script = ExtResource("5_cabinet")
+slot_0 = NodePath("luquid_tank_slot_0")
+slot_1 = NodePath("luquid_tank_slot_1")
+door_body = NodePath("cabinet_door_left_root")
+toggle_interaction = NodePath("cabinet_door_left_root/InteractionComponent")
+placement_body = NodePath("LiquidTankPlacementBody")
+placement_interaction = NodePath("LiquidTankPlacementBody/InteractionComponent")
+animation_player = NodePath("AnimationPlayer")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=713167724]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999998, 0.5)
@@ -83,21 +137,42 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59999996, 0.29999995, 0.949
 material_override = ExtResource("1_cxe7d")
 mesh = SubResource("BoxMesh_ulo85")
 
-[node name="cabinet_door_left" type="MeshInstance3D" parent="." unique_id=1835579013]
-transform = Transform3D(1, 0, 0, 0, 0.258819, -0.9659258, 0, 0.9659258, 0.258819, -0.6, -5.9604645e-08, 0.9)
+[node name="cabinet_door_left_root" type="AnimatableBody3D" parent="." unique_id=313408801 groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, -5.9604645e-08, 0.9)
+collision_layer = 3
+
+[node name="mesh_cabinet_door_left" type="MeshInstance3D" parent="cabinet_door_left_root" unique_id=1835579013]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0)
 material_override = ExtResource("3_82rg3")
 mesh = SubResource("BoxMesh_o063d")
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="cabinet_door_left" unique_id=2071526831]
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="cabinet_door_left_root/mesh_cabinet_door_left" unique_id=2071526831]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0.049999952)
 material_override = ExtResource("2_o063d")
 mesh = SubResource("BoxMesh_4xna6")
 
-[node name="MeshInstance3D12" type="MeshInstance3D" parent="cabinet_door_left/MeshInstance3D8" unique_id=1673623858]
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="cabinet_door_left_root/mesh_cabinet_door_left/MeshInstance3D8" unique_id=1673623858]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19999999, 0.060000062)
 material_override = ExtResource("3_82rg3")
 mesh = SubResource("BoxMesh_gs6ap")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cabinet_door_left_root" unique_id=249358950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 0.29999557, 0.05000156)
+shape = SubResource("BoxShape3D_o063d")
+debug_color = Color(0.99650306, 0, 0.19427907, 0.41960785)
+
+[node name="InteractionComponent" parent="cabinet_door_left_root" instance=ExtResource("6_interaction")]
+
+[node name="LiquidTankPlacementBody" type="StaticBody3D" parent="." groups=["interactable"]]
+position = Vector3(-0.575, 0.3, 0.85)
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LiquidTankPlacementBody"]
+shape = SubResource("BoxShape3D_liquid_placement")
+
+[node name="InteractionComponent" parent="LiquidTankPlacementBody" instance=ExtResource("6_interaction")]
 
 [node name="luquid_tank_slot_0" type="Node3D" parent="." unique_id=432606996]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8499999, 0.24999999, 0.65)
@@ -108,3 +183,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8499999, 0.24999999, 0.65)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30999994, 0.24999999, 0.65)
 
 [node name="luquid_tank_1" parent="luquid_tank_slot_1" unique_id=821845277 instance=ExtResource("4_lm03y")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1968799029]
+callback_mode_process = 0
+libraries/ = SubResource("AnimationLibrary_cabinet_door_left")

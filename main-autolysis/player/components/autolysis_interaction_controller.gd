@@ -60,7 +60,8 @@ func refresh_state() -> void:
 		_publish_availability(false)
 		return
 	var held_item: AutolysisItemDefinition = _inventory.get_focused_item()
-	_target = _detector.refresh_target(held_item != null and held_item.is_raw_material)
+	var holds_liquid_tank: bool = held_item != null and not held_item.is_raw_material and held_item.item_id == &"liquid_tank"
+	_target = _detector.refresh_target(held_item != null and held_item.is_raw_material, holds_liquid_tank)
 	if not _node_is_live(_target):
 		_reported_target_id = 0
 		_reported_component_ids.clear()

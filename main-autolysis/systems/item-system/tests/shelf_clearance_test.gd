@@ -2,8 +2,8 @@ extends SceneTree
 ## 实例仅用于读取实际模型和变换，不加入场景树，不触发玩家初始化。
 
 const MAIN_SCENE_PATH: String = "res://main-autolysis/scenes/01-autolysis-test.tscn"
-const UPPER_SHELF_PATH: NodePath = ^"interaction_prefabs/item_groups/place_shelf_workroom_rm_0"
-const LOWER_SHELF_PATH: NodePath = ^"interaction_prefabs/item_groups/place_shelf_workroom_rm_1"
+const UPPER_SHELF_PATH: NodePath = ^"interaction_prefabs/place_shelf_and_cabinet/place_shelf_workroom_rm_0"
+const LOWER_SHELF_PATH: NodePath = ^"interaction_prefabs/place_shelf_and_cabinet/place_shelf_workroom_rm_1"
 const REPORT_PATH: String = "res://docs/project-autolysis/00-discuss/道具系统/道具系统p1实施证据/checks/shelf-clearance.json"
 const VISUAL_PATHS: Array[String] = [
 	"res://main-autolysis/scenes/prefabs/prefab_raw_materials/visuals/rm_caffeine_visual.tscn",
