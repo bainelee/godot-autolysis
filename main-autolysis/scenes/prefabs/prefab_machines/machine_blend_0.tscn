@@ -8,7 +8,6 @@
 [ext_resource type="Material" uid="uid://3as3koaxu70e" path="res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres" id="5_7w0o1"]
 [ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="7_vnha0"]
 [ext_resource type="Material" uid="uid://blu42xw7rpe7b" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_2.tres" id="7_yvcpe"]
-[ext_resource type="PackedScene" uid="uid://bbqs75e8vtnql" path="res://main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn" id="8_7hmvv"]
 [ext_resource type="Script" uid="uid://d1wqtksnp2t8f" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd" id="10_machine"]
 [ext_resource type="Script" uid="uid://dxhbfr6x7ghda" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd" id="11_slot"]
 [ext_resource type="Script" uid="uid://c1pn2s683ojtr" path="res://main-autolysis/components/interactions/autolysis_focus_target.gd" id="12_focus"]
@@ -616,7 +615,7 @@ shape = SubResource("BoxShape3D_fsl51")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35000038, 0.59999996, 0.09999995)
 collision_layer = 40
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="luquid_tank_slot_0" unique_id=250055092]
+[node name="collision_luquid_tank_slot_0" type="CollisionShape3D" parent="luquid_tank_slot_0" unique_id=250055092]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9604645e-08, 0.005000055)
 shape = SubResource("BoxShape3D_vnha0")
 debug_color = Color(0.84678787, 0.37380517, 0.13031688, 0.41960785)
@@ -656,8 +655,6 @@ skeleton = NodePath("../../..")
 
 [node name="luquid_tank_slot" type="Node3D" parent="luquid_tank_slot_0" unique_id=1824775236]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 1.1920929e-07, 0.09999974)
-
-[node name="luquid_tank_0" parent="luquid_tank_slot_0/luquid_tank_slot" unique_id=1823254939 instance=ExtResource("8_7hmvv")]
 
 [node name="switch_handle_blend_mechine_can_reset" type="Node3D" parent="." unique_id=48086131]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7500008, 5.9604645e-08, 0.4499997)
