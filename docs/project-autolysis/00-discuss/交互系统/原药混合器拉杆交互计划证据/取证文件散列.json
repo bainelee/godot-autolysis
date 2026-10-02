@@ -1,0 +1,57 @@
+[
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_blend_0.tscn",
+    "散列": "418D9D9F42810D10631BCF122817FF8F51AEA8983AABAF37ACE61B8A3E602559",
+    "日期": "2026-10-02"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_interaction_controller.gd",
+    "散列": "CCF76D90847C624AB676535628A9635030585B62B5AB9E440FCC0C50002A5405",
+    "日期": "2026-10-02"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_focus_ray_query.gd",
+    "散列": "E2C0388E376A654C9450A4D749088B85FAF862F334C13A5F3DEDA9A2FBC7243F",
+    "日期": "2026-10-02"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\components\\interactions\\autolysis_focus_target.gd",
+    "散列": "CA131C9FEEB73D04FFFC1F71833CD07F7C5C8C716ABC66F5A24EDEB4D074361E",
+    "日期": "2026-10-02"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.gd",
+    "散列": "CD245DE31B71FB2C08A7FBF8014C9B04D213652DC2A45DA8F474D54FEED67254",
+    "日期": "2026-10-02"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_focus_controller.gd",
+    "散列": "B187711739D0CBDF7E4B4D834AAC100EAEFAE9F5F2E0100996FABDDA58EE0142",
+    "日期": "2026-10-02"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_machine.gd",
+    "散列": "8CEB4E3E190BEE80FA8E7222E57EDA2B94796F1A034E032158A0DA258D5BC5BC",
+    "日期": "2026-10-02"
+  },
+  {
+    "文件": "D:\\cogito\\addons\\cogito\\Components\\Interactions\\HoldInteraction.gd",
+    "散列": "79A53C8424E787EE78FC57B8880595EE1F9DBF433EC3868101813AF77AC2FC8F",
+    "日期": "2026-10-02"
+  },
+  {
+    "文件": "D:\\cogito\\addons\\cogito\\Components\\UI\\UI_HoldComponent.gd",
+    "散列": "F5706E29C91CD159E7BDF102F2D5CB1A386D52D345056AD7CFD0E6B808D9B52A",
+    "日期": "2026-10-02"
+  },
+  {
+    "文件": "D:\\cogito\\addons\\cogito\\CogitoObjects\\cogito_turnwheel.gd",
+    "散列": "DC220192CF23437CFC9BD7CE0AC81B5FD66EB2FFF540F13A0505D84E165EA70B",
+    "日期": "2026-10-02"
+  },
+  {
+    "文件": "D:\\cogito\\addons\\cogito\\Components\\UI\\UI_InspectComponent.gd",
+    "散列": "70DF982D8DFC434723A12DD6B1FD1E072E5299DA1DC2A724E7EF5AA13B0E3D5C",
+    "日期": "2026-10-02"
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "检查": "聚焦回归",
+  "时间": "2026-10-02T15:07:48.3244683+08:00",
+  "进程编号": 34208,
+  "退出码": 1,
+  "通过": false,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/player/tests/focus_interaction_test.gd",
+    "--",
+    "--evidence-dir=res://docs/project-autolysis/00-discuss/交互系统/原药混合器拉杆交互实施证据/回归内部证据/聚焦"
+  ],
+  "通过断言数": 219
+}

@@ -1,0 +1,5 @@
+ERROR: 探针没有收到实际鼠标移动事件，不能视为有效后端证据。
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://main-autolysis/player/tests/blend_handle_warp_probe.gd:150)
+       [1] _process (res://main-autolysis/player/tests/blend_handle_warp_probe.gd:104)

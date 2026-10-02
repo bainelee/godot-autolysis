@@ -1,0 +1,16 @@
+{
+  "检查": "handle_scene_ready",
+  "时间": "2026-10-02T15:05:38.4378660+08:00",
+  "进程编号": 14928,
+  "退出码": 0,
+  "通过": false,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--quit-after",
+    "3",
+    "res://main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn"
+  ],
+  "通过断言数": 0
+}

@@ -1,0 +1,22 @@
+{
+  "检查": "拉杆右键调整",
+  "时间": "2026-10-02T16:07:18.6132394+08:00",
+  "进程编号": 34808,
+  "退出码": 1,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/player/tests/blend_handle_drag_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/交互系统/原药混合器拉杆交互实施证据/右键退出调整/内部证据/拉杆"
+  ],
+  "通过断言数": 503
+}

@@ -1,0 +1,6 @@
+Godot Engine v4.6.1.stable.official.14d19694e - https://godotengine.org
+Vulkan 1.4.351 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3060 Ti
+
+探针记录节点已进入场景树，输入监听启用=true
+探针设置：{"内容尺寸":[1600,1200],"原累积设置":true,"同步原生消息":true,"后端":"Windows","引擎版本":{"build":"official","hash":"14d19694e0c88a3f9e82d899a0400f27a24c176e","hex":263681,"major":4,"minor":6,"patch":1,"status":"stable","string":"4.6.1-stable (official)","timestamp":0},"敏捷刷新":false,"模式":"程序定位观察","窗口尺寸":[800,600],"等待空格启动":true,"累积设置":false}
+探针延迟初始化完成：记录节点在树中=true；窗口可见=true

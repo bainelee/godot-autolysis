@@ -1,0 +1,23 @@
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2570)
+SCRIPT ERROR: Trying to assign an array of type "Array" to a variable of type "Array[Dictionary]".
+   at: AutolysisBlendHandle.get_configuration_error (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd:75)
+   GDScript backtrace (most recent call first):
+       [0] get_configuration_error (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd:75)
+       [1] configure (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd:46)
+       [2] _ready (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd:38)
+SCRIPT ERROR: Trying to assign an array of type "Array" to a variable of type "Array[Dictionary]".
+   at: AutolysisBlendHandle.get_configuration_error (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd:75)
+   GDScript backtrace (most recent call first):
+       [0] get_configuration_error (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd:75)
+       [1] is_configured (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd:57)
+       [2] configure (res://main-autolysis/components/interactions/autolysis_focus_target.gd:31)
+       [3] _ready (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd:41)
+SCRIPT ERROR: Trying to assign an array of type "Array" to a variable of type "Array[Dictionary]".
+   at: AutolysisBlendHandle.get_configuration_error (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd:75)
+   GDScript backtrace (most recent call first):
+       [0] get_configuration_error (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd:75)
+       [1] is_configured (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd:57)
+       [2] is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:54)
+       [3] configure (res://main-autolysis/components/interactions/autolysis_focus_target.gd:36)
+       [4] _ready (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd:41)

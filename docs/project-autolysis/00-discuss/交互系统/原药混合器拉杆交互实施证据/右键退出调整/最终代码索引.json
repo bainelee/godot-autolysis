@@ -1,0 +1,32 @@
+[
+  {
+    "源文件": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_interaction_controller.gd",
+    "最终副本": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\原药混合器拉杆交互实施证据\\右键退出调整\\最终代码\\autolysis_interaction_controller.gd",
+    "内容散列": "EA1695E77377E45C24E41EB93A0C00BAD55EBC545E77243E93003504E0FEFDED",
+    "总行数": 431
+  },
+  {
+    "源文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_handle.gd",
+    "最终副本": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\原药混合器拉杆交互实施证据\\右键退出调整\\最终代码\\autolysis_blend_handle.gd",
+    "内容散列": "077430FBCC19C8657EDE41FD8662C6F427ADE35605EF2D8C54D53B12AEF474F8",
+    "总行数": 190
+  },
+  {
+    "源文件": "D:\\autolysis\\main-autolysis\\player\\tests\\blend_handle_drag_test.gd",
+    "最终副本": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\原药混合器拉杆交互实施证据\\右键退出调整\\最终代码\\blend_handle_drag_test.gd",
+    "内容散列": "882B97979075DF90EFAAE6F28B3A16531F618A17049FEA6142E97D7678045433",
+    "总行数": 1024
+  },
+  {
+    "源文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_blend_0.tscn",
+    "最终副本": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\原药混合器拉杆交互实施证据\\右键退出调整\\最终代码\\machine_blend_0.tscn",
+    "内容散列": "61702AADC112D9772FE489F34AEE0025F950D49C583D1F8C9529A5BB6559C7C5",
+    "总行数": 726
+  },
+  {
+    "源文件": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_focus_controller.gd",
+    "最终副本": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\原药混合器拉杆交互实施证据\\右键退出调整\\最终代码\\autolysis_focus_controller.gd",
+    "内容散列": "B187711739D0CBDF7E4B4D834AAC100EAEFAE9F5F2E0100996FABDDA58EE0142",
+    "总行数": 219
+  }
+]

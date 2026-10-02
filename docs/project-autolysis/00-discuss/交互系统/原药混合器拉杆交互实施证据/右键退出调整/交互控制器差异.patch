@@ -1,0 +1,113 @@
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\345\216\237\350\215\257\346\267\267\345\220\210\345\231\250\346\213\211\346\235\206\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\\345\217\263\351\224\256\351\200\200\345\207\272\350\260\203\346\225\264\\\350\260\203\346\225\264\345\211\215\\\344\272\244\344\272\222\346\216\247\345\210\266\345\231\250.gd" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\345\216\237\350\215\257\346\267\267\345\220\210\345\231\250\346\213\211\346\235\206\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\\345\217\263\351\224\256\351\200\200\345\207\272\350\260\203\346\225\264\\\346\234\200\347\273\210\344\273\243\347\240\201\\autolysis_interaction_controller.gd"
+index 5e40970..05c9de4 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\345\216\237\350\215\257\346\267\267\345\220\210\345\231\250\346\213\211\346\235\206\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\\345\217\263\351\224\256\351\200\200\345\207\272\350\260\203\346\225\264\\\350\260\203\346\225\264\345\211\215\\\344\272\244\344\272\222\346\216\247\345\210\266\345\231\250.gd"
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\345\216\237\350\215\257\346\267\267\345\220\210\345\231\250\346\213\211\346\235\206\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\\345\217\263\351\224\256\351\200\200\345\207\272\350\260\203\346\225\264\\\346\234\200\347\273\210\344\273\243\347\240\201\\autolysis_interaction_controller.gd"
+@@ -28,8 +28,6 @@ var _drag_target: AutolysisBlendHandle
+ var _drag_viewport_rect: Rect2
+ var _drag_screen_transform: Transform2D
+ var _drag_window_position: Vector2i
+-var _accumulation_saved: bool = false
+-var _original_accumulation: bool = true
+ var _focus_accumulation_saved: bool = false
+ var _focus_original_accumulation: bool = true
+ var _last_drag_motion: Vector2 = Vector2.ZERO
+@@ -155,7 +153,6 @@ func clear_pending_clicks() -> void:
+ 	# 切格只作废开始请求，已经绑定的持续事件仍按顺序处理。
+ 	if _capture_sequence != _drag_sequence:
+ 		_capture_sequence = 0
+-	_restore_accumulation_if_unused()
+ 
+ 
+ func is_drag_active() -> bool:
+@@ -172,7 +169,6 @@ func cancel_focus_drag() -> void:
+ 	_pending_clicks.clear()
+ 	_drag_events.clear()
+ 	_capture_sequence = 0
+-	_restore_accumulation_if_unused()
+ 	if _node_is_live(handle):
+ 		handle.cancel_drag(_actor)
+ 
+@@ -213,13 +209,11 @@ func _handle_focus_input(event: InputEvent) -> void:
+ 		return
+ 	var player: AutolysisPlayer = _actor as AutolysisPlayer
+ 	if event.is_action_pressed(EXIT_ACTION):
++		if is_drag_active():
++			get_viewport().set_input_as_handled()
++			return
+ 		if player.is_focus_exit_allowed():
+-			if _focus.state == AutolysisFocusController.FocusState.FOCUSED and (is_drag_active() or not _pending_clicks.is_empty()):
+-				_drag_events.append({"kind": &"exit", "session": _focus.session_id})
+-				_capture_sequence = 0
+-			else:
+-				cancel_focus_drag()
+-				_focus.request_exit()
++			_focus.request_exit()
+ 			get_viewport().set_input_as_handled()
+ 		return
+ 	if not event.is_action_pressed(DIRECT_ACTION) or not player.is_focus_input_allowed():
+@@ -241,7 +235,6 @@ func _handle_focus_input(event: InputEvent) -> void:
+ 	_drag_events.append(click)
+ 	if left_mouse:
+ 		_capture_sequence = _next_sequence
+-		_save_accumulation()
+ 	get_viewport().set_input_as_handled()
+ 
+ 
+@@ -266,7 +259,7 @@ func _physics_process(_delta: float) -> void:
+ 		var handle: AutolysisBlendHandle = _drag_target
+ 		_clear_drag_binding()
+ 		handle.release_drag(_actor)
+-	if is_drag_active() and _drag_context_valid():
++	if _drag_context_valid():
+ 		_wrap_drag_cursor()
+ 		if not is_instance_valid(self):
+ 			return
+@@ -275,7 +268,6 @@ func _physics_process(_delta: float) -> void:
+ 			return
+ 	if _pending_clicks.is_empty() and not is_drag_active():
+ 		_capture_sequence = 0
+-	_restore_accumulation_if_unused()
+ 
+ 
+ func _drain_drag_events() -> void:
+@@ -285,10 +277,6 @@ func _drain_drag_events() -> void:
+ 		if not _focus_input_valid() or entry["session"] != _focus.session_id:
+ 			cancel_focus_drag()
+ 			break
+-		if entry["kind"] == &"exit":
+-			cancel_focus_drag()
+-			_focus.request_exit()
+-			break
+ 		if entry["kind"] == &"begin":
+ 			if _pending_clicks.has(entry):
+ 				_pending_clicks.erase(entry)
+@@ -365,20 +353,6 @@ func _clear_drag_binding() -> void:
+ 	_warp_delta = Vector2.ZERO
+ 
+ 
+-func _save_accumulation() -> void:
+-	if _accumulation_saved:
+-		return
+-	_original_accumulation = Input.use_accumulated_input
+-	_accumulation_saved = true
+-	Input.use_accumulated_input = false
+-
+-
+-func _restore_accumulation_if_unused() -> void:
+-	if _accumulation_saved and _pending_clicks.is_empty() and _drag_events.is_empty() and not is_drag_active():
+-		Input.use_accumulated_input = _original_accumulation
+-		_accumulation_saved = false
+-
+-
+ func _on_focus_state_changed() -> void:
+ 	cancel_focus_drag()
+ 	_sync_focus_accumulation()
+@@ -391,7 +365,7 @@ func _sync_focus_accumulation() -> void:
+ 			_focus_accumulation_saved = true
+ 		# 在新按下到来前关闭累积，避免同一原生消息批内的下拉与反推已被合并。
+ 		Input.use_accumulated_input = false
+-	elif not _accumulation_saved:
++	else:
+ 		_restore_focus_accumulation()
+ 
+ 

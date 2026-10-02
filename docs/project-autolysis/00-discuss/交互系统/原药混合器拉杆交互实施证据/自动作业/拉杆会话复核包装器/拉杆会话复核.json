@@ -1,0 +1,23 @@
+{
+  "检查": "拉杆会话复核",
+  "时间": "2026-10-02T15:11:25.4684033+08:00",
+  "进程编号": 8352,
+  "退出码": 1,
+  "通过": false,
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/player/tests/blend_handle_drag_test.gd",
+    "--",
+    "--evidence-dir",
+    "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/原药混合器拉杆交互实施证据/自动作业/拉杆会话复核",
+    "--physics-ticks",
+    "60",
+    "--safety-only"
+  ],
+  "通过断言数": 72
+}

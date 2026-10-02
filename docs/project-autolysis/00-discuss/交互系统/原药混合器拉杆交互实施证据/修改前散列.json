@@ -1,0 +1,30 @@
+[
+  {
+    "文件": "main-autolysis/player/components/autolysis_interaction_controller.gd",
+    "散列": "CCF76D90847C624AB676535628A9635030585B62B5AB9E440FCC0C50002A5405"
+  },
+  {
+    "文件": "main-autolysis/player/autolysis_player.gd",
+    "散列": "CD245DE31B71FB2C08A7FBF8014C9B04D213652DC2A45DA8F474D54FEED67254"
+  },
+  {
+    "文件": "main-autolysis/components/interactions/autolysis_focus_target.gd",
+    "散列": "CA131C9FEEB73D04FFFC1F71833CD07F7C5C8C716ABC66F5A24EDEB4D074361E"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_focus_ray_query.gd",
+    "散列": "E2C0388E376A654C9450A4D749088B85FAF862F334C13A5F3DEDA9A2FBC7243F"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd",
+    "散列": "8CEB4E3E190BEE80FA8E7222E57EDA2B94796F1A034E032158A0DA258D5BC5BC"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn",
+    "散列": "418D9D9F42810D10631BCF122817FF8F51AEA8983AABAF37ACE61B8A3E602559"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/run_item_check.ps1",
+    "散列": "937F5CA56C9906FFB222436F4AF89BCBDFDC0E48D629BCDDE3BEF50422EA5553"
+  }
+]

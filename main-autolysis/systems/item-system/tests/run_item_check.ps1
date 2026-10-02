@@ -5,6 +5,7 @@ param(
     [int]$QuitAfter = 0,
     [int]$FixedFps = 0,
     [switch]$Rendered,
+    [switch]$Visible,
     [switch]$Import,
     [int]$TimeoutSeconds = 180,
     [string[]]$UserArguments = @(),
@@ -30,7 +31,9 @@ elseif ($ScenePath) { $engineArgs += $ScenePath }
 if ($UserArguments.Count -gt 0) { $engineArgs += '--'; $engineArgs += $UserArguments }
 $outputFile = Join-Path $evidenceRoot ($CheckName + '.stdout.log')
 $errorFile = Join-Path $evidenceRoot ($CheckName + '.stderr.log')
-$checkProcess = Start-Process -FilePath $engineFile -ArgumentList $engineArgs -WindowStyle Hidden -PassThru -RedirectStandardOutput $outputFile -RedirectStandardError $errorFile
+# 真实鼠标验收需要可见窗口；自动检查仍使用隐藏窗口。
+$checkWindowStyle = if ($Visible -and $Rendered) { 'Normal' } else { 'Hidden' }
+$checkProcess = Start-Process -FilePath $engineFile -ArgumentList $engineArgs -WindowStyle $checkWindowStyle -PassThru -RedirectStandardOutput $outputFile -RedirectStandardError $errorFile
 if (-not $checkProcess.WaitForExit($TimeoutSeconds * 1000)) {
     Stop-Process -Id $checkProcess.Id -Force
     throw "检查超时，已停止本次启动的进程：$CheckName"
@@ -38,7 +41,7 @@ if (-not $checkProcess.WaitForExit($TimeoutSeconds * 1000)) {
 $checkProcess.Refresh()
 $allOutput = [IO.File]::ReadAllText($outputFile) + "`n" + [IO.File]::ReadAllText($errorFile)
 $passed = $checkProcess.ExitCode -eq 0 -and $allOutput -notmatch '(?m)^(SCRIPT ERROR:|ERROR:|失败：)'
-$record = [pscustomobject]@{检查=$CheckName; 时间=(Get-Date -Format o); 进程编号=$checkProcess.Id; 退出码=$checkProcess.ExitCode; 通过=$passed; 命令参数=$engineArgs; 通过断言数=([regex]::Matches($allOutput,'(?m)^通过：')).Count}
+$record = [pscustomobject]@{检查=$CheckName; 时间=(Get-Date -Format o); 进程编号=$checkProcess.Id; 退出码=$checkProcess.ExitCode; 通过=$passed; 引擎文件=$engineFile; 窗口显示=$checkWindowStyle; 命令参数=$engineArgs; 通过断言数=([regex]::Matches($allOutput,'(?m)^通过：')).Count}
 $record | ConvertTo-Json -Depth 3 | Set-Content -LiteralPath (Join-Path $evidenceRoot ($CheckName + '.json')) -Encoding utf8
 $record | Format-List
 if (-not $passed) { Write-Output $allOutput; exit 1 }

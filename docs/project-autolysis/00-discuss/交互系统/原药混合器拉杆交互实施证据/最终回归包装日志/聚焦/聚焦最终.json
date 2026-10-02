@@ -1,0 +1,22 @@
+{
+  "检查": "聚焦最终",
+  "时间": "2026-10-02T15:41:51.6914889+08:00",
+  "进程编号": 34144,
+  "退出码": 0,
+  "通过": true,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/player/tests/focus_interaction_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/交互系统/原药混合器拉杆交互实施证据/最终回归内部证据/聚焦"
+  ],
+  "通过断言数": 220
+}

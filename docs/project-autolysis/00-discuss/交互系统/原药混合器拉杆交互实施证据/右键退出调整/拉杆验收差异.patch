@@ -1,0 +1,234 @@
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\345\216\237\350\215\257\346\267\267\345\220\210\345\231\250\346\213\211\346\235\206\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\\345\217\263\351\224\256\351\200\200\345\207\272\350\260\203\346\225\264\\\350\260\203\346\225\264\345\211\215\\\346\213\211\346\235\206\351\233\206\346\210\220\346\265\213\350\257\225.gd" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\345\216\237\350\215\257\346\267\267\345\220\210\345\231\250\346\213\211\346\235\206\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\\345\217\263\351\224\256\351\200\200\345\207\272\350\260\203\346\225\264\\\346\234\200\347\273\210\344\273\243\347\240\201\\blend_handle_drag_test.gd"
+index d12ee99..abc16df 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\345\216\237\350\215\257\346\267\267\345\220\210\345\231\250\346\213\211\346\235\206\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\\345\217\263\351\224\256\351\200\200\345\207\272\350\260\203\346\225\264\\\350\260\203\346\225\264\345\211\215\\\346\213\211\346\235\206\351\233\206\346\210\220\346\265\213\350\257\225.gd"
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\345\216\237\350\215\257\346\267\267\345\220\210\345\231\250\346\213\211\346\235\206\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\\345\217\263\351\224\256\351\200\200\345\207\272\350\260\203\346\225\264\\\346\234\200\347\273\210\344\273\243\347\240\201\\blend_handle_drag_test.gd"
+@@ -212,7 +212,7 @@ func _new_scene(label: String, initial_accumulation: bool = false) -> void:
+ 	player.head.look_at(machine.to_global(Vector3(0, 0.3, 0.075)), Vector3.UP)
+ 	await _frames(3)
+ 	_check(machine.focus_target.is_valid_target(), "正式设备含合法槽位及拉杆登记")
+-	_check(handle.position.is_equal_approx(Vector3(0, TOP, 0)), "拉杆精确初始化为规定顶部局部位置")
++	_check(_is_idle_at_top(), "拉杆以待机状态精确初始化为规定顶部局部位置")
+ 	_check(configured_ratio > 0.0, "正式场景提供正数鼠标换算比例")
+ 	if graphical:
+ 		_button(MOUSE_BUTTON_LEFT, true, Vector2(root.size) * 0.5)
+@@ -334,6 +334,10 @@ func _sample(label: String) -> void:
+ 	samples.append({"分段": sequence, "事件": label, "物理帧": Engine.get_physics_frames(), "有效秒数": probe.effective_seconds, "物理间隔": probe.last_delta, "纵向位置": handle.position.y, "状态": handle.state, "已绑定": player.interaction_controller.is_drag_active(), "完成数": completion_count, "暂停": paused})
+ 
+ 
++func _is_idle_at_top() -> bool:
++	return handle.state == AutolysisBlendHandle.HandleState.IDLE and handle.position == Vector3(0, TOP, 0)
++
++
+ func _await_top(label: String, from_height: float, has_hold: bool = false) -> void:
+ 	var start: float = probe.effective_seconds
+ 	var actual: float = 0.0
+@@ -342,7 +346,7 @@ func _await_top(label: String, from_height: float, has_hold: bool = false) -> vo
+ 	var prior_time: float = start
+ 	var interior_speed_error: float = 0.0
+ 	for _index: int in range(180):
+-		if handle.can_begin_drag(player):
++		if _is_idle_at_top():
+ 			break
+ 		await _frames(1)
+ 		actual = probe.effective_seconds - start
+@@ -355,10 +359,10 @@ func _await_top(label: String, from_height: float, has_hold: bool = false) -> vo
+ 		prior_height = handle.position.y
+ 		prior_time = probe.effective_seconds
+ 		_sample(label)
+-		if handle.position.is_equal_approx(Vector3(0, TOP, 0)):
++		if _is_idle_at_top():
+ 			break
+ 	var expected_seconds: float = (TOP - from_height) / SPEED + (HOLD_SECONDS if has_hold else 0.0)
+-	_check(handle.position.is_equal_approx(Vector3(0, TOP, 0)), label + "最终精确恢复顶部位置")
++	_check(_is_idle_at_top(), label + "最终进入待机并精确恢复顶部位置")
+ 	_check(absf(actual - expected_seconds) <= probe.last_delta + EPSILON, label + "实测时间按剩余距离换算，偏差不超过一物理帧")
+ 	_check(maximum_error <= SPEED * probe.last_delta + EPSILON, label + "逐帧位置满足保持及匀速推进，偏差不超过一物理帧行程")
+ 	_check(interior_speed_error < EPSILON, label + "回弹内部采样速度恒为每秒一点二局部坐标单位")
+@@ -381,7 +385,7 @@ func _test_motion_and_binding() -> void:
+ 	_check(absf(handle.position.y - 0.09) < EPSILON, "相同比例向上移动回推拉杆")
+ 	_motion(-0.6 / float(handle.mouse_to_handle_ratio))
+ 	await _frames(1)
+-	_check(handle.position.is_equal_approx(Vector3(0, TOP, 0)), "超量上推精确限位且横向及深度不变")
++	_check(handle.position == Vector3(0, TOP, 0), "超量上推精确限位且横向及深度不变")
+ 	_motion(0.03 / float(handle.mouse_to_handle_ratio), 0.0, Vector2(60, 60))
+ 	await _frames(1)
+ 	_check(_query(cursor) != handle and handle.is_dragging_for(player), "指针离开碰撞后仍持续操作原拉杆")
+@@ -433,7 +437,7 @@ func _test_ordered_inputs() -> void:
+ 	_key(KEY_E, true)
+ 	_key(KEY_E, false)
+ 	await _frames(1)
+-	_check(not handle.is_dragging_for(player) and handle.position.is_equal_approx(Vector3(0, TOP, 0)), "键盘直接动作单独命中拉杆不会冒充新的左键开始")
++	_check(not handle.is_dragging_for(player) and _is_idle_at_top(), "键盘直接动作单独命中拉杆不会冒充新的左键开始")
+ 	InputMap.action_erase_event(&"interact_direct", keyboard_binding)
+ 	point = _pixel()
+ 	_button(MOUSE_BUTTON_LEFT, true, point)
+@@ -450,7 +454,7 @@ func _test_ordered_inputs() -> void:
+ 	_button(MOUSE_BUTTON_WHEEL_DOWN, false, cursor)
+ 	_button(MOUSE_BUTTON_LEFT, false, cursor)
+ 	await _frames(2)
+-	_check(handle.position.is_equal_approx(Vector3(0, TOP, 0)) and not player.interaction_controller.is_drag_active(), "切格作废尚未解析的开始及后续输入序列")
++	_check(_is_idle_at_top() and not player.interaction_controller.is_drag_active(), "切格作废尚未解析的开始及后续输入序列")
+ 	_button(MOUSE_BUTTON_LEFT, true, Vector2(60, 60))
+ 	_motion(0.12 / float(handle.mouse_to_handle_ratio), 0.0, _pixel())
+ 	await _frames(1)
+@@ -486,7 +490,7 @@ func _test_release_and_repress() -> void:
+ 	await _await_top("部分下拉重按后的回弹", 0.0)
+ 	_motion(0.06 / float(handle.mouse_to_handle_ratio))
+ 	await _frames(1)
+-	_check(Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and not handle.is_dragging_for(player) and handle.position.is_equal_approx(Vector3(0, TOP, 0)), "回弹期间被拒绝的新按下一直保持到归位也不会自动启动")
++	_check(Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and not handle.is_dragging_for(player) and _is_idle_at_top(), "回弹期间被拒绝的新按下一直保持到归位也不会自动启动")
+ 	_button(MOUSE_BUTTON_LEFT, false, cursor)
+ 	await _frames(1)
+ 	await _begin()
+@@ -529,18 +533,17 @@ func _test_right_click_during_drag() -> void:
+ 	await _frames(int(ceil(0.3 * Engine.physics_ticks_per_second)))
+ 	_check(focus.state == AutolysisFocusController.FocusState.INACTIVE, "未拖动时右键正常退出完成")
+ 	await _new_scene("同帧拖动序列穿插右键")
+-	var point: Vector2 = _pixel()
++	await _begin()
+ 	session_before = focus.session_id
+ 	var frame_before: int = Engine.get_physics_frames()
+-	_button(MOUSE_BUTTON_LEFT, true, point)
+ 	_motion(0.06 / float(handle.mouse_to_handle_ratio))
+ 	_button(MOUSE_BUTTON_RIGHT, true, cursor)
+ 	_button(MOUSE_BUTTON_RIGHT, false, cursor)
+ 	_motion(0.06 / float(handle.mouse_to_handle_ratio))
+ 	_button(MOUSE_BUTTON_LEFT, false, cursor)
+-	_check(Engine.get_physics_frames() == frame_before, "开始下拉右键再下拉松开全部按顺序注入同一物理帧前")
++	_check(Engine.get_physics_frames() == frame_before, "已建立拖动后下拉右键再下拉松开全部按顺序注入同一物理帧前")
+ 	await _frames(1)
+-	_check(focus.session_id == session_before and focus.is_focused_on(machine.focus_target) and absf(handle.position.y) < EPSILON and not player.interaction_controller.is_drag_active() and completion_count == 0, "待解析鼠标开始期间右键无效，不清理前后移动及松开序列")
++	_check(focus.session_id == session_before and focus.is_focused_on(machine.focus_target) and absf(handle.position.y) < EPSILON and not player.interaction_controller.is_drag_active() and completion_count == 0, "实际拖动期间右键无效，不清理同帧前后移动及松开序列")
+ 	_sample("同帧右键未清理有序序列")
+ 	await _await_top("同帧右键无效后的松开", 0.0)
+ 	await _new_scene("完成后最低保持允许右键退出")
+@@ -551,7 +554,7 @@ func _test_right_click_during_drag() -> void:
+ 	_button(MOUSE_BUTTON_RIGHT, false, cursor)
+ 	_check(focus.state == AutolysisFocusController.FocusState.EXITING and focus.session_id != session_before and completion_count == 1, "物理处理已完成后右键立即退出且保留完成一次")
+ 	await _frames(int(ceil(0.4 * Engine.physics_ticks_per_second)))
+-	_check(focus.state == AutolysisFocusController.FocusState.INACTIVE and handle.position.is_equal_approx(Vector3(0, TOP, 0)) and completion_count == 1, "完成后退出不影响设备最低保持及回弹")
++	_check(focus.state == AutolysisFocusController.FocusState.INACTIVE and _is_idle_at_top() and completion_count == 1, "完成后退出不影响设备最低保持及回弹")
+ 	_button(MOUSE_BUTTON_LEFT, false, cursor)
+ 	await _new_scene("自动回弹期间允许右键退出")
+ 	await _begin()
+@@ -562,7 +565,7 @@ func _test_right_click_during_drag() -> void:
+ 	_button(MOUSE_BUTTON_RIGHT, false, cursor)
+ 	_check(focus.state == AutolysisFocusController.FocusState.EXITING, "已经解绑的自动回弹期间右键仍立即退出")
+ 	await _frames(int(ceil(0.3 * Engine.physics_ticks_per_second)))
+-	_check(focus.state == AutolysisFocusController.FocusState.INACTIVE and handle.position.is_equal_approx(Vector3(0, TOP, 0)) and completion_count == 0, "自动回弹期间退出正常归位且不误完成")
++	_check(focus.state == AutolysisFocusController.FocusState.INACTIVE and _is_idle_at_top() and completion_count == 0, "自动回弹期间退出正常归位且不误完成")
+ 
+ 
+ func _test_return_times() -> void:
+@@ -613,7 +616,7 @@ func _test_completion() -> void:
+ 	var last_y: float = handle.position.y
+ 	var last_time: float = timing_start
+ 	for _index: int in range(60):
+-		if handle.position.y >= TOP - EPSILON:
++		if _is_idle_at_top():
+ 			break
+ 		await _frames(1)
+ 		var elapsed: float = probe.effective_seconds - timing_start
+@@ -628,14 +631,14 @@ func _test_completion() -> void:
+ 	var completed_duration: float = probe.effective_seconds - start
+ 	_check(absf(completed_duration - 0.3) <= probe.last_delta + EPSILON and speed_error < EPSILON, "最低保持零点一秒加全程零点二秒回弹且内部速度恒定")
+ 	_check(player.inventory_controller.get_focused_item() == item_before, "拉杆交互保留手持道具且不消耗原药")
+-	_check(handle.position.is_equal_approx(Vector3(0, TOP, 0)) and completion_count == 1, "完整周期精确归位且完成数维持一次")
++	_check(_is_idle_at_top() and completion_count == 1, "完整周期进入待机精确归位且完成数维持一次")
+ 	await _capture("04-returned.png")
+ 	await _begin()
+ 	await _to_height(BOTTOM)
+ 	await _await_top("持续按住的完整周期", BOTTOM, true)
+ 	_motion(0.24 / float(handle.mouse_to_handle_ratio))
+ 	await _frames(2)
+-	_check(completion_count == 2 and not handle.is_dragging_for(player) and handle.position.is_equal_approx(Vector3(0, TOP, 0)), "完成后持续按住和移动不会自动开始新一轮")
++	_check(completion_count == 2 and not handle.is_dragging_for(player) and _is_idle_at_top(), "完成后持续按住和移动不会自动开始新一轮")
+ 	_button(MOUSE_BUTTON_LEFT, false, cursor)
+ 	await _frames(1)
+ 	await _begin()
+@@ -653,7 +656,7 @@ func _test_accumulation_restore() -> void:
+ 		await _to_height(0.0)
+ 		_button(MOUSE_BUTTON_LEFT, false, cursor)
+ 		await _frames(1)
+-		_check(not Input.use_accumulated_input, "提前松开只恢复拖动前的聚焦累积值并保持禁用")
++		_check(not Input.use_accumulated_input, "提前松开后稳定聚焦继续禁用输入累积")
+ 		await _frames(int(ceil(0.15 * Engine.physics_ticks_per_second)))
+ 		await _begin()
+ 		await _to_height(BOTTOM)
+@@ -710,12 +713,12 @@ func _test_interruptions() -> void:
+ 			paused = false
+ 		elif reason == "菜单":
+ 			await _frames(int(ceil(0.15 * Engine.physics_ticks_per_second)))
+-			_check(handle.position.y >= TOP - EPSILON, "不暂停场景树的菜单允许取消后回弹继续")
++			_check(_is_idle_at_top(), "不暂停场景树的菜单允许取消后回弹继续直至待机归位")
+ 			_action(&"menu")
+ 		elif reason == "尺寸变更":
+ 			root.size = Vector2i(1280, 720)
+ 		await _frames(25)
+-		_check(handle.position.is_equal_approx(Vector3(0, TOP, 0)), reason + "结束后拉杆可恢复顶部且没有永久绑定")
++		_check(_is_idle_at_top(), reason + "结束后拉杆进入待机并精确恢复顶部且没有永久绑定")
+ 		_button(MOUSE_BUTTON_LEFT, false, cursor)
+ 	for phase: String in ["最低保持", "回弹"]:
+ 		await _new_scene("自动阶段暂停：" + phase)
+@@ -730,7 +733,7 @@ func _test_interruptions() -> void:
+ 		_check(handle.position.is_equal_approx(frozen) and completion_count == 1, phase + "期间暂停只冻结自动时间而不重复完成")
+ 		paused = false
+ 		await _frames(int(ceil(0.35 * Engine.physics_ticks_per_second)))
+-		_check(handle.position.is_equal_approx(Vector3(0, TOP, 0)), phase + "恢复后续接自动回弹")
++		_check(_is_idle_at_top(), phase + "恢复后续接自动回弹直至待机归位")
+ 		_button(MOUSE_BUTTON_LEFT, false, cursor)
+ 	await _new_scene("完成后退出")
+ 	await _begin()
+@@ -739,7 +742,7 @@ func _test_interruptions() -> void:
+ 	_button(MOUSE_BUTTON_RIGHT, false, cursor)
+ 	_check(focus.state == AutolysisFocusController.FocusState.EXITING, "完成后右键立即离开聚焦")
+ 	await _frames(int(ceil(0.4 * Engine.physics_ticks_per_second)))
+-	_check(completion_count == 1 and handle.position.is_equal_approx(Vector3(0, TOP, 0)), "完成后右键离开不撤销完成且设备自动流程继续")
++	_check(completion_count == 1 and _is_idle_at_top(), "完成后右键离开不撤销完成且设备自动流程继续直至待机归位")
+ 	_button(MOUSE_BUTTON_LEFT, false, cursor)
+ 
+ 
+@@ -800,13 +803,11 @@ func _test_sessions_and_dependencies() -> void:
+ 	_motion(0.24 / float(handle.mouse_to_handle_ratio))
+ 	_button(MOUSE_BUTTON_RIGHT, true, cursor)
+ 	_button(MOUSE_BUTTON_RIGHT, false, cursor)
++	_check(focus.session_id != old_session and focus.state == AutolysisFocusController.FocusState.EXITING, "鼠标开始尚未建立真实拖动时右键维持立即退出")
+ 	_button(MOUSE_BUTTON_LEFT, false, cursor)
+ 	await _frames(2)
+-	samples.append({"分段": sequence, "事件": "解析前右键忽略核验", "旧会话": old_session, "当前会话": focus.session_id, "聚焦状态": focus.state, "完成数": completion_count, "纵向位置": handle.position.y, "绑定": player.interaction_controller.is_drag_active()})
+-	_check(focus.session_id == old_session and focus.is_focused_on(machine.focus_target) and completion_count == 1 and absf(handle.position.y - BOTTOM) < EPSILON, "到最低的鼠标序列尚未解析时右键被忽略，完成一次且保持聚焦")
+-	_button(MOUSE_BUTTON_RIGHT, true, cursor)
+-	_button(MOUSE_BUTTON_RIGHT, false, cursor)
+-	_check(focus.session_id != old_session and focus.state == AutolysisFocusController.FocusState.EXITING and completion_count == 1, "已经完成后的新右键立即退出并保留完成一次")
++	samples.append({"分段": sequence, "事件": "解析前右键正常退出核验", "旧会话": old_session, "当前会话": focus.session_id, "聚焦状态": focus.state, "完成数": completion_count, "纵向位置": handle.position.y, "绑定": player.interaction_controller.is_drag_active()})
++	_check(focus.session_id != old_session and completion_count == 0 and _is_idle_at_top() and not player.interaction_controller.is_drag_active(), "真实拖动建立前右键退出作废开始序列，不补播下拉完成")
+ 	await _new_scene("解析前正式终止会话")
+ 	point = _pixel()
+ 	old_session = focus.session_id
+@@ -816,7 +817,7 @@ func _test_sessions_and_dependencies() -> void:
+ 	_button(MOUSE_BUTTON_LEFT, false, cursor)
+ 	await _frames(2)
+ 	samples.append({"分段": sequence, "事件": "正式终止后的旧序列", "旧会话": old_session, "当前会话": focus.session_id, "完成数": completion_count, "纵向位置": handle.position.y, "绑定": player.interaction_controller.is_drag_active()})
+-	_check(focus.session_id != old_session and completion_count == 0 and handle.position.is_equal_approx(Vector3(0, TOP, 0)), "正式终止递增会话编号并作废解析前的旧输入序列")
++	_check(focus.session_id != old_session and completion_count == 0 and _is_idle_at_top(), "正式终止递增会话编号并作废解析前的旧输入序列")
+ 	for dependency: String in ["拉杆", "设备", "参考相机", "玩家"]:
+ 		await _new_scene("拖动依赖释放：" + dependency)
+ 		await _begin()
+@@ -855,7 +856,7 @@ func _test_completion_reentry() -> void:
+ 		if action == "重新请求":
+ 			_check(not reentry_result and not handle.is_dragging_for(player), "完成前先改变状态，正式组件拒绝同步重入请求")
+ 			await _frames(int(ceil(0.35 * Engine.physics_ticks_per_second)))
+-			_check(handle.position.is_equal_approx(Vector3(0, TOP, 0)), "重入拒绝后原自动回弹流程正常归位")
++			_check(_is_idle_at_top(), "重入拒绝后原自动回弹流程进入待机精确归位")
+ 		else:
+ 			_check(not is_instance_valid(machine) and not player.interaction_controller.is_drag_active(), "完成回调释放设备后不遗留绑定或访问失效对象")
+ 
+@@ -900,7 +901,7 @@ func _test_collision_follow() -> void:
+ 	old_point = _collision_sample("回弹", old_point)
+ 	await _frames(int(ceil(0.2 * Engine.physics_ticks_per_second)))
+ 	_collision_sample("归位", old_point)
+-	_check(handle.position.is_equal_approx(Vector3(0, TOP, 0)), "碰撞跟随完整周期保留规定初始结构和位置")
++	_check(_is_idle_at_top(), "碰撞跟随完整周期进入待机并保留规定初始结构和位置")
+ 	_button(MOUSE_BUTTON_LEFT, false, cursor)
+ 
+ 

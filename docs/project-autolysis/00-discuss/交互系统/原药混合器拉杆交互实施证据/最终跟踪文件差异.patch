@@ -1,0 +1,601 @@
+diff --git a/main-autolysis/components/interactions/autolysis_focus_target.gd b/main-autolysis/components/interactions/autolysis_focus_target.gd
+index 1241883..c3f4fcb 100644
+--- a/main-autolysis/components/interactions/autolysis_focus_target.gd
++++ b/main-autolysis/components/interactions/autolysis_focus_target.gd
+@@ -8,14 +8,16 @@ var root_interaction: AutolysisInteractionComponent
+ 
+ var _registered_targets: Dictionary = {}
+ var _slots: Array[AutolysisBlendSlot] = []
++var _registered_handles: Dictionary = {}
+ 
+ 
+-func configure(root: PhysicsBody3D, camera: Camera3D, interaction: AutolysisInteractionComponent, slots: Array[AutolysisBlendSlot]) -> bool:
++func configure(root: PhysicsBody3D, camera: Camera3D, interaction: AutolysisInteractionComponent, slots: Array[AutolysisBlendSlot], handles: Array[AutolysisBlendHandle] = []) -> bool:
+ 	device_root = root
+ 	reference_camera = camera
+ 	root_interaction = interaction
+ 	_registered_targets.clear()
+ 	_slots.clear()
++	_registered_handles.clear()
+ 	for slot: AutolysisBlendSlot in slots:
+ 		if not _node_is_live(slot) or not slot.is_configured() or slot.get_parent() != root:
+ 			return false
+@@ -25,6 +27,12 @@ func configure(root: PhysicsBody3D, camera: Camera3D, interaction: AutolysisInte
+ 		_registered_targets[slot] = slot
+ 		_registered_targets[inner_body] = slot
+ 		_slots.append(slot)
++	for handle: AutolysisBlendHandle in handles:
++		if not _node_is_live(handle) or not handle.is_configured() or handle.device_root != root or handle.focus_target != self:
++			return false
++		if not root.is_ancestor_of(handle) or _registered_handles.has(handle) or _registered_targets.has(handle):
++			return false
++		_registered_handles[handle] = handle
+ 	return is_valid_target()
+ 
+ 
+@@ -42,11 +50,16 @@ func is_valid_target() -> bool:
+ 			return false
+ 		if _registered_targets.get(slot) != slot or _registered_targets.get(slot.raw_material_anchor) != slot:
+ 			return false
++	for handle: Variant in _registered_handles:
++		if not _node_is_live(handle) or not handle is AutolysisBlendHandle or not handle.is_configured():
++			return false
++		if handle.focus_target != self or handle.device_root != device_root or not device_root.is_ancestor_of(handle) or _registered_handles[handle] != handle:
++			return false
+ 	return true
+ 
+ 
+ func owns_target(body: Variant) -> bool:
+-	return _node_is_live(body) and is_valid_target() and _registered_targets.has(body)
++	return _node_is_live(body) and is_valid_target() and (_registered_targets.has(body) or _registered_handles.has(body))
+ 
+ 
+ func get_inner_target(body: Variant) -> Node3D:
+@@ -54,10 +67,16 @@ func get_inner_target(body: Variant) -> Node3D:
+ 
+ 
+ func get_slot_for_target(body: Variant) -> AutolysisBlendSlot:
+-	if not owns_target(body):
++	if not owns_target(body) or not _registered_targets.has(body):
+ 		return null
+ 	return _registered_targets[body] as AutolysisBlendSlot
+ 
+ 
++func get_handle_for_target(body: Variant) -> AutolysisBlendHandle:
++	if not owns_target(body) or not _registered_handles.has(body):
++		return null
++	return _registered_handles[body] as AutolysisBlendHandle
++
++
+ func _node_is_live(node: Variant) -> bool:
+ 	return is_instance_valid(node) and node is Node and node.is_inside_tree() and not node.is_queued_for_deletion()
+diff --git a/main-autolysis/player/autolysis_player.gd b/main-autolysis/player/autolysis_player.gd
+index e8b8957..7299ed2 100644
+--- a/main-autolysis/player/autolysis_player.gd
++++ b/main-autolysis/player/autolysis_player.gd
+@@ -153,6 +153,7 @@ func _ready() -> void:
+ 	inventory_controller.inventory_changed.connect(interaction_controller.clear_pending_clicks)
+ 	focus_controller.configure(self, camera, held_item_presenter, is_interaction_input_allowed)
+ 	interaction_controller.configure(self, interaction_raycast, is_interaction_input_allowed, inventory_controller, focus_controller)
++	get_window().focus_exited.connect(interaction_controller.cancel_focus_drag)
+ 
+ func is_interaction_input_allowed() -> bool:
+ 	return _base_input_allowed() and not focus_controller.has_control() and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
+@@ -209,15 +210,18 @@ func end_focus_control() -> void:
+ 			animationPlayer.play(&"", -1.0, custom_speed)
+ 
+ func _exit_tree() -> void:
++	if is_instance_valid(interaction_controller):
++		interaction_controller.cancel_focus_drag()
+ 	if is_instance_valid(focus_controller):
+ 		focus_controller.abort_session(false)
+ 
+ func _input(event: InputEvent) -> void:
++	interaction_controller.observe_focus_drag_input(event)
+ 	if event.is_action_pressed("menu"):
+ 		is_movement_paused = not is_movement_paused
+ 		update_mouse_mode()
+ 		focus_controller.sync_pause_state()
+-		interaction_controller.clear_pending_clicks()
++		interaction_controller.cancel_focus_drag()
+ 	if is_movement_paused or is_landing_stunned or focus_controller.has_control() or get_tree().paused:
+ 		return
+ 	if event is InputEventMouseMotion:
+diff --git a/main-autolysis/player/components/autolysis_focus_ray_query.gd b/main-autolysis/player/components/autolysis_focus_ray_query.gd
+index 7a9ae50..53fa52e 100644
+--- a/main-autolysis/player/components/autolysis_focus_ray_query.gd
++++ b/main-autolysis/player/components/autolysis_focus_ray_query.gd
+@@ -25,6 +25,9 @@ func query_target(camera: Camera3D, mouse_position: Vector2, target: AutolysisFo
+ 	query.collide_with_areas = false
+ 	var first_hit: Dictionary = world.direct_space_state.intersect_ray(query)
+ 	var first_body: Node = first_hit.get("collider") as Node
++	var handle: AutolysisBlendHandle = target.get_handle_for_target(first_body)
++	if handle != null:
++		return handle
+ 	var slot: AutolysisBlendSlot = target.get_slot_for_target(first_body)
+ 	if slot == null:
+ 		return null
+diff --git a/main-autolysis/player/components/autolysis_interaction_controller.gd b/main-autolysis/player/components/autolysis_interaction_controller.gd
+index d0b0e92..5e40970 100644
+--- a/main-autolysis/player/components/autolysis_interaction_controller.gd
++++ b/main-autolysis/player/components/autolysis_interaction_controller.gd
+@@ -19,6 +19,25 @@ var _reported_component_ids: Array[int] = []
+ var _focus: AutolysisFocusController
+ var _focus_query: AutolysisFocusRayQuery = AutolysisFocusRayQuery.new()
+ var _pending_clicks: Array[Dictionary] = []
++var _drag_events: Array[Dictionary] = []
++var _next_sequence: int = 0
++var _capture_sequence: int = 0
++var _drag_sequence: int = 0
++var _drag_session: int = -1
++var _drag_target: AutolysisBlendHandle
++var _drag_viewport_rect: Rect2
++var _drag_screen_transform: Transform2D
++var _drag_window_position: Vector2i
++var _accumulation_saved: bool = false
++var _original_accumulation: bool = true
++var _focus_accumulation_saved: bool = false
++var _focus_original_accumulation: bool = true
++var _last_drag_motion: Vector2 = Vector2.ZERO
++var _last_drag_position: Vector2 = Vector2.ZERO
++var _warp_pending: bool = false
++var _warp_delta: Vector2 = Vector2.ZERO
++var _warp_origin: Vector2 = Vector2.ZERO
++var _warp_destination: Vector2 = Vector2.ZERO
+ var _request_mode: AutolysisInteractionComponent.InteractionMode = AutolysisInteractionComponent.InteractionMode.DIRECT
+ 
+ 
+@@ -32,11 +51,13 @@ func configure(actor: Node3D, detector: InteractionRayCast, input_allowed: Calla
+ 	_detector = detector
+ 	_input_allowed = input_allowed
+ 	_inventory = inventory
+-	if is_instance_valid(_focus) and _focus.state_changed.is_connected(clear_pending_clicks):
+-		_focus.state_changed.disconnect(clear_pending_clicks)
++	cancel_focus_drag()
++	_restore_focus_accumulation()
++	if is_instance_valid(_focus) and _focus.state_changed.is_connected(_on_focus_state_changed):
++		_focus.state_changed.disconnect(_on_focus_state_changed)
+ 	_focus = focus
+ 	if is_instance_valid(_focus):
+-		_focus.state_changed.connect(clear_pending_clicks)
++		_focus.state_changed.connect(_on_focus_state_changed)
+ 	_has_published = false
+ 	refresh_state()
+ 
+@@ -46,6 +67,9 @@ func is_direct_available() -> bool:
+ 
+ 
+ func _process(_delta: float) -> void:
++	if _drag_sequence != 0 and not _drag_context_valid():
++		cancel_focus_drag()
++	_sync_focus_accumulation()
+ 	refresh_state()
+ 
+ 
+@@ -128,6 +152,60 @@ func _has_matching_focus_target() -> bool:
+ 
+ func clear_pending_clicks() -> void:
+ 	_pending_clicks.clear()
++	# 切格只作废开始请求，已经绑定的持续事件仍按顺序处理。
++	if _capture_sequence != _drag_sequence:
++		_capture_sequence = 0
++	_restore_accumulation_if_unused()
++
++
++func is_drag_active() -> bool:
++	return _node_is_live(_drag_target) and _drag_target.is_dragging_for(_actor)
++
++
++func get_drag_target() -> AutolysisBlendHandle:
++	return _drag_target if is_drag_active() else null
++
++
++func cancel_focus_drag() -> void:
++	var handle: AutolysisBlendHandle = _drag_target
++	_clear_drag_binding()
++	_pending_clicks.clear()
++	_drag_events.clear()
++	_capture_sequence = 0
++	_restore_accumulation_if_unused()
++	if _node_is_live(handle):
++		handle.cancel_drag(_actor)
++
++
++## 玩家前置输入只观察持续事件；开始仍须经过未处理输入和物理射线。
++func observe_focus_drag_input(event: InputEvent) -> void:
++	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.canceled:
++		cancel_focus_drag()
++		return
++	if _capture_sequence == 0:
++		return
++	if not _focus_input_valid():
++		cancel_focus_drag()
++		return
++	if event is InputEventMouseMotion:
++		var relative: Vector2 = event.relative
++		if _warp_pending:
++			# 原生消息已在定位前排空；只扣程序定位分量，保留同消息中的真实移动。
++			var inferred_origin: Vector2 = event.position - event.relative
++			if inferred_origin.distance_to(_warp_origin) <= 0.01:
++				relative -= _warp_delta
++			elif inferred_origin.distance_to(_warp_destination) > 0.01 and not event.relative.is_zero_approx():
++				# 后端基准与实际取证不符时停止本次拖动，禁止推测一个整屏补偿量。
++				push_warning("拉杆鼠标定位基准不符，取消拖动：旧基准=%s；定位前=%s；定位后=%s" % [inferred_origin, _warp_origin, _warp_destination])
++				cancel_focus_drag()
++				return
++			_warp_pending = false
++			_warp_delta = Vector2.ZERO
++		_drag_events.append({"kind": &"motion", "sequence": _capture_sequence,
++			"session": _focus.session_id, "position": event.position, "relative": relative})
++	elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
++		_drag_events.append({"kind": &"release", "sequence": _capture_sequence, "session": _focus.session_id})
++		_capture_sequence = 0
+ 
+ 
+ func _handle_focus_input(event: InputEvent) -> void:
+@@ -136,44 +214,224 @@ func _handle_focus_input(event: InputEvent) -> void:
+ 	var player: AutolysisPlayer = _actor as AutolysisPlayer
+ 	if event.is_action_pressed(EXIT_ACTION):
+ 		if player.is_focus_exit_allowed():
+-			_focus.request_exit()
+-			clear_pending_clicks()
++			if _focus.state == AutolysisFocusController.FocusState.FOCUSED and (is_drag_active() or not _pending_clicks.is_empty()):
++				_drag_events.append({"kind": &"exit", "session": _focus.session_id})
++				_capture_sequence = 0
++			else:
++				cancel_focus_drag()
++				_focus.request_exit()
+ 			get_viewport().set_input_as_handled()
+ 		return
+ 	if not event.is_action_pressed(DIRECT_ACTION) or not player.is_focus_input_allowed():
+ 		return
++	var left_mouse: bool = event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT
++	# 释放已入队后可接收新的按下；是否已归位由物理队列中的真实拉杆状态决定。
++	if (left_mouse and _capture_sequence != 0) or (not left_mouse and is_drag_active()):
++		get_viewport().set_input_as_handled()
++		return
+ 	var mouse: Vector2 = event.position if event is InputEventMouseButton else get_viewport().get_mouse_position()
+-	_pending_clicks.append({
++	_next_sequence += 1
++	var click: Dictionary = {
++		"kind": &"begin", "sequence": _next_sequence,
++		"left_mouse": left_mouse,
+ 		"mouse": mouse, "session": _focus.session_id,
+ 		"index": _inventory.get_focused_index(), "item": _inventory.get_focused_item(),
+-	})
++	}
++	_pending_clicks.append(click)
++	_drag_events.append(click)
++	if left_mouse:
++		_capture_sequence = _next_sequence
++		_save_accumulation()
+ 	get_viewport().set_input_as_handled()
+ 
+ 
+ func _physics_process(_delta: float) -> void:
+-	if _pending_clicks.is_empty():
++	_sync_focus_accumulation()
++	if not _focus_input_valid():
++		cancel_focus_drag()
+ 		return
+-	var clicks: Array[Dictionary] = _pending_clicks.duplicate()
+-	clear_pending_clicks()
+-	for click: Dictionary in clicks:
+-		if not _node_is_live(_focus) or not _dependencies_valid() or not _actor is AutolysisPlayer:
++	if _drag_sequence != 0 and not _drag_context_valid():
++		cancel_focus_drag()
++		return
++	if is_drag_active() or not _pending_clicks.is_empty():
++		# 排空窗口消息和引擎缓冲，避免对物理帧前的旧边缘事件定位。
++		DisplayServer.process_events()
++		if not is_instance_valid(self):
+ 			return
+-		var player: AutolysisPlayer = _actor as AutolysisPlayer
+-		if not player.is_focus_input_allowed() or click["session"] != _focus.session_id:
+-			continue
+-		if click["index"] != _inventory.get_focused_index() or click["item"] != _inventory.get_focused_item():
++	_drain_drag_events()
++	if not is_instance_valid(self):
++		return
++	# 按钮状态仅作有序队列处理后的兜底，保留同帧按下、到最低、松开。
++	if is_drag_active() and not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
++		var handle: AutolysisBlendHandle = _drag_target
++		_clear_drag_binding()
++		handle.release_drag(_actor)
++	if is_drag_active() and _drag_context_valid():
++		_wrap_drag_cursor()
++		if not is_instance_valid(self):
++			return
++		_drain_drag_events()
++		if not is_instance_valid(self):
++			return
++	if _pending_clicks.is_empty() and not is_drag_active():
++		_capture_sequence = 0
++	_restore_accumulation_if_unused()
++
++
++func _drain_drag_events() -> void:
++	var events: Array[Dictionary] = _drag_events
++	_drag_events = []
++	for entry: Dictionary in events:
++		if not _focus_input_valid() or entry["session"] != _focus.session_id:
++			cancel_focus_drag()
++			break
++		if entry["kind"] == &"exit":
++			cancel_focus_drag()
++			_focus.request_exit()
++			break
++		if entry["kind"] == &"begin":
++			if _pending_clicks.has(entry):
++				_pending_clicks.erase(entry)
++				_dispatch_focus_click(entry)
+ 			continue
+-		var descriptor: AutolysisFocusTarget = _focus.get_focus_target()
+-		var exclusions: Array[RID] = [player.get_rid(), player._found_area.get_rid()]
+-		var target: Node3D = _focus_query.query_target(player.camera, click["mouse"], descriptor, exclusions)
+-		if not _node_is_live(target) or not descriptor.owns_target(target):
++		if entry["sequence"] != _drag_sequence or not _drag_context_valid():
+ 			continue
+-		var components: Array[AutolysisInteractionComponent] = []
+-		for child: Node in target.get_children():
+-			if child is AutolysisInteractionComponent:
+-				components.append(child)
+-		if components.size() == 1:
+-			components[0].try_interact(_actor)
++		if entry["kind"] == &"release":
++			var handle: AutolysisBlendHandle = _drag_target
++			_clear_drag_binding()
++			handle.release_drag(_actor)
++		elif entry["kind"] == &"motion":
++			_last_drag_motion = entry["relative"]
++			_last_drag_position = entry["position"]
++			_drag_target.apply_vertical_motion(_actor, entry["relative"].y)
++			if not is_instance_valid(self):
++				return
++			if not is_drag_active():
++				_clear_drag_binding()
++
++
++func _dispatch_focus_click(click: Dictionary) -> void:
++	if is_drag_active() or click["index"] != _inventory.get_focused_index() or click["item"] != _inventory.get_focused_item():
++		return
++	var player: AutolysisPlayer = _actor as AutolysisPlayer
++	var descriptor: AutolysisFocusTarget = _focus.get_focus_target()
++	var exclusions: Array[RID] = [player.get_rid(), player._found_area.get_rid()]
++	var target: Node3D = _focus_query.query_target(player.camera, click["mouse"], descriptor, exclusions)
++	if not _node_is_live(target) or not descriptor.owns_target(target):
++		return
++	var components: Array[AutolysisInteractionComponent] = []
++	for child: Node in target.get_children():
++		if child is AutolysisInteractionComponent:
++			components.append(child)
++	if components.size() != 1:
++		return
++	var handle: AutolysisBlendHandle = descriptor.get_handle_for_target(target)
++	if handle != null and not click["left_mouse"]:
++		return
++	components[0].try_interact(_actor)
++	if not is_instance_valid(self):
++		return
++	if _node_is_live(handle) and handle.is_dragging_for(_actor) and _focus_input_valid() and click["session"] == _focus.session_id:
++		_drag_target = handle
++		_drag_sequence = click["sequence"]
++		_drag_session = click["session"]
++		_drag_viewport_rect = get_viewport().get_visible_rect()
++		_drag_screen_transform = get_viewport().get_screen_transform()
++		_drag_window_position = get_window().position
++
++
++func _focus_input_valid() -> bool:
++	return _node_is_live(_focus) and _dependencies_valid() and _actor is AutolysisPlayer and _actor.is_focus_input_allowed()
++
++
++func _drag_context_valid() -> bool:
++	if not _focus_input_valid() or not is_drag_active() or _drag_session != _focus.session_id:
++		return false
++	var descriptor: AutolysisFocusTarget = _focus.get_focus_target()
++	if descriptor == null or not descriptor.owns_target(_drag_target):
++		return false
++	return _drag_viewport_rect == get_viewport().get_visible_rect() and _drag_screen_transform == get_viewport().get_screen_transform() and _drag_window_position == get_window().position
++
++
++func _clear_drag_binding() -> void:
++	if _capture_sequence == _drag_sequence:
++		_capture_sequence = 0
++	_drag_target = null
++	_drag_sequence = 0
++	_drag_session = -1
++	_last_drag_motion = Vector2.ZERO
++	_last_drag_position = Vector2.ZERO
++	_warp_pending = false
++	_warp_delta = Vector2.ZERO
++
++
++func _save_accumulation() -> void:
++	if _accumulation_saved:
++		return
++	_original_accumulation = Input.use_accumulated_input
++	_accumulation_saved = true
++	Input.use_accumulated_input = false
++
++
++func _restore_accumulation_if_unused() -> void:
++	if _accumulation_saved and _pending_clicks.is_empty() and _drag_events.is_empty() and not is_drag_active():
++		Input.use_accumulated_input = _original_accumulation
++		_accumulation_saved = false
++
++
++func _on_focus_state_changed() -> void:
++	cancel_focus_drag()
++	_sync_focus_accumulation()
++
++
++func _sync_focus_accumulation() -> void:
++	if _focus_input_valid():
++		if not _focus_accumulation_saved:
++			_focus_original_accumulation = Input.use_accumulated_input
++			_focus_accumulation_saved = true
++		# 在新按下到来前关闭累积，避免同一原生消息批内的下拉与反推已被合并。
++		Input.use_accumulated_input = false
++	elif not _accumulation_saved:
++		_restore_focus_accumulation()
++
++
++func _restore_focus_accumulation() -> void:
++	if _focus_accumulation_saved:
++		Input.use_accumulated_input = _focus_original_accumulation
++		_focus_accumulation_saved = false
++
++
++func _wrap_drag_cursor() -> void:
++	if _warp_pending or DisplayServer.get_name() == "headless" or not get_window().has_focus():
++		return
++	var viewport: Viewport = get_viewport()
++	var before: Vector2 = viewport.get_mouse_position()
++	var scale_y: float = _drag_screen_transform.y.length()
++	if scale_y <= 0.0:
++		cancel_focus_drag()
++		return
++	var edge_margin: float = 2.0 / scale_y
++	var landing_margin: float = 4.0 / scale_y
++	var destination: Vector2 = before
++	if _last_drag_motion.y > 0.0 and before.y >= _drag_viewport_rect.end.y - edge_margin:
++		destination.y = _drag_viewport_rect.position.y + landing_margin
++	elif _last_drag_motion.y < 0.0 and before.y <= _drag_viewport_rect.position.y + edge_margin:
++		destination.y = _drag_viewport_rect.end.y - landing_margin
++	else:
++		return
++	# 此变换与引擎视口定位接口相同：顶层得到客户区坐标，嵌入窗口包含父变换。
++	_warp_origin = _last_drag_position
++	Input.warp_mouse((_drag_screen_transform * destination).round())
++	_warp_destination = viewport.get_mouse_position()
++	_warp_delta = _warp_destination - before
++	_warp_pending = not _warp_delta.is_zero_approx()
++	# 同步读取定位回声，避免下一次定位与尚未解析的定位量叠加。
++	DisplayServer.process_events()
++
++
++func _exit_tree() -> void:
++	cancel_focus_drag()
++	_restore_focus_accumulation()
+ 
+ 
+ func _dependencies_valid() -> bool:
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn b/main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn
+index 1e266a9..9daf17b 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn
++++ b/main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn
+@@ -12,6 +12,7 @@
+ [ext_resource type="Script" uid="uid://dxhbfr6x7ghda" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd" id="11_slot"]
+ [ext_resource type="Script" uid="uid://c1pn2s683ojtr" path="res://main-autolysis/components/interactions/autolysis_focus_target.gd" id="12_focus"]
+ [ext_resource type="PackedScene" path="res://main-autolysis/components/interactions/autolysis_interaction_component.tscn" id="13_interaction"]
++[ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd" id="14_handle"]
+ 
+ [sub_resource type="BoxShape3D" id="BoxShape3D_7hmvv"]
+ size = Vector3(1.8, 1.1999999, 0.95)
+@@ -240,13 +241,14 @@ _data = {
+ &"blend_slot_3_open": SubResource("Animation_blend_slot_3_open")
+ }
+ 
+-[node name="machine_blend_0" type="StaticBody3D" unique_id=1591611264 node_paths=PackedStringArray("focus_target", "reference_camera", "root_interaction", "animation_source", "slots") groups=["interactable"]]
++[node name="machine_blend_0" type="StaticBody3D" unique_id=1591611264 node_paths=PackedStringArray("focus_target", "reference_camera", "root_interaction", "animation_source", "slots", "handle") groups=["interactable"]]
+ script = ExtResource("10_machine")
+ focus_target = NodePath("FocusTarget")
+ reference_camera = NodePath("focus_camera")
+ root_interaction = NodePath("InteractionComponent")
+ animation_source = NodePath("AnimationPlayer")
+ slots = [NodePath("blend_slot_0"), NodePath("blend_slot_1"), NodePath("blend_slot_2"), NodePath("blend_slot_3")]
++handle = NodePath("switch_handle_blend_mechine_can_reset/handle_interaction")
+ 
+ [node name="FocusTarget" type="Node3D" parent="." unique_id=478468798]
+ script = ExtResource("12_focus")
+@@ -691,9 +693,16 @@ material_override = ExtResource("2_vnha0")
+ mesh = SubResource("BoxMesh_wjtth")
+ skeleton = NodePath("../../..")
+ 
+-[node name="handle_interaction" type="StaticBody3D" parent="switch_handle_blend_mechine_can_reset" unique_id=396261861]
+-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11999999, 0)
++[node name="handle_interaction" type="StaticBody3D" parent="switch_handle_blend_mechine_can_reset" unique_id=396261861 node_paths=PackedStringArray("device_root", "drag_interaction", "collision_shape")]
++transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0)
+ collision_layer = 40
++script = ExtResource("14_handle")
++device_root = NodePath("../..")
++drag_interaction = NodePath("InteractionComponent")
++collision_shape = NodePath("collision_handle_interaction")
++
++[node name="InteractionComponent" parent="switch_handle_blend_mechine_can_reset/handle_interaction" instance=ExtResource("13_interaction")]
++is_enabled = false
+ 
+ [node name="mesh_handle" type="MeshInstance3D" parent="switch_handle_blend_mechine_can_reset/handle_interaction" unique_id=1478183240]
+ material_override = ExtResource("2_vnha0")
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd
+index 6395439..f9147aa 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd
++++ b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd
+@@ -7,6 +7,7 @@ extends StaticBody3D
+ @export var root_interaction: AutolysisInteractionComponent
+ @export var animation_source: AnimationPlayer
+ @export var slots: Array[AutolysisBlendSlot] = []
++@export var handle: AutolysisBlendHandle
+ 
+ var _configured: bool = false
+ 
+@@ -34,12 +35,16 @@ func _ready() -> void:
+ 		if not slot.configure(focus_target, runtime_player):
+ 			push_error("原药混合器槽位配置失败：%s；%s" % [slot.get_path(), slot.get_configuration_error()])
+ 			return
+-	if not focus_target.configure(self, reference_camera, root_interaction, slots):
++	if not handle.configure(focus_target):
++		push_error("原药混合器拉杆配置失败：%s；%s" % [handle.get_path(), handle.get_configuration_error()])
++		return
++	if not focus_target.configure(self, reference_camera, root_interaction, slots, [handle]):
+ 		push_error("原药混合器聚焦描述登记失败：%s" % get_path())
+ 		return
+ 	root_interaction.set_availability_check(_can_enter)
+ 	root_interaction.interaction_requested.connect(_on_entry_requested)
+ 	_configured = true
++	handle.drag_interaction.is_enabled = true
+ 	root_interaction.is_enabled = true
+ 
+ 
+@@ -54,6 +59,8 @@ func _validate_configuration() -> bool:
+ 		return false
+ 	if not is_instance_valid(animation_source) or slots.size() != 4:
+ 		return false
++	if not is_instance_valid(handle) or not is_ancestor_of(handle) or handle.device_root != self:
++		return false
+ 	var seen: Array[AutolysisBlendSlot] = []
+ 	for slot: AutolysisBlendSlot in slots:
+ 		if not is_instance_valid(slot) or slot.get_parent() != self or seen.has(slot):
+diff --git a/main-autolysis/systems/item-system/tests/run_item_check.ps1 b/main-autolysis/systems/item-system/tests/run_item_check.ps1
+index feb8785..95190ca 100644
+--- a/main-autolysis/systems/item-system/tests/run_item_check.ps1
++++ b/main-autolysis/systems/item-system/tests/run_item_check.ps1
+@@ -5,6 +5,7 @@ param(
+     [int]$QuitAfter = 0,
+     [int]$FixedFps = 0,
+     [switch]$Rendered,
++    [switch]$Visible,
+     [switch]$Import,
+     [int]$TimeoutSeconds = 180,
+     [string[]]$UserArguments = @(),
+@@ -30,7 +31,9 @@ elseif ($ScenePath) { $engineArgs += $ScenePath }
+ if ($UserArguments.Count -gt 0) { $engineArgs += '--'; $engineArgs += $UserArguments }
+ $outputFile = Join-Path $evidenceRoot ($CheckName + '.stdout.log')
+ $errorFile = Join-Path $evidenceRoot ($CheckName + '.stderr.log')
+-$checkProcess = Start-Process -FilePath $engineFile -ArgumentList $engineArgs -WindowStyle Hidden -PassThru -RedirectStandardOutput $outputFile -RedirectStandardError $errorFile
++# 真实鼠标验收需要可见窗口；自动检查仍使用隐藏窗口。
++$checkWindowStyle = if ($Visible -and $Rendered) { 'Normal' } else { 'Hidden' }
++$checkProcess = Start-Process -FilePath $engineFile -ArgumentList $engineArgs -WindowStyle $checkWindowStyle -PassThru -RedirectStandardOutput $outputFile -RedirectStandardError $errorFile
+ if (-not $checkProcess.WaitForExit($TimeoutSeconds * 1000)) {
+     Stop-Process -Id $checkProcess.Id -Force
+     throw "检查超时，已停止本次启动的进程：$CheckName"
+@@ -38,7 +41,7 @@ if (-not $checkProcess.WaitForExit($TimeoutSeconds * 1000)) {
+ $checkProcess.Refresh()
+ $allOutput = [IO.File]::ReadAllText($outputFile) + "`n" + [IO.File]::ReadAllText($errorFile)
+ $passed = $checkProcess.ExitCode -eq 0 -and $allOutput -notmatch '(?m)^(SCRIPT ERROR:|ERROR:|失败：)'
+-$record = [pscustomobject]@{检查=$CheckName; 时间=(Get-Date -Format o); 进程编号=$checkProcess.Id; 退出码=$checkProcess.ExitCode; 通过=$passed; 命令参数=$engineArgs; 通过断言数=([regex]::Matches($allOutput,'(?m)^通过：')).Count}
++$record = [pscustomobject]@{检查=$CheckName; 时间=(Get-Date -Format o); 进程编号=$checkProcess.Id; 退出码=$checkProcess.ExitCode; 通过=$passed; 引擎文件=$engineFile; 窗口显示=$checkWindowStyle; 命令参数=$engineArgs; 通过断言数=([regex]::Matches($allOutput,'(?m)^通过：')).Count}
+ $record | ConvertTo-Json -Depth 3 | Set-Content -LiteralPath (Join-Path $evidenceRoot ($CheckName + '.json')) -Encoding utf8
+ $record | Format-List
+ if (-not $passed) { Write-Output $allOutput; exit 1 }

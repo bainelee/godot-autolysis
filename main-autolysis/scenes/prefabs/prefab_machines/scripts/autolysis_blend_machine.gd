@@ -7,6 +7,7 @@ extends StaticBody3D
 @export var root_interaction: AutolysisInteractionComponent
 @export var animation_source: AnimationPlayer
 @export var slots: Array[AutolysisBlendSlot] = []
+@export var handle: AutolysisBlendHandle
 
 var _configured: bool = false
 
@@ -34,12 +35,16 @@ func _ready() -> void:
 		if not slot.configure(focus_target, runtime_player):
 			push_error("原药混合器槽位配置失败：%s；%s" % [slot.get_path(), slot.get_configuration_error()])
 			return
-	if not focus_target.configure(self, reference_camera, root_interaction, slots):
+	if not handle.configure(focus_target):
+		push_error("原药混合器拉杆配置失败：%s；%s" % [handle.get_path(), handle.get_configuration_error()])
+		return
+	if not focus_target.configure(self, reference_camera, root_interaction, slots, [handle]):
 		push_error("原药混合器聚焦描述登记失败：%s" % get_path())
 		return
 	root_interaction.set_availability_check(_can_enter)
 	root_interaction.interaction_requested.connect(_on_entry_requested)
 	_configured = true
+	handle.drag_interaction.is_enabled = true
 	root_interaction.is_enabled = true
 
 
@@ -53,6 +58,8 @@ func _validate_configuration() -> bool:
 	if root_interaction.interaction_mode != AutolysisInteractionComponent.InteractionMode.FOCUS:
 		return false
 	if not is_instance_valid(animation_source) or slots.size() != 4:
+		return false
+	if not is_instance_valid(handle) or not is_ancestor_of(handle) or handle.device_root != self:
 		return false
 	var seen: Array[AutolysisBlendSlot] = []
 	for slot: AutolysisBlendSlot in slots:

@@ -1,0 +1,37 @@
+extends "res://main-autolysis/player/tests/blend_handle_drag_test.gd"
+
+
+func _run() -> void:
+	graphical = false
+	root.size = Vector2i(1280, 720)
+	probe = TickProbe.new()
+	root.add_child(probe)
+	await _new_scene("同行复核顶部松开与重新按下")
+	await _begin()
+	var first_frame: int = Engine.get_physics_frames()
+	var point: Vector2 = _pixel()
+	_button(MOUSE_BUTTON_LEFT, false, point)
+	_button(MOUSE_BUTTON_LEFT, true, point)
+	_motion(0.06 / float(handle.mouse_to_handle_ratio))
+	var all_before_next_tick: bool = first_frame == Engine.get_physics_frames()
+	await _frames(1)
+	var observed: Dictionary = {
+		"同帧输入": all_before_next_tick,
+		"开始位置": TOP,
+		"预期位置": 0.06,
+		"实际位置": handle.position.y,
+		"实际绑定": player.interaction_controller.is_drag_active(),
+		"实际状态": handle.state,
+		"实际左键按下": Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT),
+		"完成数": completion_count,
+	}
+	print(JSON.stringify(observed))
+	var report: FileAccess = FileAccess.open("res://docs/project-autolysis/00-discuss/交互系统/原药混合器拉杆交互实施证据/模块检查/peer_boundary_observation_after_fix.json", FileAccess.WRITE)
+	if report != null:
+		report.store_string(JSON.stringify(observed, "\t"))
+	var passed: bool = all_before_next_tick and player.interaction_controller.is_drag_active() and absf(handle.position.y - 0.06) < EPSILON
+	_check(passed, "顶部松开后同帧新按下独立绑定并保留后续纵向输入")
+	_button(MOUSE_BUTTON_LEFT, false, cursor)
+	world.queue_free()
+	await _frames(2)
+	quit(0 if passed else 1)

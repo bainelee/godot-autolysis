@@ -153,6 +153,7 @@ func _ready() -> void:
 	inventory_controller.inventory_changed.connect(interaction_controller.clear_pending_clicks)
 	focus_controller.configure(self, camera, held_item_presenter, is_interaction_input_allowed)
 	interaction_controller.configure(self, interaction_raycast, is_interaction_input_allowed, inventory_controller, focus_controller)
+	get_window().focus_exited.connect(interaction_controller.cancel_focus_drag)
 
 func is_interaction_input_allowed() -> bool:
 	return _base_input_allowed() and not focus_controller.has_control() and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED
@@ -209,15 +210,18 @@ func end_focus_control() -> void:
 			animationPlayer.play(&"", -1.0, custom_speed)
 
 func _exit_tree() -> void:
+	if is_instance_valid(interaction_controller):
+		interaction_controller.cancel_focus_drag()
 	if is_instance_valid(focus_controller):
 		focus_controller.abort_session(false)
 
 func _input(event: InputEvent) -> void:
+	interaction_controller.observe_focus_drag_input(event)
 	if event.is_action_pressed("menu"):
 		is_movement_paused = not is_movement_paused
 		update_mouse_mode()
 		focus_controller.sync_pause_state()
-		interaction_controller.clear_pending_clicks()
+		interaction_controller.cancel_focus_drag()
 	if is_movement_paused or is_landing_stunned or focus_controller.has_control() or get_tree().paused:
 		return
 	if event is InputEventMouseMotion:

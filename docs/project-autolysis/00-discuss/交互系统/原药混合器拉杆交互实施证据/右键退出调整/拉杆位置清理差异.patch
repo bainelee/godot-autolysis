@@ -1,0 +1,56 @@
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\345\216\237\350\215\257\346\267\267\345\220\210\345\231\250\346\213\211\346\235\206\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\\345\217\263\351\224\256\351\200\200\345\207\272\350\260\203\346\225\264\\\350\260\203\346\225\264\345\211\215\\\347\253\257\347\202\271\347\262\276\345\272\246\346\270\205\347\220\206\345\211\215\346\213\211\346\235\206.gd" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\345\216\237\350\215\257\346\267\267\345\220\210\345\231\250\346\213\211\346\235\206\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\\345\217\263\351\224\256\351\200\200\345\207\272\350\260\203\346\225\264\\\346\234\200\347\273\210\344\273\243\347\240\201\\autolysis_blend_handle.gd"
+index 3060795..60ce215 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\345\216\237\350\215\257\346\267\267\345\220\210\345\231\250\346\213\211\346\235\206\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\\345\217\263\351\224\256\351\200\200\345\207\272\350\260\203\346\225\264\\\350\260\203\346\225\264\345\211\215\\\347\253\257\347\202\271\347\262\276\345\272\246\346\270\205\347\220\206\345\211\215\346\213\211\346\235\206.gd"
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\345\216\237\350\215\257\346\267\267\345\220\210\345\231\250\346\213\211\346\235\206\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\\345\217\263\351\224\256\351\200\200\345\207\272\350\260\203\346\225\264\\\346\234\200\347\273\210\344\273\243\347\240\201\\autolysis_blend_handle.gd"
+@@ -23,7 +23,6 @@ var state: HandleState = HandleState.IDLE
+ 
+ var _configured: bool = false
+ var _drag_actor: Node3D
+-var _current_y: float = TOP_Y
+ var _hold_remaining: float = 0.0
+ var _automatic_started_frame: int = -1
+ 
+@@ -111,9 +110,9 @@ func apply_vertical_motion(actor: Node3D, vertical_motion: float) -> void:
+ 		return
+ 	if not is_finite(vertical_motion) or vertical_motion == 0.0:
+ 		return
+-	var next_y: float = clampf(_current_y - vertical_motion * mouse_to_handle_ratio, BOTTOM_Y, TOP_Y)
++	var next_y: float = clampf(position.y - vertical_motion * mouse_to_handle_ratio, BOTTOM_Y, TOP_Y)
+ 	_set_y(next_y)
+-	if next_y > BOTTOM_Y:
++	if position != Vector3(0.0, BOTTOM_Y, 0.0):
+ 		return
+ 	# 先锁定和解除角色归属，再同步通知；回调重入不能重新开始本周期。
+ 	state = HandleState.HOLDING
+@@ -157,12 +156,9 @@ func _physics_process(delta: float) -> void:
+ 		state = HandleState.RETURNING
+ 	if available_time <= 0.0:
+ 		return
+-	var next_y: float = move_toward(_current_y, TOP_Y, RETURN_SPEED * available_time)
+-	# 双精度标量保存计算进度，三维位置仅接收输出；末端消除累计数值尾差。
+-	if TOP_Y - next_y <= 0.000000001:
+-		next_y = TOP_Y
++	var next_y: float = move_toward(position.y, TOP_Y, RETURN_SPEED * available_time)
+ 	_set_y(next_y)
+-	if next_y == TOP_Y:
++	if position == Vector3(0.0, TOP_Y, 0.0):
+ 		state = HandleState.IDLE
+ 
+ 
+@@ -170,7 +166,7 @@ func _start_return() -> void:
+ 	_drag_actor = null
+ 	_hold_remaining = 0.0
+ 	_automatic_started_frame = Engine.get_physics_frames()
+-	state = HandleState.IDLE if _current_y == TOP_Y else HandleState.RETURNING
++	state = HandleState.IDLE if position == Vector3(0.0, TOP_Y, 0.0) else HandleState.RETURNING
+ 
+ 
+ func _actor_is_focused(actor: Node3D) -> bool:
+@@ -187,7 +183,6 @@ func _on_drag_requested(actor: Node3D) -> void:
+ 
+ 
+ func _set_y(value: float) -> void:
+-	_current_y = value
+ 	position = Vector3(0.0, value, 0.0)
+ 
+ 

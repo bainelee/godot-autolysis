@@ -1,0 +1,6 @@
+ERROR: Object '<Object#368159229777>' was freed or unreferenced while a signal is being emitted from it. Try connecting to the signal using 'CONNECT_DEFERRED' flag, or use queue_free() to free the object (if this object is a Node) to avoid this error and potential crashes.
+   at: ~Object (core/object/object.cpp:2423)
+   GDScript backtrace (most recent call first):
+       [0] _on_completed (res://main-autolysis/player/tests/blend_handle_drag_test.gd:202)
+       [1] apply_vertical_motion (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd:117)
+       [2] _physics_process (res://main-autolysis/player/components/autolysis_interaction_controller.gd:243)

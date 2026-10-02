@@ -1,0 +1,66 @@
+[
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd",
+    "散列": "2D75573993A52DF357CF650381ED17DE01489F008AA5944D0DC4E67A7E2097D0"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd.uid",
+    "散列": "BA733FAFF295AADB2D591B1C462E7BFBAAE8CE06EBC5D7867ED3EC69DEFC2280"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd",
+    "散列": "D3C83DD339476C94E3E1BE81774E6CEA089F1888B332D842FD9FDECD1C62CC79"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn",
+    "散列": "DE76EA26C2D97AAABF6457582AF886929D523B7CAC3F59CDBFAEA9AA69941D54"
+  },
+  {
+    "文件": "main-autolysis/components/interactions/autolysis_focus_target.gd",
+    "散列": "456E20AEA5E9C73730CAAD1E8A632C34C398BAFD139EDDC774214AB6119E0B70"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_focus_ray_query.gd",
+    "散列": "AAD24B82598B56549EC1A4EE13EF7C0F8C28D39DFDA3F46C42BDD53D3C62AA80"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_interaction_controller.gd",
+    "散列": "185CBE4D59035D6C96B001F596CCBC13D947FC3A06F8A16962A14DE60D8BAF76"
+  },
+  {
+    "文件": "main-autolysis/player/autolysis_player.gd",
+    "散列": "FC4243F5BE42A3F68AE6B59B3100653BFFD10B5141E057507FA52369B25C3B1D"
+  },
+  {
+    "文件": "main-autolysis/player/tests/blend_handle_drag_test.gd",
+    "散列": "E640637EE8C0CDAF34E5BDC1DAD2FC8BB4A576871748CDDF4EF9B526D0239B66"
+  },
+  {
+    "文件": "main-autolysis/player/tests/blend_handle_drag_test.gd.uid",
+    "散列": "9498DC923D2A9280D1A78ADCE49772941A8DA00BD2344630BCA9BB43093831AA"
+  },
+  {
+    "文件": "main-autolysis/player/tests/blend_handle_native_loop_test.gd",
+    "散列": "10BD49CBB1C9D89994CF034EA09746DBB59CD79004B3DBEF4BEA52971E8D7DAF"
+  },
+  {
+    "文件": "main-autolysis/player/tests/blend_handle_native_loop_test.gd.uid",
+    "散列": "5C68AEAABC086A223A2D0B83EED653AD3135264FFC311400479C7B9377877CD5"
+  },
+  {
+    "文件": "main-autolysis/player/tests/blend_handle_warp_probe.gd",
+    "散列": "88303CA1EC8CE431FD323A23236B1590C0FF221F6E5F8CA3DD029A4BDCAB82F4"
+  },
+  {
+    "文件": "main-autolysis/player/tests/blend_handle_warp_probe.gd.uid",
+    "散列": "0CBDAA50FAA05281E64CF02A04EFB1945CE69250825CC13477741AF0B5652777"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/run_item_check.ps1",
+    "散列": "F7E198DF367BC7DB088E8F14366557C09B358F3656219D8567CA51E36823D546"
+  },
+  {
+    "文件": "docs/project-autolysis/00-discuss/交互系统/原药混合器拉杆交互实施记录.md",
+    "散列": "915705BEC48C06606C9F64F43352C355609ABE359C680B3083E87C9C78116CCA"
+  }
+]

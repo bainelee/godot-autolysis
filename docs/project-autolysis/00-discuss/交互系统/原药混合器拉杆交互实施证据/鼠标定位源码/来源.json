@@ -1,0 +1,22 @@
+[
+  {
+    "Name": "display_server_windows.cpp",
+    "Url": "https://raw.githubusercontent.com/godotengine/godot/4.6.1-stable/platform/windows/display_server_windows.cpp"
+  },
+  {
+    "Name": "viewport.cpp",
+    "Url": "https://raw.githubusercontent.com/godotengine/godot/4.6.1-stable/scene/main/viewport.cpp"
+  },
+  {
+    "Name": "window.cpp",
+    "Url": "https://raw.githubusercontent.com/godotengine/godot/4.6.1-stable/scene/main/window.cpp"
+  },
+  {
+    "Name": "input_event.cpp",
+    "Url": "https://raw.githubusercontent.com/godotengine/godot/4.6.1-stable/core/input/input_event.cpp"
+  },
+  {
+    "Name": "input.cpp",
+    "Url": "https://raw.githubusercontent.com/godotengine/godot/4.6.1-stable/core/input/input.cpp"
+  }
+]

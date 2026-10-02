@@ -25,6 +25,9 @@ func query_target(camera: Camera3D, mouse_position: Vector2, target: AutolysisFo
 	query.collide_with_areas = false
 	var first_hit: Dictionary = world.direct_space_state.intersect_ray(query)
 	var first_body: Node = first_hit.get("collider") as Node
+	var handle: AutolysisBlendHandle = target.get_handle_for_target(first_body)
+	if handle != null:
+		return handle
 	var slot: AutolysisBlendSlot = target.get_slot_for_target(first_body)
 	if slot == null:
 		return null

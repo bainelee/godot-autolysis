@@ -1,0 +1,19 @@
+{
+  "检查": "peer_same_tick_release_repress_after_fix",
+  "时间": "2026-10-02T15:44:42.6342497+08:00",
+  "进程编号": 34040,
+  "退出码": 0,
+  "通过": true,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://.godot/blend_handle_peer_boundary_probe.gd"
+  ],
+  "通过断言数": 10
+}
