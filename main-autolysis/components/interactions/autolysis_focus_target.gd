@@ -9,15 +9,19 @@ var root_interaction: AutolysisInteractionComponent
 var _registered_targets: Dictionary = {}
 var _slots: Array[AutolysisBlendSlot] = []
 var _registered_handles: Dictionary = {}
+var _tank_place: AutolysisBlendTankPlace
+var _has_tank_place: bool = false
 
 
-func configure(root: PhysicsBody3D, camera: Camera3D, interaction: AutolysisInteractionComponent, slots: Array[AutolysisBlendSlot], handles: Array[AutolysisBlendHandle] = []) -> bool:
+func configure(root: PhysicsBody3D, camera: Camera3D, interaction: AutolysisInteractionComponent, slots: Array[AutolysisBlendSlot], handles: Array[AutolysisBlendHandle] = [], tank_place: AutolysisBlendTankPlace = null) -> bool:
 	device_root = root
 	reference_camera = camera
 	root_interaction = interaction
 	_registered_targets.clear()
 	_slots.clear()
 	_registered_handles.clear()
+	_tank_place = null
+	_has_tank_place = false
 	for slot: AutolysisBlendSlot in slots:
 		if not _node_is_live(slot) or not slot.is_configured() or slot.get_parent() != root:
 			return false
@@ -33,6 +37,13 @@ func configure(root: PhysicsBody3D, camera: Camera3D, interaction: AutolysisInte
 		if not root.is_ancestor_of(handle) or _registered_handles.has(handle) or _registered_targets.has(handle):
 			return false
 		_registered_handles[handle] = handle
+	if tank_place != null:
+		if not _node_is_live(tank_place) or not tank_place.is_configured() or tank_place.machine != root or tank_place.focus_target != self:
+			return false
+		if not root.is_ancestor_of(tank_place) or _registered_targets.has(tank_place) or _registered_handles.has(tank_place):
+			return false
+		_tank_place = tank_place
+		_has_tank_place = true
 	return is_valid_target()
 
 
@@ -55,11 +66,14 @@ func is_valid_target() -> bool:
 			return false
 		if handle.focus_target != self or handle.device_root != device_root or not device_root.is_ancestor_of(handle) or _registered_handles[handle] != handle:
 			return false
+	if _has_tank_place:
+		if not _node_is_live(_tank_place) or not _tank_place.is_configured() or _tank_place.machine != device_root or _tank_place.focus_target != self or not device_root.is_ancestor_of(_tank_place):
+			return false
 	return true
 
 
 func owns_target(body: Variant) -> bool:
-	return _node_is_live(body) and is_valid_target() and (_registered_targets.has(body) or _registered_handles.has(body))
+	return _node_is_live(body) and is_valid_target() and (_registered_targets.has(body) or _registered_handles.has(body) or body == _tank_place)
 
 
 func get_inner_target(body: Variant) -> Node3D:
@@ -76,6 +90,10 @@ func get_handle_for_target(body: Variant) -> AutolysisBlendHandle:
 	if not owns_target(body) or not _registered_handles.has(body):
 		return null
 	return _registered_handles[body] as AutolysisBlendHandle
+
+
+func get_tank_place_for_target(body: Variant) -> AutolysisBlendTankPlace:
+	return _tank_place if owns_target(body) and body == _tank_place else null
 
 
 func _node_is_live(node: Variant) -> bool:

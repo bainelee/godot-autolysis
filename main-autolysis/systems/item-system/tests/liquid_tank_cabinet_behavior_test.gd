@@ -112,7 +112,7 @@ func _fixture(occupied_slots: Array[int]) -> Dictionary:
 	var expected_items: Array[AutolysisLiquidTank] = []
 	expected_items.resize(2)
 	for index: int in range(2):
-		var anchor: Node3D = cabinet.get_node_or_null("luquid_tank_slot_%d" % index) as Node3D
+		var anchor: Node3D = cabinet.get_node_or_null("liquid_tank_slot_%d" % index) as Node3D
 		_check(anchor != null and anchor.get_parent() == cabinet, "编号%d锚点为柜的直接子级" % index)
 		if anchor == null:
 			cabinet.free()

@@ -10,6 +10,7 @@ enum SlotState { CLOSED, OPENING, OPEN, CLOSING }
 @export var animation_name: StringName
 
 var focus_target: AutolysisFocusTarget
+var machine: AutolysisBlendMachine
 var state: SlotState = SlotState.CLOSED
 
 var _runtime_player: AnimationPlayer
@@ -22,6 +23,7 @@ func configure(target: AutolysisFocusTarget, runtime_player: AnimationPlayer) ->
 	if _configured:
 		return false
 	focus_target = target
+	machine = get_parent() as AutolysisBlendMachine
 	_runtime_player = runtime_player
 	_configured = true
 	if not is_configured():
@@ -43,6 +45,8 @@ func is_configured() -> bool:
 func get_configuration_error() -> String:
 	if not _node_is_live(self) or not _node_is_live(focus_target):
 		return "槽位或聚焦目标描述不在有效场景树中"
+	if not _node_is_live(machine) or get_parent() != machine or focus_target.get_parent() != machine:
+		return "槽位与聚焦目标描述必须属于同一配药器"
 	if not _node_is_live(raw_material_anchor):
 		return "raw_material_anchor（原药锚点）未绑定或已失效"
 	if not raw_material_anchor is PhysicsBody3D or raw_material_anchor.get_parent() != self:
@@ -65,12 +69,20 @@ func is_open() -> bool:
 	return state == SlotState.OPEN
 
 
+func is_closed() -> bool:
+	return state == SlotState.CLOSED
+
+
+func is_transfer_busy() -> bool:
+	return _transfer_busy
+
+
 func is_animating() -> bool:
 	return state == SlotState.OPENING or state == SlotState.CLOSING
 
 
 func can_toggle(actor: Node3D) -> bool:
-	return is_configured() and not _transfer_busy and not is_animating() and _actor_is_focused(actor)
+	return is_configured() and not machine.is_interaction_locked() and not _transfer_busy and not is_animating() and _actor_is_focused(actor)
 
 
 func try_toggle(actor: Node3D) -> bool:
@@ -86,7 +98,7 @@ func try_toggle(actor: Node3D) -> bool:
 
 
 func can_transfer(actor: Node3D, allow_busy: bool = false) -> bool:
-	return is_configured() and is_open() and (allow_busy or not _transfer_busy) and _actor_is_focused(actor)
+	return is_configured() and not machine.is_interaction_locked() and is_open() and (allow_busy or not _transfer_busy) and _actor_is_focused(actor)
 
 
 func try_begin_transfer(actor: Node3D) -> bool:
@@ -111,7 +123,7 @@ func owns_item(item: AutolysisRawMaterial) -> bool:
 
 
 func try_attach_prepared_item(item: AutolysisRawMaterial) -> bool:
-	if not _transfer_busy or not is_configured() or not is_open() or get_stored_item() != null:
+	if not _transfer_busy or not is_configured() or machine.is_interaction_locked() or not is_open() or get_stored_item() != null:
 		return false
 	if not is_instance_valid(item) or item.is_queued_for_deletion() or not item.device_stored or item.blend_slot != self:
 		return false
@@ -122,7 +134,7 @@ func try_attach_prepared_item(item: AutolysisRawMaterial) -> bool:
 	var anchor: Node3D = raw_material_anchor
 	anchor.add_child(item)
 	# 入树回调可释放设备或改变配置，提交占用前必须重新核验。
-	if not is_instance_valid(self) or not is_configured() or not is_open() or get_stored_item() != null:
+	if not is_instance_valid(self) or not is_configured() or machine.is_interaction_locked() or not is_open() or get_stored_item() != null:
 		return false
 	if not _node_is_live(item) or not _node_is_live(anchor) or raw_material_anchor != anchor or item.get_parent() != anchor:
 		return false
@@ -134,7 +146,25 @@ func try_attach_prepared_item(item: AutolysisRawMaterial) -> bool:
 
 
 func release_item(item: AutolysisRawMaterial) -> bool:
-	if not _transfer_busy or not owns_item(item):
+	if not _transfer_busy or not is_configured() or machine.is_interaction_locked() or not owns_item(item):
+		return false
+	_stored_item = null
+	item.blend_slot = null
+	return true
+
+
+## 关门加工来源只接受所属设备当前批次；查询不修改槽位或来源。
+func can_consume_processing_item(owner_machine: AutolysisBlendMachine, batch_id: int, item: AutolysisRawMaterial, expected_instance: AutolysisItemInstance, expected_id: String) -> bool:
+	if owner_machine != machine or not is_configured() or not is_closed() or _transfer_busy or not owns_item(item):
+		return false
+	if not machine.owns_processing_source(self, item, batch_id):
+		return false
+	return is_instance_valid(expected_instance) and item.item_instance == expected_instance and expected_instance.is_valid_instance() and item.item_definition == expected_instance.definition and item.item_definition.is_raw_material and String(item.item_definition.item_id) == expected_id
+
+
+## 设备先核验全部来源，再在无外部通知的同步提交段调用。
+func consume_processing_item(owner_machine: AutolysisBlendMachine, batch_id: int, item: AutolysisRawMaterial, expected_instance: AutolysisItemInstance, expected_id: String) -> bool:
+	if not _node_is_live(machine) or not machine.is_committing_processing_batch(batch_id) or not can_consume_processing_item(owner_machine, batch_id, item, expected_instance, expected_id):
 		return false
 	_stored_item = null
 	item.blend_slot = null
@@ -143,6 +173,8 @@ func release_item(item: AutolysisRawMaterial) -> bool:
 
 ## 失败只撤销本次候选；设备失效或槽位状态改变后也不能清除其他占用。
 func rollback_prepared_item(item: Variant) -> void:
+	if is_instance_valid(machine) and (machine.is_batch_running() or not machine.get_processing_fault().is_empty()) and _stored_item == item:
+		return
 	if _stored_item == item:
 		_stored_item = null
 	if is_instance_valid(item) and item is AutolysisRawMaterial and item.blend_slot == self:

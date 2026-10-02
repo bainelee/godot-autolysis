@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c117w0eww7frm"]
 
 [ext_resource type="Material" uid="uid://5yjf2yjo2u7l" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_1.tres" id="1_6bwaf"]
-[ext_resource type="PackedScene" uid="uid://bbqs75e8vtnql" path="res://main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn" id="2_n5rw0"]
+[ext_resource type="PackedScene" uid="uid://bbqs75e8vtnql" path="res://main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn" id="2_n5rw0"]
 [ext_resource type="Material" uid="uid://blu42xw7rpe7b" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_2.tres" id="2_qpgyo"]
 [ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="3_qpgyo"]
 [ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="4_0tg3w"]
@@ -307,6 +307,6 @@ material_override = ExtResource("7_44ebl")
 mesh = SubResource("BoxMesh_oaalt")
 skeleton = NodePath("../..")
 
-[node name="luquid_tank_0" parent="." unique_id=1823254939 instance=ExtResource("2_n5rw0")]
+[node name="liquid_tank_0" parent="." unique_id=1823254939 instance=ExtResource("2_n5rw0")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.5, 0.35, 0.30000004)
 fixed_installation = true

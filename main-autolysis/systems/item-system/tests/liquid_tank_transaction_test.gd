@@ -3,7 +3,7 @@ extends SceneTree
 
 const TANK: AutolysisItemDefinition = preload("res://main-autolysis/systems/item-system/items/liquid_tank.tres")
 const CAFFEINE: AutolysisItemDefinition = preload("res://main-autolysis/systems/item-system/items/caffeine.tres")
-const WORLD_SCENE: PackedScene = preload("res://main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn")
+const WORLD_SCENE: PackedScene = preload("res://main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn")
 const CABINET_SCENE: PackedScene = preload("res://main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn")
 const SHELF_SCENE: PackedScene = preload("res://main-autolysis/scenes/prefabs/prefab_place_shelf/place_shelf_workroom_rm_0.tscn")
 const PLAYER_SCENE: PackedScene = preload("res://main-autolysis/player/autolysis_player.tscn")
@@ -94,7 +94,7 @@ func _fixture(initial_count: int = 0, open_cabinet: bool = true) -> Dictionary:
 	for index: int in range(2):
 		if index < initial_count:
 			continue
-		var anchor: Node3D = cabinet.get_node("luquid_tank_slot_%d" % index) as Node3D
+		var anchor: Node3D = cabinet.get_node("liquid_tank_slot_%d" % index) as Node3D
 		for child: Node in anchor.get_children():
 			child.free()
 	world.add_child(cabinet)
@@ -257,6 +257,8 @@ func _test_attachment_failures() -> void:
 		var old_notifications: int = actor.notifications
 		var attempt: Dictionary = {"called": false, "toggle": true, "cycle": true}
 		anchor.child_entered_tree.connect(func(node: Node) -> void:
+			# 单独标识故障来源，使日志仅按本轮精确错误逐条验收。
+			node.name = "事务故障候选%d" % mode
 			attempt["called"] = true
 			attempt["toggle"] = cabinet.try_toggle(actor)
 			attempt["cycle"] = actor.inventory.cycle_focus(1)

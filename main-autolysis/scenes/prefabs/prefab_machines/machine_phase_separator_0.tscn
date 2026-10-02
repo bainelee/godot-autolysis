@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://c0hhcbbjw5rir" path="res://main-autolysis/assets/materials/base_color/mat_base_green_2.tres" id="2_53d20"]
 [ext_resource type="Material" uid="uid://dexisf11765lm" path="res://main-autolysis/assets/materials/base_color/mat_base_brown_2.tres" id="3_0vaim"]
 [ext_resource type="Material" uid="uid://c1auue2g3ppe3" path="res://main-autolysis/assets/materials/base_color/mat_base_red_1.tres" id="3_a2l6x"]
-[ext_resource type="PackedScene" uid="uid://bbqs75e8vtnql" path="res://main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn" id="3_jhd5k"]
+[ext_resource type="PackedScene" uid="uid://bbqs75e8vtnql" path="res://main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn" id="3_jhd5k"]
 [ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="4_exy77"]
 [ext_resource type="Material" uid="uid://cvg16u7jm6ykg" path="res://main-autolysis/assets/materials/base_color/mat_base_brown_0.tres" id="5_tj67c"]
 [ext_resource type="Material" uid="uid://nbe6leccr0kp" path="res://main-autolysis/assets/materials/base_color/mat_base_blue_0.tres" id="7_aowa2"]
@@ -171,7 +171,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.61999995, 0.71999997, 0.409
 material_override = ExtResource("7_aowa2")
 mesh = SubResource("BoxMesh_isgjk")
 
-[node name="luquid_tank_0" parent="." unique_id=1823254939 instance=ExtResource("3_jhd5k")]
+[node name="liquid_tank_0" parent="." unique_id=1823254939 instance=ExtResource("3_jhd5k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59999996, 0.19999999)
 fixed_installation = true
 

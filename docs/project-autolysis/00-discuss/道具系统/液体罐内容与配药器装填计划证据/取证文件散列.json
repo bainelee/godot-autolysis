@@ -1,0 +1,222 @@
+{
+  "取证时间（协调世界时）": "2026-10-02T11:20:40.0143886Z",
+  "说明": "当前工作区与原项目实际引用文件的散列；仅计划取证，不代表游戏功能通过。",
+  "文件数量": 43,
+  "文件": [
+    {
+      "文件路径": "D:\\autolysis\\AGENTS.md",
+      "字节数": 3150,
+      "SHA256（安全散列算法）": "F63E306347A4B4F41D957978633078B67D1DF8F5DFE4940F61B7C93CBC65E72A"
+    },
+    {
+      "文件路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\液体罐内容与配药器装填计划证据\\规则核验.ps1",
+      "字节数": 6039,
+      "SHA256（安全散列算法）": "22E54D1FB0929E685ECC5B2BC8FFAF3D2CCEEE38278E2CA5FC65E854F4936B0D"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\components\\interactions\\autolysis_focus_target.gd",
+      "字节数": 3523,
+      "SHA256（安全散列算法）": "456E20AEA5E9C73730CAAD1E8A632C34C398BAFD139EDDC774214AB6119E0B70"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\components\\interactions\\autolysis_interaction_component.gd",
+      "字节数": 4366,
+      "SHA256（安全散列算法）": "930F05E9497984ADDF7BBC2437D02ECEF223E3B06EAF8E110105DEC9B289DBFF"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.gd",
+      "字节数": 30972,
+      "SHA256（安全散列算法）": "FC4243F5BE42A3F68AE6B59B3100653BFFD10B5141E057507FA52369B25C3B1D"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.tscn",
+      "字节数": 8613,
+      "SHA256（安全散列算法）": "30ADBD3A68A8840859189C3EA0FADA6FD3611A59EF1882EA79898B5CE598EA7C"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_focus_controller.gd",
+      "字节数": 6882,
+      "SHA256（安全散列算法）": "B187711739D0CBDF7E4B4D834AAC100EAEFAE9F5F2E0100996FABDDA58EE0142"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_focus_ray_query.gd",
+      "字节数": 2077,
+      "SHA256（安全散列算法）": "AAD24B82598B56549EC1A4EE13EF7C0F8C28D39DFDA3F46C42BDD53D3C62AA80"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_held_item_presenter.gd",
+      "字节数": 2154,
+      "SHA256（安全散列算法）": "1AA146C07CA6DC5DD0DBBC8D011D9CCEAABE4924C6DED9E5D1A4DD633BD37F83"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_interaction_controller.gd",
+      "字节数": 16091,
+      "SHA256（安全散列算法）": "EA1695E77377E45C24E41EB93A0C00BAD55EBC545E77243E93003504E0FEFDED"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+      "字节数": 20915,
+      "SHA256（安全散列算法）": "3A0DAF6E253E4232F1EB4085837E362B8197C9D1D16B0224773D6C455CDF5E39"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\player\\tests\\blend_collision_follow_test.gd",
+      "字节数": 5180,
+      "SHA256（安全散列算法）": "CF6AB63DD09EB6AFC202EDF1EFB6C0DF167C6ABF577E86F046AEBD596AC2DB2A"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\player\\tests\\blend_handle_drag_test.gd",
+      "字节数": 52266,
+      "SHA256（安全散列算法）": "882B97979075DF90EFAAE6F28B3A16531F618A17049FEA6142E97D7678045433"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\player\\tests\\focus_interaction_test.gd",
+      "字节数": 43245,
+      "SHA256（安全散列算法）": "C7B27647F7EA7FC5045943284696D3F9154342A731B45B045C664AAD6E35CD9C"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_blend_0.tscn",
+      "字节数": 34556,
+      "SHA256（安全散列算法）": "C55C823D7D79E44D1345E8C4E0C006788E2AAC0D7F5B3CD735BFD0429341D1DA"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_handle.gd",
+      "字节数": 7043,
+      "SHA256（安全散列算法）": "077430FBCC19C8657EDE41FD8662C6F427ADE35605EF2D8C54D53B12AEF474F8"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_machine.gd",
+      "字节数": 3945,
+      "SHA256（安全散列算法）": "D3C83DD339476C94E3E1BE81774E6CEA089F1888B332D842FD9FDECD1C62CC79"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_slot.gd",
+      "字节数": 7728,
+      "SHA256（安全散列算法）": "A9D1425C3BC80858298BF41D8CD012A3EFE5EA7A1120E4FB839F6F599B180831"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\visuals\\liquid_tank_visual.tscn",
+      "字节数": 5248,
+      "SHA256（安全散列算法）": "DB40F7625CFE3B7333F4307F9748CFF809C1F3C6C1F241259BAE276347FB58A2"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_0.tscn",
+      "字节数": 1218,
+      "SHA256（安全散列算法）": "96DEBF163F7408F8B369BC7C04D9753E6E656E15F8064CCA4A74D8CE347A1870"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_0.tscn",
+      "字节数": 1298,
+      "SHA256（安全散列算法）": "57F96A7E2497FA90CADF6BCAF076394A388B05C73A93F8EA03A5AB999164161F"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\autolysis_item_definition.gd",
+      "字节数": 1932,
+      "SHA256（安全散列算法）": "0B351468E056185CAFD4DC12318EACDC164F66D8E1E6681E6AF7536CB7561191"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\autolysis_liquid_tank_cabinet.gd",
+      "字节数": 12439,
+      "SHA256（安全散列算法）": "F060E1F3941DDB2D89328329BE44E560C52334E65B60B517D72D404B733E047C"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\autolysis_liquid_tank.gd",
+      "字节数": 3009,
+      "SHA256（安全散列算法）": "07DD712B04B360B998B9139347385D96144DA66BCFDD1C532772DE9B46C8F77C"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\items\\caffeine.tres",
+      "字节数": 729,
+      "SHA256（安全散列算法）": "128E7B6C7BD9DCA6BE0D6B374BF057F40302B8222775E134D57D9DA5DC0A2446"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\items\\sodium_benzoate.tres",
+      "字节数": 760,
+      "SHA256（安全散列算法）": "E1BCB9420622E8DFC5D0546ECFBB02D8E3709F9969BD50C2FD62C505D97E0210"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\blend_slot_transfer_test.gd",
+      "字节数": 23878,
+      "SHA256（安全散列算法）": "05FF8C9444F681A99DB686A15EA65DB079C6456896C0855BA61BC1D073E0E498"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\item_system_test.gd",
+      "字节数": 30295,
+      "SHA256（安全散列算法）": "2BB76D5166075D473158DFFFD0E34C60B17447FD90E9CC8267C08B7D7448881F"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\liquid_tank_cabinet_behavior_test.gd",
+      "字节数": 22713,
+      "SHA256（安全散列算法）": "E01CFE69CAA528E078878A91238D8352DC37CBBD1DADEEAC7A9F36FBF60D2AF8"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\liquid_tank_cabinet_rendered_test.gd",
+      "字节数": 17216,
+      "SHA256（安全散列算法）": "535B1432075E1EBDB4DBA88ABF0E0B7547AB57980B50FAB2491EEF5085F69131"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\liquid_tank_transaction_test.gd",
+      "字节数": 20938,
+      "SHA256（安全散列算法）": "2284331160D0FA9263B96D957AC24CDBD29C1567C797122D9507AC06E8C2A452"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\run_item_check.ps1",
+      "字节数": 2781,
+      "SHA256（安全散列算法）": "F7E198DF367BC7DB088E8F14366557C09B358F3656219D8567CA51E36823D546"
+    },
+    {
+      "文件路径": "D:\\autolysis\\main-autolysis\\ui\\inventory\\autolysis_inventory_bar.gd",
+      "字节数": 2032,
+      "SHA256（安全散列算法）": "233B302CF6763D100F25BA51D6DA05624F303944DCA54308E6D26657996CC6D3"
+    },
+    {
+      "文件路径": "D:\\autolysis\\project.godot",
+      "字节数": 7080,
+      "SHA256（安全散列算法）": "76F612D6F46787E983E87BE39561AC3C6AF4AAC06866E0C034E8693C72F039F6"
+    },
+    {
+      "文件路径": "D:\\cogito\\addons\\cogito\\CogitoObjects\\cogito_snap_slot.gd",
+      "字节数": 6848,
+      "SHA256（安全散列算法）": "DE069E453582410C50BA92599DEB4502C3648BEA15DA389690F93FCF54D6D098"
+    },
+    {
+      "文件路径": "D:\\cogito\\addons\\cogito\\CogitoObjects\\cogito_static_interactable.gd",
+      "字节数": 2037,
+      "SHA256（安全散列算法）": "AA6A72596A8219F8DF634C9F3B23E194A5C59B8EF464FB421A125CD1212C2D94"
+    },
+    {
+      "文件路径": "D:\\cogito\\addons\\cogito\\Components\\Interactions\\InteractionComponent.gd",
+      "字节数": 3110,
+      "SHA256（安全散列算法）": "EB112DBB8F777F2F0F0C8A54050FCC4F9083D582D6E66C1276AED178C3AF8458"
+    },
+    {
+      "文件路径": "D:\\cogito\\addons\\cogito\\Components\\Interactions\\PickupComponent.gd",
+      "字节数": 2163,
+      "SHA256（安全散列算法）": "8D4B8C66A86F5F2AC91B9EA2CC1BAEB69C06875CF7855D220FB8ED5CFCE34CE4"
+    },
+    {
+      "文件路径": "D:\\cogito\\addons\\cogito\\InventoryPD\\cogito_inventory.gd",
+      "字节数": 11881,
+      "SHA256（安全散列算法）": "1E5B3767B3E1A91C6F402CEB12348A2192082526ECA034B7676AE2E15EDEBD29"
+    },
+    {
+      "文件路径": "D:\\cogito\\addons\\cogito\\InventoryPD\\cogito_pickup.gd",
+      "字节数": 968,
+      "SHA256（安全散列算法）": "E1D45C6F8EEC3D3071A1FD8A96DD659A00D3162537C010E9B1DE08FF1AB52261"
+    },
+    {
+      "文件路径": "D:\\cogito\\addons\\cogito\\InventoryPD\\CustomResources\\InventorySlotPD.gd",
+      "字节数": 2247,
+      "SHA256（安全散列算法）": "3C38644EE09ACF34A7BC4C07F20709D1B923B9117CC143267A38403FE69CEF6A"
+    },
+    {
+      "文件路径": "D:\\cogito\\addons\\cogito\\SceneManagement\\cogito_player_state.gd",
+      "字节数": 8005,
+      "SHA256（安全散列算法）": "F1BB7424D2566725A9F1350B3210CE8AC3051CC19E6606495ECE852578949AB9"
+    },
+    {
+      "文件路径": "D:\\cogito\\addons\\cogito\\SceneManagement\\cogito_scene_manager.gd",
+      "字节数": 26767,
+      "SHA256（安全散列算法）": "00A982A3990273812ED221E995FE4775C73035DE2D664A82A5F0C28649952ED5"
+    }
+  ]
+}

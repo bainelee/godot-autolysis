@@ -127,6 +127,7 @@ var _active_found_shape: StringName = &""
 @onready var inventory_controller: AutolysisInventoryController = $InventoryController
 @onready var held_item_presenter: AutolysisHeldItemPresenter = %HeldItemPresenter
 @onready var inventory_bar: AutolysisInventoryBar = $InventoryBar
+@onready var liquid_contents_panel: AutolysisLiquidContentsPanel = $LiquidContentsPanel
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var focus_controller: AutolysisFocusController = $FocusController
 var _focus_sway_processing: bool = false
@@ -149,6 +150,7 @@ func _ready() -> void:
 	interaction_controller.direct_availability_changed.connect(interaction_crosshair.set_direct_available)
 	inventory_controller.configure(held_item_presenter, is_inventory_input_allowed)
 	inventory_bar.configure(inventory_controller)
+	liquid_contents_panel.configure(inventory_controller)
 	inventory_controller.inventory_changed.connect(interaction_controller.refresh_state)
 	inventory_controller.inventory_changed.connect(interaction_controller.clear_pending_clicks)
 	focus_controller.configure(self, camera, held_item_presenter, is_interaction_input_allowed)

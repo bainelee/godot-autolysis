@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://main-autolysis/player/components/autolysis_held_item_presenter.gd" id="33_held"]
 [ext_resource type="PackedScene" path="res://main-autolysis/ui/inventory/autolysis_inventory_bar.tscn" id="34_bar"]
 [ext_resource type="Script" path="res://main-autolysis/player/components/autolysis_focus_controller.gd" id="35_focus"]
+[ext_resource type="PackedScene" path="res://main-autolysis/ui/inventory/autolysis_liquid_contents_panel.tscn" id="36_liquid_contents"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8vem4"]
 size = Vector3(0.6, 1.7, 0.6)
@@ -170,6 +171,8 @@ script = ExtResource("33_held")
 script = ExtResource("32_inventory")
 
 [node name="InventoryBar" parent="." instance=ExtResource("34_bar")]
+
+[node name="LiquidContentsPanel" parent="." instance=ExtResource("36_liquid_contents")]
 
 [node name="InteractionController" type="Node" parent="."]
 script = ExtResource("30_interaction")

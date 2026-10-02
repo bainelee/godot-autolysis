@@ -7,6 +7,7 @@ var _following_camera: Camera3D
 var _saved_transform: Transform3D
 var _saved_top_level: bool = false
 var _camera_relative: Transform3D
+var _instance: AutolysisItemInstance
 
 
 func begin_camera_follow(camera: Camera3D) -> bool:
@@ -46,7 +47,20 @@ func prepare_item(item: AutolysisItemDefinition) -> Node3D:
 	return visual
 
 
+func prepare_instance(instance: AutolysisItemInstance) -> Node3D:
+	if instance == null or not instance.is_valid_instance():
+		return null
+	var visual: Node3D = prepare_item(instance.definition)
+	if visual == null:
+		return null
+	if instance.definition.item_id == &"liquid_tank" and not AutolysisLiquidTankVisual.apply_instance(visual, instance):
+		visual.free()
+		return null
+	return visual
+
+
 func commit_prepared(visual: Node3D) -> void:
+	watch_instance(null)
 	if is_instance_valid(_display):
 		_display.hide()
 		remove_child(_display)
@@ -55,6 +69,26 @@ func commit_prepared(visual: Node3D) -> void:
 	if _display != null:
 		add_child(_display)
 		_display.show()
+
+
+func watch_instance(instance: AutolysisItemInstance) -> void:
+	if _instance != instance:
+		if _instance != null and _instance.changed.is_connected(_refresh_instance_material):
+			_instance.changed.disconnect(_refresh_instance_material)
+		_instance = instance
+		if _instance != null:
+			_instance.changed.connect(_refresh_instance_material)
+	_refresh_instance_material()
+
+
+func _refresh_instance_material() -> void:
+	if _instance != null and _instance.definition != null and _instance.definition.item_id == &"liquid_tank" and is_instance_valid(_display):
+		if not AutolysisLiquidTankVisual.apply_instance(_display, _instance):
+			push_error("当前手持液体罐显示依赖或内容无效。")
+
+
+func _exit_tree() -> void:
+	watch_instance(null)
 
 
 func get_display() -> Node3D:

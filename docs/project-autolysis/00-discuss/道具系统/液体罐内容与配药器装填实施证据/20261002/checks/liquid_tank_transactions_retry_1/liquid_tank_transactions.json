@@ -1,0 +1,28 @@
+{
+  "检查": "liquid_tank_transactions",
+  "时间": "2026-10-02T19:38:57.0470010+08:00",
+  "进程编号": 38744,
+  "退出码": 0,
+  "通过": true,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/道具系统/液体罐内容与配药器装填实施证据/20261002/checks/liquid_tank_transactions_retry_1/internal"
+  ],
+  "通过断言数": 167,
+  "预期错误计数": {
+    "^ERROR: 液体罐实例或显示依赖无效：.*/事务故障候选2$": 1,
+    "^ERROR: 液体罐实例或显示依赖无效：.*/事务故障候选4$": 1,
+    "^ERROR: 液体罐实例或显示依赖无效：.*/事务故障候选6$": 1
+  },
+  "非预期错误": []
+}

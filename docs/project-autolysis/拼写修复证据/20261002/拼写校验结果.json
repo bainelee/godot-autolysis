@@ -1,0 +1,317 @@
+{
+  "记录时间": "2026-10-02 18:01:17（北京时间）",
+  "工程目录": "D:\\autolysis",
+  "版本控制原始提交": "2d3c17e8a5725940d94887d8f4be6550dd0bf7d0",
+  "校验通过": true,
+  "写入限制": "校验脚本仅写入所在的指定证据目录；只读读取运行工程及版本控制对象。",
+  "对比规则": "原始提交内容执行 luquid（错误液体拼写）到 liquid（液体）的逐字替换；双方回车换行及回车统一为换行后，进行逐字精确比较。",
+  "原始含错误文件数量": 12,
+  "原始错误出现次数": 39.0,
+  "逐文件对比全部通过": true,
+  "逐文件结果": [
+    {
+      "原路径": "main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn",
+      "现路径": "main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn",
+      "原始错误次数": 1,
+      "当前文件存在": true,
+      "仅替换错误拼写且统一换行后相等": true,
+      "当前文件安全散列算法": "SHA256（安全散列算法256位）",
+      "当前文件安全散列": "9a8fb1fd9b1d491541121f943b9d390606b93bd15e9bf195caee2b5e0a98179e",
+      "原始错误行": [
+        {
+          "原始行号": 11,
+          "原始文本": "[node name=\"luquid_tank_0\" type=\"StaticBody3D\" unique_id=174530150 groups=[\"interactable\"]]"
+        }
+      ]
+    },
+    {
+      "原路径": "main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn",
+      "现路径": "main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn",
+      "原始错误次数": 11,
+      "当前文件存在": true,
+      "仅替换错误拼写且统一换行后相等": true,
+      "当前文件安全散列算法": "SHA256（安全散列算法256位）",
+      "当前文件安全散列": "38edc590b392a543a920f1d306759cc4656ba33315b276a93f359541fcf99045",
+      "原始错误行": [
+        {
+          "原始行号": 616,
+          "原始文本": "[node name=\"luquid_tank_slot_0\" type=\"StaticBody3D\" parent=\".\" unique_id=1599987540]"
+        },
+        {
+          "原始行号": 620,
+          "原始文本": "[node name=\"collision_luquid_tank_slot_0\" type=\"CollisionShape3D\" parent=\"luquid_tank_slot_0\" unique_id=250055092]"
+        },
+        {
+          "原始行号": 625,
+          "原始文本": "[node name=\"mesh\" type=\"Node3D\" parent=\"luquid_tank_slot_0\" unique_id=210375152]"
+        },
+        {
+          "原始行号": 628,
+          "原始文本": "[node name=\"MeshInstance3D13\" type=\"MeshInstance3D\" parent=\"luquid_tank_slot_0/mesh\" unique_id=61120911]"
+        },
+        {
+          "原始行号": 634,
+          "原始文本": "[node name=\"MeshInstance3D14\" type=\"MeshInstance3D\" parent=\"luquid_tank_slot_0/mesh\" unique_id=66920265]"
+        },
+        {
+          "原始行号": 640,
+          "原始文本": "[node name=\"MeshInstance3D15\" type=\"MeshInstance3D\" parent=\"luquid_tank_slot_0/mesh\" unique_id=1863612309]"
+        },
+        {
+          "原始行号": 646,
+          "原始文本": "[node name=\"MeshInstance3D16\" type=\"MeshInstance3D\" parent=\"luquid_tank_slot_0/mesh\" unique_id=2056294242]"
+        },
+        {
+          "原始行号": 652,
+          "原始文本": "[node name=\"MeshInstance3D17\" type=\"MeshInstance3D\" parent=\"luquid_tank_slot_0/mesh\" unique_id=1279590557]"
+        },
+        {
+          "原始行号": 658,
+          "原始文本": "[node name=\"luquid_tank_slot\" type=\"Node3D\" parent=\"luquid_tank_slot_0\" unique_id=1824775236]"
+        }
+      ]
+    },
+    {
+      "原路径": "main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn",
+      "现路径": "main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn",
+      "原始错误次数": 2,
+      "当前文件存在": true,
+      "仅替换错误拼写且统一换行后相等": true,
+      "当前文件安全散列算法": "SHA256（安全散列算法256位）",
+      "当前文件安全散列": "d5e01d8a4616342c7d185a2601573e29219d99792a8c0cc4eb9ba96e2233976a",
+      "原始错误行": [
+        {
+          "原始行号": 4,
+          "原始文本": "[ext_resource type=\"PackedScene\" uid=\"uid://bbqs75e8vtnql\" path=\"res://main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn\" id=\"2_n5rw0\"]"
+        },
+        {
+          "原始行号": 310,
+          "原始文本": "[node name=\"luquid_tank_0\" parent=\".\" unique_id=1823254939 instance=ExtResource(\"2_n5rw0\")]"
+        }
+      ]
+    },
+    {
+      "原路径": "main-autolysis/scenes/prefabs/prefab_machines/machine_phase_separator_0.tscn",
+      "现路径": "main-autolysis/scenes/prefabs/prefab_machines/machine_phase_separator_0.tscn",
+      "原始错误次数": 2,
+      "当前文件存在": true,
+      "仅替换错误拼写且统一换行后相等": true,
+      "当前文件安全散列算法": "SHA256（安全散列算法256位）",
+      "当前文件安全散列": "605abd03943f6af3026ca44a71584173ee50a5b91b6bfc26e0d242eeb681e333",
+      "原始错误行": [
+        {
+          "原始行号": 7,
+          "原始文本": "[ext_resource type=\"PackedScene\" uid=\"uid://bbqs75e8vtnql\" path=\"res://main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn\" id=\"3_jhd5k\"]"
+        },
+        {
+          "原始行号": 174,
+          "原始文本": "[node name=\"luquid_tank_0\" parent=\".\" unique_id=1823254939 instance=ExtResource(\"3_jhd5k\")]"
+        }
+      ]
+    },
+    {
+      "原路径": "main-autolysis/scenes/prefabs/prefab_machines/machine_wave_rebuilder_0.tscn",
+      "现路径": "main-autolysis/scenes/prefabs/prefab_machines/machine_wave_rebuilder_0.tscn",
+      "原始错误次数": 2,
+      "当前文件存在": true,
+      "仅替换错误拼写且统一换行后相等": true,
+      "当前文件安全散列算法": "SHA256（安全散列算法256位）",
+      "当前文件安全散列": "bf9fff1db8318d995a0c63cb877bb9636b1e346fd95e736dbd05bcb3cf24bc4e",
+      "原始错误行": [
+        {
+          "原始行号": 6,
+          "原始文本": "[ext_resource type=\"PackedScene\" uid=\"uid://bbqs75e8vtnql\" path=\"res://main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn\" id=\"3_7bcwq\"]"
+        },
+        {
+          "原始行号": 167,
+          "原始文本": "[node name=\"luquid_tank_0\" parent=\".\" unique_id=1823254939 instance=ExtResource(\"3_7bcwq\")]"
+        }
+      ]
+    },
+    {
+      "原路径": "main-autolysis/scenes/prefabs/prefab_machines/visuals/liquid_tank_visual.tscn",
+      "现路径": "main-autolysis/scenes/prefabs/prefab_machines/visuals/liquid_tank_visual.tscn",
+      "原始错误次数": 3,
+      "当前文件存在": true,
+      "仅替换错误拼写且统一换行后相等": true,
+      "当前文件安全散列算法": "SHA256（安全散列算法256位）",
+      "当前文件安全散列": "db40f7625cfe3b7333f4307f9748cff809c1f3c6c1f241259bae276347fb58a2",
+      "原始错误行": [
+        {
+          "原始行号": 54,
+          "原始文本": "[node name=\"luquid_tank_glass\" type=\"MeshInstance3D\" parent=\".\" unique_id=1216715091]"
+        },
+        {
+          "原始行号": 58,
+          "原始文本": "[node name=\"luquid_tank_luquid\" type=\"MeshInstance3D\" parent=\".\" unique_id=214400322]"
+        }
+      ]
+    },
+    {
+      "原路径": "main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn",
+      "现路径": "main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn",
+      "原始错误次数": 9,
+      "当前文件存在": true,
+      "仅替换错误拼写且统一换行后相等": true,
+      "当前文件安全散列算法": "SHA256（安全散列算法256位）",
+      "当前文件安全散列": "e823d9794a42e3ee8a99d70969f39db457564882cfb289d3fcfb893922ff1ffe",
+      "原始错误行": [
+        {
+          "原始行号": 6,
+          "原始文本": "[ext_resource type=\"PackedScene\" uid=\"uid://bbqs75e8vtnql\" path=\"res://main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn\" id=\"4_lm03y\"]"
+        },
+        {
+          "原始行号": 91,
+          "原始文本": "slot_0 = NodePath(\"luquid_tank_slot_0\")"
+        },
+        {
+          "原始行号": 92,
+          "原始文本": "slot_1 = NodePath(\"luquid_tank_slot_1\")"
+        },
+        {
+          "原始行号": 177,
+          "原始文本": "[node name=\"luquid_tank_slot_0\" type=\"Node3D\" parent=\".\" unique_id=432606996]"
+        },
+        {
+          "原始行号": 180,
+          "原始文本": "[node name=\"luquid_tank_0\" parent=\"luquid_tank_slot_0\" unique_id=1823254939 instance=ExtResource(\"4_lm03y\")]"
+        },
+        {
+          "原始行号": 182,
+          "原始文本": "[node name=\"luquid_tank_slot_1\" type=\"Node3D\" parent=\".\" unique_id=280658325]"
+        },
+        {
+          "原始行号": 185,
+          "原始文本": "[node name=\"luquid_tank_1\" parent=\"luquid_tank_slot_1\" unique_id=821845277 instance=ExtResource(\"4_lm03y\")]"
+        }
+      ]
+    },
+    {
+      "原路径": "main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd",
+      "现路径": "main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd",
+      "原始错误次数": 3,
+      "当前文件存在": true,
+      "仅替换错误拼写且统一换行后相等": true,
+      "当前文件安全散列算法": "SHA256（安全散列算法256位）",
+      "当前文件安全散列": "f060e1f3941ddb2d89328329be44e560c52334e65b60b517d72d404b733e047c",
+      "原始错误行": [
+        {
+          "原始行号": 55,
+          "原始文本": "\tif slot_0.get_parent() != self or slot_1.get_parent() != self or slot_0.name != &\"luquid_tank_slot_0\" or slot_1.name != &\"luquid_tank_slot_1\":"
+        },
+        {
+          "原始行号": 228,
+          "原始文本": "\t\tvar slot: Node = get_node_or_null(\"luquid_tank_slot_%d\" % index)"
+        }
+      ]
+    },
+    {
+      "原路径": "main-autolysis/systems/item-system/items/liquid_tank.tres",
+      "现路径": "main-autolysis/systems/item-system/items/liquid_tank.tres",
+      "原始错误次数": 1,
+      "当前文件存在": true,
+      "仅替换错误拼写且统一换行后相等": true,
+      "当前文件安全散列算法": "SHA256（安全散列算法256位）",
+      "当前文件安全散列": "11fa4b786a88eaea920725740aa3e376bedc137fb6f9bdf0adaa2a36918e6133",
+      "原始错误行": [
+        {
+          "原始行号": 14,
+          "原始文本": "world_scene_path = \"res://main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn\""
+        }
+      ]
+    },
+    {
+      "原路径": "main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd",
+      "现路径": "main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd",
+      "原始错误次数": 1,
+      "当前文件存在": true,
+      "仅替换错误拼写且统一换行后相等": true,
+      "当前文件安全散列算法": "SHA256（安全散列算法256位）",
+      "当前文件安全散列": "e01cfe69caa528e078878a91238d8352dc37cbbd1dadeeac7a9f36fbf60d2af8",
+      "原始错误行": [
+        {
+          "原始行号": 115,
+          "原始文本": "\t\tvar anchor: Node3D = cabinet.get_node_or_null(\"luquid_tank_slot_%d\" % index) as Node3D"
+        }
+      ]
+    },
+    {
+      "原路径": "main-autolysis/systems/item-system/tests/liquid_tank_cabinet_rendered_test.gd",
+      "现路径": "main-autolysis/systems/item-system/tests/liquid_tank_cabinet_rendered_test.gd",
+      "原始错误次数": 2,
+      "当前文件存在": true,
+      "仅替换错误拼写且统一换行后相等": true,
+      "当前文件安全散列算法": "SHA256（安全散列算法256位）",
+      "当前文件安全散列": "535b1432075e1ebdb4dba88abf0e0b7547ab57980b50fab2491eef5085f69131",
+      "原始错误行": [
+        {
+          "原始行号": 5,
+          "原始文本": "const TANK_PATH: String = \"res://main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn\""
+        },
+        {
+          "原始行号": 299,
+          "原始文本": "\t\tvar tank: AutolysisLiquidTank = world.get_node(\"interaction_prefabs/machines/\" + machine_name + \"/luquid_tank_0\") as AutolysisLiquidTank"
+        }
+      ]
+    },
+    {
+      "原路径": "main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd",
+      "现路径": "main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd",
+      "原始错误次数": 2,
+      "当前文件存在": true,
+      "仅替换错误拼写且统一换行后相等": true,
+      "当前文件安全散列算法": "SHA256（安全散列算法256位）",
+      "当前文件安全散列": "2284331160d0fa9263b96d957ac24cdbd29c1567c797122d9507ac06e8c2a452",
+      "原始错误行": [
+        {
+          "原始行号": 6,
+          "原始文本": "const WORLD_SCENE: PackedScene = preload(\"res://main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn\")"
+        },
+        {
+          "原始行号": 97,
+          "原始文本": "\t\tvar anchor: Node3D = cabinet.get_node(\"luquid_tank_slot_%d\" % index) as Node3D"
+        }
+      ]
+    }
+  ],
+  "旧拼写残留检索": {
+    "范围": [
+      "main-autolysis",
+      "project.godot"
+    ],
+    "扫描规则": "检索运行工程和工程配置；含隐藏、忽略文件；二进制按文本检索；忽略大小写。",
+    "排除范围说明": "历史证据、文档及引擎缓存不属于本次运行源文件验收范围。",
+    "文件清单命令参数": [
+      "--files",
+      "-uuu",
+      "main-autolysis",
+      "project.godot"
+    ],
+    "内容检索命令参数": [
+      "-l",
+      "-uuu",
+      "-i",
+      "-F",
+      "--text",
+      "luquid",
+      "main-autolysis",
+      "project.godot"
+    ],
+    "文件清单退出码": 0,
+    "内容检索退出码": 1,
+    "扫描文件数量": 589,
+    "旧拼写文件名命中数量": 0,
+    "旧拼写文件名命中": [],
+    "旧拼写内容命中文件数量": 0,
+    "旧拼写内容命中文件": []
+  },
+  "罐场景唯一标识校验": {
+    "原路径": "main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn",
+    "现路径": "main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn",
+    "唯一标识": "uid://bbqs75e8vtnql",
+    "原罐场景首行": "[gd_scene format=3 uid=\"uid://bbqs75e8vtnql\"]",
+    "现罐场景首行": "[gd_scene format=3 uid=\"uid://bbqs75e8vtnql\"]",
+    "唯一标识保留": true,
+    "旧罐路径已不存在": true
+  }
+}

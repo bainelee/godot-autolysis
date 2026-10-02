@@ -1,0 +1,435 @@
+diff --git "a/docs/project-autolysis/00-discuss/\344\272\244\344\272\222\347\263\273\347\273\237/\350\201\232\347\204\246\344\272\244\344\272\222\344\270\216\345\216\237\350\215\257\346\267\267\345\220\210\345\231\250\350\256\250\350\256\272p1.md" "b/docs/project-autolysis/00-discuss/\344\272\244\344\272\222\347\263\273\347\273\237/\350\201\232\347\204\246\344\272\244\344\272\222\344\270\216\345\216\237\350\215\257\346\267\267\345\220\210\345\231\250\350\256\250\350\256\272p1.md"
+index 0eec2f1..4424e32 100644
+--- "a/docs/project-autolysis/00-discuss/\344\272\244\344\272\222\347\263\273\347\273\237/\350\201\232\347\204\246\344\272\244\344\272\222\344\270\216\345\216\237\350\215\257\346\267\267\345\220\210\345\231\250\350\256\250\350\256\272p1.md"
++++ "b/docs/project-autolysis/00-discuss/\344\272\244\344\272\222\347\263\273\347\273\237/\350\201\232\347\204\246\344\272\244\344\272\222\344\270\216\345\216\237\350\215\257\346\267\267\345\220\210\345\231\250\350\256\250\350\256\272p1.md"
+@@ -10,7 +10,7 @@
+ 
+ 讨论聚焦模式的进入、退出、相机、输入，以及四个混合槽位的开闭和原药取放。
+ 
+-当前设备还包含 luquid_tank_slot_0（液罐槽位零）和 switch_handle_blend_mechine_can_reset（可复位混合器开关手柄），本轮不定义这两类对象的功能。节点标识沿用场景实际拼写。
++当前设备还包含 liquid_tank_slot_0（液罐槽位零）和 switch_handle_blend_mechine_can_reset（可复位混合器开关手柄），本轮不定义这两类对象的功能。节点标识沿用场景实际拼写。
+ 
+ 本轮仅记录讨论文档及配套术语。未修改游戏代码、场景和输入配置，未执行引擎运行测试。
+ 
+diff --git "a/docs/project-autolysis/00-discuss/\351\201\223\345\205\267\347\263\273\347\273\237/\346\266\262\344\275\223\347\275\220\344\270\216\344\270\223\347\224\250\346\237\234\345\256\236\346\226\275\350\256\260\345\275\225.md" "b/docs/project-autolysis/00-discuss/\351\201\223\345\205\267\347\263\273\347\273\237/\346\266\262\344\275\223\347\275\220\344\270\216\344\270\223\347\224\250\346\237\234\345\256\236\346\226\275\350\256\260\345\275\225.md"
+index b807d9a..3433d83 100644
+--- "a/docs/project-autolysis/00-discuss/\351\201\223\345\205\267\347\263\273\347\273\237/\346\266\262\344\275\223\347\275\220\344\270\216\344\270\223\347\224\250\346\237\234\345\256\236\346\226\275\350\256\260\345\275\225.md"
++++ "b/docs/project-autolysis/00-discuss/\351\201\223\345\205\267\347\263\273\347\273\237/\346\266\262\344\275\223\347\275\220\344\270\216\344\270\223\347\224\250\346\237\234\345\256\236\346\226\275\350\256\260\345\275\225.md"
+@@ -19,7 +19,7 @@
+ | [库存控制器](/D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:255) | 新增液体罐专用查询与转移；准备显示后复核拾取来源；候选挂接及入树后复核完成才清空原格；只回滚本次候选。 |
+ | [液体罐世界场景校验](/D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:419) | 查询仅读取场景描述，执行才实例化；严格核对罐脚本、定义、固定装配及候选归属。原药工厂的原类型限制保留。 |
+ | [射线检测](/D:/autolysis/main-autolysis/player/components/interaction_raycast.gd:15)与[手持判断](/D:/autolysis/main-autolysis/player/components/autolysis_interaction_controller.gd:62) | 空手掩码3，原药19，液体罐67；保持首命中查询。柜根在第4层阻挡玩家，门和罐在第1、2层，薄放置体在第7层。 |
+-| [液体罐预制体](/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn)与[专用柜预制体](/D:/autolysis/main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn) | 绑定脚本、道具定义、唯一直接子交互组件及现有锚点；保留原场景标识、碰撞几何、门枢轴和动画。 |
++| [液体罐预制体](/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn)与[专用柜预制体](/D:/autolysis/main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn) | 绑定脚本、道具定义、唯一直接子交互组件及现有锚点；保留原场景标识、碰撞几何、门枢轴和动画。 |
+ | [液体罐定义](/D:/autolysis/main-autolysis/systems/item-system/items/liquid_tank.tres)与[纯显示场景](/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/visuals/liquid_tank_visual.tscn) | 定义标识为 liquid_tank（液体罐），明确非原药；纯显示复用五个原网格和材质，无脚本、碰撞或交互分组。 |
+ | [液体罐图标](/D:/autolysis/main-autolysis/assets/ui/item-icons/liquid_tank.png)与[图标渲染脚本](/D:/autolysis/main-autolysis/systems/item-system/tests/render_liquid_tank_icon.gd) | 真实模型渲染256×256透明图标；可见范围由横坐标16至239、纵坐标31至224，至少8像素留白；[渲染结果](/D:/autolysis/docs/project-autolysis/00-discuss/道具系统/液体罐与专用柜实施证据/图标渲染/液体罐图标渲染结果.json)保留尺寸、透明像素和散列摘要。 |
+ | [包装机](/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn)、[波重建器](/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/machine_wave_rebuilder_0.tscn)、[相位分离器](/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/machine_phase_separator_0.tscn) | 各给现有罐实例增加固定装配标记；实际主场景检查逐件确认不可拾取及碰撞仍存在。 |
+diff --git "a/docs/project-autolysis/00-discuss/\351\201\223\345\205\267\347\263\273\347\273\237/\346\266\262\344\275\223\347\275\220\344\270\216\344\270\223\347\224\250\346\237\234\345\256\236\347\216\260\350\256\241\345\210\222.md" "b/docs/project-autolysis/00-discuss/\351\201\223\345\205\267\347\263\273\347\273\237/\346\266\262\344\275\223\347\275\220\344\270\216\344\270\223\347\224\250\346\237\234\345\256\236\347\216\260\350\256\241\345\210\222.md"
+index d52055a..d2c22e7 100644
+--- "a/docs/project-autolysis/00-discuss/\351\201\223\345\205\267\347\263\273\347\273\237/\346\266\262\344\275\223\347\275\220\344\270\216\344\270\223\347\224\250\346\237\234\345\256\236\347\216\260\350\256\241\345\210\222.md"
++++ "b/docs/project-autolysis/00-discuss/\351\201\223\345\205\267\347\263\273\347\273\237/\346\266\262\344\275\223\347\275\220\344\270\216\344\270\223\347\224\250\346\237\234\345\256\236\347\216\260\350\256\241\345\210\222.md"
+@@ -2,7 +2,7 @@
+ 
+ 编制日期：2026年10月1日。状态：已实施并完成验收。本文件保留原实现方案；实际代码、运行结果及主场景操作说明见[实施记录](/D:/autolysis/docs/project-autolysis/00-discuss/道具系统/液体罐与专用柜实施记录.md)。其中“拟新增”和执行阶段为编制时的计划描述，最终文件与检查结果以实施记录为准。
+ 
+-实现对象为 [液体罐场景](/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn) 与 [工作间专用柜场景](/D:/autolysis/main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn)。方案沿用已实现架子的四格道具栏、手持显示、有限槽位及转移提交机制，并参考原项目柜门和拾取逻辑。当前两份目标场景均有未提交修改，本计划以工作区实际内容为基线，实施时保留这些修改。
++实现对象为 [液体罐场景](/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn) 与 [工作间专用柜场景](/D:/autolysis/main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn)。方案沿用已实现架子的四格道具栏、手持显示、有限槽位及转移提交机制，并参考原项目柜门和拾取逻辑。当前两份目标场景均有未提交修改，本计划以工作区实际内容为基线，实施时保留这些修改。
+ 
+ ## 一 需求与本次实现边界
+ 
+@@ -65,7 +65,7 @@
+ 
+ 新增液体罐道具定义，复用 AutolysisItemDefinition（道具定义）。拟用 item_id（道具标识）值 liquid_tank（液体罐），中文名称“液体罐”，is_raw_material（是否原药）显式设为假。柜子接收条件核对该标识、有效定义及合法液体罐世界场景；不能用“不是原药”作为全部接收条件。
+ 
+-从当前 mesh（模型容器）及其子网格制作纯显示场景，保留材质和几何。世界罐实例引用该显示场景，道具定义的 visual_scene（纯显示场景）也引用它。保持当前世界罐原点、碰撞尺寸、资源路径及场景唯一标识。已有 luquid（原资产拼写）不在本期重命名，避免破坏场景引用。
++从当前 mesh（模型容器）及其子网格制作纯显示场景，保留材质和几何。世界罐实例引用该显示场景，道具定义的 visual_scene（纯显示场景）也引用它。保持当前世界罐原点、碰撞尺寸、资源路径及场景唯一标识。原实施阶段保留原资产拼写；2026年10月2日已统一更正为 liquid（液体），场景路径、节点名称及代码引用同步更新。
+ 
+ 图标从纯显示场景实际渲染生成。沿用现有图标目录和道具栏显示方式；[现有图标渲染脚本](/D:/autolysis/main-autolysis/systems/item-system/tests/render_item_icons.gd:3)硬编码原药名称和相机参数，需新增液体罐入口或明确参数化，不能只追加名称而沿用未经检验的原药构图。手持位置、旋转、缩放通过实际画面检查确定，不把原药默认姿态视为罐的最终参数。
+ 
+@@ -79,7 +79,7 @@
+ 
+ ### 4.3 专用柜占用
+ 
+-新增 AutolysisLiquidTankCabinet（液体罐专用柜），负责两个锚点、两个占用记录、活动门状态、放置入口和柜级转移锁。显式绑定 luquid_tank_slot_0（液体罐零号槽）及 luquid_tank_slot_1（液体罐一号槽），校验编号和引用不重复；不沿用原药架的节点前缀自动收集。
++新增 AutolysisLiquidTankCabinet（液体罐专用柜），负责两个锚点、两个占用记录、活动门状态、放置入口和柜级转移锁。显式绑定 liquid_tank_slot_0（液体罐零号槽）及 liquid_tank_slot_1（液体罐一号槽），校验编号和引用不重复；不沿用原药架的节点前缀自动收集。
+ 
+ 初始化扫描两个锚点下现有液体罐并登记双向归属。每槽零件或一件合法罐均可初始化；两个或更多子罐、非法类型、同一实例重复登记及失效引用应明确报错并禁用柜内取放，不能覆盖、删除或额外生成来源罐。
+ 
+@@ -182,7 +182,7 @@
+ 
+ | 文件类别 | 具体位置 | 拟执行内容 |
+ | --- | --- | --- |
+-| 液体罐预制体 | [现有液体罐场景](/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn) | 接入罐脚本、定义、唯一交互组件和纯显示实例；保留碰撞与资源引用。 |
++| 液体罐预制体 | [现有液体罐场景](/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn) | 接入罐脚本、定义、唯一交互组件和纯显示实例；保留碰撞与资源引用。 |
+ | 专用柜预制体 | [现有柜场景](/D:/autolysis/main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn) | 接入柜脚本、活动门直接交互、独立放置体、现有两槽和初始两罐登记。 |
+ | 罐与柜脚本 | 现有道具系统目录下拟新增 autolysis_liquid_tank.gd（液体罐脚本）及 autolysis_liquid_tank_cabinet.gd（液体罐专用柜脚本） | 隔离原药业务，实现来源归属、门禁、占用和事务锁。 |
+ | 道具定义 | 现有道具系统的 items（道具定义目录）下拟新增 liquid_tank.tres（液体罐定义资源） | 绑定中文名称、类型标识、图标、纯显示场景及世界场景路径。 |
+@@ -233,7 +233,7 @@
+ 
+ | 基线文件 | 摘要 |
+ | --- | --- |
+-| [液体罐场景](/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn) | F410A2A2CD3F4AB8BDAF5820B8BAA8EF83EAFC0147D75F3CB091EA5354DDEF59 |
++| [液体罐实施前场景](/D:/autolysis/docs/project-autolysis/00-discuss/道具系统/液体罐与专用柜实施证据/baseline/main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn) | F410A2A2CD3F4AB8BDAF5820B8BAA8EF83EAFC0147D75F3CB091EA5354DDEF59 |
+ | [专用柜场景](/D:/autolysis/main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn) | B0F217A9FE7BE936DEBCF1C4EC113678800B54BEF0D8FC9C5627A2B85F89B1B3 |
+ | [库存控制器](/D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd) | 2601D287714EE2438B64C2EF4F231D8D4FB454BC9FCA274581962123C59BC596 |
+ | [交互射线](/D:/autolysis/main-autolysis/player/components/interaction_raycast.gd) | 01186DAE444818B4948F5E6E50E83BEB495D3FC3ADF9E07DEAEAA802DCF4CC69 |
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn b/main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn
+deleted file mode 100644
+index a0b9de2..0000000
+--- a/main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn
++++ /dev/null
+@@ -1,23 +0,0 @@
+-[gd_scene format=3 uid="uid://bbqs75e8vtnql"]
+-
+-[ext_resource type="Script" path="res://main-autolysis/systems/item-system/autolysis_liquid_tank.gd" id="1_tank"]
+-[ext_resource type="Resource" path="res://main-autolysis/systems/item-system/items/liquid_tank.tres" id="2_definition"]
+-[ext_resource type="PackedScene" uid="uid://b1v0kykygcrf8" path="res://main-autolysis/scenes/prefabs/prefab_machines/visuals/liquid_tank_visual.tscn" id="3_visual"]
+-[ext_resource type="PackedScene" path="res://main-autolysis/components/interactions/autolysis_interaction_component.tscn" id="4_interaction"]
+-
+-[sub_resource type="BoxShape3D" id="BoxShape3D_mu3k4"]
+-size = Vector3(0.5, 0.29999998, 0.29999998)
+-
+-[node name="luquid_tank_0" type="StaticBody3D" unique_id=174530150 groups=["interactable"]]
+-collision_layer = 3
+-script = ExtResource("1_tank")
+-item_definition = ExtResource("2_definition")
+-
+-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1573049295]
+-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4901161e-08, -1.4901161e-08)
+-shape = SubResource("BoxShape3D_mu3k4")
+-debug_color = Color(0, 0.64005935, 0.36019087, 0.41960785)
+-
+-[node name="mesh" parent="." unique_id=1065344452 instance=ExtResource("3_visual")]
+-
+-[node name="InteractionComponent" parent="." unique_id=772800009 instance=ExtResource("4_interaction")]
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn b/main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn
+index 7225a49..14db0d5 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn
++++ b/main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn
+@@ -12,7 +12,7 @@
+ [ext_resource type="Script" uid="uid://dxhbfr6x7ghda" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd" id="11_slot"]
+ [ext_resource type="Script" uid="uid://c1pn2s683ojtr" path="res://main-autolysis/components/interactions/autolysis_focus_target.gd" id="12_focus"]
+ [ext_resource type="PackedScene" path="res://main-autolysis/components/interactions/autolysis_interaction_component.tscn" id="13_interaction"]
+-[ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd" id="14_handle"]
++[ext_resource type="Script" uid="uid://3ht375u5ktdi" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd" id="14_handle"]
+ 
+ [sub_resource type="BoxShape3D" id="BoxShape3D_7hmvv"]
+ size = Vector3(1.8, 1.1999999, 0.95)
+@@ -613,49 +613,49 @@ skeleton = NodePath("../../..")
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19999999, -0.13500002)
+ shape = SubResource("BoxShape3D_fsl51")
+ 
+-[node name="luquid_tank_slot_0" type="StaticBody3D" parent="." unique_id=1599987540]
++[node name="liquid_tank_place_0" type="StaticBody3D" parent="." unique_id=1599987540]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35000038, 0.59999996, 0.09999995)
+ collision_layer = 40
+ 
+-[node name="collision_luquid_tank_slot_0" type="CollisionShape3D" parent="luquid_tank_slot_0" unique_id=250055092]
++[node name="collision_liquid_tank_slot_0" type="CollisionShape3D" parent="liquid_tank_place_0" unique_id=250055092]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9604645e-08, 0.005000055)
+ shape = SubResource("BoxShape3D_vnha0")
+ debug_color = Color(0.84678787, 0.37380517, 0.13031688, 0.41960785)
+ 
+-[node name="mesh" type="Node3D" parent="luquid_tank_slot_0" unique_id=210375152]
++[node name="mesh" type="Node3D" parent="liquid_tank_place_0" unique_id=210375152]
+ metadata/_edit_group_ = true
+ 
+-[node name="MeshInstance3D13" type="MeshInstance3D" parent="luquid_tank_slot_0/mesh" unique_id=61120911]
++[node name="MeshInstance3D13" type="MeshInstance3D" parent="liquid_tank_place_0/mesh" unique_id=61120911]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0, 0)
+ material_override = ExtResource("7_yvcpe")
+ mesh = SubResource("BoxMesh_ind84")
+ skeleton = NodePath("../../..")
+ 
+-[node name="MeshInstance3D14" type="MeshInstance3D" parent="luquid_tank_slot_0/mesh" unique_id=66920265]
++[node name="MeshInstance3D14" type="MeshInstance3D" parent="liquid_tank_place_0/mesh" unique_id=66920265]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35000002, 0, 0)
+ material_override = ExtResource("7_yvcpe")
+ mesh = SubResource("BoxMesh_ind84")
+ skeleton = NodePath("../../..")
+ 
+-[node name="MeshInstance3D15" type="MeshInstance3D" parent="luquid_tank_slot_0/mesh" unique_id=1863612309]
++[node name="MeshInstance3D15" type="MeshInstance3D" parent="liquid_tank_place_0/mesh" unique_id=1863612309]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 0, -0.25)
+ material_override = ExtResource("3_c0evn")
+ mesh = SubResource("BoxMesh_ml0b8")
+ skeleton = NodePath("../../..")
+ 
+-[node name="MeshInstance3D16" type="MeshInstance3D" parent="luquid_tank_slot_0/mesh" unique_id=2056294242]
++[node name="MeshInstance3D16" type="MeshInstance3D" parent="liquid_tank_place_0/mesh" unique_id=2056294242]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 0.25, 0.049999982)
+ material_override = ExtResource("7_yvcpe")
+ mesh = SubResource("BoxMesh_k768n")
+ skeleton = NodePath("../../..")
+ 
+-[node name="MeshInstance3D17" type="MeshInstance3D" parent="luquid_tank_slot_0/mesh" unique_id=1279590557]
++[node name="MeshInstance3D17" type="MeshInstance3D" parent="liquid_tank_place_0/mesh" unique_id=1279590557]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, -0.25, 0.049999982)
+ material_override = ExtResource("7_yvcpe")
+ mesh = SubResource("BoxMesh_k768n")
+ skeleton = NodePath("../../..")
+ 
+-[node name="luquid_tank_slot" type="Node3D" parent="luquid_tank_slot_0" unique_id=1824775236]
++[node name="liquid_tank_slot" type="Node3D" parent="liquid_tank_place_0" unique_id=1824775236]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 1.1920929e-07, 0.09999974)
+ 
+ [node name="switch_handle_blend_mechine_can_reset" type="Node3D" parent="." unique_id=48086131]
+@@ -700,7 +700,7 @@ script = ExtResource("14_handle")
+ device_root = NodePath("../..")
+ drag_interaction = NodePath("InteractionComponent")
+ collision_shape = NodePath("collision_handle_interaction")
+-mouse_to_handle_ratio = 0.0009999999999999998
++mouse_to_handle_ratio = 0.00099999999999999
+ 
+ [node name="InteractionComponent" parent="switch_handle_blend_mechine_can_reset/handle_interaction" unique_id=1143521659 instance=ExtResource("13_interaction")]
+ is_enabled = false
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn b/main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn
+index 837a421..341d46f 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn
++++ b/main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn
+@@ -1,7 +1,7 @@
+ [gd_scene format=3 uid="uid://c117w0eww7frm"]
+ 
+ [ext_resource type="Material" uid="uid://5yjf2yjo2u7l" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_1.tres" id="1_6bwaf"]
+-[ext_resource type="PackedScene" uid="uid://bbqs75e8vtnql" path="res://main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn" id="2_n5rw0"]
++[ext_resource type="PackedScene" uid="uid://bbqs75e8vtnql" path="res://main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn" id="2_n5rw0"]
+ [ext_resource type="Material" uid="uid://blu42xw7rpe7b" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_2.tres" id="2_qpgyo"]
+ [ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="3_qpgyo"]
+ [ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="4_0tg3w"]
+@@ -307,6 +307,6 @@ material_override = ExtResource("7_44ebl")
+ mesh = SubResource("BoxMesh_oaalt")
+ skeleton = NodePath("../..")
+ 
+-[node name="luquid_tank_0" parent="." unique_id=1823254939 instance=ExtResource("2_n5rw0")]
++[node name="liquid_tank_0" parent="." unique_id=1823254939 instance=ExtResource("2_n5rw0")]
+ transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.5, 0.35, 0.30000004)
+ fixed_installation = true
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/machine_phase_separator_0.tscn b/main-autolysis/scenes/prefabs/prefab_machines/machine_phase_separator_0.tscn
+index 2fa4e73..8af0bdb 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/machine_phase_separator_0.tscn
++++ b/main-autolysis/scenes/prefabs/prefab_machines/machine_phase_separator_0.tscn
+@@ -4,7 +4,7 @@
+ [ext_resource type="Material" uid="uid://c0hhcbbjw5rir" path="res://main-autolysis/assets/materials/base_color/mat_base_green_2.tres" id="2_53d20"]
+ [ext_resource type="Material" uid="uid://dexisf11765lm" path="res://main-autolysis/assets/materials/base_color/mat_base_brown_2.tres" id="3_0vaim"]
+ [ext_resource type="Material" uid="uid://c1auue2g3ppe3" path="res://main-autolysis/assets/materials/base_color/mat_base_red_1.tres" id="3_a2l6x"]
+-[ext_resource type="PackedScene" uid="uid://bbqs75e8vtnql" path="res://main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn" id="3_jhd5k"]
++[ext_resource type="PackedScene" uid="uid://bbqs75e8vtnql" path="res://main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn" id="3_jhd5k"]
+ [ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="4_exy77"]
+ [ext_resource type="Material" uid="uid://cvg16u7jm6ykg" path="res://main-autolysis/assets/materials/base_color/mat_base_brown_0.tres" id="5_tj67c"]
+ [ext_resource type="Material" uid="uid://nbe6leccr0kp" path="res://main-autolysis/assets/materials/base_color/mat_base_blue_0.tres" id="7_aowa2"]
+@@ -171,7 +171,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.61999995, 0.71999997, 0.409
+ material_override = ExtResource("7_aowa2")
+ mesh = SubResource("BoxMesh_isgjk")
+ 
+-[node name="luquid_tank_0" parent="." unique_id=1823254939 instance=ExtResource("3_jhd5k")]
++[node name="liquid_tank_0" parent="." unique_id=1823254939 instance=ExtResource("3_jhd5k")]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59999996, 0.19999999)
+ fixed_installation = true
+ 
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/machine_wave_rebuilder_0.tscn b/main-autolysis/scenes/prefabs/prefab_machines/machine_wave_rebuilder_0.tscn
+index 3692288..7d3b120 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/machine_wave_rebuilder_0.tscn
++++ b/main-autolysis/scenes/prefabs/prefab_machines/machine_wave_rebuilder_0.tscn
+@@ -3,7 +3,7 @@
+ [ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="1_7tic4"]
+ [ext_resource type="Material" uid="uid://5yjf2yjo2u7l" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_1.tres" id="1_rl8rw"]
+ [ext_resource type="Material" uid="uid://dexisf11765lm" path="res://main-autolysis/assets/materials/base_color/mat_base_brown_2.tres" id="2_7bcwq"]
+-[ext_resource type="PackedScene" uid="uid://bbqs75e8vtnql" path="res://main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn" id="3_7bcwq"]
++[ext_resource type="PackedScene" uid="uid://bbqs75e8vtnql" path="res://main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn" id="3_7bcwq"]
+ [ext_resource type="Material" uid="uid://blu42xw7rpe7b" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_2.tres" id="3_atowf"]
+ [ext_resource type="Material" uid="uid://d238nmu8fostl" path="res://main-autolysis/assets/materials/base_color/mat_base_black_0.tres" id="6_00oko"]
+ [ext_resource type="Material" uid="uid://bp35cd3s1kb3t" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_0.tres" id="6_atowf"]
+@@ -164,7 +164,7 @@ material_override = ExtResource("3_atowf")
+ mesh = SubResource("BoxMesh_00oko")
+ skeleton = NodePath("../..")
+ 
+-[node name="luquid_tank_0" parent="." unique_id=1823254939 instance=ExtResource("3_7bcwq")]
++[node name="liquid_tank_0" parent="." unique_id=1823254939 instance=ExtResource("3_7bcwq")]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21000001, 0.45, 0.29999998)
+ fixed_installation = true
+ 
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/visuals/liquid_tank_visual.tscn b/main-autolysis/scenes/prefabs/prefab_machines/visuals/liquid_tank_visual.tscn
+index 4056f6a..257f5a3 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/visuals/liquid_tank_visual.tscn
++++ b/main-autolysis/scenes/prefabs/prefab_machines/visuals/liquid_tank_visual.tscn
+@@ -51,11 +51,11 @@ size = Vector3(0.04, 0.04, 0.04)
+ 
+ [node name="mesh" type="Node3D" unique_id=1065344452]
+ 
+-[node name="luquid_tank_glass" type="MeshInstance3D" parent="." unique_id=1216715091]
++[node name="liquid_tank_glass" type="MeshInstance3D" parent="." unique_id=1216715091]
+ material_override = ExtResource("1_tus6p")
+ mesh = SubResource("BoxMesh_rlkyb")
+ 
+-[node name="luquid_tank_luquid" type="MeshInstance3D" parent="." unique_id=214400322]
++[node name="liquid_tank_liquid" type="MeshInstance3D" parent="." unique_id=214400322]
+ material_override = ExtResource("4_tus6p")
+ mesh = SubResource("BoxMesh_0b7jr")
+ 
+diff --git a/main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn b/main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn
+index 20414b2..1903692 100644
+--- a/main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn
++++ b/main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn
+@@ -3,7 +3,7 @@
+ [ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="1_cxe7d"]
+ [ext_resource type="Material" uid="uid://blu42xw7rpe7b" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_2.tres" id="2_o063d"]
+ [ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="3_82rg3"]
+-[ext_resource type="PackedScene" uid="uid://bbqs75e8vtnql" path="res://main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn" id="4_lm03y"]
++[ext_resource type="PackedScene" uid="uid://bbqs75e8vtnql" path="res://main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn" id="4_lm03y"]
+ [ext_resource type="Script" path="res://main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd" id="5_cabinet"]
+ [ext_resource type="PackedScene" path="res://main-autolysis/components/interactions/autolysis_interaction_component.tscn" id="6_interaction"]
+ 
+@@ -88,8 +88,8 @@ _data = {
+ [node name="cabinet_workroom_0" type="StaticBody3D" unique_id=1791832651 node_paths=PackedStringArray("slot_0", "slot_1", "door_body", "toggle_interaction", "placement_body", "placement_interaction", "animation_player")]
+ collision_layer = 8
+ script = ExtResource("5_cabinet")
+-slot_0 = NodePath("luquid_tank_slot_0")
+-slot_1 = NodePath("luquid_tank_slot_1")
++slot_0 = NodePath("liquid_tank_slot_0")
++slot_1 = NodePath("liquid_tank_slot_1")
+ door_body = NodePath("cabinet_door_left_root")
+ toggle_interaction = NodePath("cabinet_door_left_root/InteractionComponent")
+ placement_body = NodePath("LiquidTankPlacementBody")
+@@ -174,15 +174,15 @@ shape = SubResource("BoxShape3D_liquid_placement")
+ 
+ [node name="InteractionComponent" parent="LiquidTankPlacementBody" unique_id=2036571760 instance=ExtResource("6_interaction")]
+ 
+-[node name="luquid_tank_slot_0" type="Node3D" parent="." unique_id=432606996]
++[node name="liquid_tank_slot_0" type="Node3D" parent="." unique_id=432606996]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8499999, 0.24999999, 0.65)
+ 
+-[node name="luquid_tank_0" parent="luquid_tank_slot_0" unique_id=1823254939 instance=ExtResource("4_lm03y")]
++[node name="liquid_tank_0" parent="liquid_tank_slot_0" unique_id=1823254939 instance=ExtResource("4_lm03y")]
+ 
+-[node name="luquid_tank_slot_1" type="Node3D" parent="." unique_id=280658325]
++[node name="liquid_tank_slot_1" type="Node3D" parent="." unique_id=280658325]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30999994, 0.24999999, 0.65)
+ 
+-[node name="luquid_tank_1" parent="luquid_tank_slot_1" unique_id=821845277 instance=ExtResource("4_lm03y")]
++[node name="liquid_tank_1" parent="liquid_tank_slot_1" unique_id=821845277 instance=ExtResource("4_lm03y")]
+ 
+ [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1968799029]
+ callback_mode_process = 0
+diff --git a/main-autolysis/scenes/prefabs/prefab_raw_materials/rm_sodium_benzoate_0.tscn b/main-autolysis/scenes/prefabs/prefab_raw_materials/rm_sodium_benzoate_0.tscn
+index d3da516..14d7b46 100644
+--- a/main-autolysis/scenes/prefabs/prefab_raw_materials/rm_sodium_benzoate_0.tscn
++++ b/main-autolysis/scenes/prefabs/prefab_raw_materials/rm_sodium_benzoate_0.tscn
+@@ -1,6 +1,6 @@
+ [gd_scene format=3 uid="uid://dxw4qeo54kkwp"]
+ 
+-[ext_resource type="Script" path="res://main-autolysis/systems/item-system/autolysis_raw_material.gd" id="1_raw_material"]
++[ext_resource type="Script" uid="uid://cj8mm03cldhqt" path="res://main-autolysis/systems/item-system/autolysis_raw_material.gd" id="1_raw_material"]
+ [ext_resource type="Resource" path="res://main-autolysis/systems/item-system/items/sodium_benzoate.tres" id="2_item"]
+ [ext_resource type="PackedScene" path="res://main-autolysis/scenes/prefabs/prefab_raw_materials/visuals/rm_sodium_benzoate_visual.tscn" id="3_visual"]
+ [ext_resource type="PackedScene" path="res://main-autolysis/components/interactions/autolysis_interaction_component.tscn" id="4_interaction"]
+@@ -18,4 +18,4 @@ shape = SubResource("BoxShape3D_ie3hh")
+ 
+ [node name="mesh" parent="." unique_id=339975707 instance=ExtResource("3_visual")]
+ 
+-[node name="InteractionComponent" parent="." instance=ExtResource("4_interaction")]
++[node name="InteractionComponent" parent="." unique_id=50147013 instance=ExtResource("4_interaction")]
+diff --git a/main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd b/main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd
+index 4d66153..45081c1 100644
+--- a/main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd
++++ b/main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd
+@@ -52,7 +52,7 @@ func get_configuration_error() -> String:
+ 		return "柜子未进入有效场景树"
+ 	if not _node_is_live(slot_0) or not _node_is_live(slot_1) or slot_0 == slot_1:
+ 		return "两个槽锚点必须有效且互不重复"
+-	if slot_0.get_parent() != self or slot_1.get_parent() != self or slot_0.name != &"luquid_tank_slot_0" or slot_1.name != &"luquid_tank_slot_1":
++	if slot_0.get_parent() != self or slot_1.get_parent() != self or slot_0.name != &"liquid_tank_slot_0" or slot_1.name != &"liquid_tank_slot_1":
+ 		return "两个槽锚点必须绑定本柜编号零和一的直接子节点"
+ 	if not _node_is_live(door_body) or door_body.get_parent() != self:
+ 		return "活动门体必须为本柜直接子节点"
+@@ -225,7 +225,7 @@ func _register_initial_items() -> bool:
+ ## 配置失败也不能让柜内初始罐退回无主拾取；登记仍由完整校验决定。
+ func _protect_initial_sources() -> void:
+ 	for index: int in 2:
+-		var slot: Node = get_node_or_null("luquid_tank_slot_%d" % index)
++		var slot: Node = get_node_or_null("liquid_tank_slot_%d" % index)
+ 		if not is_instance_valid(slot):
+ 			continue
+ 		for child: Node in slot.get_children():
+diff --git a/main-autolysis/systems/item-system/items/liquid_tank.tres b/main-autolysis/systems/item-system/items/liquid_tank.tres
+index 9807bd3..eed29f8 100644
+--- a/main-autolysis/systems/item-system/items/liquid_tank.tres
++++ b/main-autolysis/systems/item-system/items/liquid_tank.tres
+@@ -1,8 +1,8 @@
+-[gd_resource type="Resource" script_class="AutolysisItemDefinition" load_steps=4 format=3]
++[gd_resource type="Resource" script_class="AutolysisItemDefinition" format=3 uid="uid://wjqih7p11ddo"]
+ 
+-[ext_resource type="Script" path="res://main-autolysis/systems/item-system/autolysis_item_definition.gd" id="1_definition"]
+-[ext_resource type="PackedScene" path="res://main-autolysis/scenes/prefabs/prefab_machines/visuals/liquid_tank_visual.tscn" id="2_visual"]
+-[ext_resource type="Texture2D" path="res://main-autolysis/assets/ui/item-icons/liquid_tank.png" id="3_icon"]
++[ext_resource type="Script" uid="uid://cx11se4abxljw" path="res://main-autolysis/systems/item-system/autolysis_item_definition.gd" id="1_definition"]
++[ext_resource type="PackedScene" uid="uid://b1v0kykygcrf8" path="res://main-autolysis/scenes/prefabs/prefab_machines/visuals/liquid_tank_visual.tscn" id="2_visual"]
++[ext_resource type="Texture2D" uid="uid://cuuh5j58a5luu" path="res://main-autolysis/assets/ui/item-icons/liquid_tank.png" id="3_icon"]
+ 
+ [resource]
+ script = ExtResource("1_definition")
+@@ -11,7 +11,6 @@ display_name = "液体罐"
+ is_raw_material = false
+ icon = ExtResource("3_icon")
+ visual_scene = ExtResource("2_visual")
+-world_scene_path = "res://main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn"
++world_scene_path = "res://main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn"
+ held_position = Vector3(0.28, -0.24, -0.62)
+-held_rotation_degrees = Vector3(-8, -18, 12)
+ held_scale = Vector3(0.7, 0.7, 0.7)
+diff --git a/main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd b/main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd
+index ff99346..370be2e 100644
+--- a/main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd
++++ b/main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd
+@@ -112,7 +112,7 @@ func _fixture(occupied_slots: Array[int]) -> Dictionary:
+ 	var expected_items: Array[AutolysisLiquidTank] = []
+ 	expected_items.resize(2)
+ 	for index: int in range(2):
+-		var anchor: Node3D = cabinet.get_node_or_null("luquid_tank_slot_%d" % index) as Node3D
++		var anchor: Node3D = cabinet.get_node_or_null("liquid_tank_slot_%d" % index) as Node3D
+ 		_check(anchor != null and anchor.get_parent() == cabinet, "编号%d锚点为柜的直接子级" % index)
+ 		if anchor == null:
+ 			cabinet.free()
+diff --git a/main-autolysis/systems/item-system/tests/liquid_tank_cabinet_rendered_test.gd b/main-autolysis/systems/item-system/tests/liquid_tank_cabinet_rendered_test.gd
+index 8bc1237..6d851a8 100644
+--- a/main-autolysis/systems/item-system/tests/liquid_tank_cabinet_rendered_test.gd
++++ b/main-autolysis/systems/item-system/tests/liquid_tank_cabinet_rendered_test.gd
+@@ -2,7 +2,7 @@ extends "res://main-autolysis/player/tests/player_smoke_test.gd"
+ ## 正式预制体、玩家、中心射线与鼠标事件的液体罐验收。
+ 
+ const CABINET_PATH: String = "res://main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn"
+-const TANK_PATH: String = "res://main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn"
++const TANK_PATH: String = "res://main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn"
+ const LIQUID: AutolysisItemDefinition = preload("res://main-autolysis/systems/item-system/items/liquid_tank.tres")
+ const CAFFEINE: AutolysisItemDefinition = preload("res://main-autolysis/systems/item-system/items/caffeine.tres")
+ 
+@@ -296,7 +296,7 @@ func _test_main_scene() -> void:
+ 	Input.action_release("crouch")
+ 	var fixed_count: int = 0
+ 	for machine_name: String in ["machine_packing_0", "machine_wave_rebuilder_0", "machine_phase_separator_0"]:
+-		var tank: AutolysisLiquidTank = world.get_node("interaction_prefabs/machines/" + machine_name + "/luquid_tank_0") as AutolysisLiquidTank
++		var tank: AutolysisLiquidTank = world.get_node("interaction_prefabs/machines/" + machine_name + "/liquid_tank_0") as AutolysisLiquidTank
+ 		check(tank != null and tank.fixed_installation and not tank.is_available_for_pickup(), "机器嵌入罐固定装配且不可拾取：" + machine_name + "（机器节点）")
+ 		if tank != null:
+ 			check(tank.collision_layer != 0, "固定机器罐保留原物理碰撞")
+diff --git a/main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd b/main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd
+index 0d25612..b1063ab 100644
+--- a/main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd
++++ b/main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd
+@@ -3,7 +3,7 @@ extends SceneTree
+ 
+ const TANK: AutolysisItemDefinition = preload("res://main-autolysis/systems/item-system/items/liquid_tank.tres")
+ const CAFFEINE: AutolysisItemDefinition = preload("res://main-autolysis/systems/item-system/items/caffeine.tres")
+-const WORLD_SCENE: PackedScene = preload("res://main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn")
++const WORLD_SCENE: PackedScene = preload("res://main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn")
+ const CABINET_SCENE: PackedScene = preload("res://main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn")
+ const SHELF_SCENE: PackedScene = preload("res://main-autolysis/scenes/prefabs/prefab_place_shelf/place_shelf_workroom_rm_0.tscn")
+ const PLAYER_SCENE: PackedScene = preload("res://main-autolysis/player/autolysis_player.tscn")
+@@ -94,7 +94,7 @@ func _fixture(initial_count: int = 0, open_cabinet: bool = true) -> Dictionary:
+ 	for index: int in range(2):
+ 		if index < initial_count:
+ 			continue
+-		var anchor: Node3D = cabinet.get_node("luquid_tank_slot_%d" % index) as Node3D
++		var anchor: Node3D = cabinet.get_node("liquid_tank_slot_%d" % index) as Node3D
+ 		for child: Node in anchor.get_children():
+ 			child.free()
+ 	world.add_child(cabinet)

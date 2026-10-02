@@ -1,0 +1,21 @@
+ M docs/project-autolysis/00-discuss/交互系统/聚焦交互与原药混合器讨论p1.md
+ M docs/project-autolysis/00-discuss/道具系统/液体罐与专用柜实施记录.md
+ M docs/project-autolysis/00-discuss/道具系统/液体罐与专用柜实现计划.md
+ D main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn
+ M main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn
+ M main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn
+ M main-autolysis/scenes/prefabs/prefab_machines/machine_phase_separator_0.tscn
+ M main-autolysis/scenes/prefabs/prefab_machines/machine_wave_rebuilder_0.tscn
+ M main-autolysis/scenes/prefabs/prefab_machines/visuals/liquid_tank_visual.tscn
+ M main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn
+ M main-autolysis/scenes/prefabs/prefab_raw_materials/rm_sodium_benzoate_0.tscn
+ M main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd
+ M main-autolysis/systems/item-system/items/liquid_tank.tres
+ M main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd
+ M main-autolysis/systems/item-system/tests/liquid_tank_cabinet_rendered_test.gd
+ M main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd
+?? docs/project-autolysis/00-discuss/道具系统/液体罐内容与配药器装填参考证据.md
+?? docs/project-autolysis/00-discuss/道具系统/液体罐内容与配药器装填实现计划.md
+?? docs/project-autolysis/00-discuss/道具系统/液体罐内容与配药器装填计划证据/
+?? docs/project-autolysis/拼写修复证据/
+?? main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn

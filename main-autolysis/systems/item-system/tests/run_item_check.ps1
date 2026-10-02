@@ -9,7 +9,8 @@ param(
     [switch]$Import,
     [int]$TimeoutSeconds = 180,
     [string[]]$UserArguments = @(),
-    [string]$EvidenceRoot = ''
+    [string]$EvidenceRoot = '',
+    [string[]]$ExpectedErrorPatterns = @()
 )
 
 # 必须在具备引擎用户目录访问权限的进程中运行，单项失败立即退出。
@@ -40,8 +41,23 @@ if (-not $checkProcess.WaitForExit($TimeoutSeconds * 1000)) {
 }
 $checkProcess.Refresh()
 $allOutput = [IO.File]::ReadAllText($outputFile) + "`n" + [IO.File]::ReadAllText($errorFile)
-$passed = $checkProcess.ExitCode -eq 0 -and $allOutput -notmatch '(?m)^(SCRIPT ERROR:|ERROR:|失败：)'
-$record = [pscustomobject]@{检查=$CheckName; 时间=(Get-Date -Format o); 进程编号=$checkProcess.Id; 退出码=$checkProcess.ExitCode; 通过=$passed; 引擎文件=$engineFile; 窗口显示=$checkWindowStyle; 命令参数=$engineArgs; 通过断言数=([regex]::Matches($allOutput,'(?m)^通过：')).Count}
+$unexpectedErrors = @()
+$expectedErrorCounts = @{}
+foreach ($pattern in $ExpectedErrorPatterns) { $expectedErrorCounts[$pattern] = 0 }
+foreach ($errorMatch in [regex]::Matches($allOutput, '(?m)^(SCRIPT ERROR:|ERROR:|失败：)[^\r\n]*')) {
+    $expectedError = $false
+    foreach ($pattern in $ExpectedErrorPatterns) {
+        if ($errorMatch.Value -match $pattern) {
+            $expectedErrorCounts[$pattern] += 1
+            $expectedError = $true
+            break
+        }
+    }
+    if (-not $expectedError) { $unexpectedErrors += $errorMatch.Value }
+}
+$missingExpectedErrors = @($ExpectedErrorPatterns | Where-Object { $expectedErrorCounts[$_] -ne 1 })
+$passed = $checkProcess.ExitCode -eq 0 -and $unexpectedErrors.Count -eq 0 -and $missingExpectedErrors.Count -eq 0
+$record = [pscustomobject]@{检查=$CheckName; 时间=(Get-Date -Format o); 进程编号=$checkProcess.Id; 退出码=$checkProcess.ExitCode; 通过=$passed; 引擎文件=$engineFile; 窗口显示=$checkWindowStyle; 命令参数=$engineArgs; 通过断言数=([regex]::Matches($allOutput,'(?m)^通过：')).Count; 预期错误计数=$expectedErrorCounts; 非预期错误=$unexpectedErrors}
 $record | ConvertTo-Json -Depth 3 | Set-Content -LiteralPath (Join-Path $evidenceRoot ($CheckName + '.json')) -Encoding utf8
 $record | Format-List
 if (-not $passed) { Write-Output $allOutput; exit 1 }

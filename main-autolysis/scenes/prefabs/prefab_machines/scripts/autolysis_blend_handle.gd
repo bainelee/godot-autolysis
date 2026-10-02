@@ -3,11 +3,13 @@ extends StaticBody3D
 ## 拉杆独占物理位置写入；输入控制器只提交已绑定角色的真实纵向位移。
 
 signal interaction_completed(actor: Node3D)
+signal handle_pull_denied(actor: Node3D, reason: StringName)
 
 enum HandleState { IDLE, DRAGGING, HOLDING, RETURNING }
 
 const TOP_Y: float = 0.12
 const BOTTOM_Y: float = -0.12
+const RESTRICTED_BOTTOM_Y: float = 0.08
 const HOLD_SECONDS: float = 0.1
 const RETURN_SECONDS: float = 0.2
 const RETURN_SPEED: float = (TOP_Y - BOTTOM_Y) / RETURN_SECONDS
@@ -25,6 +27,9 @@ var _configured: bool = false
 var _drag_actor: Node3D
 var _hold_remaining: float = 0.0
 var _automatic_started_frame: int = -1
+var _restricted_drag: bool = false
+var _drag_ratio: float = 0.0
+var _drag_bottom_y: float = BOTTOM_Y
 
 
 func _init() -> void:
@@ -59,6 +64,8 @@ func is_configured() -> bool:
 func get_configuration_error() -> String:
 	if not _node_is_live(self) or not _node_is_live(device_root) or not device_root.is_ancestor_of(self):
 		return "拉杆必须位于已绑定设备的子树中"
+	if not device_root is AutolysisBlendMachine:
+		return "拉杆必须绑定配药器根物理体"
 	if not _node_is_live(focus_target) or focus_target.get_parent() != device_root:
 		return "拉杆的聚焦目标描述必须属于已绑定设备"
 	if not _node_is_live(drag_interaction) or drag_interaction.get_parent() != self:
@@ -87,14 +94,21 @@ func get_configuration_error() -> String:
 
 ## 许可查询只读；设备登记与稳定聚焦均满足后才能接受一次新按下。
 func can_begin_drag(actor: Node3D) -> bool:
-	return is_configured() and state == HandleState.IDLE and _actor_is_focused(actor)
+	return is_configured() and not (device_root as AutolysisBlendMachine).is_interaction_locked() and state == HandleState.IDLE and _actor_is_focused(actor)
 
 
 func try_begin_drag(actor: Node3D) -> bool:
 	if not can_begin_drag(actor):
 		return false
 	_drag_actor = actor
+	var machine: AutolysisBlendMachine = device_root as AutolysisBlendMachine
+	var reason: StringName = machine.get_start_denial_reason()
+	_restricted_drag = not reason.is_empty()
+	_drag_ratio = mouse_to_handle_ratio * 0.5 if _restricted_drag else mouse_to_handle_ratio
+	_drag_bottom_y = RESTRICTED_BOTTOM_Y if _restricted_drag else BOTTOM_Y
 	state = HandleState.DRAGGING
+	if _restricted_drag:
+		handle_pull_denied.emit(actor, reason)
 	return true
 
 
@@ -105,14 +119,14 @@ func is_dragging_for(actor: Node3D) -> bool:
 func apply_vertical_motion(actor: Node3D, vertical_motion: float) -> void:
 	if not is_dragging_for(actor):
 		return
-	if not is_configured() or not _actor_is_focused(actor):
+	if not _can_continue_drag(actor):
 		cancel_drag(actor)
 		return
 	if not is_finite(vertical_motion) or vertical_motion == 0.0:
 		return
-	var next_y: float = clampf(position.y - vertical_motion * mouse_to_handle_ratio, BOTTOM_Y, TOP_Y)
+	var next_y: float = clampf(position.y - vertical_motion * _drag_ratio, _drag_bottom_y, TOP_Y)
 	_set_y(next_y)
-	if position != Vector3(0.0, BOTTOM_Y, 0.0):
+	if _restricted_drag or position != Vector3(0.0, BOTTOM_Y, 0.0):
 		return
 	# 先锁定和解除角色归属，再同步通知；回调重入不能重新开始本周期。
 	state = HandleState.HOLDING
@@ -137,7 +151,7 @@ func _physics_process(delta: float) -> void:
 	if not _configured:
 		return
 	if state == HandleState.DRAGGING:
-		if not is_configured() or not _actor_is_focused(_drag_actor):
+		if not _can_continue_drag(_drag_actor):
 			_start_return()
 		return
 	if state != HandleState.HOLDING and state != HandleState.RETURNING:
@@ -167,6 +181,21 @@ func _start_return() -> void:
 	_hold_remaining = 0.0
 	_automatic_started_frame = Engine.get_physics_frames()
 	state = HandleState.IDLE if position == Vector3(0.0, TOP_Y, 0.0) else HandleState.RETURNING
+
+
+func is_restricted_drag() -> bool:
+	return state == HandleState.DRAGGING and _restricted_drag
+
+
+func get_active_mouse_ratio() -> float:
+	return _drag_ratio if state == HandleState.DRAGGING else mouse_to_handle_ratio
+
+
+func _can_continue_drag(actor: Node3D) -> bool:
+	if not is_configured() or not _actor_is_focused(actor):
+		return false
+	var machine: AutolysisBlendMachine = device_root as AutolysisBlendMachine
+	return not machine.is_interaction_locked() and (_restricted_drag or machine.can_start_processing())
 
 
 func _actor_is_focused(actor: Node3D) -> bool:

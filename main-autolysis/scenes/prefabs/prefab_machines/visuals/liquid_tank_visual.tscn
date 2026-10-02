@@ -9,6 +9,7 @@
 [ext_resource type="Material" uid="uid://d0wjoyqfokr3s" path="res://main-autolysis/assets/materials/base_color/mat_base_red_0.tres" id="5_0b7jr"]
 [ext_resource type="Material" uid="uid://cagxkmm71r3j1" path="res://main-autolysis/assets/materials/base_color/mat_base_white_0.tres" id="6_hnh2i"]
 [ext_resource type="Material" uid="uid://k82d3m3s3npx" path="res://main-autolysis/assets/materials/base_color/mat_base_blue_2.tres" id="7_e41o6"]
+[ext_resource type="Material" path="res://main-autolysis/assets/materials/liquid_tank/liquid_tank_empty.tres" id="10_empty"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8q27"]
 albedo_color = Color(0.68, 0.7, 0.66, 1)
@@ -51,12 +52,12 @@ size = Vector3(0.04, 0.04, 0.04)
 
 [node name="mesh" type="Node3D" unique_id=1065344452]
 
-[node name="luquid_tank_glass" type="MeshInstance3D" parent="." unique_id=1216715091]
+[node name="liquid_tank_glass" type="MeshInstance3D" parent="." unique_id=1216715091]
 material_override = ExtResource("1_tus6p")
 mesh = SubResource("BoxMesh_rlkyb")
 
-[node name="luquid_tank_luquid" type="MeshInstance3D" parent="." unique_id=214400322]
-material_override = ExtResource("4_tus6p")
+[node name="liquid_tank_liquid" type="MeshInstance3D" parent="." unique_id=214400322]
+material_override = ExtResource("10_empty")
 mesh = SubResource("BoxMesh_0b7jr")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=181272463]

@@ -9,7 +9,7 @@ const LIQUID_TANK_ID: StringName = &"liquid_tank"
 const NEXT_ACTION: StringName = &"inventory_next"
 const PREVIOUS_ACTION: StringName = &"inventory_previous"
 
-var _slots: Array[AutolysisItemDefinition] = []
+var _slots: Array[AutolysisItemInstance] = []
 var _focused_index: int = 0
 var _busy: bool = false
 var _publishing: bool = false
@@ -27,6 +27,11 @@ func configure(presenter: AutolysisHeldItemPresenter, input_allowed: Callable) -
 
 
 func get_slot_item(index: int) -> AutolysisItemDefinition:
+	var instance: AutolysisItemInstance = get_slot_instance(index)
+	return null if instance == null else instance.definition
+
+
+func get_slot_instance(index: int) -> AutolysisItemInstance:
 	if index < 0 or index >= SLOT_COUNT:
 		return null
 	return _slots[index]
@@ -37,6 +42,10 @@ func get_focused_index() -> int:
 
 
 func get_focused_item() -> AutolysisItemDefinition:
+	return get_slot_item(_focused_index)
+
+
+func get_focused_instance() -> AutolysisItemInstance:
 	return _slots[_focused_index]
 
 
@@ -45,31 +54,41 @@ func cycle_focus(direction: int) -> bool:
 		return false
 	_busy = true
 	var next_index: int = posmod(_focused_index + direction, SLOT_COUNT)
-	var item: AutolysisItemDefinition = _slots[next_index]
+	var item: AutolysisItemInstance = _slots[next_index]
 	var visual: Node3D = _prepare_visual(item)
 	if item != null and visual == null:
 		_busy = false
 		return false
 	_focused_index = next_index
-	_presenter.commit_prepared(visual)
+	_commit_visual(visual)
 	_publish_change()
 	return true
 
 
 func can_receive_item(item: AutolysisItemDefinition) -> bool:
-	return (not _busy or _publishing) and _dependencies_valid() and get_focused_item() == null and item != null and item.is_valid_definition()
+	return (not _busy or _publishing) and _dependencies_valid() and get_focused_instance() == null and item != null and item.is_valid_definition()
 
 
 func try_receive_item(item: AutolysisItemDefinition) -> bool:
 	if _busy or not can_receive_item(item):
 		return false
+	return try_receive_instance(AutolysisItemInstance.create(item))
+
+
+func can_receive_instance(instance: AutolysisItemInstance) -> bool:
+	return is_instance_valid(instance) and instance.is_valid_instance() and not _slots.has(instance) and can_receive_item(instance.definition)
+
+
+func try_receive_instance(instance: AutolysisItemInstance) -> bool:
+	if _busy or not can_receive_instance(instance):
+		return false
 	_busy = true
-	var visual: Node3D = _prepare_visual(item)
+	var visual: Node3D = _prepare_visual(instance)
 	if visual == null:
 		_busy = false
 		return false
-	_slots[_focused_index] = item
-	_presenter.commit_prepared(visual)
+	_slots[_focused_index] = instance
+	_commit_visual(visual)
 	_publish_change()
 	return true
 
@@ -77,7 +96,7 @@ func try_receive_item(item: AutolysisItemDefinition) -> bool:
 func can_take_world_item(item: AutolysisRawMaterial) -> bool:
 	if not _node_is_live(item) or item.device_stored or is_instance_valid(item.blend_slot) or not item.is_available_for_pickup():
 		return false
-	if not can_receive_item(item.item_definition):
+	if not can_receive_instance(item.item_instance):
 		return false
 	if item.shelf != null:
 		return _node_is_live(item.shelf) and item.shelf.owns_item(item)
@@ -88,13 +107,13 @@ func try_take_world_item(item: AutolysisRawMaterial) -> bool:
 	if _busy or not can_take_world_item(item):
 		return false
 	_busy = true
-	var definition: AutolysisItemDefinition = item.item_definition
-	var visual: Node3D = _prepare_visual(definition)
+	var instance: AutolysisItemInstance = item.item_instance
+	var visual: Node3D = _prepare_visual(instance)
 	if visual == null:
 		_busy = false
 		return false
 	# 模型准备期间不提交任何占用；准备完成后再次核对来源。
-	if not _node_is_live(item) or item.device_stored or is_instance_valid(item.blend_slot) or not item.is_available_for_pickup():
+	if not _node_is_live(item) or item.item_instance != instance or item.device_stored or is_instance_valid(item.blend_slot) or not item.is_available_for_pickup():
 		visual.free()
 		_busy = false
 		return false
@@ -103,9 +122,9 @@ func try_take_world_item(item: AutolysisRawMaterial) -> bool:
 			visual.free()
 			_busy = false
 			return false
-	_slots[_focused_index] = definition
+	_slots[_focused_index] = instance
 	item.finish_pickup()
-	_presenter.commit_prepared(visual)
+	_commit_visual(visual)
 	_publish_change()
 	return true
 
@@ -114,7 +133,8 @@ func can_place_on_shelf(shelf: AutolysisRawMaterialShelf) -> bool:
 	if (_busy and not _publishing) or not _dependencies_valid() or not _node_is_live(shelf):
 		return false
 	var item: AutolysisItemDefinition = get_focused_item()
-	return item != null and item.is_raw_material and shelf.can_accept_item(item) and _get_world_scene(item) != null
+	var instance: AutolysisItemInstance = get_focused_instance()
+	return instance != null and instance.is_valid_instance() and item.is_raw_material and shelf.can_accept_item(item) and _get_world_scene(item) != null
 
 
 func try_place_on_shelf(shelf: AutolysisRawMaterialShelf) -> bool:
@@ -122,13 +142,13 @@ func try_place_on_shelf(shelf: AutolysisRawMaterialShelf) -> bool:
 		return false
 	_busy = true
 	var original_index: int = _focused_index
-	var definition: AutolysisItemDefinition = get_focused_item()
+	var instance: AutolysisItemInstance = get_focused_instance()
 	var slot: int = shelf.find_first_empty_slot()
-	var candidate: AutolysisRawMaterial = _prepare_world_item(definition)
+	var candidate: AutolysisRawMaterial = _prepare_world_item(instance)
 	if candidate == null:
 		_busy = false
 		return false
-	if not _node_is_live(shelf) or _focused_index != original_index or get_focused_item() != definition:
+	if not _node_is_live(shelf) or _focused_index != original_index or get_focused_instance() != instance:
 		candidate.free()
 		_busy = false
 		return false
@@ -138,7 +158,7 @@ func try_place_on_shelf(shelf: AutolysisRawMaterialShelf) -> bool:
 		_busy = false
 		return false
 	_slots[original_index] = null
-	_presenter.commit_prepared(null)
+	_commit_visual(null)
 	_publish_change()
 	return true
 
@@ -147,7 +167,8 @@ func can_place_in_blend_slot(actor: Node3D, slot: AutolysisBlendSlot) -> bool:
 	if not _can_query_blend_slot(actor, slot):
 		return false
 	var definition: AutolysisItemDefinition = get_focused_item()
-	return slot.get_stored_item() == null and definition != null and definition.is_raw_material and definition.is_valid_definition() and _get_world_scene(definition) != null
+	var instance: AutolysisItemInstance = get_focused_instance()
+	return slot.get_stored_item() == null and instance != null and instance.is_valid_instance() and definition.is_raw_material and _get_world_scene(definition) != null
 
 
 func try_place_in_blend_slot(actor: Node3D, slot: AutolysisBlendSlot) -> bool:
@@ -155,30 +176,31 @@ func try_place_in_blend_slot(actor: Node3D, slot: AutolysisBlendSlot) -> bool:
 		return false
 	var original_index: int = _focused_index
 	var definition: AutolysisItemDefinition = get_focused_item()
+	var instance: AutolysisItemInstance = get_focused_instance()
 	var anchor: Node3D = slot.raw_material_anchor
 	_busy = true
 	if not slot.try_begin_transfer(actor):
 		_busy = false
 		return false
-	var candidate: AutolysisRawMaterial = _prepare_world_item(definition)
+	var candidate: AutolysisRawMaterial = _prepare_world_item(instance)
 	if candidate == null:
 		_end_blend_transfer(slot)
 		return false
-	if not _blend_transaction_valid(actor, slot, anchor, original_index, definition) or not candidate.prepare_device_storage(slot):
+	if not _blend_transaction_valid(actor, slot, anchor, original_index, instance) or not candidate.prepare_device_storage(slot):
 		_rollback_blend_candidate(slot, candidate)
 		return false
 	if not slot.try_attach_prepared_item(candidate):
 		_rollback_blend_candidate(slot, candidate)
 		return false
 	# 入树回调可能删除设备、改变会话或搬走原药，提交前重新核对全部来源。
-	if not _blend_transaction_valid(actor, slot, anchor, original_index, definition) or not _node_is_live(candidate):
+	if not _blend_transaction_valid(actor, slot, anchor, original_index, instance) or not _node_is_live(candidate):
 		_rollback_blend_candidate(slot, candidate)
 		return false
-	if candidate.item_definition != definition or not slot.owns_item(candidate) or candidate.get_parent() != anchor:
+	if candidate.item_instance != instance or candidate.item_definition != definition or not slot.owns_item(candidate) or candidate.get_parent() != anchor:
 		_rollback_blend_candidate(slot, candidate)
 		return false
 	_slots[original_index] = null
-	_presenter.commit_prepared(null)
+	_commit_visual(null)
 	_publish_change()
 	_end_blend_transfer(slot)
 	return true
@@ -188,7 +210,7 @@ func can_take_from_blend_slot(actor: Node3D, slot: AutolysisBlendSlot) -> bool:
 	if not _can_query_blend_slot(actor, slot) or get_focused_item() != null:
 		return false
 	var item: AutolysisRawMaterial = slot.get_stored_item()
-	return _node_is_live(item) and slot.owns_item(item) and item.item_definition != null and item.item_definition.is_raw_material and item.item_definition.is_valid_definition()
+	return _node_is_live(item) and slot.owns_item(item) and is_instance_valid(item.item_instance) and item.item_instance.is_valid_instance() and item.item_instance.definition == item.item_definition and item.item_definition.is_raw_material
 
 
 func try_take_from_blend_slot(actor: Node3D, slot: AutolysisBlendSlot) -> bool:
@@ -197,12 +219,13 @@ func try_take_from_blend_slot(actor: Node3D, slot: AutolysisBlendSlot) -> bool:
 	var original_index: int = _focused_index
 	var item: AutolysisRawMaterial = slot.get_stored_item()
 	var definition: AutolysisItemDefinition = item.item_definition
+	var instance: AutolysisItemInstance = item.item_instance
 	var anchor: Node3D = slot.raw_material_anchor
 	_busy = true
 	if not slot.try_begin_transfer(actor):
 		_busy = false
 		return false
-	var visual: Node3D = _prepare_visual(definition)
+	var visual: Node3D = _prepare_visual(instance)
 	if visual == null:
 		_end_blend_transfer(slot)
 		return false
@@ -210,13 +233,13 @@ func try_take_from_blend_slot(actor: Node3D, slot: AutolysisBlendSlot) -> bool:
 		visual.free()
 		_end_blend_transfer(slot)
 		return false
-	if item.item_definition != definition or not slot.owns_item(item) or not slot.release_item(item):
+	if item.item_instance != instance or item.item_definition != definition or not slot.owns_item(item) or not slot.release_item(item):
 		visual.free()
 		_end_blend_transfer(slot)
 		return false
-	_slots[original_index] = definition
+	_slots[original_index] = instance
 	item.finish_pickup()
-	_presenter.commit_prepared(visual)
+	_commit_visual(visual)
 	_publish_change()
 	_end_blend_transfer(slot)
 	return true
@@ -228,12 +251,12 @@ func _can_query_blend_slot(actor: Node3D, slot: AutolysisBlendSlot) -> bool:
 	return actor.get_node_or_null("InventoryController") == self and slot.can_transfer(actor, _publishing)
 
 
-func _blend_transaction_valid(actor: Variant, slot: Variant, anchor: Variant, original_index: int, original_item: AutolysisItemDefinition) -> bool:
+func _blend_transaction_valid(actor: Variant, slot: Variant, anchor: Variant, original_index: int, original_item: AutolysisItemInstance) -> bool:
 	if not _dependencies_valid() or not _node_is_live(actor) or not _node_is_live(slot) or not _node_is_live(anchor):
 		return false
 	if not actor is Node3D or not slot is AutolysisBlendSlot or not anchor is Node3D:
 		return false
-	if actor.get_node_or_null("InventoryController") != self or _focused_index != original_index or get_focused_item() != original_item:
+	if actor.get_node_or_null("InventoryController") != self or _focused_index != original_index or get_focused_instance() != original_item:
 		return false
 	return slot.raw_material_anchor == anchor and slot.can_transfer(actor, true)
 
@@ -255,7 +278,7 @@ func _end_blend_transfer(slot: Variant) -> void:
 func can_take_liquid_tank(actor: Node3D, item: AutolysisLiquidTank) -> bool:
 	if not _can_query_liquid_actor(actor) or not _node_is_live(item) or not item.is_available_for_pickup():
 		return false
-	if not _is_liquid_tank_definition(item.item_definition) or not can_receive_item(item.item_definition):
+	if not _is_liquid_tank_definition(item.item_definition) or not can_receive_instance(item.item_instance):
 		return false
 	if item.cabinet_stored:
 		return _node_is_live(item.cabinet) and item.cabinet.can_transfer(actor, _publishing) and item.cabinet.owns_item(item)
@@ -266,7 +289,7 @@ func try_take_liquid_tank(actor: Node3D, item: AutolysisLiquidTank) -> bool:
 	if _busy or not can_take_liquid_tank(actor, item):
 		return false
 	var original_index: int = _focused_index
-	var definition: AutolysisItemDefinition = item.item_definition
+	var instance: AutolysisItemInstance = item.item_instance
 	var cabinet: AutolysisLiquidTankCabinet = item.cabinet
 	var slot_index: int = item.slot_index
 	var anchor: Node3D = cabinet.get_slot_node(slot_index) if item.cabinet_stored else null
@@ -274,12 +297,12 @@ func try_take_liquid_tank(actor: Node3D, item: AutolysisLiquidTank) -> bool:
 	if item.cabinet_stored and not cabinet.try_begin_transfer(actor):
 		_busy = false
 		return false
-	var visual: Node3D = _prepare_visual(definition)
+	var visual: Node3D = _prepare_visual(instance)
 	if visual == null:
 		_end_liquid_transfer(cabinet)
 		return false
 	# 准备显示不释放来源；准备完成后核对指定罐和原空格。
-	if not _liquid_pickup_source_valid(actor, item, cabinet, slot_index, anchor, original_index, definition):
+	if not _liquid_pickup_source_valid(actor, item, cabinet, slot_index, anchor, original_index, instance):
 		visual.free()
 		_end_liquid_transfer(cabinet)
 		return false
@@ -287,9 +310,9 @@ func try_take_liquid_tank(actor: Node3D, item: AutolysisLiquidTank) -> bool:
 		visual.free()
 		_end_liquid_transfer(cabinet)
 		return false
-	_slots[original_index] = definition
+	_slots[original_index] = instance
 	item.finish_pickup()
-	_presenter.commit_prepared(visual)
+	_commit_visual(visual)
 	_publish_change()
 	_end_liquid_transfer(cabinet)
 	return true
@@ -299,7 +322,8 @@ func can_place_in_liquid_tank_cabinet(actor: Node3D, cabinet: AutolysisLiquidTan
 	if not _can_query_liquid_actor(actor) or not _node_is_live(cabinet) or not cabinet.can_transfer(actor, _publishing):
 		return false
 	var definition: AutolysisItemDefinition = get_focused_item()
-	return _is_liquid_tank_definition(definition) and cabinet.can_accept_item(definition) and _get_liquid_tank_world_scene(definition) != null
+	var instance: AutolysisItemInstance = get_focused_instance()
+	return instance != null and instance.is_valid_instance() and _is_liquid_tank_definition(definition) and cabinet.can_accept_item(definition) and _get_liquid_tank_world_scene(definition) != null
 
 
 func try_place_in_liquid_tank_cabinet(actor: Node3D, cabinet: AutolysisLiquidTankCabinet) -> bool:
@@ -307,34 +331,162 @@ func try_place_in_liquid_tank_cabinet(actor: Node3D, cabinet: AutolysisLiquidTan
 		return false
 	var original_index: int = _focused_index
 	var definition: AutolysisItemDefinition = get_focused_item()
+	var instance: AutolysisItemInstance = get_focused_instance()
 	var slot_index: int = cabinet.find_first_empty_slot()
 	var anchor: Node3D = cabinet.get_slot_node(slot_index)
 	_busy = true
 	if not cabinet.try_begin_transfer(actor):
 		_busy = false
 		return false
-	var candidate: AutolysisLiquidTank = _prepare_liquid_tank_world_item(definition)
+	var candidate: AutolysisLiquidTank = _prepare_liquid_tank_world_item(instance)
 	if candidate == null:
 		_end_liquid_transfer(cabinet)
 		return false
-	if not _liquid_transaction_valid(actor, cabinet, slot_index, anchor, original_index, definition) or not candidate.prepare_cabinet_storage(cabinet, slot_index):
+	if not _liquid_transaction_valid(actor, cabinet, slot_index, anchor, original_index, instance) or not candidate.prepare_cabinet_storage(cabinet, slot_index):
 		_rollback_liquid_candidate(cabinet, candidate)
 		return false
 	if not cabinet.try_attach_prepared_item(slot_index, candidate):
 		_rollback_liquid_candidate(cabinet, candidate)
 		return false
 	# 入树回调可能释放柜子、移动候选或损坏来源，提交前再次核对。
-	if not _liquid_transaction_valid(actor, cabinet, slot_index, anchor, original_index, definition) or not _node_is_live(candidate):
+	if not _liquid_transaction_valid(actor, cabinet, slot_index, anchor, original_index, instance) or not _node_is_live(candidate):
 		_rollback_liquid_candidate(cabinet, candidate)
 		return false
-	if candidate.item_definition != definition or not candidate.is_available_for_pickup() or not cabinet.owns_item(candidate) or candidate.get_parent() != anchor:
+	if candidate.item_instance != instance or candidate.item_definition != definition or not candidate.is_available_for_pickup() or not cabinet.owns_item(candidate) or candidate.get_parent() != anchor:
 		_rollback_liquid_candidate(cabinet, candidate)
 		return false
 	_slots[original_index] = null
-	_presenter.commit_prepared(null)
+	_commit_visual(null)
 	_publish_change()
 	_end_liquid_transfer(cabinet)
 	return true
+
+
+func can_place_in_blend_tank_place(actor: Node3D, place: AutolysisBlendTankPlace) -> bool:
+	if not _can_query_blend_tank_place(actor, place):
+		return false
+	var instance: AutolysisItemInstance = get_focused_instance()
+	return place.get_stored_item() == null and instance != null and instance.is_empty_liquid_tank() and _get_liquid_tank_world_scene(instance.definition) != null
+
+
+func try_place_in_blend_tank_place(actor: Node3D, place: AutolysisBlendTankPlace) -> bool:
+	if _busy or not can_place_in_blend_tank_place(actor, place):
+		return false
+	var original_index: int = _focused_index
+	var instance: AutolysisItemInstance = get_focused_instance()
+	var anchor: Node3D = place.liquid_tank_anchor
+	_busy = true
+	if not place.try_begin_transfer(actor):
+		_busy = false
+		return false
+	var candidate: AutolysisLiquidTank = _prepare_liquid_tank_world_item(instance)
+	if candidate == null:
+		_end_blend_tank_transfer(place)
+		return false
+	if not _blend_tank_transaction_valid(actor, place, anchor, original_index, instance) or not candidate.prepare_blend_storage(place):
+		_rollback_blend_tank_candidate(place, candidate)
+		return false
+	if not place.try_attach_prepared_item(candidate):
+		_rollback_blend_tank_candidate(place, candidate)
+		return false
+	if not _blend_tank_transaction_valid(actor, place, anchor, original_index, instance) or not _node_is_live(candidate):
+		_rollback_blend_tank_candidate(place, candidate)
+		return false
+	if candidate.item_instance != instance or not instance.is_empty_liquid_tank() or not place.owns_item(candidate) or candidate.get_parent() != anchor:
+		_rollback_blend_tank_candidate(place, candidate)
+		return false
+	_slots[original_index] = null
+	_commit_visual(null)
+	_publish_change()
+	_end_blend_tank_transfer(place)
+	return true
+
+
+func can_take_from_blend_tank_place(actor: Node3D, place: AutolysisBlendTankPlace) -> bool:
+	if not _can_query_blend_tank_place(actor, place) or get_focused_instance() != null:
+		return false
+	var item: AutolysisLiquidTank = place.get_stored_item()
+	return _node_is_live(item) and place.owns_item(item) and is_instance_valid(item.item_instance) and item.item_instance.is_valid_instance() and item.item_instance.is_liquid_tank() and item.item_instance.definition == item.item_definition
+
+
+func try_take_from_blend_tank_place(actor: Node3D, place: AutolysisBlendTankPlace) -> bool:
+	if _busy or not can_take_from_blend_tank_place(actor, place):
+		return false
+	var original_index: int = _focused_index
+	var item: AutolysisLiquidTank = place.get_stored_item()
+	var instance: AutolysisItemInstance = item.item_instance
+	var anchor: Node3D = place.liquid_tank_anchor
+	_busy = true
+	if not place.try_begin_transfer(actor):
+		_busy = false
+		return false
+	var visual: Node3D = _prepare_visual(instance)
+	if visual == null:
+		_end_blend_tank_transfer(place)
+		return false
+	if not _blend_tank_transaction_valid(actor, place, anchor, original_index, null) or not _node_is_live(item):
+		visual.free()
+		_end_blend_tank_transfer(place)
+		return false
+	if item.item_instance != instance or item.item_definition != instance.definition or not instance.is_valid_instance() or not place.owns_item(item) or not place.release_item(item):
+		visual.free()
+		_end_blend_tank_transfer(place)
+		return false
+	_slots[original_index] = instance
+	item.finish_pickup()
+	_commit_visual(visual)
+	_publish_change()
+	_end_blend_tank_transfer(place)
+	return true
+
+
+func can_place_in_blend_tank(actor: Node3D, place: AutolysisBlendTankPlace) -> bool:
+	return can_place_in_blend_tank_place(actor, place)
+
+
+func try_place_in_blend_tank(actor: Node3D, place: AutolysisBlendTankPlace) -> bool:
+	return try_place_in_blend_tank_place(actor, place)
+
+
+func can_take_from_blend_tank(actor: Node3D, place: AutolysisBlendTankPlace) -> bool:
+	return can_take_from_blend_tank_place(actor, place)
+
+
+func try_take_from_blend_tank(actor: Node3D, place: AutolysisBlendTankPlace) -> bool:
+	return try_take_from_blend_tank_place(actor, place)
+
+
+func _can_query_blend_tank_place(actor: Node3D, place: AutolysisBlendTankPlace) -> bool:
+	if (_busy and not _publishing) or not _dependencies_valid() or not _node_is_live(actor) or not _node_is_live(place):
+		return false
+	return actor.get_node_or_null("InventoryController") == self and place.can_transfer(actor, _publishing)
+
+
+func _blend_tank_transaction_valid(actor: Variant, place: Variant, anchor: Variant, original_index: int, original_item: AutolysisItemInstance) -> bool:
+	if not _dependencies_valid() or not _node_is_live(actor) or not _node_is_live(place) or not _node_is_live(anchor):
+		return false
+	if not actor is Node3D or not place is AutolysisBlendTankPlace or not anchor is Node3D:
+		return false
+	if actor.get_node_or_null("InventoryController") != self or _focused_index != original_index or get_focused_instance() != original_item:
+		return false
+	if original_item != null and (not original_item.is_empty_liquid_tank() or _get_liquid_tank_world_scene(original_item.definition) == null):
+		return false
+	return place.liquid_tank_anchor == anchor and place.can_transfer(actor, true)
+
+
+func _rollback_blend_tank_candidate(place: Variant, candidate: Variant) -> void:
+	if is_instance_valid(place) and place is AutolysisBlendTankPlace:
+		place.rollback_prepared_item(candidate)
+	if is_instance_valid(candidate) and candidate is AutolysisLiquidTank:
+		candidate.free()
+	_end_blend_tank_transfer(place)
+
+
+func _end_blend_tank_transfer(place: Variant) -> void:
+	if is_instance_valid(place) and place is AutolysisBlendTankPlace:
+		place.end_transfer()
+	if is_instance_valid(self):
+		_busy = false
 
 
 func _can_query_liquid_actor(actor: Node3D) -> bool:
@@ -355,24 +507,24 @@ func _liquid_actor_valid(actor: Variant) -> bool:
 	return allowed is bool and allowed and is_instance_valid(self) and _dependencies_valid() and _node_is_live(actor) and actor.get_node_or_null("InventoryController") == self
 
 
-func _liquid_transaction_valid(actor: Variant, cabinet: Variant, slot_index: int, anchor: Variant, original_index: int, original_item: AutolysisItemDefinition) -> bool:
+func _liquid_transaction_valid(actor: Variant, cabinet: Variant, slot_index: int, anchor: Variant, original_index: int, original_item: AutolysisItemInstance) -> bool:
 	if not _liquid_actor_valid(actor) or not _node_is_live(cabinet) or not _node_is_live(anchor):
 		return false
 	if not cabinet is AutolysisLiquidTankCabinet or not anchor is Node3D:
 		return false
-	if _focused_index != original_index or get_focused_item() != original_item:
+	if _focused_index != original_index or get_focused_instance() != original_item:
 		return false
-	if original_item != null and _get_liquid_tank_world_scene(original_item) == null:
+	if original_item != null and (not original_item.is_valid_instance() or _get_liquid_tank_world_scene(original_item.definition) == null):
 		return false
 	return cabinet.get_slot_node(slot_index) == anchor and cabinet.can_transfer(actor, true)
 
 
-func _liquid_pickup_source_valid(actor: Variant, item: Variant, cabinet: Variant, slot_index: int, anchor: Variant, original_index: int, definition: AutolysisItemDefinition) -> bool:
+func _liquid_pickup_source_valid(actor: Variant, item: Variant, cabinet: Variant, slot_index: int, anchor: Variant, original_index: int, instance: AutolysisItemInstance) -> bool:
 	if not _liquid_actor_valid(actor) or not _node_is_live(item) or not item is AutolysisLiquidTank:
 		return false
-	if _focused_index != original_index or get_focused_item() != null or item.item_definition != definition:
+	if _focused_index != original_index or get_focused_instance() != null or item.item_instance != instance or item.item_definition != instance.definition:
 		return false
-	if not item.is_available_for_pickup() or not _is_liquid_tank_definition(definition):
+	if not instance.is_valid_instance() or not item.is_available_for_pickup() or not _is_liquid_tank_definition(instance.definition):
 		return false
 	if cabinet == null:
 		return not item.cabinet_stored and item.cabinet == null and item.slot_index == -1 and slot_index == -1
@@ -400,7 +552,10 @@ func _is_liquid_tank_definition(definition: AutolysisItemDefinition) -> bool:
 	return is_instance_valid(definition) and definition.item_id == LIQUID_TANK_ID and not definition.is_raw_material and definition.is_valid_definition()
 
 
-func _prepare_liquid_tank_world_item(definition: AutolysisItemDefinition) -> AutolysisLiquidTank:
+func _prepare_liquid_tank_world_item(instance: AutolysisItemInstance) -> AutolysisLiquidTank:
+	if not is_instance_valid(instance) or not instance.is_valid_instance():
+		return null
+	var definition: AutolysisItemDefinition = instance.definition
 	var scene: PackedScene = _get_liquid_tank_world_scene(definition)
 	if scene == null:
 		return null
@@ -409,10 +564,12 @@ func _prepare_liquid_tank_world_item(definition: AutolysisItemDefinition) -> Aut
 		node.free()
 		return null
 	var item: AutolysisLiquidTank = node as AutolysisLiquidTank
-	if not _is_liquid_tank_definition(item.item_definition) or item.item_definition.item_id != definition.item_id or item.fixed_installation or item.cabinet_stored or item.cabinet != null or item.slot_index != -1:
+	if not _is_liquid_tank_definition(item.item_definition) or item.item_definition.item_id != definition.item_id or item.fixed_installation or item.cabinet_stored or item.cabinet != null or item.slot_index != -1 or item.blend_stored or item.blend_place != null:
 		item.free()
 		return null
-	item.item_definition = definition
+	if not item.bind_item_instance(instance):
+		item.free()
+		return null
 	return item
 
 
@@ -455,11 +612,19 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 
 
-func _prepare_visual(item: AutolysisItemDefinition) -> Node3D:
-	return null if item == null else _presenter.prepare_item(item)
+func _prepare_visual(item: AutolysisItemInstance) -> Node3D:
+	return null if item == null else _presenter.prepare_instance(item)
 
 
-func _prepare_world_item(definition: AutolysisItemDefinition) -> AutolysisRawMaterial:
+func _commit_visual(visual: Node3D) -> void:
+	_presenter.commit_prepared(visual)
+	_presenter.watch_instance(get_focused_instance())
+
+
+func _prepare_world_item(instance: AutolysisItemInstance) -> AutolysisRawMaterial:
+	if not is_instance_valid(instance) or not instance.is_valid_instance():
+		return null
+	var definition: AutolysisItemDefinition = instance.definition
 	var scene: PackedScene = _get_world_scene(definition)
 	if scene == null:
 		return null
@@ -471,7 +636,9 @@ func _prepare_world_item(definition: AutolysisItemDefinition) -> AutolysisRawMat
 	if item.item_definition == null or item.item_definition.item_id != definition.item_id:
 		item.free()
 		return null
-	item.item_definition = definition
+	if not item.bind_item_instance(instance):
+		item.free()
+		return null
 	return item
 
 

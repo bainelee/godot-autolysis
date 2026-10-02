@@ -5,6 +5,7 @@ extends SceneTree
 const DEMO: PackedScene = preload("res://main-autolysis/player/tests/focus_interaction_demo.tscn")
 const RAY_SCRIPT: Script = preload("res://main-autolysis/player/components/autolysis_focus_ray_query.gd")
 const CAFFEINE: AutolysisItemDefinition = preload("res://main-autolysis/systems/item-system/items/caffeine.tres")
+const LIQUID_TANK: AutolysisItemDefinition = preload("res://main-autolysis/systems/item-system/items/liquid_tank.tres")
 const TOP: float = 0.12
 const BOTTOM: float = -0.12
 const SPEED: float = 1.2
@@ -225,6 +226,52 @@ func _new_scene(label: String, initial_accumulation: bool = false) -> void:
 	_check(focus.is_focused_on(machine.focus_target), "正式玩家稳定聚焦当前正式混合器")
 	_check(Input.mouse_mode == Input.MOUSE_MODE_VISIBLE, "聚焦拖动入口保持可见指针")
 	_check(not Input.use_accumulated_input, "稳定聚焦在首次新按下来临前禁用输入累积")
+	await _prepare_processing_inputs()
+
+
+## 完整拉杆回归使用合法加工前提；每轮取回满罐、补入独立空罐与原药。
+func _prepare_processing_inputs() -> void:
+	if machine.can_start_processing():
+		return
+	for _index: int in int(ceil(2.2 * Engine.physics_ticks_per_second)):
+		if not machine.is_batch_running():
+			break
+		await _frames(1)
+	_check(not machine.is_interaction_locked(), "补充加工前提时上一批次已结束且无故障")
+	var inventory: AutolysisInventoryController = player.inventory_controller
+	var original_index: int = inventory.get_focused_index()
+	if machine.tank_place.get_stored_item() != null:
+		_check(_select_empty_inventory_slot(), "取回上轮满罐前选择空道具格")
+		_check(inventory.try_take_from_blend_tank_place(player, machine.tank_place), "通过正式库存事务取回上轮满罐")
+		await _frames(1)
+	_check(_select_empty_inventory_slot(), "准备新空罐前选择空道具格")
+	_check(inventory.try_receive_item(LIQUID_TANK), "准备独立空罐实例")
+	_check(inventory.try_place_in_blend_tank_place(player, machine.tank_place), "通过正式事务将空罐放入配药器")
+	var slot: AutolysisBlendSlot = machine.slots[0]
+	_check(slot.try_toggle(player), "加工前提准备打开零号原药槽")
+	await _frames(int(ceil(0.2 * Engine.physics_ticks_per_second)) + 2)
+	_check(inventory.try_receive_item(CAFFEINE), "准备本轮咖啡因实例")
+	_check(inventory.try_place_in_blend_slot(player, slot), "通过正式库存事务放入本轮原药")
+	_check(slot.try_toggle(player), "加工前提准备关闭零号原药槽")
+	await _frames(int(ceil(0.2 * Engine.physics_ticks_per_second)) + 2)
+	for _index: int in 4:
+		if inventory.get_focused_index() == original_index:
+			break
+		var restored: bool = inventory.cycle_focus(1)
+		_check(restored, "恢复拉杆检查原选中道具格")
+		if not restored:
+			break
+	_check(machine.can_start_processing(), "正式设备具备空罐、原药与四门完全关闭前提")
+
+
+func _select_empty_inventory_slot() -> bool:
+	var inventory: AutolysisInventoryController = player.inventory_controller
+	for _index: int in 4:
+		if inventory.get_focused_instance() == null:
+			return true
+		if not inventory.cycle_focus(1):
+			return false
+	return false
 
 
 func _headless_entry_allowed() -> bool:
@@ -317,6 +364,7 @@ func _pixel() -> Vector2:
 
 
 func _begin() -> void:
+	await _prepare_processing_inputs()
 	var point: Vector2 = _pixel()
 	_motion(0.0, 0.0, point)
 	_button(MOUSE_BUTTON_LEFT, true, point)
@@ -447,6 +495,7 @@ func _test_ordered_inputs() -> void:
 	await _frames(1)
 	_check(completion_count == 1 and absf(handle.position.y - BOTTOM) < EPSILON, "同帧到最低后上推松开仍立即完成一次，不以位移净和代替路径")
 	await _await_top("同帧完成", BOTTOM, true)
+	await _prepare_processing_inputs()
 	point = _pixel()
 	_button(MOUSE_BUTTON_LEFT, true, point)
 	_motion(0.12 / float(handle.mouse_to_handle_ratio))

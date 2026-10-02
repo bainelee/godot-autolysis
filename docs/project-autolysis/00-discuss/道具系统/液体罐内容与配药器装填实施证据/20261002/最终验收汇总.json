@@ -1,0 +1,393 @@
+{
+  "日期": "2026年10月2日",
+  "引擎": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "检查数": 14,
+  "全部通过": true,
+  "累计通过断言数": 3685.0,
+  "检查": [
+    {
+      "记录文件": "import-final/最终导入.json",
+      "实际检查": {
+        "检查": "最终导入",
+        "时间": "2026-10-02T19:50:57.8448122+08:00",
+        "进程编号": 45604,
+        "退出码": 0,
+        "通过": true,
+        "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+        "窗口显示": "Hidden",
+        "命令参数": [
+          "--path",
+          "D:\\autolysis",
+          "--headless",
+          "--editor",
+          "--quit"
+        ],
+        "通过断言数": 0,
+        "预期错误计数": {},
+        "非预期错误": []
+      }
+    },
+    {
+      "记录文件": "items/道具系统回归.json",
+      "实际检查": {
+        "检查": "道具系统回归",
+        "时间": "2026-10-02T19:35:40.1658979+08:00",
+        "进程编号": 40968,
+        "退出码": 0,
+        "通过": true,
+        "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+        "窗口显示": "Hidden",
+        "命令参数": [
+          "--path",
+          "D:\\autolysis",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--script",
+          "res://main-autolysis/systems/item-system/tests/item_system_test.gd",
+          "--",
+          "--evidence-dir",
+          "res://docs/project-autolysis/00-discuss/道具系统/液体罐内容与配药器装填实施证据/20261002/items"
+        ],
+        "通过断言数": 471,
+        "预期错误计数": {},
+        "非预期错误": []
+      }
+    },
+    {
+      "记录文件": "blend_slot_transfer_retry_1/blend_slot_transfer.json",
+      "实际检查": {
+        "检查": "blend_slot_transfer",
+        "时间": "2026-10-02T19:40:50.7250153+08:00",
+        "进程编号": 16036,
+        "退出码": 0,
+        "通过": true,
+        "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+        "窗口显示": "Hidden",
+        "命令参数": [
+          "--path",
+          "D:\\autolysis",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--script",
+          "res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd",
+          "--",
+          "--evidence-dir",
+          "res://docs/project-autolysis/00-discuss/道具系统/液体罐内容与配药器装填实施证据/20261002/checks/blend_slot_transfer_retry_1/internal"
+        ],
+        "通过断言数": 266,
+        "预期错误计数": {},
+        "非预期错误": []
+      }
+    },
+    {
+      "记录文件": "liquid_tank_transactions_retry_2/liquid_tank_transactions.json",
+      "实际检查": {
+        "检查": "liquid_tank_transactions",
+        "时间": "2026-10-02T19:40:49.9330109+08:00",
+        "进程编号": 31128,
+        "退出码": 0,
+        "通过": true,
+        "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+        "窗口显示": "Hidden",
+        "命令参数": [
+          "--path",
+          "D:\\autolysis",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--script",
+          "res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd",
+          "--",
+          "--evidence-dir",
+          "res://docs/project-autolysis/00-discuss/道具系统/液体罐内容与配药器装填实施证据/20261002/checks/liquid_tank_transactions_retry_2/internal"
+        ],
+        "通过断言数": 167,
+        "预期错误计数": {
+          "^ERROR: 液体罐实例或显示依赖无效：.*/事务故障候选2$": 1,
+          "^ERROR: 液体罐实例或显示依赖无效：.*/事务故障候选4$": 1,
+          "^ERROR: 液体罐实例或显示依赖无效：.*/事务故障候选6$": 1
+        },
+        "非预期错误": []
+      }
+    },
+    {
+      "记录文件": "liquid_tank_cabinet_behavior_retry_1/liquid_tank_cabinet_behavior.json",
+      "实际检查": {
+        "检查": "liquid_tank_cabinet_behavior",
+        "时间": "2026-10-02T19:39:29.0906365+08:00",
+        "进程编号": 44596,
+        "退出码": 0,
+        "通过": true,
+        "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+        "窗口显示": "Hidden",
+        "命令参数": [
+          "--path",
+          "D:\\autolysis",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--script",
+          "res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd",
+          "--",
+          "--evidence-dir",
+          "res://docs/project-autolysis/00-discuss/道具系统/液体罐内容与配药器装填实施证据/20261002/checks/liquid_tank_cabinet_behavior_retry_1/internal"
+        ],
+        "通过断言数": 225,
+        "预期错误计数": {},
+        "非预期错误": []
+      }
+    },
+    {
+      "记录文件": "cabinet-rendered/cabinet-rendered.json",
+      "实际检查": {
+        "检查": "cabinet-rendered",
+        "时间": "2026-10-02T19:37:05.0086996+08:00",
+        "进程编号": 39908,
+        "退出码": 0,
+        "通过": true,
+        "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+        "窗口显示": "Hidden",
+        "命令参数": [
+          "--path",
+          "D:\\autolysis",
+          "--fixed-fps",
+          "60",
+          "--script",
+          "res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_rendered_test.gd",
+          "--",
+          "--evidence-dir",
+          "res://docs/project-autolysis/00-discuss/道具系统/液体罐内容与配药器装填实施证据/20261002/cabinet-rendered"
+        ],
+        "通过断言数": 71,
+        "预期错误计数": {},
+        "非预期错误": []
+      }
+    },
+    {
+      "记录文件": "focus-final/聚焦交互最终回归.json",
+      "实际检查": {
+        "检查": "聚焦交互最终回归",
+        "时间": "2026-10-02T19:46:31.4003977+08:00",
+        "进程编号": 45236,
+        "退出码": 0,
+        "通过": true,
+        "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+        "窗口显示": "Hidden",
+        "命令参数": [
+          "--path",
+          "D:\\autolysis",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--script",
+          "res://main-autolysis/player/tests/focus_interaction_test.gd",
+          "--",
+          "--evidence-dir",
+          "res://docs/project-autolysis/00-discuss/道具系统/液体罐内容与配药器装填实施证据/20261002/focus-final"
+        ],
+        "通过断言数": 220,
+        "预期错误计数": {},
+        "非预期错误": []
+      }
+    },
+    {
+      "记录文件": "handle-60/handle-60.json",
+      "实际检查": {
+        "检查": "handle-60",
+        "时间": "2026-10-02T19:37:16.8188494+08:00",
+        "进程编号": 42200,
+        "退出码": 0,
+        "通过": true,
+        "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+        "窗口显示": "Hidden",
+        "命令参数": [
+          "--path",
+          "D:\\autolysis",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--script",
+          "res://main-autolysis/player/tests/blend_handle_drag_test.gd",
+          "--",
+          "--physics-ticks",
+          "60",
+          "--evidence-dir",
+          "res://docs/project-autolysis/00-discuss/道具系统/液体罐内容与配药器装填实施证据/20261002/checks/handle-60/internal"
+        ],
+        "通过断言数": 890,
+        "预期错误计数": {},
+        "非预期错误": []
+      }
+    },
+    {
+      "记录文件": "handle-rendered-final/handle-rendered-final.json",
+      "实际检查": {
+        "检查": "handle-rendered-final",
+        "时间": "2026-10-02T19:47:42.6891816+08:00",
+        "进程编号": 25364,
+        "退出码": 0,
+        "通过": true,
+        "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+        "窗口显示": "Hidden",
+        "命令参数": [
+          "--path",
+          "D:\\autolysis",
+          "--fixed-fps",
+          "60",
+          "--script",
+          "res://main-autolysis/player/tests/blend_handle_drag_test.gd",
+          "--",
+          "--physics-ticks",
+          "60",
+          "--evidence-dir",
+          "res://docs/project-autolysis/00-discuss/道具系统/液体罐内容与配药器装填实施证据/20261002/checks/handle-rendered-final/internal"
+        ],
+        "通过断言数": 861,
+        "预期错误计数": {},
+        "非预期错误": []
+      }
+    },
+    {
+      "记录文件": "collision/collision.json",
+      "实际检查": {
+        "检查": "collision",
+        "时间": "2026-10-02T19:37:32.6332299+08:00",
+        "进程编号": 43728,
+        "退出码": 0,
+        "通过": true,
+        "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+        "窗口显示": "Hidden",
+        "命令参数": [
+          "--path",
+          "D:\\autolysis",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--script",
+          "res://main-autolysis/player/tests/blend_collision_follow_test.gd",
+          "--",
+          "--evidence-dir",
+          "res://docs/project-autolysis/00-discuss/道具系统/液体罐内容与配药器装填实施证据/20261002/checks/collision/internal"
+        ],
+        "通过断言数": 16,
+        "预期错误计数": {},
+        "非预期错误": []
+      }
+    },
+    {
+      "记录文件": "integration-final-2/装填最终集成.json",
+      "实际检查": {
+        "检查": "装填最终集成",
+        "时间": "2026-10-02T19:45:42.3263776+08:00",
+        "进程编号": 40556,
+        "退出码": 0,
+        "通过": true,
+        "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+        "窗口显示": "Hidden",
+        "命令参数": [
+          "--path",
+          "D:\\autolysis",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--script",
+          "res://main-autolysis/systems/item-system/tests/liquid_contents_blend_test.gd",
+          "--",
+          "--evidence-dir",
+          "res://docs/project-autolysis/00-discuss/道具系统/液体罐内容与配药器装填实施证据/20261002/integration-final-2"
+        ],
+        "通过断言数": 176,
+        "预期错误计数": {
+          "^ERROR: 配药器批次1故障，保持交互关闭：本轮原药来源或实例失效：槽号3；/root/FocusInteractionDemo/MachineA$": 1
+        },
+        "非预期错误": []
+      }
+    },
+    {
+      "记录文件": "integration-rendered-final/装填最终图形集成.json",
+      "实际检查": {
+        "检查": "装填最终图形集成",
+        "时间": "2026-10-02T19:47:01.8614262+08:00",
+        "进程编号": 604,
+        "退出码": 0,
+        "通过": true,
+        "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+        "窗口显示": "Hidden",
+        "命令参数": [
+          "--path",
+          "D:\\autolysis",
+          "--fixed-fps",
+          "60",
+          "--script",
+          "res://main-autolysis/systems/item-system/tests/liquid_contents_blend_test.gd",
+          "--",
+          "--evidence-dir",
+          "res://docs/project-autolysis/00-discuss/道具系统/液体罐内容与配药器装填实施证据/20261002/integration-rendered-final"
+        ],
+        "通过断言数": 181,
+        "预期错误计数": {
+          "^ERROR: 配药器批次1故障，保持交互关闭：本轮原药来源或实例失效：槽号3；/root/FocusInteractionDemo/MachineA$": 1
+        },
+        "非预期错误": []
+      }
+    },
+    {
+      "记录文件": "atomic/atomic.json",
+      "实际检查": {
+        "检查": "atomic",
+        "时间": "2026-10-02T19:44:28.9985278+08:00",
+        "进程编号": 33020,
+        "退出码": 0,
+        "通过": true,
+        "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+        "窗口显示": "Hidden",
+        "命令参数": [
+          "--path",
+          "D:\\autolysis",
+          "--headless",
+          "--fixed-fps",
+          "60",
+          "--script",
+          "res://main-autolysis/systems/item-system/tests/machine_batch_atomic_test.gd",
+          "--",
+          "--evidence-dir",
+          "res://docs/project-autolysis/00-discuss/道具系统/液体罐内容与配药器装填实施证据/20261002/checks/atomic/internal"
+        ],
+        "通过断言数": 120,
+        "预期错误计数": {},
+        "非预期错误": []
+      }
+    },
+    {
+      "记录文件": "main-rendered/main-rendered.json",
+      "实际检查": {
+        "检查": "main-rendered",
+        "时间": "2026-10-02T19:43:08.5862366+08:00",
+        "进程编号": 29784,
+        "退出码": 0,
+        "通过": true,
+        "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+        "窗口显示": "Hidden",
+        "命令参数": [
+          "--path",
+          "D:\\autolysis",
+          "--fixed-fps",
+          "60",
+          "--script",
+          "res://main-autolysis/systems/item-system/tests/liquid_contents_main_rendered_test.gd",
+          "--",
+          "--evidence-dir",
+          "res://docs/project-autolysis/00-discuss/道具系统/液体罐内容与配药器装填实施证据/20261002/main-rendered"
+        ],
+        "通过断言数": 21,
+        "预期错误计数": {},
+        "非预期错误": []
+      }
+    }
+  ],
+  "人工鼠标验收": false,
+  "输入证据": "自动注入输入与正式业务入口",
+  "图形证据": "实际图形后端导出画面"
+}

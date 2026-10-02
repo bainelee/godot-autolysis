@@ -4,6 +4,7 @@ extends StaticBody3D
 
 @export var item_definition: AutolysisItemDefinition
 
+var item_instance: AutolysisItemInstance
 var shelf: AutolysisRawMaterialShelf
 var slot_index: int = -1
 var device_stored: bool = false
@@ -14,6 +15,12 @@ var _pickup_finished: bool = false
 
 
 func _ready() -> void:
+	if item_instance == null:
+		item_instance = AutolysisItemInstance.create(item_definition)
+	if not _has_valid_instance():
+		_disable_world_pickup()
+		push_error("原药缺少合法逐件实例：%s" % get_path())
+		return
 	if device_stored:
 		_disable_world_pickup()
 	_interaction.set_availability_check(_can_interact)
@@ -22,7 +29,21 @@ func _ready() -> void:
 
 
 func is_available_for_pickup() -> bool:
-	return not device_stored and not _pickup_finished and is_inside_tree() and not is_queued_for_deletion()
+	return not device_stored and not _pickup_finished and is_inside_tree() and not is_queued_for_deletion() and _has_valid_instance()
+
+
+func bind_item_instance(instance: AutolysisItemInstance) -> bool:
+	if is_inside_tree() or _pickup_finished or not is_instance_valid(instance) or not instance.is_valid_instance():
+		return false
+	if not instance.definition.is_raw_material or not is_instance_valid(item_definition) or item_definition.item_id != instance.definition.item_id:
+		return false
+	item_definition = instance.definition
+	item_instance = instance
+	return true
+
+
+func _has_valid_instance() -> bool:
+	return is_instance_valid(item_instance) and item_instance.is_valid_instance() and item_instance.definition == item_definition and item_definition.is_raw_material
 
 
 ## 必须先关闭世界拾取再入树；设备失效后此标记仍然保留。
@@ -55,11 +76,13 @@ func finish_pickup() -> void:
 	_pickup_finished = true
 	if is_instance_valid(_interaction):
 		_interaction.is_enabled = false
-	hide()
 	collision_layer = 0
 	collision_mask = 0
 	remove_from_group(&"interactable")
-	queue_free()
+	hide()
+	# 可见性通知可能同步释放所属设备及此来源。
+	if is_instance_valid(self) and not is_queued_for_deletion():
+		queue_free()
 
 
 func _can_interact(actor: Node3D) -> bool:

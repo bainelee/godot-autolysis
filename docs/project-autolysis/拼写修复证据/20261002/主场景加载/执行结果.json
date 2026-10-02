@@ -1,0 +1,13 @@
+{
+  "退出码": 0,
+  "工程": "D:\\autolysis\\project.godot",
+  "参数": [
+    "--headless",
+    "--path",
+    "D:\\autolysis",
+    "--log-file",
+    "D:\\autolysis\\docs\\project-autolysis\\拼写修复证据\\20261002\\主场景加载\\引擎运行.log",
+    "--quit-after",
+    "10"
+  ]
+}

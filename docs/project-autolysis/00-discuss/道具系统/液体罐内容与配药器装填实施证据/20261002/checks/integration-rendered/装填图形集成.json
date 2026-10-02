@@ -1,0 +1,25 @@
+{
+  "检查": "装填图形集成",
+  "时间": "2026-10-02T19:37:24.5487453+08:00",
+  "进程编号": 38484,
+  "退出码": 0,
+  "通过": true,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/liquid_contents_blend_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/道具系统/液体罐内容与配药器装填实施证据/20261002/integration-rendered"
+  ],
+  "通过断言数": 144,
+  "预期错误计数": {
+    "^ERROR: 配药器批次1故障，保持交互关闭：本轮原药来源或实例失效：槽号3；/root/FocusInteractionDemo/MachineA$": 1
+  },
+  "非预期错误": []
+}

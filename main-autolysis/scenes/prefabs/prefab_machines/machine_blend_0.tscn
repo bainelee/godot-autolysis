@@ -12,7 +12,8 @@
 [ext_resource type="Script" uid="uid://dxhbfr6x7ghda" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd" id="11_slot"]
 [ext_resource type="Script" uid="uid://c1pn2s683ojtr" path="res://main-autolysis/components/interactions/autolysis_focus_target.gd" id="12_focus"]
 [ext_resource type="PackedScene" path="res://main-autolysis/components/interactions/autolysis_interaction_component.tscn" id="13_interaction"]
-[ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd" id="14_handle"]
+[ext_resource type="Script" uid="uid://3ht375u5ktdi" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd" id="14_handle"]
+[ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_tank_place.gd" id="15_tank_place"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7hmvv"]
 size = Vector3(1.8, 1.1999999, 0.95)
@@ -241,7 +242,7 @@ _data = {
 &"blend_slot_3_open": SubResource("Animation_blend_slot_3_open")
 }
 
-[node name="machine_blend_0" type="StaticBody3D" unique_id=1591611264 node_paths=PackedStringArray("focus_target", "reference_camera", "root_interaction", "animation_source", "slots", "handle") groups=["interactable"]]
+[node name="machine_blend_0" type="StaticBody3D" unique_id=1591611264 node_paths=PackedStringArray("focus_target", "reference_camera", "root_interaction", "animation_source", "slots", "handle", "tank_place", "processing_timer") groups=["interactable"]]
 script = ExtResource("10_machine")
 focus_target = NodePath("FocusTarget")
 reference_camera = NodePath("focus_camera")
@@ -249,6 +250,8 @@ root_interaction = NodePath("InteractionComponent")
 animation_source = NodePath("AnimationPlayer")
 slots = [NodePath("blend_slot_0"), NodePath("blend_slot_1"), NodePath("blend_slot_2"), NodePath("blend_slot_3")]
 handle = NodePath("switch_handle_blend_mechine_can_reset/handle_interaction")
+tank_place = NodePath("liquid_tank_place_0")
+processing_timer = NodePath("ProcessingTimer")
 
 [node name="FocusTarget" type="Node3D" parent="." unique_id=478468798]
 script = ExtResource("12_focus")
@@ -613,49 +616,56 @@ skeleton = NodePath("../../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19999999, -0.13500002)
 shape = SubResource("BoxShape3D_fsl51")
 
-[node name="luquid_tank_slot_0" type="StaticBody3D" parent="." unique_id=1599987540]
+[node name="liquid_tank_place_0" type="StaticBody3D" parent="." unique_id=1599987540 node_paths=PackedStringArray("liquid_tank_anchor", "transfer_interaction", "collision_shape")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35000038, 0.59999996, 0.09999995)
 collision_layer = 40
+script = ExtResource("15_tank_place")
+liquid_tank_anchor = NodePath("liquid_tank_slot")
+transfer_interaction = NodePath("InteractionComponent")
+collision_shape = NodePath("collision_liquid_tank_slot_0")
 
-[node name="collision_luquid_tank_slot_0" type="CollisionShape3D" parent="luquid_tank_slot_0" unique_id=250055092]
+[node name="InteractionComponent" parent="liquid_tank_place_0" instance=ExtResource("13_interaction")]
+is_enabled = false
+
+[node name="collision_liquid_tank_slot_0" type="CollisionShape3D" parent="liquid_tank_place_0" unique_id=250055092]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9604645e-08, 0.005000055)
 shape = SubResource("BoxShape3D_vnha0")
 debug_color = Color(0.84678787, 0.37380517, 0.13031688, 0.41960785)
 
-[node name="mesh" type="Node3D" parent="luquid_tank_slot_0" unique_id=210375152]
+[node name="mesh" type="Node3D" parent="liquid_tank_place_0" unique_id=210375152]
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D13" type="MeshInstance3D" parent="luquid_tank_slot_0/mesh" unique_id=61120911]
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="liquid_tank_place_0/mesh" unique_id=61120911]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0, 0)
 material_override = ExtResource("7_yvcpe")
 mesh = SubResource("BoxMesh_ind84")
 skeleton = NodePath("../../..")
 
-[node name="MeshInstance3D14" type="MeshInstance3D" parent="luquid_tank_slot_0/mesh" unique_id=66920265]
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="liquid_tank_place_0/mesh" unique_id=66920265]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35000002, 0, 0)
 material_override = ExtResource("7_yvcpe")
 mesh = SubResource("BoxMesh_ind84")
 skeleton = NodePath("../../..")
 
-[node name="MeshInstance3D15" type="MeshInstance3D" parent="luquid_tank_slot_0/mesh" unique_id=1863612309]
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="liquid_tank_place_0/mesh" unique_id=1863612309]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 0, -0.25)
 material_override = ExtResource("3_c0evn")
 mesh = SubResource("BoxMesh_ml0b8")
 skeleton = NodePath("../../..")
 
-[node name="MeshInstance3D16" type="MeshInstance3D" parent="luquid_tank_slot_0/mesh" unique_id=2056294242]
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="liquid_tank_place_0/mesh" unique_id=2056294242]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 0.25, 0.049999982)
 material_override = ExtResource("7_yvcpe")
 mesh = SubResource("BoxMesh_k768n")
 skeleton = NodePath("../../..")
 
-[node name="MeshInstance3D17" type="MeshInstance3D" parent="luquid_tank_slot_0/mesh" unique_id=1279590557]
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="liquid_tank_place_0/mesh" unique_id=1279590557]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, -0.25, 0.049999982)
 material_override = ExtResource("7_yvcpe")
 mesh = SubResource("BoxMesh_k768n")
 skeleton = NodePath("../../..")
 
-[node name="luquid_tank_slot" type="Node3D" parent="luquid_tank_slot_0" unique_id=1824775236]
+[node name="liquid_tank_slot" type="Node3D" parent="liquid_tank_place_0" unique_id=1824775236]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 1.1920929e-07, 0.09999974)
 
 [node name="switch_handle_blend_mechine_can_reset" type="Node3D" parent="." unique_id=48086131]
@@ -700,7 +710,7 @@ script = ExtResource("14_handle")
 device_root = NodePath("../..")
 drag_interaction = NodePath("InteractionComponent")
 collision_shape = NodePath("collision_handle_interaction")
-mouse_to_handle_ratio = 0.0009999999999999998
+mouse_to_handle_ratio = 0.00099999999999999
 
 [node name="InteractionComponent" parent="switch_handle_blend_mechine_can_reset/handle_interaction" unique_id=1143521659 instance=ExtResource("13_interaction")]
 is_enabled = false
@@ -724,3 +734,9 @@ debug_color = Color(0.7948737, 0.4256532, 5.7756904e-07, 0.41960785)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1384419403]
 callback_mode_process = 0
 libraries/ = SubResource("AnimationLibrary_fsl51")
+
+[node name="ProcessingTimer" type="Timer" parent="."]
+process_mode = 1
+process_callback = 0
+wait_time = 2.0
+one_shot = true

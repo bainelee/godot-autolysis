@@ -3,7 +3,7 @@
 [ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="1_cxe7d"]
 [ext_resource type="Material" uid="uid://blu42xw7rpe7b" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_2.tres" id="2_o063d"]
 [ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="3_82rg3"]
-[ext_resource type="PackedScene" uid="uid://bbqs75e8vtnql" path="res://main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn" id="4_lm03y"]
+[ext_resource type="PackedScene" uid="uid://bbqs75e8vtnql" path="res://main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn" id="4_lm03y"]
 [ext_resource type="Script" path="res://main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd" id="5_cabinet"]
 [ext_resource type="PackedScene" path="res://main-autolysis/components/interactions/autolysis_interaction_component.tscn" id="6_interaction"]
 
@@ -88,8 +88,8 @@ _data = {
 [node name="cabinet_workroom_0" type="StaticBody3D" unique_id=1791832651 node_paths=PackedStringArray("slot_0", "slot_1", "door_body", "toggle_interaction", "placement_body", "placement_interaction", "animation_player")]
 collision_layer = 8
 script = ExtResource("5_cabinet")
-slot_0 = NodePath("luquid_tank_slot_0")
-slot_1 = NodePath("luquid_tank_slot_1")
+slot_0 = NodePath("liquid_tank_slot_0")
+slot_1 = NodePath("liquid_tank_slot_1")
 door_body = NodePath("cabinet_door_left_root")
 toggle_interaction = NodePath("cabinet_door_left_root/InteractionComponent")
 placement_body = NodePath("LiquidTankPlacementBody")
@@ -174,15 +174,15 @@ shape = SubResource("BoxShape3D_liquid_placement")
 
 [node name="InteractionComponent" parent="LiquidTankPlacementBody" unique_id=2036571760 instance=ExtResource("6_interaction")]
 
-[node name="luquid_tank_slot_0" type="Node3D" parent="." unique_id=432606996]
+[node name="liquid_tank_slot_0" type="Node3D" parent="." unique_id=432606996]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8499999, 0.24999999, 0.65)
 
-[node name="luquid_tank_0" parent="luquid_tank_slot_0" unique_id=1823254939 instance=ExtResource("4_lm03y")]
+[node name="liquid_tank_0" parent="liquid_tank_slot_0" unique_id=1823254939 instance=ExtResource("4_lm03y")]
 
-[node name="luquid_tank_slot_1" type="Node3D" parent="." unique_id=280658325]
+[node name="liquid_tank_slot_1" type="Node3D" parent="." unique_id=280658325]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.30999994, 0.24999999, 0.65)
 
-[node name="luquid_tank_1" parent="luquid_tank_slot_1" unique_id=821845277 instance=ExtResource("4_lm03y")]
+[node name="liquid_tank_1" parent="liquid_tank_slot_1" unique_id=821845277 instance=ExtResource("4_lm03y")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1968799029]
 callback_mode_process = 0

@@ -28,6 +28,9 @@ func query_target(camera: Camera3D, mouse_position: Vector2, target: AutolysisFo
 	var handle: AutolysisBlendHandle = target.get_handle_for_target(first_body)
 	if handle != null:
 		return handle
+	var tank_place: AutolysisBlendTankPlace = target.get_tank_place_for_target(first_body)
+	if tank_place != null:
+		return tank_place
 	var slot: AutolysisBlendSlot = target.get_slot_for_target(first_body)
 	if slot == null:
 		return null

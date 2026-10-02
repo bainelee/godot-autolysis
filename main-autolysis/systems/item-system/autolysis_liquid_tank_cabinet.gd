@@ -52,7 +52,7 @@ func get_configuration_error() -> String:
 		return "柜子未进入有效场景树"
 	if not _node_is_live(slot_0) or not _node_is_live(slot_1) or slot_0 == slot_1:
 		return "两个槽锚点必须有效且互不重复"
-	if slot_0.get_parent() != self or slot_1.get_parent() != self or slot_0.name != &"luquid_tank_slot_0" or slot_1.name != &"luquid_tank_slot_1":
+	if slot_0.get_parent() != self or slot_1.get_parent() != self or slot_0.name != &"liquid_tank_slot_0" or slot_1.name != &"liquid_tank_slot_1":
 		return "两个槽锚点必须绑定本柜编号零和一的直接子节点"
 	if not _node_is_live(door_body) or door_body.get_parent() != self:
 		return "活动门体必须为本柜直接子节点"
@@ -102,7 +102,7 @@ func find_first_empty_slot() -> int:
 
 
 func owns_item(item: AutolysisLiquidTank) -> bool:
-	if not _node_is_live(item) or not item.cabinet_stored or item.fixed_installation or item.cabinet != self:
+	if not _node_is_live(item) or not item.cabinet_stored or item.fixed_installation or item.cabinet != self or item.blend_stored or is_instance_valid(item.blend_place):
 		return false
 	var slot: Node3D = get_slot_node(item.slot_index)
 	return slot != null and get_item_at_slot(item.slot_index) == item and item.get_parent() == slot
@@ -158,7 +158,7 @@ func try_attach_prepared_item(index: int, item: AutolysisLiquidTank) -> bool:
 		return false
 	if not is_instance_valid(item) or item.is_queued_for_deletion() or item.get_parent() != null or item.is_inside_tree():
 		return false
-	if not item.cabinet_stored or item.cabinet != self or item.slot_index != index or item.fixed_installation or not _valid_definition(item.item_definition):
+	if not item.cabinet_stored or item.cabinet != self or item.slot_index != index or item.fixed_installation or not _valid_item_instance(item) or item.blend_stored or is_instance_valid(item.blend_place):
 		return false
 	var slot: Node3D = get_slot_node(index)
 	if slot == null or not _live_slot_children(slot).is_empty():
@@ -169,7 +169,7 @@ func try_attach_prepared_item(index: int, item: AutolysisLiquidTank) -> bool:
 		return false
 	if not _node_is_live(item) or not _node_is_live(slot) or get_slot_node(index) != slot or item.get_parent() != slot or _live_slot_children(slot).size() != 1:
 		return false
-	if not item.cabinet_stored or item.cabinet != self or item.slot_index != index or item.fixed_installation or not _valid_definition(item.item_definition):
+	if not item.cabinet_stored or item.cabinet != self or item.slot_index != index or item.fixed_installation or not _valid_item_instance(item) or item.blend_stored or is_instance_valid(item.blend_place):
 		return false
 	item.transform = Transform3D.IDENTITY
 	_items[index] = item
@@ -205,7 +205,7 @@ func _register_initial_items() -> bool:
 		if slot.get_child_count() == 0:
 			continue
 		var item: AutolysisLiquidTank = slot.get_child(0) as AutolysisLiquidTank
-		if not _node_is_live(item) or item.fixed_installation or not item.cabinet_stored or item.cabinet != self or item.slot_index != index or not _valid_definition(item.item_definition):
+		if not _node_is_live(item) or item.fixed_installation or not item.cabinet_stored or item.cabinet != self or item.slot_index != index or not _valid_item_instance(item) or item.blend_stored or is_instance_valid(item.blend_place):
 			push_error("液体罐柜初始槽内容或来源无效：%s" % slot.get_path())
 			return false
 		if initial.has(item):
@@ -225,7 +225,7 @@ func _register_initial_items() -> bool:
 ## 配置失败也不能让柜内初始罐退回无主拾取；登记仍由完整校验决定。
 func _protect_initial_sources() -> void:
 	for index: int in 2:
-		var slot: Node = get_node_or_null("luquid_tank_slot_%d" % index)
+		var slot: Node = get_node_or_null("liquid_tank_slot_%d" % index)
 		if not is_instance_valid(slot):
 			continue
 		for child: Node in slot.get_children():
@@ -264,6 +264,10 @@ func _live_slot_children(slot: Node3D) -> Array[Node]:
 
 func _valid_definition(definition: AutolysisItemDefinition) -> bool:
 	return is_instance_valid(definition) and definition.is_valid_definition() and not definition.is_raw_material and definition.item_id == &"liquid_tank"
+
+
+func _valid_item_instance(item: AutolysisLiquidTank) -> bool:
+	return is_instance_valid(item) and is_instance_valid(item.item_instance) and item.item_instance.is_valid_instance() and item.item_instance.definition == item.item_definition and _valid_definition(item.item_definition)
 
 
 func _valid_component(body: PhysicsBody3D, component: AutolysisInteractionComponent) -> bool:

@@ -2,7 +2,7 @@ extends "res://main-autolysis/player/tests/player_smoke_test.gd"
 ## 正式预制体、玩家、中心射线与鼠标事件的液体罐验收。
 
 const CABINET_PATH: String = "res://main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn"
-const TANK_PATH: String = "res://main-autolysis/scenes/prefabs/prefab_machines/luquid_tank_0.tscn"
+const TANK_PATH: String = "res://main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn"
 const LIQUID: AutolysisItemDefinition = preload("res://main-autolysis/systems/item-system/items/liquid_tank.tres")
 const CAFFEINE: AutolysisItemDefinition = preload("res://main-autolysis/systems/item-system/items/caffeine.tres")
 
@@ -296,7 +296,7 @@ func _test_main_scene() -> void:
 	Input.action_release("crouch")
 	var fixed_count: int = 0
 	for machine_name: String in ["machine_packing_0", "machine_wave_rebuilder_0", "machine_phase_separator_0"]:
-		var tank: AutolysisLiquidTank = world.get_node("interaction_prefabs/machines/" + machine_name + "/luquid_tank_0") as AutolysisLiquidTank
+		var tank: AutolysisLiquidTank = world.get_node("interaction_prefabs/machines/" + machine_name + "/liquid_tank_0") as AutolysisLiquidTank
 		check(tank != null and tank.fixed_installation and not tank.is_available_for_pickup(), "机器嵌入罐固定装配且不可拾取：" + machine_name + "（机器节点）")
 		if tank != null:
 			check(tank.collision_layer != 0, "固定机器罐保留原物理碰撞")

@@ -1,0 +1,237 @@
+[
+  {
+    "文件": "main-autolysis/assets/materials/liquid_tank/liquid_tank_empty.tres",
+    "算法": "SHA256",
+    "散列": "178F46CECCCCD965C5A3F389AA6C8E97DB5294B6C6C66135DF39362CBA792EFF"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/liquid_tank/liquid_tank_filled.tres",
+    "算法": "SHA256",
+    "散列": "28E0C2E709F8E66D39DEC060DCE7389E1FB79D10ED0AA754C2EDB2F02DA82F72"
+  },
+  {
+    "文件": "main-autolysis/components/interactions/autolysis_focus_target.gd",
+    "算法": "SHA256",
+    "散列": "5F69BAC106F7E9782C9E7C599E4ECF47E7D858028E8E5D9A75C1142148EF7EBA"
+  },
+  {
+    "文件": "main-autolysis/player/autolysis_player.gd",
+    "算法": "SHA256",
+    "散列": "9C82DC959ADCBB5FE72CAE3F76ABBD58BD74CDBDFB7D52970174F2158E22EC37"
+  },
+  {
+    "文件": "main-autolysis/player/autolysis_player.tscn",
+    "算法": "SHA256",
+    "散列": "209987F16D30062EF025662AC1EBD3079534C6AE7548DEEA53B67A0EB67FA3FE"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_focus_controller.gd",
+    "算法": "SHA256",
+    "散列": "FEDB2A2DCA74CA3CB40C81C06080C7EC7D3BB89DF9A287F62DDD7BE18394DA22"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_focus_ray_query.gd",
+    "算法": "SHA256",
+    "散列": "745A279488EE1452606A391EA2A5CFEC87A3B5DB9D0B37500A3D7218FEFE0032"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_held_item_presenter.gd",
+    "算法": "SHA256",
+    "散列": "0E71D08B4F9ACFF32D707C0039DABEBE4D7B4CC27398B457E38419AAD8FCE3A5"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_interaction_controller.gd",
+    "算法": "SHA256",
+    "散列": "B8B9B4311CF9C15A090C826FD205F8D4B182A72FCB4BCE4458C9BAA8856667F7"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_inventory_controller.gd",
+    "算法": "SHA256",
+    "散列": "019DF2C98F852A40DAA53EA55FFC14F61E5D46559043D95AF2A9C461B4C10B4F"
+  },
+  {
+    "文件": "main-autolysis/player/tests/blend_handle_drag_test.gd",
+    "算法": "SHA256",
+    "散列": "E348897B273F4D55873C7FC1A5A8C961A5F2695F5003C7901156D381E9FF6070"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn",
+    "算法": "SHA256",
+    "散列": "9A8FB1FD9B1D491541121F943B9D390606B93BD15E9BF195CAEE2B5E0A98179E"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn",
+    "算法": "SHA256",
+    "散列": "E10FC67A60B350A054ADEB5A1874A23F0D2C11B2B16ECB3D91085D5511201DF1"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn",
+    "算法": "SHA256",
+    "散列": "D5E01D8A4616342C7D185A2601573E29219D99792A8C0CC4EB9BA96E2233976A"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/machine_phase_separator_0.tscn",
+    "算法": "SHA256",
+    "散列": "605ABD03943F6AF3026CA44A71584173EE50A5B91B6BFC26E0D242EEB681E333"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/machine_wave_rebuilder_0.tscn",
+    "算法": "SHA256",
+    "散列": "BF9FFF1DB8318D995A0C63CB877BB9636B1E346FD95E736DBD05BCB3CF24BC4E"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd",
+    "算法": "SHA256",
+    "散列": "B8CE00A54D4D919D0CB4F0EC054A56A4494514A95FD0DDDE52AF487154D758DA"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd",
+    "算法": "SHA256",
+    "散列": "16533AC79CADFD2A1AF41BD3A04E5CF201732A67E920DF6074788AB6A022B5D4"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd",
+    "算法": "SHA256",
+    "散列": "1F7E4F9BC2332E21EE6EFF75EC82B78A70695BD32F40B827BB999B0F4E02E960"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_tank_place.gd",
+    "算法": "SHA256",
+    "散列": "CB0713758D63681D22D038862087EED6FC1F4A9B632D6B5FB24C65AA9270BD78"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_tank_place.gd.uid",
+    "算法": "SHA256",
+    "散列": "F7191B9F620271CA600DF7B350A8A486CECDFC2562B3FA5CBB4FDD039A9BFDD5"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/visuals/liquid_tank_visual.tscn",
+    "算法": "SHA256",
+    "散列": "3CEAEE667D9E439FE7BFD233D58F3A0DE5273F4895593BE4EEC1CCC24D08059F"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn",
+    "算法": "SHA256",
+    "散列": "E823D9794A42E3EE8A99D70969F39DB457564882CFB289D3FCFB893922FF1FFE"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_raw_materials/rm_sodium_benzoate_0.tscn",
+    "算法": "SHA256",
+    "散列": "57F96A7E2497FA90CADF6BCAF076394A388B05C73A93F8EA03A5AB999164161F"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_item_instance.gd",
+    "算法": "SHA256",
+    "散列": "DA3C7C4D8BAFF7C65B3755DF619C45BA83BEC2294019BB284A326834408DD20C"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_item_instance.gd.uid",
+    "算法": "SHA256",
+    "散列": "5BC6C53089E20CAE4E58C31BCF53A5429A9820B5B87F2BB6367DFA0E6B892598"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_liquid_contents.gd",
+    "算法": "SHA256",
+    "散列": "7C91B3547D92C1012295298E30BE8E39F167DADD59815FBFCA1C6E9B7D7A422A"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_liquid_contents.gd.uid",
+    "算法": "SHA256",
+    "散列": "0A912A2F9D0E3475B7C9B5EAA7341DF5BEA343193B213237EB9001C58F81234C"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd",
+    "算法": "SHA256",
+    "散列": "5A51ADF0725CB6EF3602EA9B2D246FFD238C52DB1CD9610D630A029CB153ED7D"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_liquid_tank_visual.gd",
+    "算法": "SHA256",
+    "散列": "9EB1C287F97C96338245BA3B2BA2A6778E5CB2DDFC515D74C31C432D16CF58F8"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_liquid_tank_visual.gd.uid",
+    "算法": "SHA256",
+    "散列": "A255557CCE4DF6904C7C5D94F8A5812F2740C1920A2F257A17C72F3CB63A2F2E"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_liquid_tank.gd",
+    "算法": "SHA256",
+    "散列": "73192181CB9449095BAC6E8BEFA570F3AD6A4B51A5464A25DEF88AE530239BC1"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_raw_material.gd",
+    "算法": "SHA256",
+    "散列": "ED243DF2C647A008E79A10A863C85CBF9B7A72DD08872CF1C5EA2CA53EDE996F"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/items/liquid_tank.tres",
+    "算法": "SHA256",
+    "散列": "74EE98EEBA9888785BDD8A49DE3DEABD039099806DDEB74B25577448E71E2CA9"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/liquid_contents_blend_test.gd",
+    "算法": "SHA256",
+    "散列": "F6838F1EEAED7AE322F59B7ABB0F0E40C5E5D5F57A88E39E01F7DA210EB06BCE"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/liquid_contents_blend_test.gd.uid",
+    "算法": "SHA256",
+    "散列": "4254D714752E3E1C6B4D3117A2A7D11E373DA67E0B9757CB1B8487C1BF25111F"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/liquid_contents_main_rendered_test.gd",
+    "算法": "SHA256",
+    "散列": "744119F17223B89E9D7557C90EC2111469CD00700A29CE6A6D00B035A031B115"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/liquid_contents_main_rendered_test.gd.uid",
+    "算法": "SHA256",
+    "散列": "62CAFE4C1209B3D48A94E55A750425C5515204625179FA0E15AA62D342B676D0"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd",
+    "算法": "SHA256",
+    "散列": "E01CFE69CAA528E078878A91238D8352DC37CBBD1DADEEAC7A9F36FBF60D2AF8"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/liquid_tank_cabinet_rendered_test.gd",
+    "算法": "SHA256",
+    "散列": "535B1432075E1EBDB4DBA88ABF0E0B7547AB57980B50FAB2491EEF5085F69131"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd",
+    "算法": "SHA256",
+    "散列": "4875D3CDAF1BA59534A049663F3939278B0DE20FE9D0D99C4696B0688618FAE6"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/machine_batch_atomic_test.gd",
+    "算法": "SHA256",
+    "散列": "BC1D9A44BEFBB73FB38EC76C650ECC9933D189CCB00DF0B228EC10E50BE10140"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/machine_batch_atomic_test.gd.uid",
+    "算法": "SHA256",
+    "散列": "94D431C4AD0BA7E6C0ABF0373048B3D8910D7218A5C934A64E3BFF00F00F70D6"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/run_item_check.ps1",
+    "算法": "SHA256",
+    "散列": "5B39F580B8EFE0C7327F85F66FF208D0B5B37CC5595B863BD09DC654BABBAA4F"
+  },
+  {
+    "文件": "main-autolysis/ui/inventory/autolysis_liquid_contents_panel.gd",
+    "算法": "SHA256",
+    "散列": "8C54C1A552E652548494350F6F5DEFE3A161D5C956287703AC7BAC3E0EC2720B"
+  },
+  {
+    "文件": "main-autolysis/ui/inventory/autolysis_liquid_contents_panel.gd.uid",
+    "算法": "SHA256",
+    "散列": "ABF26AC976EC75DD894C61E7F457C1A3201F8E17B177166CB8B4E7F74FA1B198"
+  },
+  {
+    "文件": "main-autolysis/ui/inventory/autolysis_liquid_contents_panel.tscn",
+    "算法": "SHA256",
+    "散列": "CCEFD6A2E15735E93C8AAC9B7FE09917BCA0D676A4C8A2886B8363D6779646C6"
+  }
+]
