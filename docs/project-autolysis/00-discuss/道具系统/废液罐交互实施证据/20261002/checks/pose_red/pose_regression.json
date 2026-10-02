@@ -1,0 +1,30 @@
+{
+  "检查": "pose_regression",
+  "时间": "2026-10-02T22:43:30.9257936+08:00",
+  "进程编号": 40568,
+  "退出码": 1,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/waste_liquid_tank_behavior_test.gd",
+    "--",
+    "--pose-regression-only",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/道具系统/废液罐交互实施证据/20261002/checks/pose_red/internal"
+  ],
+  "通过断言数": 8,
+  "预期错误计数": {},
+  "非预期错误": [
+    "失败：主场景旋转后自然完成开放处置与关闭许可",
+    "失败：主场景旋转后自然完成开放处置与关闭许可",
+    "ERROR: 废液罐盖子故障，交互已锁闭：/root/@Node3D@2/主场景旋转回归自然；盖子动画完成后实际物理端帧不符合请求",
+    "ERROR: 废液罐盖子故障，交互已锁闭：/root/@Node3D@2/主场景旋转回归暂停；盖子动画完成后实际物理端帧不符合请求"
+  ]
+}

@@ -1,0 +1,33 @@
+SCRIPT ERROR: Trying to assign an array of type "Array" to a variable of type "Array[Dictionary]".
+   at: _component_contract (res://main-autolysis/systems/item-system/tests/waste_liquid_tank_behavior_test.gd:132)
+   GDScript backtrace (most recent call first):
+       [0] _component_contract (res://main-autolysis/systems/item-system/tests/waste_liquid_tank_behavior_test.gd:132)
+       [1] _test_matrix_and_selection (res://main-autolysis/systems/item-system/tests/waste_liquid_tank_behavior_test.gd:161)
+       [2] _run (res://main-autolysis/systems/item-system/tests/waste_liquid_tank_behavior_test.gd:45)
+SCRIPT ERROR: Trying to assign an array of type "Array" to a variable of type "Array[Dictionary]".
+   at: _component_contract (res://main-autolysis/systems/item-system/tests/waste_liquid_tank_behavior_test.gd:132)
+   GDScript backtrace (most recent call first):
+       [0] _component_contract (res://main-autolysis/systems/item-system/tests/waste_liquid_tank_behavior_test.gd:132)
+       [1] _test_matrix_and_selection (res://main-autolysis/systems/item-system/tests/waste_liquid_tank_behavior_test.gd:162)
+       [2] _run (res://main-autolysis/systems/item-system/tests/waste_liquid_tank_behavior_test.gd:45)
+SCRIPT ERROR: Trying to return an array of type "Array" where expected return type is "Array[int]".
+   at: AutolysisItemInstance.get_wave_coordinates (res://main-autolysis/systems/item-system/autolysis_item_instance.gd:44)
+   GDScript backtrace (most recent call first):
+       [0] get_wave_coordinates (res://main-autolysis/systems/item-system/autolysis_item_instance.gd:44)
+       [1] _test_matrix_and_selection (res://main-autolysis/systems/item-system/tests/waste_liquid_tank_behavior_test.gd:191)
+       [2] _frames (res://main-autolysis/systems/item-system/tests/waste_liquid_tank_behavior_test.gd:75)
+ERROR: 废液罐盖子故障，交互已锁闭：/root/@Node3D@2/废液罐运动故障0；盖子动画被中断、替换或改变了播放方向
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _set_motion_fault (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_waste_liquid_storage_tank.gd:194)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_waste_liquid_storage_tank.gd:160)
+ERROR: 废液罐盖子故障，交互已锁闭：/root/@Node3D@2/废液罐运动故障1；盖子动画被中断、替换或改变了播放方向
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _set_motion_fault (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_waste_liquid_storage_tank.gd:194)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_waste_liquid_storage_tank.gd:160)
+ERROR: 废液罐盖子故障，交互已锁闭：/root/@Node3D@2/废液罐运动故障3；动画播放器或指定开盖动画无效
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _set_motion_fault (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_waste_liquid_storage_tank.gd:194)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_waste_liquid_storage_tank.gd:148)

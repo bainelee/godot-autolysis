@@ -1,0 +1,13 @@
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/waste_liquid_storage_tank_0.tscn b/main-autolysis/scenes/prefabs/prefab_machines/waste_liquid_storage_tank_0.tscn
+index a503bc5..022e563 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/waste_liquid_storage_tank_0.tscn
++++ b/main-autolysis/scenes/prefabs/prefab_machines/waste_liquid_storage_tank_0.tscn
+@@ -104,7 +104,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17999998, 0.25, 0.19999999)
+ material_override = ExtResource("3_5vnea")
+ mesh = SubResource("BoxMesh_wwhyf")
+ 
+-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1217657102]
++[node name="collision_waste_liquid_storage_tank" type="CollisionShape3D" parent="." unique_id=1217657102]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 0.25, 0.19999999)
+ shape = SubResource("BoxShape3D_je7p2")
+ 

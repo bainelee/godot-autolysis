@@ -1,0 +1,37 @@
+{
+  "检查": "waste_behavior",
+  "时间": "2026-10-02T22:36:53.3306903+08:00",
+  "进程编号": 43092,
+  "退出码": 1,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/waste_liquid_tank_behavior_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/道具系统/废液罐交互实施证据/20261002/checks/behavior/internal"
+  ],
+  "通过断言数": 184,
+  "预期错误计数": {
+    "^ERROR: 废液罐盖子故障，交互已锁闭：/root/@Node3D@[0-9]+/废液罐运动故障0；盖子动画被中断、替换或改变了播放方向$": 1,
+    "^ERROR: 废液罐盖子故障，交互已锁闭：/root/@Node3D@[0-9]+/废液罐运动故障3；动画播放器或指定开盖动画无效$": 1,
+    "^ERROR: 废液罐盖子故障，交互已锁闭：/root/@Node3D@[0-9]+/废液罐运动故障2；盖子稳定状态与实际旋转或播放状态不一致$": 0,
+    "^ERROR: 废液罐盖子故障，交互已锁闭：/root/@Node3D@[0-9]+/废液罐运动故障1；盖子动画被中断、替换或改变了播放方向$": 1
+  },
+  "非预期错误": [
+    "失败：倒空后内容引用移除且相位与波形读取全部归零",
+    "失败：动画中断、实际端帧损坏或播放器释放库存处置查询与执行同时拒绝",
+    "失败：动画中断、实际端帧损坏或播放器释放真实罐体入口不分发处置请求",
+    "失败：运动或配置故障关闭后续盖子许可",
+    "SCRIPT ERROR: Trying to assign an array of type \"Array\" to a variable of type \"Array[Dictionary]\".",
+    "SCRIPT ERROR: Trying to assign an array of type \"Array\" to a variable of type \"Array[Dictionary]\".",
+    "SCRIPT ERROR: Trying to return an array of type \"Array\" where expected return type is \"Array[int]\"."
+  ]
+}

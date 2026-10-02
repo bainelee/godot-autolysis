@@ -3,6 +3,8 @@
 [ext_resource type="Material" uid="uid://d238nmu8fostl" path="res://main-autolysis/assets/materials/base_color/mat_base_black_0.tres" id="2_p3aev"]
 [ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="3_5vnea"]
 [ext_resource type="Material" uid="uid://v2cw5dvy875j" path="res://main-autolysis/assets/materials/base_color/mat_base_red_3.tres" id="3_je7p2"]
+[ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_waste_liquid_storage_tank.gd" id="4_waste_controller"]
+[ext_resource type="Script" path="res://main-autolysis/components/interactions/autolysis_interaction_component.gd" id="5_interaction"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4qoi"]
 albedo_color = Color(0.68, 0.7, 0.66, 1)
@@ -75,7 +77,15 @@ _data = {
 &"lid_open": SubResource("Animation_je7p2")
 }
 
-[node name="waste_liquid_storage_tank_0" type="StaticBody3D" unique_id=647522578]
+[node name="waste_liquid_storage_tank_0" type="StaticBody3D" unique_id=647522578 node_paths=PackedStringArray("lid_body", "lid_interaction", "disposal_interaction", "animation_player") groups=["interactable"]]
+script = ExtResource("4_waste_controller")
+lid_body = NodePath("waste_liquid_storage_tank_lid")
+lid_interaction = NodePath("waste_liquid_storage_tank_lid/LidInteraction")
+disposal_interaction = NodePath("DisposalInteraction")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="DisposalInteraction" type="Node3D" parent="."]
+script = ExtResource("5_interaction")
 
 [node name="mesh" type="Node3D" parent="." unique_id=962489499]
 
@@ -104,12 +114,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17999998, 0.25, 0.19999999)
 material_override = ExtResource("3_5vnea")
 mesh = SubResource("BoxMesh_wwhyf")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1217657102]
+[node name="collision_waste_liquid_storage_tank" type="CollisionShape3D" parent="." unique_id=1217657102]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 0.25, 0.19999999)
 shape = SubResource("BoxShape3D_je7p2")
 
-[node name="waste_liquid_storage_tank_lid" type="AnimatableBody3D" parent="." unique_id=1917499476]
+[node name="waste_liquid_storage_tank_lid" type="AnimatableBody3D" parent="." unique_id=1917499476 groups=["interactable"]]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0.5, 1.4901161e-08)
+sync_to_physics = true
+
+[node name="LidInteraction" type="Node3D" parent="waste_liquid_storage_tank_lid"]
+script = ExtResource("5_interaction")
 
 [node name="mesh" type="Node3D" parent="waste_liquid_storage_tank_lid" unique_id=2112536878]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.050000012, 0.19999999)
@@ -139,4 +153,6 @@ shape = SubResource("BoxShape3D_p3aev")
 debug_color = Color(0.94073033, 0.20392862, 0.35286155, 0.41960785)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=551360107]
+callback_mode_process = 0
+playback_auto_capture = false
 libraries/ = SubResource("AnimationLibrary_5vnea")

@@ -1,0 +1,25 @@
+{
+  "检查": "pose_regression",
+  "时间": "2026-10-02T22:44:11.3915913+08:00",
+  "进程编号": 42660,
+  "退出码": 0,
+  "通过": true,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/waste_liquid_tank_behavior_test.gd",
+    "--",
+    "--pose-regression-only",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/道具系统/废液罐交互实施证据/20261002/checks/pose_green/internal"
+  ],
+  "通过断言数": 14,
+  "预期错误计数": {},
+  "非预期错误": []
+}

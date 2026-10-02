@@ -1,0 +1,154 @@
+diff --git a/main-autolysis/player/components/autolysis_inventory_controller.gd b/main-autolysis/player/components/autolysis_inventory_controller.gd
+index 9469af9..2eb3b55 100644
+--- a/main-autolysis/player/components/autolysis_inventory_controller.gd
++++ b/main-autolysis/player/components/autolysis_inventory_controller.gd
+@@ -489,6 +489,77 @@ func _end_blend_tank_transfer(place: Variant) -> void:
+ 		_busy = false
+ 
+ 
++func can_dispose_in_waste_tank(actor: Node3D, tank: AutolysisWasteLiquidStorageTank) -> bool:
++	if not _can_query_liquid_actor(actor) or not _node_is_live(tank) or not tank.can_dispose(actor, _publishing):
++		return false
++	var instance: AutolysisItemInstance = get_focused_instance()
++	return _is_waste_disposable(instance)
++
++
++func try_dispose_in_waste_tank(actor: Node3D, tank: AutolysisWasteLiquidStorageTank) -> bool:
++	if _busy or not can_dispose_in_waste_tank(actor, tank):
++		return false
++	var original_index: int = _focused_index
++	var instance: AutolysisItemInstance = get_focused_instance()
++	var definition: AutolysisItemDefinition = instance.definition
++	var contents: AutolysisLiquidContents = instance.liquid_contents
++	var presenter: AutolysisHeldItemPresenter = _presenter
++	var display: Node3D = presenter.get_display()
++	_busy = true
++	if not tank.try_begin_disposal(actor):
++		_busy = false
++		return false
++	# 倒空前只检查既有显示依赖，不创建新罐或新手持模型。
++	if contents != null and (not _node_is_live(display) or display.get_parent() != presenter or not AutolysisLiquidTankVisual.can_apply(display)):
++		_end_waste_disposal(tank)
++		return false
++	# 许可回调与设备锁获取后，再次核对本次格、实例及内容引用。
++	if not _waste_transaction_valid(actor, tank, original_index, instance, definition, contents, presenter, display):
++		_end_waste_disposal(tank)
++		return false
++	if contents != null:
++		if not instance.set_liquid_contents(null, false):
++			_end_waste_disposal(tank)
++			return false
++		# 清空与材质提交均无回调；先更新已验证模型，保证提前订阅的观察者也读到空罐。
++		AutolysisLiquidTankVisual.apply_instance(display, instance)
++		# 内容提交后才通知；观察者可读最终状态，写入仍由两级锁拒绝。
++		_publishing = true
++		instance.emit_changed()
++	else:
++		_slots[original_index] = null
++		_commit_visual(null)
++	_publish_change()
++	_end_waste_disposal(tank)
++	return true
++
++
++func _is_waste_disposable(instance: AutolysisItemInstance) -> bool:
++	if not is_instance_valid(instance) or not instance.is_valid_instance():
++		return false
++	return instance.definition.is_raw_material or (instance.is_liquid_tank() and instance.liquid_contents != null and instance.liquid_contents.is_valid_contents())
++
++
++func _waste_transaction_valid(actor: Variant, tank: Variant, original_index: int, instance: AutolysisItemInstance, definition: AutolysisItemDefinition, contents: AutolysisLiquidContents, presenter: AutolysisHeldItemPresenter, display: Node3D) -> bool:
++	if not _liquid_actor_valid(actor) or not _node_is_live(tank) or not tank is AutolysisWasteLiquidStorageTank:
++		return false
++	if not tank.can_dispose(actor, true) or _focused_index != original_index or get_focused_instance() != instance:
++		return false
++	if not _is_waste_disposable(instance) or instance.definition != definition or instance.liquid_contents != contents:
++		return false
++	if _presenter != presenter or not _node_is_live(presenter) or presenter.get_display() != display:
++		return false
++	return contents == null or (_node_is_live(display) and display.get_parent() == presenter and AutolysisLiquidTankVisual.can_apply(display))
++
++
++func _end_waste_disposal(tank: Variant) -> void:
++	if is_instance_valid(tank) and tank is AutolysisWasteLiquidStorageTank:
++		tank.end_disposal()
++	if is_instance_valid(self):
++		_publishing = false
++		_busy = false
++
++
+ func _can_query_liquid_actor(actor: Node3D) -> bool:
+ 	return (not _busy or _publishing) and _liquid_actor_valid(actor)
+ 
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/waste_liquid_storage_tank_0.tscn b/main-autolysis/scenes/prefabs/prefab_machines/waste_liquid_storage_tank_0.tscn
+index a503bc5..2813da5 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/waste_liquid_storage_tank_0.tscn
++++ b/main-autolysis/scenes/prefabs/prefab_machines/waste_liquid_storage_tank_0.tscn
+@@ -3,6 +3,8 @@
+ [ext_resource type="Material" uid="uid://d238nmu8fostl" path="res://main-autolysis/assets/materials/base_color/mat_base_black_0.tres" id="2_p3aev"]
+ [ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="3_5vnea"]
+ [ext_resource type="Material" uid="uid://v2cw5dvy875j" path="res://main-autolysis/assets/materials/base_color/mat_base_red_3.tres" id="3_je7p2"]
++[ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_waste_liquid_storage_tank.gd" id="4_waste_controller"]
++[ext_resource type="Script" path="res://main-autolysis/components/interactions/autolysis_interaction_component.gd" id="5_interaction"]
+ 
+ [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4qoi"]
+ albedo_color = Color(0.68, 0.7, 0.66, 1)
+@@ -75,7 +77,15 @@ _data = {
+ &"lid_open": SubResource("Animation_je7p2")
+ }
+ 
+-[node name="waste_liquid_storage_tank_0" type="StaticBody3D" unique_id=647522578]
++[node name="waste_liquid_storage_tank_0" type="StaticBody3D" unique_id=647522578 node_paths=PackedStringArray("lid_body", "lid_interaction", "disposal_interaction", "animation_player") groups=["interactable"]]
++script = ExtResource("4_waste_controller")
++lid_body = NodePath("waste_liquid_storage_tank_lid")
++lid_interaction = NodePath("waste_liquid_storage_tank_lid/LidInteraction")
++disposal_interaction = NodePath("DisposalInteraction")
++animation_player = NodePath("AnimationPlayer")
++
++[node name="DisposalInteraction" type="Node3D" parent="."]
++script = ExtResource("5_interaction")
+ 
+ [node name="mesh" type="Node3D" parent="." unique_id=962489499]
+ 
+@@ -104,12 +114,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17999998, 0.25, 0.19999999)
+ material_override = ExtResource("3_5vnea")
+ mesh = SubResource("BoxMesh_wwhyf")
+ 
+-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1217657102]
++[node name="collision_waste_liquid_storage_tank" type="CollisionShape3D" parent="." unique_id=1217657102]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 0.25, 0.19999999)
+ shape = SubResource("BoxShape3D_je7p2")
+ 
+-[node name="waste_liquid_storage_tank_lid" type="AnimatableBody3D" parent="." unique_id=1917499476]
++[node name="waste_liquid_storage_tank_lid" type="AnimatableBody3D" parent="." unique_id=1917499476 groups=["interactable"]]
+ transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0.5, 1.4901161e-08)
++sync_to_physics = true
++
++[node name="LidInteraction" type="Node3D" parent="waste_liquid_storage_tank_lid"]
++script = ExtResource("5_interaction")
+ 
+ [node name="mesh" type="Node3D" parent="waste_liquid_storage_tank_lid" unique_id=2112536878]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.050000012, 0.19999999)
+@@ -139,4 +153,6 @@ shape = SubResource("BoxShape3D_p3aev")
+ debug_color = Color(0.94073033, 0.20392862, 0.35286155, 0.41960785)
+ 
+ [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=551360107]
++callback_mode_process = 0
++playback_auto_capture = false
+ libraries/ = SubResource("AnimationLibrary_5vnea")
+diff --git a/main-autolysis/systems/item-system/autolysis_item_instance.gd b/main-autolysis/systems/item-system/autolysis_item_instance.gd
+index 1f1c018..21df475 100644
+--- a/main-autolysis/systems/item-system/autolysis_item_instance.gd
++++ b/main-autolysis/systems/item-system/autolysis_item_instance.gd
+@@ -41,7 +41,10 @@ func get_phase_rgb() -> Vector3:
+ 
+ 
+ func get_wave_coordinates() -> Array[int]:
+-	return [0, 0, 0, 0, 0] if _liquid_contents == null else _liquid_contents.get_wave_coordinates()
++	if _liquid_contents == null:
++		var empty_coordinates: Array[int] = [0, 0, 0, 0, 0]
++		return empty_coordinates
++	return _liquid_contents.get_wave_coordinates()
+ 
+ 
+ func set_liquid_contents(contents: AutolysisLiquidContents, notify: bool = true) -> bool:

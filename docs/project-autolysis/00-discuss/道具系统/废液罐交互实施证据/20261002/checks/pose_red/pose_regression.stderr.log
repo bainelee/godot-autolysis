@@ -1,0 +1,10 @@
+ERROR: 废液罐盖子故障，交互已锁闭：/root/@Node3D@2/主场景旋转回归自然；盖子动画完成后实际物理端帧不符合请求
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _set_motion_fault (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_waste_liquid_storage_tank.gd:194)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_waste_liquid_storage_tank.gd:154)
+ERROR: 废液罐盖子故障，交互已锁闭：/root/@Node3D@2/主场景旋转回归暂停；盖子动画完成后实际物理端帧不符合请求
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _set_motion_fault (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_waste_liquid_storage_tank.gd:194)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_waste_liquid_storage_tank.gd:154)

@@ -41,10 +41,7 @@ func get_phase_rgb() -> Vector3:
 
 
 func get_wave_coordinates() -> Array[int]:
-	if _liquid_contents == null:
-		var empty_coordinates: Array[int] = [0, 0, 0, 0, 0]
-		return empty_coordinates
-	return _liquid_contents.get_wave_coordinates()
+	return [0, 0, 0, 0, 0] if _liquid_contents == null else _liquid_contents.get_wave_coordinates()
 
 
 func set_liquid_contents(contents: AutolysisLiquidContents, notify: bool = true) -> bool:
