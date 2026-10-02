@@ -162,17 +162,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 0.29999557, 0.
 shape = SubResource("BoxShape3D_o063d")
 debug_color = Color(0.99650306, 0, 0.19427907, 0.41960785)
 
-[node name="InteractionComponent" parent="cabinet_door_left_root" instance=ExtResource("6_interaction")]
+[node name="InteractionComponent" parent="cabinet_door_left_root" unique_id=959648714 instance=ExtResource("6_interaction")]
 
-[node name="LiquidTankPlacementBody" type="StaticBody3D" parent="." groups=["interactable"]]
-position = Vector3(-0.575, 0.3, 0.85)
+[node name="LiquidTankPlacementBody" type="StaticBody3D" parent="." unique_id=298129360 groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.575, 0.3, 0.85)
 collision_layer = 64
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LiquidTankPlacementBody"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LiquidTankPlacementBody" unique_id=468258023]
 shape = SubResource("BoxShape3D_liquid_placement")
 
-[node name="InteractionComponent" parent="LiquidTankPlacementBody" instance=ExtResource("6_interaction")]
+[node name="InteractionComponent" parent="LiquidTankPlacementBody" unique_id=2036571760 instance=ExtResource("6_interaction")]
 
 [node name="luquid_tank_slot_0" type="Node3D" parent="." unique_id=432606996]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8499999, 0.24999999, 0.65)

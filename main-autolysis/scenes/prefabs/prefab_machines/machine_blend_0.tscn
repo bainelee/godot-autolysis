@@ -45,7 +45,7 @@ material = SubResource("StandardMaterial3D_i8q27")
 size = Vector3(0.3, 0.2, 0.6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yvcpe"]
-size = Vector3(0.16, 0.29999998, 0.39999998)
+size = Vector3(0.16, 0.26, 0.29)
 
 [sub_resource type="BoxMesh" id="BoxMesh_u82aq"]
 material = SubResource("StandardMaterial3D_i8q27")
@@ -363,7 +363,7 @@ sync_to_physics = false
 [node name="InteractionComponent" parent="blend_slot_0/rm_place_slot_0" unique_id=634730428 instance=ExtResource("13_interaction")]
 
 [node name="collision_rm_place_slot_0" type="CollisionShape3D" parent="blend_slot_0/rm_place_slot_0" unique_id=277996814]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14999999, -0.16000003)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13, -0.1)
 shape = SubResource("BoxShape3D_yvcpe")
 debug_color = Color(1.3759902, 0, 0.77702904, 0.54901963)
 
@@ -430,7 +430,7 @@ sync_to_physics = false
 [node name="InteractionComponent" parent="blend_slot_1/rm_place_slot_1" unique_id=786402730 instance=ExtResource("13_interaction")]
 
 [node name="collision_rm_place_slot_1" type="CollisionShape3D" parent="blend_slot_1/rm_place_slot_1" unique_id=277996815]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14999999, -0.16000003)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13, -0.1)
 shape = SubResource("BoxShape3D_yvcpe")
 debug_color = Color(1.3759902, 0, 0.77702904, 0.54901963)
 
@@ -478,7 +478,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19999999, -0.13500002)
 shape = SubResource("BoxShape3D_fsl51")
 
 [node name="blend_slot_2" type="AnimatableBody3D" parent="." unique_id=1686289495 node_paths=PackedStringArray("raw_material_anchor", "toggle_interaction", "transfer_interaction")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06999993, -0.2, 0.41)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.069999926, -0.2, 0.41)
 collision_layer = 40
 script = ExtResource("11_slot")
 raw_material_anchor = NodePath("rm_place_slot_2")
@@ -497,7 +497,7 @@ sync_to_physics = false
 [node name="InteractionComponent" parent="blend_slot_2/rm_place_slot_2" unique_id=1840748001 instance=ExtResource("13_interaction")]
 
 [node name="collision_rm_place_slot_2" type="CollisionShape3D" parent="blend_slot_2/rm_place_slot_2" unique_id=277996816]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14999999, -0.16000003)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13, -0.1)
 shape = SubResource("BoxShape3D_yvcpe")
 debug_color = Color(1.3759902, 0, 0.77702904, 0.54901963)
 
@@ -564,7 +564,7 @@ sync_to_physics = false
 [node name="InteractionComponent" parent="blend_slot_3/rm_place_slot_3" unique_id=1401392702 instance=ExtResource("13_interaction")]
 
 [node name="collision_rm_place_slot_3" type="CollisionShape3D" parent="blend_slot_3/rm_place_slot_3" unique_id=277996817]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14999999, -0.16000003)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13000008, -0.10000004)
 shape = SubResource("BoxShape3D_yvcpe")
 debug_color = Color(1.3759902, 0, 0.77702904, 0.54901963)
 
@@ -692,10 +692,10 @@ mesh = SubResource("BoxMesh_wjtth")
 skeleton = NodePath("../../..")
 
 [node name="handle_interaction" type="StaticBody3D" parent="switch_handle_blend_mechine_can_reset" unique_id=396261861]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11999999, 0)
 collision_layer = 40
 
 [node name="mesh_handle" type="MeshInstance3D" parent="switch_handle_blend_mechine_can_reset/handle_interaction" unique_id=1478183240]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12000001, 0.02000001)
 material_override = ExtResource("2_vnha0")
 mesh = SubResource("BoxMesh_52iyd")
 skeleton = NodePath("../../..")
@@ -706,8 +706,8 @@ material_override = ExtResource("5_7w0o1")
 mesh = SubResource("CylinderMesh_hae1x")
 skeleton = NodePath("../../../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="switch_handle_blend_mechine_can_reset/handle_interaction" unique_id=550113045]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.119999975, 0.060000002)
+[node name="collision_handle_interaction" type="CollisionShape3D" parent="switch_handle_blend_mechine_can_reset/handle_interaction" unique_id=550113045]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.03999999)
 shape = SubResource("BoxShape3D_7w0o1")
 debug_color = Color(0.7948737, 0.4256532, 5.7756904e-07, 0.41960785)
 
