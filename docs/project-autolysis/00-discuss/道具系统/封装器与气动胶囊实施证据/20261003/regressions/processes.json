@@ -1,0 +1,27 @@
+[
+  {
+    "Directory": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\封装器与气动胶囊实施证据\\20261003\\regressions\\liquid-tank-transactions",
+    "PID": 40972,
+    "Name": "liquid-tank-transactions"
+  },
+  {
+    "Directory": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\封装器与气动胶囊实施证据\\20261003\\regressions\\liquid-tank-cabinet",
+    "PID": 18080,
+    "Name": "liquid-tank-cabinet"
+  },
+  {
+    "Directory": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\封装器与气动胶囊实施证据\\20261003\\regressions\\liquid-contents-blend",
+    "PID": 37192,
+    "Name": "liquid-contents-blend"
+  },
+  {
+    "Directory": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\封装器与气动胶囊实施证据\\20261003\\regressions\\waste-liquid-tank",
+    "PID": 22188,
+    "Name": "waste-liquid-tank"
+  },
+  {
+    "Directory": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\封装器与气动胶囊实施证据\\20261003\\regressions\\blend-slot-transfers",
+    "PID": 37456,
+    "Name": "blend-slot-transfers"
+  }
+]

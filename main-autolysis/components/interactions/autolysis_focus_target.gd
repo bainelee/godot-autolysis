@@ -11,6 +11,13 @@ var _slots: Array[AutolysisBlendSlot] = []
 var _registered_handles: Dictionary = {}
 var _tank_place: AutolysisBlendTankPlace
 var _has_tank_place: bool = false
+var _packing_configured: bool = false
+var _packing_tank_place: AutolysisPackingTankPlace
+var _packing_capsule_place: AutolysisPackingCapsulePlace
+var _packing_door: AutolysisPackingDoor
+var _packing_type_switches: Array[AutolysisPackingTypeSwitch] = []
+var _packing_start_button: AutolysisPackingStartButton
+var _packing_targets: Dictionary = {}
 
 
 func configure(root: PhysicsBody3D, camera: Camera3D, interaction: AutolysisInteractionComponent, slots: Array[AutolysisBlendSlot], handles: Array[AutolysisBlendHandle] = [], tank_place: AutolysisBlendTankPlace = null) -> bool:
@@ -22,6 +29,7 @@ func configure(root: PhysicsBody3D, camera: Camera3D, interaction: AutolysisInte
 	_registered_handles.clear()
 	_tank_place = null
 	_has_tank_place = false
+	_clear_packing_registration()
 	for slot: AutolysisBlendSlot in slots:
 		if not _node_is_live(slot) or not slot.is_configured() or slot.get_parent() != root:
 			return false
@@ -47,6 +55,34 @@ func configure(root: PhysicsBody3D, camera: Camera3D, interaction: AutolysisInte
 	return is_valid_target()
 
 
+func configure_packing(root: PhysicsBody3D, camera: Camera3D, interaction: AutolysisInteractionComponent, tank_place: AutolysisPackingTankPlace, capsule_place: AutolysisPackingCapsulePlace, door: AutolysisPackingDoor, type_switches: Array[AutolysisPackingTypeSwitch], start_button: AutolysisPackingStartButton) -> bool:
+	device_root = root
+	reference_camera = camera
+	root_interaction = interaction
+	_registered_targets.clear()
+	_slots.clear()
+	_registered_handles.clear()
+	_tank_place = null
+	_has_tank_place = false
+	_clear_packing_registration()
+	if not root is AutolysisPackingMachine or type_switches.size() != 3:
+		return false
+	var controls: Array[Node3D] = [tank_place, capsule_place, door, start_button]
+	for type_switch: AutolysisPackingTypeSwitch in type_switches:
+		controls.append(type_switch)
+	for control: Node3D in controls:
+		if not _packing_control_valid(control) or _packing_targets.has(control):
+			return false
+		_packing_targets[control] = control
+	_packing_tank_place = tank_place
+	_packing_capsule_place = capsule_place
+	_packing_door = door
+	_packing_type_switches.assign(type_switches)
+	_packing_start_button = start_button
+	_packing_configured = true
+	return is_valid_target()
+
+
 func is_valid_target() -> bool:
 	if not _node_is_live(self) or not _node_is_live(device_root) or get_parent() != device_root:
 		return false
@@ -54,7 +90,11 @@ func is_valid_target() -> bool:
 		return false
 	if not _node_is_live(root_interaction) or root_interaction.get_parent() != device_root:
 		return false
-	if root_interaction.interaction_mode != AutolysisInteractionComponent.InteractionMode.FOCUS or _slots.is_empty():
+	if root_interaction.interaction_mode != AutolysisInteractionComponent.InteractionMode.FOCUS:
+		return false
+	if _packing_configured:
+		return _packing_registration_valid()
+	if _slots.is_empty():
 		return false
 	for slot: Variant in _slots:
 		if not _node_is_live(slot) or not slot is AutolysisBlendSlot or not slot.is_configured() or slot.focus_target != self or slot.get_parent() != device_root:
@@ -73,7 +113,7 @@ func is_valid_target() -> bool:
 
 
 func owns_target(body: Variant) -> bool:
-	return _node_is_live(body) and is_valid_target() and (_registered_targets.has(body) or _registered_handles.has(body) or body == _tank_place)
+	return _node_is_live(body) and is_valid_target() and (_registered_targets.has(body) or _registered_handles.has(body) or body == _tank_place or _packing_targets.has(body))
 
 
 func get_inner_target(body: Variant) -> Node3D:
@@ -94,6 +134,60 @@ func get_handle_for_target(body: Variant) -> AutolysisBlendHandle:
 
 func get_tank_place_for_target(body: Variant) -> AutolysisBlendTankPlace:
 	return _tank_place if owns_target(body) and body == _tank_place else null
+
+
+func get_packing_tank_place_for_target(body: Variant) -> AutolysisPackingTankPlace:
+	return _packing_tank_place if owns_target(body) and body == _packing_tank_place else null
+
+
+func get_packing_target_for_target(body: Variant) -> Node3D:
+	return body as Node3D if _packing_targets.has(body) and owns_target(body) else null
+
+
+func get_packing_capsule_place_for_target(body: Variant) -> AutolysisPackingCapsulePlace:
+	return _packing_capsule_place if owns_target(body) and body == _packing_capsule_place else null
+
+
+func get_packing_door_for_target(body: Variant) -> AutolysisPackingDoor:
+	return _packing_door if owns_target(body) and body == _packing_door else null
+
+
+func get_packing_type_switch_for_target(body: Variant) -> AutolysisPackingTypeSwitch:
+	return body as AutolysisPackingTypeSwitch if owns_target(body) and _packing_type_switches.has(body) else null
+
+
+func get_packing_start_button_for_target(body: Variant) -> AutolysisPackingStartButton:
+	return _packing_start_button if owns_target(body) and body == _packing_start_button else null
+
+
+func _clear_packing_registration() -> void:
+	_packing_configured = false
+	_packing_tank_place = null
+	_packing_capsule_place = null
+	_packing_door = null
+	_packing_type_switches.clear()
+	_packing_start_button = null
+	_packing_targets.clear()
+
+
+func _packing_control_valid(control: Variant) -> bool:
+	if not _node_is_live(control) or not control is Node3D or not _node_is_live(device_root):
+		return false
+	if not device_root.is_ancestor_of(control) or not control.has_method("is_configured") or not control.is_configured():
+		return false
+	return control.machine == device_root and control.focus_target == self
+
+
+func _packing_registration_valid() -> bool:
+	if not device_root is AutolysisPackingMachine or _packing_targets.size() != 7 or _packing_type_switches.size() != 3:
+		return false
+	var controls: Array[Node3D] = [_packing_tank_place, _packing_capsule_place, _packing_door, _packing_start_button]
+	for type_switch: AutolysisPackingTypeSwitch in _packing_type_switches:
+		controls.append(type_switch)
+	for control: Node3D in controls:
+		if not _packing_control_valid(control) or _packing_targets.get(control) != control:
+			return false
+	return true
 
 
 func _node_is_live(node: Variant) -> bool:

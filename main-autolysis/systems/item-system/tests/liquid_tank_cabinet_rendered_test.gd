@@ -295,13 +295,15 @@ func _test_main_scene() -> void:
 	check(not cabinet.is_open(), "实际主场景关闭柜门完成完整循环")
 	Input.action_release("crouch")
 	var fixed_count: int = 0
-	for machine_name: String in ["machine_packing_0", "machine_wave_rebuilder_0", "machine_phase_separator_0"]:
+	var packing: Node = world.get_node("interaction_prefabs/machines/machine_packing_0")
+	check(packing.tank_place.get_stored_item() == null and packing.capsule_place.get_stored_item() == null, "封装器两个可转移槽初始为空")
+	for machine_name: String in ["machine_wave_rebuilder_0", "machine_phase_separator_0"]:
 		var tank: AutolysisLiquidTank = world.get_node("interaction_prefabs/machines/" + machine_name + "/liquid_tank_0") as AutolysisLiquidTank
 		check(tank != null and tank.fixed_installation and not tank.is_available_for_pickup(), "机器嵌入罐固定装配且不可拾取：" + machine_name + "（机器节点）")
 		if tank != null:
 			check(tank.collision_layer != 0, "固定机器罐保留原物理碰撞")
 			fixed_count += 1
-	check(fixed_count == 3 and _stored_count() == 2, "主场景三件固定罐与两件可转移柜罐边界正确")
+	check(fixed_count == 2 and _stored_count() == 2, "主场景两件固定罐与两件可转移柜罐边界正确")
 	await _capture("10-主场景循环完成.png")
 
 

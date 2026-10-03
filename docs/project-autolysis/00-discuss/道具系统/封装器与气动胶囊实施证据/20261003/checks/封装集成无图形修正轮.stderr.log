@@ -1,0 +1,208 @@
+SCRIPT ERROR: Invalid call. Nonexistent function 'is_configured' in base 'StaticBody3D'.
+   at: _new_scene (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:70)
+   GDScript backtrace (most recent call first):
+       [0] _new_scene (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:70)
+       [1] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'focus_target' on a base object of type 'StaticBody3D'.
+   at: _start_entry (res://main-autolysis/player/tests/focus_interaction_test.gd:216)
+   GDScript backtrace (most recent call first):
+       [0] _start_entry (res://main-autolysis/player/tests/focus_interaction_test.gd:216)
+       [1] _aim_root (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:85)
+       [2] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid call. Nonexistent function 'try_select_type' in base 'StaticBody3D'.
+   at: _test_input_matrix (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:157)
+   GDScript backtrace (most recent call first):
+       [0] _test_input_matrix (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:157)
+       [1] _enter (res://main-autolysis/player/tests/focus_interaction_test.gd:224)
+       [2] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid call. Nonexistent function 'is_configured' in base 'StaticBody3D'.
+   at: _new_scene (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:70)
+   GDScript backtrace (most recent call first):
+       [0] _new_scene (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:70)
+       [1] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'focus_target' on a base object of type 'StaticBody3D'.
+   at: _start_entry (res://main-autolysis/player/tests/focus_interaction_test.gd:216)
+   GDScript backtrace (most recent call first):
+       [0] _start_entry (res://main-autolysis/player/tests/focus_interaction_test.gd:216)
+       [1] _aim_root (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:85)
+       [2] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'tank_place' on a base object of type 'StaticBody3D'.
+   at: _test_transfer_and_animation (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:163)
+   GDScript backtrace (most recent call first):
+       [0] _test_transfer_and_animation (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:163)
+       [1] run_checks (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:26)
+       [2] _enter (res://main-autolysis/player/tests/focus_interaction_test.gd:224)
+       [3] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid call. Nonexistent function 'is_configured' in base 'StaticBody3D'.
+   at: _new_scene (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:70)
+   GDScript backtrace (most recent call first):
+       [0] _new_scene (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:70)
+       [1] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'focus_target' on a base object of type 'StaticBody3D'.
+   at: _start_entry (res://main-autolysis/player/tests/focus_interaction_test.gd:216)
+   GDScript backtrace (most recent call first):
+       [0] _start_entry (res://main-autolysis/player/tests/focus_interaction_test.gd:216)
+       [1] _aim_root (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:85)
+       [2] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'tank_place' on a base object of type 'StaticBody3D'.
+   at: _put_tank (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:126)
+   GDScript backtrace (most recent call first):
+       [0] _put_tank (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:126)
+       [1] _test_batch (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:217)
+       [2] run_checks (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:33)
+       [3] _enter (res://main-autolysis/player/tests/focus_interaction_test.gd:224)
+       [4] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'door' on a base object of type 'StaticBody3D'.
+   at: _put_capsule (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:133)
+   GDScript backtrace (most recent call first):
+       [0] _put_capsule (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:133)
+       [1] _test_batch (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:218)
+       [2] run_checks (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:33)
+       [3] _enter (res://main-autolysis/player/tests/focus_interaction_test.gd:224)
+       [4] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid call. Nonexistent function 'can_start_processing' in base 'StaticBody3D'.
+   at: _test_batch (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:219)
+   GDScript backtrace (most recent call first):
+       [0] _test_batch (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:219)
+       [1] run_checks (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:33)
+       [2] _enter (res://main-autolysis/player/tests/focus_interaction_test.gd:224)
+       [3] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'tank_place' on a base object of type 'StaticBody3D'.
+   at: _put_tank (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:126)
+   GDScript backtrace (most recent call first):
+       [0] _put_tank (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:126)
+       [1] _test_batch (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:217)
+       [2] run_checks (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:33)
+       [3] _enter (res://main-autolysis/player/tests/focus_interaction_test.gd:224)
+       [4] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'door' on a base object of type 'StaticBody3D'.
+   at: _put_capsule (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:133)
+   GDScript backtrace (most recent call first):
+       [0] _put_capsule (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:133)
+       [1] _test_batch (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:218)
+       [2] run_checks (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:33)
+       [3] _enter (res://main-autolysis/player/tests/focus_interaction_test.gd:224)
+       [4] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid call. Nonexistent function 'can_start_processing' in base 'StaticBody3D'.
+   at: _test_batch (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:219)
+   GDScript backtrace (most recent call first):
+       [0] _test_batch (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:219)
+       [1] run_checks (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:33)
+       [2] _enter (res://main-autolysis/player/tests/focus_interaction_test.gd:224)
+       [3] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid call. Nonexistent function 'is_configured' in base 'StaticBody3D'.
+   at: _new_scene (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:70)
+   GDScript backtrace (most recent call first):
+       [0] _new_scene (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:70)
+       [1] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'focus_target' on a base object of type 'StaticBody3D'.
+   at: _start_entry (res://main-autolysis/player/tests/focus_interaction_test.gd:216)
+   GDScript backtrace (most recent call first):
+       [0] _start_entry (res://main-autolysis/player/tests/focus_interaction_test.gd:216)
+       [1] _aim_root (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:85)
+       [2] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'tank_place' on a base object of type 'StaticBody3D'.
+   at: _put_tank (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:126)
+   GDScript backtrace (most recent call first):
+       [0] _put_tank (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:126)
+       [1] _test_batch (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:217)
+       [2] run_checks (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:33)
+       [3] _enter (res://main-autolysis/player/tests/focus_interaction_test.gd:224)
+       [4] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'door' on a base object of type 'StaticBody3D'.
+   at: _put_capsule (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:133)
+   GDScript backtrace (most recent call first):
+       [0] _put_capsule (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:133)
+       [1] _test_batch (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:218)
+       [2] run_checks (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:33)
+       [3] _enter (res://main-autolysis/player/tests/focus_interaction_test.gd:224)
+       [4] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid call. Nonexistent function 'can_start_processing' in base 'StaticBody3D'.
+   at: _test_batch (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:219)
+   GDScript backtrace (most recent call first):
+       [0] _test_batch (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:219)
+       [1] run_checks (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:33)
+       [2] _enter (res://main-autolysis/player/tests/focus_interaction_test.gd:224)
+       [3] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid call. Nonexistent function 'is_configured' in base 'StaticBody3D'.
+   at: _new_scene (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:70)
+   GDScript backtrace (most recent call first):
+       [0] _new_scene (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:70)
+       [1] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'focus_target' on a base object of type 'StaticBody3D'.
+   at: _start_entry (res://main-autolysis/player/tests/focus_interaction_test.gd:216)
+   GDScript backtrace (most recent call first):
+       [0] _start_entry (res://main-autolysis/player/tests/focus_interaction_test.gd:216)
+       [1] _aim_root (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:85)
+       [2] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'tank_place' on a base object of type 'StaticBody3D'.
+   at: _test_old_click (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:319)
+   GDScript backtrace (most recent call first):
+       [0] _test_old_click (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:319)
+       [1] _enter (res://main-autolysis/player/tests/focus_interaction_test.gd:224)
+       [2] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid call. Nonexistent function 'is_configured' in base 'StaticBody3D'.
+   at: _new_scene (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:70)
+   GDScript backtrace (most recent call first):
+       [0] _new_scene (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:70)
+       [1] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'focus_target' on a base object of type 'StaticBody3D'.
+   at: _start_entry (res://main-autolysis/player/tests/focus_interaction_test.gd:216)
+   GDScript backtrace (most recent call first):
+       [0] _start_entry (res://main-autolysis/player/tests/focus_interaction_test.gd:216)
+       [1] _aim_root (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:85)
+       [2] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'tank_place' on a base object of type 'StaticBody3D'.
+   at: _test_candidate_failures (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:355)
+   GDScript backtrace (most recent call first):
+       [0] _test_candidate_failures (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:355)
+       [1] _enter (res://main-autolysis/player/tests/focus_interaction_test.gd:224)
+       [2] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid call. Nonexistent function 'is_configured' in base 'StaticBody3D'.
+   at: _new_scene (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:70)
+   GDScript backtrace (most recent call first):
+       [0] _new_scene (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:70)
+       [1] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'focus_target' on a base object of type 'StaticBody3D'.
+   at: _start_entry (res://main-autolysis/player/tests/focus_interaction_test.gd:216)
+   GDScript backtrace (most recent call first):
+       [0] _start_entry (res://main-autolysis/player/tests/focus_interaction_test.gd:216)
+       [1] _aim_root (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:85)
+       [2] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'tank_place' on a base object of type 'StaticBody3D'.
+   at: _put_tank (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:126)
+   GDScript backtrace (most recent call first):
+       [0] _put_tank (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:126)
+       [1] _test_source_fault (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:372)
+       [2] _enter (res://main-autolysis/player/tests/focus_interaction_test.gd:224)
+       [3] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'door' on a base object of type 'StaticBody3D'.
+   at: _put_capsule (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:133)
+   GDScript backtrace (most recent call first):
+       [0] _put_capsule (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:133)
+       [1] _test_source_fault (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:373)
+       [2] _enter (res://main-autolysis/player/tests/focus_interaction_test.gd:224)
+       [3] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'type_switches' on a base object of type 'StaticBody3D'.
+   at: _test_source_fault (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:374)
+   GDScript backtrace (most recent call first):
+       [0] _test_source_fault (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:374)
+       [1] _enter (res://main-autolysis/player/tests/focus_interaction_test.gd:224)
+       [2] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid call. Nonexistent function 'is_configured' in base 'StaticBody3D'.
+   at: _new_scene (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:70)
+   GDScript backtrace (most recent call first):
+       [0] _new_scene (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:70)
+       [1] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'focus_target' on a base object of type 'StaticBody3D'.
+   at: _start_entry (res://main-autolysis/player/tests/focus_interaction_test.gd:216)
+   GDScript backtrace (most recent call first):
+       [0] _start_entry (res://main-autolysis/player/tests/focus_interaction_test.gd:216)
+       [1] _aim_root (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:85)
+       [2] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid call. Nonexistent function 'is_configured' in base 'StaticBody3D'.
+   at: _test_main_packing (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:400)
+   GDScript backtrace (most recent call first):
+       [0] _test_main_packing (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:400)
+       [1] _enter (res://main-autolysis/player/tests/focus_interaction_test.gd:224)
+       [2] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)

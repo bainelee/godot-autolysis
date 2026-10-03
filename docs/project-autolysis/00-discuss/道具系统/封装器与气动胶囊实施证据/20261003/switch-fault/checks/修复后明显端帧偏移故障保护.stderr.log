@@ -1,0 +1,4 @@
+ERROR: 封装器控制件运动故障：/root/@Node3D@2/machine_packing_0/type_switch_0；预期角度：(-0.785398, 0.0, 0.0)；实际角度：(-0.787238, 0.0, 0.0)；动画进度：0.159999996
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd:152)

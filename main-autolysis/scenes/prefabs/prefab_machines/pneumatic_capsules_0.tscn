@@ -1,66 +1,22 @@
 [gd_scene format=3 uid="uid://b4vm18lqyk67u"]
 
-[ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="1_n722w"]
-[ext_resource type="Material" uid="uid://3as3koaxu70e" path="res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres" id="2_tox2f"]
-[ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="3_21ecr"]
-[ext_resource type="Material" uid="uid://5yjf2yjo2u7l" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_1.tres" id="4_vyj4g"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4qoi"]
-albedo_color = Color(0.68, 0.7, 0.66, 1)
-roughness = 0.72
-
-[sub_resource type="BoxMesh" id="BoxMesh_5x187"]
-material = SubResource("StandardMaterial3D_u4qoi")
-size = Vector3(0.2, 0.6, 0.2)
-
-[sub_resource type="BoxMesh" id="BoxMesh_5qici"]
-material = SubResource("StandardMaterial3D_u4qoi")
-size = Vector3(0.24, 0.1, 0.24)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ri0kk"]
-material = SubResource("StandardMaterial3D_u4qoi")
-size = Vector3(0.24, 0.04, 0.24)
-
-[sub_resource type="BoxMesh" id="BoxMesh_y7sso"]
-material = SubResource("StandardMaterial3D_u4qoi")
-size = Vector3(0.24, 0.32, 0.24)
+[ext_resource type="Script" path="res://main-autolysis/systems/item-system/autolysis_pneumatic_capsule.gd" id="1_capsule"]
+[ext_resource type="Resource" path="res://main-autolysis/systems/item-system/items/pneumatic_capsule.tres" id="2_definition"]
+[ext_resource type="PackedScene" path="res://main-autolysis/scenes/prefabs/prefab_machines/visuals/pneumatic_capsule_visual.tscn" id="3_visual"]
+[ext_resource type="PackedScene" path="res://main-autolysis/components/interactions/autolysis_interaction_component.tscn" id="4_interaction"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4giwy"]
 size = Vector3(0.24, 0.79999995, 0.24)
 
-[node name="pneumatic_capsules_0" type="StaticBody3D" unique_id=1479518667]
+[node name="pneumatic_capsules_0" type="StaticBody3D" unique_id=1479518667 groups=["interactable"]]
+collision_layer = 3
+script = ExtResource("1_capsule")
+item_definition = ExtResource("2_definition")
 metadata/_edit_group_ = true
 
-[node name="mesh" type="Node3D" parent="." unique_id=867372818]
-
-[node name="MeshInstance3D14" type="MeshInstance3D" parent="mesh" unique_id=723619483]
-material_override = ExtResource("1_n722w")
-mesh = SubResource("BoxMesh_5x187")
-
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="mesh" unique_id=1371982688]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35, 0)
-material_override = ExtResource("2_tox2f")
-mesh = SubResource("BoxMesh_5qici")
-
-[node name="MeshInstance3D10" type="MeshInstance3D" parent="mesh" unique_id=1535705317]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
-material_override = ExtResource("2_tox2f")
-mesh = SubResource("BoxMesh_5qici")
-
-[node name="MeshInstance3D11" type="MeshInstance3D" parent="mesh" unique_id=483849287]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23999998, 0)
-material_override = ExtResource("3_21ecr")
-mesh = SubResource("BoxMesh_ri0kk")
-
-[node name="MeshInstance3D12" type="MeshInstance3D" parent="mesh" unique_id=61182408]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24000001, 0)
-material_override = ExtResource("3_21ecr")
-mesh = SubResource("BoxMesh_ri0kk")
-
-[node name="mesh_packing_info" type="MeshInstance3D" parent="mesh" unique_id=490635919]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.9802322e-08, 0)
-material_override = ExtResource("4_vyj4g")
-mesh = SubResource("BoxMesh_y7sso")
+[node name="mesh" parent="." unique_id=867372818 instance=ExtResource("3_visual")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=408769357]
 shape = SubResource("BoxShape3D_4giwy")
+
+[node name="InteractionComponent" parent="." instance=ExtResource("4_interaction")]

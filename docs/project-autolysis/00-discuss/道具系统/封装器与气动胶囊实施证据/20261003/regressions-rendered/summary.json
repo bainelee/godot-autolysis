@@ -1,0 +1,43 @@
+{
+  "engine": "D:/GODOT/Godot_v4.6.1/Godot_v4.6.1-stable_win64.exe",
+  "graphical": true,
+  "runs": [
+    {
+      "name": "liquid-tank-cabinet",
+      "assertions": 70,
+      "failures": 0,
+      "exit_code": 0,
+      "stderr_bytes": 0,
+      "screenshot_count": 10,
+      "report": "liquid-tank-cabinet/真实输入与射线报告.json"
+    },
+    {
+      "name": "focus-interaction-fixed60",
+      "fixed_fps": 60,
+      "assertions": 212,
+      "failures": 0,
+      "exit_code": 0,
+      "stderr_bytes": 0,
+      "screenshot_count": 10,
+      "transition_timing": [
+        {
+          "实际运动帧数": 12,
+          "方向": "进入时序核对",
+          "状态完成原始帧": 14,
+          "目标到达原始帧": 13,
+          "运动前采样帧数": 1,
+          "首次运动原始帧": 2
+        }
+      ],
+      "report": "focus-interaction-fixed60/focus-interaction-report.json"
+    }
+  ],
+  "initial_failed_run": {
+    "directory": "focus-interaction",
+    "assertions": 212,
+    "failures": 1,
+    "exit_code": 1,
+    "reason": "启动未指定原测试要求的固定60帧率，单项帧数时序断言失败；按原约束重跑通过，功能未修改。",
+    "failing_assertion_source": "res://main-autolysis/player/tests/focus_interaction_test.gd:316"
+  }
+}

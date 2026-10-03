@@ -11,6 +11,8 @@ var slot_index: int = -1
 var cabinet_stored: bool = false
 var blend_place: AutolysisBlendTankPlace
 var blend_stored: bool = false
+var packing_place: AutolysisPackingTankPlace
+var packing_stored: bool = false
 var _pickup_finished: bool = false
 
 @onready var _interaction: AutolysisInteractionComponent = get_node_or_null("InteractionComponent") as AutolysisInteractionComponent
@@ -30,7 +32,7 @@ func _ready() -> void:
 		return
 	_interaction.set_availability_check(_can_interact)
 	_interaction.interaction_requested.connect(_on_interaction_requested)
-	if fixed_installation or blend_stored:
+	if fixed_installation or blend_stored or packing_stored:
 		_disable_world_pickup()
 
 
@@ -82,14 +84,14 @@ func _disable_world_pickup() -> void:
 	if is_instance_valid(component):
 		component.is_enabled = false
 	remove_from_group(&"interactable")
-	if blend_stored:
+	if blend_stored or packing_stored:
 		# 只保留玩家阻挡层，罐位碰撞继续承担聚焦命中。
 		collision_layer = 8
 		collision_mask = 0
 
 
 func is_available_for_pickup() -> bool:
-	if fixed_installation or blend_stored or is_instance_valid(blend_place) or _pickup_finished or not is_inside_tree() or is_queued_for_deletion():
+	if fixed_installation or blend_stored or packing_stored or is_instance_valid(blend_place) or is_instance_valid(packing_place) or _pickup_finished or not is_inside_tree() or is_queued_for_deletion():
 		return false
 	if not is_instance_valid(_interaction) or not _interaction.is_enabled or not is_in_group(&"interactable"):
 		return false
@@ -104,7 +106,7 @@ func is_available_for_pickup() -> bool:
 func prepare_cabinet_storage(owner_cabinet: AutolysisLiquidTankCabinet, index: int) -> bool:
 	if not is_instance_valid(owner_cabinet) or owner_cabinet.is_queued_for_deletion() or index < 0 or index >= 2:
 		return false
-	if is_inside_tree() or get_parent() != null or fixed_installation or _pickup_finished or cabinet_stored or blend_stored or is_instance_valid(blend_place):
+	if is_inside_tree() or get_parent() != null or fixed_installation or _pickup_finished or cabinet_stored or blend_stored or packing_stored or is_instance_valid(blend_place) or is_instance_valid(packing_place):
 		return false
 	if is_instance_valid(cabinet) or slot_index != -1:
 		return false
@@ -117,12 +119,25 @@ func prepare_cabinet_storage(owner_cabinet: AutolysisLiquidTankCabinet, index: i
 func prepare_blend_storage(place: AutolysisBlendTankPlace) -> bool:
 	if not is_instance_valid(place) or place.is_queued_for_deletion() or not is_empty():
 		return false
-	if is_inside_tree() or get_parent() != null or fixed_installation or _pickup_finished or cabinet_stored or blend_stored:
+	if is_inside_tree() or get_parent() != null or fixed_installation or _pickup_finished or cabinet_stored or blend_stored or packing_stored:
 		return false
-	if is_instance_valid(cabinet) or is_instance_valid(blend_place) or slot_index != -1:
+	if is_instance_valid(cabinet) or is_instance_valid(blend_place) or is_instance_valid(packing_place) or slot_index != -1:
 		return false
 	blend_place = place
 	blend_stored = true
+	_disable_world_pickup()
+	return true
+
+
+func prepare_packing_storage(place: AutolysisPackingTankPlace) -> bool:
+	if not is_instance_valid(place) or place.is_queued_for_deletion() or not _has_valid_instance():
+		return false
+	if is_inside_tree() or get_parent() != null or fixed_installation or _pickup_finished or cabinet_stored or blend_stored or packing_stored:
+		return false
+	if is_instance_valid(cabinet) or is_instance_valid(blend_place) or is_instance_valid(packing_place) or slot_index != -1:
+		return false
+	packing_place = place
+	packing_stored = true
 	_disable_world_pickup()
 	return true
 

@@ -60,6 +60,8 @@ func can_enter(target: AutolysisFocusTarget) -> bool:
 		return false
 	if target.device_root is AutolysisBlendMachine and target.device_root.is_interaction_locked():
 		return false
+	if target.device_root is AutolysisPackingMachine and target.device_root.is_interaction_locked():
+		return false
 	if not _entry_allowed.is_valid():
 		return false
 	return _entry_allowed.call() == true

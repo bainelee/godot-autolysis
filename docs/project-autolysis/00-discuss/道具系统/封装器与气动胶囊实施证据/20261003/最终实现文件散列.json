@@ -1,0 +1,258 @@
+{
+  "生成时间": "2026-10-03T19:56:34.8740543+08:00",
+  "哈希算法": "SHA256（安全散列算法256位）",
+  "范围": "本次修改及新增的实现、资源与测试文件",
+  "文件数": 50,
+  "文件": [
+    {
+      "文件": "main-autolysis/assets/ui/item-icons/pneumatic_capsule.png",
+      "散列": "831F8D4FD63CD74D330CC495911E599A3C8E910713B143A6FDB8A32D1E8AA273",
+      "字节数": 18963
+    },
+    {
+      "文件": "main-autolysis/assets/ui/item-icons/pneumatic_capsule.png.import",
+      "散列": "19323C6D680415123E2AF1DB7626398B2B91EBA267635536269523F010FCA64F",
+      "字节数": 990
+    },
+    {
+      "文件": "main-autolysis/components/interactions/autolysis_focus_target.gd",
+      "散列": "11D98C052F5401CB19637F106A9B259F0FF26029F4968B9B021D968F6395EB95",
+      "字节数": 8359
+    },
+    {
+      "文件": "main-autolysis/player/components/autolysis_focus_controller.gd",
+      "散列": "9502411F8099C37B4F1390B96D5A954853C6E36776687424D634C78EB14EB47C",
+      "字节数": 7106
+    },
+    {
+      "文件": "main-autolysis/player/components/autolysis_focus_ray_query.gd",
+      "散列": "5DB4F9684BDF72E8E0F50F53F6864476727520B3DFDB2DFB8968CF96114A8477",
+      "字节数": 2431
+    },
+    {
+      "文件": "main-autolysis/player/components/autolysis_held_item_presenter.gd",
+      "散列": "21A3A79C30B3C1277A60B5A29249D6F6D46F674282A407E2B6C13267A4313BD4",
+      "字节数": 3676
+    },
+    {
+      "文件": "main-autolysis/player/components/autolysis_interaction_controller.gd",
+      "散列": "91FAEB0288A4139D31609A6BA74649CC92E02DD3149CAA0A3A313596C72F602F",
+      "字节数": 16393
+    },
+    {
+      "文件": "main-autolysis/player/components/autolysis_inventory_controller.gd",
+      "散列": "DBD057720F6760919D6AB146307403233EA8B60E6A57CA06CC48D9DE2155EF83",
+      "字节数": 43253
+    },
+    {
+      "文件": "main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn",
+      "散列": "E685CE36977024932722C0F7FC5DAC4F50DA7D9649E65B5453A732D66B0CD1F8",
+      "字节数": 26106
+    },
+    {
+      "文件": "main-autolysis/scenes/prefabs/prefab_machines/pneumatic_capsules_0.tscn",
+      "散列": "00DEE8663955A515452C549971CA28D8C4092B5210C7D688464B7A4A385551B3",
+      "字节数": 1203
+    },
+    {
+      "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_capsule_place.gd",
+      "散列": "E7930666B3A1415D04A5AFF947D427B10CC7605CB720E5057A8476A16F482F43",
+      "字节数": 6765
+    },
+    {
+      "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_capsule_place.gd.uid",
+      "散列": "0FB35C1665C996F5F92DECFB096347B5E3515DAE7DC89D3DB72C467E6619B7AC",
+      "字节数": 20
+    },
+    {
+      "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_door.gd",
+      "散列": "505683B0B7E27CF8B91F43D62F5C5CCA6AF53633A07A3A68B6AC48E7FB2344EC",
+      "字节数": 587
+    },
+    {
+      "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_door.gd.uid",
+      "散列": "E41CC8AF3C64E8BE79791FD6C9F66066B3165FEB16BD60D8EAD1EA1E1E76D99D",
+      "字节数": 20
+    },
+    {
+      "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd",
+      "散列": "9638E08A911CD6023B9B356C8F93688B6753EC4D082D610B8987F9198F214B1E",
+      "字节数": 18185
+    },
+    {
+      "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd.uid",
+      "散列": "F241D8D85AB3CEA62E496BD4B0990ADE5BCA2DBA89355B09EE00750A99898D64",
+      "字节数": 20
+    },
+    {
+      "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd",
+      "散列": "6F743E710D88F80ED1169FFE60B9C6F183D3DE2F3CB867A01EBFF8F747F275B0",
+      "字节数": 7887
+    },
+    {
+      "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd.uid",
+      "散列": "15DC2603CA3325EA915BF3A766CB38C562CD4739875A127421A479447A82C923",
+      "字节数": 20
+    },
+    {
+      "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_start_button.gd",
+      "散列": "BF13A468335C35C552C46BA30260FA84D835E5883AADEFF007B376C140F1AED1",
+      "字节数": 3895
+    },
+    {
+      "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_start_button.gd.uid",
+      "散列": "51AD52120D5BD06019338B616FA8CB03B0730D46C0651BE57C420C38E02B90A8",
+      "字节数": 20
+    },
+    {
+      "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_tank_place.gd",
+      "散列": "FD646746B2E95B8FEBA80A32E004DCCAC8A420D7BD586B8D202C9832A4515C65",
+      "字节数": 7293
+    },
+    {
+      "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_tank_place.gd.uid",
+      "散列": "C1A2F9B8F48373369EC5BBD869F8FE581CAC593DA40B5B19966ACA3984F0ED41",
+      "字节数": 19
+    },
+    {
+      "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_type_switch.gd",
+      "散列": "4217A88490CA474B7E0503BC9777A8D88F6F3591B0F901413AB36591A553DB6D",
+      "字节数": 1659
+    },
+    {
+      "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_type_switch.gd.uid",
+      "散列": "0EA44CB2743E437D1B1ADF6386A8D45FF87FFF8CF44DD5D8EF909266C54637F5",
+      "字节数": 19
+    },
+    {
+      "文件": "main-autolysis/scenes/prefabs/prefab_machines/visuals/pneumatic_capsule_visual.tscn",
+      "散列": "1C44A8AB0053B66456A974BB268284619C247541C6DB7DD7C51DABBCE2E2B634",
+      "字节数": 2627
+    },
+    {
+      "文件": "main-autolysis/scenes/prefabs/prefab_place_shelf/shelf_penumatic_capsules.tscn",
+      "散列": "D1E4FD492AE8474C9DC290EEDCA152FCA436CB5E5ECC4EAD36E3102571F2C75E",
+      "字节数": 3842
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/autolysis_item_instance.gd",
+      "散列": "3E3D3A0D7FCFE9B000D2A6E6E063F50969734426AFAD5DE035ED3B67E9D197C5",
+      "字节数": 3810
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/autolysis_liquid_tank.gd",
+      "散列": "D224559D39357657275A784EC3706A83DBBE4D5974BF330FA2772A1BBF0A369E",
+      "字节数": 6952
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/autolysis_packing_contents.gd",
+      "散列": "11D62A989670C77173AEFA1EEDC1BF7F5F29D6CBAF82AB454A7C1731B312D831",
+      "字节数": 2320
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/autolysis_packing_contents.gd.uid",
+      "散列": "70CA11CB6A44F369D4E7AE767C9BA178C40C15C6BEA17A36FE3EE5E40C5C8543",
+      "字节数": 20
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/autolysis_pneumatic_capsule_shelf.gd",
+      "散列": "819ABA975D3A7AC0375C049DD6CB86A126FDD58BFB2C3B879F8FC202FAA0967B",
+      "字节数": 1393
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/autolysis_pneumatic_capsule_shelf.gd.uid",
+      "散列": "B55B15CCB38DBDC389D1F1A148108E74807ED5F6DD65E355B3E2EDC83A06C616",
+      "字节数": 20
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/autolysis_pneumatic_capsule_visual.gd",
+      "散列": "1C1423C433E5242C61A16BD58A55E2084EC33BDB61E3E50AB6817739107D8F77",
+      "字节数": 1372
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/autolysis_pneumatic_capsule_visual.gd.uid",
+      "散列": "032D2E8379C40FD3A995F9C3BE6B531880DBBCD3882C3EC90E8FBF4F7EDBDACE",
+      "字节数": 19
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/autolysis_pneumatic_capsule.gd",
+      "散列": "1AEC506323BD3D01143FBB158B829CCE217B807352A9A3438F230B029D33907A",
+      "字节数": 4948
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/autolysis_pneumatic_capsule.gd.uid",
+      "散列": "6C3B60E9512D75282586C5B6230B2E0FFF7DAEED154EE0A98562D90A6874151D",
+      "字节数": 19
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/items/pneumatic_capsule.tres",
+      "散列": "F4DAEB93C67724EA26A2183E53D49928397181D2B5CFB1A8F37976B6F4B211CC",
+      "字节数": 851
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/tests/capsule_data_behavior_test.gd",
+      "散列": "A5D81E28BB16896E8DF4B32EB84A5C3F148E33B92C90F1FC04EBA4A7D443CB52",
+      "字节数": 19975
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/tests/capsule_data_behavior_test.gd.uid",
+      "散列": "DAE18A8A58CDE06DD1802DC3160194D5DC17C29CC16A324DDEB5AFF326990725",
+      "字节数": 19
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/tests/hand_pose_render_test.gd",
+      "散列": "B284CDEF898A56B5B1239733710CB7A103872A51CAB5C629FD1457FCFB267462",
+      "字节数": 9656
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/tests/hand_pose_render_test.gd.uid",
+      "散列": "EA8FAD2417C1D5B025C3CEC2CF1E7100DC2C264DAB238B9A1A5CEA7874D10ABB",
+      "字节数": 19
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/tests/liquid_tank_cabinet_rendered_test.gd",
+      "散列": "96D3BDAE055762B7FEEEC0312C89CB30F503B8575C9EEF11C0F2D96F12CEA305",
+      "字节数": 17429
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/tests/packing_batch_atomic_test.gd",
+      "散列": "71E16DFED15D81EDCD9EF0BCC2D212C3A689F8FA5B95CB91B5164A493A554F5A",
+      "字节数": 5873
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/tests/packing_batch_atomic_test.gd.uid",
+      "散列": "FB7B49EDE756DDDD399D602828DF9A61CA38326CE1EAAA80D1826BC6F932C7DD",
+      "字节数": 19
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd",
+      "散列": "B3482859F92FD09B2DD61223765F6111D231D2978AA918CC877BF42D9EF7DA47",
+      "字节数": 27993
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd.uid",
+      "散列": "E41B5DC654081A4560530151CAE7A5FF9B139FEAB9C11499E80B45DBBDB1BC8F",
+      "字节数": 19
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/tests/packing_machine_demo.tscn",
+      "散列": "D5A8259D58454789BF2D9148BADAE0262F76411917FF70D18AA8EA37BB87D7BE",
+      "字节数": 540
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/tests/render_pneumatic_capsule_icon.gd",
+      "散列": "010E9811C904A0AAF27DE802401E41045759339942BF779042BB1555CDE38925",
+      "字节数": 6512
+    },
+    {
+      "文件": "main-autolysis/systems/item-system/tests/render_pneumatic_capsule_icon.gd.uid",
+      "散列": "CF88E7A0157A623858CD332F18033A6370B646C03C15E201677F303F53C7B73D",
+      "字节数": 20
+    },
+    {
+      "文件": "main-autolysis/ui/inventory/autolysis_liquid_contents_panel.gd",
+      "散列": "477D0416764AF4F83EE751C85870D40B9DE6CE0BDF8C1178C155AB47655B3EEE",
+      "字节数": 3023
+    }
+  ]
+}

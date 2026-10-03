@@ -1,0 +1,4 @@
+Godot Engine v4.6.1.stable.official.14d19694e - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.14 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3060 Ti
+
+气动胶囊图标真实渲染结果：{"不透明像素":13552,"亮度最大值":0.545098066329956,"亮度最小值":0.0758169963955879,"保存成功":true,"可见像素右下":"(166, 227)","可见像素左上":"(89, 28)","图形驱动":"opengl3","图标尺寸":"(256, 256)","图标散列摘要":"831f8d4fd63cd74d330cc495911e599a3c8e910713b143a6fdb8a32d1e8aa273","引擎版本":"4.6.1-stable (official)","模型网格数":6,"正交相机尺寸":1.12,"渲染后端":"gl_compatibility","相机位置":"(0.75, 0.48, 0.95)","纯显示资源":"res://main-autolysis/scenes/prefabs/prefab_machines/visuals/pneumatic_capsule_visual.tscn","至少八像素留白":true,"观察目标":"(0.0, 0.0, 0.0)","输出图标":"res://main-autolysis/assets/ui/item-icons/pneumatic_capsule.png","透明像素":51538,"通过":true}

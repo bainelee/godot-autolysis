@@ -1,14 +1,20 @@
 [gd_scene format=3 uid="uid://c117w0eww7frm"]
 
 [ext_resource type="Material" uid="uid://5yjf2yjo2u7l" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_1.tres" id="1_6bwaf"]
-[ext_resource type="PackedScene" uid="uid://bbqs75e8vtnql" path="res://main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn" id="2_n5rw0"]
 [ext_resource type="Material" uid="uid://blu42xw7rpe7b" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_2.tres" id="2_qpgyo"]
 [ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="3_qpgyo"]
 [ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="4_0tg3w"]
-[ext_resource type="Material" uid="uid://ci6ugsscm6urn" path="res://main-autolysis/assets/materials/base_color/mat_base_green_0.tres" id="6_r1ovn"]
 [ext_resource type="Material" uid="uid://byanljsa6t8mu" path="res://main-autolysis/assets/materials/base_color/mat_base_black_1.tres" id="7_5qici"]
-[ext_resource type="PackedScene" uid="uid://b4vm18lqyk67u" path="res://main-autolysis/scenes/prefabs/prefab_machines/pneumatic_capsules_0.tscn" id="7_r1ovn"]
 [ext_resource type="Material" uid="uid://bp35cd3s1kb3t" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_0.tres" id="9_5qici"]
+[ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd" id="10_machine"]
+[ext_resource type="Script" uid="uid://c1pn2s683ojtr" path="res://main-autolysis/components/interactions/autolysis_focus_target.gd" id="11_focus"]
+[ext_resource type="PackedScene" path="res://main-autolysis/components/interactions/autolysis_interaction_component.tscn" id="12_interaction"]
+[ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_tank_place.gd" id="13_tank_place"]
+[ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_capsule_place.gd" id="14_capsule_place"]
+[ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_door.gd" id="15_door"]
+[ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_type_switch.gd" id="16_type_switch"]
+[ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_start_button.gd" id="17_start_button"]
+[ext_resource type="Material" uid="uid://eju83npipt3e" path="res://main-autolysis/assets/materials/glow_color/mat_glow_green_0.tres" id="18_selected"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hpy8m"]
 albedo_color = Color(0.68, 0.7, 0.66, 1)
@@ -266,7 +272,25 @@ _data = {
 &"type_switch_2_open": SubResource("Animation_y7sso")
 }
 
-[node name="machine_packing_0" type="StaticBody3D" unique_id=1483401030]
+[node name="machine_packing_0" type="StaticBody3D" unique_id=1483401030 node_paths=PackedStringArray("focus_target", "reference_camera", "root_interaction", "animation_source", "tank_place", "capsule_place", "door", "type_switches", "start_button", "processing_timer") groups=["interactable"]]
+script = ExtResource("10_machine")
+focus_target = NodePath("FocusTarget")
+reference_camera = NodePath("focus_camera")
+root_interaction = NodePath("InteractionComponent")
+animation_source = NodePath("AnimationPlayer")
+tank_place = NodePath("packing_tank_place")
+capsule_place = NodePath("packing_capsule_place")
+door = NodePath("door_capsules_input_bay")
+type_switches = [NodePath("type_switch_0"), NodePath("type_switch_1"), NodePath("type_switch_2")]
+start_button = NodePath("button_start_packing")
+processing_timer = NodePath("ProcessingTimer")
+
+[node name="FocusTarget" type="Node3D" parent="." unique_id=1933980748]
+script = ExtResource("11_focus")
+
+[node name="InteractionComponent" parent="." unique_id=1479986497 instance=ExtResource("12_interaction")]
+is_enabled = false
+interaction_mode = 1
 
 [node name="focus_camera" type="Camera3D" parent="." unique_id=47309137]
 transform = Transform3D(0.9659259, 0, -0.25881907, 0, 1, 0, 0.25881907, 0, 0.9659258, -0.46, 0.48, 1.4)
@@ -363,7 +387,7 @@ shape = SubResource("BoxShape3D_r1ovn")
 
 [node name="light_type_switch_0" type="MeshInstance3D" parent="." unique_id=2005914130]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66999984, 0.75999993, 0.51)
-material_override = ExtResource("6_r1ovn")
+material_override = ExtResource("4_0tg3w")
 mesh = SubResource("BoxMesh_5qici")
 skeleton = NodePath("..")
 
@@ -379,9 +403,19 @@ material_override = ExtResource("4_0tg3w")
 mesh = SubResource("BoxMesh_5qici")
 skeleton = NodePath("..")
 
-[node name="type_switch_0" type="AnimatableBody3D" parent="." unique_id=228528847]
+[node name="type_switch_0" type="AnimatableBody3D" parent="." unique_id=228528847 node_paths=PackedStringArray("indicator", "toggle_interaction", "collision_shape")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6199999, 0.75999993, 0.52000004)
+collision_layer = 40
+script = ExtResource("16_type_switch")
+indicator = NodePath("../light_type_switch_0")
+selected_material = ExtResource("18_selected")
+toggle_interaction = NodePath("InteractionComponent")
+collision_shape = NodePath("collision_type_switch")
+animation_name = &"type_switch_0_open"
 metadata/_edit_group_ = true
+
+[node name="InteractionComponent" parent="type_switch_0" unique_id=611932364 instance=ExtResource("12_interaction")]
+is_enabled = false
 
 [node name="mesh" type="MeshInstance3D" parent="type_switch_0" unique_id=2122548079]
 material_override = ExtResource("9_5qici")
@@ -399,9 +433,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.009999931)
 shape = SubResource("BoxShape3D_44ebl")
 debug_color = Color(0, 0.63869274, 0.37949818, 0.41960785)
 
-[node name="type_switch_1" type="AnimatableBody3D" parent="." unique_id=54778103]
+[node name="type_switch_1" type="AnimatableBody3D" parent="." unique_id=54778103 node_paths=PackedStringArray("indicator", "toggle_interaction", "collision_shape")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6199999, 0.6999999, 0.52000004)
+collision_layer = 40
+script = ExtResource("16_type_switch")
+packing_type = 1
+indicator = NodePath("../light_type_switch_1")
+selected_material = ExtResource("18_selected")
+toggle_interaction = NodePath("InteractionComponent")
+collision_shape = NodePath("collision_type_switch")
+animation_name = &"type_switch_1_open"
 metadata/_edit_group_ = true
+
+[node name="InteractionComponent" parent="type_switch_1" unique_id=22105450 instance=ExtResource("12_interaction")]
+is_enabled = false
 
 [node name="mesh" type="MeshInstance3D" parent="type_switch_1" unique_id=1622725450]
 material_override = ExtResource("9_5qici")
@@ -419,9 +464,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.009999931)
 shape = SubResource("BoxShape3D_44ebl")
 debug_color = Color(0, 0.63869274, 0.37949818, 0.41960785)
 
-[node name="type_switch_2" type="AnimatableBody3D" parent="." unique_id=1888383842]
+[node name="type_switch_2" type="AnimatableBody3D" parent="." unique_id=1888383842 node_paths=PackedStringArray("indicator", "toggle_interaction", "collision_shape")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6199999, 0.6399999, 0.52000004)
+collision_layer = 40
+script = ExtResource("16_type_switch")
+packing_type = 2
+indicator = NodePath("../light_type_switch_2")
+selected_material = ExtResource("18_selected")
+toggle_interaction = NodePath("InteractionComponent")
+collision_shape = NodePath("collision_type_switch")
+animation_name = &"type_switch_2_open"
 metadata/_edit_group_ = true
+
+[node name="InteractionComponent" parent="type_switch_2" unique_id=936576835 instance=ExtResource("12_interaction")]
+is_enabled = false
 
 [node name="mesh" type="MeshInstance3D" parent="type_switch_2" unique_id=1135691983]
 material_override = ExtResource("9_5qici")
@@ -439,9 +495,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.009999931)
 shape = SubResource("BoxShape3D_44ebl")
 debug_color = Color(0, 0.63869274, 0.37949818, 0.41960785)
 
-[node name="button_start_packing" type="StaticBody3D" parent="." unique_id=999260477]
+[node name="button_start_packing" type="StaticBody3D" parent="." unique_id=999260477 node_paths=PackedStringArray("start_interaction", "collision_shape")]
 transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, -0.9999998, 0, 0.99999994, -4.3711378e-08, -0.3600001, 0.65999997, 0.5)
+collision_layer = 40
+script = ExtResource("17_start_button")
+start_interaction = NodePath("InteractionComponent")
+collision_shape = NodePath("collision_button_start_packing")
 metadata/_edit_group_ = true
+
+[node name="InteractionComponent" parent="button_start_packing" unique_id=637489474 instance=ExtResource("12_interaction")]
+is_enabled = false
 
 [node name="button_base" type="MeshInstance3D" parent="button_start_packing" unique_id=449531187]
 transform = Transform3D(1, 0, 0, 0, 0.9999994, 2.842171e-14, 0, -4.6185278e-14, 0.9999994, 0, 0.009999961, 0)
@@ -457,8 +520,16 @@ mesh = SubResource("CylinderMesh_3crod")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0200015, 3.5762787e-07)
 shape = SubResource("BoxShape3D_mndtq")
 
-[node name="door_capsules_input_bay" type="AnimatableBody3D" parent="." unique_id=926293633]
+[node name="door_capsules_input_bay" type="AnimatableBody3D" parent="." unique_id=926293633 node_paths=PackedStringArray("toggle_interaction", "collision_shape")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.22000001, 0.5, 0.5)
+collision_layer = 40
+script = ExtResource("15_door")
+toggle_interaction = NodePath("InteractionComponent")
+collision_shape = NodePath("collision_door_capsules_input_bay")
+animation_name = &"door_capsules_input_bay_open"
+
+[node name="InteractionComponent" parent="door_capsules_input_bay" unique_id=21554429 instance=ExtResource("12_interaction")]
+is_enabled = false
 
 [node name="mesh2" type="Node3D" parent="door_capsules_input_bay" unique_id=72714859]
 
@@ -483,26 +554,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26, 0, 0.06999999)
 shape = SubResource("BoxShape3D_5qici")
 debug_color = Color(0.1848008, 0.6428053, 0, 0.41960785)
 
-[node name="slot_pneumatic_capsules" type="Node3D" parent="." unique_id=1611160981]
+[node name="packing_capsule_place" type="StaticBody3D" parent="." unique_id=962285227 node_paths=PackedStringArray("capsule_anchor", "transfer_interaction", "collision_shape")]
+collision_layer = 40
+script = ExtResource("14_capsule_place")
+capsule_anchor = NodePath("slot_pneumatic_capsules")
+transfer_interaction = NodePath("InteractionComponent")
+collision_shape = NodePath("collision_pneumatic_capsule_slot")
+
+[node name="InteractionComponent" parent="packing_capsule_place" unique_id=858500445 instance=ExtResource("12_interaction")]
+is_enabled = false
+
+[node name="slot_pneumatic_capsules" type="Node3D" parent="packing_capsule_place" unique_id=1611160981]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04, 0.50000006, 0.33)
 
-[node name="pneumatic_capsules_0" parent="slot_pneumatic_capsules" unique_id=1479295841 instance=ExtResource("7_r1ovn")]
-
-[node name="collision_pneumatic_capsule_slot" type="CollisionShape3D" parent="." unique_id=1480832464]
+[node name="collision_pneumatic_capsule_slot" type="CollisionShape3D" parent="packing_capsule_place" unique_id=1480832464]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.04, 0.49999994, 0.30000004)
 shape = SubResource("BoxShape3D_y7sso")
 debug_color = Color(0.33057958, 0.48726058, 1, 0.41960785)
 
-[node name="liquid_tank_slot" type="Node3D" parent="." unique_id=553338899]
+[node name="packing_tank_place" type="StaticBody3D" parent="." unique_id=152951119 node_paths=PackedStringArray("liquid_tank_anchor", "transfer_interaction", "collision_shape")]
+collision_layer = 40
+script = ExtResource("13_tank_place")
+liquid_tank_anchor = NodePath("liquid_tank_slot")
+transfer_interaction = NodePath("InteractionComponent")
+collision_shape = NodePath("collision_liquid_tank_slot")
+
+[node name="InteractionComponent" parent="packing_tank_place" unique_id=907125178 instance=ExtResource("12_interaction")]
+is_enabled = false
+
+[node name="liquid_tank_slot" type="Node3D" parent="packing_tank_place" unique_id=553338899]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.5, 0.35, 0.30000004)
 
-[node name="liquid_tank_0" parent="liquid_tank_slot" unique_id=1823254939 instance=ExtResource("2_n5rw0")]
-fixed_installation = true
-
-[node name="collision_liquid_tank_slot" type="CollisionShape3D" parent="." unique_id=856905235]
+[node name="collision_liquid_tank_slot" type="CollisionShape3D" parent="packing_tank_place" unique_id=856905235]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.49999997, 0.34999996, 0.30000004)
 shape = SubResource("BoxShape3D_ri0kk")
 debug_color = Color(0.8679427, 0.35385427, 5.7756904e-07, 0.41960785)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1072277988]
+callback_mode_process = 0
 libraries/ = SubResource("AnimationLibrary_ri0kk")
+
+[node name="ProcessingTimer" type="Timer" parent="." unique_id=1166427253]
+process_mode = 1
+process_callback = 0
+wait_time = 2.0
+one_shot = true

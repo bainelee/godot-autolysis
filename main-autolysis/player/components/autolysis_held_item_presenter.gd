@@ -56,6 +56,9 @@ func prepare_instance(instance: AutolysisItemInstance) -> Node3D:
 	if instance.definition.item_id == &"liquid_tank" and not AutolysisLiquidTankVisual.apply_instance(visual, instance):
 		visual.free()
 		return null
+	if instance.is_pneumatic_capsule() and not AutolysisPneumaticCapsuleVisual.apply_instance(visual, instance):
+		visual.free()
+		return null
 	return visual
 
 
@@ -82,9 +85,14 @@ func watch_instance(instance: AutolysisItemInstance) -> void:
 
 
 func _refresh_instance_material() -> void:
-	if _instance != null and _instance.definition != null and _instance.definition.item_id == &"liquid_tank" and is_instance_valid(_display):
+	if _instance == null or _instance.definition == null or not is_instance_valid(_display):
+		return
+	if _instance.is_liquid_tank():
 		if not AutolysisLiquidTankVisual.apply_instance(_display, _instance):
 			push_error("当前手持液体罐显示依赖或内容无效。")
+	elif _instance.is_pneumatic_capsule():
+		if not AutolysisPneumaticCapsuleVisual.apply_instance(_display, _instance):
+			push_error("当前手持气动胶囊显示依赖或内容无效。")
 
 
 func _exit_tree() -> void:

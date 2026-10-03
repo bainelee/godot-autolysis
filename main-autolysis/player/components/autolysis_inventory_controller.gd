@@ -6,6 +6,7 @@ signal inventory_changed()
 
 const SLOT_COUNT: int = 4
 const LIQUID_TANK_ID: StringName = &"liquid_tank"
+const PNEUMATIC_CAPSULE_ID: StringName = &"pneumatic_capsule"
 const NEXT_ACTION: StringName = &"inventory_next"
 const PREVIOUS_ACTION: StringName = &"inventory_previous"
 
@@ -489,6 +490,218 @@ func _end_blend_tank_transfer(place: Variant) -> void:
 		_busy = false
 
 
+func can_place_in_packing_tank_place(actor: Node3D, place: AutolysisPackingTankPlace) -> bool:
+	return _can_place_in_packing_place(actor, place)
+
+
+func try_place_in_packing_tank_place(actor: Node3D, place: AutolysisPackingTankPlace) -> bool:
+	return _try_place_in_packing_place(actor, place)
+
+
+func try_store_selected_in_packing_tank_place(actor: Node3D, place: AutolysisPackingTankPlace) -> bool:
+	return try_place_in_packing_tank_place(actor, place)
+
+
+func can_take_from_packing_tank_place(actor: Node3D, place: AutolysisPackingTankPlace) -> bool:
+	return _can_take_from_packing_place(actor, place)
+
+
+func try_take_from_packing_tank_place(actor: Node3D, place: AutolysisPackingTankPlace) -> bool:
+	return _try_take_from_packing_place(actor, place)
+
+
+func can_place_in_packing_capsule_place(actor: Node3D, place: AutolysisPackingCapsulePlace) -> bool:
+	return _can_place_in_packing_place(actor, place)
+
+
+func try_place_in_packing_capsule_place(actor: Node3D, place: AutolysisPackingCapsulePlace) -> bool:
+	return _try_place_in_packing_place(actor, place)
+
+
+func try_store_selected_in_packing_capsule_place(actor: Node3D, place: AutolysisPackingCapsulePlace) -> bool:
+	return try_place_in_packing_capsule_place(actor, place)
+
+
+func can_take_from_packing_capsule_place(actor: Node3D, place: AutolysisPackingCapsulePlace) -> bool:
+	return _can_take_from_packing_place(actor, place)
+
+
+func try_take_from_packing_capsule_place(actor: Node3D, place: AutolysisPackingCapsulePlace) -> bool:
+	return _try_take_from_packing_place(actor, place)
+
+
+func _can_query_packing_place(actor: Variant, place: Variant) -> bool:
+	if (_busy and not _publishing) or not _dependencies_valid() or not _node_is_live(actor) or not actor is AutolysisPlayer or not _node_is_live(place):
+		return false
+	if not place is AutolysisPackingTankPlace and not place is AutolysisPackingCapsulePlace:
+		return false
+	return actor.get_node_or_null("InventoryController") == self and place.can_transfer(actor, _publishing)
+
+
+func _packing_instance_matches(place: Variant, instance: AutolysisItemInstance) -> bool:
+	if not is_instance_valid(instance) or not instance.is_valid_instance():
+		return false
+	if place is AutolysisPackingTankPlace:
+		return instance.is_liquid_tank() and _get_liquid_tank_world_scene(instance.definition) != null
+	if place is AutolysisPackingCapsulePlace:
+		return instance.is_pneumatic_capsule() and _get_pneumatic_capsule_world_scene(instance.definition) != null
+	return false
+
+
+func _packing_anchor(place: Variant) -> Node3D:
+	if place is AutolysisPackingTankPlace:
+		return place.liquid_tank_anchor
+	if place is AutolysisPackingCapsulePlace:
+		return place.capsule_anchor
+	return null
+
+
+func _can_place_in_packing_place(actor: Node3D, place: Variant) -> bool:
+	return _can_query_packing_place(actor, place) and place.get_stored_item() == null and _packing_instance_matches(place, get_focused_instance())
+
+
+func _try_place_in_packing_place(actor: Node3D, place: Variant) -> bool:
+	if _busy or not _can_place_in_packing_place(actor, place):
+		return false
+	var original_index: int = _focused_index
+	var instance: AutolysisItemInstance = get_focused_instance()
+	var anchor: Node3D = _packing_anchor(place)
+	var player: AutolysisPlayer = actor as AutolysisPlayer
+	var session: int = player.focus_controller.session_id
+	_busy = true
+	if not place.try_begin_transfer(actor):
+		_busy = false
+		return false
+	var candidate: Variant = _prepare_liquid_tank_world_item(instance) if place is AutolysisPackingTankPlace else _prepare_pneumatic_capsule_world_item(instance)
+	if candidate == null:
+		_end_packing_transfer(place)
+		return false
+	if not _packing_transaction_valid(actor, place, anchor, original_index, instance, session) or place.get_stored_item() != null or not candidate.prepare_packing_storage(place):
+		_rollback_packing_candidate(place, candidate)
+		return false
+	if not place.try_attach_prepared_item(candidate):
+		_rollback_packing_candidate(place, candidate)
+		return false
+	# 入树初始化后复查同一实例、同一会话和已登记候选，失败时仍保留库存来源。
+	if not _packing_transaction_valid(actor, place, anchor, original_index, instance, session) or not _node_is_live(candidate):
+		_rollback_packing_candidate(place, candidate)
+		return false
+	if candidate.item_instance != instance or candidate.item_definition != instance.definition or not place.owns_item(candidate) or candidate.get_parent() != anchor:
+		_rollback_packing_candidate(place, candidate)
+		return false
+	_slots[original_index] = null
+	_commit_visual(null)
+	_publish_change()
+	_end_packing_transfer(place)
+	return true
+
+
+func _can_take_from_packing_place(actor: Node3D, place: Variant) -> bool:
+	if not _can_query_packing_place(actor, place) or get_focused_instance() != null:
+		return false
+	var item: Variant = place.get_stored_item()
+	return _node_is_live(item) and place.owns_item(item) and _packing_instance_matches(place, item.item_instance) and item.item_instance.definition == item.item_definition
+
+
+func _try_take_from_packing_place(actor: Node3D, place: Variant) -> bool:
+	if _busy or not _can_take_from_packing_place(actor, place):
+		return false
+	var original_index: int = _focused_index
+	var item: Variant = place.get_stored_item()
+	var instance: AutolysisItemInstance = item.item_instance
+	var anchor: Node3D = _packing_anchor(place)
+	var machine: AutolysisPackingMachine = place.machine
+	var player: AutolysisPlayer = actor as AutolysisPlayer
+	var session: int = player.focus_controller.session_id
+	_busy = true
+	if not place.try_begin_transfer(actor):
+		_busy = false
+		return false
+	var visual: Node3D = _prepare_visual(instance)
+	if visual == null:
+		_end_packing_transfer(place)
+		return false
+	if not _packing_transaction_valid(actor, place, anchor, original_index, null, session) or not _node_is_live(item):
+		visual.free()
+		_end_packing_transfer(place)
+		return false
+	if item.item_instance != instance or item.item_definition != instance.definition or not _packing_instance_matches(place, instance) or not place.owns_item(item) or not place.release_item(item):
+		visual.free()
+		_end_packing_transfer(place)
+		return false
+	# 释放来源后无失败分支；先提交库存和显示，再以成功取走事件清除机器选择。
+	_slots[original_index] = instance
+	item.finish_pickup()
+	_commit_visual(visual)
+	if _node_is_live(machine):
+		machine.on_packing_item_taken(place, instance)
+	_publish_change()
+	_end_packing_transfer(place)
+	return true
+
+
+func _packing_transaction_valid(actor: Variant, place: Variant, anchor: Variant, original_index: int, instance: AutolysisItemInstance, session: int) -> bool:
+	if not _dependencies_valid() or not _node_is_live(actor) or not actor is AutolysisPlayer or not _node_is_live(place) or not _node_is_live(anchor):
+		return false
+	if not place is AutolysisPackingTankPlace and not place is AutolysisPackingCapsulePlace:
+		return false
+	if actor.get_node_or_null("InventoryController") != self or _focused_index != original_index or get_focused_instance() != instance:
+		return false
+	if not _node_is_live(actor.focus_controller) or actor.focus_controller.session_id != session:
+		return false
+	if instance != null and not _packing_instance_matches(place, instance):
+		return false
+	return _packing_anchor(place) == anchor and place.can_transfer(actor, true)
+
+
+func _rollback_packing_candidate(place: Variant, candidate: Variant) -> void:
+	if is_instance_valid(place) and (place is AutolysisPackingTankPlace or place is AutolysisPackingCapsulePlace):
+		place.rollback_prepared_item(candidate)
+		# 槽位保留的已提交来源不得由候选回滚释放。
+		if is_instance_valid(candidate) and place.owns_item(candidate):
+			_end_packing_transfer(place)
+			return
+	if is_instance_valid(candidate) and (candidate is AutolysisLiquidTank or candidate is AutolysisPneumaticCapsule):
+		candidate.free()
+	_end_packing_transfer(place)
+
+
+func _end_packing_transfer(place: Variant) -> void:
+	if is_instance_valid(place) and (place is AutolysisPackingTankPlace or place is AutolysisPackingCapsulePlace):
+		place.end_transfer()
+	if is_instance_valid(self):
+		_busy = false
+
+
+func can_take_pneumatic_capsule(actor: Node3D, item: AutolysisPneumaticCapsule) -> bool:
+	return _can_query_liquid_actor(actor) and _node_is_live(item) and item.is_available_for_pickup() and _is_pneumatic_capsule_definition(item.item_definition) and can_receive_instance(item.item_instance)
+
+
+func try_take_pneumatic_capsule(actor: Node3D, item: AutolysisPneumaticCapsule) -> bool:
+	if _busy or not can_take_pneumatic_capsule(actor, item):
+		return false
+	var original_index: int = _focused_index
+	var instance: AutolysisItemInstance = item.item_instance
+	_busy = true
+	var visual: Node3D = _prepare_visual(instance)
+	if visual == null:
+		_busy = false
+		return false
+	if not _liquid_actor_valid(actor) or not _node_is_live(item) or _focused_index != original_index or get_focused_instance() != null:
+		visual.free()
+		_busy = false
+		return false
+	if item.item_instance != instance or item.item_definition != instance.definition or not instance.is_valid_instance() or not instance.is_pneumatic_capsule() or not item.is_available_for_pickup():
+		visual.free()
+		_busy = false
+		return false
+	_slots[original_index] = instance
+	item.finish_pickup()
+	_commit_visual(visual)
+	_publish_change()
+	return true
+
+
 func can_dispose_in_waste_tank(actor: Node3D, tank: AutolysisWasteLiquidStorageTank) -> bool:
 	if not _can_query_liquid_actor(actor) or not _node_is_live(tank) or not tank.can_dispose(actor, _publishing):
 		return false
@@ -537,7 +750,7 @@ func try_dispose_in_waste_tank(actor: Node3D, tank: AutolysisWasteLiquidStorageT
 func _is_waste_disposable(instance: AutolysisItemInstance) -> bool:
 	if not is_instance_valid(instance) or not instance.is_valid_instance():
 		return false
-	return instance.definition.is_raw_material or (instance.is_liquid_tank() and instance.liquid_contents != null and instance.liquid_contents.is_valid_contents())
+	return instance.definition.is_raw_material or instance.is_pneumatic_capsule() or (instance.is_liquid_tank() and instance.liquid_contents != null and instance.liquid_contents.is_valid_contents())
 
 
 func _waste_transaction_valid(actor: Variant, tank: Variant, original_index: int, instance: AutolysisItemInstance, definition: AutolysisItemDefinition, contents: AutolysisLiquidContents, presenter: AutolysisHeldItemPresenter, display: Node3D) -> bool:
@@ -635,7 +848,7 @@ func _prepare_liquid_tank_world_item(instance: AutolysisItemInstance) -> Autolys
 		node.free()
 		return null
 	var item: AutolysisLiquidTank = node as AutolysisLiquidTank
-	if not _is_liquid_tank_definition(item.item_definition) or item.item_definition.item_id != definition.item_id or item.fixed_installation or item.cabinet_stored or item.cabinet != null or item.slot_index != -1 or item.blend_stored or item.blend_place != null:
+	if not _is_liquid_tank_definition(item.item_definition) or item.item_definition.item_id != definition.item_id or item.fixed_installation or item.cabinet_stored or item.cabinet != null or item.slot_index != -1 or item.blend_stored or item.blend_place != null or item.packing_stored or item.packing_place != null:
 		item.free()
 		return null
 	if not item.bind_item_instance(instance):
@@ -661,6 +874,47 @@ func _get_liquid_tank_world_scene(definition: AutolysisItemDefinition) -> Packed
 	if not item is AutolysisItemDefinition or not _is_liquid_tank_definition(item) or item.item_id != definition.item_id:
 		return null
 	if fixed_installation != null and (not fixed_installation is bool or fixed_installation):
+		return null
+	return scene
+
+
+func _is_pneumatic_capsule_definition(definition: AutolysisItemDefinition) -> bool:
+	return is_instance_valid(definition) and definition.item_id == PNEUMATIC_CAPSULE_ID and not definition.is_raw_material and definition.is_valid_definition()
+
+
+func _prepare_pneumatic_capsule_world_item(instance: AutolysisItemInstance) -> AutolysisPneumaticCapsule:
+	if not is_instance_valid(instance) or not instance.is_valid_instance() or not instance.is_pneumatic_capsule():
+		return null
+	var scene: PackedScene = _get_pneumatic_capsule_world_scene(instance.definition)
+	if scene == null:
+		return null
+	var node: Node = scene.instantiate()
+	if not node is AutolysisPneumaticCapsule:
+		node.free()
+		return null
+	var item: AutolysisPneumaticCapsule = node as AutolysisPneumaticCapsule
+	if not _is_pneumatic_capsule_definition(item.item_definition) or item.item_definition.item_id != instance.definition.item_id or item.packing_stored or item.packing_place != null:
+		item.free()
+		return null
+	if not item.bind_item_instance(instance):
+		item.free()
+		return null
+	return item
+
+
+func _get_pneumatic_capsule_world_scene(definition: AutolysisItemDefinition) -> PackedScene:
+	if not _is_pneumatic_capsule_definition(definition) or definition.world_scene_path.is_empty() or not ResourceLoader.exists(definition.world_scene_path, "PackedScene"):
+		return null
+	var resource: Resource = load(definition.world_scene_path)
+	if not resource is PackedScene or not resource.can_instantiate():
+		return null
+	var scene: PackedScene = resource as PackedScene
+	var state: SceneState = scene.get_state()
+	var script: Variant = _root_property(state, &"script")
+	var item: Variant = _root_property(state, &"item_definition")
+	if not script is Script or script.get_global_name() != &"AutolysisPneumaticCapsule":
+		return null
+	if not item is AutolysisItemDefinition or not _is_pneumatic_capsule_definition(item) or item.item_id != definition.item_id:
 		return null
 	return scene
 

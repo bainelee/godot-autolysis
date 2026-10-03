@@ -1,0 +1,6 @@
+SCRIPT ERROR: Parse Error: Cannot assign a new value to a constant.
+   at: GDScript::reload (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:286)
+SCRIPT ERROR: Parse Error: Cannot assign a new value to a constant.
+   at: GDScript::reload (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:288)
+ERROR: Failed to load script "res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)

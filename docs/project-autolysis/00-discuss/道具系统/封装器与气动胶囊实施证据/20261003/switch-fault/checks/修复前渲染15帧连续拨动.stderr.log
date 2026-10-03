@@ -1,0 +1,4 @@
+ERROR: 封装器控制件运动故障：/root/@Node3D@2/machine_packing_0/type_switch_0
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd:148)

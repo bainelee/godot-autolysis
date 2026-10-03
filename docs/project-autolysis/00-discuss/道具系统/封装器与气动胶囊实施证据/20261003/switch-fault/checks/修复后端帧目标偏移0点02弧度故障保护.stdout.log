@@ -1,0 +1,7 @@
+Godot Engine v4.6.1.stable.official.14d19694e - https://godotengine.org
+Vulkan 1.4.351 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 3060 Ti
+
+通过：正式机器初始化成功
+通过：动画实际完成信号已注入明显端帧偏移
+通过：真实动画结束后明显端帧偏移仍被拒绝并留下故障
+开关故障保护断言数：3；失败总数：0

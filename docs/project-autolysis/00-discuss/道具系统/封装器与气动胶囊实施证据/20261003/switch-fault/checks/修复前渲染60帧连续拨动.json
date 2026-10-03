@@ -1,0 +1,27 @@
+{
+  "检查": "修复前渲染60帧连续拨动",
+  "时间": "2026-10-03T20:02:54.7371403+08:00",
+  "进程编号": 22744,
+  "退出码": 1,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/packing_motion_physics_test.gd",
+    "--",
+    "--frame-limit",
+    "60",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/道具系统/封装器与气动胶囊实施证据/20261003/switch-fault/before-render60"
+  ],
+  "通过断言数": 3,
+  "预期错误计数": {},
+  "非预期错误": [
+    "失败：第1轮开关抵达开启端帧",
+    "失败：第1轮开关抵达关闭端帧",
+    "ERROR: 封装器控制件运动故障：/root/@Node3D@2/machine_packing_0/type_switch_0"
+  ]
+}

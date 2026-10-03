@@ -1,0 +1,26 @@
+{
+  "检查": "重复拨动图形30帧复现确认",
+  "时间": "2026-10-03T20:03:20.6261982+08:00",
+  "进程编号": 23252,
+  "退出码": 1,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--fixed-fps",
+    "30",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/packing_switch_repeat_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/道具系统/封装器与气动胶囊实施证据/20261003/switch-fault/input-before-30-confirm"
+  ],
+  "通过断言数": 15,
+  "预期错误计数": {},
+  "非预期错误": [
+    "失败：第1轮类型0第一次拨动稳定开启且无运动故障",
+    "ERROR: 封装器控制件运动故障：/root/PackingMachineDemo/PackingA/type_switch_0"
+  ]
+}

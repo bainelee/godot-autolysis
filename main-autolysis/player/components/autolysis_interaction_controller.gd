@@ -231,6 +231,7 @@ func _handle_focus_input(event: InputEvent) -> void:
 		"mouse": mouse, "session": _focus.session_id,
 		"index": _inventory.get_focused_index(), "item": _inventory.get_focused_item(),
 		"instance": _inventory.get_focused_instance(),
+		"focus_target": _focus.get_focus_target(),
 	}
 	_pending_clicks.append(click)
 	_drag_events.append(click)
@@ -300,6 +301,8 @@ func _drain_drag_events() -> void:
 
 
 func _dispatch_focus_click(click: Dictionary) -> void:
+	if not _focus_input_valid() or click.get("session", -1) != _focus.session_id or click.get("focus_target") != _focus.get_focus_target():
+		return
 	if is_drag_active() or click["index"] != _inventory.get_focused_index() or click["item"] != _inventory.get_focused_item() or click.get("instance") != _inventory.get_focused_instance():
 		return
 	var player: AutolysisPlayer = _actor as AutolysisPlayer

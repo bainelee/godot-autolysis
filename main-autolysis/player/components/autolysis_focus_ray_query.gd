@@ -25,6 +25,10 @@ func query_target(camera: Camera3D, mouse_position: Vector2, target: AutolysisFo
 	query.collide_with_areas = false
 	var first_hit: Dictionary = world.direct_space_state.intersect_ray(query)
 	var first_body: Node = first_hit.get("collider") as Node
+	# 封装器只解析显式登记的首命中，门和其他物体仍保留真实遮挡。
+	var packing_target: Node3D = target.get_packing_target_for_target(first_body)
+	if packing_target != null:
+		return packing_target
 	var handle: AutolysisBlendHandle = target.get_handle_for_target(first_body)
 	if handle != null:
 		return handle

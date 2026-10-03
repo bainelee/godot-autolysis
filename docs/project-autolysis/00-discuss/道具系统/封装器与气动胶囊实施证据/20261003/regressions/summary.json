@@ -1,0 +1,67 @@
+[
+  {
+    "name": "liquid-tank-transactions",
+    "mode": "headless",
+    "assertions": 167,
+    "failures": 0,
+    "completed": true,
+    "expected_error_count": 3,
+    "actual_error_count": 3,
+    "unexpected_errors": [],
+    "fault_injection_source": "res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd:253",
+    "stdout": "liquid-tank-transactions/stdout.log",
+    "stderr": "liquid-tank-transactions/stderr.log"
+  },
+  {
+    "name": "liquid-tank-cabinet",
+    "mode": "headless",
+    "assertions": 225,
+    "failures": 0,
+    "completed": true,
+    "expected_error_count": 0,
+    "actual_error_count": 0,
+    "unexpected_errors": [],
+    "fault_injection_source": "res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd:42",
+    "stdout": "liquid-tank-cabinet/stdout.log",
+    "stderr": "liquid-tank-cabinet/stderr.log"
+  },
+  {
+    "name": "liquid-contents-blend",
+    "mode": "headless",
+    "assertions": 176,
+    "failures": 0,
+    "completed": true,
+    "expected_error_count": 1,
+    "actual_error_count": 1,
+    "unexpected_errors": [],
+    "fault_injection_source": "res://main-autolysis/systems/item-system/tests/liquid_contents_blend_test.gd",
+    "stdout": "liquid-contents-blend/stdout.log",
+    "stderr": "liquid-contents-blend/stderr.log"
+  },
+  {
+    "name": "waste-liquid-tank",
+    "mode": "headless",
+    "assertions": 206,
+    "failures": 0,
+    "completed": true,
+    "expected_error_count": 4,
+    "actual_error_count": 4,
+    "unexpected_errors": [],
+    "fault_injection_source": "res://main-autolysis/systems/item-system/tests/waste_liquid_tank_behavior_test.gd:344",
+    "stdout": "waste-liquid-tank/stdout.log",
+    "stderr": "waste-liquid-tank/stderr.log"
+  },
+  {
+    "name": "blend-slot-transfers",
+    "mode": "headless",
+    "assertions": 266,
+    "failures": 0,
+    "completed": true,
+    "expected_error_count": 0,
+    "actual_error_count": 0,
+    "unexpected_errors": [],
+    "fault_injection_source": "res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:23",
+    "stdout": "blend-slot-transfers/stdout.log",
+    "stderr": "blend-slot-transfers/stderr.log"
+  }
+]

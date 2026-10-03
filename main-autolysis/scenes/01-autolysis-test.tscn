@@ -1294,6 +1294,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -2.1000001, -7.45)
 [node name="rm_caffeine_group_0" parent="interaction_prefabs/item_groups" unique_id=1649809486 instance=ExtResource("39_6qagm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -2.1000001, -7.1)
 
+[node name="rm_sodium_benzoate_group_1" parent="interaction_prefabs/item_groups" unique_id=498108266 instance=ExtResource("23_gu27o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.545, 1.7199998, 11.795001)
+
+[node name="rm_caffeine_group_1" parent="interaction_prefabs/item_groups" unique_id=238425409 instance=ExtResource("39_6qagm")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.1950006, 1.7199998, 11.795001)
+
 [node name="machines" type="Node3D" parent="interaction_prefabs" unique_id=1444861931]
 
 [node name="machine_ration_0" parent="interaction_prefabs/machines" unique_id=293070891 instance=ExtResource("21_13qhq")]
