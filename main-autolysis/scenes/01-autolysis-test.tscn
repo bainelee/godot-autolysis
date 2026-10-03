@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://bj4x7kte4vqfp" path="res://main-autolysis/scenes/prefabs/prefab_machines/quest_board_0.tscn" id="38_13qhq"]
 [ext_resource type="PackedScene" uid="uid://dfj70m6ya03b0" path="res://main-autolysis/scenes/prefabs/prefab_furnitures/wall_air_vent_0.tscn" id="38_t3ei3"]
 [ext_resource type="PackedScene" uid="uid://c0lj86k2dghrm" path="res://main-autolysis/scenes/prefabs/prefab_raw_materials/rm_caffeine_group_0.tscn" id="39_6qagm"]
+[ext_resource type="PackedScene" uid="uid://gs2nm8tewqks" path="res://main-autolysis/scenes/prefabs/prefab_place_shelf/shelf_penumatic_capsules.tscn" id="39_31j6e"]
 [ext_resource type="PackedScene" uid="uid://brkrki24ps4u7" path="res://main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn" id="39_t3ei3"]
 [ext_resource type="PackedScene" uid="uid://c7180ip5n6m2l" path="res://main-autolysis/scenes/prefabs/prefab_furnitures/store_shelf_warehouse_0.tscn" id="41_31j6e"]
 [ext_resource type="PackedScene" uid="uid://bnxoym6q4vqb7" path="res://main-autolysis/scenes/prefabs/prefab_items/syringe_group_0.tscn" id="42_hpy8m"]
@@ -1344,3 +1345,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2000003, 0.72, 11.999999)
 
 [node name="shelf_bottle_0" parent="interaction_prefabs/place_shelf_and_cabinet" unique_id=158678432 instance=ExtResource("32_13qhq")]
 transform = Transform3D(1, 0, -6.3573026e-08, 0, 1, 0, 6.3573026e-08, 0, 1, -4.2, 1.6800001, 12)
+
+[node name="shelf_penumatic_capsules" parent="." unique_id=115234868 instance=ExtResource("39_31j6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 1.6999999, 10.75)

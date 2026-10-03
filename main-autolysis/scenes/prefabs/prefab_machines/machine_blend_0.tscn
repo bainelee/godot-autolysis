@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://c1pn2s683ojtr" path="res://main-autolysis/components/interactions/autolysis_focus_target.gd" id="12_focus"]
 [ext_resource type="PackedScene" path="res://main-autolysis/components/interactions/autolysis_interaction_component.tscn" id="13_interaction"]
 [ext_resource type="Script" uid="uid://3ht375u5ktdi" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd" id="14_handle"]
-[ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_tank_place.gd" id="15_tank_place"]
+[ext_resource type="Script" uid="uid://dnkaqpncy764" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_tank_place.gd" id="15_tank_place"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7hmvv"]
 size = Vector3(1.8, 1.1999999, 0.95)
@@ -624,7 +624,7 @@ liquid_tank_anchor = NodePath("liquid_tank_slot")
 transfer_interaction = NodePath("InteractionComponent")
 collision_shape = NodePath("collision_liquid_tank_slot_0")
 
-[node name="InteractionComponent" parent="liquid_tank_place_0" instance=ExtResource("13_interaction")]
+[node name="InteractionComponent" parent="liquid_tank_place_0" unique_id=144424723 instance=ExtResource("13_interaction")]
 is_enabled = false
 
 [node name="collision_liquid_tank_slot_0" type="CollisionShape3D" parent="liquid_tank_place_0" unique_id=250055092]
@@ -735,7 +735,7 @@ debug_color = Color(0.7948737, 0.4256532, 5.7756904e-07, 0.41960785)
 callback_mode_process = 0
 libraries/ = SubResource("AnimationLibrary_fsl51")
 
-[node name="ProcessingTimer" type="Timer" parent="."]
+[node name="ProcessingTimer" type="Timer" parent="." unique_id=1351251144]
 process_mode = 1
 process_callback = 0
 wait_time = 2.0
