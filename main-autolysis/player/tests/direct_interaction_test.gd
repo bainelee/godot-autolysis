@@ -24,14 +24,33 @@ class ProbeBody extends StaticBody3D:
 class EffectReceiver extends Node3D:
 	var count: int = 0
 	var release_target: Node = null
+	var release_immediately: bool = false
 
 	func receive(_actor: Node3D) -> void:
 		count += 1
 		if is_instance_valid(release_target):
-			release_target.queue_free()
+			if release_immediately:
+				release_target.free()
+			else:
+				release_target.queue_free()
 
 	func receive_zero() -> void:
 		count += 1
+
+class RequestObserver extends Node3D:
+	var count: int = 0
+	var business_count_at_notification: int = -1
+	var probe: ProbeBody
+	var component: AutolysisInteractionComponent
+	var recurse: bool = false
+	var recursive_result: bool = true
+
+	func observe(actor: Node3D) -> void:
+		count += 1
+		if is_instance_valid(probe):
+			business_count_at_notification = probe.request_count
+		if recurse:
+			recursive_result = component.try_interact(actor)
 
 class ClickConsumer extends Control:
 	var consumed: int = 0
@@ -101,7 +120,7 @@ func new_probe(location: Vector3, with_receiver: bool = true) -> ProbeBody:
 	probe.component = COMPONENT_SCENE.instantiate()
 	probe.add_child(probe.component)
 	if with_receiver:
-		probe.component.interaction_requested.connect(probe.receive)
+		probe.component.set_execution_handler(probe.receive)
 	world.add_child(probe)
 	probe.global_position = location
 	return probe
@@ -149,37 +168,50 @@ func run_component_contracts() -> void:
 	component.interaction_mode = AutolysisInteractionComponent.InteractionMode.FOCUS
 	check(not component.can_interact(actor) and not component.try_interact(actor), "独立组件预留聚焦模式不执行直接交互")
 	component.interaction_mode = AutolysisInteractionComponent.InteractionMode.DIRECT
-	component.interaction_requested.disconnect(probe.receive)
-	check(not component.can_interact(actor) and not component.try_interact(actor), "没有效果接收者时不可用且不分发")
-	component.interaction_requested.connect(probe.receive)
-	component.interaction_requested.connect(probe.receive_alternative)
-	check(not component.can_interact(actor) and not component.try_interact(actor), "多个效果接收者时不可用且不分发")
-	component.interaction_requested.disconnect(probe.receive_alternative)
-	component.interaction_requested.disconnect(probe.receive)
-	component.interaction_requested.connect(probe.receive, CONNECT_DEFERRED)
-	check(not component.can_interact(actor), "延迟效果连接不符合本期同步契约")
-	component.interaction_requested.disconnect(probe.receive)
-	component.interaction_requested.connect(probe.receive)
+	check(component.has_execution_handler(probe.receive) and not component.has_execution_handler(probe.receive_alternative), "权威执行入口可核对实际拥有者回调")
+	component.clear_execution_handler()
+	check(not component.has_execution_handler() and not component.can_interact(actor) and not component.try_interact(actor), "没有权威执行绑定时不可用且不分发")
+	component.set_execution_handler(probe.receive)
 	probe.recurse = true
 	check(component.try_interact(actor) and not probe.recursive_result and probe.request_count == 2, "效果回调递归交互被拒绝且外层仅分发一次")
 	probe.recurse = false
+	var observer: RequestObserver = RequestObserver.new()
+	observer.probe = probe
+	observer.component = component
+	observer.recurse = true
+	world.add_child(observer)
+	var deferred_observer: RequestObserver = RequestObserver.new()
+	deferred_observer.probe = probe
+	world.add_child(deferred_observer)
+	component.interaction_requested.connect(observer.observe)
+	component.interaction_requested.connect(deferred_observer.observe, CONNECT_DEFERRED)
+	check(component.can_interact(actor) and component.try_interact(actor) and probe.request_count == 3, "多个同步与延后观察订阅不改变许可且业务只执行一次")
+	check(observer.count == 1 and observer.business_count_at_notification == 3 and not observer.recursive_result and deferred_observer.count == 0, "同步观察在业务后通知且观察期间拒绝递归请求")
+	await frames(2)
+	check(deferred_observer.count == 1 and deferred_observer.business_count_at_notification == 3 and probe.request_count == 3, "延后观察仅记录本次结果而不重复业务")
+	deferred_observer.queue_free()
+	await frames(2)
+	check(component.can_interact(actor) and component.try_interact(actor) and probe.request_count == 4 and observer.count == 2, "释放一个观察对象后保留业务与其他观察")
+	observer.queue_free()
+	await frames(2)
 	var detached_actor: Node3D = Node3D.new()
 	check(not component.can_interact(detached_actor) and not component.can_interact(null), "未入树或空执行者不可用")
 	detached_actor.free()
-	component.interaction_requested.disconnect(probe.receive)
 	var receiver: EffectReceiver = EffectReceiver.new()
 	world.add_child(receiver)
-	component.interaction_requested.connect(receiver.receive_zero)
-	check(not component.can_interact(actor), "零参数接收者不符合单参数效果契约")
-	component.interaction_requested.disconnect(receiver.receive_zero)
-	component.interaction_requested.connect(receiver.receive, CONNECT_APPEND_SOURCE_OBJECT)
-	check(not component.can_interact(actor), "追加信号来源参数的连接不符合单参数效果契约")
-	component.interaction_requested.disconnect(receiver.receive)
-	component.interaction_requested.connect(receiver.receive)
+	component.set_execution_handler(receiver.receive_zero)
+	check(not component.has_execution_handler() and not component.can_interact(actor), "零参数权威入口在执行前被拒绝")
+	component.set_execution_handler(Callable())
+	check(not component.can_interact(actor), "空权威入口不会退回无限制分发")
+	component.set_execution_handler(receiver.receive)
+	world.remove_child(receiver)
+	check(not component.can_interact(actor), "权威执行对象离树时拒绝请求")
+	world.add_child(receiver)
 	receiver.queue_free()
 	check(not component.can_interact(actor) and not component.try_interact(actor), "效果接收者排队释放后立即拒绝请求")
 	await frames(2)
-	component.interaction_requested.connect(probe.receive)
+	check(not component.can_interact(actor), "权威执行对象释放后维持不可用")
+	component.set_execution_handler(probe.receive)
 	component.queue_free()
 	check(not component.can_interact(actor) and not component.try_interact(actor), "组件排队释放后立即拒绝请求")
 	probe.queue_free()
@@ -193,7 +225,29 @@ func run_component_contracts() -> void:
 	check(not probe.component.can_interact(actor), "执行者排队释放后立即拒绝请求")
 	probe.queue_free()
 	await frames(2)
+	await run_dispatch_lifetime_contracts()
 
+func run_dispatch_lifetime_contracts() -> void:
+	for release_immediately: bool in [false, true]:
+		# 引擎禁止立即释放正在执行方法的组件；组件释放使用排队方式。
+		for target_kind: int in range(2 if release_immediately else 3):
+			var actor: Node3D = Node3D.new()
+			world.add_child(actor)
+			var probe: ProbeBody = new_probe(Vector3(20, 20, 20), false)
+			var receiver: EffectReceiver = EffectReceiver.new()
+			receiver.release_immediately = release_immediately
+			world.add_child(receiver)
+			probe.component.set_execution_handler(receiver.receive)
+			var observer: RequestObserver = RequestObserver.new()
+			world.add_child(observer)
+			probe.component.interaction_requested.connect(observer.observe)
+			var targets: Array[Node] = [actor, probe, probe.component]
+			receiver.release_target = targets[target_kind]
+			check(probe.component.try_interact(actor) and receiver.count == 1 and observer.count == 0, "业务%s释放第%d类依赖后安全结束分发且不向失效上下文通知" % ["立即" if release_immediately else "排队", target_kind])
+			for remaining: Variant in [actor, probe, receiver, observer]:
+				if is_instance_valid(remaining):
+					remaining.queue_free()
+			await frames(2)
 func run_availability_contracts() -> void:
 	var actor: Node3D = Node3D.new()
 	world.add_child(actor)
@@ -261,7 +315,7 @@ func run_availability_lifetime_contracts() -> void:
 		var probe: ProbeBody = new_probe(Vector3(20, 20, 20), false)
 		var effect_receiver: EffectReceiver = EffectReceiver.new()
 		world.add_child(effect_receiver)
-		probe.component.interaction_requested.connect(effect_receiver.receive)
+		probe.component.set_execution_handler(effect_receiver.receive)
 		var receiver: AvailabilityReceiver = AvailabilityReceiver.new()
 		world.add_child(receiver)
 		probe.component.set_availability_check(receiver.permits)
@@ -352,10 +406,10 @@ func run_configuration_cases() -> void:
 	var probe: ProbeBody = new_probe(origin + Vector3(0, 0, -1.2), false)
 	await frames(3)
 	await click()
-	check(not available and probe.request_count == 0, "命中无效果连接的组件不能伪装成可执行目标")
-	probe.component.interaction_requested.connect(probe.receive)
+	check(not available and probe.request_count == 0, "命中无权威执行绑定的组件不能伪装成可执行目标")
+	probe.component.set_execution_handler(probe.receive)
 	var extra: AutolysisInteractionComponent = COMPONENT_SCENE.instantiate()
-	extra.interaction_requested.connect(probe.receive_alternative)
+	extra.set_execution_handler(probe.receive_alternative)
 	probe.add_child(extra)
 	await frames(3)
 	await click()
@@ -439,7 +493,7 @@ func run_effect_release_cases() -> void:
 	var receiver: EffectReceiver = EffectReceiver.new()
 	receiver.release_target = probe
 	world.add_child(receiver)
-	probe.component.interaction_requested.connect(receiver.receive)
+	probe.component.set_execution_handler(receiver.receive)
 	await frames(3)
 	check(available, "释放效果执行前目标有效且可用")
 	await click()
@@ -449,7 +503,7 @@ func run_effect_release_cases() -> void:
 	probe = new_probe(player.camera.global_position + Vector3(0, 0, -1.2), false)
 	receiver = EffectReceiver.new()
 	world.add_child(receiver)
-	probe.component.interaction_requested.connect(receiver.receive)
+	probe.component.set_execution_handler(receiver.receive)
 	await frames(3)
 	check(available, "点击前立即释放用例初始目标已选中")
 	# 信号发射中的源对象必须排队释放；这里在发射前销毁，验证过期选择。

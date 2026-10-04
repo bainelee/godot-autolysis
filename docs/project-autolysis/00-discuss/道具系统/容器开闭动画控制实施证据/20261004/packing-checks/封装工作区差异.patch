@@ -1,0 +1,2503 @@
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn b/main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn
+index f3cfb0f..a64276f 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn
++++ b/main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn
+@@ -16,6 +16,8 @@
+ [ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_type_switch.gd" id="16_type_switch"]
+ [ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_start_button.gd" id="17_start_button"]
+ [ext_resource type="Material" uid="uid://eju83npipt3e" path="res://main-autolysis/assets/materials/glow_color/mat_glow_green_0.tres" id="18_selected"]
++[ext_resource type="Material" path="res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres" id="19_indicator_ready"]
++[ext_resource type="Material" path="res://main-autolysis/assets/materials/glow_color/mat_glow_blue_0.tres" id="20_indicator_running"]
+ 
+ [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hpy8m"]
+ albedo_color = Color(0.68, 0.7, 0.66, 1)
+@@ -293,6 +295,13 @@ start_button = NodePath("button_start_packing")
+ processing_timer = NodePath("ProcessingTimer")
+ start_indicator = NodePath("button_start_packing/button_press")
+ completion_indicators = [NodePath("light_packing_complete_sign/light_packing_complete_sign_mesh_0"), NodePath("light_packing_complete_sign/light_packing_complete_sign_mesh_1")]
++indicator_default_material = ExtResource("13_start_red")
++indicator_ready_material = ExtResource("19_indicator_ready")
++indicator_running_material = ExtResource("20_indicator_running")
++indicator_incomplete_material = ExtResource("4_0tg3w")
++indicator_half_cycle_seconds = 0.5
++indicator_emission_minimum = 0.0
++indicator_emission_maximum = 2.0
+ 
+ [node name="FocusTarget" type="Node3D" parent="." unique_id=1933980748]
+ script = ExtResource("11_focus")
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_capsule_place.gd b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_capsule_place.gd
+index 65cd72c..d5a10ae 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_capsule_place.gd
++++ b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_capsule_place.gd
+@@ -26,18 +26,18 @@ func configure(owner_machine: AutolysisPackingMachine, target: AutolysisFocusTar
+ 	if not get_configuration_error().is_empty():
+ 		return false
+ 	transfer_interaction.set_availability_check(_can_transfer_interact)
+-	transfer_interaction.interaction_requested.connect(_on_transfer_requested)
++	transfer_interaction.set_execution_handler(_on_transfer_requested)
+ 	_configured = true
+ 	return true
+ 
+ 
+ func get_configuration_error() -> String:
+-	if not _node_is_live(self) or not _node_is_live(machine) or get_parent() != machine:
+-		return "胶囊位必须属于有效封装器直接子级"
+-	if not _node_is_live(focus_target) or focus_target.get_parent() != machine:
++	if not _node_is_live(self) or not _node_is_live(machine) or not machine.is_ancestor_of(self):
++		return "胶囊位必须归属于有效封装器"
++	if not _node_is_live(focus_target) or not machine.is_ancestor_of(focus_target):
+ 		return "胶囊位与聚焦描述必须属于同一封装器"
+-	if not _node_is_live(capsule_anchor) or capsule_anchor.get_parent() != self:
+-		return "胶囊锚点必须属于本胶囊位直接子级"
++	if not _node_is_live(capsule_anchor) or not is_ancestor_of(capsule_anchor):
++		return "胶囊锚点必须归属于本胶囊位"
+ 	if not _node_is_live(collision_shape) or collision_shape.get_parent() != self or collision_shape.shape == null or collision_shape.disabled:
+ 		return "胶囊位直属碰撞无效"
+ 	if not _node_is_live(transfer_interaction) or transfer_interaction.get_parent() != self or transfer_interaction.interaction_mode != AutolysisInteractionComponent.InteractionMode.DIRECT:
+@@ -48,12 +48,8 @@ func get_configuration_error() -> String:
+ 			count += 1
+ 	if count != 1:
+ 		return "胶囊位必须恰好配置一个交互组件"
+-	var receivers: Array[Dictionary] = []
+-	receivers.assign(transfer_interaction.interaction_requested.get_connections())
+-	if not _configured and not receivers.is_empty():
+-		return "胶囊位初始化前不得连接其他接收者"
+-	if _configured and (receivers.size() != 1 or receivers[0]["callable"] != _on_transfer_requested or receivers[0]["flags"] != 0):
+-		return "胶囊位必须只同步连接自身请求方法"
++	if _configured and not transfer_interaction.has_execution_handler(_on_transfer_requested):
++		return "胶囊位缺少自身业务执行绑定"
+ 	for child: Node in capsule_anchor.get_children():
+ 		if child is AutolysisPneumaticCapsule and not child.is_queued_for_deletion() and child != _stored_item:
+ 			return "胶囊锚点存在未登记胶囊"
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_door.gd b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_door.gd
+index 2be0123..9f84117 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_door.gd
++++ b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_door.gd
+@@ -1,6 +1,6 @@
+ class_name AutolysisPackingDoor
+ extends AutolysisPackingMotion
+-## 舱门运动不改变本机类型；胶囊取放依赖完整打开端帧。
++## 舱门运动不改变本机类型；胶囊取放依赖打开动作自然完成。
+ 
+ 
+ func can_toggle(actor: Node3D) -> bool:
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd
+index b83af5e..8a7fc6d 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd
++++ b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd
+@@ -8,11 +8,6 @@ signal processing_failed(batch_id: int, reason: String)
+ 
+ const PROCESSING_SECONDS: float = 2.0
+ const NO_TYPE: int = -1
+-const INDICATOR_HALF_CYCLE_SECONDS: float = 0.5
+-const INDICATOR_RED_MATERIAL = preload("res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres")
+-const INDICATOR_READY_MATERIAL = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres")
+-const INDICATOR_BLUE_MATERIAL = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_blue_0.tres")
+-const INDICATOR_GREY_MATERIAL = preload("res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres")
+ 
+ enum IndicatorState { DEFAULT, READY, RUNNING, COMPLETED }
+ 
+@@ -28,6 +23,14 @@ enum IndicatorState { DEFAULT, READY, RUNNING, COMPLETED }
+ @export var processing_timer: Timer
+ @export var start_indicator: MeshInstance3D
+ @export var completion_indicators: Array[MeshInstance3D] = []
++@export_group("提示灯表现")
++@export var indicator_default_material: StandardMaterial3D = preload("res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres")
++@export var indicator_ready_material: StandardMaterial3D = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres")
++@export var indicator_running_material: StandardMaterial3D = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_blue_0.tres")
++@export var indicator_incomplete_material: StandardMaterial3D = preload("res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres")
++@export var indicator_half_cycle_seconds: float = 0.5
++@export var indicator_emission_minimum: float = 0.0
++@export var indicator_emission_maximum: float = 2.0
+ 
+ var _configured: bool = false
+ var _processing: bool = false
+@@ -46,6 +49,7 @@ var _batch_capsule_instance: AutolysisItemInstance
+ var _batch_source: AutolysisLiquidContents
+ var _batch_type: int = NO_TYPE
+ var _indicator_enabled: bool = false
++var _completion_indicator_enabled: bool = false
+ var _indicator_state: int = -1
+ var _indicator_blue_material: StandardMaterial3D
+ var _indicator_tween: Tween
+@@ -58,19 +62,19 @@ func _ready() -> void:
+ 	if not _validate_configuration():
+ 		push_error("封装器配置无效：%s" % get_path())
+ 		return
+-	animation_source.stop(true)
+-	animation_source.active = false
++	if _node_is_live(animation_source):
++		animation_source.stop(true)
++		animation_source.active = false
+ 	if not tank_place.configure(self, focus_target) or not capsule_place.configure(self, focus_target):
+ 		push_error("封装器槽位配置失败：%s；%s" % [tank_place.get_configuration_error(), capsule_place.get_configuration_error()])
+ 		return
+ 	if not door.configure(self, focus_target, _create_player(door.animation_name, "PackingDoorAnimation")):
+-		push_error("封装器舱门配置失败：%s" % door.get_configuration_error())
+-		return
++		push_warning("封装器舱门停止更新：%s" % door.get_configuration_error())
+ 	for index: int in type_switches.size():
+ 		var control: AutolysisPackingTypeSwitch = type_switches[index]
+ 		if not control.configure(self, focus_target, _create_player(control.animation_name, "PackingTypeAnimation_%d" % index)):
+-			push_error("封装器类型开关配置失败：%s" % control.get_configuration_error())
+-			return
++			push_warning("封装器类型开关停止更新：%s" % control.get_configuration_error())
++		control.motion_cancelled.connect(_on_type_motion_cancelled.bind(control))
+ 	if not start_button.configure(self, focus_target, _create_player(start_button.animation_name, "PackingStartAnimation")):
+ 		push_error("封装器开始按钮配置失败：%s" % start_button.get_configuration_error())
+ 		return
+@@ -78,7 +82,7 @@ func _ready() -> void:
+ 		push_error("封装器聚焦描述登记失败：%s" % get_path())
+ 		return
+ 	root_interaction.set_availability_check(_can_enter)
+-	root_interaction.interaction_requested.connect(_on_entry_requested)
++	root_interaction.set_execution_handler(_on_entry_requested)
+ 	processing_timer.timeout.connect(_on_processing_timeout)
+ 	_configured = true
+ 	tank_place.transfer_interaction.is_enabled = true
+@@ -93,29 +97,53 @@ func _ready() -> void:
+ 
+ ## 显示依赖独立校验；失效时只停灯，不改变封装业务许可或故障锁。
+ func _initialize_indicator() -> void:
+-	if not INDICATOR_RED_MATERIAL is StandardMaterial3D or not INDICATOR_READY_MATERIAL is StandardMaterial3D or not INDICATOR_BLUE_MATERIAL is StandardMaterial3D or not INDICATOR_GREY_MATERIAL is StandardMaterial3D:
+-		_disable_indicator("四份提示灯材质必须为 StandardMaterial3D（标准三维材质）")
+-		return
+-	_indicator_blue_material = INDICATOR_BLUE_MATERIAL.duplicate() as StandardMaterial3D
+-	if not _indicator_dependencies_are_valid():
+-		_disable_indicator("按钮网格、双完成网格的归属、网格或独立运行材质无效")
+-		return
+-	_indicator_enabled = true
+-	start_indicator.tree_exiting.connect(_on_indicator_exiting)
++	if is_instance_valid(indicator_running_material):
++		_indicator_blue_material = indicator_running_material.duplicate() as StandardMaterial3D
++	_indicator_enabled = _start_indicator_dependencies_are_valid()
++	_completion_indicator_enabled = _completion_indicator_dependencies_are_valid()
++	if _indicator_enabled:
++		start_indicator.tree_exiting.connect(_on_indicator_exiting)
++		_set_indicator_state(IndicatorState.DEFAULT)
++	else:
++		_disable_indicator("开始提示灯引用、材质或闪烁参数无效")
++	if _completion_indicator_enabled:
++		for indicator: MeshInstance3D in completion_indicators:
++			indicator.tree_exiting.connect(_on_completion_indicator_exiting)
++		_set_completion_indicators(false)
++	else:
++		push_warning("封装完成灯停止更新：显示引用或材质无效")
++
++
++func rebind_indicators() -> void:
++	_on_indicator_exiting()
+ 	for indicator: MeshInstance3D in completion_indicators:
+-		indicator.tree_exiting.connect(_on_indicator_exiting)
+-	_set_indicator_state(IndicatorState.DEFAULT)
+-	_set_completion_indicators(false)
++		if _node_is_live(indicator) and indicator.tree_exiting.is_connected(_on_completion_indicator_exiting):
++			indicator.tree_exiting.disconnect(_on_completion_indicator_exiting)
++	if _node_is_live(start_indicator) and start_indicator.tree_exiting.is_connected(_on_indicator_exiting):
++		start_indicator.tree_exiting.disconnect(_on_indicator_exiting)
++	_indicator_state = -1
++	_initialize_indicator()
++	_refresh_indicator()
++	_set_completion_indicators(_completed_capsule_instance != null)
+ 
+ 
+ func _indicator_dependencies_are_valid() -> bool:
+-	if not _node_is_live(start_button) or start_button.get_parent() != self or not _node_is_live(start_indicator) or start_indicator.get_parent() != start_button or start_indicator.mesh == null or not is_instance_valid(_indicator_blue_material):
++	return _start_indicator_dependencies_are_valid() and _completion_indicator_dependencies_are_valid()
++
++
++func _start_indicator_dependencies_are_valid() -> bool:
++	if not _node_is_live(start_button) or not is_ancestor_of(start_button) or not _node_is_live(start_indicator) or not is_ancestor_of(start_indicator) or start_indicator.mesh == null:
++		return false
++	if not is_instance_valid(indicator_default_material) or not is_instance_valid(indicator_ready_material) or not is_instance_valid(_indicator_blue_material):
+ 		return false
+-	var completion_root: Node3D = get_node_or_null("light_packing_complete_sign") as Node3D
+-	if not _node_is_live(completion_root) or completion_root.get_parent() != self or completion_indicators.size() != 2 or completion_indicators[0] == completion_indicators[1]:
++	return is_finite(indicator_half_cycle_seconds) and indicator_half_cycle_seconds > 0.0 and is_finite(indicator_emission_minimum) and is_finite(indicator_emission_maximum) and indicator_emission_minimum >= 0.0 and indicator_emission_maximum >= indicator_emission_minimum
++
++
++func _completion_indicator_dependencies_are_valid() -> bool:
++	if completion_indicators.size() != 2 or completion_indicators[0] == completion_indicators[1] or not is_instance_valid(indicator_running_material) or not is_instance_valid(indicator_incomplete_material):
+ 		return false
+ 	for indicator: MeshInstance3D in completion_indicators:
+-		if not _node_is_live(indicator) or indicator.get_parent() != completion_root or indicator.mesh == null:
++		if not _node_is_live(indicator) or not is_ancestor_of(indicator) or indicator.mesh == null:
+ 			return false
+ 	return true
+ 
+@@ -123,7 +151,7 @@ func _indicator_dependencies_are_valid() -> bool:
+ func _refresh_indicator() -> void:
+ 	if not _indicator_enabled or not _node_is_live(self):
+ 		return
+-	if not _indicator_dependencies_are_valid():
++	if not _start_indicator_dependencies_are_valid():
+ 		_disable_indicator("提示灯引用、归属、网格或运行材质已失效")
+ 		return
+ 	_set_indicator_state(_get_indicator_state())
+@@ -151,11 +179,11 @@ func _set_indicator_state(next_state: IndicatorState) -> void:
+ 	_indicator_state = next_state
+ 	match next_state:
+ 		IndicatorState.DEFAULT:
+-			start_indicator.material_override = INDICATOR_RED_MATERIAL
++			start_indicator.material_override = indicator_default_material
+ 		IndicatorState.READY, IndicatorState.COMPLETED:
+-			start_indicator.material_override = INDICATOR_READY_MATERIAL
++			start_indicator.material_override = indicator_ready_material
+ 		IndicatorState.RUNNING:
+-			_indicator_blue_material.emission_energy_multiplier = 2.0
++			_indicator_blue_material.emission_energy_multiplier = indicator_emission_maximum
+ 			start_indicator.material_override = _indicator_blue_material
+ 			_indicator_tween = create_tween()
+ 			_indicator_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+@@ -163,19 +191,20 @@ func _set_indicator_state(next_state: IndicatorState) -> void:
+ 			_indicator_tween.set_ignore_time_scale(false)
+ 			_indicator_tween.set_trans(Tween.TRANS_LINEAR)
+ 			_indicator_tween.set_loops()
+-			_indicator_tween.tween_property(_indicator_blue_material, "emission_energy_multiplier", 0.0, INDICATOR_HALF_CYCLE_SECONDS)
+-			_indicator_tween.tween_property(_indicator_blue_material, "emission_energy_multiplier", 2.0, INDICATOR_HALF_CYCLE_SECONDS)
++			_indicator_tween.tween_property(_indicator_blue_material, "emission_energy_multiplier", indicator_emission_minimum, indicator_half_cycle_seconds)
++			_indicator_tween.tween_property(_indicator_blue_material, "emission_energy_multiplier", indicator_emission_maximum, indicator_half_cycle_seconds)
+ 
+ 
+ ## 完成双灯只在初始化、成功完成与成功取走本轮胶囊的边界切换。
+ func _set_completion_indicators(completed: bool) -> void:
+-	if not _indicator_enabled:
++	if not _completion_indicator_enabled:
+ 		return
+-	if not _indicator_dependencies_are_valid():
+-		_disable_indicator("完成双灯显示依赖已失效")
++	if not _completion_indicator_dependencies_are_valid():
++		_on_completion_indicator_exiting()
++		push_warning("封装完成灯停止更新：显示依赖已失效")
+ 		return
+ 	for indicator: MeshInstance3D in completion_indicators:
+-		indicator.material_override = INDICATOR_BLUE_MATERIAL if completed else INDICATOR_GREY_MATERIAL
++		indicator.material_override = indicator_running_material if completed else indicator_incomplete_material
+ 
+ 
+ func _stop_indicator_blink() -> void:
+@@ -191,67 +220,70 @@ func _on_indicator_exiting() -> void:
+ 
+ func _disable_indicator(reason: String) -> void:
+ 	_on_indicator_exiting()
+-	push_error("封装机提示灯停止更新：%s；%s" % [reason, get_path()])
++	push_warning("封装机提示灯停止更新：%s；%s" % [reason, get_path()])
++
++
++func _on_completion_indicator_exiting() -> void:
++	_completion_indicator_enabled = false
+ 
+ 
+ func _create_player(animation_name: StringName, player_name: String) -> AnimationPlayer:
++	if not _node_is_live(animation_source) or not animation_source.has_animation(animation_name):
++		return null
++	var animation_root: Node = animation_source.get_node_or_null(animation_source.root_node)
++	if not _node_is_live(animation_root) or (animation_root != self and not is_ancestor_of(animation_root)):
++		return null
+ 	var library: AnimationLibrary = AnimationLibrary.new()
+-	library.add_animation(animation_name, animation_source.get_animation(animation_name))
++	var library_name: StringName = &""
++	var local_animation_name: StringName = animation_name
++	var name_parts: PackedStringArray = String(animation_name).split("/", false, 1)
++	if name_parts.size() == 2:
++		library_name = StringName(name_parts[0])
++		local_animation_name = StringName(name_parts[1])
++	library.add_animation(local_animation_name, animation_source.get_animation(animation_name))
+ 	var runtime_player: AnimationPlayer = AnimationPlayer.new()
+ 	runtime_player.name = player_name
+-	runtime_player.root_node = NodePath("..")
+-	runtime_player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS
++	runtime_player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
+ 	runtime_player.process_mode = Node.PROCESS_MODE_PAUSABLE
+ 	runtime_player.playback_auto_capture = false
+-	runtime_player.add_animation_library(&"", library)
++	runtime_player.add_animation_library(library_name, library)
+ 	add_child(runtime_player)
++	runtime_player.root_node = runtime_player.get_path_to(animation_root)
++	runtime_player.speed_scale = animation_source.speed_scale
+ 	return runtime_player
+ 
+ 
+ func _validate_configuration() -> bool:
+-	if not _node_is_live(self) or not _node_is_live(focus_target) or focus_target.get_parent() != self:
++	if not _node_is_live(self) or not _node_is_live(focus_target) or not is_ancestor_of(focus_target):
+ 		return false
+ 	if not _node_is_live(reference_camera) or not is_ancestor_of(reference_camera):
+ 		return false
+ 	if not _node_is_live(root_interaction) or root_interaction.get_parent() != self or root_interaction.interaction_mode != AutolysisInteractionComponent.InteractionMode.FOCUS:
+ 		return false
+-	if not _node_is_live(animation_source) or animation_source.get_parent() != self or (_configured and animation_source.active):
+-		return false
+-	if not _node_is_live(tank_place) or tank_place.get_parent() != self or not _node_is_live(capsule_place) or capsule_place.get_parent() != self:
++	if not _node_is_live(tank_place) or not is_ancestor_of(tank_place) or not _node_is_live(capsule_place) or not is_ancestor_of(capsule_place):
+ 		return false
+-	if not _node_is_live(door) or door.get_parent() != self or not _node_is_live(start_button) or start_button.get_parent() != self or type_switches.size() != 3:
++	if not _node_is_live(door) or not is_ancestor_of(door) or not _node_is_live(start_button) or not is_ancestor_of(start_button) or type_switches.size() != 3:
+ 		return false
+-	if not _node_is_live(processing_timer) or processing_timer.get_parent() != self or not processing_timer.one_shot or processing_timer.process_mode != Node.PROCESS_MODE_PAUSABLE:
++	if not _node_is_live(processing_timer) or not is_ancestor_of(processing_timer) or not processing_timer.one_shot or processing_timer.process_mode != Node.PROCESS_MODE_PAUSABLE:
+ 		return false
+-	if processing_timer.ignore_time_scale or processing_timer.process_callback != Timer.TIMER_PROCESS_PHYSICS or not is_equal_approx(processing_timer.wait_time, PROCESSING_SECONDS):
++	if processing_timer.ignore_time_scale or processing_timer.process_callback != Timer.TIMER_PROCESS_PHYSICS:
+ 		return false
+-	if not _valid_animation(door.animation_name, 0.2) or not _valid_animation(start_button.animation_name, 0.12):
++	if _configured and not root_interaction.has_execution_handler(_on_entry_requested):
+ 		return false
+ 	var seen: Array[AutolysisPackingTypeSwitch] = []
+ 	for index: int in type_switches.size():
+-		var control: AutolysisPackingTypeSwitch = type_switches[index]
+-		if not _node_is_live(control) or control.get_parent() != self or seen.has(control) or control.packing_type != index or not _valid_animation(control.animation_name, 0.16):
++		var candidate: Variant = type_switches[index]
++		if not _node_is_live(candidate):
++			return false
++		var control: AutolysisPackingTypeSwitch = candidate as AutolysisPackingTypeSwitch
++		if not is_ancestor_of(control) or seen.has(control) or control.packing_type != index:
+ 			return false
+ 		seen.append(control)
+ 	return true
+ 
+ 
+-func _valid_animation(animation_name: StringName, seconds: float) -> bool:
+-	if not animation_source.has_animation(animation_name):
+-		return false
+-	var animation: Animation = animation_source.get_animation(animation_name)
+-	return animation.loop_mode == Animation.LOOP_NONE and is_equal_approx(animation.length, seconds)
+-
+-
+ func is_configured() -> bool:
+-	if not _configured or not _validate_configuration() or not focus_target.is_valid_target():
+-		return false
+-	if not tank_place.is_configured() or not capsule_place.is_configured() or not door.is_configured() or not start_button.is_configured():
+-		return false
+-	for control: AutolysisPackingTypeSwitch in type_switches:
+-		if not control.is_configured():
+-			return false
+-	return true
++	return _configured and _validate_configuration() and focus_target.is_valid_target()
+ 
+ 
+ func is_interaction_locked() -> bool:
+@@ -297,14 +329,29 @@ func has_valid_inputs() -> bool:
+ 
+ 
+ func are_switches_animating() -> bool:
+-	for control: AutolysisPackingTypeSwitch in type_switches:
+-		if control.is_animating():
++	for candidate: Variant in type_switches:
++		if _node_is_live(candidate) and (candidate as AutolysisPackingTypeSwitch).is_animating():
+ 			return true
+ 	return false
+ 
+ 
+ func can_select_type(actor: Node3D, packing_type: int) -> bool:
+-	return packing_type >= 0 and packing_type < 3 and is_configured() and not is_interaction_locked() and _completed_capsule_instance == null and not are_transfers_busy() and has_valid_inputs() and not are_switches_animating() and is_actor_focused(actor)
++	return packing_type >= 0 and packing_type < 3 and is_configured() and _switch_dependencies_are_valid() and not is_interaction_locked() and _completed_capsule_instance == null and not are_transfers_busy() and has_valid_inputs() and not are_switches_animating() and is_actor_focused(actor)
++
++
++func _switch_dependencies_are_valid() -> bool:
++	for candidate: Variant in type_switches:
++		if not _node_is_live(candidate) or not (candidate as AutolysisPackingTypeSwitch).is_configured():
++			return false
++	return true
++
++
++func _on_type_motion_cancelled(_reason: String, _control: AutolysisPackingTypeSwitch) -> void:
++	_selected_type = NO_TYPE
++	for candidate: Variant in type_switches:
++		if _node_is_live(candidate):
++			(candidate as AutolysisPackingTypeSwitch).clear_selection_for_recovery()
++	_refresh_indicator()
+ 
+ 
+ func try_select_type(actor: Node3D, packing_type: int) -> bool:
+@@ -317,7 +364,10 @@ func try_select_type(actor: Node3D, packing_type: int) -> bool:
+ 
+ func _apply_selection() -> void:
+ 	# 先恢复旧灯，再亮新灯，使改选过程中也最多一盏发光灯。
+-	for control: AutolysisPackingTypeSwitch in type_switches:
++	for candidate: Variant in type_switches:
++		if not _node_is_live(candidate):
++			continue
++		var control: AutolysisPackingTypeSwitch = candidate as AutolysisPackingTypeSwitch
+ 		if control.packing_type != _selected_type:
+ 			control.set_selected(false)
+ 	if _selected_type >= 0:
+@@ -359,9 +409,9 @@ func get_start_denial_reason() -> StringName:
+ 		return &"invalid_inputs"
+ 	if _selected_type < 0 or _selected_type >= 3:
+ 		return &"missing_type"
+-	if door.is_animating() or (not door.is_open() and not door.is_closed()):
++	if not door.is_configured() or door.is_animating() or (not door.is_open() and not door.is_closed()):
+ 		return &"door_moving"
+-	if are_switches_animating():
++	if not _switch_dependencies_are_valid() or are_switches_animating():
+ 		return &"switch_moving"
+ 	for control: AutolysisPackingTypeSwitch in type_switches:
+ 		if control.is_selected() != (control.packing_type == _selected_type) or (control.is_selected() and not control.is_open()) or (not control.is_selected() and not control.is_closed()):
+@@ -467,8 +517,12 @@ func _get_batch_commit_error(contents: AutolysisPackingContents) -> String:
+ 		return "运行批次、计时或设备配置失效"
+ 	if not is_instance_valid(contents) or not contents.is_valid_contents():
+ 		return "不能建立合法封装产物"
+-	if are_transfers_busy() or not _node_is_live(_batch_tank) or not _node_is_live(_batch_capsule) or not tank_place.owns_item(_batch_tank) or not capsule_place.owns_item(_batch_capsule):
+-		return "本轮两槽归属或取放事务失效"
++	if are_transfers_busy():
++		return "本轮取放事务仍在运行"
++	if not _node_is_live(_batch_tank) or not tank_place.owns_item(_batch_tank):
++		return "本轮液体罐节点或槽位归属失效"
++	if not _node_is_live(_batch_capsule) or not capsule_place.owns_item(_batch_capsule):
++		return "本轮胶囊节点或槽位归属失效"
+ 	if _batch_tank.item_instance != _batch_tank_instance or _batch_capsule.item_instance != _batch_capsule_instance:
+ 		return "本轮物品实例身份发生变化"
+ 	if not is_instance_valid(_batch_tank_instance) or not _batch_tank_instance.is_valid_instance() or not is_instance_valid(_batch_capsule_instance) or not _batch_capsule_instance.is_empty_pneumatic_capsule():
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd
+index aa7bb99..03028c1 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd
++++ b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd
+@@ -1,12 +1,11 @@
+ class_name AutolysisPackingMotion
+ extends AnimatableBody3D
+-## 门与开关共用物理帧端帧核验；每个控制件仍有自己的播放器和运动状态。
++## 控制件由物理处理推进独立播放器；目标自然完成后发布稳定结果。
+ 
+-enum MotionState { CLOSED, OPENING, OPEN, CLOSING }
++signal motion_completed(opened: bool)
++signal motion_cancelled(reason: String)
+ 
+-# 实测物理同步后的端帧误差约为0.0000176弧度，默认向量容差会误判。
+-# 此容差小于0.006度；动画停止、状态和实际端帧仍同时核验。
+-const ENDPOINT_ANGLE_TOLERANCE: float = 0.0001
++enum MotionState { CLOSED, OPENING, OPEN, CLOSING }
+ 
+ @export var toggle_interaction: AutolysisInteractionComponent
+ @export var collision_shape: CollisionShape3D
+@@ -17,12 +16,22 @@ var focus_target: AutolysisFocusTarget
+ var state: MotionState = MotionState.CLOSED
+ var _runtime_player: AnimationPlayer
+ var _configured: bool = false
+-var _source_animation: Animation
+-var _closed_rotation: Vector3
+-var _open_rotation: Vector3
+ var _completion_pending: bool = false
++var _restoration_pending: bool = false
+ var _expected_direction: int = 0
+ var _motion_fault: String = ""
++var _motion_serial: int = 0
++var _pending_serial: int = 0
++var _pending_frame: int = 0
++var _stable_open: bool = false
++var _suspended: bool = false
++var _action_animation: Animation
++var _pending_animation: Animation
++var _completed_transform: Transform3D
++var _applying_animation: bool = false
++var _deferred_action: int = 0
++var _deferred_open: bool = false
++var _deferred_player: AnimationPlayer
+ 
+ 
+ func _ready() -> void:
+@@ -35,29 +44,19 @@ func configure(owner_machine: AutolysisPackingMachine, target: AutolysisFocusTar
+ 		return false
+ 	machine = owner_machine
+ 	focus_target = target
+-	_runtime_player = runtime_player
+-	if not get_configuration_error().is_empty():
++	if not _get_control_error().is_empty():
+ 		return false
+-	_source_animation = _runtime_player.get_animation(animation_name)
+-	_closed_rotation = _source_animation.track_get_key_value(0, 0)
+-	_open_rotation = _source_animation.track_get_key_value(0, _source_animation.track_get_key_count(0) - 1)
+-	_runtime_player.play(animation_name, 0.0)
+-	_runtime_player.seek(0.0, true)
+-	_runtime_player.pause()
+ 	toggle_interaction.set_availability_check(can_toggle)
+-	toggle_interaction.interaction_requested.connect(_on_toggle_requested)
+-	_runtime_player.animation_finished.connect(_on_animation_finished)
++	toggle_interaction.set_execution_handler(_on_toggle_requested)
+ 	_configured = true
+-	return true
++	return rebind_animation_player(runtime_player)
+ 
+ 
+-func get_configuration_error() -> String:
+-	if not _motion_fault.is_empty():
+-		return _motion_fault
+-	if not _node_is_live(self) or not _node_is_live(machine) or get_parent() != machine:
+-		return "控制件必须属于有效封装器直接子级"
+-	if not _node_is_live(focus_target) or focus_target.get_parent() != machine:
+-		return "控制件与聚焦描述必须属于同一封装器"
++func _get_control_error() -> String:
++	if not _node_is_live(self) or not _node_is_live(machine) or not machine.is_ancestor_of(self):
++		return "控制件必须归属于有效封装器"
++	if not _node_is_live(focus_target) or not machine.is_ancestor_of(focus_target):
++		return "控制件与聚焦描述必须归属于同一封装器"
+ 	if not sync_to_physics:
+ 		return "活动控制件必须保留物理同步"
+ 	if not _node_is_live(collision_shape) or collision_shape.get_parent() != self or collision_shape.shape == null or collision_shape.disabled:
+@@ -70,48 +69,50 @@ func get_configuration_error() -> String:
+ 			count += 1
+ 	if count != 1:
+ 		return "控制件必须恰好配置一个交互组件"
+-	var receivers: Array[Dictionary] = []
+-	receivers.assign(toggle_interaction.interaction_requested.get_connections())
+-	if not _configured and not receivers.is_empty():
+-		return "控制件初始化前不得连接其他接收者"
+-	if _configured and (receivers.size() != 1 or receivers[0]["callable"] != _on_toggle_requested or receivers[0]["flags"] != 0):
+-		return "控制件必须只同步连接自身请求方法"
+-	if not _node_is_live(_runtime_player) or _runtime_player.get_parent() != machine or not _runtime_player.has_animation(animation_name):
++	if _configured and not toggle_interaction.has_execution_handler(_on_toggle_requested):
++		return "控制件缺少自身业务执行绑定"
++	return ""
++
++
++func _get_dependency_error() -> String:
++	var control_error: String = _get_control_error()
++	if not control_error.is_empty():
++		return control_error
++	if not _node_is_live(_runtime_player) or not machine.is_ancestor_of(_runtime_player) or not _runtime_player.has_animation(animation_name):
+ 		return "独立运行播放器或指定动画无效"
+-	if _runtime_player.get_node_or_null(_runtime_player.root_node) != machine or not _runtime_player.active or _runtime_player.callback_mode_process != AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS:
+-		return "动画轨道必须使用本机根节点及物理帧"
+-	if _runtime_player.process_mode != Node.PROCESS_MODE_PAUSABLE or not is_equal_approx(_runtime_player.speed_scale, 1.0):
+-		return "动画必须使用可暂停处理及原速度"
++	var animation_root: Node = _runtime_player.get_node_or_null(_runtime_player.root_node)
++	if not _node_is_live(animation_root) or (animation_root != machine and not machine.is_ancestor_of(animation_root)):
++		return "独立运行播放器根引用不属于本机"
++	if not _runtime_player.active or _runtime_player.callback_mode_process != AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL or _runtime_player.process_mode != Node.PROCESS_MODE_PAUSABLE:
++		return "动画必须由本控制件可暂停物理处理推进"
++	if not is_finite(_runtime_player.speed_scale) or _runtime_player.speed_scale <= 0.0:
++		return "动画速度倍率必须为有限正数"
+ 	if not _runtime_player.autoplay.is_empty() or not _runtime_player.animation_get_next(animation_name).is_empty() or not _runtime_player.get_queue().is_empty():
+-		return "控制件动画不得自动播放或排队"
+-	var source: Animation = _runtime_player.get_animation(animation_name)
+-	if source.loop_mode != Animation.LOOP_NONE or source.get_track_count() != 1 or source.track_get_type(0) != Animation.TYPE_VALUE or not source.track_is_enabled(0):
+-		return "控制件动画必须只有一个启用的非循环属性轨道"
+-	if source.track_get_path(0) != NodePath("%s:rotation" % name) or source.track_get_key_count(0) < 2:
+-		return "控制件动画必须控制自身旋转并具有两端关键帧"
+-	var first: Variant = source.track_get_key_value(0, 0)
+-	var last: Variant = source.track_get_key_value(0, source.track_get_key_count(0) - 1)
+-	if not first is Vector3 or not last is Vector3 or not first.is_finite() or not last.is_finite() or first.is_equal_approx(last):
+-		return "控制件动画端帧必须为不同的有效角度"
+-	if _source_animation != null and (source != _source_animation or first != _closed_rotation or last != _open_rotation):
+-		return "初始化后的动画资源或端帧发生变化"
++		return "独立控制件动画不得自动播放或排队"
++	var animation: Animation = _runtime_player.get_animation(animation_name)
++	if animation.loop_mode != Animation.LOOP_NONE or not is_finite(animation.length) or animation.length <= 0.0:
++		return "目标自然完成要求有限正时长的非循环动画"
+ 	return ""
+ 
+ 
++func get_configuration_error() -> String:
++	return _motion_fault if not _motion_fault.is_empty() else _get_dependency_error()
++
++
+ func is_configured() -> bool:
+ 	return _configured and get_configuration_error().is_empty()
+ 
+ 
+ func is_open() -> bool:
+-	return is_configured() and state == MotionState.OPEN and not _completion_pending and not _runtime_player.is_playing() and _rotation_matches_endpoint(_open_rotation)
++	return is_configured() and state == MotionState.OPEN and not is_animating()
+ 
+ 
+ func is_closed() -> bool:
+-	return is_configured() and state == MotionState.CLOSED and not _completion_pending and not _runtime_player.is_playing() and _rotation_matches_endpoint(_closed_rotation)
++	return is_configured() and state == MotionState.CLOSED and not is_animating()
+ 
+ 
+ func is_animating() -> bool:
+-	return state == MotionState.OPENING or state == MotionState.CLOSING or _completion_pending
++	return state == MotionState.OPENING or state == MotionState.CLOSING or _completion_pending or _restoration_pending
+ 
+ 
+ func can_toggle(_actor: Node3D) -> bool:
+@@ -122,58 +123,289 @@ func _on_toggle_requested(_actor: Node3D) -> void:
+ 	pass
+ 
+ 
++func rebind_animation_player(runtime_player: AnimationPlayer) -> bool:
++	var had_active_state: bool = is_animating() or _stable_open
++	if _applying_animation:
++		_invalidate_motion()
++		if had_active_state:
++			motion_cancelled.emit("动作播放器重新绑定")
++		_deferred_action = 2
++		_deferred_player = runtime_player
++		return true
++	_disconnect_player()
++	_invalidate_motion()
++	_runtime_player = runtime_player
++	_motion_fault = _get_dependency_error()
++	if not _motion_fault.is_empty():
++		if had_active_state:
++			motion_cancelled.emit("动作播放器重新绑定")
++		return false
++	_runtime_player.animation_finished.connect(_on_animation_finished)
++	_motion_fault = ""
++	_restore_stable_state(false)
++	if had_active_state:
++		motion_cancelled.emit("动作播放器重新绑定")
++	return true
++
++
++func restore_closed() -> bool:
++	_invalidate_motion()
++	if _applying_animation:
++		_deferred_action = 1
++		_deferred_open = false
++		return true
++	var error: String = _get_dependency_error()
++	if not error.is_empty():
++		_motion_fault = error
++		return false
++	_motion_fault = ""
++	_restore_stable_state(false)
++	return true
++
++
++func pause_motion() -> bool:
++	if not is_configured() or not is_animating() or _completion_pending or _restoration_pending or _suspended:
++		return false
++	_suspended = true
++	# 手动播放器只由本控制件推进；暂停不重启播放，避免续播重复当前事件。
++	return true
++
++
++func resume_motion() -> bool:
++	if not is_configured() or not _suspended:
++		return false
++	_suspended = false
++	return true
++
++
++func cancel_motion(reason: String = "显式取消动作") -> void:
++	var was_moving: bool = is_animating()
++	var previous_open: bool = _stable_open
++	_invalidate_motion()
++	if _applying_animation:
++		_deferred_action = 1
++		_deferred_open = previous_open
++		if was_moving:
++			motion_cancelled.emit(reason)
++		return
++	var error: String = _get_dependency_error()
++	if error.is_empty():
++		_motion_fault = ""
++		_restore_stable_state(previous_open)
++	else:
++		_motion_fault = error
++	if was_moving:
++		motion_cancelled.emit(reason)
++
++
+ func _start_motion(opening: bool) -> void:
++	if not is_configured():
++		return
++	if _applying_animation:
++		_deferred_action = 3
++		_deferred_open = opening
++		return
++	var was_moving: bool = is_animating()
+ 	var position: float = _runtime_player.current_animation_position
+-	if not is_animating():
+-		position = _source_animation.length if state == MotionState.OPEN else 0.0
+-	_completion_pending = false
++	if not was_moving:
++		position = _runtime_player.get_animation(animation_name).length if _stable_open else 0.0
++	_invalidate_motion()
+ 	_expected_direction = 1 if opening else -1
+ 	state = MotionState.OPENING if opening else MotionState.CLOSING
+-	# 同名动画显式恢复当前进度，取消开启时不得先跳至末帧。
++	_action_animation = _runtime_player.get_animation(animation_name)
++	# 类型清除可以从当前进度反向；不会定位至旧的打开端点。
+ 	_runtime_player.play(animation_name, 0.0, float(_expected_direction), not opening)
+-	_runtime_player.seek(position, true)
+-	if (opening and is_equal_approx(position, _source_animation.length)) or (not opening and is_zero_approx(position)):
+-		_runtime_player.pause()
+-		_completion_pending = true
++	_apply_seek(position)
+ 
+ 
+-func _physics_process(_delta: float) -> void:
++func _physics_process(delta: float) -> void:
+ 	if not _configured or not _motion_fault.is_empty():
+ 		return
+-	var error: String = get_configuration_error()
++	var error: String = _get_dependency_error()
+ 	if not error.is_empty():
+-		_motion_fault = error
+-		push_error("封装器控制件配置失效：%s；%s" % [get_path(), error])
++		_interrupt_motion(error)
+ 		return
+-	if _completion_pending:
+-		var endpoint: Vector3 = _open_rotation if _expected_direction == 1 else _closed_rotation
+-		if _runtime_player.is_playing() or not _rotation_matches_endpoint(endpoint):
+-			_motion_fault = "控制件动画完成后实际物理端帧不符合请求"
+-			push_error("封装器控制件运动故障：%s；预期角度：%s；实际角度：%s；动画进度：%.9f" % [get_path(), endpoint, rotation, _runtime_player.current_animation_position])
++	if _completion_pending or _restoration_pending:
++		if _runtime_player.is_playing() or _runtime_player.assigned_animation != animation_name or _runtime_player.get_animation(animation_name) != _pending_animation:
++			_interrupt_motion("完成同步期间播放归属或本次资源被外部替换")
++			return
++		if _suspended:
+ 			return
+-		state = MotionState.OPEN if _expected_direction == 1 else MotionState.CLOSED
+-		_completion_pending = false
+-		_expected_direction = 0
++		if _pending_serial == _motion_serial and Engine.get_physics_frames() > _pending_frame:
++			_finish_pending()
++		return
++	if not is_animating():
++		return
++	if _runtime_player.current_animation != animation_name or _runtime_player.get_animation(animation_name) != _action_animation or not _runtime_player.is_playing() or signf(_runtime_player.get_playing_speed()) != float(_expected_direction):
++		_interrupt_motion("本次动作被外部停止、替换播放方向或替换资源")
++		return
++	if _suspended:
++		return
++	# 原生同步会在每次局部属性写入回退变换；暂时合并属性后只提交完整变换一次。
++	var advancing_serial: int = _motion_serial
++	set_notify_local_transform(false)
++	_applying_animation = true
++	_runtime_player.advance(delta)
++	# 立即方法轨道可以释放控制件、播放器或取消本次动作。
++	if not _node_is_live(self):
++		return
++	_applying_animation = false
++	if _apply_deferred_action():
++		return
++	if advancing_serial != _motion_serial:
++		set_notify_local_transform(true)
++		return
++	var applied_error: String = _get_dependency_error()
++	if not applied_error.is_empty():
++		set_notify_local_transform(true)
++		_interrupt_motion(applied_error)
++		return
++	var animated_transform: Transform3D = transform
++	set_notify_local_transform(true)
++	transform = animated_transform
++
++
++func _apply_seek(position: float) -> void:
++	var seeking_serial: int = _motion_serial
++	set_notify_local_transform(false)
++	_applying_animation = true
++	_runtime_player.seek(position, true, true)
++	if not _node_is_live(self):
++		return
++	_applying_animation = false
++	if _apply_deferred_action():
++		return
++	if seeking_serial != _motion_serial:
++		set_notify_local_transform(true)
++		return
++	var applied_error: String = _get_dependency_error()
++	if not applied_error.is_empty():
++		set_notify_local_transform(true)
++		_interrupt_motion(applied_error)
++		return
++	var animated_transform: Transform3D = transform
++	set_notify_local_transform(true)
++	transform = animated_transform
++
++
++func _restore_stable_state(opened: bool) -> void:
++	_stable_open = opened
++	state = MotionState.OPEN if opened else MotionState.CLOSED
++	_runtime_player.stop(true)
++	_apply_restore_seek(_runtime_player.get_animation(animation_name).length if opened else 0.0)
++	_restoration_pending = true
++	_pending_animation = _runtime_player.get_animation(animation_name)
++	_pending_serial = _motion_serial
++	_pending_frame = Engine.get_physics_frames()
++
++
++func _apply_restore_seek(position: float) -> void:
++	# 未推进播放留下的启动事件由临时属性副本消费；原动画事件启用位保持不变。
++	var pose_animation: Animation = _runtime_player.get_animation(animation_name).duplicate() as Animation
++	for track: int in pose_animation.get_track_count():
++		if pose_animation.track_get_type(track) in [Animation.TYPE_METHOD, Animation.TYPE_AUDIO, Animation.TYPE_ANIMATION]:
++			pose_animation.track_set_enabled(track, false)
++	var pose_library: AnimationLibrary = AnimationLibrary.new()
++	pose_library.add_animation(&"pose", pose_animation)
++	var pose_library_name: StringName = &"_packing_restore"
++	var suffix: int = 0
++	while _runtime_player.has_animation_library(pose_library_name):
++		suffix += 1
++		pose_library_name = StringName("_packing_restore_%d" % suffix)
++	_runtime_player.add_animation_library(pose_library_name, pose_library)
++	set_notify_local_transform(false)
++	_runtime_player.assigned_animation = StringName(String(pose_library_name) + "/pose")
++	_runtime_player.seek(position, true, true)
++	_runtime_player.assigned_animation = animation_name
++	_runtime_player.seek(position, true, true)
++	_runtime_player.pause()
++	_runtime_player.remove_animation_library(pose_library_name)
++	var restored_transform: Transform3D = transform
++	set_notify_local_transform(true)
++	transform = restored_transform
+ 
+ 
+ func _on_animation_finished(finished_animation: StringName) -> void:
+-	if finished_animation != animation_name or not is_animating() or _completion_pending or not _motion_fault.is_empty():
++	if finished_animation != animation_name or not is_animating() or _completion_pending or _restoration_pending or not _motion_fault.is_empty():
+ 		return
+-	var endpoint: float = _source_animation.length if _expected_direction == 1 else 0.0
+-	if _runtime_player.is_playing() or not is_equal_approx(_runtime_player.current_animation_position, endpoint):
++	if _suspended and not _applying_animation:
+ 		return
+ 	_completion_pending = true
++	_pending_animation = _action_animation
++	_pending_serial = _motion_serial
++	_pending_frame = Engine.get_physics_frames()
++
++
++func _finish_pending() -> void:
++	var natural_completion: bool = _completion_pending
++	_completed_transform = transform
++	if natural_completion:
++		_stable_open = _expected_direction == 1
++		state = MotionState.OPEN if _stable_open else MotionState.CLOSED
++	_completion_pending = false
++	_restoration_pending = false
++	_expected_direction = 0
++	_action_animation = null
++	_pending_animation = null
++	if natural_completion:
++		motion_completed.emit(_stable_open)
++
++
++func _interrupt_motion(reason: String) -> void:
++	_invalidate_motion()
++	_motion_fault = reason
++	push_warning("封装控制件动作中断：%s；%s" % [get_path(), reason])
++	motion_cancelled.emit(reason)
+ 
+ 
+-func _rotation_matches_endpoint(endpoint: Vector3) -> bool:
+-	if not rotation.is_finite():
++func _invalidate_motion() -> void:
++	_motion_serial += 1
++	_completion_pending = false
++	_restoration_pending = false
++	_expected_direction = 0
++	_suspended = false
++	_action_animation = null
++	_pending_animation = null
++	_deferred_action = 0
++	_deferred_player = null
++	state = MotionState.OPEN if _stable_open else MotionState.CLOSED
++	if not _applying_animation and _node_is_live(_runtime_player):
++		_runtime_player.stop(true)
++
++
++func _apply_deferred_action() -> bool:
++	if _deferred_action == 0:
+ 		return false
+-	var difference := Vector3(
+-		angle_difference(rotation.x, endpoint.x),
+-		angle_difference(rotation.y, endpoint.y),
+-		angle_difference(rotation.z, endpoint.z)
+-	)
+-	return difference.length_squared() <= ENDPOINT_ANGLE_TOLERANCE * ENDPOINT_ANGLE_TOLERANCE
++	set_notify_local_transform(true)
++	var requested_action: int = _deferred_action
++	var requested_open: bool = _deferred_open
++	var requested_player: AnimationPlayer = _deferred_player
++	_deferred_action = 0
++	_deferred_player = null
++	if requested_action == 2:
++		rebind_animation_player(requested_player)
++	elif requested_action == 3:
++		_start_motion(requested_open)
++	else:
++		var error: String = _get_dependency_error()
++		if error.is_empty():
++			_motion_fault = ""
++			_restore_stable_state(requested_open)
++		else:
++			_motion_fault = error
++			if _node_is_live(_runtime_player):
++				_runtime_player.stop(true)
++	return true
++
++
++func _disconnect_player() -> void:
++	if is_instance_valid(_runtime_player) and _runtime_player.animation_finished.is_connected(_on_animation_finished):
++		_runtime_player.animation_finished.disconnect(_on_animation_finished)
++
++
++func _exit_tree() -> void:
++	_invalidate_motion()
++	_disconnect_player()
+ 
+ 
+ func _node_is_live(node: Variant) -> bool:
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_start_button.gd b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_start_button.gd
+index cc525d9..c1274a0 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_start_button.gd
++++ b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_start_button.gd
+@@ -1,6 +1,6 @@
+ class_name AutolysisPackingStartButton
+ extends StaticBody3D
+-## 合法点击接受即启动计时；按钮按压与加工计时并行运行。
++## 开始入口只依赖业务引用；按压是与加工并行的可选表现。
+ 
+ @export var start_interaction: AutolysisInteractionComponent
+ @export var collision_shape: CollisionShape3D
+@@ -10,6 +10,13 @@ var machine: AutolysisPackingMachine
+ var focus_target: AutolysisFocusTarget
+ var _runtime_player: AnimationPlayer
+ var _configured: bool = false
++var _press_enabled: bool = false
++var _press_error: String = ""
++var _press_active: bool = false
++var _press_animation: Animation
++var _applying_press: bool = false
++var _queued_rebind: bool = false
++var _queued_player: AnimationPlayer
+ 
+ 
+ func _ready() -> void:
+@@ -22,21 +29,18 @@ func configure(owner_machine: AutolysisPackingMachine, target: AutolysisFocusTar
+ 		return false
+ 	machine = owner_machine
+ 	focus_target = target
+-	_runtime_player = runtime_player
+ 	if not get_configuration_error().is_empty():
+ 		return false
+-	_runtime_player.play(animation_name, 0.0)
+-	_runtime_player.seek(0.0, true)
+-	_runtime_player.pause()
+ 	start_interaction.set_availability_check(can_start)
+-	start_interaction.interaction_requested.connect(_on_start_requested)
++	start_interaction.set_execution_handler(_on_start_requested)
+ 	_configured = true
++	rebind_press_animation(runtime_player)
+ 	return true
+ 
+ 
+ func get_configuration_error() -> String:
+-	if not _node_is_live(self) or not _node_is_live(machine) or get_parent() != machine or not _node_is_live(focus_target) or focus_target.get_parent() != machine:
+-		return "开始按钮与聚焦描述必须属于同一有效封装器"
++	if not _node_is_live(self) or not _node_is_live(machine) or not machine.is_ancestor_of(self) or not _node_is_live(focus_target) or not machine.is_ancestor_of(focus_target):
++		return "开始按钮与聚焦描述必须归属于同一有效封装器"
+ 	if not _node_is_live(collision_shape) or collision_shape.get_parent() != self or collision_shape.shape == null or collision_shape.disabled:
+ 		return "开始按钮直属碰撞无效"
+ 	if not _node_is_live(start_interaction) or start_interaction.get_parent() != self or start_interaction.interaction_mode != AutolysisInteractionComponent.InteractionMode.DIRECT:
+@@ -47,22 +51,76 @@ func get_configuration_error() -> String:
+ 			count += 1
+ 	if count != 1:
+ 		return "开始按钮必须恰好配置一个交互组件"
+-	var receivers: Array[Dictionary] = []
+-	receivers.assign(start_interaction.interaction_requested.get_connections())
+-	if not _configured and not receivers.is_empty():
+-		return "开始按钮初始化前不得连接其他接收者"
+-	if _configured and (receivers.size() != 1 or receivers[0]["callable"] != _on_start_requested or receivers[0]["flags"] != 0):
+-		return "开始按钮必须只同步连接自身请求方法"
+-	if not _node_is_live(_runtime_player) or _runtime_player.get_parent() != machine or not _runtime_player.has_animation(animation_name) or _runtime_player.get_node_or_null(_runtime_player.root_node) != machine:
+-		return "开始按钮独立动画配置无效"
+-	if not _runtime_player.active or _runtime_player.callback_mode_process != AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS or _runtime_player.process_mode != Node.PROCESS_MODE_PAUSABLE:
+-		return "开始按钮动画必须使用可暂停物理帧"
++	if _configured and not start_interaction.has_execution_handler(_on_start_requested):
++		return "开始按钮缺少自身业务执行绑定"
++	return ""
++
++
++func get_press_error() -> String:
++	if not _press_enabled and not _press_error.is_empty():
++		return _press_error
++	if not _node_is_live(_runtime_player) or not _runtime_player.has_animation(animation_name):
++		return "开始按钮缺少可选按压播放器或指定动画"
++	if not _node_is_live(machine) or not machine.is_ancestor_of(_runtime_player):
++		return "开始按钮按压播放器不属于本机"
++	var animation_root: Node = _runtime_player.get_node_or_null(_runtime_player.root_node)
++	if not _node_is_live(animation_root) or (animation_root != machine and not machine.is_ancestor_of(animation_root)):
++		return "开始按钮按压播放器根引用不属于本机"
++	if not _runtime_player.active or _runtime_player.callback_mode_process != AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL or _runtime_player.process_mode != Node.PROCESS_MODE_PAUSABLE:
++		return "开始按钮按压播放器必须由可暂停物理处理推进"
++	if not is_finite(_runtime_player.speed_scale) or _runtime_player.speed_scale <= 0.0:
++		return "开始按钮按压速度必须为有限正数"
+ 	var animation: Animation = _runtime_player.get_animation(animation_name)
+-	if animation.loop_mode != Animation.LOOP_NONE or not is_equal_approx(animation.length, 0.12) or animation.get_track_count() != 1 or animation.track_get_path(0) != NodePath("button_start_packing/button_press:position"):
+-		return "开始按钮必须绑定既有零点一二秒按压动作"
++	if animation.loop_mode != Animation.LOOP_NONE or not is_finite(animation.length) or animation.length <= 0.0:
++		return "开始按钮按压必须为有限非循环动作"
+ 	return ""
+ 
+ 
++func rebind_press_animation(runtime_player: AnimationPlayer) -> bool:
++	if _applying_press:
++		_press_active = false
++		_press_enabled = false
++		_queued_rebind = true
++		_queued_player = runtime_player
++		return true
++	if is_instance_valid(_runtime_player) and _runtime_player.animation_finished.is_connected(_on_press_finished):
++		_runtime_player.animation_finished.disconnect(_on_press_finished)
++	_runtime_player = runtime_player
++	_press_error = ""
++	_press_active = false
++	_press_animation = null
++	_press_error = get_press_error()
++	_press_enabled = _press_error.is_empty()
++	if _press_enabled:
++		_runtime_player.animation_finished.connect(_on_press_finished)
++		_runtime_player.stop(true)
++		_restore_press_pose()
++	else:
++		push_warning("封装开始按钮按压停止更新：%s" % _press_error)
++	return _press_enabled
++
++
++func _restore_press_pose() -> void:
++	var pose_animation: Animation = _runtime_player.get_animation(animation_name).duplicate() as Animation
++	for track: int in pose_animation.get_track_count():
++		if pose_animation.track_get_type(track) in [Animation.TYPE_METHOD, Animation.TYPE_AUDIO, Animation.TYPE_ANIMATION]:
++			pose_animation.track_set_enabled(track, false)
++	var pose_library: AnimationLibrary = AnimationLibrary.new()
++	pose_library.add_animation(&"pose", pose_animation)
++	var pose_library_name: StringName = &"_packing_button_restore"
++	var suffix: int = 0
++	while _runtime_player.has_animation_library(pose_library_name):
++		suffix += 1
++		pose_library_name = StringName("_packing_button_restore_%d" % suffix)
++	_runtime_player.add_animation_library(pose_library_name, pose_library)
++	_runtime_player.assigned_animation = StringName(String(pose_library_name) + "/pose")
++	_runtime_player.seek(0.0, true, true)
++	_runtime_player.assigned_animation = animation_name
++	_runtime_player.seek(0.0, true, true)
++	_runtime_player.pause()
++	_runtime_player.remove_animation_library(pose_library_name)
++
++
+ func is_configured() -> bool:
+ 	return _configured and get_configuration_error().is_empty()
+ 
+@@ -72,13 +130,61 @@ func can_start(actor: Node3D) -> bool:
+ 
+ 
+ func play_press() -> void:
++	if not _press_enabled:
++		return
++	_press_error = get_press_error()
++	if not _press_error.is_empty():
++		_press_enabled = false
++		push_warning("封装开始按钮按压停止更新：%s" % _press_error)
++		return
++	_runtime_player.stop(true)
++	_press_active = true
++	_press_animation = _runtime_player.get_animation(animation_name)
+ 	_runtime_player.play(animation_name, 0.0)
+-	_runtime_player.seek(0.0, true)
++	_applying_press = true
++	_runtime_player.seek(0.0, true, true)
++	if _node_is_live(self):
++		_applying_press = false
++		_apply_queued_rebind()
+ 
+ 
+ func _on_start_requested(actor: Node3D) -> void:
+ 	machine.try_start_processing(actor)
+ 
+ 
++func _physics_process(delta: float) -> void:
++	if not _press_enabled or not _press_active:
++		return
++	var error: String = get_press_error()
++	if error.is_empty() and (_runtime_player.current_animation != animation_name or not _runtime_player.is_playing() or _runtime_player.get_animation(animation_name) != _press_animation or _runtime_player.get_playing_speed() <= 0.0):
++		error = "按压被外部停止、替换播放或替换资源"
++	if not error.is_empty():
++		_press_error = error
++		_press_enabled = false
++		_press_active = false
++		push_warning("封装开始按钮按压停止更新：%s" % error)
++		return
++	_applying_press = true
++	_runtime_player.advance(delta)
++	if _node_is_live(self):
++		_applying_press = false
++		_apply_queued_rebind()
++
++
++func _apply_queued_rebind() -> void:
++	if not _queued_rebind:
++		return
++	var replacement: AnimationPlayer = _queued_player
++	_queued_rebind = false
++	_queued_player = null
++	rebind_press_animation(replacement)
++
++
++func _on_press_finished(finished_animation: StringName) -> void:
++	if finished_animation == animation_name:
++		_press_active = false
++		_press_animation = null
++
++
+ func _node_is_live(node: Variant) -> bool:
+ 	return is_instance_valid(node) and node is Node and node.is_inside_tree() and not node.is_queued_for_deletion()
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_tank_place.gd b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_tank_place.gd
+index 104a1a0..a70cb07 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_tank_place.gd
++++ b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_tank_place.gd
+@@ -26,18 +26,18 @@ func configure(owner_machine: AutolysisPackingMachine, target: AutolysisFocusTar
+ 	if not get_configuration_error().is_empty():
+ 		return false
+ 	transfer_interaction.set_availability_check(_can_transfer_interact)
+-	transfer_interaction.interaction_requested.connect(_on_transfer_requested)
++	transfer_interaction.set_execution_handler(_on_transfer_requested)
+ 	_configured = true
+ 	return true
+ 
+ 
+ func get_configuration_error() -> String:
+-	if not _node_is_live(self) or not _node_is_live(machine) or get_parent() != machine:
+-		return "液体罐位必须属于有效封装器直接子级"
+-	if not _node_is_live(focus_target) or focus_target.get_parent() != machine:
++	if not _node_is_live(self) or not _node_is_live(machine) or not machine.is_ancestor_of(self):
++		return "液体罐位必须归属于有效封装器"
++	if not _node_is_live(focus_target) or not machine.is_ancestor_of(focus_target):
+ 		return "液体罐位与聚焦描述必须属于同一封装器"
+-	if not _node_is_live(liquid_tank_anchor) or liquid_tank_anchor.get_parent() != self:
+-		return "罐锚点必须属于本罐位直接子级"
++	if not _node_is_live(liquid_tank_anchor) or not is_ancestor_of(liquid_tank_anchor):
++		return "罐锚点必须归属于本罐位"
+ 	if not _node_is_live(collision_shape) or collision_shape.get_parent() != self or collision_shape.shape == null or collision_shape.disabled:
+ 		return "液体罐位直属碰撞无效"
+ 	if not _node_is_live(transfer_interaction) or transfer_interaction.get_parent() != self or transfer_interaction.interaction_mode != AutolysisInteractionComponent.InteractionMode.DIRECT:
+@@ -48,12 +48,8 @@ func get_configuration_error() -> String:
+ 			count += 1
+ 	if count != 1:
+ 		return "液体罐位必须恰好配置一个交互组件"
+-	var receivers: Array[Dictionary] = []
+-	receivers.assign(transfer_interaction.interaction_requested.get_connections())
+-	if not _configured and not receivers.is_empty():
+-		return "液体罐位初始化前不得连接其他接收者"
+-	if _configured and (receivers.size() != 1 or receivers[0]["callable"] != _on_transfer_requested or receivers[0]["flags"] != 0):
+-		return "液体罐位必须只同步连接自身请求方法"
++	if _configured and not transfer_interaction.has_execution_handler(_on_transfer_requested):
++		return "液体罐位缺少自身业务执行绑定"
+ 	for child: Node in liquid_tank_anchor.get_children():
+ 		if child is AutolysisLiquidTank and not child.is_queued_for_deletion() and child != _stored_item:
+ 			return "罐锚点存在未登记液体罐"
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_type_switch.gd b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_type_switch.gd
+index 4227a46..2291faf 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_type_switch.gd
++++ b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_type_switch.gd
+@@ -8,21 +8,21 @@ extends AutolysisPackingMotion
+ 
+ var _selected: bool = false
+ var _original_material: Material
++var _indicator_enabled: bool = false
+ 
+ 
+ func configure(owner_machine: AutolysisPackingMachine, target: AutolysisFocusTarget, runtime_player: AnimationPlayer) -> bool:
+-	if not _node_is_live(indicator) or indicator.get_parent() != owner_machine or not is_instance_valid(selected_material):
+-		return false
+-	_original_material = indicator.material_override
+-	return super.configure(owner_machine, target, runtime_player)
++	var configured: bool = super.configure(owner_machine, target, runtime_player)
++	_initialize_indicator()
++	return configured
+ 
+ 
+ func get_configuration_error() -> String:
+ 	var error: String = super.get_configuration_error()
+ 	if not error.is_empty():
+ 		return error
+-	if packing_type < 0 or packing_type > 2 or not _node_is_live(indicator) or indicator.get_parent() != machine or not is_instance_valid(selected_material):
+-		return "类型、指示灯或亮起材质无效"
++	if packing_type < 0 or packing_type > 2:
++		return "类型编号无效"
+ 	return ""
+ 
+ 
+@@ -43,10 +43,44 @@ func _on_toggle_requested(actor: Node3D) -> void:
+ 
+ 
+ func set_selected(selected: bool) -> void:
+-	if not is_configured():
++	if not is_configured() and selected:
+ 		return
+-	indicator.material_override = selected_material if selected else _original_material
++	_update_indicator(selected)
+ 	if _selected == selected:
+ 		return
+ 	_selected = selected
+-	_start_motion(selected)
++	if is_configured():
++		_start_motion(selected)
++
++
++func clear_selection_for_recovery() -> void:
++	_selected = false
++	_update_indicator(false)
++	restore_closed()
++
++
++func _initialize_indicator() -> void:
++	_indicator_enabled = _indicator_dependencies_are_valid()
++	if _indicator_enabled:
++		_original_material = indicator.material_override
++		_update_indicator(_selected)
++	else:
++		push_warning("封装类型灯停止更新：显示引用、归属、网格或材质无效")
++
++
++func rebind_indicator() -> void:
++	_initialize_indicator()
++
++
++func _indicator_dependencies_are_valid() -> bool:
++	return _node_is_live(machine) and _node_is_live(indicator) and machine.is_ancestor_of(indicator) and indicator.mesh != null and is_instance_valid(selected_material)
++
++
++func _update_indicator(selected: bool) -> void:
++	if not _indicator_enabled:
++		return
++	if not _indicator_dependencies_are_valid():
++		_indicator_enabled = false
++		push_warning("封装类型灯停止更新：显示依赖已失效")
++		return
++	indicator.material_override = selected_material if selected else _original_material
+diff --git a/main-autolysis/systems/item-system/tests/packing_batch_atomic_test.gd b/main-autolysis/systems/item-system/tests/packing_batch_atomic_test.gd
+index 99b062e..aa1e2b8 100644
+--- a/main-autolysis/systems/item-system/tests/packing_batch_atomic_test.gd
++++ b/main-autolysis/systems/item-system/tests/packing_batch_atomic_test.gd
+@@ -39,7 +39,7 @@ func _prepare_atomic_batch() -> void:
+ 	atomic_tank = await _put_tank(_source_contents(1))
+ 	atomic_capsule = await _put_capsule()
+ 	check(machine.try_select_type(player, 1), "原子验收正式机器接受针酊粉类型选择")
+-	await frames(18)
++	await _wait_packing_motion()
+ 	check(machine.can_start_processing(), "原子验收批次前提成立")
+ 	atomic_callbacks = 0
+ 	atomic_partial = false
+diff --git a/main-autolysis/systems/item-system/tests/packing_indicator_test.gd b/main-autolysis/systems/item-system/tests/packing_indicator_test.gd
+index 89bc982..f6c4e04 100644
+--- a/main-autolysis/systems/item-system/tests/packing_indicator_test.gd
++++ b/main-autolysis/systems/item-system/tests/packing_indicator_test.gd
+@@ -60,6 +60,7 @@ var saved_time_scale: float = 1.0
+ var indicator_clock: PackingBatchClock
+ var rollback_notifications: int = 0
+ var failed_take_inventory_changes: int = 0
++var waveform_completion_seconds: float = -1.0
+ 
+ 
+ func run_checks() -> void:
+@@ -119,7 +120,7 @@ func _place_lamp_tank(device: AutolysisPackingMachine) -> void:
+ func _place_lamp_capsule(device: AutolysisPackingMachine) -> void:
+ 	if not device.door.is_open():
+ 		check(device.door.try_toggle(player), "正式门入口打开目标封装机舱门")
+-		await frames(18)
++		await _wait_packing_motion(device)
+ 	check(device.door.is_open(), "胶囊放入前真实舱门完全打开")
+ 	check(inventory.try_receive_item(CAPSULE_DEFINITION), "正式库存入口接收独立空胶囊")
+ 	check(inventory.try_place_in_packing_capsule_place(player, device.capsule_place), "正式库存事务将空胶囊放入目标封装机")
+@@ -128,7 +129,7 @@ func _place_lamp_capsule(device: AutolysisPackingMachine) -> void:
+ 
+ func _select_lamp_type(device: AutolysisPackingMachine, index: int = 0) -> void:
+ 	check(device.try_select_type(player, index), "正式类型选择入口接受合法类型")
+-	await frames(18)
++	await _wait_packing_motion(device)
+ 	check(device.get_selected_type() == index and not device.are_switches_animating(), "真实类型动画结束并保留合法选择")
+ 
+ 
+@@ -177,18 +178,18 @@ func _test_lamp_permissions() -> void:
+ 	check(device.try_select_type(player, 0), "正式选择入口启动类型开关动画")
+ 	await frames(1)
+ 	_assert_lamps(LAMP_DEFAULT, "合法类型开关尚在运动时按钮红色")
+-	await frames(18)
++	await _wait_packing_motion()
+ 	_assert_lamps(LAMP_READY, "完全开门且类型动画完成后就绪蓝色常亮")
+ 	await _capture_lamps("02-就绪蓝色.png")
+ 	check(device.door.try_toggle(player), "正式门入口接受从就绪状态关门")
+ 	await frames(1)
+ 	_assert_lamps(LAMP_DEFAULT, "舱门关门运动期间按钮红色")
+-	await frames(18)
++	await _wait_packing_motion()
+ 	_assert_lamps(LAMP_READY, "完全关门后按既有许可重新显示就绪")
+ 	check(device.door.try_toggle(player), "正式门入口接受从就绪状态开门")
+ 	await frames(1)
+ 	_assert_lamps(LAMP_DEFAULT, "舱门开门运动期间按钮红色")
+-	await frames(18)
++	await _wait_packing_motion()
+ 	_assert_lamps(LAMP_READY, "完全开门后按既有许可重新显示就绪")
+ 	check(device.tank_place.try_begin_transfer(player), "正式罐位入口取得取放事务锁")
+ 	await frames(2)
+@@ -205,10 +206,10 @@ func _test_lamp_permissions() -> void:
+ 	device.start_button.start_interaction.interaction_mode = AutolysisInteractionComponent.InteractionMode.FOCUS
+ 	await frames(2)
+ 	_assert_lamps(LAMP_DEFAULT, "实际交互模式不匹配时按钮红色")
+-	check(focus.state == INACTIVE, "交互模式失效使真实聚焦控制器取消无效设备会话")
++	check(focus.is_focused_on(device.focus_target), "单入口交互模式失效只限制开始入口并保留核心聚焦会话")
+ 	device.start_button.start_interaction.interaction_mode = AutolysisInteractionComponent.InteractionMode.DIRECT
+ 	await frames(2)
+-	_assert_lamps(LAMP_DEFAULT, "实际交互模式恢复但尚未重新聚焦时按钮继续红色")
++	_assert_lamps(LAMP_READY, "实际交互模式恢复后当前聚焦会话重新显示就绪")
+ 	await _focus_lamp_device(device)
+ 	_assert_lamps(LAMP_READY, "实际交互模式恢复并重新稳定聚焦后按钮就绪")
+ 	_action(&"menu", true)
+@@ -237,7 +238,7 @@ func _test_lamp_permissions() -> void:
+ 	await frames(20)
+ 	_assert_lamps(LAMP_READY, "重新稳定聚焦后显示就绪蓝色常亮")
+ 	check(device.try_select_type(player, 0), "正式选择入口取消当前类型")
+-	await frames(18)
++	await _wait_packing_motion()
+ 	_assert_lamps(LAMP_DEFAULT, "取消当前类型后恢复红色且双完成灯始终保持灰色")
+ 	await _fresh_lamp_case()
+ 	device = machine as AutolysisPackingMachine
+@@ -268,6 +269,8 @@ func _test_lamp_waveform_and_isolation() -> void:
+ 	check(blue != null and other_blue != null and blue != other_blue and blue != LAMP_BLUE_ZERO and other_blue != LAMP_BLUE_ZERO, "两台按钮运行材质均为不同的独立副本且原始资源未被直接使用")
+ 	check(blue.albedo_texture == LAMP_BLUE_ZERO.albedo_texture and other_blue.albedo_texture == LAMP_BLUE_ZERO.albedo_texture and LAMP_BLUE_ZERO.albedo_texture != null, "独立运行副本保持共享原始纹理引用")
+ 	var origin: float = indicator_clock.effective_seconds
++	waveform_completion_seconds = -1.0
++	device.processing_completed.connect(_observe_waveform_completion.bind(origin), CONNECT_ONE_SHOT)
+ 	check(device.start_button.start_interaction.try_interact(player), "正式按钮交互同步接受真实启动")
+ 	_assert_lamps(LAMP_RUNNING, "真实点击被接受后立即闪烁，不等待按钮按压完成")
+ 	check(is_equal_approx(blue.emission_energy_multiplier, 2.0), "真实启动瞬间从倍率二开始向零线性插值")
+@@ -322,11 +325,11 @@ func _test_lamp_waveform_and_isolation() -> void:
+ 			tested_exit = true
+ 			await _exit()
+ 			_assert_lamps(LAMP_RUNNING, "运行中退出聚焦不会终止封装和按钮闪烁")
+-		await frames(1)
++		await physics_frame
+ 	check(sampled_frames >= 80 and tested_pause and tested_scale and tested_refresh and tested_exit and captured_low, "波形覆盖两秒批次、暂停恢复、时间缩放、重复刷新、明暗采样与退出聚焦")
+ 	_assert_lamps(LAMP_COMPLETED, "两秒有效游戏时间后真实提交完成三灯常亮并清除运行补间")
+ 	check(not tween.is_valid(), "成功完成后本轮运行补间已终止")
+-	check(absf(indicator_clock.effective_seconds - origin - 2.0) <= 1.0 / float(Engine.physics_ticks_per_second) + 0.00001, "时间缩放和暂停后仍由两秒有效游戏时间决定完成")
++	check(absf(waveform_completion_seconds - 2.0) <= 1.0 / float(Engine.physics_ticks_per_second) + 0.00001, "完成事件实测时间在缩放和暂停后仍为两秒有效游戏时间")
+ 	_assert_lamps(LAMP_COMPLETED, "另一台完成待取显示在本机整个批次期间保持", second)
+ 	if graphical:
+ 		check(high_luminance > low_luminance + 0.01, "真实渲染的按钮高倍率画面比低倍率画面更亮")
+@@ -338,6 +341,10 @@ func _test_lamp_waveform_and_isolation() -> void:
+ 	await _capture_lamps("06-取走重置.png")
+ 
+ 
++func _observe_waveform_completion(_batch_id: int, _contents: AutolysisPackingContents, origin: float) -> void:
++	waveform_completion_seconds = indicator_clock.effective_seconds - origin
++
++
+ func _test_lamp_consecutive_batches() -> void:
+ 	await _prepare_lamp_ready()
+ 	var device: AutolysisPackingMachine = machine as AutolysisPackingMachine
+@@ -354,10 +361,10 @@ func _test_lamp_consecutive_batches() -> void:
+ 		_assert_lamps(LAMP_COMPLETED, "连续批次成功完成后停闪并显示三灯常亮")
+ 		check(current_tween != null and not current_tween.is_valid(), "连续批次完成后旧循环不残留")
+ 		check(device.door.try_toggle(player), "完成待取阶段允许正式门入口关闭舱门")
+-		await frames(18)
++		await _wait_packing_motion()
+ 		_assert_lamps(LAMP_COMPLETED, "完成待取关门不会改变三个灯")
+ 		check(device.door.try_toggle(player), "完成待取阶段允许正式门入口重新开门")
+-		await frames(18)
++		await _wait_packing_motion()
+ 		_assert_lamps(LAMP_COMPLETED, "完成待取开门不会改变三个灯")
+ 		await _focus_lamp_device(device)
+ 		_assert_lamps(LAMP_COMPLETED, "完成后退出再进入聚焦仍保持三个灯")
+@@ -370,7 +377,7 @@ func _test_lamp_consecutive_batches() -> void:
+ 		_assert_lamps(LAMP_DEFAULT, "连续批次每次成功取走本轮胶囊均重置三个灯")
+ 		check(device.get_completed_capsule_instance() == null and device.get_selected_type() == -1, "成功取走清除本机完成记录及类型选择")
+ 		if batch_index == 0:
+-			await frames(18)
++			await _wait_packing_motion()
+ 			check(not device.are_switches_animating(), "胶囊成功取走后的真实类型复位动画结束再准备下一轮")
+ 			check(inventory.cycle_focus(1), "第二轮准备使用另一个空道具格")
+ 			await _place_lamp_tank(device)
+diff --git a/main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd b/main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd
+index c059f27..60bc86a 100644
+--- a/main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd
++++ b/main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd
+@@ -66,6 +66,7 @@ func _new_scene() -> void:
+ 	# 继承夹具的配药器会与封装器占用同一位置，入树前移除。
+ 	world.get_node("MachineA").free()
+ 	world.get_node("MachineB").free()
++	_prepare_packing_scene()
+ 	root.add_child(world)
+ 	player = world.get_node("Player")
+ 	machine = world.get_node("PackingA")
+@@ -84,6 +85,10 @@ func _new_scene() -> void:
+ 	await _aim_root()
+ 
+ 
++func _prepare_packing_scene() -> void:
++	pass
++
++
+ func _aim_root() -> void:
+ 	player.body.rotation = Vector3.ZERO
+ 	player.neck.rotation = Vector3.ZERO
+@@ -141,7 +146,7 @@ func _put_tank(contents: AutolysisLiquidContents) -> AutolysisItemInstance:
+ func _put_capsule(contents: AutolysisPackingContents = null) -> AutolysisItemInstance:
+ 	if not machine.door.is_open():
+ 		await _click(_body_pixel(machine.door))
+-		await frames(18)
++		await _wait_packing_motion()
+ 	check(machine.door.is_open(), "胶囊取放前舱门完全打开")
+ 	var instance: AutolysisItemInstance = AutolysisItemInstance.create(CAPSULE_DEFINITION)
+ 	if contents != null:
+@@ -164,7 +169,7 @@ func _test_input_matrix() -> void:
+ 				await _put_capsule(AutolysisPackingContents.create_result(_source_contents(), 1) if capsule_state == 2 else null)
+ 			var should_select: bool = tank_state == 2 and capsule_state == 1
+ 			check(machine.try_select_type(player, 0) == should_select, "九种输入组合仅满罐加空胶囊允许选择：%d、%d" % [tank_state, capsule_state])
+-			await frames(16)
++			await _wait_packing_motion()
+ 			check(machine.can_start_processing() == should_select, "九种组合启动许可与实际合法输入一致")
+ 			_assert_packing_indicators(INDICATOR_BLUE_READY if should_select else INDICATOR_RED, false, "输入组合%d、%d" % [tank_state, capsule_state])
+ 
+@@ -188,7 +193,7 @@ func _test_transfer_and_animation() -> void:
+ 	check(_query(capsule_center) == machine.door, "关闭舱门实际阻挡胶囊槽射线")
+ 	await _click(_body_pixel(machine.door))
+ 	check(machine.door.is_animating() and not inventory.try_place_in_packing_capsule_place(player, machine.capsule_place), "舱门运动中拒绝胶囊放入")
+-	await frames(18)
++	await _wait_packing_motion()
+ 	await _click(_body_pixel(machine.capsule_place))
+ 	check(machine.capsule_place.get_stored_item().item_instance == empty_capsule, "完全开门后放入原胶囊")
+ 	check(not machine.try_select_type(player, 0), "空罐加空胶囊不能选类型")
+@@ -202,17 +207,17 @@ func _test_transfer_and_animation() -> void:
+ 	check(not machine.try_select_type(player, 1), "开关动作途中拒绝新的类型点击")
+ 	await _click(_body_pixel(machine.tank_place))
+ 	check(machine.get_selected_type() == -1 and inventory.get_focused_instance() == stored_tank_instance, "开启途中成功取罐立即取消类型")
+-	await frames(18)
++	await _wait_packing_motion()
+ 	check(not machine.type_switches[0].is_selected() and not machine.type_switches[0].is_animating(), "中途反播自然归位且旧回调不恢复选择")
+ 	check(machine.door.is_open(), "开关复位不改变舱门")
+ 	await _click(_body_pixel(machine.tank_place))
+ 	await _click(_body_pixel(machine.type_switches[0]))
+-	await frames(18)
++	await _wait_packing_motion()
+ 	await _click(_body_pixel(machine.type_switches[2]))
+-	await frames(18)
++	await _wait_packing_motion()
+ 	check(machine.get_selected_type() == 2 and not machine.type_switches[0].is_selected() and machine.type_switches[2].is_selected(), "改选时旧开关关闭、新开关开启")
+ 	await _click(_body_pixel(machine.type_switches[2]))
+-	await frames(18)
++	await _wait_packing_motion()
+ 	_record_machine_state("取消类型后")
+ 	check(machine.get_selected_type() == -1 and not machine.can_start_processing(), "再次点击当前类型取消选择")
+ 	_assert_packing_indicators(INDICATOR_RED, false, "取消类型选择")
+@@ -268,7 +273,7 @@ func _test_batch(type_index: int) -> void:
+ 	check(not machine.can_start_processing(), "合法输入尚未选类型不能启动")
+ 	_assert_packing_indicators(INDICATOR_RED, false, "合法输入尚未选类型")
+ 	await _click(_body_pixel(machine.type_switches[type_index]))
+-	await frames(18)
++	await _wait_packing_motion()
+ 	_record_machine_state("本轮选择后%d" % type_index)
+ 	check(machine.get_selected_type() == type_index and machine.can_start_processing(), "类型开启保持末帧且完全开门可启动")
+ 	_assert_packing_indicators(INDICATOR_BLUE_READY, false, "完全开门且类型稳定")
+@@ -288,7 +293,7 @@ func _test_batch(type_index: int) -> void:
+ 		await _click(_body_pixel(machine.door))
+ 		check(not machine.can_start_processing(), "关闭舱门途中禁止启动")
+ 		_assert_packing_indicators(INDICATOR_RED, false, "舱门关闭途中")
+-		await frames(18)
++		await _wait_packing_motion()
+ 		check(machine.door.is_closed() and machine.can_start_processing(), "完全关门仍可启动")
+ 		_assert_packing_indicators(INDICATOR_BLUE_READY, false, "完全关门且类型稳定")
+ 	observer_saw_partial = false
+@@ -343,7 +348,7 @@ func _test_batch(type_index: int) -> void:
+ 	if not machine.door.is_open():
+ 		await _click(_body_pixel(machine.door))
+ 		_assert_packing_indicators(INDICATOR_BLUE_READY, true, "完成后舱门运动中")
+-		await frames(18)
++		await _wait_packing_motion()
+ 		_assert_packing_indicators(INDICATOR_BLUE_READY, true, "完成后完全开门")
+ 	if type_index != 1:
+ 		await _click(_body_pixel(machine.tank_place))
+@@ -372,7 +377,7 @@ func _test_batch(type_index: int) -> void:
+ 	check(inventory.get_focused_instance() == capsule_instance and machine.get_selected_type() == -1, "成功取回本轮胶囊才清除完成记录和类型")
+ 	check(capsule_reset_notification_seen, "真实成功取胶囊路径发布已复位的库存变化通知")
+ 	_assert_packing_indicators(INDICATOR_RED, false, "成功取回本轮胶囊")
+-	await frames(18)
++	await _wait_packing_motion()
+ 	_assert_original_lights()
+ 	var panel: AutolysisLiquidContentsPanel = player.get_node("LiquidContentsPanel") as AutolysisLiquidContentsPanel
+ 	check(panel.is_showing_contents() and panel.get_contents_text().contains("气动胶囊") and panel.get_contents_text().contains(packed_contents.get_packing_type_display()) and panel.get_contents_text().contains("波形重构"), "取回封装胶囊临时面板显示全部内容和封装类型")
+@@ -445,6 +450,7 @@ func _test_disposal() -> void:
+ 	var waste: AutolysisWasteLiquidStorageTank = WASTE_SCENE.instantiate() as AutolysisWasteLiquidStorageTank
+ 	world.add_child(waste)
+ 	waste.position = Vector3(4, 0.75, 0)
++	await _wait_container_open(waste, false)
+ 	for sealed: bool in [false, true]:
+ 		var instance: AutolysisItemInstance = AutolysisItemInstance.create(CAPSULE_DEFINITION)
+ 		if sealed:
+@@ -453,10 +459,10 @@ func _test_disposal() -> void:
+ 		check(not inventory.try_dispose_in_waste_tank(player, waste), "关闭罐盖拒绝胶囊废弃")
+ 		check(waste.try_toggle(player), "开启正式废液罐盖")
+ 		check(not inventory.try_dispose_in_waste_tank(player, waste), "运动罐盖拒绝胶囊废弃")
+-		await frames(18)
++		await _wait_container_open(waste, true)
+ 		check(inventory.try_dispose_in_waste_tank(player, waste) and inventory.get_focused_instance() == null and player.held_item_presenter.get_display() == null, "空或封装胶囊均整件销毁且不留下空壳")
+ 		check(waste.try_toggle(player), "关闭正式废液罐盖")
+-		await frames(18)
++		await _wait_container_open(waste, false)
+ 
+ 
+ func _test_candidate_failures() -> void:
+@@ -489,7 +495,7 @@ func _test_source_fault() -> void:
+ 	var tank: AutolysisItemInstance = await _put_tank(_source_contents())
+ 	var capsule: AutolysisItemInstance = await _put_capsule()
+ 	await _click(_body_pixel(machine.type_switches[0]))
+-	await frames(18)
++	await _wait_packing_motion()
+ 	machine.processing_started.connect(_record_batch_start)
+ 	machine.processing_failed.connect(_record_batch_failure)
+ 	await _click(_body_pixel(machine.start_button))
+@@ -523,7 +529,7 @@ func _test_main_packing() -> void:
+ 	await _put_tank(_source_contents(1))
+ 	await _put_capsule()
+ 	await _click(_body_pixel(machine.type_switches[1]))
+-	await frames(18)
++	await _wait_packing_motion()
+ 	_assert_packing_indicators(INDICATOR_BLUE_READY, false, "实际主场景准备完成")
+ 	await _capture("主场景封装器已准备.png")
+ 	await _click(_body_pixel(machine.start_button))
+@@ -558,3 +564,20 @@ func _record_machine_state(label: String) -> void:
+ 		var runtime: AnimationPlayer = control.get("_runtime_player") as AnimationPlayer
+ 		switches.append({"选中": control.is_selected(), "运动": control.is_animating(), "状态": control.state, "角度": str(control.rotation), "配置错误": control.get_configuration_error(), "播放中": runtime.is_playing(), "进度": runtime.current_animation_position, "速度": runtime.get_playing_speed(), "待完成": control.get("_completion_pending")})
+ 	print("设备观测：", JSON.stringify({"位置": label, "类型": machine.get_selected_type(), "输入合法": machine.has_valid_inputs(), "转移锁": machine.are_transfers_busy(), "故障": machine.get_processing_fault(), "启动拒绝": machine.get_start_denial_reason(), "开关": switches}))
++
++
++
++func _wait_packing_motion(device: AutolysisPackingMachine = null) -> void:
++	var target_device: AutolysisPackingMachine = machine as AutolysisPackingMachine if device == null else device
++	var deadline: int = Engine.get_physics_frames() + Engine.physics_ticks_per_second * 5
++	while is_instance_valid(target_device) and (target_device.door.is_animating() or target_device.are_switches_animating()) and Engine.get_physics_frames() < deadline:
++		await frames(1)
++	check(is_instance_valid(target_device) and not target_device.door.is_animating() and not target_device.are_switches_animating(), "目标门及开关在测试上限内完成；状态按自然完成确认")
++	await frames(1)
++
++
++func _wait_container_open(container: AutolysisWasteLiquidStorageTank, opened: bool) -> void:
++	var deadline: int = Engine.get_physics_frames() + Engine.physics_ticks_per_second * 5
++	while is_instance_valid(container) and container.is_animating() and Engine.get_physics_frames() < deadline:
++		await frames(1)
++	check(is_instance_valid(container) and container.is_open() == opened and not container.is_animating(), "废液罐目标开闭在测试上限内完成")
+diff --git a/main-autolysis/systems/item-system/tests/packing_motion_physics_test.gd b/main-autolysis/systems/item-system/tests/packing_motion_physics_test.gd
+index 8897f49..46a9fc6 100644
+--- a/main-autolysis/systems/item-system/tests/packing_motion_physics_test.gd
++++ b/main-autolysis/systems/item-system/tests/packing_motion_physics_test.gd
+@@ -1,9 +1,14 @@
+ extends SceneTree
+-## 正式封装器控制件连续正反播放，逐物理帧保存真实姿态和状态。
++## 真实封装资产变体及中断；姿态只作表现测量，不参与运行许可。
+ 
+ const MACHINE_SCENE: PackedScene = preload("res://main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn")
+ const PLAYER_SCENE: PackedScene = preload("res://main-autolysis/player/autolysis_player.tscn")
+ 
++class AnimationEvents extends Node:
++	var calls: int = 0
++	func record() -> void:
++		calls += 1
++
+ var world: Node3D
+ var machine: AutolysisPackingMachine
+ var actor: AutolysisPlayer
+@@ -11,12 +16,13 @@ var controls: Array[AutolysisPackingMotion] = []
+ var records: Array[Dictionary] = []
+ var failures: int = 0
+ var assertion_count: int = 0
+-var evidence_directory: String = preload("res://main-autolysis/systems/item-system/tests/test_evidence.gd").directory("res://docs/project-autolysis/00-discuss/道具系统/封装器与气动胶囊实施证据/20261003/switch-fault/default")
++var evidence_directory: String = preload("res://main-autolysis/systems/item-system/tests/test_evidence.gd").directory("res://docs/project-autolysis/00-discuss/道具系统/容器开闭动画控制实施证据/20261004/packing-checks/motion")
+ var frame_limit: int = 60
+-var cycles: int = 20
+-var physics_before: int = 0
+-var render_before: int = 0
+-var endpoint_fault_injected: bool = false
++var cycles: int = 3
++var completion_count: int = 0
++var event_probe: AnimationEvents
++var expected_closed: Dictionary = {}
++var expected_open: Dictionary = {}
+ 
+ 
+ func _initialize() -> void:
+@@ -34,132 +40,281 @@ func _run() -> void:
+ 	Engine.max_fps = frame_limit
+ 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(evidence_directory))
+ 	root.size = Vector2i(640, 360)
+-	world = Node3D.new()
+-	root.add_child(world)
+-	var camera: Camera3D = Camera3D.new()
+-	camera.position = Vector3(0.0, 1.0, 3.0)
+-	world.add_child(camera)
+-	camera.look_at(Vector3.ZERO)
+-	camera.current = true
+-	machine = MACHINE_SCENE.instantiate() as AutolysisPackingMachine
+-	world.add_child(machine)
+-	await physics_frame
++	await _create_case()
++	for cycle: int in range(cycles):
++		await _cycle_all(cycle, false)
++	for duration: float in [0.08, 0.65, 1.2]:
++		await _create_case(duration, false, duration == 0.65)
++		await _cycle_all(0, true)
++	await _create_case(0.65, true)
++	await _cycle_all(0, true)
++	await _create_case(0.65, false, false, true)
++	await _cycle_all(0, true)
++	await _create_case(0.65)
++	await _test_interruptions()
++	await _create_case(0.08)
++	await _test_pending_takeover()
++	await _create_case(0.08)
++	await _test_pending_resource_replacement()
++	var file: FileAccess = FileAccess.open(evidence_directory.path_join("运动资产与中断报告.json"), FileAccess.WRITE)
++	file.store_string(JSON.stringify({"后端": DisplayServer.get_name(), "命令参数": OS.get_cmdline_args(), "断言数": assertion_count, "失败数": failures, "记录": records}, "\t"))
++	world.queue_free()
+ 	await physics_frame
+-	_check(machine.is_configured(), "正式机器初始化成功")
+-	if arguments.has("--all-controls"):
+-		controls.assign(machine.type_switches)
+-		controls.append(machine.door)
+-		actor = PLAYER_SCENE.instantiate() as AutolysisPlayer
+-		world.add_child(actor)
+-		actor.set_physics_process(false)
+-		if DisplayServer.get_name() == "headless":
+-			# 无图形后端缺少鼠标捕获状态，其余聚焦门控使用正式玩家。
+-			actor.focus_controller.configure(actor, actor.camera, actor.held_item_presenter, _headless_entry_allowed)
+-		_check(actor.focus_controller.try_enter(machine.focus_target), "正式玩家进入舱门测试聚焦会话")
+-		for _frame: int in range(18):
+-			await physics_frame
+-		_check(machine.is_actor_focused(actor), "正式玩家完成舱门测试聚焦过渡")
+-	else:
+-		controls.append(machine.type_switches[0])
+-	physics_before = Engine.get_physics_frames()
+-	render_before = Engine.get_process_frames()
+-	if arguments.has("--inject-endpoint-offset"):
+-		var runtime_player: AnimationPlayer = controls[0].get("_runtime_player") as AnimationPlayer
+-		runtime_player.animation_finished.connect(_inject_endpoint_offset.bind(controls[0]), CONNECT_ONE_SHOT)
+-		_command_motion(controls[0], true)
+-		await _observe_motion(0, "开启")
+-		_check(endpoint_fault_injected, "动画实际完成信号已注入明显端帧偏移")
+-		_check(not controls[0].get_configuration_error().is_empty() and not controls[0].is_open(), "真实动画结束后明显端帧偏移仍被拒绝并留下故障")
+-		_save_report()
++	print("封装运动资产与中断断言数：", assertion_count, "；失败总数：", failures)
++	quit(0 if failures == 0 else 1)
++
++
++func _create_case(duration: float = 0.0, equal_ends: bool = false, reparented: bool = false, named_library: bool = false) -> void:
++	if is_instance_valid(world):
+ 		world.queue_free()
+ 		await physics_frame
+-		print("开关故障保护断言数：", assertion_count, "；失败总数：", failures)
+-		quit(0 if failures == 0 else 1)
+-		return
+-	for cycle: int in range(cycles):
+-		for control: AutolysisPackingMotion in controls:
+-			_command_motion(control, true)
+-		await _observe_motion(cycle, "开启")
++	world = Node3D.new()
++	root.add_child(world)
++	machine = MACHINE_SCENE.instantiate() as AutolysisPackingMachine
++	machine.rotation.y = 0.41
++	controls.assign(machine.type_switches)
++	controls.append(machine.door)
++	expected_closed.clear()
++	expected_open.clear()
++	event_probe = AnimationEvents.new()
++	event_probe.name = "AnimationEvents"
++	machine.add_child(event_probe)
++	if reparented:
++		var grouping: Node3D = Node3D.new()
++		grouping.name = "Controls"
++		machine.add_child(grouping)
+ 		for control: AutolysisPackingMotion in controls:
+-			_check(control.is_open(), "第%d轮控制件%s抵达开启端帧" % [cycle, control.name])
++			control.owner = null
++			control.reparent(grouping, false)
++			control.owner = machine
++	if duration > 0.0:
+ 		for control: AutolysisPackingMotion in controls:
+-			_command_motion(control, false)
+-		await _observe_motion(cycle, "关闭")
++			_variant_animation(control, duration, equal_ends)
++		machine.animation_source.speed_scale = 1.75
++	if named_library:
++		var original_library: AnimationLibrary = machine.animation_source.get_animation_library(&"")
++		var qualified_library: AnimationLibrary = AnimationLibrary.new()
+ 		for control: AutolysisPackingMotion in controls:
+-			_check(control.is_closed(), "第%d轮控制件%s抵达关闭端帧" % [cycle, control.name])
+-		if failures > 0:
+-			break
+-	_save_report()
+-	world.queue_free()
++			var local_name: StringName = control.animation_name
++			qualified_library.add_animation(local_name, original_library.get_animation(local_name))
++			original_library.remove_animation(local_name)
++			control.animation_name = StringName("_packing_restore/" + String(local_name))
++		machine.animation_source.add_animation_library(&"_packing_restore", qualified_library)
++	world.add_child(machine)
++	actor = PLAYER_SCENE.instantiate() as AutolysisPlayer
++	world.add_child(actor)
++	actor.set_physics_process(false)
++	if DisplayServer.get_name() == "headless":
++		actor.focus_controller.configure(actor, actor.camera, actor.held_item_presenter, _headless_entry_allowed)
+ 	await physics_frame
+-	print("开关连续运动断言数：", assertion_count, "；失败总数：", failures)
+-	quit(0 if failures == 0 else 1)
++	await physics_frame
++	_check(machine.is_configured(), "封装机器核心登记有效")
++	_check(actor.focus_controller.try_enter(machine.focus_target), "真实玩家进入封装聚焦")
++	var deadline: int = Engine.get_physics_frames() + Engine.physics_ticks_per_second * 5
++	while not machine.is_actor_focused(actor) and Engine.get_physics_frames() < deadline:
++		await physics_frame
++	_check(machine.is_actor_focused(actor), "真实玩家聚焦稳定")
++	for control: AutolysisPackingMotion in controls:
++		(control.get("_runtime_player") as AnimationPlayer).callback_mode_method = AnimationMixer.ANIMATION_CALLBACK_MODE_METHOD_IMMEDIATE
++		control.motion_completed.connect(_on_completed)
++		_check(control.is_closed(), "控制件初始化由当前动画建立关闭态：%s" % control.name)
++		if named_library:
++			_check((control.get("_runtime_player") as AnimationPlayer).has_animation_library(&"_packing_restore"), "临时库默认名称与业务源库相同时保留原业务动画库：%s" % control.name)
++	_check(event_probe.calls == 0, "属性专用初始化未执行方法轨道")
++	completion_count = 0
++	records.append({"变体": duration, "首尾相同": equal_ends, "调整层级": reparented, "命名动画库": named_library, "速度倍率": machine.animation_source.speed_scale, "父级旋转": str(machine.rotation)})
+ 
+ 
+-func _inject_endpoint_offset(_animation_name: StringName, control: AutolysisPackingMotion) -> void:
+-	endpoint_fault_injected = true
+-	var endpoint: Vector3 = control.get("_open_rotation")
+-	control.rotation = endpoint + Vector3(0.02, 0.0, 0.0)
++func _variant_animation(control: AutolysisPackingMotion, duration: float, equal_ends: bool) -> void:
++	var animation: Animation = Animation.new()
++	animation.length = duration
++	var path: String = str(machine.get_path_to(control))
++	var closed_position: Vector3 = control.position
++	var opened_position: Vector3 = closed_position + Vector3(0.015, 0.025, -0.01)
++	var closed_rotation: Vector3 = Vector3(0.04, 0.08, -0.03)
++	var opened_rotation: Vector3 = Vector3(0.29, 0.37, 0.12)
++	var closed_scale: Vector3 = Vector3.ONE * 0.93
++	var opened_scale: Vector3 = Vector3.ONE * 1.04
++	for property: String in ["rotation", "position", "scale"]:
++		var closed_value: Vector3 = closed_rotation if property == "rotation" else (closed_position if property == "position" else closed_scale)
++		var opened_value: Vector3 = opened_rotation if property == "rotation" else (opened_position if property == "position" else opened_scale)
++		var track: int = animation.add_track(Animation.TYPE_VALUE)
++		animation.track_set_path(track, NodePath(path + ":" + property))
++		animation.track_insert_key(track, 0.0, closed_value)
++		animation.track_insert_key(track, duration * 0.5, opened_value)
++		animation.track_insert_key(track, duration, closed_value if equal_ends else opened_value)
++	var event_track: int = animation.add_track(Animation.TYPE_METHOD)
++	animation.track_set_path(event_track, NodePath("AnimationEvents"))
++	animation.track_insert_key(event_track, 0.0, {"method": &"record", "args": []})
++	animation.track_insert_key(event_track, duration * 0.5, {"method": &"record", "args": []})
++	var library: AnimationLibrary = machine.animation_source.get_animation_library(&"")
++	# 每个夹具持有独立库，避免变体改变其他机器或原始资产。
++	var isolated: AnimationLibrary = library.duplicate() as AnimationLibrary
++	machine.animation_source.remove_animation_library(&"")
++	machine.animation_source.add_animation_library(&"", isolated)
++	isolated.remove_animation(control.animation_name)
++	isolated.add_animation(control.animation_name, animation)
++	expected_closed[control] = Transform3D(Basis.from_euler(closed_rotation).scaled(closed_scale), closed_position)
++	expected_open[control] = expected_closed[control] if equal_ends else Transform3D(Basis.from_euler(opened_rotation).scaled(opened_scale), opened_position)
+ 
+ 
+ func _headless_entry_allowed() -> bool:
+ 	return actor._base_input_allowed() and not actor.focus_controller.has_control()
+ 
+ 
++func _on_completed(_opened: bool) -> void:
++	completion_count += 1
++
++
+ func _command_motion(control: AutolysisPackingMotion, opening: bool) -> void:
+ 	if control is AutolysisPackingTypeSwitch:
+ 		(control as AutolysisPackingTypeSwitch).set_selected(opening)
+-	elif control is AutolysisPackingDoor:
+-		_check((control as AutolysisPackingDoor).try_toggle(actor), "正式舱门接受运动请求")
++	else:
++		_check((control as AutolysisPackingDoor).try_toggle(actor), "正式舱门接受目标动作")
++
++
++func _cycle_all(cycle: int, measure: bool) -> void:
++	for opening: bool in [true, false]:
++		var previous_completions: int = completion_count
++		for control: AutolysisPackingMotion in controls:
++			_command_motion(control, opening)
++		await _observe_motion()
++		_check(completion_count == previous_completions + controls.size(), "每个目标自然完成只发布一次：轮次%d、打开%s" % [cycle, opening])
++		var stable: Dictionary = {}
++		for control: AutolysisPackingMotion in controls:
++			_check(control.is_open() if opening else control.is_closed(), "目标完成后稳定业务态：%s" % control.name)
++			stable[control] = control.transform
++			if measure:
++				var expected: Transform3D = expected_open[control] if opening else expected_closed[control]
++				_check(_transform_near(control.transform, expected), "多属性表现保留本次旋转、位移与缩放：%s" % control.name)
++		var events_after_finish: int = event_probe.calls
++		for _sample: int in range(6):
++			await physics_frame
++			for control: AutolysisPackingMotion in controls:
++				_check(_transform_near(control.transform, stable[control]), "自然结果在稳定阶段保留：%s" % control.name)
++		_check(event_probe.calls == events_after_finish, "稳定阶段未重放方法事件轨道")
+ 
+ 
+-func _observe_motion(cycle: int, direction: String) -> void:
+-	var fault_step: int = -1
+-	for step: int in range(20):
++func _transform_near(actual: Transform3D, expected: Transform3D) -> bool:
++	return actual.origin.distance_to(expected.origin) < 0.001 and actual.basis.x.distance_to(expected.basis.x) < 0.001 and actual.basis.y.distance_to(expected.basis.y) < 0.001 and actual.basis.z.distance_to(expected.basis.z) < 0.001
++
++
++func _observe_motion() -> void:
++	var deadline: int = Engine.get_physics_frames() + Engine.physics_ticks_per_second * 5
++	while Engine.get_physics_frames() < deadline:
+ 		await physics_frame
+-		var all_stopped: bool = true
++		var moving: bool = false
+ 		for control: AutolysisPackingMotion in controls:
+-			_record_motion(control, cycle, direction, step)
+-			all_stopped = all_stopped and not control.is_animating()
+-			if not control.get_configuration_error().is_empty() and fault_step < 0:
+-				fault_step = step
+-		if fault_step >= 0 and step - fault_step >= 6:
+-			return
+-		if fault_step < 0 and all_stopped:
++			moving = moving or control.is_animating()
++			var runtime: AnimationPlayer = control.get("_runtime_player") as AnimationPlayer
++			records.append({"控制件": str(control.name), "物理帧": Engine.get_physics_frames(), "状态": control.state, "完成待处理": control.get("_completion_pending"), "动作序号": control.get("_motion_serial"), "实际变换": str(control.transform), "全局变换": str(control.global_transform), "进度": runtime.current_animation_position if is_instance_valid(runtime) and not runtime.current_animation.is_empty() else -1.0, "错误": control.get_configuration_error()})
++		if not moving:
+ 			return
++	_check(false, "目标动作未在测试上限内终结")
+ 
+ 
+-func _record_motion(control: AutolysisPackingMotion, cycle: int, direction: String, step: int) -> void:
+-	var runtime_player: AnimationPlayer = control.get("_runtime_player") as AnimationPlayer
+-	var animation: Animation = runtime_player.get_animation(control.animation_name)
+-	var last_key: int = animation.track_get_key_count(0) - 1
+-	var expected: Vector3 = animation.track_get_key_value(0, last_key if direction == "开启" else 0)
+-	var last_rotation: Vector3 = animation.track_get_key_value(0, last_key)
+-	var configured_rotation: Vector3 = control.get("_open_rotation") if direction == "开启" else control.get("_closed_rotation")
+-	var quaternion_delta: Quaternion = control.basis.get_rotation_quaternion().inverse() * Quaternion.from_euler(expected)
+-	var stable_quaternion_angle: float = 2.0 * atan2(Vector3(quaternion_delta.x, quaternion_delta.y, quaternion_delta.z).length(), absf(quaternion_delta.w))
+-	records.append({
+-		"控制件": str(control.name),
+-		"轮次": cycle,
+-		"方向": direction,
+-		"采样": step,
+-		"物理帧": Engine.get_physics_frames(),
+-		"处理帧": Engine.get_process_frames(),
+-		"状态": int(control.state),
+-		"待完成": control.get("_completion_pending"),
+-		"动画正在播放": runtime_player.is_playing(),
+-		"动画进度": runtime_player.current_animation_position,
+-		"角度": [control.rotation.x, control.rotation.y, control.rotation.z],
+-		"目标角度": [expected.x, expected.y, expected.z],
+-		"角度差": [control.rotation.x - expected.x, control.rotation.y - expected.y, control.rotation.z - expected.z],
+-		"默认旋转近似通过": control.rotation.is_equal_approx(expected),
+-		"四元数角距离": control.basis.get_rotation_quaternion().angle_to(Quaternion.from_euler(expected)),
+-		"四元数稳定角距离": stable_quaternion_angle,
+-		"末关键帧角度": [last_rotation.x, last_rotation.y, last_rotation.z],
+-		"配置目标角度": [configured_rotation.x, configured_rotation.y, configured_rotation.z],
+-		"全局角度": [control.global_rotation.x, control.global_rotation.y, control.global_rotation.z],
+-		"错误": control.get_configuration_error()
+-	})
++func _test_interruptions() -> void:
++	var door: AutolysisPackingDoor = machine.door
++	_check(door.try_toggle(actor), "暂停用例打开请求已接受")
++	await physics_frame
++	await physics_frame
++	_check(door.pause_motion(), "控制器显式暂停动作")
++	var paused_transform: Transform3D = door.transform
++	var paused_position: float = (door.get("_runtime_player") as AnimationPlayer).current_animation_position
++	for _frame: int in range(5):
++		await physics_frame
++	_check(door.is_animating() and completion_count == 0 and _transform_near(door.transform, paused_transform), "暂停保留动作且未发布完成")
++	_check(is_equal_approx((door.get("_runtime_player") as AnimationPlayer).current_animation_position, paused_position), "暂停保留当前动画进度")
++	_check(door.resume_motion(), "同一动作显式续播")
++	await _observe_motion()
++	_check(door.is_open() and completion_count == 1, "续播只自然完成一次")
++	_check(door.try_toggle(actor), "关闭取消用例接受请求")
++	await physics_frame
++	await physics_frame
++	var events_before_cancel: int = event_probe.calls
++	door.cancel_motion()
++	await _observe_motion()
++	_check(door.is_open() and completion_count == 1, "关闭中取消恢复此前确实完成的打开态且不发布完成")
++	_check(event_probe.calls == events_before_cancel, "取消恢复未执行零秒或其他方法事件")
++	_check(door.try_toggle(actor), "再次关闭接受请求")
++	await _observe_motion()
++	_check(door.is_closed(), "取消恢复后可自然关闭")
++	_check(door.try_toggle(actor), "同帧取消用例接受打开")
++	var events_before_immediate: int = event_probe.calls
++	door.cancel_motion()
++	await _observe_motion()
++	_check(door.is_closed() and event_probe.calls == events_before_immediate, "合法请求零秒事件之后同帧取消不追加方法事件")
++	var immediate_player: AnimationPlayer = door.get("_runtime_player") as AnimationPlayer
++	immediate_player.play(door.animation_name)
++	_check(door.rebind_animation_player(immediate_player), "未推进外部播放后立即重新绑定")
++	await _observe_motion()
++	_check(door.is_closed() and event_probe.calls == events_before_immediate, "外部播放后立即重绑恢复不执行残留启动事件")
++	var before_cancel: int = completion_count
++	_check(door.try_toggle(actor), "打开取消用例接受请求")
++	await physics_frame
++	door.cancel_motion()
++	await _observe_motion()
++	_check(door.is_closed() and completion_count == before_cancel, "打开中取消恢复关闭态且不虚报完成")
++	_check(door.try_toggle(actor), "外部停止用例接受请求")
++	await physics_frame
++	(door.get("_runtime_player") as AnimationPlayer).stop(true)
++	await physics_frame
++	await physics_frame
++	_check(not door.is_animating() and not door.get_configuration_error().is_empty(), "外部停止终结动作并记录原因")
++	_check(machine.is_configured() and actor.focus_controller.is_focused_on(machine.focus_target), "局部门中断不使机器登记或聚焦失效")
++	_check(door.restore_closed(), "显式恢复建立配置关闭态")
++	await _observe_motion()
++	for takeover: int in range(3):
++		var paused_completion_count: int = completion_count
++		_check(door.try_toggle(actor), "挂起期间外部接管用例接受打开")
++		await physics_frame
++		await physics_frame
++		_check(door.pause_motion(), "外部接管之前挂起手动推进")
++		var paused_player: AnimationPlayer = door.get("_runtime_player") as AnimationPlayer
++		if takeover == 0:
++			paused_player.stop(true)
++		elif takeover == 1:
++			paused_player.play_backwards(door.animation_name)
++		else:
++			paused_player.get_animation_library(&"").add_animation(&"external_takeover", paused_player.get_animation(door.animation_name))
++			paused_player.play(&"external_takeover")
++		await physics_frame
++		await physics_frame
++		_check(not door.is_animating() and not door.get_configuration_error().is_empty() and completion_count == paused_completion_count, "挂起期间外部停止、反向或名称替换立即终结旧动作且无完成许可")
++		_check(door.restore_closed(), "挂起期间接管之后显式恢复关闭")
++		await _observe_motion()
++	var before_replacement: int = completion_count
++	_check(door.try_toggle(actor), "同名反向接管用例接受打开请求")
++	await physics_frame
++	await physics_frame
++	(door.get("_runtime_player") as AnimationPlayer).play_backwards(door.animation_name)
++	await physics_frame
++	await physics_frame
++	_check(not door.is_animating() and not door.is_open() and completion_count == before_replacement and not door.get_configuration_error().is_empty(), "同名反播接管终结旧动作且不误授予打开许可")
++	_check(door.restore_closed(), "同名反播接管之后显式恢复关闭")
++	await _observe_motion()
++	_check(door.try_toggle(actor), "播放器释放用例接受请求")
++	await physics_frame
++	var old_player: AnimationPlayer = door.get("_runtime_player") as AnimationPlayer
++	old_player.queue_free()
++	await physics_frame
++	await physics_frame
++	_check(not door.is_animating() and not door.is_open(), "播放器释放未伪造自然完成且已清理等待")
++	var replacement: AnimationPlayer = machine.call("_create_player", door.animation_name, "ReplacementDoorAnimation") as AnimationPlayer
++	_check(door.rebind_animation_player(replacement), "必要播放器重新绑定")
++	await _observe_motion()
++	_check(door.is_closed(), "重新绑定建立关闭态而不恢复被取消打开态")
++	_check(door.try_toggle(actor), "重新绑定后接受新打开")
++	await _observe_motion()
++	_check(door.is_open(), "重新绑定后新动作按自然完成开放")
++	var active_player: AnimationPlayer = door.get("_runtime_player") as AnimationPlayer
++	var looping: Animation = active_player.get_animation(door.animation_name).duplicate() as Animation
++	looping.loop_mode = Animation.LOOP_LINEAR
++	var loop_library: AnimationLibrary = active_player.get_animation_library(&"")
++	loop_library.remove_animation(door.animation_name)
++	loop_library.add_animation(door.animation_name, looping)
++	_check(not door.rebind_animation_player(active_player) and door.get_configuration_error().contains("非循环"), "循环动作不能完成时给出实际配置理由")
++	_check(machine.is_configured() and actor.focus_controller.is_focused_on(machine.focus_target), "循环门动作只限制门相关入口而保留机器聚焦")
+ 
+ 
+ func _check(condition: bool, description: String) -> void:
+@@ -169,23 +324,28 @@ func _check(condition: bool, description: String) -> void:
+ 	print(("通过：" if condition else "失败：") + description)
+ 
+ 
+-func _save_report() -> void:
+-	var report: Dictionary = {
+-		"渲染后端": DisplayServer.get_name(),
+-		"渲染帧率上限": frame_limit,
+-		"请求循环数": cycles,
+-		"控制件数": controls.size(),
+-		"明显端帧偏移已注入": endpoint_fault_injected,
+-		"物理帧率": Engine.physics_ticks_per_second,
+-		"物理帧数": Engine.get_physics_frames() - physics_before,
+-		"处理帧数": Engine.get_process_frames() - render_before,
+-		"断言数": assertion_count,
+-		"失败数": failures,
+-		"记录": records
+-	}
+-	var file: FileAccess = FileAccess.open(evidence_directory.path_join("连续拨动报告.json"), FileAccess.WRITE)
+-	if file == null:
+-		push_error("连续拨动报告无法创建")
+-		failures += 1
+-		return
+-	file.store_string(JSON.stringify(report, "\t"))
++func _test_pending_takeover() -> void:
++	var runtime: AnimationPlayer = machine.door.get("_runtime_player") as AnimationPlayer
++	runtime.animation_finished.connect(_takeover_finished.bind(runtime), CONNECT_ONE_SHOT)
++	_check(machine.door.try_toggle(actor), "完成同步窗口接管用例接受打开")
++	await _observe_motion()
++	_check(completion_count == 0 and not machine.door.is_open() and not machine.door.is_animating() and not machine.door.get_configuration_error().is_empty(), "目标完成后同步窗口外部同名重播不获得打开许可")
++
++
++func _takeover_finished(_animation_name: StringName, runtime: AnimationPlayer) -> void:
++	runtime.play(machine.door.animation_name)
++
++
++func _test_pending_resource_replacement() -> void:
++	var runtime: AnimationPlayer = machine.door.get("_runtime_player") as AnimationPlayer
++	runtime.animation_finished.connect(_replace_finished_resource.bind(runtime), CONNECT_ONE_SHOT)
++	_check(machine.door.try_toggle(actor), "完成同步窗口资源替换用例接受打开")
++	await _observe_motion()
++	_check(completion_count == 0 and not machine.door.is_open() and not machine.door.is_animating() and not machine.door.get_configuration_error().is_empty(), "完成同步窗口同名资源替换终结旧动作且不误授予打开")
++
++
++func _replace_finished_resource(_animation_name: StringName, runtime: AnimationPlayer) -> void:
++	var replacement: Animation = runtime.get_animation(machine.door.animation_name).duplicate() as Animation
++	var library: AnimationLibrary = runtime.get_animation_library(&"")
++	library.remove_animation(machine.door.animation_name)
++	library.add_animation(machine.door.animation_name, replacement)
+diff --git a/main-autolysis/systems/item-system/tests/packing_switch_repeat_test.gd b/main-autolysis/systems/item-system/tests/packing_switch_repeat_test.gd
+index 5168887..fa319e5 100644
+--- a/main-autolysis/systems/item-system/tests/packing_switch_repeat_test.gd
++++ b/main-autolysis/systems/item-system/tests/packing_switch_repeat_test.gd
+@@ -1,5 +1,5 @@
+ extends "res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd"
+-## 正式玩家重复拨动三类开关，记录端帧与物理同步状态。
++## 正式玩家重复拨动三类开关，记录目标完成与物理同步状态。
+ 
+ var repeat_samples: Array[Dictionary] = []
+ 
+@@ -43,9 +43,10 @@ func run_checks() -> void:
+ 
+ 
+ func _observe_motion(control: AutolysisPackingTypeSwitch, cycle: int, direction: String) -> void:
+-	for sample_index: int in range(30):
++	for sample_index: int in range(Engine.physics_ticks_per_second * 5):
+ 		var runtime: AnimationPlayer = control.get("_runtime_player")
+ 		repeat_samples.append({"轮次": cycle, "方向": direction, "类型": control.packing_type, "物理帧": Engine.get_physics_frames(), "状态": control.state, "动画进度": runtime.current_animation_position, "角度": str(control.rotation), "物理角度": str(control.global_transform.basis.get_euler()), "播放中": runtime.is_playing(), "待完成": control.get("_completion_pending"), "配置错误": control.get_configuration_error()})
+ 		if not control.get_configuration_error().is_empty() or not control.is_animating():
+ 			return
+ 		await frames(1)
++	check(false, "目标开关未在测试上限内终结")
+diff --git a/main-autolysis/systems/item-system/tests/packing_asset_isolation_test.gd b/main-autolysis/systems/item-system/tests/packing_asset_isolation_test.gd
+new file mode 100644
+index 0000000..a317c91
+--- /dev/null
++++ b/main-autolysis/systems/item-system/tests/packing_asset_isolation_test.gd
+@@ -0,0 +1,430 @@
++extends "res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd"
++## 可选表现失效与类型协调取消使用真实业务入口验证来源及一次提交。
++
++var missing_press_at_initialization: bool = false
++
++class ButtonEvents extends Node:
++	var calls: int = 0
++	func record() -> void:
++		calls += 1
++
++class ReleasingEvent extends Node:
++	var target: Node
++	var calls: int = 0
++	func release_control() -> void:
++		calls += 1
++		if is_instance_valid(target):
++			target.queue_free()
++
++class MotionCommandEvent extends Node:
++	var target: AutolysisPackingMotion
++	var rebind: bool = false
++	var suspend: bool = false
++	var release_dependency: bool = false
++	var calls: int = 0
++	var accepted: bool = false
++	func command() -> void:
++		calls += 1
++		if release_dependency:
++			target.collision_shape.queue_free()
++		if suspend:
++			accepted = target.pause_motion()
++		elif rebind:
++			accepted = target.rebind_animation_player(target.get("_runtime_player") as AnimationPlayer)
++		else:
++			target.cancel_motion("立即方法轨道取消")
++			accepted = true
++
++class ButtonRebindEvent extends Node:
++	var target: AutolysisPackingStartButton
++	var calls: int = 0
++	var accepted: bool = false
++	func command() -> void:
++		calls += 1
++		accepted = target.rebind_press_animation(target.get("_runtime_player") as AnimationPlayer)
++
++class TakingEvent extends Node:
++	var target: AutolysisPackingMachine
++	var actor: Node3D
++	var inventory: AutolysisInventoryController
++	var calls: int = 0
++	var accepted: bool = false
++	func command() -> void:
++		calls += 1
++		var transferred: bool = inventory.try_take_from_packing_tank_place(actor, target.tank_place)
++		accepted = accepted or transferred
++
++var isolated_completed: int = 0
++var isolated_started: int = 0
++var isolation_records: Array[Dictionary] = []
++
++
++func run_checks() -> void:
++	graphical = DisplayServer.get_name() != "headless"
++	original_accumulation = Input.use_accumulated_input
++	Input.use_accumulated_input = false
++	evidence_directory = preload("res://main-autolysis/systems/item-system/tests/test_evidence.gd").directory("res://docs/project-autolysis/00-discuss/道具系统/容器开闭动画控制实施证据/20261004/packing-checks/isolation")
++	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(evidence_directory))
++	root.size = Vector2i(1280, 720)
++	await _test_optional_display_and_press()
++	await _test_switch_coordinated_cancellation()
++	await _test_button_duration_and_material_configuration()
++	await _test_core_control_release(0.04)
++	await _test_core_control_release(0.0)
++	for event_time: float in [0.0, 0.04]:
++		for rebind: bool in [false, true]:
++			await _test_immediate_motion_command(event_time, rebind)
++		await _test_immediate_button_rebind(event_time)
++		await _test_immediate_motion_pause(event_time)
++		await _test_immediate_dependency_cancel(event_time)
++		await _test_immediate_item_take(event_time)
++	await _test_immediate_motion_pause(-1.0)
++	var report: FileAccess = FileAccess.open(evidence_directory.path_join("显示隔离与类型中断报告.json"), FileAccess.WRITE)
++	report.store_string(JSON.stringify({"断言数": assertion_count, "失败数": failures, "断言": records, "记录": isolation_records, "命令参数": OS.get_cmdline_args()}, "\t"))
++	_release_controls()
++	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
++	Input.use_accumulated_input = original_accumulation
++	world.queue_free()
++	await frames(2)
++	print("封装显示隔离与类型中断断言数：", assertion_count, "；失败总数：", failures)
++	quit(0 if failures == 0 else 1)
++
++
++func _prepare_packing_scene() -> void:
++	if not missing_press_at_initialization:
++		return
++	for node_name: String in ["PackingA", "PackingB"]:
++		var device: AutolysisPackingMachine = world.get_node(node_name) as AutolysisPackingMachine
++		var isolated: AnimationLibrary = device.animation_source.get_animation_library(&"").duplicate() as AnimationLibrary
++		device.animation_source.remove_animation_library(&"")
++		device.animation_source.add_animation_library(&"", isolated)
++		isolated.remove_animation(device.start_button.animation_name)
++		device.processing_timer.wait_time = 9.0
++
++
++func _prepare_sources() -> Array[AutolysisItemInstance]:
++	await _new_scene()
++	await _enter()
++	var source: AutolysisItemInstance = await _put_tank(_source_contents())
++	var capsule: AutolysisItemInstance = await _put_capsule()
++	return [source, capsule]
++
++
++func _test_optional_display_and_press() -> void:
++	missing_press_at_initialization = true
++	var sources: Array[AutolysisItemInstance] = await _prepare_sources()
++	missing_press_at_initialization = false
++	check(machine.start_button.is_configured() and not machine.start_button.get_press_error().is_empty(), "缺少初始按压动画仍保留业务开始入口")
++	var decoration: Node3D = Node3D.new()
++	machine.add_child(decoration)
++	for control: AutolysisPackingTypeSwitch in machine.type_switches:
++		control.indicator.reparent(decoration)
++	check(machine.try_select_type(player, 0), "类型灯重组层级后允许选择")
++	await _wait_packing_motion()
++	machine.type_switches[0].indicator.queue_free()
++	machine.start_indicator.queue_free()
++	machine.completion_indicators[0].queue_free()
++	await frames(2)
++	check(machine.is_configured() and focus.is_focused_on(machine.focus_target) and machine.can_start_processing(), "移除类型灯、开始灯和完成灯不退出聚焦或拒绝合法加工")
++	isolated_started = 0
++	isolated_completed = 0
++	machine.processing_started.connect(_on_isolated_started)
++	machine.processing_completed.connect(_on_isolated_completed)
++	var before: int = Engine.get_physics_frames()
++	check(machine.start_button.start_interaction.try_interact(player), "缺少全部相关表现时权威开始入口接受一次请求")
++	check(not machine.start_button.start_interaction.try_interact(player), "接受批次后拒绝重复开始")
++	await _wait_batch()
++	check(isolated_started == 1 and isolated_completed == 1 and sources[0].is_empty_liquid_tank() and not sources[1].is_empty_pneumatic_capsule(), "显示失效仍只提交一次并保留两件来源身份")
++	check(Engine.get_physics_frames() - before >= Engine.physics_ticks_per_second * 2, "加工仍从真实接受时计算两秒")
++	isolation_records.append({"用例": "缺按压与灯删除", "开始次数": isolated_started, "完成次数": isolated_completed, "源罐为空": sources[0].is_empty_liquid_tank(), "胶囊已封装": not sources[1].is_empty_pneumatic_capsule(), "实际计时器等待值": machine.processing_timer.wait_time})
++
++
++func _test_switch_coordinated_cancellation() -> void:
++	var sources: Array[AutolysisItemInstance] = await _prepare_sources()
++	for cancelled_index: int in [0, 1]:
++		check(machine.try_select_type(player, 0), "选择取消用例接受初始类型")
++		await _wait_packing_motion()
++		check(machine.try_select_type(player, 1), "选择取消用例同时关闭旧开关并打开新开关")
++		await frames(2)
++		machine.type_switches[cancelled_index].cancel_motion("类型切换专项显式取消")
++		await _wait_packing_motion()
++		_assert_cancelled_selection(sources, "取消旧开关" if cancelled_index == 0 else "取消新开关")
++	# 一个控制件先自然完成，另一个仍运动时统一清除整次选择。
++	var slow: AutolysisPackingTypeSwitch = machine.type_switches[0]
++	var runtime: AnimationPlayer = slow.get("_runtime_player") as AnimationPlayer
++	runtime.speed_scale = 0.2
++	check(machine.try_select_type(player, 0), "慢速开关可以使用有效正速度倍率")
++	await _wait_packing_motion()
++	check(machine.try_select_type(player, 1), "快慢开关类型切换已接受")
++	var deadline: int = Engine.get_physics_frames() + Engine.physics_ticks_per_second * 5
++	while not machine.type_switches[1].is_open() and slow.is_animating() and Engine.get_physics_frames() < deadline:
++		await frames(1)
++	check(machine.type_switches[1].is_open() and slow.is_animating(), "新开关已完成而旧开关仍关闭中")
++	slow.cancel_motion("类型切换部分完成取消")
++	await _wait_packing_motion()
++	_assert_cancelled_selection(sources, "一个已完成另一个取消")
++	runtime.speed_scale = 1.0
++	check(machine.try_select_type(player, 2), "重新选择用例接受目标类型")
++	await frames(2)
++	var interrupted: AutolysisPackingTypeSwitch = machine.type_switches[2]
++	var released: AnimationPlayer = interrupted.get("_runtime_player") as AnimationPlayer
++	released.queue_free()
++	await frames(3)
++	check(machine.get_selected_type() == -1 and not interrupted.is_animating() and not interrupted.is_selected(), "必要播放器释放立即清除整机选择和选中标记")
++	var replacement: AnimationPlayer = machine.call("_create_player", interrupted.animation_name, "RecoveredTypeAnimation") as AnimationPlayer
++	check(interrupted.rebind_animation_player(replacement), "类型依赖重新绑定成功")
++	await _wait_packing_motion()
++	_assert_cancelled_selection(sources, "依赖释放后恢复")
++	check(machine.try_select_type(player, 2), "恢复依赖后再次选择")
++	await _wait_packing_motion()
++	check(machine.can_start_processing(), "恢复后选中状态与稳定动作一致可启动")
++
++
++func _assert_cancelled_selection(sources: Array[AutolysisItemInstance], label: String) -> void:
++	check(machine.get_selected_type() == -1 and not machine.can_start_processing(), label + "：整机选择已清除且不能启动")
++	for control: AutolysisPackingTypeSwitch in machine.type_switches:
++		check(not control.is_selected() and control.is_closed(), label + "：每个有依赖开关恢复关闭且未选中")
++	check(sources[0].liquid_contents != null and sources[1].is_empty_pneumatic_capsule(), label + "：未消耗输入或创建产物")
++
++
++func _test_button_duration_and_material_configuration() -> void:
++	var sources: Array[AutolysisItemInstance] = await _prepare_sources()
++	check(machine.try_select_type(player, 1), "可调显示用例选择类型")
++	await _wait_packing_motion()
++	var button: AutolysisPackingStartButton = machine.start_button
++	var runtime: AnimationPlayer = button.get("_runtime_player") as AnimationPlayer
++	var variant: Animation = runtime.get_animation(button.animation_name).duplicate() as Animation
++	variant.length = 1.2
++	var events: ButtonEvents = ButtonEvents.new()
++	events.name = "ButtonEvents"
++	machine.add_child(events)
++	var method_track: int = variant.add_track(Animation.TYPE_METHOD)
++	variant.track_set_path(method_track, NodePath("ButtonEvents"))
++	variant.track_insert_key(method_track, 0.0, {"method": &"record", "args": []})
++	var library: AnimationLibrary = runtime.get_animation_library(&"")
++	library.remove_animation(button.animation_name)
++	var local_animation_name: StringName = button.animation_name
++	var protected_library: AnimationLibrary = AnimationLibrary.new()
++	protected_library.add_animation(local_animation_name, variant)
++	runtime.add_animation_library(&"_packing_button_restore", protected_library)
++	button.animation_name = StringName("_packing_button_restore/" + String(local_animation_name))
++	check(button.rebind_press_animation(runtime), "按压表现使用一点二秒有效变体重新绑定")
++	check(runtime.has_animation_library(&"_packing_button_restore") and runtime.get_animation(button.animation_name) == variant, "按钮临时库默认名称与业务源库相同时保留原动画库及资源")
++	await frames(2)
++	check(events.calls == 0, "按钮属性专用重新绑定未执行零秒方法事件")
++	runtime.play(button.animation_name)
++	check(button.rebind_press_animation(runtime), "按钮外部未推进播放后立即重新绑定")
++	await frames(2)
++	check(events.calls == 0 and variant.track_is_enabled(method_track), "按钮恢复消费残留启动事件且原动画事件启用位未改")
++	var ready_material: StandardMaterial3D = StandardMaterial3D.new()
++	ready_material.albedo_color = Color(0.2, 0.7, 0.8)
++	machine.indicator_ready_material = ready_material
++	machine.indicator_half_cycle_seconds = 0.2
++	machine.indicator_emission_minimum = 0.3
++	machine.indicator_emission_maximum = 3.4
++	machine.rebind_indicators()
++	check(machine.start_indicator.material_override == ready_material, "有效材质替换被实际显示采用")
++	check(machine.start_button.start_interaction.try_interact(player), "可调显示和长按压不阻断正式启动")
++	var independent: StandardMaterial3D = machine.get("_indicator_blue_material") as StandardMaterial3D
++	await frames(5)
++	check(events.calls == 1, "真实启动按压只执行一次零秒方法事件")
++	check(independent.emission_energy_multiplier >= 0.3 and independent.emission_energy_multiplier <= 3.4 and independent != machine.indicator_running_material, "合法闪烁周期及发光范围使用本机独立材质")
++	runtime.stop(true)
++	await frames(2)
++	check(machine.is_batch_running() and machine.get_processing_fault().is_empty(), "按压外部停止不撤销已接受批次")
++	check(not button.get_press_error().is_empty(), "按压中断记录原因并只停用相关表现")
++	await _wait_batch()
++	check(sources[0].is_empty_liquid_tank() and not sources[1].is_empty_pneumatic_capsule(), "按压停止后仍成对提交加工结果")
++
++
++func _wait_batch() -> void:
++	var deadline: int = Engine.get_physics_frames() + Engine.physics_ticks_per_second * 5
++	while machine.is_batch_running() and Engine.get_physics_frames() < deadline:
++		await frames(1)
++	check(not machine.is_batch_running() and machine.get_processing_fault().is_empty(), "目标批次在测试上限内自然完成且没有业务故障")
++
++
++func _test_core_control_release(event_time: float) -> void:
++	var sources: Array[AutolysisItemInstance] = await _prepare_sources()
++	var control: AutolysisPackingTypeSwitch = machine.type_switches[0]
++	var runtime: AnimationPlayer = control.get("_runtime_player") as AnimationPlayer
++	var events: ReleasingEvent = ReleasingEvent.new()
++	events.name = "ReleaseEvent"
++	events.target = control
++	machine.add_child(events)
++	var releasing_animation: Animation = runtime.get_animation(control.animation_name).duplicate() as Animation
++	var method_track: int = releasing_animation.add_track(Animation.TYPE_METHOD)
++	releasing_animation.track_set_path(method_track, NodePath("ReleaseEvent"))
++	releasing_animation.track_insert_key(method_track, event_time, {"method": &"release_control", "args": []})
++	var library: AnimationLibrary = runtime.get_animation_library(&"")
++	library.remove_animation(control.animation_name)
++	library.add_animation(control.animation_name, releasing_animation)
++	runtime.callback_mode_method = AnimationMixer.ANIMATION_CALLBACK_MODE_METHOD_IMMEDIATE
++	check(control.rebind_animation_player(runtime), "控制件立即事件变体通过显式重新绑定建立关闭态")
++	await _wait_packing_motion()
++	check(machine.try_select_type(player, 0), "核心控制件释放用例接受选择")
++	var deadline: int = Engine.get_physics_frames() + Engine.physics_ticks_per_second * 5
++	while is_instance_valid(control) and Engine.get_physics_frames() < deadline:
++		await frames(1)
++	await frames(2)
++	check(events.calls == 1 and not is_instance_valid(control), "立即方法轨道实际释放正在推进的控制件一次")
++	check(not machine.is_configured() and not focus.is_focused_on(machine.focus_target), "登记控制物理体释放按核心登记失效退出聚焦")
++	check(sources[0].liquid_contents != null and sources[1].is_empty_pneumatic_capsule(), "核心控制件释放没有消耗来源或创建产物")
++
++
++func _on_isolated_started(_batch_id: int) -> void:
++	isolated_started += 1
++
++
++func _test_immediate_motion_command(event_time: float, rebind: bool) -> void:
++	var sources: Array[AutolysisItemInstance] = await _prepare_sources()
++	var control: AutolysisPackingTypeSwitch = machine.type_switches[0]
++	var runtime: AnimationPlayer = control.get("_runtime_player") as AnimationPlayer
++	var event: MotionCommandEvent = MotionCommandEvent.new()
++	event.name = "MotionCommandEvent"
++	event.target = control
++	event.rebind = rebind
++	machine.add_child(event)
++	var variant: Animation = runtime.get_animation(control.animation_name).duplicate() as Animation
++	var track: int = variant.add_track(Animation.TYPE_METHOD)
++	variant.track_set_path(track, NodePath("MotionCommandEvent"))
++	variant.track_insert_key(track, event_time, {"method": &"command", "args": []})
++	var library: AnimationLibrary = runtime.get_animation_library(&"")
++	library.remove_animation(control.animation_name)
++	library.add_animation(control.animation_name, variant)
++	runtime.callback_mode_method = AnimationMixer.ANIMATION_CALLBACK_MODE_METHOD_IMMEDIATE
++	check(control.rebind_animation_player(runtime), "立即方法取消或重绑变体从显式关闭态建立")
++	await _wait_packing_motion()
++	check(machine.try_select_type(player, 0), "立即方法取消或重绑用例接受真实类型选择")
++	await _wait_packing_motion()
++	check(event.calls == 1 and event.accepted and control.is_closed() and machine.get_selected_type() == -1, "立即方法定位或推进内取消及重绑只执行一次，返回后恢复关闭并协调清除选择")
++	check(sources[0].liquid_contents != null and sources[1].is_empty_pneumatic_capsule(), "立即方法取消及重绑没有消耗两件来源")
++
++
++func _test_immediate_button_rebind(event_time: float) -> void:
++	var sources: Array[AutolysisItemInstance] = await _prepare_sources()
++	check(machine.try_select_type(player, 0), "按钮立即重绑用例建立稳定类型选择")
++	await _wait_packing_motion()
++	var button: AutolysisPackingStartButton = machine.start_button
++	var runtime: AnimationPlayer = button.get("_runtime_player") as AnimationPlayer
++	var event: ButtonRebindEvent = ButtonRebindEvent.new()
++	event.name = "ButtonRebindEvent"
++	event.target = button
++	machine.add_child(event)
++	var variant: Animation = runtime.get_animation(button.animation_name).duplicate() as Animation
++	var track: int = variant.add_track(Animation.TYPE_METHOD)
++	variant.track_set_path(track, NodePath("ButtonRebindEvent"))
++	variant.track_insert_key(track, event_time, {"method": &"command", "args": []})
++	var library: AnimationLibrary = runtime.get_animation_library(&"")
++	library.remove_animation(button.animation_name)
++	library.add_animation(button.animation_name, variant)
++	runtime.callback_mode_method = AnimationMixer.ANIMATION_CALLBACK_MODE_METHOD_IMMEDIATE
++	check(button.rebind_press_animation(runtime), "按钮立即方法重绑变体初始化不执行事件")
++	check(event.calls == 0 and button.start_interaction.try_interact(player), "按钮立即方法重绑用例通过权威入口启动真实批次")
++	await _wait_batch()
++	check(event.calls == 1 and event.accepted and sources[0].is_empty_liquid_tank() and not sources[1].is_empty_pneumatic_capsule(), "按钮定位或推进内部重绑返回后安全恢复表现且真实批次仍成对完成")
++
++
++func _test_immediate_motion_pause(event_time: float) -> void:
++	var sources: Array[AutolysisItemInstance] = await _prepare_sources()
++	var control: AutolysisPackingTypeSwitch = machine.type_switches[0]
++	var runtime: AnimationPlayer = control.get("_runtime_player") as AnimationPlayer
++	var event: MotionCommandEvent = MotionCommandEvent.new()
++	event.name = "MotionPauseEvent"
++	event.target = control
++	event.suspend = true
++	machine.add_child(event)
++	var variant: Animation = runtime.get_animation(control.animation_name).duplicate() as Animation
++	var track: int = variant.add_track(Animation.TYPE_METHOD)
++	variant.track_set_path(track, NodePath("MotionPauseEvent"))
++	var actual_event_time: float = variant.length if event_time < 0.0 else event_time
++	variant.track_insert_key(track, actual_event_time, {"method": &"command", "args": []})
++	var library: AnimationLibrary = runtime.get_animation_library(&"")
++	library.remove_animation(control.animation_name)
++	library.add_animation(control.animation_name, variant)
++	runtime.callback_mode_method = AnimationMixer.ANIMATION_CALLBACK_MODE_METHOD_IMMEDIATE
++	check(control.rebind_animation_player(runtime), "立即方法暂停变体初始化不执行事件")
++	await _wait_packing_motion()
++	check(machine.try_select_type(player, 0), "立即方法暂停用例接受类型选择")
++	var deadline: int = Engine.get_physics_frames() + Engine.physics_ticks_per_second * 5
++	while event.calls == 0 and Engine.get_physics_frames() < deadline:
++		await frames(1)
++	var paused_position: float = runtime.current_animation_position
++	await frames(3)
++	check(event.calls == 1 and event.accepted and control.is_animating() and is_equal_approx(paused_position, runtime.current_animation_position), "立即方法定位或推进内暂停返回后安全保留同一动作与进度")
++	check(control.resume_motion(), "立即方法暂停后显式续播被接受")
++	await _wait_packing_motion()
++	check(control.is_open() and event.calls == 1 and machine.get_selected_type() == 0, "立即方法暂停续播只完成一次并保留一致类型选择")
++	check(sources[0].liquid_contents != null and sources[1].is_empty_pneumatic_capsule(), "立即方法暂停及续播没有消耗两件来源")
++	isolation_records.append({"用例": "立即方法暂停与续播", "事件时间": actual_event_time, "暂停进度": paused_position, "事件次数": event.calls, "最终打开": control.is_open(), "故障": control.get_configuration_error()})
++
++
++func _test_immediate_dependency_cancel(event_time: float) -> void:
++	var sources: Array[AutolysisItemInstance] = await _prepare_sources()
++	var control: AutolysisPackingTypeSwitch = machine.type_switches[0]
++	var runtime: AnimationPlayer = control.get("_runtime_player") as AnimationPlayer
++	var replacement_collision: CollisionShape3D = control.collision_shape.duplicate() as CollisionShape3D
++	var event: MotionCommandEvent = MotionCommandEvent.new()
++	event.name = "MotionDependencyCancelEvent"
++	event.target = control
++	event.release_dependency = true
++	machine.add_child(event)
++	var variant: Animation = runtime.get_animation(control.animation_name).duplicate() as Animation
++	var track: int = variant.add_track(Animation.TYPE_METHOD)
++	variant.track_set_path(track, NodePath("MotionDependencyCancelEvent"))
++	variant.track_insert_key(track, event_time, {"method": &"command", "args": []})
++	var library: AnimationLibrary = runtime.get_animation_library(&"")
++	library.remove_animation(control.animation_name)
++	library.add_animation(control.animation_name, variant)
++	runtime.callback_mode_method = AnimationMixer.ANIMATION_CALLBACK_MODE_METHOD_IMMEDIATE
++	check(control.rebind_animation_player(runtime), "立即方法依赖失效取消变体初始化不执行事件")
++	await _wait_packing_motion()
++	check(machine.try_select_type(player, 0), "立即方法依赖失效取消用例接受类型选择")
++	var deadline: int = Engine.get_physics_frames() + Engine.physics_ticks_per_second * 5
++	while event.calls == 0 and Engine.get_physics_frames() < deadline:
++		await frames(1)
++	await _wait_packing_motion()
++	check(event.calls == 1 and event.accepted and not control.is_configured() and not runtime.is_playing() and machine.get_selected_type() == -1, "立即方法依赖释放后取消返回时安全停止旧动作并清除选择")
++	control.add_child(replacement_collision)
++	control.collision_shape = replacement_collision
++	variant.track_set_enabled(track, false)
++	check(control.rebind_animation_player(runtime), "立即依赖失效后修复碰撞并显式重绑")
++	await _wait_packing_motion()
++	check(control.is_closed() and machine.try_select_type(player, 0), "依赖修复后从稳定关闭态接受下一选择")
++	await _wait_packing_motion()
++	check(control.is_open() and event.calls == 1 and sources[0].liquid_contents != null and sources[1].is_empty_pneumatic_capsule(), "依赖修复后下一动作自然完成且来源保留")
++
++
++func _test_immediate_item_take(event_time: float) -> void:
++	var sources: Array[AutolysisItemInstance] = await _prepare_sources()
++	var control: AutolysisPackingTypeSwitch = machine.type_switches[0]
++	var runtime: AnimationPlayer = control.get("_runtime_player") as AnimationPlayer
++	var event: TakingEvent = TakingEvent.new()
++	event.name = "MotionTakingEvent"
++	event.target = machine
++	event.actor = player
++	event.inventory = inventory
++	machine.add_child(event)
++	var variant: Animation = runtime.get_animation(control.animation_name).duplicate() as Animation
++	var track: int = variant.add_track(Animation.TYPE_METHOD)
++	variant.track_set_path(track, NodePath("MotionTakingEvent"))
++	variant.track_insert_key(track, event_time, {"method": &"command", "args": []})
++	var library: AnimationLibrary = runtime.get_animation_library(&"")
++	library.remove_animation(control.animation_name)
++	library.add_animation(control.animation_name, variant)
++	runtime.callback_mode_method = AnimationMixer.ANIMATION_CALLBACK_MODE_METHOD_IMMEDIATE
++	check(control.rebind_animation_player(runtime), "立即方法取物反播变体初始化不执行事件")
++	await _wait_packing_motion()
++	check(machine.try_select_type(player, 0), "立即方法取物反播用例接受类型选择")
++	await _wait_packing_motion()
++	check(event.accepted and event.calls >= 1 and machine.tank_place.get_stored_item() == null and inventory.get_focused_instance() == sources[0], "立即方法实际槽位取物保留原来源实例并移入库存")
++	check(machine.get_selected_type() == -1 and not control.is_selected() and control.is_closed() and machine.door.is_open(), "立即方法取物之后返回再安全反播关闭，旧动作不恢复类型选择")
++	variant.track_set_enabled(track, false)
++	check(inventory.try_place_in_packing_tank_place(player, machine.tank_place), "立即取物反播后原来源可再次放回槽位")
++	check(machine.try_select_type(player, 0), "立即取物反播后接受下一次正常选择")
++	await _wait_packing_motion()
++	check(control.is_open() and machine.can_start_processing() and sources[0].liquid_contents != null and sources[1].is_empty_pneumatic_capsule(), "立即取物反播后下一动作自然完成且两件来源未加工")
++
++
++func _on_isolated_completed(_batch_id: int, _contents: AutolysisPackingContents) -> void:
++	isolated_completed += 1

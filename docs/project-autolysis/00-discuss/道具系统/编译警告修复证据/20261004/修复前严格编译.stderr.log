@@ -1,0 +1,20 @@
+SCRIPT ERROR: Parse Error: The local variable "shapecast_safety_offset" is declared but never used in the block. If this is intended, prefix it with an underscore: "_shapecast_safety_offset". (Warning treated as error.)
+   at: GDScript::reload (res://main-autolysis/player/components/item_drop_shape_cast.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://docs/project-autolysis/00-discuss/道具系统/编译警告修复证据/20261004/warning_compile_probe.gd:35)
+SCRIPT ERROR: Parse Error: Values of the ternary operator are not mutually compatible. (Warning treated as error.)
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_inventory_controller.gd:575)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://docs/project-autolysis/00-discuss/道具系统/编译警告修复证据/20261004/warning_compile_probe.gd:35)
+SCRIPT ERROR: Parse Error: The local function parameter "position" is shadowing an already-declared property in the base class "Node3D". (Warning treated as error.)
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd:268)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://docs/project-autolysis/00-discuss/道具系统/编译警告修复证据/20261004/warning_compile_probe.gd:35)
+SCRIPT ERROR: Parse Error: The local function parameter "position" is shadowing an already-declared property in the base class "Node3D". (Warning treated as error.)
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd:302)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://docs/project-autolysis/00-discuss/道具系统/编译警告修复证据/20261004/warning_compile_probe.gd:35)
+SCRIPT ERROR: Parse Error: The local variable "position" is shadowing an already-declared property in the base class "Node3D". (Warning treated as error.)
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd:209)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://docs/project-autolysis/00-discuss/道具系统/编译警告修复证据/20261004/warning_compile_probe.gd:35)

@@ -31,7 +31,7 @@ func configure(root: PhysicsBody3D, camera: Camera3D, interaction: AutolysisInte
 	_has_tank_place = false
 	_clear_packing_registration()
 	for slot: AutolysisBlendSlot in slots:
-		if not _node_is_live(slot) or not slot.is_configured() or slot.get_parent() != root:
+		if not _blend_slot_registration_valid(slot, root):
 			return false
 		var inner_body: PhysicsBody3D = slot.raw_material_anchor as PhysicsBody3D
 		if not _node_is_live(inner_body) or _registered_targets.has(slot) or _registered_targets.has(inner_body):
@@ -40,13 +40,13 @@ func configure(root: PhysicsBody3D, camera: Camera3D, interaction: AutolysisInte
 		_registered_targets[inner_body] = slot
 		_slots.append(slot)
 	for handle: AutolysisBlendHandle in handles:
-		if not _node_is_live(handle) or not handle.is_configured() or handle.device_root != root or handle.focus_target != self:
+		if not _node_is_live(handle) or handle.device_root != root or handle.focus_target != self:
 			return false
 		if not root.is_ancestor_of(handle) or _registered_handles.has(handle) or _registered_targets.has(handle):
 			return false
 		_registered_handles[handle] = handle
 	if tank_place != null:
-		if not _node_is_live(tank_place) or not tank_place.is_configured() or tank_place.machine != root or tank_place.focus_target != self:
+		if not _node_is_live(tank_place) or tank_place.machine != root or tank_place.focus_target != self:
 			return false
 		if not root.is_ancestor_of(tank_place) or _registered_targets.has(tank_place) or _registered_handles.has(tank_place):
 			return false
@@ -97,17 +97,17 @@ func is_valid_target() -> bool:
 	if _slots.is_empty():
 		return false
 	for slot: Variant in _slots:
-		if not _node_is_live(slot) or not slot is AutolysisBlendSlot or not slot.is_configured() or slot.focus_target != self or slot.get_parent() != device_root:
+		if not _blend_slot_registration_valid(slot, device_root):
 			return false
 		if _registered_targets.get(slot) != slot or _registered_targets.get(slot.raw_material_anchor) != slot:
 			return false
 	for handle: Variant in _registered_handles:
-		if not _node_is_live(handle) or not handle is AutolysisBlendHandle or not handle.is_configured():
+		if not _node_is_live(handle) or not handle is AutolysisBlendHandle:
 			return false
 		if handle.focus_target != self or handle.device_root != device_root or not device_root.is_ancestor_of(handle) or _registered_handles[handle] != handle:
 			return false
 	if _has_tank_place:
-		if not _node_is_live(_tank_place) or not _tank_place.is_configured() or _tank_place.machine != device_root or _tank_place.focus_target != self or not device_root.is_ancestor_of(_tank_place):
+		if not _node_is_live(_tank_place) or _tank_place.machine != device_root or _tank_place.focus_target != self or not device_root.is_ancestor_of(_tank_place):
 			return false
 	return true
 
@@ -170,10 +170,20 @@ func _clear_packing_registration() -> void:
 	_packing_targets.clear()
 
 
+## 登记只保护命中归属和来源配对；某入口运动配置失效由该入口自行拒绝。
+func _blend_slot_registration_valid(slot: Variant, root: PhysicsBody3D) -> bool:
+	if not _node_is_live(slot) or not slot is AutolysisBlendSlot or not _node_is_live(root):
+		return false
+	if slot.machine != root or slot.focus_target != self or not root.is_ancestor_of(slot):
+		return false
+	var anchor: Variant = slot.raw_material_anchor
+	return _node_is_live(anchor) and anchor is PhysicsBody3D and slot.is_ancestor_of(anchor)
+
+
 func _packing_control_valid(control: Variant) -> bool:
 	if not _node_is_live(control) or not control is Node3D or not _node_is_live(device_root):
 		return false
-	if not device_root.is_ancestor_of(control) or not control.has_method("is_configured") or not control.is_configured():
+	if not device_root.is_ancestor_of(control):
 		return false
 	return control.machine == device_root and control.focus_target == self
 
@@ -181,10 +191,11 @@ func _packing_control_valid(control: Variant) -> bool:
 func _packing_registration_valid() -> bool:
 	if not device_root is AutolysisPackingMachine or _packing_targets.size() != 7 or _packing_type_switches.size() != 3:
 		return false
-	var controls: Array[Node3D] = [_packing_tank_place, _packing_capsule_place, _packing_door, _packing_start_button]
-	for type_switch: AutolysisPackingTypeSwitch in _packing_type_switches:
+	# 登记对象可能已经释放；先按未限定类型的引用检查，避免无效对象被写入类型数组。
+	var controls: Array = [_packing_tank_place, _packing_capsule_place, _packing_door, _packing_start_button]
+	for type_switch: Variant in _packing_type_switches:
 		controls.append(type_switch)
-	for control: Node3D in controls:
+	for control: Variant in controls:
 		if not _packing_control_valid(control) or _packing_targets.get(control) != control:
 			return false
 	return true

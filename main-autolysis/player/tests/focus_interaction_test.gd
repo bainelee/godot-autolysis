@@ -66,6 +66,8 @@ func run_checks() -> void:
 		await _test_queued_inputs()
 	elif OS.get_cmdline_user_args().has("--main-only"):
 		await _test_main_scene()
+	elif OS.get_cmdline_user_args().has("--local-only"):
+		await _test_local_dependency_isolation()
 	else:
 		await _test_normal_entry_gates()
 		await _obtain_source_items()
@@ -79,6 +81,7 @@ func run_checks() -> void:
 		await _test_camera_animation_resume()
 		await _test_menu_and_pause()
 		await _test_dependency_release()
+		await _test_local_dependency_isolation()
 		await _test_main_scene()
 	_save_report()
 	_release_controls()
@@ -800,6 +803,31 @@ func _test_dependency_release() -> void:
 				check(not is_instance_valid(player), "阶段%d释放玩家完成且不访问已释放子节点" % stage)
 			else:
 				_assert_restored("阶段%d释放%s" % [stage, released])
+
+
+func _test_local_dependency_isolation() -> void:
+	await _new_scene()
+	await _obtain_source_items()
+	await _enter()
+	var session: int = focus.session_id
+	var before_count: int = _item_count()
+	var unavailable: AutolysisBlendSlot = machine.slots[0]
+	var available_slot: AutolysisBlendSlot = machine.slots[1]
+	var local_player: AnimationPlayer = unavailable._runtime_player
+	local_player.queue_free()
+	await frames(3)
+	check(machine.focus_target.is_valid_target() and focus.state == FOCUSED and focus.session_id == session, "一个槽门的必要播放器失效不撤销设备核心登记或聚焦会话")
+	check(not unavailable.toggle_interaction.can_interact(player) and not unavailable.transfer_interaction.can_interact(player), "局部播放器失效只拒绝依赖该门的开闭和取放")
+	await _click(_pixel(0))
+	await _click(_pixel(1))
+	for wait_index: int in range(180):
+		if available_slot.is_open():
+			break
+		await frames(1)
+	check(available_slot.is_open() and not unavailable.is_open() and focus.state == FOCUSED, "局部门失效后真实鼠标仍能打开另一个登记槽门")
+	check(_item_count() == before_count, "局部运动依赖失效与邻门操作保持原药来源数量")
+	await _exit()
+	_assert_restored("局部门依赖失效后退出")
 
 
 func _test_main_scene() -> void:

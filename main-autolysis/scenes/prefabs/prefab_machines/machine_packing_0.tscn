@@ -16,6 +16,8 @@
 [ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_type_switch.gd" id="16_type_switch"]
 [ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_start_button.gd" id="17_start_button"]
 [ext_resource type="Material" uid="uid://eju83npipt3e" path="res://main-autolysis/assets/materials/glow_color/mat_glow_green_0.tres" id="18_selected"]
+[ext_resource type="Material" path="res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres" id="19_indicator_ready"]
+[ext_resource type="Material" path="res://main-autolysis/assets/materials/glow_color/mat_glow_blue_0.tres" id="20_indicator_running"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hpy8m"]
 albedo_color = Color(0.68, 0.7, 0.66, 1)
@@ -293,6 +295,13 @@ start_button = NodePath("button_start_packing")
 processing_timer = NodePath("ProcessingTimer")
 start_indicator = NodePath("button_start_packing/button_press")
 completion_indicators = [NodePath("light_packing_complete_sign/light_packing_complete_sign_mesh_0"), NodePath("light_packing_complete_sign/light_packing_complete_sign_mesh_1")]
+indicator_default_material = ExtResource("13_start_red")
+indicator_ready_material = ExtResource("19_indicator_ready")
+indicator_running_material = ExtResource("20_indicator_running")
+indicator_incomplete_material = ExtResource("4_0tg3w")
+indicator_half_cycle_seconds = 0.5
+indicator_emission_minimum = 0.0
+indicator_emission_maximum = 2.0
 
 [node name="FocusTarget" type="Node3D" parent="." unique_id=1933980748]
 script = ExtResource("11_focus")

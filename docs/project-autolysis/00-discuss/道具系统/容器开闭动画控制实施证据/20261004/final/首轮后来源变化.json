@@ -1,0 +1,12 @@
+{
+  "核对时间": "2026-10-04T13:17:44.3613901+08:00",
+  "首次来源数": 220,
+  "最终来源数": 220,
+  "首轮后变化": [
+    "AGENTS.md",
+    "main-autolysis/player/tests/blend_handle_drag_test.gd",
+    "main-autolysis/systems/item-system/tests/run_container_animation_verification.ps1",
+    "main-autolysis/systems/item-system/tests/blend_animation_variants_test.gd"
+  ],
+  "其余来源无变化": true
+}

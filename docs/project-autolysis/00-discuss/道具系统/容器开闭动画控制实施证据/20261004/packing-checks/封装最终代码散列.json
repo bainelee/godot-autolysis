@@ -1,0 +1,58 @@
+[
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_capsule_place.gd",
+    "SHA256（安全散列算法256）": "DABA3A7005BD614BB33945FFDFDFDF219357D3627BA3D437EDC0B79F49871E67"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_door.gd",
+    "SHA256（安全散列算法256）": "5A551D7E1588F3CB7FA54C965F78F90AED59C9E3D695426DEA452C78FA4A6C5E"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_machine.gd",
+    "SHA256（安全散列算法256）": "F5F6E7E5CB5A9A7DD6BEE9E2AEDBEF6EE17E43B355C982F78BDBC157F18771BC"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_motion.gd",
+    "SHA256（安全散列算法256）": "CD3F7F7727AC2A91095195044B6C5DF45FE7E170397C57DCFB3B70DCC327FB54"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_start_button.gd",
+    "SHA256（安全散列算法256）": "37E7223D7091A23CCC36A508A684B8DBAB6828800C6DD50D47A0A0787682D450"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_tank_place.gd",
+    "SHA256（安全散列算法256）": "71A2E8CC7CC210272A2C19F5D83BFD2A2235300992029A2F69B3EC16303137BF"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_type_switch.gd",
+    "SHA256（安全散列算法256）": "3C978B0A4A88A6576EEB267E79457382F55B7B95F435996220895DC21E38B33F"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_packing_0.tscn",
+    "SHA256（安全散列算法256）": "6E824739E0ACE0009787086776B15730893D96B31D105E5FDC63C2CF813E577D"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\packing_asset_isolation_test.gd",
+    "SHA256（安全散列算法256）": "C6C16CFDF4B5AC7C0BBD0EA55100DF5AF037848CDBB633554E2A1182148A7A89"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\packing_batch_atomic_test.gd",
+    "SHA256（安全散列算法256）": "B01FDBB93003A32FB066E5848BC35EE0B2D7F580AE73DB3115FBA05037DC0DE6"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\packing_indicator_test.gd",
+    "SHA256（安全散列算法256）": "2AD9FE92F7489A121C58EB2BD17E8FA4908FCFC708A5575043D2960DA3022D30"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\packing_machine_behavior_test.gd",
+    "SHA256（安全散列算法256）": "B957659911781F4CF884EE617CABEBBD75FAC707B506B972A7566459CEAF07FA"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\packing_motion_physics_test.gd",
+    "SHA256（安全散列算法256）": "11A1095DB4DFB35513B16730DF6E3CF7031AE291241848CF21BFC800B61B9057"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\packing_switch_repeat_test.gd",
+    "SHA256（安全散列算法256）": "4567E79CD6A227667269E3485D12B55C97AB0AA787BD3D9EE3675CB15199CEF6"
+  }
+]

@@ -1,0 +1,212 @@
+diff --git a/main-autolysis/player/tests/blend_handle_drag_test.gd b/main-autolysis/player/tests/blend_handle_drag_test.gd
+index 33a489f..47d90c2 100644
+--- a/main-autolysis/player/tests/blend_handle_drag_test.gd
++++ b/main-autolysis/player/tests/blend_handle_drag_test.gd
+@@ -62,6 +62,19 @@ class ManualObserver extends Node:
+ 	func _physics_process(_delta: float) -> void:
+ 		runner._record_manual_physics()
+ 
++class InputTraceObserver extends Node:
++	var runner: Object
++
++	func _init() -> void:
++		process_mode = Node.PROCESS_MODE_ALWAYS
++		process_physics_priority = 1100
++
++	func _input(event: InputEvent) -> void:
++		runner._record_received_input(event)
++
++	func _physics_process(_delta: float) -> void:
++		runner._record_input_context()
++
+ var failures: int = 0
+ var assertion_count: int = 0
+ var evidence_directory: String = preload("res://main-autolysis/systems/item-system/tests/test_evidence.gd").directory("res://docs/project-autolysis/00-discuss/交互系统/原药混合器拉杆交互实施证据/自动作业/拉杆60")
+@@ -100,6 +113,15 @@ var manual_capture_count: int = 0
+ var manual_prior_height: float = TOP
+ var manual_maximum_physics_error: float = 0.0
+ var manual_point_misses: int = 0
++var trace_input: bool = false
++var injection_depth: int = 0
++var received_inputs: Array[Dictionary] = []
++var input_contexts: Array[Dictionary] = []
++var warp_observations: Array[Dictionary] = []
++var last_warp_signature: String = ""
++var injection_contexts: Array[Dictionary] = []
++var motion_prefix_only: bool = false
++var manual_mode: bool = false
+ 
+ 
+ func _initialize() -> void:
+@@ -125,6 +147,24 @@ func _run() -> void:
+ 	original_accumulation = Input.use_accumulated_input
+ 	original_physics_ticks = Engine.physics_ticks_per_second
+ 	var arguments: PackedStringArray = OS.get_cmdline_user_args()
++	manual_mode = arguments.has("--manual")
++	trace_input = arguments.has("--trace-input") or (graphical and not manual_mode)
++	motion_prefix_only = arguments.has("--motion-prefix-only")
++	# 合成事件不移动系统指针；自动图形夹具禁止焦点，避免混入原生边缘定位。
++	# 人工模式保留真实窗口输入，须在用户明确授权的独立操作中运行。
++	if graphical and not manual_mode:
++		root.unfocusable = true
++		# 已存在的窗口可能仍保留焦点；未证实隔离前不进入合成拖动及真实定位。
++		if root.has_focus():
++			DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(evidence_directory))
++			_check(false, "自动图形窗口仍有焦点，停止合成输入检查以避免系统指针定位")
++			_save_report()
++			quit(1)
++			return
++	if trace_input:
++		var observer: InputTraceObserver = InputTraceObserver.new()
++		observer.runner = self
++		root.add_child(observer)
+ 	var tick_index: int = arguments.find("--physics-ticks")
+ 	if tick_index >= 0 and tick_index + 1 < arguments.size():
+ 		Engine.physics_ticks_per_second = int(arguments[tick_index + 1])
+@@ -133,8 +173,10 @@ func _run() -> void:
+ 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(evidence_directory))
+ 	probe = TickProbe.new()
+ 	root.add_child(probe)
+-	if arguments.has("--manual"):
++	if manual_mode:
+ 		await _run_manual()
++	elif arguments.has("--motion-only") or motion_prefix_only:
++		await _test_motion_and_binding()
+ 	elif arguments.has("--core-only"):
+ 		await _test_motion_and_binding()
+ 		await _test_ordered_inputs()
+@@ -213,6 +255,8 @@ func _new_scene(label: String, initial_accumulation: bool = false) -> void:
+ 	player.head.look_at(machine.to_global(Vector3(0, 0.3, 0.075)), Vector3.UP)
+ 	await _frames(3)
+ 	_check(machine.focus_target.is_valid_target(), "正式设备含合法槽位及拉杆登记")
++	if graphical and not manual_mode:
++		_check(root.unfocusable and not root.has_focus(), "自动图形夹具不可聚焦，保留程序注入并隔离原生循环定位")
+ 	_check(_is_idle_at_top(), "拉杆以待机状态精确初始化为规定顶部局部位置")
+ 	_check(configured_ratio > 0.0, "正式场景提供正数鼠标换算比例")
+ 	if graphical:
+@@ -302,8 +346,7 @@ func _button(button: MouseButton, pressed: bool, point: Vector2, canceled: bool
+ 	event.position = point
+ 	event.global_position = point
+ 	inputs.append({"分段": sequence, "物理帧": Engine.get_physics_frames(), "种类": "按钮", "按钮编号": button, "按下": pressed, "取消标记": canceled, "坐标": str(point)})
+-	Input.parse_input_event(event)
+-	Input.flush_buffered_events()
++	_inject(event)
+ 
+ 
+ func _motion(vertical: float, horizontal: float = 0.0, point: Vector2 = INVALID_PIXEL) -> void:
+@@ -318,8 +361,7 @@ func _motion(vertical: float, horizontal: float = 0.0, point: Vector2 = INVALID_
+ 	event.screen_relative = event.relative
+ 	event.button_mask = MOUSE_BUTTON_MASK_LEFT if left_pressed else 0
+ 	inputs.append({"分段": sequence, "物理帧": Engine.get_physics_frames(), "种类": "移动", "坐标": str(target_point), "相对位移": str(event.relative), "左键按住": left_pressed})
+-	Input.parse_input_event(event)
+-	Input.flush_buffered_events()
++	_inject(event)
+ 	cursor = target_point
+ 
+ 
+@@ -328,8 +370,7 @@ func _action(action: StringName) -> void:
+ 		var event: InputEventAction = InputEventAction.new()
+ 		event.action = action
+ 		event.pressed = pressed
+-		Input.parse_input_event(event)
+-		Input.flush_buffered_events()
++		_inject(event)
+ 
+ 
+ func _key(key: Key, pressed: bool) -> void:
+@@ -337,8 +378,67 @@ func _key(key: Key, pressed: bool) -> void:
+ 	event.keycode = key
+ 	event.pressed = pressed
+ 	inputs.append({"分段": sequence, "物理帧": Engine.get_physics_frames(), "种类": "键盘", "键码": key, "按下": pressed})
++	_inject(event)
++
++
++func _inject(event: InputEvent) -> void:
++	var context: Dictionary = {}
++	if trace_input and (event is InputEventMouseMotion or event is InputEventMouseButton):
++		context["注入前"] = _input_context()
++		context["事件坐标"] = str(event.position)
++		if event is InputEventMouseMotion:
++			context["事件相对量"] = str(event.relative)
++	injection_depth += 1
+ 	Input.parse_input_event(event)
+ 	Input.flush_buffered_events()
++	injection_depth -= 1
++	if not context.is_empty():
++		context["注入后"] = _input_context()
++		injection_contexts.append(context)
++
++
++func _record_received_input(event: InputEvent) -> void:
++	if not event is InputEventMouseMotion and not event is InputEventMouseButton:
++		return
++	var record: Dictionary = _input_context()
++	record["注入调用内分发"] = injection_depth > 0
++	record["接收种类"] = "移动" if event is InputEventMouseMotion else "按钮"
++	record["接收坐标"] = str(event.position)
++	record["接收全局坐标"] = str(event.global_position)
++	if event is InputEventMouseMotion:
++		record["接收相对位移"] = str(event.relative)
++		record["接收屏幕位移"] = str(event.screen_relative)
++	else:
++		record["按钮编号"] = event.button_index
++		record["按下"] = event.pressed
++	received_inputs.append(record)
++
++
++func _input_context() -> Dictionary:
++	var record: Dictionary = {"分段": sequence, "物理帧": Engine.get_physics_frames(), "窗口有焦点": root.has_focus(), "窗口不可聚焦": root.unfocusable, "实际视口指针": str(root.get_mouse_position()), "合成基准": str(cursor)}
++	if is_instance_valid(handle):
++		record["拉杆高度"] = handle.position.y
++	if is_instance_valid(player) and is_instance_valid(player.interaction_controller):
++		var controller: AutolysisInteractionController = player.interaction_controller
++		record["绑定有效"] = controller.is_drag_active()
++		record["待定位消息"] = controller.get("_warp_pending")
++		record["定位原点"] = str(controller.get("_warp_origin"))
++		record["定位落点"] = str(controller.get("_warp_destination"))
++		record["定位位移"] = str(controller.get("_warp_delta"))
++	return record
++
++
++func _record_input_context() -> void:
++	if not is_instance_valid(player) or not is_instance_valid(player.interaction_controller):
++		return
++	var record: Dictionary = _input_context()
++	if not record.get("绑定有效", false) and not record.get("待定位消息", false):
++		return
++	input_contexts.append(record)
++	var signature: String = "%d/%s/%s" % [player.interaction_controller.get_instance_id(), record.get("定位原点", ""), record.get("定位落点", "")]
++	if record.get("定位落点", "(0.0, 0.0)") != "(0.0, 0.0)" and signature != last_warp_signature:
++		warp_observations.append(record.duplicate())
++		last_warp_signature = signature
+ 
+ 
+ func _exclusions() -> Array[RID]:
+@@ -428,6 +528,8 @@ func _test_motion_and_binding() -> void:
+ 	await _frames(1)
+ 	await _frames(4)
+ 	_check(handle.position.is_equal_approx(before), "横向移动与静止均不改变拉杆")
++	if motion_prefix_only:
++		return
+ 	_motion(-0.03 / float(handle.mouse_to_handle_ratio))
+ 	await _frames(1)
+ 	_check(absf(handle.position.y - 0.09) < EPSILON, "相同比例向上移动回推拉杆")
+@@ -1065,6 +1167,18 @@ func _export_manual_capture(index: int) -> void:
+ 
+ func _save_report() -> void:
+ 	var report: Dictionary = {"图形运行": graphical, "自动注入入口": "Input.parse_input_event（输入系统解析输入事件）", "物理迭代数": Engine.physics_ticks_per_second, "窗口尺寸": str(root.size), "内容缩放模式": root.content_scale_mode, "内容缩放尺寸": str(root.content_scale_size), "内容缩放因子": root.content_scale_factor, "正式场景读取比例": configured_ratio, "图形普通输入进入次数": graphical_entry_count, "断言数": assertion_count, "失败数": failures, "断言": records, "注入输入顺序": inputs, "物理有效时间采样": samples, "碰撞实际查询": collision_records, "截图": screenshots, "另需图形取证": ["本机鼠标定位事件序列及补偿", "上下边缘多次循环与快速反向", "循环定位同帧松开", "嵌入及内容缩放坐标转换", "正常实时拉动比例体验调校及用户体验验收"]}
++	report["窗口不可聚焦"] = root.unfocusable
++	if trace_input:
++		report["实际接收鼠标事件"] = received_inputs
++		report["绑定时输入上下文"] = input_contexts
++		report["定位参数变化观察"] = warp_observations
++		report["注入前后输入上下文"] = injection_contexts
++		report["定位参数变化观察次数"] = warp_observations.size()
++		var outside_injection_events: int = 0
++		for event: Dictionary in received_inputs:
++			if not event["注入调用内分发"]:
++				outside_injection_events += 1
++		report["非注入调用内分发事件数"] = outside_injection_events
+ 	var file: FileAccess = FileAccess.open(evidence_directory.path_join("blend-handle-drag-report.json"), FileAccess.WRITE)
+ 	if file == null:
+ 		_check(false, "拉杆验收报告可写入独立证据目录")

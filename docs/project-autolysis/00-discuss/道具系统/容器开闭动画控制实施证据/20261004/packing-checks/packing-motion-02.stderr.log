@@ -1,0 +1,10 @@
+WARNING: 封装控制件动作中断：/root/@Node3D@7/machine_packing_0/door_capsules_input_bay；本次动作被外部停止、替换播放或替换资源
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] _interrupt_motion (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd:260)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd:205)
+WARNING: 封装控制件动作中断：/root/@Node3D@7/machine_packing_0/door_capsules_input_bay；独立运行播放器或指定动画无效
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] _interrupt_motion (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd:260)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd:196)

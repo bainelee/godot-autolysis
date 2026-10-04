@@ -193,12 +193,19 @@ func _test_tank_candidate_failure() -> void:
 
 func _load_slot(index: int, definition: AutolysisItemDefinition) -> void:
 	await _click(_pixel(index))
-	await frames(18)
+	await _wait_blend_slot(machine.slots[index], true)
 	check(inventory.try_receive_item(definition), "当前选中空格接收原药")
 	await _click(_pixel(index, true))
 	check(machine.slots[index].get_stored_item() != null and inventory.get_focused_item() == null, "真实射线点击将原药放入指定槽")
 	await _click(_pixel(index))
-	await frames(18)
+	await _wait_blend_slot(machine.slots[index], false)
+
+
+func _wait_blend_slot(slot: AutolysisBlendSlot, opened: bool) -> void:
+	var deadline: int = Time.get_ticks_msec() + 8000
+	while slot.is_animating() and Time.get_ticks_msec() < deadline:
+		await frames(1)
+	check(slot.is_open() if opened else slot.is_closed(), "对应槽门完成目标动作；%s" % slot.get_motion_error())
 
 
 func _start_batch_input() -> void:
@@ -214,24 +221,24 @@ func _start_batch_input() -> void:
 func _test_tank_and_batch() -> void:
 	await _load_slot(2, CAFFEINE)
 	await _click(_pixel(0))
-	await frames(18)
+	await _wait_blend_slot(machine.slots[0], true)
 	check(not machine.can_start_processing(), "空槽门完全打开仍阻止启动")
 	_check_indicator(INDICATOR_DEFAULT, "空槽门打开期间红色")
 	await _restricted_once("空槽门打开：")
 	await _click(_pixel(0))
 	check(not machine.can_start_processing(), "空槽门关闭运动中不能启动")
 	_check_indicator(INDICATOR_DEFAULT, "空槽门关闭动画期间红色")
-	await frames(18)
+	await _wait_blend_slot(machine.slots[0], false)
 	check(machine.can_start_processing(), "四门完全关闭、一份原药与空罐允许启动")
 	_check_indicator(INDICATOR_READY, "关门动画结束并满足完整启动条件后橙色常亮")
 	var old_denied_for_cancel: int = denied_count
 	check(machine.handle.try_begin_drag(player) and not machine.handle.is_restricted_drag(), "合法前提选择正常拖动")
 	machine.handle.apply_vertical_motion(player, 40)
 	check(machine.slots[0].try_toggle(player), "正常拖动中实际改变空槽门前提")
-	await frames(18)
+	await _wait_blend_slot(machine.slots[0], true)
 	check(not machine.handle.is_dragging_for(player) and not machine.is_batch_running() and denied_count == old_denied_for_cancel, "正常拖动期间启动前提失效时取消且不发禁止或完成")
 	await _click(_pixel(0))
-	await frames(18)
+	await _wait_blend_slot(machine.slots[0], false)
 	var source: AutolysisRawMaterial = machine.slots[2].get_stored_item()
 	var tank: AutolysisLiquidTank = machine.tank_place.get_stored_item()
 	var old_completed: int = completed_batches

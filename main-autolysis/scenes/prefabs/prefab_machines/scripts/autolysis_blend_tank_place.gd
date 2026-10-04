@@ -29,7 +29,7 @@ func configure(owner_machine: AutolysisBlendMachine, target: AutolysisFocusTarge
 	if not get_configuration_error().is_empty():
 		return false
 	transfer_interaction.set_availability_check(_can_transfer_interact)
-	transfer_interaction.interaction_requested.connect(_on_transfer_requested)
+	transfer_interaction.set_execution_handler(_on_transfer_requested)
 	_configured = true
 	return true
 
@@ -39,12 +39,12 @@ func is_configured() -> bool:
 
 
 func get_configuration_error() -> String:
-	if not _node_is_live(self) or not _node_is_live(machine) or get_parent() != machine:
+	if not _node_is_live(self) or not _node_is_live(machine) or not machine.is_ancestor_of(self):
 		return "液体罐放置位必须属于有效配药器"
-	if not _node_is_live(focus_target) or focus_target.get_parent() != machine:
+	if not _node_is_live(focus_target) or not machine.is_ancestor_of(focus_target):
 		return "液体罐放置位与聚焦描述必须属于同一配药器"
-	if not _node_is_live(liquid_tank_anchor) or liquid_tank_anchor.get_parent() != self:
-		return "liquid_tank_anchor（罐锚点）必须属于本放置位直接子级"
+	if not _node_is_live(liquid_tank_anchor) or not is_ancestor_of(liquid_tank_anchor):
+		return "liquid_tank_anchor（罐锚点）必须属于本放置位子树"
 	if not _node_is_live(collision_shape) or collision_shape.get_parent() != self or collision_shape.shape == null or collision_shape.disabled:
 		return "collision_shape（碰撞形状）必须属于本放置位直接子级且有效"
 	if not _node_is_live(transfer_interaction) or transfer_interaction.get_parent() != self:
@@ -57,12 +57,8 @@ func get_configuration_error() -> String:
 			component_count += 1
 	if component_count != 1:
 		return "液体罐放置位必须恰好配置一个交互组件"
-	var receivers: Array[Dictionary] = []
-	receivers.assign(transfer_interaction.interaction_requested.get_connections())
-	if not _configured and not receivers.is_empty():
-		return "液体罐取放组件初始化前不得连接其他请求接收者"
-	if _configured and (receivers.size() != 1 or receivers[0]["callable"] != _on_transfer_requested or receivers[0]["flags"] != 0):
-		return "液体罐取放组件必须只同步连接本放置位"
+	if _configured and not transfer_interaction.has_execution_handler(_on_transfer_requested):
+		return "液体罐取放组件的业务执行绑定失效"
 	for child: Node in liquid_tank_anchor.get_children():
 		if child is AutolysisLiquidTank and not child.is_queued_for_deletion() and child != _stored_item:
 			return "液体罐锚点存在未登记罐，保留来源并关闭入口"

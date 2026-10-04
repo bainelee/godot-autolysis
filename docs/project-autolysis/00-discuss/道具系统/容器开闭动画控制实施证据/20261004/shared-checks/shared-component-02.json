@@ -1,0 +1,21 @@
+{
+  "检查": "shared-component-02",
+  "时间": "2026-10-04T12:09:30.0794327+08:00",
+  "进程编号": 35828,
+  "退出码": 0,
+  "通过": true,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/player/tests/component_migration_test.gd"
+  ],
+  "通过断言数": 23,
+  "预期错误计数": {},
+  "非预期错误": []
+}

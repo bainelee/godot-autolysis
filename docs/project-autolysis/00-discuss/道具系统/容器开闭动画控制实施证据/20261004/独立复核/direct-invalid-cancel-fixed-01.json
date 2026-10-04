@@ -1,0 +1,23 @@
+{
+  "检查": "direct-invalid-cancel-fixed-01",
+  "时间": "2026-10-04T12:34:09.4695339+08:00",
+  "进程编号": 12948,
+  "退出码": 0,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "C:/Users/baine/AppData/Local/Temp/autolysis-independent-event-20261004/direct-invalid-cancel-probe.gd"
+  ],
+  "通过断言数": 0,
+  "预期错误计数": {},
+  "非预期错误": [
+    "SCRIPT ERROR: Invalid access to property or key 'door_collision' on a base object of type 'StaticBody3D (AutolysisLiquidTankCabinet)'."
+  ]
+}

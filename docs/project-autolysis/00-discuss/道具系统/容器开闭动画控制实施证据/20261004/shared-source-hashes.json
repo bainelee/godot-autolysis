@@ -1,0 +1,82 @@
+[
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\components\\interactions\\autolysis_interaction_component.gd",
+    "散列": "FB38CBAA492FAA58F62AC9E4C28CEDB3E9AD918C9641D49E7A56B0DF037BA961",
+    "算法": "SHA256（安全散列算法256位）"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\components\\interactions\\autolysis_focus_target.gd",
+    "散列": "5AE5646A413563640D8DEE24A9D0B68AEE276F0D0A90543F7919278552E00E53",
+    "算法": "SHA256（安全散列算法256位）"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\autolysis_raw_material.gd",
+    "散列": "B59E2409AB98C5D005D64E829D65FBFD87BAC851A1B872C1215EF20E648283D9",
+    "算法": "SHA256（安全散列算法256位）"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\autolysis_raw_material_group.gd",
+    "散列": "FE5D05DE12050EF9F550BA6C5DC821E1F789856573E53005AE90809DFE0CF30C",
+    "算法": "SHA256（安全散列算法256位）"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\autolysis_raw_material_shelf.gd",
+    "散列": "E47FF00B22CAFFCBC43F288C8F73CF2F4A038EDFBE8ED96E5B1B6C687586BD5C",
+    "算法": "SHA256（安全散列算法256位）"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\autolysis_liquid_tank.gd",
+    "散列": "175741CF9834C3AC7A4B868465721E86924F7EE0DEB79C6B7291B1D2191CC840",
+    "算法": "SHA256（安全散列算法256位）"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\autolysis_pneumatic_capsule.gd",
+    "散列": "61B399A244EB1832B7EE351A557DDF7959900368905373E3A3E742459D6FD065",
+    "算法": "SHA256（安全散列算法256位）"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\autolysis_pneumatic_capsule_shelf.gd",
+    "散列": "0B60EE7A334E1ABEAC605B255A64B78806455233092CE004B5DDAB28AEBF3D4E",
+    "算法": "SHA256（安全散列算法256位）"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\direct_interaction_test.gd",
+    "散列": "F3DC471240A8E69F6DA1966EF08DBEBD22FA3CBCFC6F8B9D20EDECD78F0982F7",
+    "算法": "SHA256（安全散列算法256位）"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\component_migration_test.gd",
+    "散列": "28D239EC27325C222F69BAEAE4D848583D334E1051EB2BC41D2A7613DFEE2323",
+    "算法": "SHA256（安全散列算法256位）"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\focus_interaction_test.gd",
+    "散列": "F430CF62004CAB069FBB49C5602C638089550DDC9D8CBEB1FA86D466D97CBA5D",
+    "算法": "SHA256（安全散列算法256位）"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\fixtures\\direct_interaction_demo.gd",
+    "散列": "66691B37EDF2D266549713267CDE36E4F258BAC2ED2667BD8C4473D883393E70",
+    "算法": "SHA256（安全散列算法256位）"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\direct_interaction_demo.tscn",
+    "散列": "1196550395D4BA224F160D681BB2E3D841F4B4A148AFF0301E48A6ED450C07E0",
+    "算法": "SHA256（安全散列算法256位）"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\item_system_test.gd",
+    "散列": "948A594752F52E0D3DB589F80CD1952EBC6FF9BF56DD981B6150B103346F0B28",
+    "算法": "SHA256（安全散列算法256位）"
+  },
+  {
+    "路径": "D:\\cogito\\addons\\cogito\\CogitoObjects\\cogito_door.gd",
+    "散列": "877F0EF0FF117DA749A84F4A16CC4470AB69CE684B338349E687412731F0E6C3",
+    "算法": "SHA256（安全散列算法256位）"
+  },
+  {
+    "路径": "D:\\cogito\\main-degauss\\scripts\\animated_interaction_sequencer.gd",
+    "散列": "0DDC75BD595C1CB2CEF30B65C8E7F0297C145286402D149A4CC93BA24F48533B",
+    "算法": "SHA256（安全散列算法256位）"
+  }
+]

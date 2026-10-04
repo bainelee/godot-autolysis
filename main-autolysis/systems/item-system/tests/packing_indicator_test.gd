@@ -60,6 +60,7 @@ var saved_time_scale: float = 1.0
 var indicator_clock: PackingBatchClock
 var rollback_notifications: int = 0
 var failed_take_inventory_changes: int = 0
+var waveform_completion_seconds: float = -1.0
 
 
 func run_checks() -> void:
@@ -119,7 +120,7 @@ func _place_lamp_tank(device: AutolysisPackingMachine) -> void:
 func _place_lamp_capsule(device: AutolysisPackingMachine) -> void:
 	if not device.door.is_open():
 		check(device.door.try_toggle(player), "正式门入口打开目标封装机舱门")
-		await frames(18)
+		await _wait_packing_motion(device)
 	check(device.door.is_open(), "胶囊放入前真实舱门完全打开")
 	check(inventory.try_receive_item(CAPSULE_DEFINITION), "正式库存入口接收独立空胶囊")
 	check(inventory.try_place_in_packing_capsule_place(player, device.capsule_place), "正式库存事务将空胶囊放入目标封装机")
@@ -128,7 +129,7 @@ func _place_lamp_capsule(device: AutolysisPackingMachine) -> void:
 
 func _select_lamp_type(device: AutolysisPackingMachine, index: int = 0) -> void:
 	check(device.try_select_type(player, index), "正式类型选择入口接受合法类型")
-	await frames(18)
+	await _wait_packing_motion(device)
 	check(device.get_selected_type() == index and not device.are_switches_animating(), "真实类型动画结束并保留合法选择")
 
 
@@ -177,18 +178,18 @@ func _test_lamp_permissions() -> void:
 	check(device.try_select_type(player, 0), "正式选择入口启动类型开关动画")
 	await frames(1)
 	_assert_lamps(LAMP_DEFAULT, "合法类型开关尚在运动时按钮红色")
-	await frames(18)
+	await _wait_packing_motion()
 	_assert_lamps(LAMP_READY, "完全开门且类型动画完成后就绪蓝色常亮")
 	await _capture_lamps("02-就绪蓝色.png")
 	check(device.door.try_toggle(player), "正式门入口接受从就绪状态关门")
 	await frames(1)
 	_assert_lamps(LAMP_DEFAULT, "舱门关门运动期间按钮红色")
-	await frames(18)
+	await _wait_packing_motion()
 	_assert_lamps(LAMP_READY, "完全关门后按既有许可重新显示就绪")
 	check(device.door.try_toggle(player), "正式门入口接受从就绪状态开门")
 	await frames(1)
 	_assert_lamps(LAMP_DEFAULT, "舱门开门运动期间按钮红色")
-	await frames(18)
+	await _wait_packing_motion()
 	_assert_lamps(LAMP_READY, "完全开门后按既有许可重新显示就绪")
 	check(device.tank_place.try_begin_transfer(player), "正式罐位入口取得取放事务锁")
 	await frames(2)
@@ -205,10 +206,10 @@ func _test_lamp_permissions() -> void:
 	device.start_button.start_interaction.interaction_mode = AutolysisInteractionComponent.InteractionMode.FOCUS
 	await frames(2)
 	_assert_lamps(LAMP_DEFAULT, "实际交互模式不匹配时按钮红色")
-	check(focus.state == INACTIVE, "交互模式失效使真实聚焦控制器取消无效设备会话")
+	check(focus.is_focused_on(device.focus_target), "单入口交互模式失效只限制开始入口并保留核心聚焦会话")
 	device.start_button.start_interaction.interaction_mode = AutolysisInteractionComponent.InteractionMode.DIRECT
 	await frames(2)
-	_assert_lamps(LAMP_DEFAULT, "实际交互模式恢复但尚未重新聚焦时按钮继续红色")
+	_assert_lamps(LAMP_READY, "实际交互模式恢复后当前聚焦会话重新显示就绪")
 	await _focus_lamp_device(device)
 	_assert_lamps(LAMP_READY, "实际交互模式恢复并重新稳定聚焦后按钮就绪")
 	_action(&"menu", true)
@@ -237,7 +238,7 @@ func _test_lamp_permissions() -> void:
 	await frames(20)
 	_assert_lamps(LAMP_READY, "重新稳定聚焦后显示就绪蓝色常亮")
 	check(device.try_select_type(player, 0), "正式选择入口取消当前类型")
-	await frames(18)
+	await _wait_packing_motion()
 	_assert_lamps(LAMP_DEFAULT, "取消当前类型后恢复红色且双完成灯始终保持灰色")
 	await _fresh_lamp_case()
 	device = machine as AutolysisPackingMachine
@@ -268,6 +269,8 @@ func _test_lamp_waveform_and_isolation() -> void:
 	check(blue != null and other_blue != null and blue != other_blue and blue != LAMP_BLUE_ZERO and other_blue != LAMP_BLUE_ZERO, "两台按钮运行材质均为不同的独立副本且原始资源未被直接使用")
 	check(blue.albedo_texture == LAMP_BLUE_ZERO.albedo_texture and other_blue.albedo_texture == LAMP_BLUE_ZERO.albedo_texture and LAMP_BLUE_ZERO.albedo_texture != null, "独立运行副本保持共享原始纹理引用")
 	var origin: float = indicator_clock.effective_seconds
+	waveform_completion_seconds = -1.0
+	device.processing_completed.connect(_observe_waveform_completion.bind(origin), CONNECT_ONE_SHOT)
 	check(device.start_button.start_interaction.try_interact(player), "正式按钮交互同步接受真实启动")
 	_assert_lamps(LAMP_RUNNING, "真实点击被接受后立即闪烁，不等待按钮按压完成")
 	check(is_equal_approx(blue.emission_energy_multiplier, 2.0), "真实启动瞬间从倍率二开始向零线性插值")
@@ -322,11 +325,11 @@ func _test_lamp_waveform_and_isolation() -> void:
 			tested_exit = true
 			await _exit()
 			_assert_lamps(LAMP_RUNNING, "运行中退出聚焦不会终止封装和按钮闪烁")
-		await frames(1)
+		await physics_frame
 	check(sampled_frames >= 80 and tested_pause and tested_scale and tested_refresh and tested_exit and captured_low, "波形覆盖两秒批次、暂停恢复、时间缩放、重复刷新、明暗采样与退出聚焦")
 	_assert_lamps(LAMP_COMPLETED, "两秒有效游戏时间后真实提交完成三灯常亮并清除运行补间")
 	check(not tween.is_valid(), "成功完成后本轮运行补间已终止")
-	check(absf(indicator_clock.effective_seconds - origin - 2.0) <= 1.0 / float(Engine.physics_ticks_per_second) + 0.00001, "时间缩放和暂停后仍由两秒有效游戏时间决定完成")
+	check(absf(waveform_completion_seconds - 2.0) <= 1.0 / float(Engine.physics_ticks_per_second) + 0.00001, "完成事件实测时间在缩放和暂停后仍为两秒有效游戏时间")
 	_assert_lamps(LAMP_COMPLETED, "另一台完成待取显示在本机整个批次期间保持", second)
 	if graphical:
 		check(high_luminance > low_luminance + 0.01, "真实渲染的按钮高倍率画面比低倍率画面更亮")
@@ -336,6 +339,10 @@ func _test_lamp_waveform_and_isolation() -> void:
 	await frames(2)
 	_assert_lamps(LAMP_DEFAULT, "本轮胶囊成功取走同步恢复红色按钮与灰色双完成灯")
 	await _capture_lamps("06-取走重置.png")
+
+
+func _observe_waveform_completion(_batch_id: int, _contents: AutolysisPackingContents, origin: float) -> void:
+	waveform_completion_seconds = indicator_clock.effective_seconds - origin
 
 
 func _test_lamp_consecutive_batches() -> void:
@@ -354,10 +361,10 @@ func _test_lamp_consecutive_batches() -> void:
 		_assert_lamps(LAMP_COMPLETED, "连续批次成功完成后停闪并显示三灯常亮")
 		check(current_tween != null and not current_tween.is_valid(), "连续批次完成后旧循环不残留")
 		check(device.door.try_toggle(player), "完成待取阶段允许正式门入口关闭舱门")
-		await frames(18)
+		await _wait_packing_motion()
 		_assert_lamps(LAMP_COMPLETED, "完成待取关门不会改变三个灯")
 		check(device.door.try_toggle(player), "完成待取阶段允许正式门入口重新开门")
-		await frames(18)
+		await _wait_packing_motion()
 		_assert_lamps(LAMP_COMPLETED, "完成待取开门不会改变三个灯")
 		await _focus_lamp_device(device)
 		_assert_lamps(LAMP_COMPLETED, "完成后退出再进入聚焦仍保持三个灯")
@@ -370,7 +377,7 @@ func _test_lamp_consecutive_batches() -> void:
 		_assert_lamps(LAMP_DEFAULT, "连续批次每次成功取走本轮胶囊均重置三个灯")
 		check(device.get_completed_capsule_instance() == null and device.get_selected_type() == -1, "成功取走清除本机完成记录及类型选择")
 		if batch_index == 0:
-			await frames(18)
+			await _wait_packing_motion()
 			check(not device.are_switches_animating(), "胶囊成功取走后的真实类型复位动画结束再准备下一轮")
 			check(inventory.cycle_focus(1), "第二轮准备使用另一个空道具格")
 			await _place_lamp_tank(device)

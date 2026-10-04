@@ -1,0 +1,29 @@
+WARNING: 封装开始按钮按压停止更新：开始按钮缺少可选按压播放器或指定动画
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] rebind_press_animation (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_start_button.gd:90)
+       [1] configure (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_start_button.gd:34)
+       [2] _ready (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:78)
+       [3] _new_scene (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:70)
+       [4] _prepare_sources (res://main-autolysis/systems/item-system/tests/packing_asset_isolation_test.gd:59)
+       [5] _test_optional_display_and_press (res://main-autolysis/systems/item-system/tests/packing_asset_isolation_test.gd:68)
+       [6] run_checks (res://main-autolysis/systems/item-system/tests/packing_asset_isolation_test.gd:31)
+WARNING: 封装开始按钮按压停止更新：开始按钮缺少可选按压播放器或指定动画
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] rebind_press_animation (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_start_button.gd:90)
+       [1] configure (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_start_button.gd:34)
+       [2] _ready (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:78)
+       [3] _new_scene (res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd:70)
+       [4] _prepare_sources (res://main-autolysis/systems/item-system/tests/packing_asset_isolation_test.gd:59)
+       [5] _test_optional_display_and_press (res://main-autolysis/systems/item-system/tests/packing_asset_isolation_test.gd:68)
+       [6] run_checks (res://main-autolysis/systems/item-system/tests/packing_asset_isolation_test.gd:31)
+WARNING: 封装控制件动作中断：/root/PackingMachineDemo/PackingA/type_switch_2；独立运行播放器或指定动画无效
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] _interrupt_motion (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd:294)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd:196)
+WARNING: 封装开始按钮按压停止更新：按压被外部停止、替换播放或替换资源
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_start_button.gd:147)

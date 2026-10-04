@@ -1,0 +1,4 @@
+WARNING: AnimationMixer: 'edited_bank/door_2', couldn't resolve track:  '../AnimationEventProbe'. This warning can be disabled in Project Settings.
+   at: _update_caches (scene/animation/animation_mixer.cpp:717)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd:312)

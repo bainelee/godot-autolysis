@@ -1,0 +1,62 @@
+[
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_slot.gd",
+    "算法": "SHA256",
+    "散列": "F682A942242A9184FC3D12723926456B798344C0A3B2F42B9ADBC103E7DDACFE"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_machine.gd",
+    "算法": "SHA256",
+    "散列": "70A48987715B02922BC5200368208BC98D0EAF412D8A54A46FBA4ACFEE3B36A9"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_handle.gd",
+    "算法": "SHA256",
+    "散列": "87A16986B21542636BDF82B17A0022E95E9D72F39B0EF0949E9E6D38EC98F578"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_tank_place.gd",
+    "算法": "SHA256",
+    "散列": "27C8F29B181F0ED6AC79A7D37718E32516C1AE3A84E8774C5E78883348B783A4"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_blend_0.tscn",
+    "算法": "SHA256",
+    "散列": "B66CF1C8A240207F72F714E324A1C44066309DA2BF7EFBD9651AE72F1AA21498"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\blend_animation_variants_test.gd",
+    "算法": "SHA256",
+    "散列": "59C1AA6B6D1E7284248E5BBF5221261031C158094C9672EA60016BB2BDC15D3D"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\blend_slot_transfer_test.gd",
+    "算法": "SHA256",
+    "散列": "743B9DBD95EB730BE89EF888BCD828490655620ECFB392D0CD476F5820F44914"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\liquid_contents_blend_test.gd",
+    "算法": "SHA256",
+    "散列": "83265E84AC049CEDF666DC72748ED35E1ABC749BA43756E2ED74E6AF30B5FCE7"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\blend_indicator_test.gd",
+    "算法": "SHA256",
+    "散列": "BE4D8F60FF6EBDC26B2EE7F1CB9C9B706C4A18CED30FE24E9773FD7703061392"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\run_blend_animation_verification.ps1",
+    "算法": "SHA256",
+    "散列": "E9CEEEA6D764673219DC432E6D91FE22063602786ACD6978827506B8B28C2F93"
+  },
+  {
+    "文件": "D:\\cogito\\addons\\cogito\\CogitoObjects\\cogito_door.gd",
+    "算法": "SHA256",
+    "散列": "877F0EF0FF117DA749A84F4A16CC4470AB69CE684B338349E687412731F0E6C3"
+  },
+  {
+    "文件": "D:\\cogito\\main-degauss\\scripts\\animated_interaction_sequencer.gd",
+    "算法": "SHA256",
+    "散列": "0DDC75BD595C1CB2CEF30B65C8E7F0297C145286402D149A4CC93BA24F48533B"
+  }
+]

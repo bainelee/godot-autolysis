@@ -1,0 +1,4 @@
+SCRIPT ERROR: Parse Error: Invalid argument for "_move_before_tree()" function: argument 1 should be "Node3D" but is "AnimationPlayer".
+   at: GDScript::reload (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:93)
+ERROR: Failed to load script "res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)

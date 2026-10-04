@@ -24,6 +24,7 @@ func run_checks() -> void:
 	await _test_external_fill_and_credential_invalidation()
 	await _test_tank_exit()
 	await _test_machine_exit()
+	await _test_edited_display_configuration()
 	await _test_indicator_loss()
 	_save_indicator_report()
 	_release_controls()
@@ -61,11 +62,11 @@ func _place_indicator_tank(device: AutolysisBlendMachine, definition: AutolysisI
 func _place_indicator_raw(device: AutolysisBlendMachine, index: int = 0) -> void:
 	var slot: AutolysisBlendSlot = device.slots[index]
 	check(slot.try_toggle(player), "正式槽门入口开始打开原药槽")
-	await frames(15)
+	await _wait_blend_slot(slot, true)
 	check(slot.is_open(), "真实门动画完成到打开状态")
 	check(inventory.try_receive_item(CAFFEINE) and inventory.try_place_in_blend_slot(player, slot), "正式库存事务将原药放入已打开槽")
 	check(slot.try_toggle(player), "正式槽门入口开始关闭原药槽")
-	await frames(15)
+	await _wait_blend_slot(slot, false)
 	check(slot.is_closed(), "真实门动画完成到关闭状态")
 
 
@@ -98,12 +99,12 @@ func _test_start_conditions_and_transactions() -> void:
 	check(slot.try_toggle(player), "就绪后公开入口打开空槽门")
 	await frames(1)
 	_check_indicator(INDICATOR_DEFAULT, "空槽门打开动画开始后红色")
-	await frames(15)
+	await _wait_blend_slot(slot, true)
 	_check_indicator(INDICATOR_DEFAULT, "空槽门完全打开后仍为红色")
 	check(slot.try_toggle(player), "公开入口关闭空槽门")
 	await frames(1)
 	_check_indicator(INDICATOR_DEFAULT, "空槽门关闭动画期间仍为红色")
-	await frames(15)
+	await _wait_blend_slot(slot, false)
 	_check_indicator(INDICATOR_READY, "最后槽门关闭动画结束触发橙色就绪")
 	check(machine.tank_place.try_begin_transfer(player), "合法罐位事务开始")
 	await frames(2)
@@ -119,10 +120,10 @@ func _test_start_conditions_and_transactions() -> void:
 	_check_indicator(INDICATOR_READY, "重新放罐事务结束后恢复橙色")
 	slot = machine.slots[0]
 	check(slot.try_toggle(player), "正式入口打开最后原药所在槽")
-	await frames(15)
+	await _wait_blend_slot(slot, true)
 	check(inventory.try_take_from_blend_slot(player, slot), "正式库存事务移走最后原药")
 	check(slot.try_toggle(player), "取药后关闭空槽")
-	await frames(15)
+	await _wait_blend_slot(slot, false)
 	_check_indicator(INDICATOR_DEFAULT, "移走最后原药并关门后红色")
 	await _fresh_indicator_case()
 	await _place_indicator_tank(machine as AutolysisBlendMachine)
@@ -231,10 +232,10 @@ func _test_completed_credential_and_two_batches() -> void:
 		check(machine.get("_completed_tank_instance") == instance, "绿色凭据保存真实成功批次罐的逐件实例身份")
 		var slot: AutolysisBlendSlot = machine.slots[2]
 		check(slot.try_toggle(player), "完成后允许打开空槽门")
-		await frames(15)
+		await _wait_blend_slot(slot, true)
 		_check_indicator(INDICATOR_COMPLETED, "完成罐仍在时空槽门打开持续绿色")
 		check(slot.try_toggle(player), "完成后允许关闭空槽门")
-		await frames(15)
+		await _wait_blend_slot(slot, false)
 		await _focus_device(machine as AutolysisBlendMachine)
 		_check_indicator(INDICATOR_COMPLETED, "完成后退出并重新聚焦仍保持绿色")
 		if batch_index == 0:
@@ -334,6 +335,46 @@ func _test_indicator_loss() -> void:
 	check(machine.is_batch_running() and machine.get_processing_fault().is_empty(), "显示依赖失效不改变已有业务运行或制造业务故障")
 	await frames(125)
 	check(not machine.is_batch_running() and not machine.tank_place.get_stored_item().is_empty(), "指示灯失效后原有业务仍完成完整批次")
+
+
+func _test_edited_display_configuration() -> void:
+	await _fresh_indicator_case()
+	var custom: AutolysisBlendMachine = preload("res://main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn").instantiate() as AutolysisBlendMachine
+	var decoration: Node3D = Node3D.new()
+	decoration.name = "EditedIndicatorDecoration"
+	custom.add_child(decoration)
+	custom.status_indicator.owner = null
+	custom.status_indicator.reparent(decoration, false)
+	custom.status_indicator.owner = custom
+	custom.indicator_default_material = INDICATOR_RED.duplicate() as Material
+	custom.indicator_ready_material = INDICATOR_ORANGE.duplicate() as StandardMaterial3D
+	custom.indicator_ready_material.emission_energy_multiplier = 3.0
+	custom.indicator_completed_material = INDICATOR_GREEN.duplicate() as Material
+	custom.indicator_half_cycle_seconds = 0.13
+	custom.indicator_emission_min = 0.4
+	custom.indicator_emission_max = 4.0
+	world.add_child(custom)
+	machine = custom
+	await _focus_device(custom)
+	check(custom.is_configured() and custom.status_indicator.material_override == custom.indicator_default_material, "显示重组和替换材质后设备仍可聚焦且保留编辑的默认材质")
+	await _place_indicator_tank(custom)
+	await _place_indicator_raw(custom)
+	var active_material: StandardMaterial3D = custom.get("_indicator_orange_material") as StandardMaterial3D
+	check(active_material != custom.indicator_ready_material and is_equal_approx(active_material.emission_energy_multiplier, 3.0), "编辑的就绪材质倍率生效且本机仍使用独立副本")
+	check(custom.try_start_processing(player), "可编辑显示参数下真实业务启动")
+	var minimum: float = active_material.emission_energy_multiplier
+	var maximum: float = minimum
+	for _sample: int in 40:
+		await frames(1)
+		minimum = minf(minimum, active_material.emission_energy_multiplier)
+		maximum = maxf(maximum, active_material.emission_energy_multiplier)
+	check(minimum >= 0.4 and maximum <= 4.0 and minimum < 0.8 and maximum > 3.6, "编辑闪烁半周期和发光范围生效")
+	check(is_equal_approx(custom.indicator_ready_material.emission_energy_multiplier, 3.0), "编辑材质资源本身不被运行闪烁修改")
+	var deadline: int = Time.get_ticks_msec() + 8000
+	while custom.is_batch_running() and Time.get_ticks_msec() < deadline:
+		await frames(1)
+	check(not custom.is_batch_running() and custom.status_indicator.material_override == custom.indicator_completed_material, "显示参数编辑不改变两秒业务完成且使用编辑的完成材质")
+	check(inventory.try_take_from_blend_tank_place(player, custom.tank_place), "显示参数编辑后正式库存仍可取回完成罐")
 
 
 func _capture_indicator(filename: String) -> float:

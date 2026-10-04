@@ -13,8 +13,7 @@ var _items: Array[AutolysisRawMaterial] = []
 func _ready() -> void:
 	_collect_slots()
 	_interaction.set_availability_check(_can_interact)
-	if not _interaction.interaction_requested.is_connected(_on_interaction_requested):
-		_interaction.interaction_requested.connect(_on_interaction_requested)
+	_interaction.set_execution_handler(_on_interaction_requested)
 
 
 func get_slot_count() -> int:

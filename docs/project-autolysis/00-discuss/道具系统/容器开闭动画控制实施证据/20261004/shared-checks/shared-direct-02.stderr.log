@@ -1,0 +1,34 @@
+ERROR: Attempted to set an invalid (previously freed?) object instance into a 'TypedArray'.
+   at: _internal_validate_object (core/variant/container_type_validate.h:96)
+   GDScript backtrace (most recent call first):
+       [0] run_dispatch_lifetime_contracts (res://main-autolysis/player/tests/direct_interaction_test.gd:246)
+       [1] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+ERROR: Condition "!_p->typed.validate(value, "set")" is true.
+   at: set (core/variant/array.cpp:520)
+   GDScript backtrace (most recent call first):
+       [0] run_dispatch_lifetime_contracts (res://main-autolysis/player/tests/direct_interaction_test.gd:246)
+       [1] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+ERROR: Attempted to set an invalid (previously freed?) object instance into a 'TypedArray'.
+   at: _internal_validate_object (core/variant/container_type_validate.h:96)
+   GDScript backtrace (most recent call first):
+       [0] run_dispatch_lifetime_contracts (res://main-autolysis/player/tests/direct_interaction_test.gd:246)
+       [1] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+ERROR: Condition "!_p->typed.validate(value, "set")" is true.
+   at: set (core/variant/array.cpp:520)
+   GDScript backtrace (most recent call first):
+       [0] run_dispatch_lifetime_contracts (res://main-autolysis/player/tests/direct_interaction_test.gd:246)
+       [1] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+ERROR: Object is locked and can't be freed.
+   at: callp (core/object/object.cpp:890)
+   GDScript backtrace (most recent call first):
+       [0] receive (res://main-autolysis/player/tests/direct_interaction_test.gd:33)
+       [1] try_interact (res://main-autolysis/components/interactions/autolysis_interaction_component.gd:92)
+       [2] run_dispatch_lifetime_contracts (res://main-autolysis/player/tests/direct_interaction_test.gd:245)
+       [3] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Attempted to free a locked object (calling or emitting).
+   at: EffectReceiver.receive (res://main-autolysis/player/tests/direct_interaction_test.gd:33)
+   GDScript backtrace (most recent call first):
+       [0] receive (res://main-autolysis/player/tests/direct_interaction_test.gd:33)
+       [1] try_interact (res://main-autolysis/components/interactions/autolysis_interaction_component.gd:92)
+       [2] run_dispatch_lifetime_contracts (res://main-autolysis/player/tests/direct_interaction_test.gd:245)
+       [3] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)

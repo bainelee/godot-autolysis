@@ -1,0 +1,39 @@
+{
+  "检查": "animation-timing-batched-transform",
+  "时间": "2026-10-04T12:06:29.6224935+08:00",
+  "进程编号": 44952,
+  "退出码": 0,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/container_animation_timing_probe.gd"
+  ],
+  "通过断言数": 1,
+  "预期错误计数": {},
+  "非预期错误": [
+    "SCRIPT ERROR: Parse Error: Function \"restore_closed()\" not found in base self.",
+    "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+    "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+    "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+    "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+    "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+    "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+    "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+    "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+    "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+    "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+    "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+    "ERROR: Failed to load script \"res://main-autolysis/systems/item-system/autolysis_raw_material_group.gd\" with error \"Compilation failed\".",
+    "ERROR: Attempted to set an object into a TypedArray, that does not inherit from 'GDScript'.",
+    "ERROR: Condition \"!_p->typed.validate(value, \"set\")\" is true.",
+    "ERROR: Attempted to set an object into a TypedArray, that does not inherit from 'GDScript'.",
+    "ERROR: Condition \"!_p->typed.validate(value, \"set\")\" is true.",
+    "ERROR: Attempted to set an object into a TypedArray, that does not inherit from 'GDScript'.",
+    "ERROR: Condition \"!_p->typed.validate(value, \"set\")\" is true."
+  ]
+}

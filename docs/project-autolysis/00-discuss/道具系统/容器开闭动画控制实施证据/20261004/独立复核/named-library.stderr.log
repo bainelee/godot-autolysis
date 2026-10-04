@@ -1,0 +1,4 @@
+ERROR: Invalid animation name: 'bank/move'.
+   at: add_animation (scene/resources/animation_library.cpp:48)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (C:/Users/baine/AppData/Local/Temp/autolysis-independent-event-20261004/named-library-probe.gd:10)

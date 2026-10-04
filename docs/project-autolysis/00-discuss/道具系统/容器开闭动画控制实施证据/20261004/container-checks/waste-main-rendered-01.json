@@ -1,0 +1,21 @@
+{
+  "检查": "waste-main-rendered-01",
+  "时间": "2026-10-04T12:16:04.4995774+08:00",
+  "进程编号": 30692,
+  "退出码": 0,
+  "通过": true,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/waste_liquid_tank_behavior_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/道具系统/容器开闭动画控制实施证据/20261004/container-checks/waste-main-rendered-01"
+  ],
+  "通过断言数": 246,
+  "预期错误计数": {},
+  "非预期错误": []
+}

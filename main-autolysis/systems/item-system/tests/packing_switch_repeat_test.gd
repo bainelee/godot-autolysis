@@ -1,5 +1,5 @@
 extends "res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd"
-## 正式玩家重复拨动三类开关，记录端帧与物理同步状态。
+## 正式玩家重复拨动三类开关，记录目标完成与物理同步状态。
 
 var repeat_samples: Array[Dictionary] = []
 
@@ -43,9 +43,10 @@ func run_checks() -> void:
 
 
 func _observe_motion(control: AutolysisPackingTypeSwitch, cycle: int, direction: String) -> void:
-	for sample_index: int in range(30):
+	for sample_index: int in range(Engine.physics_ticks_per_second * 5):
 		var runtime: AnimationPlayer = control.get("_runtime_player")
 		repeat_samples.append({"轮次": cycle, "方向": direction, "类型": control.packing_type, "物理帧": Engine.get_physics_frames(), "状态": control.state, "动画进度": runtime.current_animation_position, "角度": str(control.rotation), "物理角度": str(control.global_transform.basis.get_euler()), "播放中": runtime.is_playing(), "待完成": control.get("_completion_pending"), "配置错误": control.get_configuration_error()})
 		if not control.get_configuration_error().is_empty() or not control.is_animating():
 			return
 		await frames(1)
+	check(false, "目标开关未在测试上限内终结")

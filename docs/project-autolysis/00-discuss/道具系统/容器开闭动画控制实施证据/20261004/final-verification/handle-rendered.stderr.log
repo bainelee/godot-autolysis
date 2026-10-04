@@ -1,0 +1,8 @@
+WARNING: 拉杆鼠标定位基准不符，取消拖动：旧基准=(1076.587, 104.0)；定位前=(1076.587, 542.2863)；定位后=(659.0, 4.0)
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] observe_focus_drag_input (res://main-autolysis/player/components/autolysis_interaction_controller.gd:195)
+       [1] _input (res://main-autolysis/player/autolysis_player.gd:221)
+       [2] _motion (res://main-autolysis/player/tests/blend_handle_drag_test.gd:321)
+       [3] _test_completion (res://main-autolysis/player/tests/blend_handle_drag_test.gd:642)
+       [4] _capture (res://main-autolysis/player/tests/blend_handle_drag_test.gd:965)

@@ -1,0 +1,10 @@
+main-autolysis/systems/item-system/tests/blend_animation_variants_test.gd
+main-autolysis/systems/item-system/tests/blend_animation_variants_test.gd.uid
+main-autolysis/systems/item-system/tests/container_animation_asset_test.gd
+main-autolysis/systems/item-system/tests/container_animation_asset_test.gd.uid
+main-autolysis/systems/item-system/tests/container_animation_timing_probe.gd
+main-autolysis/systems/item-system/tests/container_animation_timing_probe.gd.uid
+main-autolysis/systems/item-system/tests/packing_asset_isolation_test.gd
+main-autolysis/systems/item-system/tests/packing_asset_isolation_test.gd.uid
+main-autolysis/systems/item-system/tests/run_blend_animation_verification.ps1
+main-autolysis/systems/item-system/tests/run_container_animation_verification.ps1

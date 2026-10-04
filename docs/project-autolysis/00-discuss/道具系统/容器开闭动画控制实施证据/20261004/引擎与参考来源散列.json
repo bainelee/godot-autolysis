@@ -1,0 +1,22 @@
+[
+  {
+    "来源": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+    "长度": 172310536,
+    "散列": "1E5EFE381F62EE1CEA6BC18CAAC71C0C74BD6E68E6AF5C6EFB3DBE76628F61C7"
+  },
+  {
+    "来源": "D:\\cogito\\addons\\cogito\\CogitoObjects\\cogito_door.gd",
+    "长度": 15548,
+    "散列": "877F0EF0FF117DA749A84F4A16CC4470AB69CE684B338349E687412731F0E6C3"
+  },
+  {
+    "来源": "D:\\cogito\\main-degauss\\scripts\\animated_interaction_sequencer.gd",
+    "长度": 5693,
+    "散列": "0DDC75BD595C1CB2CEF30B65C8E7F0297C145286402D149A4CC93BA24F48533B"
+  },
+  {
+    "来源": "D:\\cogito\\main-degauss\\prefabs\\animated_door_demo.tscn",
+    "长度": 4029,
+    "散列": "D3A228B4F42D85F30112406BC8C023AE1071155F442061A8BCDFE75D0C62FCF2"
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "检查": "blend-animation-variants-04",
+  "时间": "2026-10-04T12:14:56.7780307+08:00",
+  "进程编号": 37500,
+  "退出码": 1,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/blend_animation_variants_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/道具系统/容器开闭动画控制实施证据/20261004/blend-checks/variants"
+  ],
+  "通过断言数": 120,
+  "预期错误计数": {},
+  "非预期错误": [
+    "失败：第0槽反向完整变换返回配置关闭结果，表现测量误差=0.000689",
+    "失败：第1槽反向完整变换返回配置关闭结果，表现测量误差=0.000680",
+    "失败：第2槽反向完整变换返回配置关闭结果，表现测量误差=0.000652",
+    "失败：第3槽反向完整变换返回配置关闭结果，表现测量误差=0.000688"
+  ]
+}

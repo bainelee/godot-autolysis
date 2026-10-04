@@ -24,8 +24,7 @@ func _ready() -> void:
 	if device_stored:
 		_disable_world_pickup()
 	_interaction.set_availability_check(_can_interact)
-	if not _interaction.interaction_requested.is_connected(_on_interaction_requested):
-		_interaction.interaction_requested.connect(_on_interaction_requested)
+	_interaction.set_execution_handler(_on_interaction_requested)
 
 
 func is_available_for_pickup() -> bool:

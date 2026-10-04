@@ -134,9 +134,9 @@ func _test_cycle() -> void:
 	await _click()
 	check(not cabinet.is_open() and _stored_count() == 2, "暂停期间左键不转移液体罐")
 	paused = false
-	await frames(20)
+	await _wait_motion()
 	check(cabinet.is_open(), "恢复后打开动画自然结束并开放取放")
-	check(absf(_door_shape().get_parent().rotation.x - deg_to_rad(75)) < 0.002, "打开终态保留现有横轴七十五度")
+	check(_matches_current_asset(true), "打开终态符合当前配置资产")
 	await _capture("02-打开双罐.png")
 	var one: AutolysisLiquidTank = cabinet.get_item_at_slot(1)
 	await _aim(one.global_position)
@@ -191,8 +191,8 @@ func _test_cycle() -> void:
 	await _aim_door()
 	await _click()
 	check(cabinet.is_animating() and not cabinet.is_open(), "持罐点击打开的门只开始关闭")
-	await frames(20)
-	check(not cabinet.is_open() and not cabinet.is_animating() and _door_shape().get_parent().rotation.is_zero_approx(), "倒放结束恢复实际关门零度")
+	await _wait_motion()
+	check(not cabinet.is_open() and not cabinet.is_animating() and _matches_current_asset(false), "倒放结束恢复当前资产关闭结果")
 	check(_stored_count() == 2 and _inventory_count() == 1, "关门不改变三个有限罐的占用")
 	await _capture("07-持罐关闭.png")
 
@@ -212,7 +212,7 @@ func _test_gate_and_occlusion() -> void:
 	await _front()
 	await _aim_door()
 	await _click()
-	await frames(20)
+	await _wait_motion()
 	check(cabinet.is_open(), "空手再次通过真实柜门交互打开")
 	var blocker: StaticBody3D = box(Vector3(0.4, 2, 0.04), cabinet.to_global(Vector3(-0.85, 0.8, 1.2)))
 	await _aim(stored.global_position)
@@ -231,7 +231,7 @@ func _test_gate_and_occlusion() -> void:
 	check(player.interaction_raycast.collision_mask == 19 and player.interaction_raycast.get_collider() != cabinet.placement_body, "手持原药保持掩码十九且不检测液体罐放置体")
 	await _aim_door()
 	await _click()
-	await frames(20)
+	await _wait_motion()
 	check(not cabinet.is_open(), "手持原药仍可通过真实柜门交互关闭")
 
 
@@ -268,7 +268,7 @@ func _test_main_scene() -> void:
 	await _front()
 	await _aim_door()
 	await _click()
-	await frames(20)
+	await _wait_motion()
 	check(cabinet.is_open(), "实际主场景左键打开现有柜门")
 	await _capture("08-主场景打开.png")
 	# 混合机现有底部碰撞位于柜内罐上方；真实蹲下后瞄准可见下部。
@@ -291,7 +291,7 @@ func _test_main_scene() -> void:
 	check(_stored_count() == 2 and inventory.get_focused_item() == null, "实际主场景放回对应空槽")
 	await _aim_door()
 	await _click()
-	await frames(20)
+	await _wait_motion()
 	check(not cabinet.is_open(), "实际主场景关闭柜门完成完整循环")
 	Input.action_release("crouch")
 	var fixed_count: int = 0
@@ -353,3 +353,17 @@ func _save_report() -> void:
 		file.close()
 	else:
 		check(false, "报告文件可写")
+
+func _wait_motion() -> void:
+	for frame: int in 240:
+		if not cabinet.is_animating():
+			return
+		await frames(1)
+	check(false, "图形柜门检查超过动作等待上限")
+
+
+func _matches_current_asset(opened: bool) -> bool:
+	var source: Animation = cabinet.animation_player.get_animation(cabinet.animation_name)
+	var expected: Vector3 = source.track_get_key_value(0, source.track_get_key_count(0) - 1 if opened else 0)
+	var expected_basis: Basis = Basis.from_euler(expected)
+	return cabinet.door_body.basis.x.distance_to(expected_basis.x) < 0.002 and cabinet.door_body.basis.y.distance_to(expected_basis.y) < 0.002 and cabinet.door_body.basis.z.distance_to(expected_basis.z) < 0.002

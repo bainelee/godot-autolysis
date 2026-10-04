@@ -1,0 +1,653 @@
+diff --git a/main-autolysis/components/interactions/autolysis_focus_target.gd b/main-autolysis/components/interactions/autolysis_focus_target.gd
+index 300d18e..8e76ef1 100644
+--- a/main-autolysis/components/interactions/autolysis_focus_target.gd
++++ b/main-autolysis/components/interactions/autolysis_focus_target.gd
+@@ -31,7 +31,7 @@ func configure(root: PhysicsBody3D, camera: Camera3D, interaction: AutolysisInte
+ 	_has_tank_place = false
+ 	_clear_packing_registration()
+ 	for slot: AutolysisBlendSlot in slots:
+-		if not _node_is_live(slot) or not slot.is_configured() or slot.get_parent() != root:
++		if not _blend_slot_registration_valid(slot, root):
+ 			return false
+ 		var inner_body: PhysicsBody3D = slot.raw_material_anchor as PhysicsBody3D
+ 		if not _node_is_live(inner_body) or _registered_targets.has(slot) or _registered_targets.has(inner_body):
+@@ -40,13 +40,13 @@ func configure(root: PhysicsBody3D, camera: Camera3D, interaction: AutolysisInte
+ 		_registered_targets[inner_body] = slot
+ 		_slots.append(slot)
+ 	for handle: AutolysisBlendHandle in handles:
+-		if not _node_is_live(handle) or not handle.is_configured() or handle.device_root != root or handle.focus_target != self:
++		if not _node_is_live(handle) or handle.device_root != root or handle.focus_target != self:
+ 			return false
+ 		if not root.is_ancestor_of(handle) or _registered_handles.has(handle) or _registered_targets.has(handle):
+ 			return false
+ 		_registered_handles[handle] = handle
+ 	if tank_place != null:
+-		if not _node_is_live(tank_place) or not tank_place.is_configured() or tank_place.machine != root or tank_place.focus_target != self:
++		if not _node_is_live(tank_place) or tank_place.machine != root or tank_place.focus_target != self:
+ 			return false
+ 		if not root.is_ancestor_of(tank_place) or _registered_targets.has(tank_place) or _registered_handles.has(tank_place):
+ 			return false
+@@ -97,17 +97,17 @@ func is_valid_target() -> bool:
+ 	if _slots.is_empty():
+ 		return false
+ 	for slot: Variant in _slots:
+-		if not _node_is_live(slot) or not slot is AutolysisBlendSlot or not slot.is_configured() or slot.focus_target != self or slot.get_parent() != device_root:
++		if not _blend_slot_registration_valid(slot, device_root):
+ 			return false
+ 		if _registered_targets.get(slot) != slot or _registered_targets.get(slot.raw_material_anchor) != slot:
+ 			return false
+ 	for handle: Variant in _registered_handles:
+-		if not _node_is_live(handle) or not handle is AutolysisBlendHandle or not handle.is_configured():
++		if not _node_is_live(handle) or not handle is AutolysisBlendHandle:
+ 			return false
+ 		if handle.focus_target != self or handle.device_root != device_root or not device_root.is_ancestor_of(handle) or _registered_handles[handle] != handle:
+ 			return false
+ 	if _has_tank_place:
+-		if not _node_is_live(_tank_place) or not _tank_place.is_configured() or _tank_place.machine != device_root or _tank_place.focus_target != self or not device_root.is_ancestor_of(_tank_place):
++		if not _node_is_live(_tank_place) or _tank_place.machine != device_root or _tank_place.focus_target != self or not device_root.is_ancestor_of(_tank_place):
+ 			return false
+ 	return true
+ 
+@@ -170,10 +170,20 @@ func _clear_packing_registration() -> void:
+ 	_packing_targets.clear()
+ 
+ 
++## 登记只保护命中归属和来源配对；某入口运动配置失效由该入口自行拒绝。
++func _blend_slot_registration_valid(slot: Variant, root: PhysicsBody3D) -> bool:
++	if not _node_is_live(slot) or not slot is AutolysisBlendSlot or not _node_is_live(root):
++		return false
++	if slot.machine != root or slot.focus_target != self or not root.is_ancestor_of(slot):
++		return false
++	var anchor: Node3D = slot.raw_material_anchor
++	return _node_is_live(anchor) and anchor is PhysicsBody3D and slot.is_ancestor_of(anchor)
++
++
+ func _packing_control_valid(control: Variant) -> bool:
+ 	if not _node_is_live(control) or not control is Node3D or not _node_is_live(device_root):
+ 		return false
+-	if not device_root.is_ancestor_of(control) or not control.has_method("is_configured") or not control.is_configured():
++	if not device_root.is_ancestor_of(control):
+ 		return false
+ 	return control.machine == device_root and control.focus_target == self
+ 
+@@ -181,10 +191,11 @@ func _packing_control_valid(control: Variant) -> bool:
+ func _packing_registration_valid() -> bool:
+ 	if not device_root is AutolysisPackingMachine or _packing_targets.size() != 7 or _packing_type_switches.size() != 3:
+ 		return false
+-	var controls: Array[Node3D] = [_packing_tank_place, _packing_capsule_place, _packing_door, _packing_start_button]
+-	for type_switch: AutolysisPackingTypeSwitch in _packing_type_switches:
++	# 登记对象可能已经释放；先按未限定类型的引用检查，避免无效对象被写入类型数组。
++	var controls: Array = [_packing_tank_place, _packing_capsule_place, _packing_door, _packing_start_button]
++	for type_switch: Variant in _packing_type_switches:
+ 		controls.append(type_switch)
+-	for control: Node3D in controls:
++	for control: Variant in controls:
+ 		if not _packing_control_valid(control) or _packing_targets.get(control) != control:
+ 			return false
+ 	return true
+diff --git a/main-autolysis/components/interactions/autolysis_interaction_component.gd b/main-autolysis/components/interactions/autolysis_interaction_component.gd
+index 09346f2..3f04847 100644
+--- a/main-autolysis/components/interactions/autolysis_interaction_component.gd
++++ b/main-autolysis/components/interactions/autolysis_interaction_component.gd
+@@ -1,6 +1,6 @@
+ class_name AutolysisInteractionComponent
+ extends Node3D
+-## 附加在物理体上的交互入口；物体负责接收请求并执行效果。
++## 附加在物理体上的交互入口；明确绑定的拥有者执行业务，信号仅发布分发观察。
+ 
+ signal interaction_requested(actor: Node3D)
+ 
+@@ -16,6 +16,21 @@ var _is_dispatching: bool = false
+ var _is_querying_availability: bool = false
+ var _availability_check_configured: bool = false
+ var _availability_check: Callable = Callable()
++var _execution_handler: Callable = Callable()
++
++
++## 同步业务入口接收发起者；观察者连接数量不参与业务许可。
++func set_execution_handler(handler: Callable) -> void:
++	_execution_handler = handler
++
++
++func clear_execution_handler() -> void:
++	_execution_handler = Callable()
++
++
++## 可按期望回调核对登记，避免其他入口错误借用本组件。
++func has_execution_handler(expected: Callable = Callable()) -> bool:
++	return _has_live_execution_handler() and (expected.is_null() or _execution_handler == expected)
+ 
+ 
+ ## 查询必须同步、只读，接收发起者并返回布尔值；无效配置不会退回无限制状态。
+@@ -65,7 +80,7 @@ func _has_base_permission(actor: Node3D, requested_mode: InteractionMode) -> boo
+ 		return false
+ 	if not physical_parent.is_inside_tree() or physical_parent.is_queued_for_deletion():
+ 		return false
+-	return _has_single_live_receiver()
++	return _has_live_execution_handler()
+ 
+ 
+ ## 返回真仅表示请求已分发，不表示动画或其他延迟效果已完成。
+@@ -73,13 +88,28 @@ func try_interact(actor: Node3D, requested_mode: InteractionMode = InteractionMo
+ 	if not can_interact(actor, requested_mode):
+ 		return false
+ 	_is_dispatching = true
+-	interaction_requested.emit(actor)
+-	# 接收者可能释放物体；不在已释放的组件上继续写入。
++	var handler: Callable = _execution_handler
++	handler.call(actor)
++	# 业务可能释放组件、命中体或发起者；仅向仍有效的观察上下文通知。
++	if not is_instance_valid(self):
++		return true
++	if _dispatch_context_is_live(actor):
++		interaction_requested.emit(actor)
++	# 观察期间仍保持互斥；观察者释放源对象后不继续访问成员。
+ 	if is_instance_valid(self):
+ 		_is_dispatching = false
+ 	return true
+ 
+ 
++func _dispatch_context_is_live(actor: Variant) -> bool:
++	if not is_inside_tree() or is_queued_for_deletion():
++		return false
++	var physical_parent: Node = get_parent()
++	if not is_instance_valid(physical_parent) or not physical_parent.is_inside_tree() or physical_parent.is_queued_for_deletion():
++		return false
++	return is_instance_valid(actor) and actor is Node3D and actor.is_inside_tree() and not actor.is_queued_for_deletion()
++
++
+ func _has_live_availability_check() -> bool:
+ 	if not _availability_check.is_valid():
+ 		return false
+@@ -92,20 +122,10 @@ func _has_live_availability_check() -> bool:
+ 	return _availability_check.get_argument_count() == 1
+ 
+ 
+-func _has_single_live_receiver() -> bool:
+-	var connections: Array[Dictionary] = []
+-	connections.assign(interaction_requested.get_connections())
+-	if connections.size() != 1:
+-		return false
+-	var connection: Dictionary = connections[0]
+-	var receiver: Callable = connection["callable"]
+-	var flags: int = connection["flags"]
+-	# 延迟连接或追加源对象会破坏同步、单参数请求契约。
+-	if (flags & Object.CONNECT_DEFERRED) != 0 or (flags & Object.CONNECT_APPEND_SOURCE_OBJECT) != 0:
+-		return false
+-	if not receiver.is_valid() or receiver.get_argument_count() != 1:
++func _has_live_execution_handler() -> bool:
++	if not _execution_handler.is_valid() or _execution_handler.get_argument_count() != 1:
+ 		return false
+-	var receiver_object: Object = receiver.get_object()
++	var receiver_object: Object = _execution_handler.get_object()
+ 	if not is_instance_valid(receiver_object) or not receiver_object is Node:
+ 		return false
+ 	var receiver_node: Node = receiver_object as Node
+diff --git a/main-autolysis/player/tests/component_migration_test.gd b/main-autolysis/player/tests/component_migration_test.gd
+index f781078..c4995db 100644
+--- a/main-autolysis/player/tests/component_migration_test.gd
++++ b/main-autolysis/player/tests/component_migration_test.gd
+@@ -3,6 +3,18 @@ extends "res://main-autolysis/player/tests/player_smoke_test.gd"
+ var seen: Node = null
+ var unseen_count: int = 0
+ 
++class ExecutionReceiver extends Node3D:
++	var count: int = 0
++	var observation_count: int = 0
++	var observed_business_count: int = 0
++
++	func execute(_actor: Node3D) -> void:
++		count += 1
++
++	func observe(_actor: Node3D) -> void:
++		observation_count += 1
++		observed_business_count = count
++
+ func on_seen(target: Node3D) -> void:
+ 	seen = target
+ 
+@@ -64,6 +76,16 @@ func run_checks() -> void:
+ 	var destination: Vector3 = drop.get_shapecast_item_drop_position(0.25, 0.2)
+ 	var expected: Vector3 = drop.global_position - 2.25 * player.camera.global_basis.z
+ 	check(destination.is_equal_approx(expected), "投放位置计算使用原脚本逻辑")
++	var component: AutolysisInteractionComponent = load("res://main-autolysis/components/interactions/autolysis_interaction_component.tscn").instantiate()
++	target.add_child(component)
++	var receiver: ExecutionReceiver = ExecutionReceiver.new()
++	world.add_child(receiver)
++	component.interaction_requested.connect(receiver.observe)
++	check(not component.can_interact(player) and not component.try_interact(player) and receiver.observation_count == 0, "迁移组件只有观察连接时拒绝请求")
++	component.set_execution_handler(receiver.execute)
++	check(component.has_execution_handler(receiver.execute) and component.try_interact(player) and receiver.count == 1 and receiver.observation_count == 1 and receiver.observed_business_count == 1, "迁移组件同步执行权威入口一次后发布观察通知")
++	component.clear_execution_handler()
++	check(not component.can_interact(player) and not component.try_interact(player) and receiver.count == 1, "迁移组件明确解除权威入口后阻止后续执行")
+ 	world.queue_free()
+ 	await frames(3)
+ 	print("失败总数：", failures)
+diff --git a/main-autolysis/player/tests/direct_interaction_demo.tscn b/main-autolysis/player/tests/direct_interaction_demo.tscn
+index e70e1f0..e525786 100644
+--- a/main-autolysis/player/tests/direct_interaction_demo.tscn
++++ b/main-autolysis/player/tests/direct_interaction_demo.tscn
+@@ -144,7 +144,3 @@ offset_left = 24.0
+ offset_top = 90.0
+ offset_right = 900.0
+ offset_bottom = 122.0
+-
+-[connection signal="interaction_requested" from="SwitchA/Interaction" to="." method="_on_switch_a_requested"]
+-[connection signal="interaction_requested" from="SwitchB/Interaction" to="." method="_on_switch_b_requested"]
+-[connection signal="interaction_requested" from="Door/Interaction" to="." method="_on_door_requested"]
+diff --git a/main-autolysis/player/tests/direct_interaction_test.gd b/main-autolysis/player/tests/direct_interaction_test.gd
+index 9ffd93d..f4b2e10 100644
+--- a/main-autolysis/player/tests/direct_interaction_test.gd
++++ b/main-autolysis/player/tests/direct_interaction_test.gd
+@@ -24,15 +24,34 @@ class ProbeBody extends StaticBody3D:
+ class EffectReceiver extends Node3D:
+ 	var count: int = 0
+ 	var release_target: Node = null
++	var release_immediately: bool = false
+ 
+ 	func receive(_actor: Node3D) -> void:
+ 		count += 1
+ 		if is_instance_valid(release_target):
+-			release_target.queue_free()
++			if release_immediately:
++				release_target.free()
++			else:
++				release_target.queue_free()
+ 
+ 	func receive_zero() -> void:
+ 		count += 1
+ 
++class RequestObserver extends Node3D:
++	var count: int = 0
++	var business_count_at_notification: int = -1
++	var probe: ProbeBody
++	var component: AutolysisInteractionComponent
++	var recurse: bool = false
++	var recursive_result: bool = true
++
++	func observe(actor: Node3D) -> void:
++		count += 1
++		if is_instance_valid(probe):
++			business_count_at_notification = probe.request_count
++		if recurse:
++			recursive_result = component.try_interact(actor)
++
+ class ClickConsumer extends Control:
+ 	var consumed: int = 0
+ 
+@@ -101,7 +120,7 @@ func new_probe(location: Vector3, with_receiver: bool = true) -> ProbeBody:
+ 	probe.component = COMPONENT_SCENE.instantiate()
+ 	probe.add_child(probe.component)
+ 	if with_receiver:
+-		probe.component.interaction_requested.connect(probe.receive)
++		probe.component.set_execution_handler(probe.receive)
+ 	world.add_child(probe)
+ 	probe.global_position = location
+ 	return probe
+@@ -149,37 +168,50 @@ func run_component_contracts() -> void:
+ 	component.interaction_mode = AutolysisInteractionComponent.InteractionMode.FOCUS
+ 	check(not component.can_interact(actor) and not component.try_interact(actor), "独立组件预留聚焦模式不执行直接交互")
+ 	component.interaction_mode = AutolysisInteractionComponent.InteractionMode.DIRECT
+-	component.interaction_requested.disconnect(probe.receive)
+-	check(not component.can_interact(actor) and not component.try_interact(actor), "没有效果接收者时不可用且不分发")
+-	component.interaction_requested.connect(probe.receive)
+-	component.interaction_requested.connect(probe.receive_alternative)
+-	check(not component.can_interact(actor) and not component.try_interact(actor), "多个效果接收者时不可用且不分发")
+-	component.interaction_requested.disconnect(probe.receive_alternative)
+-	component.interaction_requested.disconnect(probe.receive)
+-	component.interaction_requested.connect(probe.receive, CONNECT_DEFERRED)
+-	check(not component.can_interact(actor), "延迟效果连接不符合本期同步契约")
+-	component.interaction_requested.disconnect(probe.receive)
+-	component.interaction_requested.connect(probe.receive)
++	check(component.has_execution_handler(probe.receive) and not component.has_execution_handler(probe.receive_alternative), "权威执行入口可核对实际拥有者回调")
++	component.clear_execution_handler()
++	check(not component.has_execution_handler() and not component.can_interact(actor) and not component.try_interact(actor), "没有权威执行绑定时不可用且不分发")
++	component.set_execution_handler(probe.receive)
+ 	probe.recurse = true
+ 	check(component.try_interact(actor) and not probe.recursive_result and probe.request_count == 2, "效果回调递归交互被拒绝且外层仅分发一次")
+ 	probe.recurse = false
++	var observer: RequestObserver = RequestObserver.new()
++	observer.probe = probe
++	observer.component = component
++	observer.recurse = true
++	world.add_child(observer)
++	var deferred_observer: RequestObserver = RequestObserver.new()
++	deferred_observer.probe = probe
++	world.add_child(deferred_observer)
++	component.interaction_requested.connect(observer.observe)
++	component.interaction_requested.connect(deferred_observer.observe, CONNECT_DEFERRED)
++	check(component.can_interact(actor) and component.try_interact(actor) and probe.request_count == 3, "多个同步与延后观察订阅不改变许可且业务只执行一次")
++	check(observer.count == 1 and observer.business_count_at_notification == 3 and not observer.recursive_result and deferred_observer.count == 0, "同步观察在业务后通知且观察期间拒绝递归请求")
++	await frames(2)
++	check(deferred_observer.count == 1 and deferred_observer.business_count_at_notification == 3 and probe.request_count == 3, "延后观察仅记录本次结果而不重复业务")
++	deferred_observer.queue_free()
++	await frames(2)
++	check(component.can_interact(actor) and component.try_interact(actor) and probe.request_count == 4 and observer.count == 2, "释放一个观察对象后保留业务与其他观察")
++	observer.queue_free()
++	await frames(2)
+ 	var detached_actor: Node3D = Node3D.new()
+ 	check(not component.can_interact(detached_actor) and not component.can_interact(null), "未入树或空执行者不可用")
+ 	detached_actor.free()
+-	component.interaction_requested.disconnect(probe.receive)
+ 	var receiver: EffectReceiver = EffectReceiver.new()
+ 	world.add_child(receiver)
+-	component.interaction_requested.connect(receiver.receive_zero)
+-	check(not component.can_interact(actor), "零参数接收者不符合单参数效果契约")
+-	component.interaction_requested.disconnect(receiver.receive_zero)
+-	component.interaction_requested.connect(receiver.receive, CONNECT_APPEND_SOURCE_OBJECT)
+-	check(not component.can_interact(actor), "追加信号来源参数的连接不符合单参数效果契约")
+-	component.interaction_requested.disconnect(receiver.receive)
+-	component.interaction_requested.connect(receiver.receive)
++	component.set_execution_handler(receiver.receive_zero)
++	check(not component.has_execution_handler() and not component.can_interact(actor), "零参数权威入口在执行前被拒绝")
++	component.set_execution_handler(Callable())
++	check(not component.can_interact(actor), "空权威入口不会退回无限制分发")
++	component.set_execution_handler(receiver.receive)
++	world.remove_child(receiver)
++	check(not component.can_interact(actor), "权威执行对象离树时拒绝请求")
++	world.add_child(receiver)
+ 	receiver.queue_free()
+ 	check(not component.can_interact(actor) and not component.try_interact(actor), "效果接收者排队释放后立即拒绝请求")
+ 	await frames(2)
+-	component.interaction_requested.connect(probe.receive)
++	check(not component.can_interact(actor), "权威执行对象释放后维持不可用")
++	component.set_execution_handler(probe.receive)
+ 	component.queue_free()
+ 	check(not component.can_interact(actor) and not component.try_interact(actor), "组件排队释放后立即拒绝请求")
+ 	probe.queue_free()
+@@ -193,7 +225,29 @@ func run_component_contracts() -> void:
+ 	check(not probe.component.can_interact(actor), "执行者排队释放后立即拒绝请求")
+ 	probe.queue_free()
+ 	await frames(2)
+-
++	await run_dispatch_lifetime_contracts()
++
++func run_dispatch_lifetime_contracts() -> void:
++	for release_immediately: bool in [false, true]:
++		# 引擎禁止立即释放正在执行方法的组件；组件释放使用排队方式。
++		for target_kind: int in range(2 if release_immediately else 3):
++			var actor: Node3D = Node3D.new()
++			world.add_child(actor)
++			var probe: ProbeBody = new_probe(Vector3(20, 20, 20), false)
++			var receiver: EffectReceiver = EffectReceiver.new()
++			receiver.release_immediately = release_immediately
++			world.add_child(receiver)
++			probe.component.set_execution_handler(receiver.receive)
++			var observer: RequestObserver = RequestObserver.new()
++			world.add_child(observer)
++			probe.component.interaction_requested.connect(observer.observe)
++			var targets: Array[Node] = [actor, probe, probe.component]
++			receiver.release_target = targets[target_kind]
++			check(probe.component.try_interact(actor) and receiver.count == 1 and observer.count == 0, "业务%s释放第%d类依赖后安全结束分发且不向失效上下文通知" % ["立即" if release_immediately else "排队", target_kind])
++			for remaining: Variant in [actor, probe, receiver, observer]:
++				if is_instance_valid(remaining):
++					remaining.queue_free()
++			await frames(2)
+ func run_availability_contracts() -> void:
+ 	var actor: Node3D = Node3D.new()
+ 	world.add_child(actor)
+@@ -261,7 +315,7 @@ func run_availability_lifetime_contracts() -> void:
+ 		var probe: ProbeBody = new_probe(Vector3(20, 20, 20), false)
+ 		var effect_receiver: EffectReceiver = EffectReceiver.new()
+ 		world.add_child(effect_receiver)
+-		probe.component.interaction_requested.connect(effect_receiver.receive)
++		probe.component.set_execution_handler(effect_receiver.receive)
+ 		var receiver: AvailabilityReceiver = AvailabilityReceiver.new()
+ 		world.add_child(receiver)
+ 		probe.component.set_availability_check(receiver.permits)
+@@ -352,10 +406,10 @@ func run_configuration_cases() -> void:
+ 	var probe: ProbeBody = new_probe(origin + Vector3(0, 0, -1.2), false)
+ 	await frames(3)
+ 	await click()
+-	check(not available and probe.request_count == 0, "命中无效果连接的组件不能伪装成可执行目标")
+-	probe.component.interaction_requested.connect(probe.receive)
++	check(not available and probe.request_count == 0, "命中无权威执行绑定的组件不能伪装成可执行目标")
++	probe.component.set_execution_handler(probe.receive)
+ 	var extra: AutolysisInteractionComponent = COMPONENT_SCENE.instantiate()
+-	extra.interaction_requested.connect(probe.receive_alternative)
++	extra.set_execution_handler(probe.receive_alternative)
+ 	probe.add_child(extra)
+ 	await frames(3)
+ 	await click()
+@@ -439,7 +493,7 @@ func run_effect_release_cases() -> void:
+ 	var receiver: EffectReceiver = EffectReceiver.new()
+ 	receiver.release_target = probe
+ 	world.add_child(receiver)
+-	probe.component.interaction_requested.connect(receiver.receive)
++	probe.component.set_execution_handler(receiver.receive)
+ 	await frames(3)
+ 	check(available, "释放效果执行前目标有效且可用")
+ 	await click()
+@@ -449,7 +503,7 @@ func run_effect_release_cases() -> void:
+ 	probe = new_probe(player.camera.global_position + Vector3(0, 0, -1.2), false)
+ 	receiver = EffectReceiver.new()
+ 	world.add_child(receiver)
+-	probe.component.interaction_requested.connect(receiver.receive)
++	probe.component.set_execution_handler(receiver.receive)
+ 	await frames(3)
+ 	check(available, "点击前立即释放用例初始目标已选中")
+ 	# 信号发射中的源对象必须排队释放；这里在发射前销毁，验证过期选择。
+diff --git a/main-autolysis/player/tests/fixtures/direct_interaction_demo.gd b/main-autolysis/player/tests/fixtures/direct_interaction_demo.gd
+index f323ec8..4352d12 100644
+--- a/main-autolysis/player/tests/fixtures/direct_interaction_demo.gd
++++ b/main-autolysis/player/tests/fixtures/direct_interaction_demo.gd
+@@ -19,6 +19,9 @@ var _door_change_pending: bool = false
+ @onready var status: Label = $Instructions/Status
+ 
+ func _ready() -> void:
++	(switch_a.get_node("Interaction") as AutolysisInteractionComponent).set_execution_handler(_on_switch_a_requested)
++	(switch_b.get_node("Interaction") as AutolysisInteractionComponent).set_execution_handler(_on_switch_b_requested)
++	door_component.set_execution_handler(_on_door_requested)
+ 	set_physics_process(false)
+ 	_update_status()
+ 
+diff --git a/main-autolysis/player/tests/focus_interaction_test.gd b/main-autolysis/player/tests/focus_interaction_test.gd
+index 3f88b73..603cc3e 100644
+--- a/main-autolysis/player/tests/focus_interaction_test.gd
++++ b/main-autolysis/player/tests/focus_interaction_test.gd
+@@ -66,6 +66,8 @@ func run_checks() -> void:
+ 		await _test_queued_inputs()
+ 	elif OS.get_cmdline_user_args().has("--main-only"):
+ 		await _test_main_scene()
++	elif OS.get_cmdline_user_args().has("--local-only"):
++		await _test_local_dependency_isolation()
+ 	else:
+ 		await _test_normal_entry_gates()
+ 		await _obtain_source_items()
+@@ -79,6 +81,7 @@ func run_checks() -> void:
+ 		await _test_camera_animation_resume()
+ 		await _test_menu_and_pause()
+ 		await _test_dependency_release()
++		await _test_local_dependency_isolation()
+ 		await _test_main_scene()
+ 	_save_report()
+ 	_release_controls()
+@@ -802,6 +805,31 @@ func _test_dependency_release() -> void:
+ 				_assert_restored("阶段%d释放%s" % [stage, released])
+ 
+ 
++func _test_local_dependency_isolation() -> void:
++	await _new_scene()
++	await _obtain_source_items()
++	await _enter()
++	var session: int = focus.session_id
++	var before_count: int = _item_count()
++	var unavailable: AutolysisBlendSlot = machine.slots[0]
++	var available_slot: AutolysisBlendSlot = machine.slots[1]
++	var local_player: AnimationPlayer = unavailable._runtime_player
++	local_player.queue_free()
++	await frames(3)
++	check(machine.focus_target.is_valid_target() and focus.state == FOCUSED and focus.session_id == session, "一个槽门的必要播放器失效不撤销设备核心登记或聚焦会话")
++	check(not unavailable.toggle_interaction.can_interact(player) and not unavailable.transfer_interaction.can_interact(player), "局部播放器失效只拒绝依赖该门的开闭和取放")
++	await _click(_pixel(0))
++	await _click(_pixel(1))
++	for wait_index: int in range(180):
++		if available_slot.is_open():
++			break
++		await frames(1)
++	check(available_slot.is_open() and not unavailable.is_open() and focus.state == FOCUSED, "局部门失效后真实鼠标仍能打开另一个登记槽门")
++	check(_item_count() == before_count, "局部运动依赖失效与邻门操作保持原药来源数量")
++	await _exit()
++	_assert_restored("局部门依赖失效后退出")
++
++
+ func _test_main_scene() -> void:
+ 	if is_instance_valid(world):
+ 		world.queue_free()
+diff --git a/main-autolysis/systems/item-system/autolysis_liquid_tank.gd b/main-autolysis/systems/item-system/autolysis_liquid_tank.gd
+index 466bae8..89abadd 100644
+--- a/main-autolysis/systems/item-system/autolysis_liquid_tank.gd
++++ b/main-autolysis/systems/item-system/autolysis_liquid_tank.gd
+@@ -31,7 +31,7 @@ func _ready() -> void:
+ 		push_error("液体罐缺少直接子交互组件：%s" % get_path())
+ 		return
+ 	_interaction.set_availability_check(_can_interact)
+-	_interaction.interaction_requested.connect(_on_interaction_requested)
++	_interaction.set_execution_handler(_on_interaction_requested)
+ 	if fixed_installation or blend_stored or packing_stored:
+ 		_disable_world_pickup()
+ 
+diff --git a/main-autolysis/systems/item-system/autolysis_pneumatic_capsule.gd b/main-autolysis/systems/item-system/autolysis_pneumatic_capsule.gd
+index e1aefa0..8cffea7 100644
+--- a/main-autolysis/systems/item-system/autolysis_pneumatic_capsule.gd
++++ b/main-autolysis/systems/item-system/autolysis_pneumatic_capsule.gd
+@@ -25,7 +25,7 @@ func _ready() -> void:
+ 		push_error("气动胶囊缺少直接子交互组件：%s" % get_path())
+ 		return
+ 	_interaction.set_availability_check(_can_interact)
+-	_interaction.interaction_requested.connect(_on_interaction_requested)
++	_interaction.set_execution_handler(_on_interaction_requested)
+ 	if packing_stored:
+ 		_disable_world_pickup()
+ 
+diff --git a/main-autolysis/systems/item-system/autolysis_pneumatic_capsule_shelf.gd b/main-autolysis/systems/item-system/autolysis_pneumatic_capsule_shelf.gd
+index dfef15c..56c05c2 100644
+--- a/main-autolysis/systems/item-system/autolysis_pneumatic_capsule_shelf.gd
++++ b/main-autolysis/systems/item-system/autolysis_pneumatic_capsule_shelf.gd
+@@ -9,7 +9,7 @@ extends StaticBody3D
+ 
+ func _ready() -> void:
+ 	_interaction.set_availability_check(_can_interact)
+-	_interaction.interaction_requested.connect(_on_interaction_requested)
++	_interaction.set_execution_handler(_on_interaction_requested)
+ 
+ 
+ func _can_interact(actor: Node3D) -> bool:
+diff --git a/main-autolysis/systems/item-system/autolysis_raw_material.gd b/main-autolysis/systems/item-system/autolysis_raw_material.gd
+index 3acbcdf..b60b239 100644
+--- a/main-autolysis/systems/item-system/autolysis_raw_material.gd
++++ b/main-autolysis/systems/item-system/autolysis_raw_material.gd
+@@ -24,8 +24,7 @@ func _ready() -> void:
+ 	if device_stored:
+ 		_disable_world_pickup()
+ 	_interaction.set_availability_check(_can_interact)
+-	if not _interaction.interaction_requested.is_connected(_on_interaction_requested):
+-		_interaction.interaction_requested.connect(_on_interaction_requested)
++	_interaction.set_execution_handler(_on_interaction_requested)
+ 
+ 
+ func is_available_for_pickup() -> bool:
+diff --git a/main-autolysis/systems/item-system/autolysis_raw_material_group.gd b/main-autolysis/systems/item-system/autolysis_raw_material_group.gd
+index 42ddc36..417aa3b 100644
+--- a/main-autolysis/systems/item-system/autolysis_raw_material_group.gd
++++ b/main-autolysis/systems/item-system/autolysis_raw_material_group.gd
+@@ -9,8 +9,7 @@ extends StaticBody3D
+ 
+ func _ready() -> void:
+ 	_interaction.set_availability_check(_can_interact)
+-	if not _interaction.interaction_requested.is_connected(_on_interaction_requested):
+-		_interaction.interaction_requested.connect(_on_interaction_requested)
++	_interaction.set_execution_handler(_on_interaction_requested)
+ 
+ 
+ func _can_interact(actor: Node3D) -> bool:
+diff --git a/main-autolysis/systems/item-system/autolysis_raw_material_shelf.gd b/main-autolysis/systems/item-system/autolysis_raw_material_shelf.gd
+index 1b8e0a6..727bb75 100644
+--- a/main-autolysis/systems/item-system/autolysis_raw_material_shelf.gd
++++ b/main-autolysis/systems/item-system/autolysis_raw_material_shelf.gd
+@@ -13,8 +13,7 @@ var _items: Array[AutolysisRawMaterial] = []
+ func _ready() -> void:
+ 	_collect_slots()
+ 	_interaction.set_availability_check(_can_interact)
+-	if not _interaction.interaction_requested.is_connected(_on_interaction_requested):
+-		_interaction.interaction_requested.connect(_on_interaction_requested)
++	_interaction.set_execution_handler(_on_interaction_requested)
+ 
+ 
+ func get_slot_count() -> int:
+diff --git a/main-autolysis/systems/item-system/tests/item_system_test.gd b/main-autolysis/systems/item-system/tests/item_system_test.gd
+index e1ba7f4..bbc8692 100644
+--- a/main-autolysis/systems/item-system/tests/item_system_test.gd
++++ b/main-autolysis/systems/item-system/tests/item_system_test.gd
+@@ -58,6 +58,18 @@ class TestActor extends Node3D:
+ 		competing_attempted = true
+ 		competing_place_result = inventory.try_place_on_shelf(competing_shelf)
+ 
++class InteractionObserver extends Node3D:
++	var count: int = 0
++	var component: AutolysisInteractionComponent
++	var recursive_result: bool = true
++	var focused_instance_at_notification: AutolysisItemInstance
++
++	func observe(actor: Node3D) -> void:
++		count += 1
++		var inventory: AutolysisInventoryController = actor.get_node("InventoryController") as AutolysisInventoryController
++		focused_instance_at_notification = inventory.get_focused_instance()
++		recursive_result = component.try_interact(actor)
++
+ var world: Node3D
+ var failures: int = 0
+ var assertion_count: int = 0
+@@ -74,6 +86,7 @@ func _run() -> void:
+ 	root.add_child(world)
+ 	await _test_inventory_and_display()
+ 	await _test_groups()
++	await _test_interaction_observers()
+ 	await _test_world_pickup()
+ 	await _test_shelves_and_conservation()
+ 	await _test_transfer_failures()
+@@ -221,6 +234,44 @@ func _test_groups() -> void:
+ 		await _clear_world()
+ 
+ 
++func _test_interaction_observers() -> void:
++	var actor: TestActor = _new_actor()
++	var group: AutolysisRawMaterialGroup = CAFFEINE_GROUP.instantiate() as AutolysisRawMaterialGroup
++	world.add_child(group)
++	var component: AutolysisInteractionComponent = group.get_node("InteractionComponent") as AutolysisInteractionComponent
++	var first: InteractionObserver = InteractionObserver.new()
++	var second: InteractionObserver = InteractionObserver.new()
++	first.component = component
++	second.component = component
++	world.add_child(first)
++	world.add_child(second)
++	component.interaction_requested.connect(first.observe)
++	component.interaction_requested.connect(second.observe, CONNECT_DEFERRED)
++	var initial_notifications: int = actor.notifications
++	_check(component.can_interact(actor) and component.try_interact(actor), "生产原药组允许附加同步和延后观察订阅")
++	var received: AutolysisItemInstance = actor.inventory.get_focused_instance()
++	_check(_inventory_count(actor.inventory) == 1 and actor.notifications == initial_notifications + 1 and first.count == 1 and not first.recursive_result and first.focused_instance_at_notification == received, "生产原药组权威执行只提交一件且同步观察在提交后拒绝重入")
++	await _frames(2)
++	_check(second.count == 1 and not second.recursive_result and second.focused_instance_at_notification == received and _inventory_count(actor.inventory) == 1, "延后原药组观察不重复领取或覆盖已提交实例")
++	second.queue_free()
++	await _frames(2)
++	actor.inventory.cycle_focus(1)
++	_check(component.try_interact(actor) and _inventory_count(actor.inventory) == 2 and actor.inventory.get_slot_instance(0) == received and actor.inventory.get_focused_instance() != received, "观察对象释放后下一独立请求产生一件新实例且保留原来源身份")
++	first.queue_free()
++	await _frames(2)
++	var shelf: AutolysisRawMaterialShelf = _new_shelf()
++	var shelf_component: AutolysisInteractionComponent = shelf.get_node("InteractionComponent") as AutolysisInteractionComponent
++	var shelf_observer: InteractionObserver = InteractionObserver.new()
++	shelf_observer.component = shelf_component
++	world.add_child(shelf_observer)
++	shelf_component.interaction_requested.connect(shelf_observer.observe)
++	actor.inventory.cycle_focus(-1)
++	initial_notifications = actor.notifications
++	_check(shelf_component.try_interact(actor) and _shelf_count(shelf) == 1 and _inventory_count(actor.inventory) == 1 and shelf.get_item_at_slot(0).item_instance == received, "生产放置架附加观察后只转移一件并保留同一原药实例")
++	_check(actor.notifications == initial_notifications + 1 and shelf_observer.count == 1 and not shelf_observer.recursive_result and shelf_observer.focused_instance_at_notification == null, "放置架观察在提交后记录空手状态且不重复消耗来源")
++	await _clear_world()
++
++
+ func _test_world_pickup() -> void:
+ 	var actor: TestActor = _new_actor()
+ 	var first: AutolysisRawMaterial = _new_world_item(CAFFEINE_WORLD, Vector3(0, 0, 0))

@@ -572,7 +572,11 @@ func _try_place_in_packing_place(actor: Node3D, place: Variant) -> bool:
 	if not place.try_begin_transfer(actor):
 		_busy = false
 		return false
-	var candidate: Variant = _prepare_liquid_tank_world_item(instance) if place is AutolysisPackingTankPlace else _prepare_pneumatic_capsule_world_item(instance)
+	var candidate: Variant
+	if place is AutolysisPackingTankPlace:
+		candidate = _prepare_liquid_tank_world_item(instance)
+	else:
+		candidate = _prepare_pneumatic_capsule_world_item(instance)
 	if candidate == null:
 		_end_packing_transfer(place)
 		return false

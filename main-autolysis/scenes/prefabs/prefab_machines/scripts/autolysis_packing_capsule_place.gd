@@ -26,18 +26,18 @@ func configure(owner_machine: AutolysisPackingMachine, target: AutolysisFocusTar
 	if not get_configuration_error().is_empty():
 		return false
 	transfer_interaction.set_availability_check(_can_transfer_interact)
-	transfer_interaction.interaction_requested.connect(_on_transfer_requested)
+	transfer_interaction.set_execution_handler(_on_transfer_requested)
 	_configured = true
 	return true
 
 
 func get_configuration_error() -> String:
-	if not _node_is_live(self) or not _node_is_live(machine) or get_parent() != machine:
-		return "胶囊位必须属于有效封装器直接子级"
-	if not _node_is_live(focus_target) or focus_target.get_parent() != machine:
+	if not _node_is_live(self) or not _node_is_live(machine) or not machine.is_ancestor_of(self):
+		return "胶囊位必须归属于有效封装器"
+	if not _node_is_live(focus_target) or not machine.is_ancestor_of(focus_target):
 		return "胶囊位与聚焦描述必须属于同一封装器"
-	if not _node_is_live(capsule_anchor) or capsule_anchor.get_parent() != self:
-		return "胶囊锚点必须属于本胶囊位直接子级"
+	if not _node_is_live(capsule_anchor) or not is_ancestor_of(capsule_anchor):
+		return "胶囊锚点必须归属于本胶囊位"
 	if not _node_is_live(collision_shape) or collision_shape.get_parent() != self or collision_shape.shape == null or collision_shape.disabled:
 		return "胶囊位直属碰撞无效"
 	if not _node_is_live(transfer_interaction) or transfer_interaction.get_parent() != self or transfer_interaction.interaction_mode != AutolysisInteractionComponent.InteractionMode.DIRECT:
@@ -48,12 +48,8 @@ func get_configuration_error() -> String:
 			count += 1
 	if count != 1:
 		return "胶囊位必须恰好配置一个交互组件"
-	var receivers: Array[Dictionary] = []
-	receivers.assign(transfer_interaction.interaction_requested.get_connections())
-	if not _configured and not receivers.is_empty():
-		return "胶囊位初始化前不得连接其他接收者"
-	if _configured and (receivers.size() != 1 or receivers[0]["callable"] != _on_transfer_requested or receivers[0]["flags"] != 0):
-		return "胶囊位必须只同步连接自身请求方法"
+	if _configured and not transfer_interaction.has_execution_handler(_on_transfer_requested):
+		return "胶囊位缺少自身业务执行绑定"
 	for child: Node in capsule_anchor.get_children():
 		if child is AutolysisPneumaticCapsule and not child.is_queued_for_deletion() and child != _stored_item:
 			return "胶囊锚点存在未登记胶囊"

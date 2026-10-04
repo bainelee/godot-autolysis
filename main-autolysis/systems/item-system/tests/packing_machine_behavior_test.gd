@@ -66,6 +66,7 @@ func _new_scene() -> void:
 	# 继承夹具的配药器会与封装器占用同一位置，入树前移除。
 	world.get_node("MachineA").free()
 	world.get_node("MachineB").free()
+	_prepare_packing_scene()
 	root.add_child(world)
 	player = world.get_node("Player")
 	machine = world.get_node("PackingA")
@@ -82,6 +83,10 @@ func _new_scene() -> void:
 	for index: int in range(3):
 		original_lights.append(machine.get_node("light_type_switch_%d" % index).material_override)
 	await _aim_root()
+
+
+func _prepare_packing_scene() -> void:
+	pass
 
 
 func _aim_root() -> void:
@@ -141,7 +146,7 @@ func _put_tank(contents: AutolysisLiquidContents) -> AutolysisItemInstance:
 func _put_capsule(contents: AutolysisPackingContents = null) -> AutolysisItemInstance:
 	if not machine.door.is_open():
 		await _click(_body_pixel(machine.door))
-		await frames(18)
+		await _wait_packing_motion()
 	check(machine.door.is_open(), "胶囊取放前舱门完全打开")
 	var instance: AutolysisItemInstance = AutolysisItemInstance.create(CAPSULE_DEFINITION)
 	if contents != null:
@@ -164,7 +169,7 @@ func _test_input_matrix() -> void:
 				await _put_capsule(AutolysisPackingContents.create_result(_source_contents(), 1) if capsule_state == 2 else null)
 			var should_select: bool = tank_state == 2 and capsule_state == 1
 			check(machine.try_select_type(player, 0) == should_select, "九种输入组合仅满罐加空胶囊允许选择：%d、%d" % [tank_state, capsule_state])
-			await frames(16)
+			await _wait_packing_motion()
 			check(machine.can_start_processing() == should_select, "九种组合启动许可与实际合法输入一致")
 			_assert_packing_indicators(INDICATOR_BLUE_READY if should_select else INDICATOR_RED, false, "输入组合%d、%d" % [tank_state, capsule_state])
 
@@ -188,7 +193,7 @@ func _test_transfer_and_animation() -> void:
 	check(_query(capsule_center) == machine.door, "关闭舱门实际阻挡胶囊槽射线")
 	await _click(_body_pixel(machine.door))
 	check(machine.door.is_animating() and not inventory.try_place_in_packing_capsule_place(player, machine.capsule_place), "舱门运动中拒绝胶囊放入")
-	await frames(18)
+	await _wait_packing_motion()
 	await _click(_body_pixel(machine.capsule_place))
 	check(machine.capsule_place.get_stored_item().item_instance == empty_capsule, "完全开门后放入原胶囊")
 	check(not machine.try_select_type(player, 0), "空罐加空胶囊不能选类型")
@@ -202,17 +207,17 @@ func _test_transfer_and_animation() -> void:
 	check(not machine.try_select_type(player, 1), "开关动作途中拒绝新的类型点击")
 	await _click(_body_pixel(machine.tank_place))
 	check(machine.get_selected_type() == -1 and inventory.get_focused_instance() == stored_tank_instance, "开启途中成功取罐立即取消类型")
-	await frames(18)
+	await _wait_packing_motion()
 	check(not machine.type_switches[0].is_selected() and not machine.type_switches[0].is_animating(), "中途反播自然归位且旧回调不恢复选择")
 	check(machine.door.is_open(), "开关复位不改变舱门")
 	await _click(_body_pixel(machine.tank_place))
 	await _click(_body_pixel(machine.type_switches[0]))
-	await frames(18)
+	await _wait_packing_motion()
 	await _click(_body_pixel(machine.type_switches[2]))
-	await frames(18)
+	await _wait_packing_motion()
 	check(machine.get_selected_type() == 2 and not machine.type_switches[0].is_selected() and machine.type_switches[2].is_selected(), "改选时旧开关关闭、新开关开启")
 	await _click(_body_pixel(machine.type_switches[2]))
-	await frames(18)
+	await _wait_packing_motion()
 	_record_machine_state("取消类型后")
 	check(machine.get_selected_type() == -1 and not machine.can_start_processing(), "再次点击当前类型取消选择")
 	_assert_packing_indicators(INDICATOR_RED, false, "取消类型选择")
@@ -268,7 +273,7 @@ func _test_batch(type_index: int) -> void:
 	check(not machine.can_start_processing(), "合法输入尚未选类型不能启动")
 	_assert_packing_indicators(INDICATOR_RED, false, "合法输入尚未选类型")
 	await _click(_body_pixel(machine.type_switches[type_index]))
-	await frames(18)
+	await _wait_packing_motion()
 	_record_machine_state("本轮选择后%d" % type_index)
 	check(machine.get_selected_type() == type_index and machine.can_start_processing(), "类型开启保持末帧且完全开门可启动")
 	_assert_packing_indicators(INDICATOR_BLUE_READY, false, "完全开门且类型稳定")
@@ -288,7 +293,7 @@ func _test_batch(type_index: int) -> void:
 		await _click(_body_pixel(machine.door))
 		check(not machine.can_start_processing(), "关闭舱门途中禁止启动")
 		_assert_packing_indicators(INDICATOR_RED, false, "舱门关闭途中")
-		await frames(18)
+		await _wait_packing_motion()
 		check(machine.door.is_closed() and machine.can_start_processing(), "完全关门仍可启动")
 		_assert_packing_indicators(INDICATOR_BLUE_READY, false, "完全关门且类型稳定")
 	observer_saw_partial = false
@@ -343,7 +348,7 @@ func _test_batch(type_index: int) -> void:
 	if not machine.door.is_open():
 		await _click(_body_pixel(machine.door))
 		_assert_packing_indicators(INDICATOR_BLUE_READY, true, "完成后舱门运动中")
-		await frames(18)
+		await _wait_packing_motion()
 		_assert_packing_indicators(INDICATOR_BLUE_READY, true, "完成后完全开门")
 	if type_index != 1:
 		await _click(_body_pixel(machine.tank_place))
@@ -372,7 +377,7 @@ func _test_batch(type_index: int) -> void:
 	check(inventory.get_focused_instance() == capsule_instance and machine.get_selected_type() == -1, "成功取回本轮胶囊才清除完成记录和类型")
 	check(capsule_reset_notification_seen, "真实成功取胶囊路径发布已复位的库存变化通知")
 	_assert_packing_indicators(INDICATOR_RED, false, "成功取回本轮胶囊")
-	await frames(18)
+	await _wait_packing_motion()
 	_assert_original_lights()
 	var panel: AutolysisLiquidContentsPanel = player.get_node("LiquidContentsPanel") as AutolysisLiquidContentsPanel
 	check(panel.is_showing_contents() and panel.get_contents_text().contains("气动胶囊") and panel.get_contents_text().contains(packed_contents.get_packing_type_display()) and panel.get_contents_text().contains("波形重构"), "取回封装胶囊临时面板显示全部内容和封装类型")
@@ -445,6 +450,7 @@ func _test_disposal() -> void:
 	var waste: AutolysisWasteLiquidStorageTank = WASTE_SCENE.instantiate() as AutolysisWasteLiquidStorageTank
 	world.add_child(waste)
 	waste.position = Vector3(4, 0.75, 0)
+	await _wait_container_open(waste, false)
 	for sealed: bool in [false, true]:
 		var instance: AutolysisItemInstance = AutolysisItemInstance.create(CAPSULE_DEFINITION)
 		if sealed:
@@ -453,10 +459,10 @@ func _test_disposal() -> void:
 		check(not inventory.try_dispose_in_waste_tank(player, waste), "关闭罐盖拒绝胶囊废弃")
 		check(waste.try_toggle(player), "开启正式废液罐盖")
 		check(not inventory.try_dispose_in_waste_tank(player, waste), "运动罐盖拒绝胶囊废弃")
-		await frames(18)
+		await _wait_container_open(waste, true)
 		check(inventory.try_dispose_in_waste_tank(player, waste) and inventory.get_focused_instance() == null and player.held_item_presenter.get_display() == null, "空或封装胶囊均整件销毁且不留下空壳")
 		check(waste.try_toggle(player), "关闭正式废液罐盖")
-		await frames(18)
+		await _wait_container_open(waste, false)
 
 
 func _test_candidate_failures() -> void:
@@ -489,7 +495,7 @@ func _test_source_fault() -> void:
 	var tank: AutolysisItemInstance = await _put_tank(_source_contents())
 	var capsule: AutolysisItemInstance = await _put_capsule()
 	await _click(_body_pixel(machine.type_switches[0]))
-	await frames(18)
+	await _wait_packing_motion()
 	machine.processing_started.connect(_record_batch_start)
 	machine.processing_failed.connect(_record_batch_failure)
 	await _click(_body_pixel(machine.start_button))
@@ -523,7 +529,7 @@ func _test_main_packing() -> void:
 	await _put_tank(_source_contents(1))
 	await _put_capsule()
 	await _click(_body_pixel(machine.type_switches[1]))
-	await frames(18)
+	await _wait_packing_motion()
 	_assert_packing_indicators(INDICATOR_BLUE_READY, false, "实际主场景准备完成")
 	await _capture("主场景封装器已准备.png")
 	await _click(_body_pixel(machine.start_button))
@@ -558,3 +564,20 @@ func _record_machine_state(label: String) -> void:
 		var runtime: AnimationPlayer = control.get("_runtime_player") as AnimationPlayer
 		switches.append({"选中": control.is_selected(), "运动": control.is_animating(), "状态": control.state, "角度": str(control.rotation), "配置错误": control.get_configuration_error(), "播放中": runtime.is_playing(), "进度": runtime.current_animation_position, "速度": runtime.get_playing_speed(), "待完成": control.get("_completion_pending")})
 	print("设备观测：", JSON.stringify({"位置": label, "类型": machine.get_selected_type(), "输入合法": machine.has_valid_inputs(), "转移锁": machine.are_transfers_busy(), "故障": machine.get_processing_fault(), "启动拒绝": machine.get_start_denial_reason(), "开关": switches}))
+
+
+
+func _wait_packing_motion(device: AutolysisPackingMachine = null) -> void:
+	var target_device: AutolysisPackingMachine = machine as AutolysisPackingMachine if device == null else device
+	var deadline: int = Engine.get_physics_frames() + Engine.physics_ticks_per_second * 5
+	while is_instance_valid(target_device) and (target_device.door.is_animating() or target_device.are_switches_animating()) and Engine.get_physics_frames() < deadline:
+		await frames(1)
+	check(is_instance_valid(target_device) and not target_device.door.is_animating() and not target_device.are_switches_animating(), "目标门及开关在测试上限内完成；状态按自然完成确认")
+	await frames(1)
+
+
+func _wait_container_open(container: AutolysisWasteLiquidStorageTank, opened: bool) -> void:
+	var deadline: int = Engine.get_physics_frames() + Engine.physics_ticks_per_second * 5
+	while is_instance_valid(container) and container.is_animating() and Engine.get_physics_frames() < deadline:
+		await frames(1)
+	check(is_instance_valid(container) and container.is_open() == opened and not container.is_animating(), "废液罐目标开闭在测试上限内完成")

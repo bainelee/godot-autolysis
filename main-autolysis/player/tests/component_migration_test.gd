@@ -3,6 +3,18 @@ extends "res://main-autolysis/player/tests/player_smoke_test.gd"
 var seen: Node = null
 var unseen_count: int = 0
 
+class ExecutionReceiver extends Node3D:
+	var count: int = 0
+	var observation_count: int = 0
+	var observed_business_count: int = 0
+
+	func execute(_actor: Node3D) -> void:
+		count += 1
+
+	func observe(_actor: Node3D) -> void:
+		observation_count += 1
+		observed_business_count = count
+
 func on_seen(target: Node3D) -> void:
 	seen = target
 
@@ -64,6 +76,16 @@ func run_checks() -> void:
 	var destination: Vector3 = drop.get_shapecast_item_drop_position(0.25, 0.2)
 	var expected: Vector3 = drop.global_position - 2.25 * player.camera.global_basis.z
 	check(destination.is_equal_approx(expected), "投放位置计算使用原脚本逻辑")
+	var component: AutolysisInteractionComponent = load("res://main-autolysis/components/interactions/autolysis_interaction_component.tscn").instantiate()
+	target.add_child(component)
+	var receiver: ExecutionReceiver = ExecutionReceiver.new()
+	world.add_child(receiver)
+	component.interaction_requested.connect(receiver.observe)
+	check(not component.can_interact(player) and not component.try_interact(player) and receiver.observation_count == 0, "迁移组件只有观察连接时拒绝请求")
+	component.set_execution_handler(receiver.execute)
+	check(component.has_execution_handler(receiver.execute) and component.try_interact(player) and receiver.count == 1 and receiver.observation_count == 1 and receiver.observed_business_count == 1, "迁移组件同步执行权威入口一次后发布观察通知")
+	component.clear_execution_handler()
+	check(not component.can_interact(player) and not component.try_interact(player) and receiver.count == 1, "迁移组件明确解除权威入口后阻止后续执行")
 	world.queue_free()
 	await frames(3)
 	print("失败总数：", failures)

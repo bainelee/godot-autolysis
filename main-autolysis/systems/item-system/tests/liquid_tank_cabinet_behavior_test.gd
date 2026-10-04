@@ -127,6 +127,7 @@ func _fixture(occupied_slots: Array[int]) -> Dictionary:
 			cabinet.free()
 			return {}
 	world.add_child(cabinet)
+	await _frames(2)
 	_check(cabinet.is_configured(), "真实柜初始配置有效")
 	if not cabinet.is_configured():
 		return {}
@@ -134,7 +135,7 @@ func _fixture(occupied_slots: Array[int]) -> Dictionary:
 
 
 func _test_initial_configuration(occupied_slots: Array[int]) -> void:
-	var fixture: Dictionary = _fixture(occupied_slots)
+	var fixture: Dictionary = await _fixture(occupied_slots)
 	if fixture.is_empty():
 		await _clear_world()
 		return
@@ -163,26 +164,17 @@ func _test_initial_configuration(occupied_slots: Array[int]) -> void:
 
 
 func _check_component_contract(body: PhysicsBody3D, component: AutolysisInteractionComponent, receiver: Node, label: String) -> void:
-	_check(component != null and component.get_parent() == body, label + "为物理体直接子级")
+	_check(component != null and component.get_parent() == body and body.is_in_group(&"interactable"), label + "为可交互物理体直接子级")
 	if component == null:
 		return
 	var count: int = 0
 	for child: Node in body.get_children():
 		if child is AutolysisInteractionComponent:
 			count += 1
-	_check(count == 1 and component.interaction_mode == AutolysisInteractionComponent.InteractionMode.DIRECT, label + "恰有一个直接交互入口")
-	var connections: Array[Dictionary] = []
-	connections.assign(component.interaction_requested.get_connections())
-	_check(connections.size() == 1, label + "恰有一个接收者")
-	if connections.size() != 1:
-		return
-	var callback: Callable = connections[0]["callable"]
-	var flags: int = connections[0]["flags"]
-	_check(callback.is_valid() and callback.get_object() == receiver and callback.get_argument_count() == 1 and (flags & (Object.CONNECT_DEFERRED | Object.CONNECT_APPEND_SOURCE_OBJECT)) == 0, label + "接收者为所属业务节点且同步接收一个演员参数")
-
+	_check(count == 1 and component.has_execution_handler(), label + "具有唯一直接入口和明确业务执行绑定")
 
 func _test_motion_and_component_contract() -> void:
-	var fixture: Dictionary = _fixture([0])
+	var fixture: Dictionary = await _fixture([0])
 	if fixture.is_empty():
 		await _clear_world()
 		return
@@ -195,21 +187,21 @@ func _test_motion_and_component_contract() -> void:
 	_assert_transfer_denied(cabinet, picker, placer, "正在打开")
 	_assert_repeated_toggle_denied(cabinet, picker, "正在打开")
 	_record_motion(cabinet, "开始打开")
-	await _frames(20)
+	await _wait_motion(cabinet)
 	_check(cabinet.is_open() and not cabinet.is_animating() and not cabinet.animation_player.is_playing(), "真实开门动画自然结束后才建立完全打开许可")
 	_check(cabinet.door_body.rotation.is_equal_approx(_animation_end_rotation(cabinet)), "完全打开时实际门姿态等于动画末帧")
 	_assert_transfer_allowed(cabinet, picker, placer)
-	_check_additional_receiver_denied(cabinet.toggle_interaction, picker, "开门组件")
-	_check_additional_receiver_denied(cabinet.placement_interaction, placer, "放置组件")
+	_check_observer_permission(cabinet.toggle_interaction, picker, "开门组件")
+	_check_observer_permission(cabinet.placement_interaction, placer, "放置组件")
 	var stored: AutolysisLiquidTank = cabinet.get_item_at_slot(0)
 	if stored != null:
-		_check_additional_receiver_denied(stored.get_node("InteractionComponent") as AutolysisInteractionComponent, picker, "罐拾取组件")
+		_check_observer_permission(stored.get_node("InteractionComponent") as AutolysisInteractionComponent, picker, "罐拾取组件")
 	_record_motion(cabinet, "自然打开完成")
 	_check(cabinet.toggle_interaction.try_interact(picker), "已打开的门组件开始真实倒放关闭")
 	_check(cabinet.is_animating() and cabinet.animation_player.is_playing() and not cabinet.is_open(), "关闭请求立即收回取放许可")
 	_assert_transfer_denied(cabinet, picker, placer, "正在关闭")
 	_assert_repeated_toggle_denied(cabinet, picker, "正在关闭")
-	await _frames(20)
+	await _wait_motion(cabinet)
 	_check(not cabinet.is_open() and not cabinet.is_animating() and not cabinet.animation_player.is_playing() and cabinet.door_body.rotation.is_zero_approx(), "真实倒放自然结束回到关闭零度")
 	_assert_transfer_denied(cabinet, picker, placer, "关闭完成")
 	_check(cabinet.owns_item(stored) and _cabinet_count(cabinet) == 1 and picker.inventory.get_focused_item() == null and placer.inventory.get_focused_item() == TANK, "完整开闭及组件拒绝过程保持所有来源不变")
@@ -252,21 +244,19 @@ func _assert_repeated_toggle_denied(cabinet: AutolysisLiquidTankCabinet, actor: 
 	_check(cabinet.animation_player.is_playing() and is_equal_approx(cabinet.animation_player.current_animation_position, position_before) and is_equal_approx(cabinet.animation_player.get_playing_speed(), direction_before) and cabinet.door_body.rotation.is_equal_approx(rotation_before), label + "连续请求不重启、不倒转、不跳动当前动画")
 
 
-func _check_additional_receiver_denied(component: AutolysisInteractionComponent, actor: TestActor, label: String) -> void:
-	_check(component != null and component.can_interact(actor), label + "单接收者夹具原本允许交互")
+func _check_observer_permission(component: AutolysisInteractionComponent, actor: TestActor, label: String) -> void:
+	_check(component != null and component.can_interact(actor), label + "权威执行绑定原本允许交互")
 	if component == null:
 		return
 	var requests_before: int = actor.extra_requests
 	component.interaction_requested.connect(actor.on_extra_request)
-	_check(not component.can_interact(actor) and not component.try_interact(actor) and actor.extra_requests == requests_before, label + "追加第二接收者后查询和分发同时拒绝")
+	_check(component.can_interact(actor) and actor.extra_requests == requests_before, label + "追加观察者不改变许可且只读查询不发布请求")
 	component.interaction_requested.disconnect(actor.on_extra_request)
-	_check(component.can_interact(actor), label + "恢复唯一接收者后许可恢复")
-
 
 func _start_fault_motion(cabinet: AutolysisLiquidTankCabinet, actor: TestActor, closing: bool) -> bool:
 	if closing:
 		_check(cabinet.try_toggle(actor), "关闭故障夹具通过正式入口先打开")
-		await _frames(20)
+		await _wait_motion(cabinet)
 		_check(cabinet.is_open(), "关闭故障夹具确已自然打开")
 		if not cabinet.is_open():
 			return false
@@ -277,7 +267,7 @@ func _start_fault_motion(cabinet: AutolysisLiquidTankCabinet, actor: TestActor, 
 
 
 func _test_stopped_animation(closing: bool) -> void:
-	var fixture: Dictionary = _fixture([0])
+	var fixture: Dictionary = await _fixture([0])
 	if fixture.is_empty():
 		await _clear_world()
 		return
@@ -306,7 +296,7 @@ func _test_stopped_animation(closing: bool) -> void:
 		var server_error: float = _transform_error(probe.server_poses[index], target_before)
 		_check(node_error < 0.0001 and server_error < 0.0001, label + "后续物理回调%d的节点与物理姿态保持停止前服务器目标" % index)
 		motion_records.append({"阶段": label + "后续物理回调%d" % index, "停止前服务器目标": str(target_before), "门节点姿态": str(probe.node_poses[index]), "门物理姿态": str(probe.server_poses[index]), "节点与停止目标误差": node_error, "服务器与停止目标误差": server_error})
-	await _frames(20)
+	await _wait_motion(cabinet)
 	var stable_server: Transform3D = PhysicsServer3D.body_get_state(cabinet.door_body.get_rid(), PhysicsServer3D.BODY_STATE_TRANSFORM)
 	_check(not cabinet.animation_player.is_playing() and _transform_error(cabinet.door_body.global_transform, target_before) < 0.0001 and _transform_error(stable_server, target_before) < 0.0001, label + "等待后仍保持最后提交的中途物理目标")
 	_assert_transfer_denied(cabinet, picker, placer, label)
@@ -316,7 +306,7 @@ func _test_stopped_animation(closing: bool) -> void:
 
 
 func _test_released_animation_player(closing: bool) -> void:
-	var fixture: Dictionary = _fixture([0])
+	var fixture: Dictionary = await _fixture([0])
 	if fixture.is_empty():
 		await _clear_world()
 		return
@@ -330,8 +320,8 @@ func _test_released_animation_player(closing: bool) -> void:
 		return
 	var released_player: AnimationPlayer = cabinet.animation_player
 	released_player.queue_free()
-	await _frames(20)
-	_check(not is_instance_valid(released_player) and not cabinet.is_configured(), label + "实际播放器释放使配置失效")
+	await _wait_motion(cabinet)
+	_check(not is_instance_valid(released_player) and cabinet.is_configured() and not cabinet.get_motion_error().is_empty(), label + "实际播放器释放仅使门运动依赖失效且槽位登记保留")
 	_assert_transfer_denied(cabinet, picker, placer, label)
 	_check(not cabinet.can_toggle(picker) and not cabinet.try_toggle(picker) and not cabinet.toggle_interaction.try_interact(picker), label + "失效引用不分发后续门动作")
 	_record_motion(cabinet, label)
@@ -389,3 +379,10 @@ func _save_evidence() -> void:
 		return
 	report.store_string(JSON.stringify({"引擎": Engine.get_version_info(), "物理帧率": Engine.physics_ticks_per_second, "断言数": assertion_count, "失败数": failures, "记录": records, "真实动画记录": motion_records, "姿态误差定义": "取原点差与三个基向量差长度的最大值，并非全部表示米", "官方方法证据": ["https://docs.godotengine.org/en/4.6/classes/class_animationplayer.html#class-animationplayer-method-get-playing-speed", "https://docs.godotengine.org/en/4.6/classes/class_animationplayer.html#class-animationplayer-method-stop", "https://docs.godotengine.org/en/4.6/classes/class_animationplayer.html#class-animationplayer-method-is-animation-active", "https://docs.godotengine.org/en/4.6/classes/class_physicsserver3d.html#class-physicsserver3d-method-body-get-state", "https://raw.githubusercontent.com/godotengine/godot/4.6.1-stable/scene/3d/physics/animatable_body_3d.cpp", "https://raw.githubusercontent.com/godotengine/godot/4.6.1-stable/scene/animation/animation_player.cpp"]}, "\t"))
 	report.close()
+
+func _wait_motion(cabinet: AutolysisLiquidTankCabinet) -> void:
+	for frame: int in 240:
+		if not cabinet.is_animating():
+			return
+		await _frames(1)
+	_check(false, "柜门等待超过测试上限；原因：" + cabinet.get_motion_error())

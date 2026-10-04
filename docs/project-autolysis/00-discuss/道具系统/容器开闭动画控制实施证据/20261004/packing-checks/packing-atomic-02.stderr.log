@@ -1,0 +1,12 @@
+ERROR: 封装器批次1故障，保留来源并关闭入口：本轮液体罐节点或槽位归属失效；/root/PackingMachineDemo/PackingA
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _fail_batch (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:542)
+       [1] _complete_batch (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:464)
+       [2] _on_processing_timeout (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:455)
+ERROR: 封装器批次1故障，保留来源并关闭入口：本轮胶囊节点或槽位归属失效；/root/PackingMachineDemo/PackingA
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _fail_batch (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:542)
+       [1] _complete_batch (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:464)
+       [2] _on_processing_timeout (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:455)

@@ -19,6 +19,9 @@ var _door_change_pending: bool = false
 @onready var status: Label = $Instructions/Status
 
 func _ready() -> void:
+	(switch_a.get_node("Interaction") as AutolysisInteractionComponent).set_execution_handler(_on_switch_a_requested)
+	(switch_b.get_node("Interaction") as AutolysisInteractionComponent).set_execution_handler(_on_switch_b_requested)
+	door_component.set_execution_handler(_on_door_requested)
 	set_physics_process(false)
 	_update_status()
 

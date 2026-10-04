@@ -1,0 +1,1008 @@
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn b/main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn
+index c151dbb..059e287 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn
++++ b/main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn
+@@ -708,13 +708,17 @@ material_override = ExtResource("2_vnha0")
+ mesh = SubResource("BoxMesh_wjtth")
+ skeleton = NodePath("../../..")
+ 
+-[node name="handle_interaction" type="StaticBody3D" parent="switch_handle_blend_mechine_can_reset" unique_id=396261861 node_paths=PackedStringArray("device_root", "drag_interaction", "collision_shape")]
++[node name="HandleTopReference" type="Marker3D" parent="switch_handle_blend_mechine_can_reset"]
++position = Vector3(0, 0.12, 0)
++
++[node name="handle_interaction" type="StaticBody3D" parent="switch_handle_blend_mechine_can_reset" unique_id=396261861 node_paths=PackedStringArray("device_root", "drag_interaction", "collision_shape", "top_reference")]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0)
+ collision_layer = 40
+ script = ExtResource("14_handle")
+ device_root = NodePath("../..")
+ drag_interaction = NodePath("InteractionComponent")
+ collision_shape = NodePath("collision_handle_interaction")
++top_reference = NodePath("../HandleTopReference")
+ mouse_to_handle_ratio = 0.00099999999999999
+ 
+ [node name="InteractionComponent" parent="switch_handle_blend_mechine_can_reset/handle_interaction" unique_id=1143521659 instance=ExtResource("13_interaction")]
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd
+index f194645..4c29e39 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd
++++ b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd
+@@ -7,16 +7,14 @@ signal handle_pull_denied(actor: Node3D, reason: StringName)
+ 
+ enum HandleState { IDLE, DRAGGING, HOLDING, RETURNING }
+ 
+-const TOP_Y: float = 0.12
+-const BOTTOM_Y: float = -0.12
+-const RESTRICTED_BOTTOM_Y: float = 0.08
+-const HOLD_SECONDS: float = 0.1
+-const RETURN_SECONDS: float = 0.2
+-const RETURN_SPEED: float = (TOP_Y - BOTTOM_Y) / RETURN_SECONDS
+-
+ @export var device_root: PhysicsBody3D
+ @export var drag_interaction: AutolysisInteractionComponent
+ @export var collision_shape: CollisionShape3D
++@export var top_reference: Node3D
++@export var full_travel: float = 0.24
++@export var restricted_travel: float = 0.04
++@export var hold_seconds: float = 0.1
++@export var return_seconds: float = 0.2
+ ## 临时初始配置，单位为局部坐标单位／鼠标视口纵向输入单位；最终比例须真实操作调校。
+ @export_range(0.000001, 0.01, 0.000001, "or_greater") var mouse_to_handle_ratio: float = 0.0005
+ 
+@@ -29,7 +27,8 @@ var _hold_remaining: float = 0.0
+ var _automatic_started_frame: int = -1
+ var _restricted_drag: bool = false
+ var _drag_ratio: float = 0.0
+-var _drag_bottom_y: float = BOTTOM_Y
++var _drag_bottom_y: float = 0.0
++var _top_position: Vector3
+ 
+ 
+ func _init() -> void:
+@@ -50,9 +49,10 @@ func configure(target: AutolysisFocusTarget) -> bool:
+ 	if not get_configuration_error().is_empty():
+ 		return false
+ 	drag_interaction.set_availability_check(can_begin_drag)
+-	drag_interaction.interaction_requested.connect(_on_drag_requested)
++	drag_interaction.set_execution_handler(_on_drag_requested)
+ 	state = HandleState.IDLE
+-	_set_y(TOP_Y)
++	_top_position = top_reference.position if top_reference.get_parent() == get_parent() else get_parent_node_3d().to_local(top_reference.global_position)
++	position = _top_position
+ 	_configured = true
+ 	return true
+ 
+@@ -66,7 +66,7 @@ func get_configuration_error() -> String:
+ 		return "拉杆必须位于已绑定设备的子树中"
+ 	if not device_root is AutolysisBlendMachine:
+ 		return "拉杆必须绑定配药器根物理体"
+-	if not _node_is_live(focus_target) or focus_target.get_parent() != device_root:
++	if not _node_is_live(focus_target) or not device_root.is_ancestor_of(focus_target):
+ 		return "拉杆的聚焦目标描述必须属于已绑定设备"
+ 	if not _node_is_live(drag_interaction) or drag_interaction.get_parent() != self:
+ 		return "drag_interaction（拖动交互组件）必须位于拉杆直接子级"
+@@ -78,17 +78,22 @@ func get_configuration_error() -> String:
+ 			component_count += 1
+ 	if component_count != 1:
+ 		return "拉杆必须恰好配置一个直接子交互组件"
+-	var receivers: Array[Dictionary] = []
+-	receivers.assign(drag_interaction.interaction_requested.get_connections())
+-	if not _configured and not receivers.is_empty():
+-		return "拉杆交互组件在初始化前已连接其他请求接收者"
+-	if _configured:
+-		if receivers.size() != 1 or receivers[0]["callable"] != _on_drag_requested or receivers[0]["flags"] != 0:
+-			return "拉杆交互组件必须只同步连接本拉杆的请求接收方法"
++	if _configured and not drag_interaction.has_execution_handler(_on_drag_requested):
++		return "拉杆交互组件的业务执行绑定失效"
+ 	if not _node_is_live(collision_shape) or collision_shape.get_parent() != self or collision_shape.shape == null or collision_shape.disabled:
+ 		return "collision_shape（碰撞形状）必须指向拉杆直接子级的有效碰撞形状"
+ 	if not is_finite(mouse_to_handle_ratio) or mouse_to_handle_ratio <= 0.0:
+ 		return "mouse_to_handle_ratio（鼠标位移到拉杆位移比例）必须是大于零的有限数值"
++	if not _node_is_live(top_reference) or top_reference == self or is_ancestor_of(top_reference) or not device_root.is_ancestor_of(top_reference):
++		return "top_reference（顶部参照）必须为设备子树中的独立参照"
++	if not is_instance_valid(get_parent_node_3d()):
++		return "拉杆必须具有有效三维父节点以换算顶部参照"
++	if not top_reference.global_position.is_finite():
++		return "顶部参照位置必须为有限数值"
++	if not is_finite(full_travel) or full_travel <= 0.0 or not is_finite(restricted_travel) or restricted_travel < 0.0 or restricted_travel > full_travel:
++		return "完整行程必须为有限正数，受限行程必须位于零和完整行程之间"
++	if not is_finite(hold_seconds) or hold_seconds < 0.0 or not is_finite(return_seconds) or return_seconds <= 0.0:
++		return "保持时长必须为有限非负数，完整回弹时长必须为有限正数"
+ 	return ""
+ 
+ 
+@@ -105,7 +110,9 @@ func try_begin_drag(actor: Node3D) -> bool:
+ 	var reason: StringName = machine.get_start_denial_reason()
+ 	_restricted_drag = not reason.is_empty()
+ 	_drag_ratio = mouse_to_handle_ratio * 0.5 if _restricted_drag else mouse_to_handle_ratio
+-	_drag_bottom_y = RESTRICTED_BOTTOM_Y if _restricted_drag else BOTTOM_Y
++	# 限位与三维位置使用相同精度，避免场景参照和标量减法形成不可表示的触底值。
++	var travel: float = restricted_travel if _restricted_drag else full_travel
++	_drag_bottom_y = (_top_position - Vector3(0.0, travel, 0.0)).y
+ 	state = HandleState.DRAGGING
+ 	if _restricted_drag:
+ 		handle_pull_denied.emit(actor, reason)
+@@ -124,14 +131,14 @@ func apply_vertical_motion(actor: Node3D, vertical_motion: float) -> void:
+ 		return
+ 	if not is_finite(vertical_motion) or vertical_motion == 0.0:
+ 		return
+-	var next_y: float = clampf(position.y - vertical_motion * _drag_ratio, _drag_bottom_y, TOP_Y)
++	var next_y: float = clampf(position.y - vertical_motion * _drag_ratio, _drag_bottom_y, _top_position.y)
+ 	_set_y(next_y)
+-	if _restricted_drag or position != Vector3(0.0, BOTTOM_Y, 0.0):
++	if _restricted_drag or next_y != _drag_bottom_y:
+ 		return
+ 	# 先锁定和解除角色归属，再同步通知；回调重入不能重新开始本周期。
+ 	state = HandleState.HOLDING
+ 	_drag_actor = null
+-	_hold_remaining = HOLD_SECONDS
++	_hold_remaining = hold_seconds
+ 	_automatic_started_frame = Engine.get_physics_frames()
+ 	interaction_completed.emit(actor)
+ 	# 完成回调可能立即释放设备或拉杆，此处不再访问实例成员。
+@@ -170,9 +177,9 @@ func _physics_process(delta: float) -> void:
+ 		state = HandleState.RETURNING
+ 	if available_time <= 0.0:
+ 		return
+-	var next_y: float = move_toward(position.y, TOP_Y, RETURN_SPEED * available_time)
++	var next_y: float = move_toward(position.y, _top_position.y, full_travel / return_seconds * available_time)
+ 	_set_y(next_y)
+-	if position == Vector3(0.0, TOP_Y, 0.0):
++	if next_y == _top_position.y:
+ 		state = HandleState.IDLE
+ 
+ 
+@@ -180,7 +187,7 @@ func _start_return() -> void:
+ 	_drag_actor = null
+ 	_hold_remaining = 0.0
+ 	_automatic_started_frame = Engine.get_physics_frames()
+-	state = HandleState.IDLE if position == Vector3(0.0, TOP_Y, 0.0) else HandleState.RETURNING
++	state = HandleState.IDLE if position.y == _top_position.y else HandleState.RETURNING
+ 
+ 
+ func is_restricted_drag() -> bool:
+@@ -212,7 +219,7 @@ func _on_drag_requested(actor: Node3D) -> void:
+ 
+ 
+ func _set_y(value: float) -> void:
+-	position = Vector3(0.0, value, 0.0)
++	position = Vector3(_top_position.x, value, _top_position.z)
+ 
+ 
+ func _node_is_live(node: Variant) -> bool:
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd
+index 0232e06..94742e0 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd
++++ b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd
+@@ -8,10 +8,6 @@ signal processing_failed(batch_id: int, reason: String)
+ signal handle_pull_denied(actor: Node3D, reason: StringName)
+ 
+ const PROCESSING_SECONDS: float = 2.0
+-const INDICATOR_HALF_CYCLE_SECONDS: float = 0.5
+-const INDICATOR_RED_MATERIAL = preload("res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres")
+-const INDICATOR_ORANGE_MATERIAL = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_orange_0.tres")
+-const INDICATOR_GREEN_MATERIAL = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_green_0.tres")
+ 
+ enum IndicatorState { DEFAULT, READY, RUNNING, COMPLETED }
+ 
+@@ -24,6 +20,12 @@ enum IndicatorState { DEFAULT, READY, RUNNING, COMPLETED }
+ @export var tank_place: AutolysisBlendTankPlace
+ @export var processing_timer: Timer
+ @export var status_indicator: MeshInstance3D
++@export var indicator_default_material: Material = preload("res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres")
++@export var indicator_ready_material: StandardMaterial3D = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_orange_0.tres")
++@export var indicator_completed_material: Material = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_green_0.tres")
++@export var indicator_half_cycle_seconds: float = 0.5
++@export var indicator_emission_min: float = 0.0
++@export var indicator_emission_max: float = 2.0
+ 
+ var _configured: bool = false
+ var _processing: bool = false
+@@ -54,26 +56,36 @@ func _ready() -> void:
+ 	if not _validate_configuration():
+ 		push_error("原药混合器配置无效：%s" % get_path())
+ 		return
+-	animation_source.stop(true)
+-	animation_source.active = false
++	var valid_source: bool = _node_is_live(animation_source)
++	var animation_root: Node = animation_source.get_node_or_null(animation_source.root_node) if valid_source else self
++	if valid_source:
++		animation_source.stop(true)
++		animation_source.active = false
++	if not _node_is_live(animation_root):
++		push_warning("配药器动画源根引用无法解析，仅停用槽门动作")
++		valid_source = false
++		animation_root = self
+ 	for index: int in slots.size():
+ 		var slot: AutolysisBlendSlot = slots[index]
+ 		var library: AnimationLibrary = AnimationLibrary.new()
+-		library.add_animation(slot.animation_name, animation_source.get_animation(slot.animation_name))
++		var animation_path: PackedStringArray = String(slot.animation_name).split("/")
++		var library_name: StringName = StringName(animation_path[0]) if animation_path.size() > 1 else &""
++		var action_name: StringName = StringName(animation_path[1]) if animation_path.size() > 1 else slot.animation_name
++		if valid_source and animation_source.has_animation(slot.animation_name):
++			library.add_animation(action_name, animation_source.get_animation(slot.animation_name))
+ 		var runtime_player: AnimationPlayer = AnimationPlayer.new()
+ 		runtime_player.name = "BlendSlotAnimation_%d" % index
+-		runtime_player.root_node = NodePath("..")
+-		runtime_player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS
++		runtime_player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
+ 		runtime_player.process_mode = Node.PROCESS_MODE_PAUSABLE
+ 		runtime_player.playback_auto_capture = false
+-		runtime_player.add_animation_library(&"", library)
++		runtime_player.speed_scale = animation_source.speed_scale if valid_source else 1.0
++		runtime_player.add_animation_library(library_name, library)
+ 		add_child(runtime_player)
++		runtime_player.root_node = runtime_player.get_path_to(animation_root)
+ 		if not slot.configure(focus_target, runtime_player):
+-			push_error("原药混合器槽位配置失败：%s；%s" % [slot.get_path(), slot.get_configuration_error()])
+-			return
++			push_warning("原药混合器槽位配置失败：%s；%s" % [slot.get_path(), slot.get_configuration_error()])
+ 	if not handle.configure(focus_target):
+-		push_error("原药混合器拉杆配置失败：%s；%s" % [handle.get_path(), handle.get_configuration_error()])
+-		return
++		push_warning("原药混合器拉杆配置失败：%s；%s" % [handle.get_path(), handle.get_configuration_error()])
+ 	if not tank_place.configure(self, focus_target):
+ 		push_error("配药器液体罐位配置失败：%s；%s" % [tank_place.get_path(), tank_place.get_configuration_error()])
+ 		return
+@@ -81,7 +93,7 @@ func _ready() -> void:
+ 		push_error("原药混合器聚焦描述登记失败：%s" % get_path())
+ 		return
+ 	root_interaction.set_availability_check(_can_enter)
+-	root_interaction.interaction_requested.connect(_on_entry_requested)
++	root_interaction.set_execution_handler(_on_entry_requested)
+ 	handle.interaction_completed.connect(_on_handle_completed)
+ 	handle.handle_pull_denied.connect(_on_handle_pull_denied)
+ 	processing_timer.timeout.connect(_on_processing_timeout)
+@@ -109,13 +121,16 @@ func _physics_process(_delta: float) -> void:
+ 
+ 
+ func _initialize_indicator() -> void:
+-	if not _node_is_live(status_indicator) or status_indicator.get_parent() != self or status_indicator.mesh == null:
+-		_disable_indicator("status_indicator（状态指示灯）必须绑定本机直接子级的有效网格")
++	if not _node_is_live(status_indicator) or not is_ancestor_of(status_indicator) or status_indicator.mesh == null:
++		_disable_indicator("status_indicator（状态指示灯）必须绑定本机子树中的有效网格")
++		return
++	if not is_instance_valid(indicator_default_material) or not is_instance_valid(indicator_ready_material) or not is_instance_valid(indicator_completed_material):
++		_disable_indicator("指示灯材质引用无效")
+ 		return
+-	if not INDICATOR_RED_MATERIAL is StandardMaterial3D or not INDICATOR_ORANGE_MATERIAL is StandardMaterial3D or not INDICATOR_GREEN_MATERIAL is StandardMaterial3D:
+-		_disable_indicator("三份指定指示灯材质必须为 StandardMaterial3D（标准三维材质）")
++	if not is_finite(indicator_half_cycle_seconds) or indicator_half_cycle_seconds <= 0.0 or not is_finite(indicator_emission_min) or not is_finite(indicator_emission_max) or indicator_emission_min < 0.0 or indicator_emission_max < indicator_emission_min:
++		_disable_indicator("指示灯闪烁时长或发光范围无效")
+ 		return
+-	_indicator_orange_material = INDICATOR_ORANGE_MATERIAL.duplicate() as StandardMaterial3D
++	_indicator_orange_material = indicator_ready_material.duplicate() as StandardMaterial3D
+ 	if not is_instance_valid(_indicator_orange_material):
+ 		_disable_indicator("橙色材质独立副本创建失败")
+ 		return
+@@ -125,7 +140,7 @@ func _initialize_indicator() -> void:
+ 
+ 
+ func _indicator_dependencies_are_valid() -> bool:
+-	return _node_is_live(status_indicator) and status_indicator.get_parent() == self and status_indicator.mesh != null and is_instance_valid(_indicator_orange_material)
++	return _node_is_live(status_indicator) and is_ancestor_of(status_indicator) and status_indicator.mesh != null and is_instance_valid(_indicator_orange_material) and is_instance_valid(indicator_default_material) and is_instance_valid(indicator_ready_material) and is_instance_valid(indicator_completed_material)
+ 
+ 
+ func _queue_indicator_refresh() -> void:
+@@ -175,12 +190,12 @@ func _set_indicator_state(next_state: IndicatorState) -> void:
+ 	_indicator_state = next_state
+ 	match next_state:
+ 		IndicatorState.DEFAULT:
+-			status_indicator.material_override = INDICATOR_RED_MATERIAL
++			status_indicator.material_override = indicator_default_material
+ 		IndicatorState.READY:
+-			_indicator_orange_material.emission_energy_multiplier = (INDICATOR_ORANGE_MATERIAL as StandardMaterial3D).emission_energy_multiplier
++			_indicator_orange_material.emission_energy_multiplier = indicator_ready_material.emission_energy_multiplier
+ 			status_indicator.material_override = _indicator_orange_material
+ 		IndicatorState.RUNNING:
+-			_indicator_orange_material.emission_energy_multiplier = 2.0
++			_indicator_orange_material.emission_energy_multiplier = indicator_emission_max
+ 			status_indicator.material_override = _indicator_orange_material
+ 			_indicator_tween = create_tween()
+ 			_indicator_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+@@ -188,10 +203,10 @@ func _set_indicator_state(next_state: IndicatorState) -> void:
+ 			_indicator_tween.set_ignore_time_scale(false)
+ 			_indicator_tween.set_trans(Tween.TRANS_LINEAR)
+ 			_indicator_tween.set_loops()
+-			_indicator_tween.tween_property(_indicator_orange_material, "emission_energy_multiplier", 0.0, INDICATOR_HALF_CYCLE_SECONDS)
+-			_indicator_tween.tween_property(_indicator_orange_material, "emission_energy_multiplier", 2.0, INDICATOR_HALF_CYCLE_SECONDS)
++			_indicator_tween.tween_property(_indicator_orange_material, "emission_energy_multiplier", indicator_emission_min, indicator_half_cycle_seconds)
++			_indicator_tween.tween_property(_indicator_orange_material, "emission_energy_multiplier", indicator_emission_max, indicator_half_cycle_seconds)
+ 		IndicatorState.COMPLETED:
+-			status_indicator.material_override = INDICATOR_GREEN_MATERIAL
++			status_indicator.material_override = indicator_completed_material
+ 
+ 
+ func _stop_indicator_blink() -> void:
+@@ -233,11 +248,11 @@ func _on_indicator_exiting() -> void:
+ 
+ func _disable_indicator(reason: String) -> void:
+ 	_on_indicator_exiting()
+-	push_error("配药器状态指示灯停止更新：%s；%s" % [reason, get_path()])
++	push_warning("配药器状态指示灯停止更新：%s；%s" % [reason, get_path()])
+ 
+ 
+ func _validate_configuration() -> bool:
+-	if not is_instance_valid(focus_target) or focus_target.get_parent() != self:
++	if not _node_is_live(focus_target) or not is_ancestor_of(focus_target):
+ 		return false
+ 	if not is_instance_valid(reference_camera) or not is_ancestor_of(reference_camera):
+ 		return false
+@@ -245,29 +260,22 @@ func _validate_configuration() -> bool:
+ 		return false
+ 	if root_interaction.interaction_mode != AutolysisInteractionComponent.InteractionMode.FOCUS:
+ 		return false
+-	if not is_instance_valid(animation_source) or slots.size() != 4:
++	if _configured and not root_interaction.has_execution_handler(_on_entry_requested):
++		return false
++	if slots.size() != 4:
+ 		return false
+ 	if not is_instance_valid(handle) or not is_ancestor_of(handle) or handle.device_root != self:
+ 		return false
+-	if not _node_is_live(tank_place) or tank_place.get_parent() != self:
++	if not _node_is_live(tank_place) or not is_ancestor_of(tank_place):
+ 		return false
+-	if not _node_is_live(processing_timer) or processing_timer.get_parent() != self:
++	if not _node_is_live(processing_timer) or not is_ancestor_of(processing_timer):
+ 		return false
+-	if not processing_timer.one_shot or processing_timer.process_mode != Node.PROCESS_MODE_PAUSABLE or processing_timer.ignore_time_scale or processing_timer.process_callback != Timer.TIMER_PROCESS_PHYSICS or not is_equal_approx(processing_timer.wait_time, PROCESSING_SECONDS):
++	if not processing_timer.one_shot or processing_timer.process_mode != Node.PROCESS_MODE_PAUSABLE or processing_timer.ignore_time_scale or processing_timer.process_callback != Timer.TIMER_PROCESS_PHYSICS:
+ 		return false
+ 	var seen: Array[AutolysisBlendSlot] = []
+ 	for index: int in slots.size():
+-		var slot: AutolysisBlendSlot = slots[index]
+-		if not is_instance_valid(slot) or slot.get_parent() != self or seen.has(slot):
+-			return false
+-		if slot.name != StringName("blend_slot_%d" % index):
+-			return false
+-		if not animation_source.has_animation(slot.animation_name):
+-			return false
+-		var animation: Animation = animation_source.get_animation(slot.animation_name)
+-		if animation.loop_mode != Animation.LOOP_NONE or not is_equal_approx(animation.length, 0.2):
+-			return false
+-		if animation.get_track_count() != 1 or animation.track_get_path(0) != NodePath("%s:rotation" % slot.name):
++		var slot: Variant = slots[index]
++		if not _node_is_live(slot) or not is_ancestor_of(slot) or seen.has(slot):
+ 			return false
+ 		seen.append(slot)
+ 	return true
+@@ -276,7 +284,7 @@ func _validate_configuration() -> bool:
+ func is_configured() -> bool:
+ 	if not _configured or not _validate_configuration() or not focus_target.is_valid_target():
+ 		return false
+-	return handle.is_configured() and tank_place.is_configured()
++	return true
+ 
+ 
+ func is_batch_running() -> bool:
+@@ -305,6 +313,8 @@ func get_start_denial_reason() -> StringName:
+ 		return &"processing_fault"
+ 	if not is_configured():
+ 		return &"invalid_configuration"
++	if not handle.is_configured() or not tank_place.is_configured():
++		return &"invalid_configuration"
+ 	if _processing:
+ 		return &"processing"
+ 	if tank_place.is_transfer_busy():
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd
+index 45e63a6..23ca666 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd
++++ b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd
+@@ -3,6 +3,7 @@ extends AnimatableBody3D
+ ## 每槽独立保存开闭与占用；道具栏提交由玩家的道具控制器负责。
+ 
+ signal state_changed
++signal motion_cancelled(reason: String)
+ 
+ enum SlotState { CLOSED, OPENING, OPEN, CLOSING }
+ 
+@@ -19,60 +20,96 @@ var _runtime_player: AnimationPlayer
+ var _stored_item: AutolysisRawMaterial
+ var _configured: bool = false
+ var _transfer_busy: bool = false
++var _stable_open: bool = false
++var _motion_serial: int = 0
++var _motion_pending: bool = false
++var _result_frame: int = -1
++var _result_serial: int = -1
++var _motion_suspended: bool = false
++var _motion_error: String = ""
++var _active_animation: Animation
++var _result_animation: Animation
++var _last_completed_transform: Transform3D
++var _advancing: bool = false
++var _restore_queued: bool = false
++var _restore_open: bool = false
++var _rebind_queued: bool = false
++var _replacement_player: AnimationPlayer
++var _stop_queued: bool = false
+ 
+ 
+ func configure(target: AutolysisFocusTarget, runtime_player: AnimationPlayer) -> bool:
+ 	if _configured:
+ 		return false
+ 	focus_target = target
+-	machine = get_parent() as AutolysisBlendMachine
++	var ancestor: Node = get_parent()
++	while ancestor != null and not ancestor is AutolysisBlendMachine:
++		ancestor = ancestor.get_parent()
++	machine = ancestor as AutolysisBlendMachine
+ 	_runtime_player = runtime_player
+ 	_configured = true
+-	if not is_configured():
+-		_configured = false
+-		return false
+-	toggle_interaction.set_availability_check(can_toggle)
+-	toggle_interaction.interaction_requested.connect(_on_toggle_requested)
+-	transfer_interaction.set_availability_check(_can_transfer_interact)
+-	transfer_interaction.interaction_requested.connect(_on_transfer_requested)
+-	_runtime_player.animation_finished.connect(_on_animation_finished)
+-	return true
++	if _node_is_live(toggle_interaction):
++		toggle_interaction.set_availability_check(can_toggle)
++		toggle_interaction.set_execution_handler(_on_toggle_requested)
++	if _node_is_live(transfer_interaction):
++		transfer_interaction.set_availability_check(_can_transfer_interact)
++		transfer_interaction.set_execution_handler(_on_transfer_requested)
++	return rebind_animation_player(runtime_player)
+ 
+ 
+ func is_configured() -> bool:
+-	return _configured and get_configuration_error().is_empty()
++	return _configured and _motion_error.is_empty() and get_configuration_error().is_empty()
+ 
+ 
+ ## 配置失败给出实际失效字段，避免移动节点或清空引用后只能得到笼统错误。
+ func get_configuration_error() -> String:
+ 	if not _node_is_live(self) or not _node_is_live(focus_target):
+ 		return "槽位或聚焦目标描述不在有效场景树中"
+-	if not _node_is_live(machine) or get_parent() != machine or focus_target.get_parent() != machine:
++	if not _node_is_live(machine) or not machine.is_ancestor_of(self) or not machine.is_ancestor_of(focus_target):
+ 		return "槽位与聚焦目标描述必须属于同一配药器"
+ 	if not _node_is_live(raw_material_anchor):
+ 		return "raw_material_anchor（原药锚点）未绑定或已失效"
+-	if not raw_material_anchor is PhysicsBody3D or raw_material_anchor.get_parent() != self:
+-		return "raw_material_anchor（原药锚点）必须指向本槽直接子级的取放物理体"
++	if not raw_material_anchor is PhysicsBody3D or not is_ancestor_of(raw_material_anchor):
++		return "raw_material_anchor（原药锚点）必须指向本槽子树的取放物理体"
+ 	# 本槽由物理帧动画驱动，内部取放体只继承父变换，不能独立回写物理姿态。
+ 	if raw_material_anchor is AnimatableBody3D and raw_material_anchor.sync_to_physics:
+ 		return "随父槽运动的原药取放体必须关闭 sync_to_physics（物理同步）"
+ 	if not _node_is_live(_runtime_player) or not _runtime_player.has_animation(animation_name):
+ 		return "独立运行播放器或指定槽位动画无效"
++	if not machine.is_ancestor_of(_runtime_player):
++		return "槽门运行播放器必须归属于本机"
++	for other_slot: Variant in machine.slots:
++		if other_slot != self and _node_is_live(other_slot) and other_slot.get("_runtime_player") == _runtime_player:
++			return "每槽必须拥有互不共享的独立运行播放器"
++	if not is_finite(_runtime_player.speed_scale) or _runtime_player.speed_scale <= 0.0:
++		return "槽门动画播放器速度必须为有限正数"
++	if _runtime_player.callback_mode_process != AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL:
++		return "槽门由本槽物理回调统一推进并合并变换提交"
++	var animation: Animation = _runtime_player.get_animation(animation_name)
++	if animation.loop_mode != Animation.LOOP_NONE or not is_finite(animation.length) or animation.length <= 0.0:
++		return "槽门必须配置可自然完成的有限非循环动画"
++	var animation_root: Node = _runtime_player.get_node_or_null(_runtime_player.root_node)
++	if not _node_is_live(animation_root) or (animation_root != machine and not machine.is_ancestor_of(animation_root)):
++		return "槽门动画根引用必须解析为所属设备或其子树"
++	if not _runtime_player.get_queue().is_empty() or not _runtime_player.animation_get_next(animation_name).is_empty():
++		return "槽门独立播放器被外部排队或后续动作接管"
+ 	if not _node_is_live(toggle_interaction) or toggle_interaction.get_parent() != self:
+ 		return "toggle_interaction（开闭交互组件）必须位于本槽直接子级"
+ 	if not _node_is_live(transfer_interaction) or transfer_interaction.get_parent() != raw_material_anchor:
+ 		return "transfer_interaction（取放交互组件）必须位于原药取放体直接子级"
+ 	if toggle_interaction.interaction_mode != AutolysisInteractionComponent.InteractionMode.DIRECT or transfer_interaction.interaction_mode != AutolysisInteractionComponent.InteractionMode.DIRECT:
+ 		return "槽位开闭和取放组件必须使用直接动作模式"
++	if _configured and (not toggle_interaction.has_execution_handler(_on_toggle_requested) or not transfer_interaction.has_execution_handler(_on_transfer_requested)):
++		return "槽位开闭或取放业务执行绑定失效"
+ 	return ""
+ 
+ 
+ func is_open() -> bool:
+-	return state == SlotState.OPEN
++	return is_configured() and not _motion_pending and state == SlotState.OPEN
+ 
+ 
+ func is_closed() -> bool:
+-	return state == SlotState.CLOSED
++	return is_configured() and not _motion_pending and state == SlotState.CLOSED
+ 
+ 
+ func is_transfer_busy() -> bool:
+@@ -84,12 +121,15 @@ func is_animating() -> bool:
+ 
+ 
+ func can_toggle(actor: Node3D) -> bool:
+-	return is_configured() and not machine.is_interaction_locked() and not _transfer_busy and not is_animating() and _actor_is_focused(actor)
++	return is_configured() and not _advancing and not machine.is_interaction_locked() and not _transfer_busy and not is_animating() and _actor_is_focused(actor)
+ 
+ 
+ func try_toggle(actor: Node3D) -> bool:
+ 	if not can_toggle(actor):
+ 		return false
++	_motion_serial += 1
++	_motion_suspended = false
++	_active_animation = _runtime_player.get_animation(animation_name)
+ 	if state == SlotState.CLOSED:
+ 		state = SlotState.OPENING
+ 		_runtime_player.play(animation_name, 0.0)
+@@ -224,14 +264,214 @@ func _on_transfer_requested(actor: Node3D) -> void:
+ 
+ 
+ func _on_animation_finished(finished_animation: StringName) -> void:
+-	if finished_animation != animation_name:
++	if finished_animation != animation_name or not is_animating() or not _motion_error.is_empty() or _restore_queued or _rebind_queued:
+ 		return
+-	if state == SlotState.OPENING:
+-		state = SlotState.OPEN
+-	elif state == SlotState.CLOSING:
+-		state = SlotState.CLOSED
+-	else:
++	_motion_pending = true
++	_result_frame = Engine.get_physics_frames()
++	_result_serial = _motion_serial
++	_result_animation = _active_animation
++
++
++func _finish_result(serial: int) -> void:
++	if serial != _motion_serial or not _motion_pending or not _node_is_live(self):
++		return
++	if not get_configuration_error().is_empty():
++		_interrupt_motion(get_configuration_error())
+ 		return
++	_last_completed_transform = transform
++	_stable_open = state == SlotState.OPENING
++	state = SlotState.OPEN if _stable_open else SlotState.CLOSED
++	_motion_pending = false
++	_active_animation = null
++	_result_animation = null
++	_emit_state_changed.call_deferred()
++
++
++## 只有所属目标自然完成才发布稳定态；外部停止不会伪报完成。
++func _physics_process(delta: float) -> void:
++	if not _configured:
++		return
++	var dependency_error: String = get_configuration_error()
++	if not dependency_error.is_empty():
++		if _motion_error.is_empty():
++			_interrupt_motion(dependency_error)
++		return
++	if _motion_suspended:
++		return
++	if _motion_pending:
++		if _runtime_player.is_playing() or _runtime_player.assigned_animation != animation_name or _runtime_player.get_animation(animation_name) != _result_animation:
++			_interrupt_motion("槽门完成待同步期间目标播放被替换")
++			return
++		if Engine.get_physics_frames() > _result_frame:
++			_finish_result(_result_serial)
++		return
++	if is_animating() and not _motion_pending and not _motion_suspended:
++		var actual_speed: float = _runtime_player.get_playing_speed()
++		var direction_matches: bool = actual_speed > 0.0 if state == SlotState.OPENING else actual_speed < 0.0
++		if not _runtime_player.is_playing() or _runtime_player.current_animation != animation_name or _runtime_player.get_animation(animation_name) != _active_animation or not direction_matches:
++			_interrupt_motion("槽门目标播放被外部停止或替换")
++			return
++		# 原生物理同步逐属性写回旧变换；先应用本次全部属性，再一次性提交实际变换。
++		set_notify_local_transform(false)
++		_advancing = true
++		_runtime_player.advance(delta)
++		if not is_instance_valid(self):
++			return
++		_advancing = false
++		var applied_transform: Transform3D = transform
++		set_notify_local_transform(true)
++		if not _node_is_live(self):
++			_motion_pending = false
++			_restore_queued = false
++			_rebind_queued = false
++			_replacement_player = null
++			_active_animation = null
++			_result_animation = null
++			return
++		# 方法轨道可能在推进内取消或重绑定；引擎遍历缓存返回后才变更动画库。
++		if _rebind_queued:
++			_rebind_queued = false
++			var replacement: Variant = _replacement_player
++			_replacement_player = null
++			rebind_animation_player(replacement if _node_is_live(replacement) else null)
++			return
++		dependency_error = get_configuration_error()
++		if not dependency_error.is_empty():
++			_interrupt_motion(dependency_error)
++			return
++		if _restore_queued:
++			_restore_queued = false
++			_restore_stable_state(_restore_open, _motion_serial)
++			return
++		transform = applied_transform
++		if _stop_queued:
++			_stop_queued = false
++			if _node_is_live(_runtime_player):
++				_runtime_player.stop(true)
++		return
++
++
++func suspend_motion() -> bool:
++	if not is_animating() or _motion_pending or _motion_suspended or not is_configured():
++		return false
++	_motion_suspended = true
++	return true
++
++
++func resume_motion() -> bool:
++	if not _motion_suspended or not is_animating() or not is_configured():
++		return false
++	_motion_suspended = false
++	return true
++
++
++func cancel_motion(reason: String = "显式取消") -> bool:
++	if not _configured or not get_configuration_error().is_empty():
++		return false
++	_motion_serial += 1
++	_motion_pending = false
++	_motion_suspended = false
++	_motion_error = ""
++	_active_animation = null
++	_stop_queued = false
++	if _advancing:
++		_restore_queued = true
++		_restore_open = _stable_open
++		_rebind_queued = false
++		_replacement_player = null
++		_motion_pending = true
++		state = SlotState.OPENING if _stable_open else SlotState.CLOSING
++	else:
++		_restore_stable_state(_stable_open, _motion_serial)
++	motion_cancelled.emit(reason)
++	return true
++
++
++func rebind_animation_player(player: AnimationPlayer) -> bool:
++	_stop_queued = false
++	if _advancing:
++		_motion_serial += 1
++		_motion_pending = true
++		_motion_suspended = false
++		_active_animation = null
++		_restore_queued = false
++		_rebind_queued = true
++		_replacement_player = player
++		state = SlotState.CLOSING
++		return true
++	_motion_serial += 1
++	_motion_pending = false
++	_motion_suspended = false
++	_active_animation = null
++	if _node_is_live(_runtime_player) and _runtime_player.animation_finished.is_connected(_on_animation_finished):
++		_runtime_player.animation_finished.disconnect(_on_animation_finished)
++	_runtime_player = player
++	if _node_is_live(_runtime_player):
++		_runtime_player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
++	_motion_error = get_configuration_error()
++	if not _motion_error.is_empty():
++		_stable_open = false
++		state = SlotState.CLOSED
++		return false
++	_runtime_player.animation_finished.connect(_on_animation_finished)
++	_stable_open = false
++	_restore_stable_state(false, _motion_serial)
++	return true
++
++
++func get_motion_error() -> String:
++	return _motion_error
++
++
++func _restore_stable_state(opened: bool, serial: int) -> void:
++	_motion_pending = true
++	_result_frame = Engine.get_physics_frames()
++	_result_serial = serial
++	state = SlotState.OPENING if opened else SlotState.CLOSING
++	_runtime_player.stop(true)
++	var animation: Animation = _runtime_player.get_animation(animation_name)
++	_result_animation = animation
++	# 停止尚未推进的播放仍会遗留开始标记；临时表现副本先消费标记且不执行事件。
++	var pose_animation: Animation = animation.duplicate() as Animation
++	for track: int in pose_animation.get_track_count():
++		var track_type: Animation.TrackType = pose_animation.track_get_type(track)
++		if track_type == Animation.TYPE_METHOD or track_type == Animation.TYPE_AUDIO or track_type == Animation.TYPE_ANIMATION:
++			pose_animation.track_set_enabled(track, false)
++	var pose_library: AnimationLibrary = AnimationLibrary.new()
++	pose_library.add_animation(&"pose", pose_animation)
++	var library_name: StringName = StringName("__blend_restore_%d" % _motion_serial)
++	while _runtime_player.has_animation_library(library_name):
++		library_name = StringName("%s_" % library_name)
++	_runtime_player.add_animation_library(library_name, pose_library)
++	set_notify_local_transform(false)
++	_runtime_player.assigned_animation = StringName("%s/pose" % library_name)
++	_runtime_player.seek(animation.length if opened else 0.0, true, true)
++	_runtime_player.assigned_animation = animation_name
++	_runtime_player.seek(animation.length if opened else 0.0, true, true)
++	var applied_transform: Transform3D = transform
++	set_notify_local_transform(true)
++	transform = applied_transform
++	_runtime_player.pause()
++	_runtime_player.remove_animation_library(library_name)
++
++
++func _interrupt_motion(reason: String) -> void:
++	_motion_serial += 1
++	_restore_queued = false
++	_rebind_queued = false
++	_replacement_player = null
++	_motion_pending = false
++	_motion_suspended = false
++	_active_animation = null
++	_result_animation = null
++	_motion_error = reason
++	state = SlotState.OPEN if _stable_open else SlotState.CLOSED
++	if _node_is_live(_runtime_player):
++		if _advancing:
++			_stop_queued = true
++		else:
++			_runtime_player.stop(true)
++	motion_cancelled.emit(reason)
+ 	_emit_state_changed.call_deferred()
+ 
+ 
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_tank_place.gd b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_tank_place.gd
+index 21edc3b..f7b23b9 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_tank_place.gd
++++ b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_tank_place.gd
+@@ -29,7 +29,7 @@ func configure(owner_machine: AutolysisBlendMachine, target: AutolysisFocusTarge
+ 	if not get_configuration_error().is_empty():
+ 		return false
+ 	transfer_interaction.set_availability_check(_can_transfer_interact)
+-	transfer_interaction.interaction_requested.connect(_on_transfer_requested)
++	transfer_interaction.set_execution_handler(_on_transfer_requested)
+ 	_configured = true
+ 	return true
+ 
+@@ -39,12 +39,12 @@ func is_configured() -> bool:
+ 
+ 
+ func get_configuration_error() -> String:
+-	if not _node_is_live(self) or not _node_is_live(machine) or get_parent() != machine:
++	if not _node_is_live(self) or not _node_is_live(machine) or not machine.is_ancestor_of(self):
+ 		return "液体罐放置位必须属于有效配药器"
+-	if not _node_is_live(focus_target) or focus_target.get_parent() != machine:
++	if not _node_is_live(focus_target) or not machine.is_ancestor_of(focus_target):
+ 		return "液体罐放置位与聚焦描述必须属于同一配药器"
+-	if not _node_is_live(liquid_tank_anchor) or liquid_tank_anchor.get_parent() != self:
+-		return "liquid_tank_anchor（罐锚点）必须属于本放置位直接子级"
++	if not _node_is_live(liquid_tank_anchor) or not is_ancestor_of(liquid_tank_anchor):
++		return "liquid_tank_anchor（罐锚点）必须属于本放置位子树"
+ 	if not _node_is_live(collision_shape) or collision_shape.get_parent() != self or collision_shape.shape == null or collision_shape.disabled:
+ 		return "collision_shape（碰撞形状）必须属于本放置位直接子级且有效"
+ 	if not _node_is_live(transfer_interaction) or transfer_interaction.get_parent() != self:
+@@ -57,12 +57,8 @@ func get_configuration_error() -> String:
+ 			component_count += 1
+ 	if component_count != 1:
+ 		return "液体罐放置位必须恰好配置一个交互组件"
+-	var receivers: Array[Dictionary] = []
+-	receivers.assign(transfer_interaction.interaction_requested.get_connections())
+-	if not _configured and not receivers.is_empty():
+-		return "液体罐取放组件初始化前不得连接其他请求接收者"
+-	if _configured and (receivers.size() != 1 or receivers[0]["callable"] != _on_transfer_requested or receivers[0]["flags"] != 0):
+-		return "液体罐取放组件必须只同步连接本放置位"
++	if _configured and not transfer_interaction.has_execution_handler(_on_transfer_requested):
++		return "液体罐取放组件的业务执行绑定失效"
+ 	for child: Node in liquid_tank_anchor.get_children():
+ 		if child is AutolysisLiquidTank and not child.is_queued_for_deletion() and child != _stored_item:
+ 			return "液体罐锚点存在未登记罐，保留来源并关闭入口"
+diff --git a/main-autolysis/systems/item-system/tests/blend_indicator_test.gd b/main-autolysis/systems/item-system/tests/blend_indicator_test.gd
+index 68428ec..3fbb8e5 100644
+--- a/main-autolysis/systems/item-system/tests/blend_indicator_test.gd
++++ b/main-autolysis/systems/item-system/tests/blend_indicator_test.gd
+@@ -24,6 +24,7 @@ func run_checks() -> void:
+ 	await _test_external_fill_and_credential_invalidation()
+ 	await _test_tank_exit()
+ 	await _test_machine_exit()
++	await _test_edited_display_configuration()
+ 	await _test_indicator_loss()
+ 	_save_indicator_report()
+ 	_release_controls()
+@@ -61,11 +62,11 @@ func _place_indicator_tank(device: AutolysisBlendMachine, definition: AutolysisI
+ func _place_indicator_raw(device: AutolysisBlendMachine, index: int = 0) -> void:
+ 	var slot: AutolysisBlendSlot = device.slots[index]
+ 	check(slot.try_toggle(player), "正式槽门入口开始打开原药槽")
+-	await frames(15)
++	await _wait_blend_slot(slot, true)
+ 	check(slot.is_open(), "真实门动画完成到打开状态")
+ 	check(inventory.try_receive_item(CAFFEINE) and inventory.try_place_in_blend_slot(player, slot), "正式库存事务将原药放入已打开槽")
+ 	check(slot.try_toggle(player), "正式槽门入口开始关闭原药槽")
+-	await frames(15)
++	await _wait_blend_slot(slot, false)
+ 	check(slot.is_closed(), "真实门动画完成到关闭状态")
+ 
+ 
+@@ -98,12 +99,12 @@ func _test_start_conditions_and_transactions() -> void:
+ 	check(slot.try_toggle(player), "就绪后公开入口打开空槽门")
+ 	await frames(1)
+ 	_check_indicator(INDICATOR_DEFAULT, "空槽门打开动画开始后红色")
+-	await frames(15)
++	await _wait_blend_slot(slot, true)
+ 	_check_indicator(INDICATOR_DEFAULT, "空槽门完全打开后仍为红色")
+ 	check(slot.try_toggle(player), "公开入口关闭空槽门")
+ 	await frames(1)
+ 	_check_indicator(INDICATOR_DEFAULT, "空槽门关闭动画期间仍为红色")
+-	await frames(15)
++	await _wait_blend_slot(slot, false)
+ 	_check_indicator(INDICATOR_READY, "最后槽门关闭动画结束触发橙色就绪")
+ 	check(machine.tank_place.try_begin_transfer(player), "合法罐位事务开始")
+ 	await frames(2)
+@@ -119,10 +120,10 @@ func _test_start_conditions_and_transactions() -> void:
+ 	_check_indicator(INDICATOR_READY, "重新放罐事务结束后恢复橙色")
+ 	slot = machine.slots[0]
+ 	check(slot.try_toggle(player), "正式入口打开最后原药所在槽")
+-	await frames(15)
++	await _wait_blend_slot(slot, true)
+ 	check(inventory.try_take_from_blend_slot(player, slot), "正式库存事务移走最后原药")
+ 	check(slot.try_toggle(player), "取药后关闭空槽")
+-	await frames(15)
++	await _wait_blend_slot(slot, false)
+ 	_check_indicator(INDICATOR_DEFAULT, "移走最后原药并关门后红色")
+ 	await _fresh_indicator_case()
+ 	await _place_indicator_tank(machine as AutolysisBlendMachine)
+@@ -231,10 +232,10 @@ func _test_completed_credential_and_two_batches() -> void:
+ 		check(machine.get("_completed_tank_instance") == instance, "绿色凭据保存真实成功批次罐的逐件实例身份")
+ 		var slot: AutolysisBlendSlot = machine.slots[2]
+ 		check(slot.try_toggle(player), "完成后允许打开空槽门")
+-		await frames(15)
++		await _wait_blend_slot(slot, true)
+ 		_check_indicator(INDICATOR_COMPLETED, "完成罐仍在时空槽门打开持续绿色")
+ 		check(slot.try_toggle(player), "完成后允许关闭空槽门")
+-		await frames(15)
++		await _wait_blend_slot(slot, false)
+ 		await _focus_device(machine as AutolysisBlendMachine)
+ 		_check_indicator(INDICATOR_COMPLETED, "完成后退出并重新聚焦仍保持绿色")
+ 		if batch_index == 0:
+@@ -336,6 +337,46 @@ func _test_indicator_loss() -> void:
+ 	check(not machine.is_batch_running() and not machine.tank_place.get_stored_item().is_empty(), "指示灯失效后原有业务仍完成完整批次")
+ 
+ 
++func _test_edited_display_configuration() -> void:
++	await _fresh_indicator_case()
++	var custom: AutolysisBlendMachine = preload("res://main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn").instantiate() as AutolysisBlendMachine
++	var decoration: Node3D = Node3D.new()
++	decoration.name = "EditedIndicatorDecoration"
++	custom.add_child(decoration)
++	custom.status_indicator.owner = null
++	custom.status_indicator.reparent(decoration, false)
++	custom.status_indicator.owner = custom
++	custom.indicator_default_material = INDICATOR_RED.duplicate() as Material
++	custom.indicator_ready_material = INDICATOR_ORANGE.duplicate() as StandardMaterial3D
++	custom.indicator_ready_material.emission_energy_multiplier = 3.0
++	custom.indicator_completed_material = INDICATOR_GREEN.duplicate() as Material
++	custom.indicator_half_cycle_seconds = 0.13
++	custom.indicator_emission_min = 0.4
++	custom.indicator_emission_max = 4.0
++	world.add_child(custom)
++	machine = custom
++	await _focus_device(custom)
++	check(custom.is_configured() and custom.status_indicator.material_override == custom.indicator_default_material, "显示重组和替换材质后设备仍可聚焦且保留编辑的默认材质")
++	await _place_indicator_tank(custom)
++	await _place_indicator_raw(custom)
++	var active_material: StandardMaterial3D = custom.get("_indicator_orange_material") as StandardMaterial3D
++	check(active_material != custom.indicator_ready_material and is_equal_approx(active_material.emission_energy_multiplier, 3.0), "编辑的就绪材质倍率生效且本机仍使用独立副本")
++	check(custom.try_start_processing(player), "可编辑显示参数下真实业务启动")
++	var minimum: float = active_material.emission_energy_multiplier
++	var maximum: float = minimum
++	for _sample: int in 40:
++		await frames(1)
++		minimum = minf(minimum, active_material.emission_energy_multiplier)
++		maximum = maxf(maximum, active_material.emission_energy_multiplier)
++	check(minimum >= 0.4 and maximum <= 4.0 and minimum < 0.8 and maximum > 3.6, "编辑闪烁半周期和发光范围生效")
++	check(is_equal_approx(custom.indicator_ready_material.emission_energy_multiplier, 3.0), "编辑材质资源本身不被运行闪烁修改")
++	var deadline: int = Time.get_ticks_msec() + 8000
++	while custom.is_batch_running() and Time.get_ticks_msec() < deadline:
++		await frames(1)
++	check(not custom.is_batch_running() and custom.status_indicator.material_override == custom.indicator_completed_material, "显示参数编辑不改变两秒业务完成且使用编辑的完成材质")
++	check(inventory.try_take_from_blend_tank_place(player, custom.tank_place), "显示参数编辑后正式库存仍可取回完成罐")
++
++
+ func _capture_indicator(filename: String) -> float:
+ 	if not graphical:
+ 		return -1.0
+diff --git a/main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd b/main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd
+index c8b8ef5..415571a 100644
+--- a/main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd
++++ b/main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd
+@@ -60,6 +60,13 @@ func _frames(count: int = 2) -> void:
+ 		await process_frame
+ 
+ 
++func _wait_slot_state(slot: AutolysisBlendSlot, opened: bool) -> void:
++	var deadline: int = Time.get_ticks_msec() + 8000
++	while slot.is_animating() and Time.get_ticks_msec() < deadline:
++		await _frames(1)
++	_check(slot.is_open() if opened else slot.is_closed(), "对应槽门在失败上限内完成目标动作；%s" % slot.get_motion_error())
++
++
+ func _clear_world() -> void:
+ 	for child: Node in world.get_children():
+ 		child.queue_free()
+@@ -92,7 +99,8 @@ func _fixture(open_slots: bool = true) -> Dictionary:
+ 			var component: AutolysisInteractionComponent = slot.get_node("InteractionComponent") as AutolysisInteractionComponent
+ 			_check(component.try_interact(player), "通过正式开闭组件打开第%d槽" % index)
+ 	if open_slots:
+-		await _frames(18)
++		for slot: AutolysisBlendSlot in slots:
++			await _wait_slot_state(slot, true)
+ 	return {"player": player, "machine": machine, "target": target, "slots": slots}
+ 
+ 
+@@ -163,7 +171,7 @@ func _test_busy_and_selected_slot() -> void:
+ 	_check(not inventory.can_place_in_blend_slot(player, slot) and not inventory.try_place_in_blend_slot(player, slot), "关闭槽位拒绝放入")
+ 	_check(component.try_interact(player), "通过组件开始打开指定槽位")
+ 	_check(not inventory.try_place_in_blend_slot(player, slot), "槽位打开动画期间拒绝放入")
+-	await _frames(18)
++	await _wait_slot_state(slot, true)
+ 	_check(inventory.try_place_in_blend_slot(player, slot), "完全打开后允许放入")
+ 	_check(inventory.try_receive_item(SODIUM), "原当前格重新持有另一原药")
+ 	var item: AutolysisRawMaterial = slot.get_stored_item()
+@@ -178,7 +186,7 @@ func _test_busy_and_selected_slot() -> void:
+ 	var old_item_transform: Transform3D = slot.get_stored_item().global_transform
+ 	_check(component.try_interact(player), "含药槽位允许关闭")
+ 	_check(not inventory.try_take_from_blend_slot(player, slot), "含药槽关闭运动期间拒绝取回")
+-	await _frames(18)
++	await _wait_slot_state(slot, false)
+ 	_check(slot.get_stored_item() == item or slot.owns_item(slot.get_stored_item()), "含药关闭保留唯一占用")
+ 	_check(not slot.get_stored_item().global_transform.is_equal_approx(old_item_transform) and slot.get_stored_item().transform.is_equal_approx(Transform3D.IDENTITY), "原药真实世界姿态随槽位动画变化且局部姿态保持单位变换")
+ 	_check(_inventory_count(inventory) + _stored_count(slots) == 2, "切格、拒绝和含药动画均保持总数")
+diff --git a/main-autolysis/systems/item-system/tests/liquid_contents_blend_test.gd b/main-autolysis/systems/item-system/tests/liquid_contents_blend_test.gd
+index 901ff66..a1e717d 100644
+--- a/main-autolysis/systems/item-system/tests/liquid_contents_blend_test.gd
++++ b/main-autolysis/systems/item-system/tests/liquid_contents_blend_test.gd
+@@ -193,12 +193,19 @@ func _test_tank_candidate_failure() -> void:
+ 
+ func _load_slot(index: int, definition: AutolysisItemDefinition) -> void:
+ 	await _click(_pixel(index))
+-	await frames(18)
++	await _wait_blend_slot(machine.slots[index], true)
+ 	check(inventory.try_receive_item(definition), "当前选中空格接收原药")
+ 	await _click(_pixel(index, true))
+ 	check(machine.slots[index].get_stored_item() != null and inventory.get_focused_item() == null, "真实射线点击将原药放入指定槽")
+ 	await _click(_pixel(index))
+-	await frames(18)
++	await _wait_blend_slot(machine.slots[index], false)
++
++
++func _wait_blend_slot(slot: AutolysisBlendSlot, opened: bool) -> void:
++	var deadline: int = Time.get_ticks_msec() + 8000
++	while slot.is_animating() and Time.get_ticks_msec() < deadline:
++		await frames(1)
++	check(slot.is_open() if opened else slot.is_closed(), "对应槽门完成目标动作；%s" % slot.get_motion_error())
+ 
+ 
+ func _start_batch_input() -> void:
+@@ -214,24 +221,24 @@ func _start_batch_input() -> void:
+ func _test_tank_and_batch() -> void:
+ 	await _load_slot(2, CAFFEINE)
+ 	await _click(_pixel(0))
+-	await frames(18)
++	await _wait_blend_slot(machine.slots[0], true)
+ 	check(not machine.can_start_processing(), "空槽门完全打开仍阻止启动")
+ 	_check_indicator(INDICATOR_DEFAULT, "空槽门打开期间红色")
+ 	await _restricted_once("空槽门打开：")
+ 	await _click(_pixel(0))
+ 	check(not machine.can_start_processing(), "空槽门关闭运动中不能启动")
+ 	_check_indicator(INDICATOR_DEFAULT, "空槽门关闭动画期间红色")
+-	await frames(18)
++	await _wait_blend_slot(machine.slots[0], false)
+ 	check(machine.can_start_processing(), "四门完全关闭、一份原药与空罐允许启动")
+ 	_check_indicator(INDICATOR_READY, "关门动画结束并满足完整启动条件后橙色常亮")
+ 	var old_denied_for_cancel: int = denied_count
+ 	check(machine.handle.try_begin_drag(player) and not machine.handle.is_restricted_drag(), "合法前提选择正常拖动")
+ 	machine.handle.apply_vertical_motion(player, 40)
+ 	check(machine.slots[0].try_toggle(player), "正常拖动中实际改变空槽门前提")
+-	await frames(18)
++	await _wait_blend_slot(machine.slots[0], true)
+ 	check(not machine.handle.is_dragging_for(player) and not machine.is_batch_running() and denied_count == old_denied_for_cancel, "正常拖动期间启动前提失效时取消且不发禁止或完成")
+ 	await _click(_pixel(0))
+-	await frames(18)
++	await _wait_blend_slot(machine.slots[0], false)
+ 	var source: AutolysisRawMaterial = machine.slots[2].get_stored_item()
+ 	var tank: AutolysisLiquidTank = machine.tank_place.get_stored_item()
+ 	var old_completed: int = completed_batches

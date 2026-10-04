@@ -1,0 +1,48 @@
+WARNING: Adding 'blend_slot_0' as child to 'EditedSlotGroup' will make owner 'machine_blend_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _make_fixture (res://main-autolysis/systems/item-system/tests/blend_animation_variants_test.gd:56)
+       [1] _clear_world (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:73)
+       [2] _frames (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:60)
+WARNING: Adding 'blend_slot_1' as child to 'EditedSlotGroup' will make owner 'machine_blend_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _make_fixture (res://main-autolysis/systems/item-system/tests/blend_animation_variants_test.gd:56)
+       [1] _clear_world (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:73)
+       [2] _frames (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:60)
+WARNING: Adding 'blend_slot_2' as child to 'EditedSlotGroup' will make owner 'machine_blend_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _make_fixture (res://main-autolysis/systems/item-system/tests/blend_animation_variants_test.gd:56)
+       [1] _clear_world (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:73)
+       [2] _frames (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:60)
+WARNING: Adding 'blend_slot_3' as child to 'EditedSlotGroup' will make owner 'machine_blend_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _make_fixture (res://main-autolysis/systems/item-system/tests/blend_animation_variants_test.gd:56)
+       [1] _clear_world (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:73)
+       [2] _frames (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:60)
+WARNING: Adding 'blend_slot_0' as child to 'EditedSlotGroup' will make owner 'machine_blend_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _make_fixture (res://main-autolysis/systems/item-system/tests/blend_animation_variants_test.gd:56)
+       [1] _clear_world (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:73)
+       [2] _frames (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:60)
+WARNING: Adding 'blend_slot_1' as child to 'EditedSlotGroup' will make owner 'machine_blend_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _make_fixture (res://main-autolysis/systems/item-system/tests/blend_animation_variants_test.gd:56)
+       [1] _clear_world (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:73)
+       [2] _frames (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:60)
+WARNING: Adding 'blend_slot_2' as child to 'EditedSlotGroup' will make owner 'machine_blend_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _make_fixture (res://main-autolysis/systems/item-system/tests/blend_animation_variants_test.gd:56)
+       [1] _clear_world (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:73)
+       [2] _frames (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:60)
+WARNING: Adding 'blend_slot_3' as child to 'EditedSlotGroup' will make owner 'machine_blend_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _make_fixture (res://main-autolysis/systems/item-system/tests/blend_animation_variants_test.gd:56)
+       [1] _clear_world (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:73)
+       [2] _frames (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:60)

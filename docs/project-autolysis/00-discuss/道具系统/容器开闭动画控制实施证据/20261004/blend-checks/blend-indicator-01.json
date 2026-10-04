@@ -1,0 +1,27 @@
+{
+  "检查": "blend-indicator-01",
+  "时间": "2026-10-04T12:18:59.4051516+08:00",
+  "进程编号": 2276,
+  "退出码": 1,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/blend_indicator_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/道具系统/容器开闭动画控制实施证据/20261004/blend-checks/indicator"
+  ],
+  "通过断言数": 349,
+  "预期错误计数": {
+    "^ERROR: 配药器批次1故障，保持交互关闭：本轮原药来源或实例失效：槽号3": 0
+  },
+  "非预期错误": [
+    "失败：波形覆盖完整两秒批次、重复刷新、暂停、时间缩放与退出聚焦",
+    "失败：时间缩放与暂停后仍由两秒有效游戏计时完成"
+  ]
+}

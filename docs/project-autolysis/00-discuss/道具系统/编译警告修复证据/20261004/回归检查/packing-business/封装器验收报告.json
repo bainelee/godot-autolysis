@@ -1,0 +1,4222 @@
+{
+	"图形运行": false,
+	"失败数": 0,
+	"实际射线": [
+		{
+			"像素": "(805.8466, 343.8486)",
+			"手持投影外": true,
+			"物理帧": 98,
+			"目标": "/root/PackingMachineDemo/PackingA/door_capsules_input_bay"
+		},
+		{
+			"像素": "(750.4657, 346.3959)",
+			"手持投影外": true,
+			"物理帧": 112,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_capsule_place"
+		},
+		{
+			"像素": "(805.8466, 343.8486)",
+			"手持投影外": true,
+			"物理帧": 164,
+			"目标": "/root/PackingMachineDemo/PackingA/door_capsules_input_bay"
+		},
+		{
+			"像素": "(750.4657, 346.3959)",
+			"手持投影外": true,
+			"物理帧": 178,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_capsule_place"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 230,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 282,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(805.8466, 343.8486)",
+			"手持投影外": true,
+			"物理帧": 284,
+			"目标": "/root/PackingMachineDemo/PackingA/door_capsules_input_bay"
+		},
+		{
+			"像素": "(750.4657, 346.3959)",
+			"手持投影外": true,
+			"物理帧": 298,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_capsule_place"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 350,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(805.8466, 343.8486)",
+			"手持投影外": true,
+			"物理帧": 352,
+			"目标": "/root/PackingMachineDemo/PackingA/door_capsules_input_bay"
+		},
+		{
+			"像素": "(750.4657, 346.3959)",
+			"手持投影外": true,
+			"物理帧": 366,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_capsule_place"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 418,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 470,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(805.8466, 343.8486)",
+			"手持投影外": true,
+			"物理帧": 472,
+			"目标": "/root/PackingMachineDemo/PackingA/door_capsules_input_bay"
+		},
+		{
+			"像素": "(750.4657, 346.3959)",
+			"手持投影外": true,
+			"物理帧": 486,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_capsule_place"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 549,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(805.8466, 343.8486)",
+			"手持投影外": true,
+			"物理帧": 551,
+			"目标": "/root/PackingMachineDemo/PackingA/door_capsules_input_bay"
+		},
+		{
+			"像素": "(750.4657, 346.3959)",
+			"手持投影外": true,
+			"物理帧": 565,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_capsule_place"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 617,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 620,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 622,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(805.8466, 343.8486)",
+			"手持投影外": true,
+			"物理帧": 625,
+			"目标": "/root/PackingMachineDemo/PackingA/door_capsules_input_bay"
+		},
+		{
+			"像素": "(750.4657, 346.3959)",
+			"手持投影外": true,
+			"物理帧": 639,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_capsule_place"
+		},
+		{
+			"像素": "(307.0353, 110.394)",
+			"手持投影外": true,
+			"物理帧": 641,
+			"目标": "/root/PackingMachineDemo/PackingA/type_switch_0"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 645,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 651,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(307.0353, 110.394)",
+			"手持投影外": true,
+			"物理帧": 653,
+			"目标": "/root/PackingMachineDemo/PackingA/type_switch_0"
+		},
+		{
+			"像素": "(307.0353, 217.3682)",
+			"手持投影外": true,
+			"物理帧": 665,
+			"目标": "/root/PackingMachineDemo/PackingA/type_switch_2"
+		},
+		{
+			"像素": "(308.8438, 197.9459)",
+			"手持投影外": true,
+			"物理帧": 677,
+			"目标": "/root/PackingMachineDemo/PackingA/type_switch_2"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 742,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(805.8466, 343.8486)",
+			"手持投影外": true,
+			"物理帧": 744,
+			"目标": "/root/PackingMachineDemo/PackingA/door_capsules_input_bay"
+		},
+		{
+			"像素": "(750.4657, 346.3959)",
+			"手持投影外": true,
+			"物理帧": 758,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_capsule_place"
+		},
+		{
+			"像素": "(307.0353, 110.394)",
+			"手持投影外": true,
+			"物理帧": 760,
+			"目标": "/root/PackingMachineDemo/PackingA/type_switch_0"
+		},
+		{
+			"像素": "(536.4378, 243.1486)",
+			"手持投影外": true,
+			"物理帧": 774,
+			"目标": "/root/PackingMachineDemo/PackingA/button_start_packing"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 935,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 937,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(750.4657, 346.3959)",
+			"手持投影外": true,
+			"物理帧": 939,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_capsule_place"
+		},
+		{
+			"像素": "(750.4657, 346.3959)",
+			"手持投影外": true,
+			"物理帧": 951,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_capsule_place"
+		},
+		{
+			"像素": "(750.4657, 346.3959)",
+			"手持投影外": true,
+			"物理帧": 953,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_capsule_place"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 956,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 959,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(750.4657, 346.3959)",
+			"手持投影外": true,
+			"物理帧": 961,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_capsule_place"
+		},
+		{
+			"像素": "(307.0353, 163.8811)",
+			"手持投影外": true,
+			"物理帧": 963,
+			"目标": "/root/PackingMachineDemo/PackingA/type_switch_1"
+		},
+		{
+			"像素": "(1152.638, 343.2717)",
+			"手持投影外": true,
+			"物理帧": 977,
+			"目标": "/root/PackingMachineDemo/PackingA/door_capsules_input_bay"
+		},
+		{
+			"像素": "(536.4378, 243.1486)",
+			"手持投影外": true,
+			"物理帧": 991,
+			"目标": "/root/PackingMachineDemo/PackingA/button_start_packing"
+		},
+		{
+			"像素": "(805.8455, 343.8486)",
+			"手持投影外": true,
+			"物理帧": 1152,
+			"目标": "/root/PackingMachineDemo/PackingA/door_capsules_input_bay"
+		},
+		{
+			"像素": "(750.4657, 346.3959)",
+			"手持投影外": true,
+			"物理帧": 1166,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_capsule_place"
+		},
+		{
+			"像素": "(750.4657, 346.3959)",
+			"手持投影外": true,
+			"物理帧": 1178,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_capsule_place"
+		},
+		{
+			"像素": "(750.4657, 346.3959)",
+			"手持投影外": true,
+			"物理帧": 1180,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_capsule_place"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 1183,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 1235,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(805.8466, 343.8486)",
+			"手持投影外": true,
+			"物理帧": 1237,
+			"目标": "/root/PackingMachineDemo/PackingA/door_capsules_input_bay"
+		},
+		{
+			"像素": "(750.4657, 346.3959)",
+			"手持投影外": true,
+			"物理帧": 1251,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_capsule_place"
+		},
+		{
+			"像素": "(307.0353, 217.3682)",
+			"手持投影外": true,
+			"物理帧": 1253,
+			"目标": "/root/PackingMachineDemo/PackingA/type_switch_2"
+		},
+		{
+			"像素": "(536.4378, 243.1486)",
+			"手持投影外": true,
+			"物理帧": 1267,
+			"目标": "/root/PackingMachineDemo/PackingA/button_start_packing"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 1428,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 1430,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(750.4657, 346.3959)",
+			"手持投影外": true,
+			"物理帧": 1432,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_capsule_place"
+		},
+		{
+			"像素": "(750.4657, 346.3959)",
+			"手持投影外": true,
+			"物理帧": 1444,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_capsule_place"
+		},
+		{
+			"像素": "(750.4657, 346.3959)",
+			"手持投影外": true,
+			"物理帧": 1446,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_capsule_place"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 1449,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 1501,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(422.7944, 460.1564)",
+			"手持投影外": true,
+			"物理帧": 1600,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_tank_place"
+		},
+		{
+			"像素": "(805.8466, 343.8486)",
+			"手持投影外": true,
+			"物理帧": 1602,
+			"目标": "/root/PackingMachineDemo/PackingA/door_capsules_input_bay"
+		},
+		{
+			"像素": "(750.4657, 346.3959)",
+			"手持投影外": true,
+			"物理帧": 1616,
+			"目标": "/root/PackingMachineDemo/PackingA/packing_capsule_place"
+		},
+		{
+			"像素": "(307.0353, 110.394)",
+			"手持投影外": true,
+			"物理帧": 1618,
+			"目标": "/root/PackingMachineDemo/PackingA/type_switch_0"
+		},
+		{
+			"像素": "(536.4378, 243.1486)",
+			"手持投影外": true,
+			"物理帧": 1630,
+			"目标": "/root/PackingMachineDemo/PackingA/button_start_packing"
+		},
+		{
+			"像素": "(422.7945, 460.156)",
+			"手持投影外": true,
+			"物理帧": 1848,
+			"目标": "/root/01-autolysis-test/interaction_prefabs/machines/machine_packing_0/packing_tank_place"
+		},
+		{
+			"像素": "(805.8466, 343.8482)",
+			"手持投影外": true,
+			"物理帧": 1850,
+			"目标": "/root/01-autolysis-test/interaction_prefabs/machines/machine_packing_0/door_capsules_input_bay"
+		},
+		{
+			"像素": "(750.4658, 346.3956)",
+			"手持投影外": true,
+			"物理帧": 1864,
+			"目标": "/root/01-autolysis-test/interaction_prefabs/machines/machine_packing_0/packing_capsule_place"
+		},
+		{
+			"像素": "(307.0354, 163.8807)",
+			"手持投影外": true,
+			"物理帧": 1866,
+			"目标": "/root/01-autolysis-test/interaction_prefabs/machines/machine_packing_0/type_switch_1"
+		},
+		{
+			"像素": "(536.4379, 243.1483)",
+			"手持投影外": true,
+			"物理帧": 1878,
+			"目标": "/root/01-autolysis-test/interaction_prefabs/machines/machine_packing_0/button_start_packing"
+		},
+		{
+			"像素": "(750.4658, 346.3956)",
+			"手持投影外": true,
+			"物理帧": 2010,
+			"目标": "/root/01-autolysis-test/interaction_prefabs/machines/machine_packing_0/packing_capsule_place"
+		}
+	],
+	"截图": [],
+	"手持投影": [
+		{
+			"位置": "封装类型0",
+			"完整入画": true,
+			"投影包围矩形": "[P: (834.6534, 190.3266), S: (280.3743, 512.6733)]",
+			"画面尺寸": "(1280, 720)",
+			"视场角": 55.0
+		},
+		{
+			"位置": "封装类型1",
+			"完整入画": true,
+			"投影包围矩形": "[P: (834.6534, 190.3266), S: (280.3743, 512.6733)]",
+			"画面尺寸": "(1280, 720)",
+			"视场角": 55.0
+		},
+		{
+			"位置": "封装类型2",
+			"完整入画": true,
+			"投影包围矩形": "[P: (834.6534, 190.3266), S: (280.3743, 512.6733)]",
+			"画面尺寸": "(1280, 720)",
+			"视场角": 55.0
+		},
+		{
+			"位置": "主场景",
+			"完整入画": true,
+			"投影包围矩形": "[P: (834.6539, 190.3266), S: (280.3743, 512.6733)]",
+			"画面尺寸": "(1280, 720)",
+			"视场角": 55.0
+		}
+	],
+	"提示灯观察": [
+		{
+			"位置": "设备初始化",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 26,
+			"运行补间": false
+		},
+		{
+			"位置": "输入组合0、0",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 49,
+			"运行补间": false
+		},
+		{
+			"位置": "设备初始化",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 76,
+			"运行补间": false
+		},
+		{
+			"位置": "输入组合0、1",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 115,
+			"运行补间": false
+		},
+		{
+			"位置": "设备初始化",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 142,
+			"运行补间": false
+		},
+		{
+			"位置": "输入组合0、2",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 181,
+			"运行补间": false
+		},
+		{
+			"位置": "设备初始化",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 208,
+			"运行补间": false
+		},
+		{
+			"位置": "输入组合1、0",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 233,
+			"运行补间": false
+		},
+		{
+			"位置": "设备初始化",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 260,
+			"运行补间": false
+		},
+		{
+			"位置": "输入组合1、1",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 301,
+			"运行补间": false
+		},
+		{
+			"位置": "设备初始化",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 328,
+			"运行补间": false
+		},
+		{
+			"位置": "输入组合1、2",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 369,
+			"运行补间": false
+		},
+		{
+			"位置": "设备初始化",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 396,
+			"运行补间": false
+		},
+		{
+			"位置": "输入组合2、0",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 421,
+			"运行补间": false
+		},
+		{
+			"位置": "设备初始化",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 448,
+			"运行补间": false
+		},
+		{
+			"位置": "输入组合2、1",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 500,
+			"运行补间": false
+		},
+		{
+			"位置": "设备初始化",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 527,
+			"运行补间": false
+		},
+		{
+			"位置": "输入组合2、2",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 568,
+			"运行补间": false
+		},
+		{
+			"位置": "设备初始化",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 595,
+			"运行补间": false
+		},
+		{
+			"位置": "类型开关开启途中",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 645,
+			"运行补间": false
+		},
+		{
+			"位置": "取消类型选择",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 689,
+			"运行补间": false
+		},
+		{
+			"位置": "设备初始化",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 720,
+			"运行补间": false
+		},
+		{
+			"位置": "合法输入尚未选类型",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 760,
+			"运行补间": false
+		},
+		{
+			"位置": "完全开门且类型稳定",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 772,
+			"运行补间": false
+		},
+		{
+			"位置": "启动前取放事务保持锁定",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 773,
+			"运行补间": false
+		},
+		{
+			"位置": "启动前取放事务结束",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 774,
+			"运行补间": false
+		},
+		{
+			"位置": "同步开始通知",
+			"倍率": 2.0,
+			"完成灯亮": false,
+			"按钮材质实例": -9223371766338942835,
+			"物理帧": 775,
+			"运行补间": true
+		},
+		{
+			"位置": "真实按钮点击被接受",
+			"倍率": 1.86666667461395,
+			"完成灯亮": false,
+			"按钮材质实例": -9223371766338942835,
+			"物理帧": 776,
+			"运行补间": true
+		},
+		{
+			"位置": "运行中退出聚焦",
+			"倍率": 0.733333349227905,
+			"完成灯亮": false,
+			"按钮材质实例": -9223371766338942835,
+			"物理帧": 813,
+			"运行补间": true
+		},
+		{
+			"位置": "共同提交内容通知仍保持运行显示",
+			"倍率": 1.93333327770233,
+			"完成灯亮": false,
+			"按钮材质实例": -9223371766338942835,
+			"物理帧": 916,
+			"运行补间": true
+		},
+		{
+			"位置": "共同提交内容通知仍保持运行显示",
+			"倍率": 1.93333327770233,
+			"完成灯亮": false,
+			"按钮材质实例": -9223371766338942835,
+			"物理帧": 916,
+			"运行补间": true
+		},
+		{
+			"位置": "同步完成通知",
+			"完成灯亮": true,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 916,
+			"运行补间": false
+		},
+		{
+			"位置": "退出聚焦后自然完成",
+			"完成灯亮": true,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 916,
+			"运行补间": false
+		},
+		{
+			"位置": "完成后重新进入聚焦",
+			"完成灯亮": true,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 935,
+			"运行补间": false
+		},
+		{
+			"位置": "完成后先取空罐",
+			"完成灯亮": true,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 937,
+			"运行补间": false
+		},
+		{
+			"位置": "完成待取时补满罐",
+			"完成灯亮": true,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 939,
+			"运行补间": false
+		},
+		{
+			"位置": "产物取回候选失败",
+			"完成灯亮": true,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 939,
+			"运行补间": false
+		},
+		{
+			"位置": "成功取胶囊的库存变化通知",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 940,
+			"运行补间": false
+		},
+		{
+			"位置": "成功取回本轮胶囊",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 941,
+			"运行补间": false
+		},
+		{
+			"位置": "合法输入尚未选类型",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 963,
+			"运行补间": false
+		},
+		{
+			"位置": "完全开门且类型稳定",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 975,
+			"运行补间": false
+		},
+		{
+			"位置": "启动前取放事务保持锁定",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 976,
+			"运行补间": false
+		},
+		{
+			"位置": "启动前取放事务结束",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 977,
+			"运行补间": false
+		},
+		{
+			"位置": "舱门关闭途中",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 979,
+			"运行补间": false
+		},
+		{
+			"位置": "完全关门且类型稳定",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 991,
+			"运行补间": false
+		},
+		{
+			"位置": "同步开始通知",
+			"倍率": 2.0,
+			"完成灯亮": false,
+			"按钮材质实例": -9223371766338942835,
+			"物理帧": 992,
+			"运行补间": true
+		},
+		{
+			"位置": "真实按钮点击被接受",
+			"倍率": 1.86666667461395,
+			"完成灯亮": false,
+			"按钮材质实例": -9223371766338942835,
+			"物理帧": 993,
+			"运行补间": true
+		},
+		{
+			"位置": "运行中退出聚焦",
+			"倍率": 0.733333349227905,
+			"完成灯亮": false,
+			"按钮材质实例": -9223371766338942835,
+			"物理帧": 1030,
+			"运行补间": true
+		},
+		{
+			"位置": "共同提交内容通知仍保持运行显示",
+			"倍率": 1.93333327770233,
+			"完成灯亮": false,
+			"按钮材质实例": -9223371766338942835,
+			"物理帧": 1133,
+			"运行补间": true
+		},
+		{
+			"位置": "共同提交内容通知仍保持运行显示",
+			"倍率": 1.93333327770233,
+			"完成灯亮": false,
+			"按钮材质实例": -9223371766338942835,
+			"物理帧": 1133,
+			"运行补间": true
+		},
+		{
+			"位置": "同步完成通知",
+			"完成灯亮": true,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 1133,
+			"运行补间": false
+		},
+		{
+			"位置": "退出聚焦后自然完成",
+			"完成灯亮": true,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 1133,
+			"运行补间": false
+		},
+		{
+			"位置": "完成后重新进入聚焦",
+			"完成灯亮": true,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 1152,
+			"运行补间": false
+		},
+		{
+			"位置": "完成后舱门运动中",
+			"完成灯亮": true,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 1154,
+			"运行补间": false
+		},
+		{
+			"位置": "完成后完全开门",
+			"完成灯亮": true,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 1166,
+			"运行补间": false
+		},
+		{
+			"位置": "成功取胶囊的库存变化通知",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 1167,
+			"运行补间": false
+		},
+		{
+			"位置": "成功取回本轮胶囊",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 1168,
+			"运行补间": false
+		},
+		{
+			"位置": "设备初始化",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 1213,
+			"运行补间": false
+		},
+		{
+			"位置": "合法输入尚未选类型",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 1253,
+			"运行补间": false
+		},
+		{
+			"位置": "完全开门且类型稳定",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 1265,
+			"运行补间": false
+		},
+		{
+			"位置": "启动前取放事务保持锁定",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 1266,
+			"运行补间": false
+		},
+		{
+			"位置": "启动前取放事务结束",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 1267,
+			"运行补间": false
+		},
+		{
+			"位置": "同步开始通知",
+			"倍率": 2.0,
+			"完成灯亮": false,
+			"按钮材质实例": -9223371652773967941,
+			"物理帧": 1268,
+			"运行补间": true
+		},
+		{
+			"位置": "真实按钮点击被接受",
+			"倍率": 1.86666667461395,
+			"完成灯亮": false,
+			"按钮材质实例": -9223371652773967941,
+			"物理帧": 1269,
+			"运行补间": true
+		},
+		{
+			"位置": "运行中退出聚焦",
+			"倍率": 0.733333349227905,
+			"完成灯亮": false,
+			"按钮材质实例": -9223371652773967941,
+			"物理帧": 1306,
+			"运行补间": true
+		},
+		{
+			"位置": "共同提交内容通知仍保持运行显示",
+			"倍率": 1.93333327770233,
+			"完成灯亮": false,
+			"按钮材质实例": -9223371652773967941,
+			"物理帧": 1409,
+			"运行补间": true
+		},
+		{
+			"位置": "共同提交内容通知仍保持运行显示",
+			"倍率": 1.93333327770233,
+			"完成灯亮": false,
+			"按钮材质实例": -9223371652773967941,
+			"物理帧": 1409,
+			"运行补间": true
+		},
+		{
+			"位置": "同步完成通知",
+			"完成灯亮": true,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 1409,
+			"运行补间": false
+		},
+		{
+			"位置": "退出聚焦后自然完成",
+			"完成灯亮": true,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 1409,
+			"运行补间": false
+		},
+		{
+			"位置": "完成后重新进入聚焦",
+			"完成灯亮": true,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 1428,
+			"运行补间": false
+		},
+		{
+			"位置": "完成后先取空罐",
+			"完成灯亮": true,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 1430,
+			"运行补间": false
+		},
+		{
+			"位置": "完成待取时补满罐",
+			"完成灯亮": true,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 1432,
+			"运行补间": false
+		},
+		{
+			"位置": "成功取胶囊的库存变化通知",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 1433,
+			"运行补间": false
+		},
+		{
+			"位置": "成功取回本轮胶囊",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 1434,
+			"运行补间": false
+		},
+		{
+			"位置": "设备初始化",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 1479,
+			"运行补间": false
+		},
+		{
+			"位置": "设备初始化",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 1529,
+			"运行补间": false
+		},
+		{
+			"位置": "设备初始化",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 1578,
+			"运行补间": false
+		},
+		{
+			"位置": "同步开始通知",
+			"倍率": 2.0,
+			"完成灯亮": false,
+			"按钮材质实例": -9223371552261667020,
+			"物理帧": 1631,
+			"运行补间": true
+		},
+		{
+			"位置": "来源变化故障批次启动后",
+			"倍率": 1.86666667461395,
+			"完成灯亮": false,
+			"按钮材质实例": -9223371552261667020,
+			"物理帧": 1632,
+			"运行补间": true
+		},
+		{
+			"位置": "同步失败通知",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 1752,
+			"运行补间": false
+		},
+		{
+			"位置": "来源变化拒绝提交后",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 1762,
+			"运行补间": false
+		},
+		{
+			"位置": "设备初始化",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 1789,
+			"运行补间": false
+		},
+		{
+			"位置": "实际主场景初始空槽",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 1848,
+			"运行补间": false
+		},
+		{
+			"位置": "实际主场景准备完成",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 1878,
+			"运行补间": false
+		},
+		{
+			"位置": "实际主场景按钮点击被接受",
+			"倍率": 1.86666667461395,
+			"完成灯亮": false,
+			"按钮材质实例": -9223371477754050459,
+			"物理帧": 1880,
+			"运行补间": true
+		},
+		{
+			"位置": "实际主场景完成封装",
+			"完成灯亮": true,
+			"按钮材质": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+			"物理帧": 2010,
+			"运行补间": false
+		},
+		{
+			"位置": "实际主场景成功取胶囊",
+			"完成灯亮": false,
+			"按钮材质": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+			"物理帧": 2012,
+			"运行补间": false
+		}
+	],
+	"断言": [
+		{
+			"说明": "两台真实封装器配置有效",
+			"通过": true
+		},
+		{
+			"说明": "两槽初始为空且没有类型选择",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "无图形夹具通过正式会话入口建立聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式设备进入稳定聚焦",
+			"通过": true
+		},
+		{
+			"说明": "九种输入组合仅满罐加空胶囊允许选择：0、0",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "九种组合启动许可与实际合法输入一致",
+			"通过": true
+		},
+		{
+			"说明": "输入组合0、0：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "输入组合0、0：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "输入组合0、0：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "输入组合0、0：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "两台真实封装器配置有效",
+			"通过": true
+		},
+		{
+			"说明": "两槽初始为空且没有类型选择",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "无图形夹具通过正式会话入口建立聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式设备进入稳定聚焦",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "胶囊取放前舱门完全打开",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收胶囊实例",
+			"通过": true
+		},
+		{
+			"说明": "真实胶囊位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "九种输入组合仅满罐加空胶囊允许选择：0、1",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "九种组合启动许可与实际合法输入一致",
+			"通过": true
+		},
+		{
+			"说明": "输入组合0、1：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "输入组合0、1：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "输入组合0、1：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "输入组合0、1：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "两台真实封装器配置有效",
+			"通过": true
+		},
+		{
+			"说明": "两槽初始为空且没有类型选择",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "无图形夹具通过正式会话入口建立聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式设备进入稳定聚焦",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "胶囊取放前舱门完全打开",
+			"通过": true
+		},
+		{
+			"说明": "准备封装胶囊实例",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收胶囊实例",
+			"通过": true
+		},
+		{
+			"说明": "真实胶囊位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "九种输入组合仅满罐加空胶囊允许选择：0、2",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "九种组合启动许可与实际合法输入一致",
+			"通过": true
+		},
+		{
+			"说明": "输入组合0、2：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "输入组合0、2：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "输入组合0、2：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "输入组合0、2：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "两台真实封装器配置有效",
+			"通过": true
+		},
+		{
+			"说明": "两槽初始为空且没有类型选择",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "无图形夹具通过正式会话入口建立聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式设备进入稳定聚焦",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收液体罐实例",
+			"通过": true
+		},
+		{
+			"说明": "真实罐位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "九种输入组合仅满罐加空胶囊允许选择：1、0",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "九种组合启动许可与实际合法输入一致",
+			"通过": true
+		},
+		{
+			"说明": "输入组合1、0：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "输入组合1、0：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "输入组合1、0：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "输入组合1、0：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "两台真实封装器配置有效",
+			"通过": true
+		},
+		{
+			"说明": "两槽初始为空且没有类型选择",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "无图形夹具通过正式会话入口建立聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式设备进入稳定聚焦",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收液体罐实例",
+			"通过": true
+		},
+		{
+			"说明": "真实罐位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "胶囊取放前舱门完全打开",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收胶囊实例",
+			"通过": true
+		},
+		{
+			"说明": "真实胶囊位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "九种输入组合仅满罐加空胶囊允许选择：1、1",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "九种组合启动许可与实际合法输入一致",
+			"通过": true
+		},
+		{
+			"说明": "输入组合1、1：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "输入组合1、1：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "输入组合1、1：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "输入组合1、1：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "两台真实封装器配置有效",
+			"通过": true
+		},
+		{
+			"说明": "两槽初始为空且没有类型选择",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "无图形夹具通过正式会话入口建立聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式设备进入稳定聚焦",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收液体罐实例",
+			"通过": true
+		},
+		{
+			"说明": "真实罐位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "胶囊取放前舱门完全打开",
+			"通过": true
+		},
+		{
+			"说明": "准备封装胶囊实例",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收胶囊实例",
+			"通过": true
+		},
+		{
+			"说明": "真实胶囊位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "九种输入组合仅满罐加空胶囊允许选择：1、2",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "九种组合启动许可与实际合法输入一致",
+			"通过": true
+		},
+		{
+			"说明": "输入组合1、2：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "输入组合1、2：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "输入组合1、2：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "输入组合1、2：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "两台真实封装器配置有效",
+			"通过": true
+		},
+		{
+			"说明": "两槽初始为空且没有类型选择",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "无图形夹具通过正式会话入口建立聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式设备进入稳定聚焦",
+			"通过": true
+		},
+		{
+			"说明": "准备完整内容满罐实例",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收液体罐实例",
+			"通过": true
+		},
+		{
+			"说明": "真实罐位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "九种输入组合仅满罐加空胶囊允许选择：2、0",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "九种组合启动许可与实际合法输入一致",
+			"通过": true
+		},
+		{
+			"说明": "输入组合2、0：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "输入组合2、0：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "输入组合2、0：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "输入组合2、0：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "两台真实封装器配置有效",
+			"通过": true
+		},
+		{
+			"说明": "两槽初始为空且没有类型选择",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "无图形夹具通过正式会话入口建立聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式设备进入稳定聚焦",
+			"通过": true
+		},
+		{
+			"说明": "准备完整内容满罐实例",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收液体罐实例",
+			"通过": true
+		},
+		{
+			"说明": "真实罐位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "胶囊取放前舱门完全打开",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收胶囊实例",
+			"通过": true
+		},
+		{
+			"说明": "真实胶囊位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "九种输入组合仅满罐加空胶囊允许选择：2、1",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "九种组合启动许可与实际合法输入一致",
+			"通过": true
+		},
+		{
+			"说明": "输入组合2、1：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "输入组合2、1：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "输入组合2、1：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "输入组合2、1：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "输入组合2、1：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "两台真实封装器配置有效",
+			"通过": true
+		},
+		{
+			"说明": "两槽初始为空且没有类型选择",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "无图形夹具通过正式会话入口建立聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式设备进入稳定聚焦",
+			"通过": true
+		},
+		{
+			"说明": "准备完整内容满罐实例",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收液体罐实例",
+			"通过": true
+		},
+		{
+			"说明": "真实罐位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "胶囊取放前舱门完全打开",
+			"通过": true
+		},
+		{
+			"说明": "准备封装胶囊实例",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收胶囊实例",
+			"通过": true
+		},
+		{
+			"说明": "真实胶囊位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "九种输入组合仅满罐加空胶囊允许选择：2、2",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "九种组合启动许可与实际合法输入一致",
+			"通过": true
+		},
+		{
+			"说明": "输入组合2、2：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "输入组合2、2：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "输入组合2、2：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "输入组合2、2：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "两台真实封装器配置有效",
+			"通过": true
+		},
+		{
+			"说明": "两槽初始为空且没有类型选择",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "无图形夹具通过正式会话入口建立聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式设备进入稳定聚焦",
+			"通过": true
+		},
+		{
+			"说明": "跨设备聚焦不允许转移",
+			"通过": true
+		},
+		{
+			"说明": "准备错误种类原药",
+			"通过": true
+		},
+		{
+			"说明": "错误种类点击不改变来源和槽位",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收液体罐实例",
+			"通过": true
+		},
+		{
+			"说明": "真实罐位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "准备同种类罐检查已占用入口",
+			"通过": true
+		},
+		{
+			"说明": "已占用槽对合法同种类物品不交换、不覆盖",
+			"通过": true
+		},
+		{
+			"说明": "准备空胶囊以检查关闭门禁",
+			"通过": true
+		},
+		{
+			"说明": "关闭舱门拒绝胶囊放入",
+			"通过": true
+		},
+		{
+			"说明": "关闭舱门实际阻挡胶囊槽射线",
+			"通过": true
+		},
+		{
+			"说明": "舱门运动中拒绝胶囊放入",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "完全开门后放入原胶囊",
+			"通过": true
+		},
+		{
+			"说明": "空罐加空胶囊不能选类型",
+			"通过": true
+		},
+		{
+			"说明": "夹具对真实罐写入合法源内容",
+			"通过": true
+		},
+		{
+			"说明": "开关开启途中已经唯一选中但不能启动",
+			"通过": true
+		},
+		{
+			"说明": "类型开关开启途中：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "类型开关开启途中：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "类型开关开启途中：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "类型开关开启途中：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "开关动作途中拒绝新的类型点击",
+			"通过": true
+		},
+		{
+			"说明": "开启途中成功取罐立即取消类型",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "中途反播自然归位且旧回调不恢复选择",
+			"通过": true
+		},
+		{
+			"说明": "开关复位不改变舱门",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "改选时旧开关关闭、新开关开启",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "再次点击当前类型取消选择",
+			"通过": true
+		},
+		{
+			"说明": "取消类型选择：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "取消类型选择：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "取消类型选择：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "取消类型选择：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "关闭后分别恢复第0盏灯的原材质",
+			"通过": true
+		},
+		{
+			"说明": "关闭后分别恢复第1盏灯的原材质",
+			"通过": true
+		},
+		{
+			"说明": "关闭后分别恢复第2盏灯的原材质",
+			"通过": true
+		},
+		{
+			"说明": "未登记外部物体阻挡真实聚焦射线",
+			"通过": true
+		},
+		{
+			"说明": "两台真实封装器配置有效",
+			"通过": true
+		},
+		{
+			"说明": "两槽初始为空且没有类型选择",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "无图形夹具通过正式会话入口建立聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式设备进入稳定聚焦",
+			"通过": true
+		},
+		{
+			"说明": "准备完整内容满罐实例",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收液体罐实例",
+			"通过": true
+		},
+		{
+			"说明": "真实罐位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "胶囊取放前舱门完全打开",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收胶囊实例",
+			"通过": true
+		},
+		{
+			"说明": "真实胶囊位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "合法输入尚未选类型不能启动",
+			"通过": true
+		},
+		{
+			"说明": "合法输入尚未选类型：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "合法输入尚未选类型：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "合法输入尚未选类型：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "合法输入尚未选类型：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "类型开启保持末帧且完全开门可启动",
+			"通过": true
+		},
+		{
+			"说明": "完全开门且类型稳定：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "完全开门且类型稳定：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "完全开门且类型稳定：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "完全开门且类型稳定：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "完全开门且类型稳定：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "启动前取得真实罐位转移锁",
+			"通过": true
+		},
+		{
+			"说明": "转移事务未结束禁止启动",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务保持锁定：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务保持锁定：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务保持锁定：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务保持锁定：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务结束：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务结束：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务结束：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务结束：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务结束：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "选择提交后只有一盏灯使用指定发光材质",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知：按钮使用本机独立蓝色运行材质",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知：只有既有运行补间持续闪烁",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知：运行发光倍率处于零至二",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知已在倍率二进入闪烁",
+			"通过": true
+		},
+		{
+			"说明": "按钮按压动画起点的开始通知已经进入运行灯态",
+			"通过": true
+		},
+		{
+			"说明": "按钮接受后立即计时且完成前两件内容不变",
+			"通过": true
+		},
+		{
+			"说明": "真实按钮点击被接受：按钮使用本机独立蓝色运行材质",
+			"通过": true
+		},
+		{
+			"说明": "真实按钮点击被接受：只有既有运行补间持续闪烁",
+			"通过": true
+		},
+		{
+			"说明": "真实按钮点击被接受：运行发光倍率处于零至二",
+			"通过": true
+		},
+		{
+			"说明": "真实按钮点击被接受：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "真实按钮点击被接受：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "同帧重入不能启动第二批次",
+			"通过": true
+		},
+		{
+			"说明": "提前完成回调不能越过真实两秒计时",
+			"通过": true
+		},
+		{
+			"说明": "运行中门和类型业务锁定",
+			"通过": true
+		},
+		{
+			"说明": "运行中两个库存转移入口锁定",
+			"通过": true
+		},
+		{
+			"说明": "运行中根设备交互锁定",
+			"通过": true
+		},
+		{
+			"说明": "暂停期间计时剩余量完全不变",
+			"通过": true
+		},
+		{
+			"说明": "暂停期间真实按钮闪烁倍率不推进",
+			"通过": true
+		},
+		{
+			"说明": "真实右键归还普通控制",
+			"通过": true
+		},
+		{
+			"说明": "右键退出有效且运行中拒绝重新进入",
+			"通过": true
+		},
+		{
+			"说明": "运行中退出聚焦：按钮使用本机独立蓝色运行材质",
+			"通过": true
+		},
+		{
+			"说明": "运行中退出聚焦：只有既有运行补间持续闪烁",
+			"通过": true
+		},
+		{
+			"说明": "运行中退出聚焦：运行发光倍率处于零至二",
+			"通过": true
+		},
+		{
+			"说明": "运行中退出聚焦：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "运行中退出聚焦：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：按钮使用本机独立蓝色运行材质",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：只有既有运行补间持续闪烁",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：运行发光倍率处于零至二",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：按钮使用本机独立蓝色运行材质",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：只有既有运行补间持续闪烁",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：运行发光倍率处于零至二",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "同步完成通知：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "同步完成通知：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "同步完成通知：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "同步完成通知：第0盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "同步完成通知：第0盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "同步完成通知：第1盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "同步完成通知：第1盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "实际接受至完成的游戏时间为两秒至一个物理采样帧误差",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成得到空罐和封装胶囊",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成：第0盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成：第0盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成：第1盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成：第1盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "所有实例变化观察者只看到成对完成状态",
+			"通过": true
+		},
+		{
+			"说明": "产物完整保留原药顺序重复、相位、波形与本轮类型",
+			"通过": true
+		},
+		{
+			"说明": "重复完成回调不改变产物",
+			"通过": true
+		},
+		{
+			"说明": "无图形夹具通过正式会话入口建立聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式设备进入稳定聚焦",
+			"通过": true
+		},
+		{
+			"说明": "完成后重新进入聚焦：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "完成后重新进入聚焦：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "完成后重新进入聚焦：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "完成后重新进入聚焦：第0盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "完成后重新进入聚焦：第0盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "完成后重新进入聚焦：第1盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "完成后重新进入聚焦：第1盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "完成后先取空罐保留选中类型",
+			"通过": true
+		},
+		{
+			"说明": "完成后先取空罐：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "完成后先取空罐：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "完成后先取空罐：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "完成后先取空罐：第0盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "完成后先取空罐：第0盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "完成后先取空罐：第1盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "完成后先取空罐：第1盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "原罐再次装填不会改动产物",
+			"通过": true
+		},
+		{
+			"说明": "完成待取时补满罐仍保留类型并拒绝再封装",
+			"通过": true
+		},
+		{
+			"说明": "完成待取时补满罐：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "完成待取时补满罐：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "完成待取时补满罐：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "完成待取时补满罐：第0盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "完成待取时补满罐：第0盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "完成待取时补满罐：第1盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "完成待取时补满罐：第1盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "产物取回候选失败保持胶囊占用、完成身份与类型",
+			"通过": true
+		},
+		{
+			"说明": "产物取回候选失败：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "产物取回候选失败：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "产物取回候选失败：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "产物取回候选失败：第0盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "产物取回候选失败：第0盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "产物取回候选失败：第1盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "产物取回候选失败：第1盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "库存变化通知前本轮胶囊来源、完成记录和类型已经清空",
+			"通过": true
+		},
+		{
+			"说明": "成功取胶囊库存通知仍处于原取放事务内",
+			"通过": true
+		},
+		{
+			"说明": "成功取胶囊的库存变化通知：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "成功取胶囊的库存变化通知：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "成功取胶囊的库存变化通知：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "成功取胶囊的库存变化通知：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "成功取回本轮胶囊才清除完成记录和类型",
+			"通过": true
+		},
+		{
+			"说明": "真实成功取胶囊路径发布已复位的库存变化通知",
+			"通过": true
+		},
+		{
+			"说明": "成功取回本轮胶囊：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "成功取回本轮胶囊：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "成功取回本轮胶囊：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "成功取回本轮胶囊：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "关闭后分别恢复第0盏灯的原材质",
+			"通过": true
+		},
+		{
+			"说明": "关闭后分别恢复第1盏灯的原材质",
+			"通过": true
+		},
+		{
+			"说明": "关闭后分别恢复第2盏灯的原材质",
+			"通过": true
+		},
+		{
+			"说明": "取回封装胶囊临时面板显示全部内容和封装类型",
+			"通过": true
+		},
+		{
+			"说明": "取回手持胶囊使用指定绿色标识",
+			"通过": true
+		},
+		{
+			"说明": "整件手持胶囊完整入画且至少保留十六像素边距：封装类型0",
+			"通过": true
+		},
+		{
+			"说明": "封装胶囊放回保持数据且不能二次封装",
+			"通过": true
+		},
+		{
+			"说明": "再次取回封装胶囊数据独立",
+			"通过": true
+		},
+		{
+			"说明": "切换至空格立即隐藏内容面板",
+			"通过": true
+		},
+		{
+			"说明": "产物先取或后取两种顺序都可取回罐",
+			"通过": true
+		},
+		{
+			"说明": "准备完整内容满罐实例",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收液体罐实例",
+			"通过": true
+		},
+		{
+			"说明": "真实罐位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "胶囊取放前舱门完全打开",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收胶囊实例",
+			"通过": true
+		},
+		{
+			"说明": "真实胶囊位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "合法输入尚未选类型不能启动",
+			"通过": true
+		},
+		{
+			"说明": "合法输入尚未选类型：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "合法输入尚未选类型：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "合法输入尚未选类型：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "合法输入尚未选类型：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "类型开启保持末帧且完全开门可启动",
+			"通过": true
+		},
+		{
+			"说明": "完全开门且类型稳定：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "完全开门且类型稳定：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "完全开门且类型稳定：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "完全开门且类型稳定：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "完全开门且类型稳定：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "启动前取得真实罐位转移锁",
+			"通过": true
+		},
+		{
+			"说明": "转移事务未结束禁止启动",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务保持锁定：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务保持锁定：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务保持锁定：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务保持锁定：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务结束：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务结束：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务结束：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务结束：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务结束：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "选择提交后只有一盏灯使用指定发光材质",
+			"通过": true
+		},
+		{
+			"说明": "关闭舱门途中禁止启动",
+			"通过": true
+		},
+		{
+			"说明": "舱门关闭途中：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "舱门关闭途中：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "舱门关闭途中：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "舱门关闭途中：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "完全关门仍可启动",
+			"通过": true
+		},
+		{
+			"说明": "完全关门且类型稳定：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "完全关门且类型稳定：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "完全关门且类型稳定：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "完全关门且类型稳定：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "完全关门且类型稳定：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知：按钮使用本机独立蓝色运行材质",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知：只有既有运行补间持续闪烁",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知：运行发光倍率处于零至二",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知已在倍率二进入闪烁",
+			"通过": true
+		},
+		{
+			"说明": "按钮按压动画起点的开始通知已经进入运行灯态",
+			"通过": true
+		},
+		{
+			"说明": "按钮接受后立即计时且完成前两件内容不变",
+			"通过": true
+		},
+		{
+			"说明": "真实按钮点击被接受：按钮使用本机独立蓝色运行材质",
+			"通过": true
+		},
+		{
+			"说明": "真实按钮点击被接受：只有既有运行补间持续闪烁",
+			"通过": true
+		},
+		{
+			"说明": "真实按钮点击被接受：运行发光倍率处于零至二",
+			"通过": true
+		},
+		{
+			"说明": "真实按钮点击被接受：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "真实按钮点击被接受：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "同帧重入不能启动第二批次",
+			"通过": true
+		},
+		{
+			"说明": "提前完成回调不能越过真实两秒计时",
+			"通过": true
+		},
+		{
+			"说明": "运行中门和类型业务锁定",
+			"通过": true
+		},
+		{
+			"说明": "运行中两个库存转移入口锁定",
+			"通过": true
+		},
+		{
+			"说明": "运行中根设备交互锁定",
+			"通过": true
+		},
+		{
+			"说明": "暂停期间计时剩余量完全不变",
+			"通过": true
+		},
+		{
+			"说明": "暂停期间真实按钮闪烁倍率不推进",
+			"通过": true
+		},
+		{
+			"说明": "真实右键归还普通控制",
+			"通过": true
+		},
+		{
+			"说明": "右键退出有效且运行中拒绝重新进入",
+			"通过": true
+		},
+		{
+			"说明": "运行中退出聚焦：按钮使用本机独立蓝色运行材质",
+			"通过": true
+		},
+		{
+			"说明": "运行中退出聚焦：只有既有运行补间持续闪烁",
+			"通过": true
+		},
+		{
+			"说明": "运行中退出聚焦：运行发光倍率处于零至二",
+			"通过": true
+		},
+		{
+			"说明": "运行中退出聚焦：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "运行中退出聚焦：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：按钮使用本机独立蓝色运行材质",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：只有既有运行补间持续闪烁",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：运行发光倍率处于零至二",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：按钮使用本机独立蓝色运行材质",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：只有既有运行补间持续闪烁",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：运行发光倍率处于零至二",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "同步完成通知：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "同步完成通知：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "同步完成通知：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "同步完成通知：第0盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "同步完成通知：第0盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "同步完成通知：第1盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "同步完成通知：第1盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "实际接受至完成的游戏时间为两秒至一个物理采样帧误差",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成得到空罐和封装胶囊",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成：第0盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成：第0盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成：第1盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成：第1盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "所有实例变化观察者只看到成对完成状态",
+			"通过": true
+		},
+		{
+			"说明": "产物完整保留原药顺序重复、相位、波形与本轮类型",
+			"通过": true
+		},
+		{
+			"说明": "重复完成回调不改变产物",
+			"通过": true
+		},
+		{
+			"说明": "无图形夹具通过正式会话入口建立聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式设备进入稳定聚焦",
+			"通过": true
+		},
+		{
+			"说明": "完成后重新进入聚焦：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "完成后重新进入聚焦：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "完成后重新进入聚焦：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "完成后重新进入聚焦：第0盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "完成后重新进入聚焦：第0盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "完成后重新进入聚焦：第1盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "完成后重新进入聚焦：第1盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "完成后舱门运动中：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "完成后舱门运动中：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "完成后舱门运动中：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "完成后舱门运动中：第0盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "完成后舱门运动中：第0盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "完成后舱门运动中：第1盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "完成后舱门运动中：第1盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "完成后完全开门：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "完成后完全开门：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "完成后完全开门：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "完成后完全开门：第0盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "完成后完全开门：第0盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "完成后完全开门：第1盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "完成后完全开门：第1盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "库存变化通知前本轮胶囊来源、完成记录和类型已经清空",
+			"通过": true
+		},
+		{
+			"说明": "成功取胶囊库存通知仍处于原取放事务内",
+			"通过": true
+		},
+		{
+			"说明": "成功取胶囊的库存变化通知：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "成功取胶囊的库存变化通知：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "成功取胶囊的库存变化通知：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "成功取胶囊的库存变化通知：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "成功取回本轮胶囊才清除完成记录和类型",
+			"通过": true
+		},
+		{
+			"说明": "真实成功取胶囊路径发布已复位的库存变化通知",
+			"通过": true
+		},
+		{
+			"说明": "成功取回本轮胶囊：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "成功取回本轮胶囊：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "成功取回本轮胶囊：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "成功取回本轮胶囊：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "关闭后分别恢复第0盏灯的原材质",
+			"通过": true
+		},
+		{
+			"说明": "关闭后分别恢复第1盏灯的原材质",
+			"通过": true
+		},
+		{
+			"说明": "关闭后分别恢复第2盏灯的原材质",
+			"通过": true
+		},
+		{
+			"说明": "取回封装胶囊临时面板显示全部内容和封装类型",
+			"通过": true
+		},
+		{
+			"说明": "取回手持胶囊使用指定绿色标识",
+			"通过": true
+		},
+		{
+			"说明": "整件手持胶囊完整入画且至少保留十六像素边距：封装类型1",
+			"通过": true
+		},
+		{
+			"说明": "封装胶囊放回保持数据且不能二次封装",
+			"通过": true
+		},
+		{
+			"说明": "再次取回封装胶囊数据独立",
+			"通过": true
+		},
+		{
+			"说明": "切换至空格立即隐藏内容面板",
+			"通过": true
+		},
+		{
+			"说明": "产物先取或后取两种顺序都可取回罐",
+			"通过": true
+		},
+		{
+			"说明": "两台真实封装器配置有效",
+			"通过": true
+		},
+		{
+			"说明": "两槽初始为空且没有类型选择",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "无图形夹具通过正式会话入口建立聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式设备进入稳定聚焦",
+			"通过": true
+		},
+		{
+			"说明": "准备完整内容满罐实例",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收液体罐实例",
+			"通过": true
+		},
+		{
+			"说明": "真实罐位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "胶囊取放前舱门完全打开",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收胶囊实例",
+			"通过": true
+		},
+		{
+			"说明": "真实胶囊位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "合法输入尚未选类型不能启动",
+			"通过": true
+		},
+		{
+			"说明": "合法输入尚未选类型：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "合法输入尚未选类型：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "合法输入尚未选类型：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "合法输入尚未选类型：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "类型开启保持末帧且完全开门可启动",
+			"通过": true
+		},
+		{
+			"说明": "完全开门且类型稳定：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "完全开门且类型稳定：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "完全开门且类型稳定：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "完全开门且类型稳定：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "完全开门且类型稳定：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "启动前取得真实罐位转移锁",
+			"通过": true
+		},
+		{
+			"说明": "转移事务未结束禁止启动",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务保持锁定：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务保持锁定：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务保持锁定：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务保持锁定：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务结束：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务结束：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务结束：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务结束：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "启动前取放事务结束：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "选择提交后只有一盏灯使用指定发光材质",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知：按钮使用本机独立蓝色运行材质",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知：只有既有运行补间持续闪烁",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知：运行发光倍率处于零至二",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知已在倍率二进入闪烁",
+			"通过": true
+		},
+		{
+			"说明": "按钮按压动画起点的开始通知已经进入运行灯态",
+			"通过": true
+		},
+		{
+			"说明": "按钮接受后立即计时且完成前两件内容不变",
+			"通过": true
+		},
+		{
+			"说明": "真实按钮点击被接受：按钮使用本机独立蓝色运行材质",
+			"通过": true
+		},
+		{
+			"说明": "真实按钮点击被接受：只有既有运行补间持续闪烁",
+			"通过": true
+		},
+		{
+			"说明": "真实按钮点击被接受：运行发光倍率处于零至二",
+			"通过": true
+		},
+		{
+			"说明": "真实按钮点击被接受：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "真实按钮点击被接受：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "同帧重入不能启动第二批次",
+			"通过": true
+		},
+		{
+			"说明": "提前完成回调不能越过真实两秒计时",
+			"通过": true
+		},
+		{
+			"说明": "运行中门和类型业务锁定",
+			"通过": true
+		},
+		{
+			"说明": "运行中两个库存转移入口锁定",
+			"通过": true
+		},
+		{
+			"说明": "运行中根设备交互锁定",
+			"通过": true
+		},
+		{
+			"说明": "暂停期间计时剩余量完全不变",
+			"通过": true
+		},
+		{
+			"说明": "暂停期间真实按钮闪烁倍率不推进",
+			"通过": true
+		},
+		{
+			"说明": "真实右键归还普通控制",
+			"通过": true
+		},
+		{
+			"说明": "右键退出有效且运行中拒绝重新进入",
+			"通过": true
+		},
+		{
+			"说明": "运行中退出聚焦：按钮使用本机独立蓝色运行材质",
+			"通过": true
+		},
+		{
+			"说明": "运行中退出聚焦：只有既有运行补间持续闪烁",
+			"通过": true
+		},
+		{
+			"说明": "运行中退出聚焦：运行发光倍率处于零至二",
+			"通过": true
+		},
+		{
+			"说明": "运行中退出聚焦：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "运行中退出聚焦：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：按钮使用本机独立蓝色运行材质",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：只有既有运行补间持续闪烁",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：运行发光倍率处于零至二",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：按钮使用本机独立蓝色运行材质",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：只有既有运行补间持续闪烁",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：运行发光倍率处于零至二",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "共同提交内容通知仍保持运行显示：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "同步完成通知：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "同步完成通知：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "同步完成通知：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "同步完成通知：第0盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "同步完成通知：第0盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "同步完成通知：第1盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "同步完成通知：第1盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "实际接受至完成的游戏时间为两秒至一个物理采样帧误差",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成得到空罐和封装胶囊",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成：第0盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成：第0盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成：第1盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "退出聚焦后自然完成：第1盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "所有实例变化观察者只看到成对完成状态",
+			"通过": true
+		},
+		{
+			"说明": "产物完整保留原药顺序重复、相位、波形与本轮类型",
+			"通过": true
+		},
+		{
+			"说明": "重复完成回调不改变产物",
+			"通过": true
+		},
+		{
+			"说明": "无图形夹具通过正式会话入口建立聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式设备进入稳定聚焦",
+			"通过": true
+		},
+		{
+			"说明": "完成后重新进入聚焦：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "完成后重新进入聚焦：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "完成后重新进入聚焦：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "完成后重新进入聚焦：第0盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "完成后重新进入聚焦：第0盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "完成后重新进入聚焦：第1盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "完成后重新进入聚焦：第1盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "完成后先取空罐保留选中类型",
+			"通过": true
+		},
+		{
+			"说明": "完成后先取空罐：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "完成后先取空罐：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "完成后先取空罐：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "完成后先取空罐：第0盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "完成后先取空罐：第0盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "完成后先取空罐：第1盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "完成后先取空罐：第1盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "原罐再次装填不会改动产物",
+			"通过": true
+		},
+		{
+			"说明": "完成待取时补满罐仍保留类型并拒绝再封装",
+			"通过": true
+		},
+		{
+			"说明": "完成待取时补满罐：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "完成待取时补满罐：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "完成待取时补满罐：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "完成待取时补满罐：第0盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "完成待取时补满罐：第0盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "完成待取时补满罐：第1盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "完成待取时补满罐：第1盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "库存变化通知前本轮胶囊来源、完成记录和类型已经清空",
+			"通过": true
+		},
+		{
+			"说明": "成功取胶囊库存通知仍处于原取放事务内",
+			"通过": true
+		},
+		{
+			"说明": "成功取胶囊的库存变化通知：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "成功取胶囊的库存变化通知：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "成功取胶囊的库存变化通知：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "成功取胶囊的库存变化通知：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "成功取回本轮胶囊才清除完成记录和类型",
+			"通过": true
+		},
+		{
+			"说明": "真实成功取胶囊路径发布已复位的库存变化通知",
+			"通过": true
+		},
+		{
+			"说明": "成功取回本轮胶囊：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "成功取回本轮胶囊：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "成功取回本轮胶囊：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "成功取回本轮胶囊：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "关闭后分别恢复第0盏灯的原材质",
+			"通过": true
+		},
+		{
+			"说明": "关闭后分别恢复第1盏灯的原材质",
+			"通过": true
+		},
+		{
+			"说明": "关闭后分别恢复第2盏灯的原材质",
+			"通过": true
+		},
+		{
+			"说明": "取回封装胶囊临时面板显示全部内容和封装类型",
+			"通过": true
+		},
+		{
+			"说明": "取回手持胶囊使用指定绿色标识",
+			"通过": true
+		},
+		{
+			"说明": "整件手持胶囊完整入画且至少保留十六像素边距：封装类型2",
+			"通过": true
+		},
+		{
+			"说明": "封装胶囊放回保持数据且不能二次封装",
+			"通过": true
+		},
+		{
+			"说明": "再次取回封装胶囊数据独立",
+			"通过": true
+		},
+		{
+			"说明": "切换至空格立即隐藏内容面板",
+			"通过": true
+		},
+		{
+			"说明": "产物先取或后取两种顺序都可取回罐",
+			"通过": true
+		},
+		{
+			"说明": "两台真实封装器配置有效",
+			"通过": true
+		},
+		{
+			"说明": "两槽初始为空且没有类型选择",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "无图形夹具通过正式会话入口建立聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式设备进入稳定聚焦",
+			"通过": true
+		},
+		{
+			"说明": "准备旧请求来源罐",
+			"通过": true
+		},
+		{
+			"说明": "点击入队后真实库存切换选中格",
+			"通过": true
+		},
+		{
+			"说明": "旧选中格快照请求拒绝且保留来源",
+			"通过": true
+		},
+		{
+			"说明": "两台真实封装器配置有效",
+			"通过": true
+		},
+		{
+			"说明": "两槽初始为空且没有类型选择",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "无图形夹具通过正式会话入口建立聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式设备进入稳定聚焦",
+			"通过": true
+		},
+		{
+			"说明": "候选故障准备原满罐",
+			"通过": true
+		},
+		{
+			"说明": "手持合法满罐跨设备请求拒绝且保持来源",
+			"通过": true
+		},
+		{
+			"说明": "候选世界种类不匹配不丢失原满罐",
+			"通过": true
+		},
+		{
+			"说明": "修复候选后可以放入同一满罐",
+			"通过": true
+		},
+		{
+			"说明": "手持候选缺少内容网格不改变罐位和源内容",
+			"通过": true
+		},
+		{
+			"说明": "候选修复后取回保持实例",
+			"通过": true
+		},
+		{
+			"说明": "两台真实封装器配置有效",
+			"通过": true
+		},
+		{
+			"说明": "两槽初始为空且没有类型选择",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "无图形夹具通过正式会话入口建立聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式设备进入稳定聚焦",
+			"通过": true
+		},
+		{
+			"说明": "准备完整内容满罐实例",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收液体罐实例",
+			"通过": true
+		},
+		{
+			"说明": "真实罐位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "胶囊取放前舱门完全打开",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收胶囊实例",
+			"通过": true
+		},
+		{
+			"说明": "真实胶囊位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知：按钮使用本机独立蓝色运行材质",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知：只有既有运行补间持续闪烁",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知：运行发光倍率处于零至二",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "同步开始通知已在倍率二进入闪烁",
+			"通过": true
+		},
+		{
+			"说明": "按钮按压动画起点的开始通知已经进入运行灯态",
+			"通过": true
+		},
+		{
+			"说明": "来源变化故障批次真实启动",
+			"通过": true
+		},
+		{
+			"说明": "来源变化故障批次启动后：按钮使用本机独立蓝色运行材质",
+			"通过": true
+		},
+		{
+			"说明": "来源变化故障批次启动后：只有既有运行补间持续闪烁",
+			"通过": true
+		},
+		{
+			"说明": "来源变化故障批次启动后：运行发光倍率处于零至二",
+			"通过": true
+		},
+		{
+			"说明": "来源变化故障批次启动后：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "来源变化故障批次启动后：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "同步失败通知：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "同步失败通知：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "同步失败通知：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "同步失败通知：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "完成前源字段变化拒绝提交且没有半件产物",
+			"通过": true
+		},
+		{
+			"说明": "来源变化拒绝提交后：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "来源变化拒绝提交后：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "来源变化拒绝提交后：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "来源变化拒绝提交后：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "两台真实封装器配置有效",
+			"通过": true
+		},
+		{
+			"说明": "两槽初始为空且没有类型选择",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "设备初始化：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "无图形夹具通过正式会话入口建立聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式设备进入稳定聚焦",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景封装器初始空槽并正常聚焦",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景初始空槽：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景初始空槽：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景初始空槽：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景初始空槽：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "准备完整内容满罐实例",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收液体罐实例",
+			"通过": true
+		},
+		{
+			"说明": "真实罐位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "胶囊取放前舱门完全打开",
+			"通过": true
+		},
+		{
+			"说明": "选中空格接收胶囊实例",
+			"通过": true
+		},
+		{
+			"说明": "真实胶囊位点击保持原实例且移除库存来源",
+			"通过": true
+		},
+		{
+			"说明": "目标门及开关在测试上限内完成；状态按自然完成确认",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景准备完成：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景准备完成：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景准备完成：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景准备完成：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景准备完成：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景按钮点击被接受：按钮使用本机独立蓝色运行材质",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景按钮点击被接受：只有既有运行补间持续闪烁",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景按钮点击被接受：运行发光倍率处于零至二",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景按钮点击被接受：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景按钮点击被接受：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景真实射线点击完成封装",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景完成封装：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景完成封装：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景完成封装：按钮就绪或完成待取沿用一号蓝色倍率",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景完成封装：第0盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景完成封装：第0盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景完成封装：第1盏完成灯保持指定蓝色常亮材质",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景完成封装：第1盏完成灯倍率保持二",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景成功取胶囊：开始按钮使用指定固定材质",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景成功取胶囊：没有残留按钮闪烁补间",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景成功取胶囊：第0盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "实际主场景成功取胶囊：第1盏完成灯保持指定灰色材质",
+			"通过": true
+		},
+		{
+			"说明": "整件手持胶囊完整入画且至少保留十六像素边距：主场景",
+			"通过": true
+		},
+		{
+			"说明": "真实右键归还普通控制",
+			"通过": true
+		}
+	],
+	"断言数": 773,
+	"计时采样": [
+		{
+			"封装类型": 0,
+			"暂停物理帧数": 20,
+			"有效物理帧数": 121,
+			"物理帧率": 60,
+			"计时秒数": 2.0
+		},
+		{
+			"封装类型": 1,
+			"暂停物理帧数": 20,
+			"有效物理帧数": 121,
+			"物理帧率": 60,
+			"计时秒数": 2.0
+		},
+		{
+			"封装类型": 2,
+			"暂停物理帧数": 20,
+			"有效物理帧数": 121,
+			"物理帧率": 60,
+			"计时秒数": 2.0
+		}
+	]
+}

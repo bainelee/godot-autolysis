@@ -60,6 +60,13 @@ func _frames(count: int = 2) -> void:
 		await process_frame
 
 
+func _wait_slot_state(slot: AutolysisBlendSlot, opened: bool) -> void:
+	var deadline: int = Time.get_ticks_msec() + 8000
+	while slot.is_animating() and Time.get_ticks_msec() < deadline:
+		await _frames(1)
+	_check(slot.is_open() if opened else slot.is_closed(), "对应槽门在失败上限内完成目标动作；%s" % slot.get_motion_error())
+
+
 func _clear_world() -> void:
 	for child: Node in world.get_children():
 		child.queue_free()
@@ -92,7 +99,8 @@ func _fixture(open_slots: bool = true) -> Dictionary:
 			var component: AutolysisInteractionComponent = slot.get_node("InteractionComponent") as AutolysisInteractionComponent
 			_check(component.try_interact(player), "通过正式开闭组件打开第%d槽" % index)
 	if open_slots:
-		await _frames(18)
+		for slot: AutolysisBlendSlot in slots:
+			await _wait_slot_state(slot, true)
 	return {"player": player, "machine": machine, "target": target, "slots": slots}
 
 
@@ -163,7 +171,7 @@ func _test_busy_and_selected_slot() -> void:
 	_check(not inventory.can_place_in_blend_slot(player, slot) and not inventory.try_place_in_blend_slot(player, slot), "关闭槽位拒绝放入")
 	_check(component.try_interact(player), "通过组件开始打开指定槽位")
 	_check(not inventory.try_place_in_blend_slot(player, slot), "槽位打开动画期间拒绝放入")
-	await _frames(18)
+	await _wait_slot_state(slot, true)
 	_check(inventory.try_place_in_blend_slot(player, slot), "完全打开后允许放入")
 	_check(inventory.try_receive_item(SODIUM), "原当前格重新持有另一原药")
 	var item: AutolysisRawMaterial = slot.get_stored_item()
@@ -178,7 +186,7 @@ func _test_busy_and_selected_slot() -> void:
 	var old_item_transform: Transform3D = slot.get_stored_item().global_transform
 	_check(component.try_interact(player), "含药槽位允许关闭")
 	_check(not inventory.try_take_from_blend_slot(player, slot), "含药槽关闭运动期间拒绝取回")
-	await _frames(18)
+	await _wait_slot_state(slot, false)
 	_check(slot.get_stored_item() == item or slot.owns_item(slot.get_stored_item()), "含药关闭保留唯一占用")
 	_check(not slot.get_stored_item().global_transform.is_equal_approx(old_item_transform) and slot.get_stored_item().transform.is_equal_approx(Transform3D.IDENTITY), "原药真实世界姿态随槽位动画变化且局部姿态保持单位变换")
 	_check(_inventory_count(inventory) + _stored_count(slots) == 2, "切格、拒绝和含药动画均保持总数")

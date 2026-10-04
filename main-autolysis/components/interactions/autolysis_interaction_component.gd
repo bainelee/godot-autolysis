@@ -1,6 +1,6 @@
 class_name AutolysisInteractionComponent
 extends Node3D
-## 附加在物理体上的交互入口；物体负责接收请求并执行效果。
+## 附加在物理体上的交互入口；明确绑定的拥有者执行业务，信号仅发布分发观察。
 
 signal interaction_requested(actor: Node3D)
 
@@ -16,6 +16,21 @@ var _is_dispatching: bool = false
 var _is_querying_availability: bool = false
 var _availability_check_configured: bool = false
 var _availability_check: Callable = Callable()
+var _execution_handler: Callable = Callable()
+
+
+## 同步业务入口接收发起者；观察者连接数量不参与业务许可。
+func set_execution_handler(handler: Callable) -> void:
+	_execution_handler = handler
+
+
+func clear_execution_handler() -> void:
+	_execution_handler = Callable()
+
+
+## 可按期望回调核对登记，避免其他入口错误借用本组件。
+func has_execution_handler(expected: Callable = Callable()) -> bool:
+	return _has_live_execution_handler() and (expected.is_null() or _execution_handler == expected)
 
 
 ## 查询必须同步、只读，接收发起者并返回布尔值；无效配置不会退回无限制状态。
@@ -65,7 +80,7 @@ func _has_base_permission(actor: Node3D, requested_mode: InteractionMode) -> boo
 		return false
 	if not physical_parent.is_inside_tree() or physical_parent.is_queued_for_deletion():
 		return false
-	return _has_single_live_receiver()
+	return _has_live_execution_handler()
 
 
 ## 返回真仅表示请求已分发，不表示动画或其他延迟效果已完成。
@@ -73,11 +88,26 @@ func try_interact(actor: Node3D, requested_mode: InteractionMode = InteractionMo
 	if not can_interact(actor, requested_mode):
 		return false
 	_is_dispatching = true
-	interaction_requested.emit(actor)
-	# 接收者可能释放物体；不在已释放的组件上继续写入。
+	var handler: Callable = _execution_handler
+	handler.call(actor)
+	# 业务可能释放组件、命中体或发起者；仅向仍有效的观察上下文通知。
+	if not is_instance_valid(self):
+		return true
+	if _dispatch_context_is_live(actor):
+		interaction_requested.emit(actor)
+	# 观察期间仍保持互斥；观察者释放源对象后不继续访问成员。
 	if is_instance_valid(self):
 		_is_dispatching = false
 	return true
+
+
+func _dispatch_context_is_live(actor: Variant) -> bool:
+	if not is_inside_tree() or is_queued_for_deletion():
+		return false
+	var physical_parent: Node = get_parent()
+	if not is_instance_valid(physical_parent) or not physical_parent.is_inside_tree() or physical_parent.is_queued_for_deletion():
+		return false
+	return is_instance_valid(actor) and actor is Node3D and actor.is_inside_tree() and not actor.is_queued_for_deletion()
 
 
 func _has_live_availability_check() -> bool:
@@ -92,20 +122,10 @@ func _has_live_availability_check() -> bool:
 	return _availability_check.get_argument_count() == 1
 
 
-func _has_single_live_receiver() -> bool:
-	var connections: Array[Dictionary] = []
-	connections.assign(interaction_requested.get_connections())
-	if connections.size() != 1:
+func _has_live_execution_handler() -> bool:
+	if not _execution_handler.is_valid() or _execution_handler.get_argument_count() != 1:
 		return false
-	var connection: Dictionary = connections[0]
-	var receiver: Callable = connection["callable"]
-	var flags: int = connection["flags"]
-	# 延迟连接或追加源对象会破坏同步、单参数请求契约。
-	if (flags & Object.CONNECT_DEFERRED) != 0 or (flags & Object.CONNECT_APPEND_SOURCE_OBJECT) != 0:
-		return false
-	if not receiver.is_valid() or receiver.get_argument_count() != 1:
-		return false
-	var receiver_object: Object = receiver.get_object()
+	var receiver_object: Object = _execution_handler.get_object()
 	if not is_instance_valid(receiver_object) or not receiver_object is Node:
 		return false
 	var receiver_node: Node = receiver_object as Node

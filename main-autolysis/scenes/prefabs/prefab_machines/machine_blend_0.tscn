@@ -708,13 +708,17 @@ material_override = ExtResource("2_vnha0")
 mesh = SubResource("BoxMesh_wjtth")
 skeleton = NodePath("../../..")
 
-[node name="handle_interaction" type="StaticBody3D" parent="switch_handle_blend_mechine_can_reset" unique_id=396261861 node_paths=PackedStringArray("device_root", "drag_interaction", "collision_shape")]
+[node name="HandleTopReference" type="Marker3D" parent="switch_handle_blend_mechine_can_reset"]
+position = Vector3(0, 0.12, 0)
+
+[node name="handle_interaction" type="StaticBody3D" parent="switch_handle_blend_mechine_can_reset" unique_id=396261861 node_paths=PackedStringArray("device_root", "drag_interaction", "collision_shape", "top_reference")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0)
 collision_layer = 40
 script = ExtResource("14_handle")
 device_root = NodePath("../..")
 drag_interaction = NodePath("InteractionComponent")
 collision_shape = NodePath("collision_handle_interaction")
+top_reference = NodePath("../HandleTopReference")
 mouse_to_handle_ratio = 0.00099999999999999
 
 [node name="InteractionComponent" parent="switch_handle_blend_mechine_can_reset/handle_interaction" unique_id=1143521659 instance=ExtResource("13_interaction")]

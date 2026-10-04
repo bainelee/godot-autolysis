@@ -1,0 +1,70 @@
+ERROR: Condition "!is_inside_tree()" is true. Returning: Transform3D()
+   at: get_global_transform (scene/3d/node_3d.cpp:642)
+   GDScript backtrace (most recent call first):
+       [0] _test_variant (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:83)
+       [1] _run (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:29)
+       [2] _test_variant (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:160)
+       [3] _frames (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:174)
+WARNING: Adding 'waste_liquid_storage_tank_lid' as child to '新分组' will make owner 'waste_liquid_storage_tank_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _test_variant (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:83)
+       [1] _run (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:29)
+       [2] _test_variant (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:160)
+       [3] _frames (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:174)
+WARNING: Adding 'AnimationPlayer' as child to '新分组' will make owner 'waste_liquid_storage_tank_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _test_variant (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:88)
+       [1] _run (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:29)
+       [2] _test_variant (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:160)
+       [3] _frames (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:174)
+ERROR: Condition "!is_inside_tree()" is true. Returning: Transform3D()
+   at: get_global_transform (scene/3d/node_3d.cpp:642)
+   GDScript backtrace (most recent call first):
+       [0] _test_variant (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:83)
+       [1] _run (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:29)
+       [2] _test_variant (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:160)
+       [3] _frames (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:174)
+WARNING: Adding 'cabinet_door_left_root' as child to '新分组' will make owner 'cabinet_workroom_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _test_variant (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:83)
+       [1] _run (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:29)
+       [2] _test_variant (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:160)
+       [3] _frames (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:174)
+WARNING: Adding 'AnimationPlayer' as child to '新分组' will make owner 'cabinet_workroom_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _test_variant (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:88)
+       [1] _run (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:29)
+       [2] _test_variant (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:160)
+       [3] _frames (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:174)
+ERROR: Condition "!is_inside_tree()" is true. Returning: Transform3D()
+   at: get_global_transform (scene/3d/node_3d.cpp:642)
+   GDScript backtrace (most recent call first):
+       [0] _test_variant (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:91)
+       [1] _run (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:29)
+       [2] _test_variant (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:160)
+       [3] _frames (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:174)
+WARNING: Adding 'liquid_tank_slot_0' as child to '新分组' will make owner 'cabinet_workroom_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _test_variant (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:91)
+       [1] _run (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:29)
+       [2] _test_variant (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:160)
+       [3] _frames (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:174)
+ERROR: Condition "!is_inside_tree()" is true. Returning: Transform3D()
+   at: get_global_transform (scene/3d/node_3d.cpp:642)
+   GDScript backtrace (most recent call first):
+       [0] _test_variant (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:93)
+       [1] _run (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:29)
+       [2] _test_variant (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:160)
+       [3] _frames (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:174)
+WARNING: Adding 'liquid_tank_slot_1' as child to '新分组' will make owner 'cabinet_workroom_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _test_variant (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:93)
+       [1] _run (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:29)
+       [2] _test_variant (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:160)
+       [3] _frames (res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd:174)

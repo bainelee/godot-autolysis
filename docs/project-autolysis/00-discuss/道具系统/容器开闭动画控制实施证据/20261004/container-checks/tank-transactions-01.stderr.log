@@ -1,0 +1,12 @@
+SCRIPT ERROR: Out of bounds get index '0' (on base: 'Array[Dictionary]')
+   at: _test_observer_reentry (res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd:306)
+   GDScript backtrace (most recent call first):
+       [0] _test_observer_reentry (res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd:306)
+       [1] _fixture (res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd:106)
+       [2] _frames (res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd:67)
+SCRIPT ERROR: Cannot call method 'reparent' on a null value.
+   at: _test_orphaned_storage (res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd:346)
+   GDScript backtrace (most recent call first):
+       [0] _test_orphaned_storage (res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd:346)
+       [1] _fixture (res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd:106)
+       [2] _frames (res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd:67)

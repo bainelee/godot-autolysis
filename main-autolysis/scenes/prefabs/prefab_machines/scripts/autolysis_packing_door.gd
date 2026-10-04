@@ -1,6 +1,6 @@
 class_name AutolysisPackingDoor
 extends AutolysisPackingMotion
-## 舱门运动不改变本机类型；胶囊取放依赖完整打开端帧。
+## 舱门运动不改变本机类型；胶囊取放依赖打开动作自然完成。
 
 
 func can_toggle(actor: Node3D) -> bool:

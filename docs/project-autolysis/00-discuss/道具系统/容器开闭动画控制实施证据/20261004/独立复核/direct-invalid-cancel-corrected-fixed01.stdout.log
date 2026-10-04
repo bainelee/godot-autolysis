@@ -1,0 +1,10 @@
+Godot Engine v4.6.1.stable.official.14d19694e - https://godotengine.org
+
+初始化类型：废液罐；可切换：true
+依赖失效类型：废液罐；取消次数：1；拒绝切换：true；动作停止：true
+修复重新绑定：true
+修复后类型：废液罐；切换可用：true；稳定关闭：true；关闭完整姿态：true
+初始化类型：专用柜；可切换：true
+依赖失效类型：专用柜；取消次数：1；拒绝切换：true；动作停止：true
+修复重新绑定：true
+修复后类型：专用柜；切换可用：true；稳定关闭：true；关闭完整姿态：true

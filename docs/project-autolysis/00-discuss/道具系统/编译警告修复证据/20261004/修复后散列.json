@@ -1,0 +1,14 @@
+[
+  {
+    "Path": "D:\\autolysis\\main-autolysis\\player\\components\\item_drop_shape_cast.gd",
+    "Hash": "095B48259CC0F1FCA27733A01CE91A24AC330FFF82860DC939FC28A16EC6BAC9"
+  },
+  {
+    "Path": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+    "Hash": "1D5134652CC5BB3D9E28D1DBAB31EFD1FC21217C9A6436FE9C1EB66D5A57D189"
+  },
+  {
+    "Path": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_motion.gd",
+    "Hash": "9DD67DAE13C6BCCF06B69D03570307C49B7C0EF90CC950BD315AD832CC66DA17"
+  }
+]

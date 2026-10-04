@@ -39,7 +39,7 @@ func _prepare_atomic_batch() -> void:
 	atomic_tank = await _put_tank(_source_contents(1))
 	atomic_capsule = await _put_capsule()
 	check(machine.try_select_type(player, 1), "原子验收正式机器接受针酊粉类型选择")
-	await frames(18)
+	await _wait_packing_motion()
 	check(machine.can_start_processing(), "原子验收批次前提成立")
 	atomic_callbacks = 0
 	atomic_partial = false

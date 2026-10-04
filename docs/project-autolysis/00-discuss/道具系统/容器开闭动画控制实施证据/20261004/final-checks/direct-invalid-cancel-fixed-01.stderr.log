@@ -1,0 +1,5 @@
+SCRIPT ERROR: Invalid access to property or key 'door_collision' on a base object of type 'StaticBody3D (AutolysisLiquidTankCabinet)'.
+   at: ImmediateCancel.cancel (C:/Users/baine/AppData/Local/Temp/autolysis-independent-event-20261004/direct-invalid-cancel-probe.gd:7)
+   GDScript backtrace (most recent call first):
+       [0] cancel (C:/Users/baine/AppData/Local/Temp/autolysis-independent-event-20261004/direct-invalid-cancel-probe.gd:7)
+       [1] _physics_process (res://main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd:444)

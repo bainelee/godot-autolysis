@@ -8,11 +8,6 @@ signal processing_failed(batch_id: int, reason: String)
 
 const PROCESSING_SECONDS: float = 2.0
 const NO_TYPE: int = -1
-const INDICATOR_HALF_CYCLE_SECONDS: float = 0.5
-const INDICATOR_RED_MATERIAL = preload("res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres")
-const INDICATOR_READY_MATERIAL = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres")
-const INDICATOR_BLUE_MATERIAL = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_blue_0.tres")
-const INDICATOR_GREY_MATERIAL = preload("res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres")
 
 enum IndicatorState { DEFAULT, READY, RUNNING, COMPLETED }
 
@@ -28,6 +23,14 @@ enum IndicatorState { DEFAULT, READY, RUNNING, COMPLETED }
 @export var processing_timer: Timer
 @export var start_indicator: MeshInstance3D
 @export var completion_indicators: Array[MeshInstance3D] = []
+@export_group("提示灯表现")
+@export var indicator_default_material: StandardMaterial3D = preload("res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres")
+@export var indicator_ready_material: StandardMaterial3D = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres")
+@export var indicator_running_material: StandardMaterial3D = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_blue_0.tres")
+@export var indicator_incomplete_material: StandardMaterial3D = preload("res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres")
+@export var indicator_half_cycle_seconds: float = 0.5
+@export var indicator_emission_minimum: float = 0.0
+@export var indicator_emission_maximum: float = 2.0
 
 var _configured: bool = false
 var _processing: bool = false
@@ -46,6 +49,7 @@ var _batch_capsule_instance: AutolysisItemInstance
 var _batch_source: AutolysisLiquidContents
 var _batch_type: int = NO_TYPE
 var _indicator_enabled: bool = false
+var _completion_indicator_enabled: bool = false
 var _indicator_state: int = -1
 var _indicator_blue_material: StandardMaterial3D
 var _indicator_tween: Tween
@@ -58,19 +62,19 @@ func _ready() -> void:
 	if not _validate_configuration():
 		push_error("封装器配置无效：%s" % get_path())
 		return
-	animation_source.stop(true)
-	animation_source.active = false
+	if _node_is_live(animation_source):
+		animation_source.stop(true)
+		animation_source.active = false
 	if not tank_place.configure(self, focus_target) or not capsule_place.configure(self, focus_target):
 		push_error("封装器槽位配置失败：%s；%s" % [tank_place.get_configuration_error(), capsule_place.get_configuration_error()])
 		return
 	if not door.configure(self, focus_target, _create_player(door.animation_name, "PackingDoorAnimation")):
-		push_error("封装器舱门配置失败：%s" % door.get_configuration_error())
-		return
+		push_warning("封装器舱门停止更新：%s" % door.get_configuration_error())
 	for index: int in type_switches.size():
 		var control: AutolysisPackingTypeSwitch = type_switches[index]
 		if not control.configure(self, focus_target, _create_player(control.animation_name, "PackingTypeAnimation_%d" % index)):
-			push_error("封装器类型开关配置失败：%s" % control.get_configuration_error())
-			return
+			push_warning("封装器类型开关停止更新：%s" % control.get_configuration_error())
+		control.motion_cancelled.connect(_on_type_motion_cancelled.bind(control))
 	if not start_button.configure(self, focus_target, _create_player(start_button.animation_name, "PackingStartAnimation")):
 		push_error("封装器开始按钮配置失败：%s" % start_button.get_configuration_error())
 		return
@@ -78,7 +82,7 @@ func _ready() -> void:
 		push_error("封装器聚焦描述登记失败：%s" % get_path())
 		return
 	root_interaction.set_availability_check(_can_enter)
-	root_interaction.interaction_requested.connect(_on_entry_requested)
+	root_interaction.set_execution_handler(_on_entry_requested)
 	processing_timer.timeout.connect(_on_processing_timeout)
 	_configured = true
 	tank_place.transfer_interaction.is_enabled = true
@@ -93,29 +97,53 @@ func _ready() -> void:
 
 ## 显示依赖独立校验；失效时只停灯，不改变封装业务许可或故障锁。
 func _initialize_indicator() -> void:
-	if not INDICATOR_RED_MATERIAL is StandardMaterial3D or not INDICATOR_READY_MATERIAL is StandardMaterial3D or not INDICATOR_BLUE_MATERIAL is StandardMaterial3D or not INDICATOR_GREY_MATERIAL is StandardMaterial3D:
-		_disable_indicator("四份提示灯材质必须为 StandardMaterial3D（标准三维材质）")
-		return
-	_indicator_blue_material = INDICATOR_BLUE_MATERIAL.duplicate() as StandardMaterial3D
-	if not _indicator_dependencies_are_valid():
-		_disable_indicator("按钮网格、双完成网格的归属、网格或独立运行材质无效")
-		return
-	_indicator_enabled = true
-	start_indicator.tree_exiting.connect(_on_indicator_exiting)
+	if is_instance_valid(indicator_running_material):
+		_indicator_blue_material = indicator_running_material.duplicate() as StandardMaterial3D
+	_indicator_enabled = _start_indicator_dependencies_are_valid()
+	_completion_indicator_enabled = _completion_indicator_dependencies_are_valid()
+	if _indicator_enabled:
+		start_indicator.tree_exiting.connect(_on_indicator_exiting)
+		_set_indicator_state(IndicatorState.DEFAULT)
+	else:
+		_disable_indicator("开始提示灯引用、材质或闪烁参数无效")
+	if _completion_indicator_enabled:
+		for indicator: MeshInstance3D in completion_indicators:
+			indicator.tree_exiting.connect(_on_completion_indicator_exiting)
+		_set_completion_indicators(false)
+	else:
+		push_warning("封装完成灯停止更新：显示引用或材质无效")
+
+
+func rebind_indicators() -> void:
+	_on_indicator_exiting()
 	for indicator: MeshInstance3D in completion_indicators:
-		indicator.tree_exiting.connect(_on_indicator_exiting)
-	_set_indicator_state(IndicatorState.DEFAULT)
-	_set_completion_indicators(false)
+		if _node_is_live(indicator) and indicator.tree_exiting.is_connected(_on_completion_indicator_exiting):
+			indicator.tree_exiting.disconnect(_on_completion_indicator_exiting)
+	if _node_is_live(start_indicator) and start_indicator.tree_exiting.is_connected(_on_indicator_exiting):
+		start_indicator.tree_exiting.disconnect(_on_indicator_exiting)
+	_indicator_state = -1
+	_initialize_indicator()
+	_refresh_indicator()
+	_set_completion_indicators(_completed_capsule_instance != null)
 
 
 func _indicator_dependencies_are_valid() -> bool:
-	if not _node_is_live(start_button) or start_button.get_parent() != self or not _node_is_live(start_indicator) or start_indicator.get_parent() != start_button or start_indicator.mesh == null or not is_instance_valid(_indicator_blue_material):
+	return _start_indicator_dependencies_are_valid() and _completion_indicator_dependencies_are_valid()
+
+
+func _start_indicator_dependencies_are_valid() -> bool:
+	if not _node_is_live(start_button) or not is_ancestor_of(start_button) or not _node_is_live(start_indicator) or not is_ancestor_of(start_indicator) or start_indicator.mesh == null:
 		return false
-	var completion_root: Node3D = get_node_or_null("light_packing_complete_sign") as Node3D
-	if not _node_is_live(completion_root) or completion_root.get_parent() != self or completion_indicators.size() != 2 or completion_indicators[0] == completion_indicators[1]:
+	if not is_instance_valid(indicator_default_material) or not is_instance_valid(indicator_ready_material) or not is_instance_valid(_indicator_blue_material):
+		return false
+	return is_finite(indicator_half_cycle_seconds) and indicator_half_cycle_seconds > 0.0 and is_finite(indicator_emission_minimum) and is_finite(indicator_emission_maximum) and indicator_emission_minimum >= 0.0 and indicator_emission_maximum >= indicator_emission_minimum
+
+
+func _completion_indicator_dependencies_are_valid() -> bool:
+	if completion_indicators.size() != 2 or completion_indicators[0] == completion_indicators[1] or not is_instance_valid(indicator_running_material) or not is_instance_valid(indicator_incomplete_material):
 		return false
 	for indicator: MeshInstance3D in completion_indicators:
-		if not _node_is_live(indicator) or indicator.get_parent() != completion_root or indicator.mesh == null:
+		if not _node_is_live(indicator) or not is_ancestor_of(indicator) or indicator.mesh == null:
 			return false
 	return true
 
@@ -123,7 +151,7 @@ func _indicator_dependencies_are_valid() -> bool:
 func _refresh_indicator() -> void:
 	if not _indicator_enabled or not _node_is_live(self):
 		return
-	if not _indicator_dependencies_are_valid():
+	if not _start_indicator_dependencies_are_valid():
 		_disable_indicator("提示灯引用、归属、网格或运行材质已失效")
 		return
 	_set_indicator_state(_get_indicator_state())
@@ -151,11 +179,11 @@ func _set_indicator_state(next_state: IndicatorState) -> void:
 	_indicator_state = next_state
 	match next_state:
 		IndicatorState.DEFAULT:
-			start_indicator.material_override = INDICATOR_RED_MATERIAL
+			start_indicator.material_override = indicator_default_material
 		IndicatorState.READY, IndicatorState.COMPLETED:
-			start_indicator.material_override = INDICATOR_READY_MATERIAL
+			start_indicator.material_override = indicator_ready_material
 		IndicatorState.RUNNING:
-			_indicator_blue_material.emission_energy_multiplier = 2.0
+			_indicator_blue_material.emission_energy_multiplier = indicator_emission_maximum
 			start_indicator.material_override = _indicator_blue_material
 			_indicator_tween = create_tween()
 			_indicator_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
@@ -163,19 +191,20 @@ func _set_indicator_state(next_state: IndicatorState) -> void:
 			_indicator_tween.set_ignore_time_scale(false)
 			_indicator_tween.set_trans(Tween.TRANS_LINEAR)
 			_indicator_tween.set_loops()
-			_indicator_tween.tween_property(_indicator_blue_material, "emission_energy_multiplier", 0.0, INDICATOR_HALF_CYCLE_SECONDS)
-			_indicator_tween.tween_property(_indicator_blue_material, "emission_energy_multiplier", 2.0, INDICATOR_HALF_CYCLE_SECONDS)
+			_indicator_tween.tween_property(_indicator_blue_material, "emission_energy_multiplier", indicator_emission_minimum, indicator_half_cycle_seconds)
+			_indicator_tween.tween_property(_indicator_blue_material, "emission_energy_multiplier", indicator_emission_maximum, indicator_half_cycle_seconds)
 
 
 ## 完成双灯只在初始化、成功完成与成功取走本轮胶囊的边界切换。
 func _set_completion_indicators(completed: bool) -> void:
-	if not _indicator_enabled:
+	if not _completion_indicator_enabled:
 		return
-	if not _indicator_dependencies_are_valid():
-		_disable_indicator("完成双灯显示依赖已失效")
+	if not _completion_indicator_dependencies_are_valid():
+		_on_completion_indicator_exiting()
+		push_warning("封装完成灯停止更新：显示依赖已失效")
 		return
 	for indicator: MeshInstance3D in completion_indicators:
-		indicator.material_override = INDICATOR_BLUE_MATERIAL if completed else INDICATOR_GREY_MATERIAL
+		indicator.material_override = indicator_running_material if completed else indicator_incomplete_material
 
 
 func _stop_indicator_blink() -> void:
@@ -191,67 +220,70 @@ func _on_indicator_exiting() -> void:
 
 func _disable_indicator(reason: String) -> void:
 	_on_indicator_exiting()
-	push_error("封装机提示灯停止更新：%s；%s" % [reason, get_path()])
+	push_warning("封装机提示灯停止更新：%s；%s" % [reason, get_path()])
+
+
+func _on_completion_indicator_exiting() -> void:
+	_completion_indicator_enabled = false
 
 
 func _create_player(animation_name: StringName, player_name: String) -> AnimationPlayer:
+	if not _node_is_live(animation_source) or not animation_source.has_animation(animation_name):
+		return null
+	var animation_root: Node = animation_source.get_node_or_null(animation_source.root_node)
+	if not _node_is_live(animation_root) or (animation_root != self and not is_ancestor_of(animation_root)):
+		return null
 	var library: AnimationLibrary = AnimationLibrary.new()
-	library.add_animation(animation_name, animation_source.get_animation(animation_name))
+	var library_name: StringName = &""
+	var local_animation_name: StringName = animation_name
+	var name_parts: PackedStringArray = String(animation_name).split("/", false, 1)
+	if name_parts.size() == 2:
+		library_name = StringName(name_parts[0])
+		local_animation_name = StringName(name_parts[1])
+	library.add_animation(local_animation_name, animation_source.get_animation(animation_name))
 	var runtime_player: AnimationPlayer = AnimationPlayer.new()
 	runtime_player.name = player_name
-	runtime_player.root_node = NodePath("..")
-	runtime_player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS
+	runtime_player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
 	runtime_player.process_mode = Node.PROCESS_MODE_PAUSABLE
 	runtime_player.playback_auto_capture = false
-	runtime_player.add_animation_library(&"", library)
+	runtime_player.add_animation_library(library_name, library)
 	add_child(runtime_player)
+	runtime_player.root_node = runtime_player.get_path_to(animation_root)
+	runtime_player.speed_scale = animation_source.speed_scale
 	return runtime_player
 
 
 func _validate_configuration() -> bool:
-	if not _node_is_live(self) or not _node_is_live(focus_target) or focus_target.get_parent() != self:
+	if not _node_is_live(self) or not _node_is_live(focus_target) or not is_ancestor_of(focus_target):
 		return false
 	if not _node_is_live(reference_camera) or not is_ancestor_of(reference_camera):
 		return false
 	if not _node_is_live(root_interaction) or root_interaction.get_parent() != self or root_interaction.interaction_mode != AutolysisInteractionComponent.InteractionMode.FOCUS:
 		return false
-	if not _node_is_live(animation_source) or animation_source.get_parent() != self or (_configured and animation_source.active):
+	if not _node_is_live(tank_place) or not is_ancestor_of(tank_place) or not _node_is_live(capsule_place) or not is_ancestor_of(capsule_place):
 		return false
-	if not _node_is_live(tank_place) or tank_place.get_parent() != self or not _node_is_live(capsule_place) or capsule_place.get_parent() != self:
+	if not _node_is_live(door) or not is_ancestor_of(door) or not _node_is_live(start_button) or not is_ancestor_of(start_button) or type_switches.size() != 3:
 		return false
-	if not _node_is_live(door) or door.get_parent() != self or not _node_is_live(start_button) or start_button.get_parent() != self or type_switches.size() != 3:
+	if not _node_is_live(processing_timer) or not is_ancestor_of(processing_timer) or not processing_timer.one_shot or processing_timer.process_mode != Node.PROCESS_MODE_PAUSABLE:
 		return false
-	if not _node_is_live(processing_timer) or processing_timer.get_parent() != self or not processing_timer.one_shot or processing_timer.process_mode != Node.PROCESS_MODE_PAUSABLE:
+	if processing_timer.ignore_time_scale or processing_timer.process_callback != Timer.TIMER_PROCESS_PHYSICS:
 		return false
-	if processing_timer.ignore_time_scale or processing_timer.process_callback != Timer.TIMER_PROCESS_PHYSICS or not is_equal_approx(processing_timer.wait_time, PROCESSING_SECONDS):
-		return false
-	if not _valid_animation(door.animation_name, 0.2) or not _valid_animation(start_button.animation_name, 0.12):
+	if _configured and not root_interaction.has_execution_handler(_on_entry_requested):
 		return false
 	var seen: Array[AutolysisPackingTypeSwitch] = []
 	for index: int in type_switches.size():
-		var control: AutolysisPackingTypeSwitch = type_switches[index]
-		if not _node_is_live(control) or control.get_parent() != self or seen.has(control) or control.packing_type != index or not _valid_animation(control.animation_name, 0.16):
+		var candidate: Variant = type_switches[index]
+		if not _node_is_live(candidate):
+			return false
+		var control: AutolysisPackingTypeSwitch = candidate as AutolysisPackingTypeSwitch
+		if not is_ancestor_of(control) or seen.has(control) or control.packing_type != index:
 			return false
 		seen.append(control)
 	return true
 
 
-func _valid_animation(animation_name: StringName, seconds: float) -> bool:
-	if not animation_source.has_animation(animation_name):
-		return false
-	var animation: Animation = animation_source.get_animation(animation_name)
-	return animation.loop_mode == Animation.LOOP_NONE and is_equal_approx(animation.length, seconds)
-
-
 func is_configured() -> bool:
-	if not _configured or not _validate_configuration() or not focus_target.is_valid_target():
-		return false
-	if not tank_place.is_configured() or not capsule_place.is_configured() or not door.is_configured() or not start_button.is_configured():
-		return false
-	for control: AutolysisPackingTypeSwitch in type_switches:
-		if not control.is_configured():
-			return false
-	return true
+	return _configured and _validate_configuration() and focus_target.is_valid_target()
 
 
 func is_interaction_locked() -> bool:
@@ -297,14 +329,29 @@ func has_valid_inputs() -> bool:
 
 
 func are_switches_animating() -> bool:
-	for control: AutolysisPackingTypeSwitch in type_switches:
-		if control.is_animating():
+	for candidate: Variant in type_switches:
+		if _node_is_live(candidate) and (candidate as AutolysisPackingTypeSwitch).is_animating():
 			return true
 	return false
 
 
 func can_select_type(actor: Node3D, packing_type: int) -> bool:
-	return packing_type >= 0 and packing_type < 3 and is_configured() and not is_interaction_locked() and _completed_capsule_instance == null and not are_transfers_busy() and has_valid_inputs() and not are_switches_animating() and is_actor_focused(actor)
+	return packing_type >= 0 and packing_type < 3 and is_configured() and _switch_dependencies_are_valid() and not is_interaction_locked() and _completed_capsule_instance == null and not are_transfers_busy() and has_valid_inputs() and not are_switches_animating() and is_actor_focused(actor)
+
+
+func _switch_dependencies_are_valid() -> bool:
+	for candidate: Variant in type_switches:
+		if not _node_is_live(candidate) or not (candidate as AutolysisPackingTypeSwitch).is_configured():
+			return false
+	return true
+
+
+func _on_type_motion_cancelled(_reason: String, _control: AutolysisPackingTypeSwitch) -> void:
+	_selected_type = NO_TYPE
+	for candidate: Variant in type_switches:
+		if _node_is_live(candidate):
+			(candidate as AutolysisPackingTypeSwitch).clear_selection_for_recovery()
+	_refresh_indicator()
 
 
 func try_select_type(actor: Node3D, packing_type: int) -> bool:
@@ -317,7 +364,10 @@ func try_select_type(actor: Node3D, packing_type: int) -> bool:
 
 func _apply_selection() -> void:
 	# 先恢复旧灯，再亮新灯，使改选过程中也最多一盏发光灯。
-	for control: AutolysisPackingTypeSwitch in type_switches:
+	for candidate: Variant in type_switches:
+		if not _node_is_live(candidate):
+			continue
+		var control: AutolysisPackingTypeSwitch = candidate as AutolysisPackingTypeSwitch
 		if control.packing_type != _selected_type:
 			control.set_selected(false)
 	if _selected_type >= 0:
@@ -359,9 +409,9 @@ func get_start_denial_reason() -> StringName:
 		return &"invalid_inputs"
 	if _selected_type < 0 or _selected_type >= 3:
 		return &"missing_type"
-	if door.is_animating() or (not door.is_open() and not door.is_closed()):
+	if not door.is_configured() or door.is_animating() or (not door.is_open() and not door.is_closed()):
 		return &"door_moving"
-	if are_switches_animating():
+	if not _switch_dependencies_are_valid() or are_switches_animating():
 		return &"switch_moving"
 	for control: AutolysisPackingTypeSwitch in type_switches:
 		if control.is_selected() != (control.packing_type == _selected_type) or (control.is_selected() and not control.is_open()) or (not control.is_selected() and not control.is_closed()):
@@ -467,8 +517,12 @@ func _get_batch_commit_error(contents: AutolysisPackingContents) -> String:
 		return "运行批次、计时或设备配置失效"
 	if not is_instance_valid(contents) or not contents.is_valid_contents():
 		return "不能建立合法封装产物"
-	if are_transfers_busy() or not _node_is_live(_batch_tank) or not _node_is_live(_batch_capsule) or not tank_place.owns_item(_batch_tank) or not capsule_place.owns_item(_batch_capsule):
-		return "本轮两槽归属或取放事务失效"
+	if are_transfers_busy():
+		return "本轮取放事务仍在运行"
+	if not _node_is_live(_batch_tank) or not tank_place.owns_item(_batch_tank):
+		return "本轮液体罐节点或槽位归属失效"
+	if not _node_is_live(_batch_capsule) or not capsule_place.owns_item(_batch_capsule):
+		return "本轮胶囊节点或槽位归属失效"
 	if _batch_tank.item_instance != _batch_tank_instance or _batch_capsule.item_instance != _batch_capsule_instance:
 		return "本轮物品实例身份发生变化"
 	if not is_instance_valid(_batch_tank_instance) or not _batch_tank_instance.is_valid_instance() or not is_instance_valid(_batch_capsule_instance) or not _batch_capsule_instance.is_empty_pneumatic_capsule():

@@ -1,0 +1,102 @@
+[
+  {
+    "检查": "container-assets",
+    "时间": "2026-10-04T12:37:11.1091507+08:00",
+    "进程编号": 30532,
+    "退出码": 0,
+    "通过": true,
+    "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+    "窗口显示": "Hidden",
+    "命令参数": [
+      "--path",
+      "D:\\autolysis",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://main-autolysis/systems/item-system/tests/container_animation_asset_test.gd",
+      "--",
+      "--evidence-dir",
+      "D:/autolysis/docs/project-autolysis/00-discuss/道具系统/容器开闭动画控制实施证据/20261004/final-checks/root-restore-sync/container-assets"
+    ],
+    "通过断言数": 262,
+    "预期错误计数": {},
+    "非预期错误": []
+  },
+  {
+    "检查": "waste",
+    "时间": "2026-10-04T12:37:17.0368745+08:00",
+    "进程编号": 34884,
+    "退出码": 0,
+    "通过": true,
+    "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+    "窗口显示": "Hidden",
+    "命令参数": [
+      "--path",
+      "D:\\autolysis",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://main-autolysis/systems/item-system/tests/waste_liquid_tank_behavior_test.gd",
+      "--",
+      "--evidence-dir",
+      "D:/autolysis/docs/project-autolysis/00-discuss/道具系统/容器开闭动画控制实施证据/20261004/final-checks/root-restore-sync/waste"
+    ],
+    "通过断言数": 203,
+    "预期错误计数": {},
+    "非预期错误": []
+  },
+  {
+    "检查": "cabinet",
+    "时间": "2026-10-04T12:37:22.6675146+08:00",
+    "进程编号": 33056,
+    "退出码": 0,
+    "通过": true,
+    "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+    "窗口显示": "Hidden",
+    "命令参数": [
+      "--path",
+      "D:\\autolysis",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd",
+      "--",
+      "--evidence-dir",
+      "D:/autolysis/docs/project-autolysis/00-discuss/道具系统/容器开闭动画控制实施证据/20261004/final-checks/root-restore-sync/cabinet"
+    ],
+    "通过断言数": 198,
+    "预期错误计数": {},
+    "非预期错误": []
+  },
+  {
+    "检查": "tank-transactions",
+    "时间": "2026-10-04T12:37:28.1385912+08:00",
+    "进程编号": 16300,
+    "退出码": 0,
+    "通过": true,
+    "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+    "窗口显示": "Hidden",
+    "命令参数": [
+      "--path",
+      "D:\\autolysis",
+      "--headless",
+      "--fixed-fps",
+      "60",
+      "--script",
+      "res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd",
+      "--",
+      "--evidence-dir",
+      "D:/autolysis/docs/project-autolysis/00-discuss/道具系统/容器开闭动画控制实施证据/20261004/final-checks/root-restore-sync/tank-transactions"
+    ],
+    "通过断言数": 167,
+    "预期错误计数": {
+      "事务故障候选2$": 1,
+      "事务故障候选4$": 1,
+      "事务故障候选6$": 1
+    },
+    "非预期错误": []
+  }
+]

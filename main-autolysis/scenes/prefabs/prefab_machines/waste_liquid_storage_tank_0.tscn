@@ -68,7 +68,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.04, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.6981317, 0, 0), Vector3(-0.7853982, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(-0.61086524, 0, 0), Vector3(-0.7853982, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5vnea"]
@@ -77,11 +77,13 @@ _data = {
 &"lid_open": SubResource("Animation_je7p2")
 }
 
-[node name="waste_liquid_storage_tank_0" type="StaticBody3D" unique_id=647522578 node_paths=PackedStringArray("lid_body", "lid_interaction", "disposal_interaction", "animation_player") groups=["interactable"]]
+[node name="waste_liquid_storage_tank_0" type="StaticBody3D" unique_id=647522578 node_paths=PackedStringArray("lid_body", "lid_interaction", "disposal_interaction", "body_collision", "lid_collision", "animation_player") groups=["interactable"]]
 script = ExtResource("4_waste_controller")
 lid_body = NodePath("waste_liquid_storage_tank_lid")
 lid_interaction = NodePath("waste_liquid_storage_tank_lid/LidInteraction")
 disposal_interaction = NodePath("DisposalInteraction")
+body_collision = NodePath("collision_waste_liquid_storage_tank")
+lid_collision = NodePath("waste_liquid_storage_tank_lid/CollisionShape3D")
 animation_player = NodePath("AnimationPlayer")
 
 [node name="DisposalInteraction" type="Node3D" parent="." unique_id=1924562075]

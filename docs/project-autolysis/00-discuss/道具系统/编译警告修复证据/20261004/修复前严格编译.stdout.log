@@ -1,0 +1,9 @@
+Godot Engine v4.6.1.stable.official.14d19694e - https://godotengine.org
+
+警告提升为编译错误：debug/gdscript/warnings/unused_variable
+警告提升为编译错误：debug/gdscript/warnings/incompatible_ternary
+警告提升为编译错误：debug/gdscript/warnings/shadowed_variable_base_class
+失败：res://main-autolysis/player/components/item_drop_shape_cast.gd；重新编译结果：43
+失败：res://main-autolysis/player/components/autolysis_inventory_controller.gd；重新编译结果：43
+失败：res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd；重新编译结果：43
+编译检查完成；脚本数：3；失败数：3

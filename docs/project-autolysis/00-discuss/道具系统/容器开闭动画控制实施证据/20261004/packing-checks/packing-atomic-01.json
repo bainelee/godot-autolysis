@@ -1,0 +1,25 @@
+{
+  "检查": "packing-atomic-01",
+  "时间": "2026-10-04T12:14:24.8342929+08:00",
+  "进程编号": 11004,
+  "退出码": 0,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/packing_batch_atomic_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/道具系统/容器开闭动画控制实施证据/20261004/packing-checks/atomic"
+  ],
+  "通过断言数": 240,
+  "预期错误计数": {
+    "封装器批次1故障，保留来源并关闭入口：运行批次、计时或设备配置失效": 0,
+    "封装器批次1故障，保留来源并关闭入口：本轮两槽归属或取放事务失效": 2
+  },
+  "非预期错误": []
+}

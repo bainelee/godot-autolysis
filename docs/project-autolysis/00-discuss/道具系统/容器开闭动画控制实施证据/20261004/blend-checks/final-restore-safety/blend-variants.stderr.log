@@ -1,0 +1,35 @@
+WARNING: AnimationMixer: 'edited_bank/door_2', couldn't resolve track:  '../AnimationEventProbe'. This warning can be disabled in Project Settings.
+   at: _update_caches (scene/animation/animation_mixer.cpp:717)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd:313)
+SCRIPT ERROR: Trying to assign invalid previously freed instance.
+   at: AutolysisFocusTarget._blend_slot_registration_valid (res://main-autolysis/components/interactions/autolysis_focus_target.gd:179)
+   GDScript backtrace (most recent call first):
+       [0] _blend_slot_registration_valid (res://main-autolysis/components/interactions/autolysis_focus_target.gd:179)
+       [1] is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:100)
+       [2] _process (res://main-autolysis/player/components/autolysis_focus_controller.gd:122)
+SCRIPT ERROR: Trying to assign invalid previously freed instance.
+   at: AutolysisFocusTarget._blend_slot_registration_valid (res://main-autolysis/components/interactions/autolysis_focus_target.gd:179)
+   GDScript backtrace (most recent call first):
+       [0] _blend_slot_registration_valid (res://main-autolysis/components/interactions/autolysis_focus_target.gd:179)
+       [1] is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:100)
+       [2] is_configured (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd:285)
+       [3] _get_indicator_state (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd:171)
+       [4] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd:119)
+SCRIPT ERROR: Trying to assign invalid previously freed instance.
+   at: AutolysisFocusTarget._blend_slot_registration_valid (res://main-autolysis/components/interactions/autolysis_focus_target.gd:179)
+   GDScript backtrace (most recent call first):
+       [0] _blend_slot_registration_valid (res://main-autolysis/components/interactions/autolysis_focus_target.gd:179)
+       [1] is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:100)
+       [2] is_configured (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd:285)
+       [3] _get_indicator_state (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd:171)
+       [4] _refresh_indicator (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd:163)
+SCRIPT ERROR: Trying to assign invalid previously freed instance.
+   at: AutolysisFocusTarget._blend_slot_registration_valid (res://main-autolysis/components/interactions/autolysis_focus_target.gd:179)
+   GDScript backtrace (most recent call first):
+       [0] _blend_slot_registration_valid (res://main-autolysis/components/interactions/autolysis_focus_target.gd:179)
+       [1] is_valid_target (res://main-autolysis/components/interactions/autolysis_focus_target.gd:100)
+       [2] is_configured (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd:285)
+       [3] _test_immediate_method_controls (res://main-autolysis/systems/item-system/tests/blend_animation_variants_test.gd:370)
+       [4] _wait_condition (res://main-autolysis/systems/item-system/tests/blend_animation_variants_test.gd:123)
+       [5] _frames (res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd:60)

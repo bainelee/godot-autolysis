@@ -8,21 +8,21 @@ extends AutolysisPackingMotion
 
 var _selected: bool = false
 var _original_material: Material
+var _indicator_enabled: bool = false
 
 
 func configure(owner_machine: AutolysisPackingMachine, target: AutolysisFocusTarget, runtime_player: AnimationPlayer) -> bool:
-	if not _node_is_live(indicator) or indicator.get_parent() != owner_machine or not is_instance_valid(selected_material):
-		return false
-	_original_material = indicator.material_override
-	return super.configure(owner_machine, target, runtime_player)
+	var configured: bool = super.configure(owner_machine, target, runtime_player)
+	_initialize_indicator()
+	return configured
 
 
 func get_configuration_error() -> String:
 	var error: String = super.get_configuration_error()
 	if not error.is_empty():
 		return error
-	if packing_type < 0 or packing_type > 2 or not _node_is_live(indicator) or indicator.get_parent() != machine or not is_instance_valid(selected_material):
-		return "类型、指示灯或亮起材质无效"
+	if packing_type < 0 or packing_type > 2:
+		return "类型编号无效"
 	return ""
 
 
@@ -43,10 +43,44 @@ func _on_toggle_requested(actor: Node3D) -> void:
 
 
 func set_selected(selected: bool) -> void:
-	if not is_configured():
+	if not is_configured() and selected:
 		return
-	indicator.material_override = selected_material if selected else _original_material
+	_update_indicator(selected)
 	if _selected == selected:
 		return
 	_selected = selected
-	_start_motion(selected)
+	if is_configured():
+		_start_motion(selected)
+
+
+func clear_selection_for_recovery() -> void:
+	_selected = false
+	_update_indicator(false)
+	restore_closed()
+
+
+func _initialize_indicator() -> void:
+	_indicator_enabled = _indicator_dependencies_are_valid()
+	if _indicator_enabled:
+		_original_material = indicator.material_override
+		_update_indicator(_selected)
+	else:
+		push_warning("封装类型灯停止更新：显示引用、归属、网格或材质无效")
+
+
+func rebind_indicator() -> void:
+	_initialize_indicator()
+
+
+func _indicator_dependencies_are_valid() -> bool:
+	return _node_is_live(machine) and _node_is_live(indicator) and machine.is_ancestor_of(indicator) and indicator.mesh != null and is_instance_valid(selected_material)
+
+
+func _update_indicator(selected: bool) -> void:
+	if not _indicator_enabled:
+		return
+	if not _indicator_dependencies_are_valid():
+		_indicator_enabled = false
+		push_warning("封装类型灯停止更新：显示依赖已失效")
+		return
+	indicator.material_override = selected_material if selected else _original_material

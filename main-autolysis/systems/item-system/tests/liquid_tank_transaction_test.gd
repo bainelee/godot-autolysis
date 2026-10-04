@@ -98,10 +98,11 @@ func _fixture(initial_count: int = 0, open_cabinet: bool = true) -> Dictionary:
 		for child: Node in anchor.get_children():
 			child.free()
 	world.add_child(cabinet)
+	await _frames(2)
 	_check(cabinet.get_slot_count() == 2 and _cabinet_count(cabinet) == initial_count, "真实柜初始化登记%d罐且不额外生成" % initial_count)
 	if open_cabinet:
 		_check(cabinet.try_toggle(actor), "正式开闭入口开始打开真实柜门")
-		await _frames(20)
+		await _wait_motion(cabinet)
 		_check(cabinet.is_open(), "真实柜门动画完成后才建立完全打开状态")
 	return {"actor": actor, "cabinet": cabinet}
 
@@ -363,3 +364,10 @@ func _save_evidence() -> void:
 		return
 	report.store_string(JSON.stringify({"断言数": assertion_count, "失败数": failures, "记录": records}, "\t"))
 	report.close()
+
+func _wait_motion(cabinet: AutolysisLiquidTankCabinet) -> void:
+	for frame: int in 240:
+		if not cabinet.is_animating():
+			return
+		await _frames(1)
+	_check(false, "柜门超过事务夹具等待上限")

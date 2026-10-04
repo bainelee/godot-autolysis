@@ -1,0 +1,32 @@
+{
+  "检查": "shared-direct-02",
+  "时间": "2026-10-04T12:08:09.9104228+08:00",
+  "进程编号": 10496,
+  "退出码": 1,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/player/tests/direct_interaction_test.gd",
+    "--",
+    "--evidence-dir",
+    "D:/autolysis/docs/project-autolysis/00-discuss/道具系统/容器开闭动画控制实施证据/20261004/shared-checks/direct"
+  ],
+  "通过断言数": 53,
+  "预期错误计数": {},
+  "非预期错误": [
+    "失败：业务立即释放第2类依赖后安全结束分发且不向失效上下文通知",
+    "ERROR: Attempted to set an invalid (previously freed?) object instance into a 'TypedArray'.",
+    "ERROR: Condition \"!_p->typed.validate(value, \"set\")\" is true.",
+    "ERROR: Attempted to set an invalid (previously freed?) object instance into a 'TypedArray'.",
+    "ERROR: Condition \"!_p->typed.validate(value, \"set\")\" is true.",
+    "ERROR: Object is locked and can't be freed.",
+    "SCRIPT ERROR: Attempted to free a locked object (calling or emitting)."
+  ]
+}

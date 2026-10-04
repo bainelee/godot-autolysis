@@ -1,0 +1,22 @@
+{
+  "检查": "packing-motion-12",
+  "时间": "2026-10-04T12:43:31.6085562+08:00",
+  "进程编号": 12444,
+  "退出码": 0,
+  "通过": true,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/systems/item-system/tests/packing_motion_physics_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/道具系统/容器开闭动画控制实施证据/20261004/packing-checks/motion"
+  ],
+  "通过断言数": 660,
+  "预期错误计数": {},
+  "非预期错误": []
+}

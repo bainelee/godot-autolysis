@@ -1,0 +1,14 @@
+WARNING: Adding 'waste_liquid_storage_tank_0' as child to 'root' will make owner '01-autolysis-test' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://main-autolysis/systems/item-system/tests/container_animation_timing_probe.gd:37)
+WARNING: Adding 'cabinet_workroom_0' as child to 'root' will make owner '01-autolysis-test' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://main-autolysis/systems/item-system/tests/container_animation_timing_probe.gd:37)
+       [1] _frames (res://main-autolysis/systems/item-system/tests/container_animation_timing_probe.gd:116)
+WARNING: Adding 'machine_packing_0' as child to 'root' will make owner '01-autolysis-test' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://main-autolysis/systems/item-system/tests/container_animation_timing_probe.gd:37)
+       [1] _frames (res://main-autolysis/systems/item-system/tests/container_animation_timing_probe.gd:116)

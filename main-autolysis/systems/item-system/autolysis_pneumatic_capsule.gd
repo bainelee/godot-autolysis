@@ -25,7 +25,7 @@ func _ready() -> void:
 		push_error("气动胶囊缺少直接子交互组件：%s" % get_path())
 		return
 	_interaction.set_availability_check(_can_interact)
-	_interaction.interaction_requested.connect(_on_interaction_requested)
+	_interaction.set_execution_handler(_on_interaction_requested)
 	if packing_stored:
 		_disable_world_pickup()
 

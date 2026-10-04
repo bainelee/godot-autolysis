@@ -144,7 +144,3 @@ offset_left = 24.0
 offset_top = 90.0
 offset_right = 900.0
 offset_bottom = 122.0
-
-[connection signal="interaction_requested" from="SwitchA/Interaction" to="." method="_on_switch_a_requested"]
-[connection signal="interaction_requested" from="SwitchB/Interaction" to="." method="_on_switch_b_requested"]
-[connection signal="interaction_requested" from="Door/Interaction" to="." method="_on_door_requested"]

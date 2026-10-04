@@ -1,0 +1,88 @@
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\351\201\223\345\205\267\347\263\273\347\273\237\\\347\274\226\350\257\221\350\255\246\345\221\212\344\277\256\345\244\215\350\257\201\346\215\256\\20261004\\\344\277\256\345\244\215\345\211\215\\item_drop_shape_cast.gd.txt" "b/D:\\autolysis\\main-autolysis\\player\\components\\item_drop_shape_cast.gd"
+index 4fdec66..499bf11 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\351\201\223\345\205\267\347\263\273\347\273\237\\\347\274\226\350\257\221\350\255\246\345\221\212\344\277\256\345\244\215\350\257\201\346\215\256\\20261004\\\344\277\256\345\244\215\345\211\215\\item_drop_shape_cast.gd.txt"
++++ "b/D:\\autolysis\\main-autolysis\\player\\components\\item_drop_shape_cast.gd"
+@@ -12,7 +12,6 @@ func get_shapecast_item_drop_position(distance_offset: float, _item_size: float
+ 	new_sphereshape.margin = _item_size * margin_multiplier
+ 	shape = new_sphereshape
+ 	
+-	var shapecast_safety_offset = get_closest_collision_safe_fraction()
+ 	var destination_point = self.global_position + (self.target_position.z - distance_offset) * get_viewport().get_camera_3d().get_global_transform().basis.z
+ 	print("Shapcast: shape radius=", shape.radius, " shape margin=", shape.margin)
+ 	return destination_point
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\351\201\223\345\205\267\347\263\273\347\273\237\\\347\274\226\350\257\221\350\255\246\345\221\212\344\277\256\345\244\215\350\257\201\346\215\256\\20261004\\\344\277\256\345\244\215\345\211\215\\autolysis_inventory_controller.gd.txt" "b/D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd"
+index d0807e7..ccf91ba 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\351\201\223\345\205\267\347\263\273\347\273\237\\\347\274\226\350\257\221\350\255\246\345\221\212\344\277\256\345\244\215\350\257\201\346\215\256\\20261004\\\344\277\256\345\244\215\345\211\215\\autolysis_inventory_controller.gd.txt"
++++ "b/D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd"
+@@ -572,7 +572,11 @@ func _try_place_in_packing_place(actor: Node3D, place: Variant) -> bool:
+ 	if not place.try_begin_transfer(actor):
+ 		_busy = false
+ 		return false
+-	var candidate: Variant = _prepare_liquid_tank_world_item(instance) if place is AutolysisPackingTankPlace else _prepare_pneumatic_capsule_world_item(instance)
++	var candidate: Variant
++	if place is AutolysisPackingTankPlace:
++		candidate = _prepare_liquid_tank_world_item(instance)
++	else:
++		candidate = _prepare_pneumatic_capsule_world_item(instance)
+ 	if candidate == null:
+ 		_end_packing_transfer(place)
+ 		return false
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\351\201\223\345\205\267\347\263\273\347\273\237\\\347\274\226\350\257\221\350\255\246\345\221\212\344\277\256\345\244\215\350\257\201\346\215\256\\20261004\\\344\277\256\345\244\215\345\211\215\\autolysis_packing_motion.gd.txt" "b/D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_motion.gd"
+index 03028c1..dd4b8f3 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\351\201\223\345\205\267\347\263\273\347\273\237\\\347\274\226\350\257\221\350\255\246\345\221\212\344\277\256\345\244\215\350\257\201\346\215\256\\20261004\\\344\277\256\345\244\215\345\211\215\\autolysis_packing_motion.gd.txt"
++++ "b/D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_motion.gd"
+@@ -206,16 +206,16 @@ func _start_motion(opening: bool) -> void:
+ 		_deferred_open = opening
+ 		return
+ 	var was_moving: bool = is_animating()
+-	var position: float = _runtime_player.current_animation_position
++	var animation_time: float = _runtime_player.current_animation_position
+ 	if not was_moving:
+-		position = _runtime_player.get_animation(animation_name).length if _stable_open else 0.0
++		animation_time = _runtime_player.get_animation(animation_name).length if _stable_open else 0.0
+ 	_invalidate_motion()
+ 	_expected_direction = 1 if opening else -1
+ 	state = MotionState.OPENING if opening else MotionState.CLOSING
+ 	_action_animation = _runtime_player.get_animation(animation_name)
+ 	# 类型清除可以从当前进度反向；不会定位至旧的打开端点。
+ 	_runtime_player.play(animation_name, 0.0, float(_expected_direction), not opening)
+-	_apply_seek(position)
++	_apply_seek(animation_time)
+ 
+ 
+ func _physics_process(delta: float) -> void:
+@@ -265,11 +265,11 @@ func _physics_process(delta: float) -> void:
+ 	transform = animated_transform
+ 
+ 
+-func _apply_seek(position: float) -> void:
++func _apply_seek(animation_time: float) -> void:
+ 	var seeking_serial: int = _motion_serial
+ 	set_notify_local_transform(false)
+ 	_applying_animation = true
+-	_runtime_player.seek(position, true, true)
++	_runtime_player.seek(animation_time, true, true)
+ 	if not _node_is_live(self):
+ 		return
+ 	_applying_animation = false
+@@ -299,7 +299,7 @@ func _restore_stable_state(opened: bool) -> void:
+ 	_pending_frame = Engine.get_physics_frames()
+ 
+ 
+-func _apply_restore_seek(position: float) -> void:
++func _apply_restore_seek(animation_time: float) -> void:
+ 	# 未推进播放留下的启动事件由临时属性副本消费；原动画事件启用位保持不变。
+ 	var pose_animation: Animation = _runtime_player.get_animation(animation_name).duplicate() as Animation
+ 	for track: int in pose_animation.get_track_count():
+@@ -315,9 +315,9 @@ func _apply_restore_seek(position: float) -> void:
+ 	_runtime_player.add_animation_library(pose_library_name, pose_library)
+ 	set_notify_local_transform(false)
+ 	_runtime_player.assigned_animation = StringName(String(pose_library_name) + "/pose")
+-	_runtime_player.seek(position, true, true)
++	_runtime_player.seek(animation_time, true, true)
+ 	_runtime_player.assigned_animation = animation_name
+-	_runtime_player.seek(position, true, true)
++	_runtime_player.seek(animation_time, true, true)
+ 	_runtime_player.pause()
+ 	_runtime_player.remove_animation_library(pose_library_name)
+ 	var restored_transform: Transform3D = transform

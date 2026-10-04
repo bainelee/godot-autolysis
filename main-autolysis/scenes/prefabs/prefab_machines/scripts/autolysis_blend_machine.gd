@@ -8,10 +8,6 @@ signal processing_failed(batch_id: int, reason: String)
 signal handle_pull_denied(actor: Node3D, reason: StringName)
 
 const PROCESSING_SECONDS: float = 2.0
-const INDICATOR_HALF_CYCLE_SECONDS: float = 0.5
-const INDICATOR_RED_MATERIAL = preload("res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres")
-const INDICATOR_ORANGE_MATERIAL = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_orange_0.tres")
-const INDICATOR_GREEN_MATERIAL = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_green_0.tres")
 
 enum IndicatorState { DEFAULT, READY, RUNNING, COMPLETED }
 
@@ -24,6 +20,12 @@ enum IndicatorState { DEFAULT, READY, RUNNING, COMPLETED }
 @export var tank_place: AutolysisBlendTankPlace
 @export var processing_timer: Timer
 @export var status_indicator: MeshInstance3D
+@export var indicator_default_material: Material = preload("res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres")
+@export var indicator_ready_material: StandardMaterial3D = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_orange_0.tres")
+@export var indicator_completed_material: Material = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_green_0.tres")
+@export var indicator_half_cycle_seconds: float = 0.5
+@export var indicator_emission_min: float = 0.0
+@export var indicator_emission_max: float = 2.0
 
 var _configured: bool = false
 var _processing: bool = false
@@ -54,26 +56,36 @@ func _ready() -> void:
 	if not _validate_configuration():
 		push_error("原药混合器配置无效：%s" % get_path())
 		return
-	animation_source.stop(true)
-	animation_source.active = false
+	var valid_source: bool = _node_is_live(animation_source)
+	var animation_root: Node = animation_source.get_node_or_null(animation_source.root_node) if valid_source else self
+	if valid_source:
+		animation_source.stop(true)
+		animation_source.active = false
+	if not _node_is_live(animation_root):
+		push_warning("配药器动画源根引用无法解析，仅停用槽门动作")
+		valid_source = false
+		animation_root = self
 	for index: int in slots.size():
 		var slot: AutolysisBlendSlot = slots[index]
 		var library: AnimationLibrary = AnimationLibrary.new()
-		library.add_animation(slot.animation_name, animation_source.get_animation(slot.animation_name))
+		var animation_path: PackedStringArray = String(slot.animation_name).split("/")
+		var library_name: StringName = StringName(animation_path[0]) if animation_path.size() > 1 else &""
+		var action_name: StringName = StringName(animation_path[1]) if animation_path.size() > 1 else slot.animation_name
+		if valid_source and animation_source.has_animation(slot.animation_name):
+			library.add_animation(action_name, animation_source.get_animation(slot.animation_name))
 		var runtime_player: AnimationPlayer = AnimationPlayer.new()
 		runtime_player.name = "BlendSlotAnimation_%d" % index
-		runtime_player.root_node = NodePath("..")
-		runtime_player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS
+		runtime_player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
 		runtime_player.process_mode = Node.PROCESS_MODE_PAUSABLE
 		runtime_player.playback_auto_capture = false
-		runtime_player.add_animation_library(&"", library)
+		runtime_player.speed_scale = animation_source.speed_scale if valid_source else 1.0
+		runtime_player.add_animation_library(library_name, library)
 		add_child(runtime_player)
+		runtime_player.root_node = runtime_player.get_path_to(animation_root)
 		if not slot.configure(focus_target, runtime_player):
-			push_error("原药混合器槽位配置失败：%s；%s" % [slot.get_path(), slot.get_configuration_error()])
-			return
+			push_warning("原药混合器槽位配置失败：%s；%s" % [slot.get_path(), slot.get_configuration_error()])
 	if not handle.configure(focus_target):
-		push_error("原药混合器拉杆配置失败：%s；%s" % [handle.get_path(), handle.get_configuration_error()])
-		return
+		push_warning("原药混合器拉杆配置失败：%s；%s" % [handle.get_path(), handle.get_configuration_error()])
 	if not tank_place.configure(self, focus_target):
 		push_error("配药器液体罐位配置失败：%s；%s" % [tank_place.get_path(), tank_place.get_configuration_error()])
 		return
@@ -81,7 +93,7 @@ func _ready() -> void:
 		push_error("原药混合器聚焦描述登记失败：%s" % get_path())
 		return
 	root_interaction.set_availability_check(_can_enter)
-	root_interaction.interaction_requested.connect(_on_entry_requested)
+	root_interaction.set_execution_handler(_on_entry_requested)
 	handle.interaction_completed.connect(_on_handle_completed)
 	handle.handle_pull_denied.connect(_on_handle_pull_denied)
 	processing_timer.timeout.connect(_on_processing_timeout)
@@ -109,13 +121,16 @@ func _physics_process(_delta: float) -> void:
 
 
 func _initialize_indicator() -> void:
-	if not _node_is_live(status_indicator) or status_indicator.get_parent() != self or status_indicator.mesh == null:
-		_disable_indicator("status_indicator（状态指示灯）必须绑定本机直接子级的有效网格")
+	if not _node_is_live(status_indicator) or not is_ancestor_of(status_indicator) or status_indicator.mesh == null:
+		_disable_indicator("status_indicator（状态指示灯）必须绑定本机子树中的有效网格")
 		return
-	if not INDICATOR_RED_MATERIAL is StandardMaterial3D or not INDICATOR_ORANGE_MATERIAL is StandardMaterial3D or not INDICATOR_GREEN_MATERIAL is StandardMaterial3D:
-		_disable_indicator("三份指定指示灯材质必须为 StandardMaterial3D（标准三维材质）")
+	if not is_instance_valid(indicator_default_material) or not is_instance_valid(indicator_ready_material) or not is_instance_valid(indicator_completed_material):
+		_disable_indicator("指示灯材质引用无效")
 		return
-	_indicator_orange_material = INDICATOR_ORANGE_MATERIAL.duplicate() as StandardMaterial3D
+	if not is_finite(indicator_half_cycle_seconds) or indicator_half_cycle_seconds <= 0.0 or not is_finite(indicator_emission_min) or not is_finite(indicator_emission_max) or indicator_emission_min < 0.0 or indicator_emission_max < indicator_emission_min:
+		_disable_indicator("指示灯闪烁时长或发光范围无效")
+		return
+	_indicator_orange_material = indicator_ready_material.duplicate() as StandardMaterial3D
 	if not is_instance_valid(_indicator_orange_material):
 		_disable_indicator("橙色材质独立副本创建失败")
 		return
@@ -125,7 +140,7 @@ func _initialize_indicator() -> void:
 
 
 func _indicator_dependencies_are_valid() -> bool:
-	return _node_is_live(status_indicator) and status_indicator.get_parent() == self and status_indicator.mesh != null and is_instance_valid(_indicator_orange_material)
+	return _node_is_live(status_indicator) and is_ancestor_of(status_indicator) and status_indicator.mesh != null and is_instance_valid(_indicator_orange_material) and is_instance_valid(indicator_default_material) and is_instance_valid(indicator_ready_material) and is_instance_valid(indicator_completed_material)
 
 
 func _queue_indicator_refresh() -> void:
@@ -175,12 +190,12 @@ func _set_indicator_state(next_state: IndicatorState) -> void:
 	_indicator_state = next_state
 	match next_state:
 		IndicatorState.DEFAULT:
-			status_indicator.material_override = INDICATOR_RED_MATERIAL
+			status_indicator.material_override = indicator_default_material
 		IndicatorState.READY:
-			_indicator_orange_material.emission_energy_multiplier = (INDICATOR_ORANGE_MATERIAL as StandardMaterial3D).emission_energy_multiplier
+			_indicator_orange_material.emission_energy_multiplier = indicator_ready_material.emission_energy_multiplier
 			status_indicator.material_override = _indicator_orange_material
 		IndicatorState.RUNNING:
-			_indicator_orange_material.emission_energy_multiplier = 2.0
+			_indicator_orange_material.emission_energy_multiplier = indicator_emission_max
 			status_indicator.material_override = _indicator_orange_material
 			_indicator_tween = create_tween()
 			_indicator_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
@@ -188,10 +203,10 @@ func _set_indicator_state(next_state: IndicatorState) -> void:
 			_indicator_tween.set_ignore_time_scale(false)
 			_indicator_tween.set_trans(Tween.TRANS_LINEAR)
 			_indicator_tween.set_loops()
-			_indicator_tween.tween_property(_indicator_orange_material, "emission_energy_multiplier", 0.0, INDICATOR_HALF_CYCLE_SECONDS)
-			_indicator_tween.tween_property(_indicator_orange_material, "emission_energy_multiplier", 2.0, INDICATOR_HALF_CYCLE_SECONDS)
+			_indicator_tween.tween_property(_indicator_orange_material, "emission_energy_multiplier", indicator_emission_min, indicator_half_cycle_seconds)
+			_indicator_tween.tween_property(_indicator_orange_material, "emission_energy_multiplier", indicator_emission_max, indicator_half_cycle_seconds)
 		IndicatorState.COMPLETED:
-			status_indicator.material_override = INDICATOR_GREEN_MATERIAL
+			status_indicator.material_override = indicator_completed_material
 
 
 func _stop_indicator_blink() -> void:
@@ -233,11 +248,11 @@ func _on_indicator_exiting() -> void:
 
 func _disable_indicator(reason: String) -> void:
 	_on_indicator_exiting()
-	push_error("配药器状态指示灯停止更新：%s；%s" % [reason, get_path()])
+	push_warning("配药器状态指示灯停止更新：%s；%s" % [reason, get_path()])
 
 
 func _validate_configuration() -> bool:
-	if not is_instance_valid(focus_target) or focus_target.get_parent() != self:
+	if not _node_is_live(focus_target) or not is_ancestor_of(focus_target):
 		return false
 	if not is_instance_valid(reference_camera) or not is_ancestor_of(reference_camera):
 		return false
@@ -245,29 +260,22 @@ func _validate_configuration() -> bool:
 		return false
 	if root_interaction.interaction_mode != AutolysisInteractionComponent.InteractionMode.FOCUS:
 		return false
-	if not is_instance_valid(animation_source) or slots.size() != 4:
+	if _configured and not root_interaction.has_execution_handler(_on_entry_requested):
+		return false
+	if slots.size() != 4:
 		return false
 	if not is_instance_valid(handle) or not is_ancestor_of(handle) or handle.device_root != self:
 		return false
-	if not _node_is_live(tank_place) or tank_place.get_parent() != self:
+	if not _node_is_live(tank_place) or not is_ancestor_of(tank_place):
 		return false
-	if not _node_is_live(processing_timer) or processing_timer.get_parent() != self:
+	if not _node_is_live(processing_timer) or not is_ancestor_of(processing_timer):
 		return false
-	if not processing_timer.one_shot or processing_timer.process_mode != Node.PROCESS_MODE_PAUSABLE or processing_timer.ignore_time_scale or processing_timer.process_callback != Timer.TIMER_PROCESS_PHYSICS or not is_equal_approx(processing_timer.wait_time, PROCESSING_SECONDS):
+	if not processing_timer.one_shot or processing_timer.process_mode != Node.PROCESS_MODE_PAUSABLE or processing_timer.ignore_time_scale or processing_timer.process_callback != Timer.TIMER_PROCESS_PHYSICS:
 		return false
 	var seen: Array[AutolysisBlendSlot] = []
 	for index: int in slots.size():
-		var slot: AutolysisBlendSlot = slots[index]
-		if not is_instance_valid(slot) or slot.get_parent() != self or seen.has(slot):
-			return false
-		if slot.name != StringName("blend_slot_%d" % index):
-			return false
-		if not animation_source.has_animation(slot.animation_name):
-			return false
-		var animation: Animation = animation_source.get_animation(slot.animation_name)
-		if animation.loop_mode != Animation.LOOP_NONE or not is_equal_approx(animation.length, 0.2):
-			return false
-		if animation.get_track_count() != 1 or animation.track_get_path(0) != NodePath("%s:rotation" % slot.name):
+		var slot: Variant = slots[index]
+		if not _node_is_live(slot) or not is_ancestor_of(slot) or seen.has(slot):
 			return false
 		seen.append(slot)
 	return true
@@ -276,7 +284,7 @@ func _validate_configuration() -> bool:
 func is_configured() -> bool:
 	if not _configured or not _validate_configuration() or not focus_target.is_valid_target():
 		return false
-	return handle.is_configured() and tank_place.is_configured()
+	return true
 
 
 func is_batch_running() -> bool:
@@ -304,6 +312,8 @@ func get_start_denial_reason() -> StringName:
 	if not _fault.is_empty():
 		return &"processing_fault"
 	if not is_configured():
+		return &"invalid_configuration"
+	if not handle.is_configured() or not tank_place.is_configured():
 		return &"invalid_configuration"
 	if _processing:
 		return &"processing"

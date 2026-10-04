@@ -1,0 +1,64 @@
+SCRIPT ERROR: Parse Error: Function "restore_closed()" not found in base self.
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_type_switch.gd:59)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_focus_controller.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/player/autolysis_player.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/systems/item-system/autolysis_liquid_tank.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_tank_place.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/components/interactions/autolysis_focus_target.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/systems/item-system/autolysis_raw_material.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_inventory_controller.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/systems/item-system/autolysis_raw_material_group.gd:0)
+ERROR: Failed to load script "res://main-autolysis/systems/item-system/autolysis_raw_material_group.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+ERROR: Attempted to set an object into a TypedArray, that does not inherit from 'GDScript'.
+   at: _internal_validate_object (core/variant/container_type_validate.h:129)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://main-autolysis/systems/item-system/tests/container_animation_timing_probe.gd:18)
+ERROR: Condition "!_p->typed.validate(value, "set")" is true.
+   at: set (core/variant/array.cpp:520)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://main-autolysis/systems/item-system/tests/container_animation_timing_probe.gd:18)
+ERROR: Attempted to set an object into a TypedArray, that does not inherit from 'GDScript'.
+   at: _internal_validate_object (core/variant/container_type_validate.h:129)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://main-autolysis/systems/item-system/tests/container_animation_timing_probe.gd:18)
+ERROR: Condition "!_p->typed.validate(value, "set")" is true.
+   at: set (core/variant/array.cpp:520)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://main-autolysis/systems/item-system/tests/container_animation_timing_probe.gd:18)
+ERROR: Attempted to set an object into a TypedArray, that does not inherit from 'GDScript'.
+   at: _internal_validate_object (core/variant/container_type_validate.h:129)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://main-autolysis/systems/item-system/tests/container_animation_timing_probe.gd:18)
+ERROR: Condition "!_p->typed.validate(value, "set")" is true.
+   at: set (core/variant/array.cpp:520)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://main-autolysis/systems/item-system/tests/container_animation_timing_probe.gd:18)
+WARNING: Adding 'waste_liquid_storage_tank_0' as child to 'root' will make owner '01-autolysis-test' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://main-autolysis/systems/item-system/tests/container_animation_timing_probe.gd:37)
+WARNING: Adding 'cabinet_workroom_0' as child to 'root' will make owner '01-autolysis-test' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://main-autolysis/systems/item-system/tests/container_animation_timing_probe.gd:37)
+       [1] _frames (res://main-autolysis/systems/item-system/tests/container_animation_timing_probe.gd:116)
+WARNING: Adding 'machine_packing_0' as child to 'root' will make owner '01-autolysis-test' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://main-autolysis/systems/item-system/tests/container_animation_timing_probe.gd:37)
+       [1] _frames (res://main-autolysis/systems/item-system/tests/container_animation_timing_probe.gd:116)

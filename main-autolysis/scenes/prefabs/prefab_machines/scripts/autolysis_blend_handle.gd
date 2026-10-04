@@ -7,16 +7,14 @@ signal handle_pull_denied(actor: Node3D, reason: StringName)
 
 enum HandleState { IDLE, DRAGGING, HOLDING, RETURNING }
 
-const TOP_Y: float = 0.12
-const BOTTOM_Y: float = -0.12
-const RESTRICTED_BOTTOM_Y: float = 0.08
-const HOLD_SECONDS: float = 0.1
-const RETURN_SECONDS: float = 0.2
-const RETURN_SPEED: float = (TOP_Y - BOTTOM_Y) / RETURN_SECONDS
-
 @export var device_root: PhysicsBody3D
 @export var drag_interaction: AutolysisInteractionComponent
 @export var collision_shape: CollisionShape3D
+@export var top_reference: Node3D
+@export var full_travel: float = 0.24
+@export var restricted_travel: float = 0.04
+@export var hold_seconds: float = 0.1
+@export var return_seconds: float = 0.2
 ## 临时初始配置，单位为局部坐标单位／鼠标视口纵向输入单位；最终比例须真实操作调校。
 @export_range(0.000001, 0.01, 0.000001, "or_greater") var mouse_to_handle_ratio: float = 0.0005
 
@@ -29,7 +27,8 @@ var _hold_remaining: float = 0.0
 var _automatic_started_frame: int = -1
 var _restricted_drag: bool = false
 var _drag_ratio: float = 0.0
-var _drag_bottom_y: float = BOTTOM_Y
+var _drag_bottom_y: float = 0.0
+var _top_position: Vector3
 
 
 func _init() -> void:
@@ -50,9 +49,10 @@ func configure(target: AutolysisFocusTarget) -> bool:
 	if not get_configuration_error().is_empty():
 		return false
 	drag_interaction.set_availability_check(can_begin_drag)
-	drag_interaction.interaction_requested.connect(_on_drag_requested)
+	drag_interaction.set_execution_handler(_on_drag_requested)
 	state = HandleState.IDLE
-	_set_y(TOP_Y)
+	_top_position = top_reference.position if top_reference.get_parent() == get_parent() else get_parent_node_3d().to_local(top_reference.global_position)
+	position = _top_position
 	_configured = true
 	return true
 
@@ -66,7 +66,7 @@ func get_configuration_error() -> String:
 		return "拉杆必须位于已绑定设备的子树中"
 	if not device_root is AutolysisBlendMachine:
 		return "拉杆必须绑定配药器根物理体"
-	if not _node_is_live(focus_target) or focus_target.get_parent() != device_root:
+	if not _node_is_live(focus_target) or not device_root.is_ancestor_of(focus_target):
 		return "拉杆的聚焦目标描述必须属于已绑定设备"
 	if not _node_is_live(drag_interaction) or drag_interaction.get_parent() != self:
 		return "drag_interaction（拖动交互组件）必须位于拉杆直接子级"
@@ -78,17 +78,22 @@ func get_configuration_error() -> String:
 			component_count += 1
 	if component_count != 1:
 		return "拉杆必须恰好配置一个直接子交互组件"
-	var receivers: Array[Dictionary] = []
-	receivers.assign(drag_interaction.interaction_requested.get_connections())
-	if not _configured and not receivers.is_empty():
-		return "拉杆交互组件在初始化前已连接其他请求接收者"
-	if _configured:
-		if receivers.size() != 1 or receivers[0]["callable"] != _on_drag_requested or receivers[0]["flags"] != 0:
-			return "拉杆交互组件必须只同步连接本拉杆的请求接收方法"
+	if _configured and not drag_interaction.has_execution_handler(_on_drag_requested):
+		return "拉杆交互组件的业务执行绑定失效"
 	if not _node_is_live(collision_shape) or collision_shape.get_parent() != self or collision_shape.shape == null or collision_shape.disabled:
 		return "collision_shape（碰撞形状）必须指向拉杆直接子级的有效碰撞形状"
 	if not is_finite(mouse_to_handle_ratio) or mouse_to_handle_ratio <= 0.0:
 		return "mouse_to_handle_ratio（鼠标位移到拉杆位移比例）必须是大于零的有限数值"
+	if not _node_is_live(top_reference) or top_reference == self or is_ancestor_of(top_reference) or not device_root.is_ancestor_of(top_reference):
+		return "top_reference（顶部参照）必须为设备子树中的独立参照"
+	if not is_instance_valid(get_parent_node_3d()):
+		return "拉杆必须具有有效三维父节点以换算顶部参照"
+	if not top_reference.global_position.is_finite():
+		return "顶部参照位置必须为有限数值"
+	if not is_finite(full_travel) or full_travel <= 0.0 or not is_finite(restricted_travel) or restricted_travel < 0.0 or restricted_travel > full_travel:
+		return "完整行程必须为有限正数，受限行程必须位于零和完整行程之间"
+	if not is_finite(hold_seconds) or hold_seconds < 0.0 or not is_finite(return_seconds) or return_seconds <= 0.0:
+		return "保持时长必须为有限非负数，完整回弹时长必须为有限正数"
 	return ""
 
 
@@ -105,7 +110,9 @@ func try_begin_drag(actor: Node3D) -> bool:
 	var reason: StringName = machine.get_start_denial_reason()
 	_restricted_drag = not reason.is_empty()
 	_drag_ratio = mouse_to_handle_ratio * 0.5 if _restricted_drag else mouse_to_handle_ratio
-	_drag_bottom_y = RESTRICTED_BOTTOM_Y if _restricted_drag else BOTTOM_Y
+	# 限位与三维位置使用相同精度，避免场景参照和标量减法形成不可表示的触底值。
+	var travel: float = restricted_travel if _restricted_drag else full_travel
+	_drag_bottom_y = (_top_position - Vector3(0.0, travel, 0.0)).y
 	state = HandleState.DRAGGING
 	if _restricted_drag:
 		handle_pull_denied.emit(actor, reason)
@@ -124,14 +131,14 @@ func apply_vertical_motion(actor: Node3D, vertical_motion: float) -> void:
 		return
 	if not is_finite(vertical_motion) or vertical_motion == 0.0:
 		return
-	var next_y: float = clampf(position.y - vertical_motion * _drag_ratio, _drag_bottom_y, TOP_Y)
+	var next_y: float = clampf(position.y - vertical_motion * _drag_ratio, _drag_bottom_y, _top_position.y)
 	_set_y(next_y)
-	if _restricted_drag or position != Vector3(0.0, BOTTOM_Y, 0.0):
+	if _restricted_drag or next_y != _drag_bottom_y:
 		return
 	# 先锁定和解除角色归属，再同步通知；回调重入不能重新开始本周期。
 	state = HandleState.HOLDING
 	_drag_actor = null
-	_hold_remaining = HOLD_SECONDS
+	_hold_remaining = hold_seconds
 	_automatic_started_frame = Engine.get_physics_frames()
 	interaction_completed.emit(actor)
 	# 完成回调可能立即释放设备或拉杆，此处不再访问实例成员。
@@ -170,9 +177,9 @@ func _physics_process(delta: float) -> void:
 		state = HandleState.RETURNING
 	if available_time <= 0.0:
 		return
-	var next_y: float = move_toward(position.y, TOP_Y, RETURN_SPEED * available_time)
+	var next_y: float = move_toward(position.y, _top_position.y, full_travel / return_seconds * available_time)
 	_set_y(next_y)
-	if position == Vector3(0.0, TOP_Y, 0.0):
+	if next_y == _top_position.y:
 		state = HandleState.IDLE
 
 
@@ -180,7 +187,7 @@ func _start_return() -> void:
 	_drag_actor = null
 	_hold_remaining = 0.0
 	_automatic_started_frame = Engine.get_physics_frames()
-	state = HandleState.IDLE if position == Vector3(0.0, TOP_Y, 0.0) else HandleState.RETURNING
+	state = HandleState.IDLE if position.y == _top_position.y else HandleState.RETURNING
 
 
 func is_restricted_drag() -> bool:
@@ -212,7 +219,7 @@ func _on_drag_requested(actor: Node3D) -> void:
 
 
 func _set_y(value: float) -> void:
-	position = Vector3(0.0, value, 0.0)
+	position = Vector3(_top_position.x, value, _top_position.z)
 
 
 func _node_is_live(node: Variant) -> bool:

@@ -1,0 +1,64 @@
+{
+  "对应正式检查": "final-configured-handle/blend-assets.json",
+  "通过断言": 300,
+  "本次修改生产": false,
+  "源与结果": [
+    {
+      "文件": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\blend_animation_variants_test.gd",
+      "算法": "SHA256（安全散列256）",
+      "散列": "B2198949D520DB5AE7B52BEE0A712BC8167F7B96DEC9849D8FD4034B207A127D"
+    },
+    {
+      "文件": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\容器开闭动画控制实施证据\\20261004\\final-configured-handle\\blend-assets.json",
+      "算法": "SHA256（安全散列256）",
+      "散列": "AEFC717ADE37D765F44475C8F46CD969611CCC4421C0F048DCCA903D09B668F0"
+    },
+    {
+      "文件": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\容器开闭动画控制实施证据\\20261004\\final-configured-handle\\blend-assets\\blend-animation-samples.json",
+      "算法": "SHA256（安全散列256）",
+      "散列": "5BC4F7860E9DF5936AA233FEEA73DDE667CAD1D89CF1CF1FE617D51D9F8113DF"
+    },
+    {
+      "文件": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\容器开闭动画控制实施证据\\20261004\\blend-checks\\可调拉杆时序补充验收记录.md",
+      "算法": "SHA256（安全散列256）",
+      "散列": "75AC3BCE1AF0957D45729354BDBE68FFD51ADD74709B23727D01722E74F1C727"
+    }
+  ],
+  "生产来源核对": [
+    {
+      "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_slot.gd",
+      "算法": "SHA256（安全散列256）",
+      "当前散列": "F682A942242A9184FC3D12723926456B798344C0A3B2F42B9ADBC103E7DDACFE",
+      "六项验证散列": "F682A942242A9184FC3D12723926456B798344C0A3B2F42B9ADBC103E7DDACFE",
+      "与六项验证时相同": true
+    },
+    {
+      "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_machine.gd",
+      "算法": "SHA256（安全散列256）",
+      "当前散列": "70A48987715B02922BC5200368208BC98D0EAF412D8A54A46FBA4ACFEE3B36A9",
+      "六项验证散列": "70A48987715B02922BC5200368208BC98D0EAF412D8A54A46FBA4ACFEE3B36A9",
+      "与六项验证时相同": true
+    },
+    {
+      "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_handle.gd",
+      "算法": "SHA256（安全散列256）",
+      "当前散列": "87A16986B21542636BDF82B17A0022E95E9D72F39B0EF0949E9E6D38EC98F578",
+      "六项验证散列": "87A16986B21542636BDF82B17A0022E95E9D72F39B0EF0949E9E6D38EC98F578",
+      "与六项验证时相同": true
+    },
+    {
+      "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_tank_place.gd",
+      "算法": "SHA256（安全散列256）",
+      "当前散列": "27C8F29B181F0ED6AC79A7D37718E32516C1AE3A84E8774C5E78883348B783A4",
+      "六项验证散列": "27C8F29B181F0ED6AC79A7D37718E32516C1AE3A84E8774C5E78883348B783A4",
+      "与六项验证时相同": true
+    },
+    {
+      "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_blend_0.tscn",
+      "算法": "SHA256（安全散列256）",
+      "当前散列": "B66CF1C8A240207F72F714E324A1C44066309DA2BF7EFBD9651AE72F1AA21498",
+      "六项验证散列": "B66CF1C8A240207F72F714E324A1C44066309DA2BF7EFBD9651AE72F1AA21498",
+      "与六项验证时相同": true
+    }
+  ]
+}

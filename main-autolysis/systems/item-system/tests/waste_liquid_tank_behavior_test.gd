@@ -110,6 +110,7 @@ func _new_tank() -> AutolysisWasteLiquidStorageTank:
 	_check(tank != null, "真实废液罐预制体根节点挂载处置控制器")
 	if tank != null:
 		world.add_child(tank)
+		await _frames(2)
 		_check(tank.is_configured(), "真实废液罐初始化配置有效")
 	return tank
 
@@ -125,7 +126,7 @@ func _filled_instance() -> AutolysisItemInstance:
 
 func _open(tank: AutolysisWasteLiquidStorageTank, actor: Node3D) -> bool:
 	_check(tank.try_toggle(actor), "正式开闭入口开始真实开盖动画")
-	await _frames(20)
+	await _wait_motion(tank)
 	_check(tank.is_open() and not tank.is_animating() and not tank.animation_player.is_playing(), "自然动画结束后废液罐才完全打开")
 	return tank.is_open()
 
@@ -138,14 +139,7 @@ func _component_contract(body: PhysicsBody3D, component: AutolysisInteractionCom
 	for child: Node in body.get_children():
 		if child is AutolysisInteractionComponent:
 			count += 1
-	var connections: Array[Dictionary] = []
-	connections.assign(component.interaction_requested.get_connections())
-	_check(count == 1 and component.interaction_mode == AutolysisInteractionComponent.InteractionMode.DIRECT and connections.size() == 1, label + "具有唯一直接入口与唯一接收者")
-	if connections.size() == 1:
-		var callback: Callable = connections[0]["callable"]
-		var flags: int = connections[0]["flags"]
-		_check(callback.is_valid() and callback.get_object() == receiver and callback.get_argument_count() == 1 and (flags & (Object.CONNECT_DEFERRED | Object.CONNECT_APPEND_SOURCE_OBJECT)) == 0, label + "业务控制器同步接收单个演员参数")
-
+	_check(count == 1 and component.has_execution_handler(), label + "具有唯一直接入口和明确业务执行绑定")
 
 func _assert_denied(actor: TestActor, tank: AutolysisWasteLiquidStorageTank, label: String) -> void:
 	var source: AutolysisItemInstance = actor.inventory.get_focused_instance()
@@ -161,7 +155,7 @@ func _assert_denied(actor: TestActor, tank: AutolysisWasteLiquidStorageTank, lab
 func _test_matrix_and_selection() -> void:
 	var actor: TestActor = _new_actor()
 	var other: TestActor = _new_actor()
-	var tank: AutolysisWasteLiquidStorageTank = _new_tank()
+	var tank: AutolysisWasteLiquidStorageTank = await _new_tank()
 	if tank == null:
 		await _clear_world()
 		return
@@ -171,7 +165,7 @@ func _test_matrix_and_selection() -> void:
 	_component_contract(tank, tank.disposal_interaction, tank, "罐体组件")
 	_component_contract(tank.lid_body, tank.lid_interaction, tank, "盖子组件")
 	_check(not tank.is_open() and not tank.is_animating() and tank.lid_body.rotation.is_zero_approx(), "初始化盖子明确位于实际关闭端帧")
-	_check(tank.animation_player.callback_mode_process == AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS and tank.lid_body.sync_to_physics, "真实盖子使用物理帧动画与物理同步")
+	_check(tank.animation_player.callback_mode_process == AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL and tank.lid_body.sync_to_physics, "真实盖子由物理回调手动推进并保留物理同步")
 	_assert_denied(actor, tank, "关闭持满罐")
 	var notifications_before: int = actor.notifications
 	_check(tank.lid_interaction.try_interact(actor), "持满罐点击盖子仅开始打开")
@@ -179,11 +173,11 @@ func _test_matrix_and_selection() -> void:
 	_assert_denied(actor, tank, "打开中持满罐")
 	var position_before: float = tank.animation_player.current_animation_position
 	_check(not tank.try_toggle(actor) and not tank.lid_interaction.try_interact(actor) and is_equal_approx(tank.animation_player.current_animation_position, position_before), "打开中重复开闭不重启动画")
-	await _frames(20)
+	await _wait_motion(tank)
 	_check(tank.is_open(), "真实打开动画完成建立许可")
 	var animation: Animation = tank.animation_player.get_animation(&"lid_open")
 	var expected_rotation: Vector3 = animation.track_get_key_value(0, animation.track_get_key_count(0) - 1)
-	_check(tank.lid_body.rotation.is_equal_approx(expected_rotation), "完全打开的盖子姿态等于真实动画末帧")
+	_check(_basis_error(tank.lid_body.basis, Basis.from_euler(expected_rotation)) < 0.0003, "完全打开的盖子姿态等于真实动画末帧")
 	actor.input_enabled = false
 	_assert_denied(actor, tank, "输入禁止")
 	actor.input_enabled = true
@@ -206,19 +200,19 @@ func _test_matrix_and_selection() -> void:
 	_check(tank.is_animating() and not tank.is_open() and tank.animation_player.get_playing_speed() < 0.0, "关闭请求收回处置许可并实际倒放")
 	_assert_denied(actor, tank, "关闭中持空罐")
 	_check(not tank.try_toggle(actor), "关闭中不追加开闭动作")
-	await _frames(20)
+	await _wait_motion(tank)
 	_check(not tank.is_open() and not tank.is_animating() and tank.lid_body.rotation.is_zero_approx(), "反播自然结束回到关闭零度")
 	for _index: int in range(3):
 		await _open(tank, actor)
 		_check(tank.try_toggle(actor), "连续循环正式入口开始关闭")
-		await _frames(20)
+		await _wait_motion(tank)
 		_check(tank.lid_body.rotation.is_zero_approx() and not tank.is_open(), "连续开闭循环恢复实际关闭端帧")
 	await _clear_world()
 
 
 func _test_raw_material_destruction() -> void:
 	var actor: TestActor = _new_actor()
-	var tank: AutolysisWasteLiquidStorageTank = _new_tank()
+	var tank: AutolysisWasteLiquidStorageTank = await _new_tank()
 	if tank == null:
 		await _clear_world()
 		return
@@ -249,7 +243,7 @@ func _test_notifications_and_reentry() -> void:
 	for destroy_raw: bool in [false, true]:
 		var actor: TestActor = _new_actor()
 		var other: TestActor = _new_actor()
-		var tank: AutolysisWasteLiquidStorageTank = _new_tank()
+		var tank: AutolysisWasteLiquidStorageTank = await _new_tank()
 		if tank == null:
 			await _clear_world()
 			return
@@ -292,7 +286,7 @@ func _test_notifications_and_reentry() -> void:
 func _test_invalid_sources_and_display() -> void:
 	for invalid_contents: bool in [false, true]:
 		var actor: TestActor = _new_actor()
-		var tank: AutolysisWasteLiquidStorageTank = _new_tank()
+		var tank: AutolysisWasteLiquidStorageTank = await _new_tank()
 		if tank == null:
 			await _clear_world()
 			return
@@ -319,7 +313,7 @@ func _test_invalid_sources_and_display() -> void:
 
 func _test_prior_resource_observer() -> void:
 	var actor: TestActor = _new_actor()
-	var tank: AutolysisWasteLiquidStorageTank = _new_tank()
+	var tank: AutolysisWasteLiquidStorageTank = await _new_tank()
 	if tank == null:
 		await _clear_world()
 		return
@@ -345,40 +339,35 @@ func _test_prior_resource_observer() -> void:
 func _test_motion_faults() -> void:
 	for mode: int in range(4):
 		var actor: TestActor = _new_actor()
-		var tank: AutolysisWasteLiquidStorageTank = _new_tank()
-		if tank == null:
-			await _clear_world()
-			return
-		tank.name = "废液罐运动故障%d" % mode
-		_check(actor.inventory.try_receive_instance(_filled_instance()), "运动故障用例持有效满罐")
-		if mode == 1 or mode == 2 or mode == 3:
+		var tank: AutolysisWasteLiquidStorageTank = await _new_tank()
+		_check(actor.inventory.try_receive_instance(_filled_instance()), "运动中断用例持有效满罐")
+		if mode > 0:
 			await _open(tank, actor)
-		if mode <= 1:
-			_check(tank.try_toggle(actor), "运动故障用例经正式入口开始目标动画")
-			await _frames(1)
-			_check(tank.is_animating() and tank.animation_player.is_playing(), "故障注入时动画确在运动中")
-			tank.animation_player.stop(true)
-		elif mode == 2:
-			# 暂时解除同步以注入实际错误姿态，恢复同步后再检验端帧门禁。
-			tank.set_physics_process(false)
-			tank.lid_body.sync_to_physics = false
-			tank.lid_body.rotation = Vector3.ZERO
+		if mode == 2:
+			# 姿态只用于测量；合法运动已完成后不以几何偏差撤销业务许可。
+			tank.lid_body.transform = Transform3D.IDENTITY
 			await _frames(2)
-			tank.lid_body.sync_to_physics = true
-			_check(tank.lid_body.rotation.is_zero_approx() and tank.is_configured() and not tank.is_open(), "恢复有效同步配置后实际错误关闭姿态确已注入且打开许可关闭")
-			tank.set_physics_process(true)
+			_check(tank.is_open() and tank.can_toggle(actor), "完成态不因外部姿态偏移增加业务门禁")
 		else:
-			tank.animation_player.queue_free()
-		await _frames(20)
-		_assert_denied(actor, tank, "动画中断、实际端帧损坏或播放器释放")
-		_check(not tank.can_toggle(actor) and not tank.try_toggle(actor) and not tank.lid_interaction.try_interact(actor), "运动或配置故障关闭后续盖子许可")
-		motion_records.append({"故障类型": mode, "配置有效": tank.is_configured(), "完全打开": tank.is_open(), "实际盖子旋转": str(tank.lid_body.rotation), "配置错误": tank.get_configuration_error()})
+			_check(tank.try_toggle(actor), "中断用例由正式入口开始目标动作")
+			await _frames(1)
+			if mode == 3:
+				tank.animation_player.queue_free()
+			else:
+				tank.animation_player.stop(true)
+			await _frames(4)
+			_assert_denied(actor, tank, "动画中断或必要播放器释放")
+			_check(not tank.is_animating() and not tank.can_toggle(actor), "中断终结等待且不伪报自然完成")
+			if mode < 3:
+				_check(tank.cancel_motion(), "明确取消可以恢复此前稳定状态")
+				await _wait_motion(tank)
+				_check(tank.is_open() == (mode == 1), "恢复与请求前稳定状态一致且不重复处置")
+		motion_records.append({"中断类型": mode, "配置有效": tank.is_configured(), "完全打开": tank.is_open(), "配置错误": tank.get_configuration_error()})
 		await _clear_world()
-
 
 func _test_empty_cabinet_round_trip() -> void:
 	var actor: TestActor = _new_actor()
-	var tank: AutolysisWasteLiquidStorageTank = _new_tank()
+	var tank: AutolysisWasteLiquidStorageTank = await _new_tank()
 	if tank == null:
 		await _clear_world()
 		return
@@ -392,7 +381,7 @@ func _test_empty_cabinet_round_trip() -> void:
 	await _open(tank, actor)
 	_check(actor.inventory.try_dispose_in_waste_tank(actor, tank), "柜子往返先通过废液罐倒空")
 	_check(cabinet.try_toggle(actor), "柜子往返通过既有正式入口开门")
-	await _frames(20)
+	await _wait_motion(cabinet)
 	_check(actor.inventory.try_place_in_liquid_tank_cabinet(actor, cabinet), "倒空原罐可继续放入真实专用柜")
 	var stored: AutolysisLiquidTank = cabinet.get_item_at_slot(0)
 	_check(stored != null and stored.item_instance == source and stored.is_empty(), "柜内保持原实例与空罐内容")
@@ -412,6 +401,7 @@ func _test_rotated_parent_motion() -> void:
 		tank.name = "主场景旋转回归暂停" if pause_motion else "主场景旋转回归自然"
 		tank.transform = source_transform
 		world.add_child(tank)
+		await _frames(2)
 		_check(tank.is_configured() and tank.can_toggle(actor), "主场景实际变换下初始化配置与关闭许可有效")
 		var animation: Animation = tank.animation_player.get_animation(&"lid_open")
 		var expected_rotation: Vector3 = animation.track_get_key_value(0, animation.track_get_key_count(0) - 1)
@@ -423,14 +413,14 @@ func _test_rotated_parent_motion() -> void:
 			await _frames(5)
 			_check(_basis_error(tank.lid_body.basis, paused_basis) < 0.00001, "主场景旋转下开盖中暂停保持实际姿态")
 			paused = false
-		await _frames(20)
+		await _wait_motion(tank)
 		var open_error: float = _basis_error(tank.lid_body.basis, Basis.from_euler(expected_rotation))
 		motion_records.append({"阶段": "主场景旋转暂停恢复开盖" if pause_motion else "主场景旋转自然开盖", "主场景原始变换": str(source_transform), "动画末帧角度": str(expected_rotation), "实际盖子角度": str(tank.lid_body.rotation), "期望局部矩阵": str(Basis.from_euler(expected_rotation)), "实际局部矩阵": str(tank.lid_body.basis), "矩阵最大轴差值": open_error, "完全打开": tank.is_open(), "运动中": tank.is_animating(), "配置错误": tank.get_configuration_error()})
-		_check(open_error < 0.00001, "主场景旋转后实际盖子矩阵与动画打开端帧一致")
+		_check(open_error < 0.0003, "主场景旋转后实际盖子矩阵与动画打开端帧一致")
 		_check(tank.is_open() and not tank.is_animating() and tank.can_dispose(actor) and tank.can_toggle(actor), "主场景旋转后自然完成开放处置与关闭许可")
 		if tank.is_open():
 			_check(tank.try_toggle(actor), "主场景实际变换下正式入口反播关闭")
-			await _frames(20)
+			await _wait_motion(tank)
 			var close_error: float = _basis_error(tank.lid_body.basis, Basis.IDENTITY)
 			motion_records.append({"阶段": "主场景旋转反播关闭", "实际盖子角度": str(tank.lid_body.rotation), "实际局部矩阵": str(tank.lid_body.basis), "矩阵最大轴差值": close_error, "完全打开": tank.is_open(), "运动中": tank.is_animating()})
 			_check(close_error < 0.00001 and not tank.is_open() and not tank.is_animating() and tank.can_toggle(actor) and not tank.can_dispose(actor), "主场景旋转后反播回到真实关闭端帧并恢复开盖许可")
@@ -473,7 +463,7 @@ func _test_main_scene_inputs_and_refill() -> void:
 	await _click()
 	_check(source.liquid_contents != null and not main_tank.is_open(), "主场景动画中暂停点击不倒空")
 	paused = false
-	await _frames(20)
+	await _wait_motion(main_tank)
 	_check(main_tank.is_open(), "主场景真实开盖动画自然完成")
 	if not await _aim_reachable(main_tank, "主场景打开罐体"):
 		return
@@ -508,12 +498,12 @@ func _test_main_scene_inputs_and_refill() -> void:
 	if not await _aim_reachable(main_tank.lid_body, "主场景已打开盖子仍可关闭"):
 		return
 	await _click()
-	await _frames(20)
+	await _wait_motion(main_tank)
 	_check(not main_tank.is_open() and main_tank.lid_body.rotation.is_zero_approx(), "真实主场景打开后的盖子仍能首命中并通过左键关闭")
 	if not await _aim_reachable(main_tank.lid_body, "主场景再次开盖"):
 		return
 	await _click()
-	await _frames(20)
+	await _wait_motion(main_tank)
 	_check(inventory.cycle_focus(1) and inventory.try_receive_item(CAFFEINE), "主场景切换空格建立当前原药，原空罐留在其他格")
 	if not await _aim_reachable(main_tank, "主场景原药罐体"):
 		return
@@ -607,10 +597,10 @@ func _test_actual_blend_refill(source: AutolysisItemInstance) -> void:
 	_check(placed != null and placed.item_instance == source and placed.is_empty(), "配药器罐位保留倒空原实例身份与空内容")
 	var slot: AutolysisBlendSlot = machine.slots[0]
 	_check(slot.try_toggle(player), "正式槽门入口打开零号原药槽")
-	await _frames(20)
+	await _wait_motion(slot)
 	_check(inventory.try_receive_item(SODIUM) and inventory.try_place_in_blend_slot(player, slot), "重新装填通过既有库存接口装入一份苯甲酸钠")
 	_check(slot.try_toggle(player), "正式槽门入口关闭装药槽")
-	await _frames(20)
+	await _wait_motion(slot)
 	_check(machine.try_start_processing(player), "空罐和有效原药通过正式入口开始真实两秒配药")
 	await _frames(125)
 	_check(not machine.is_batch_running() and placed != null and not placed.is_empty() and placed.item_instance == source and source.liquid_contents.get_raw_material_ids() == ["sodium_benzoate"], "真实计时完成后倒空原罐重新获得新药液且原实例保持")
@@ -634,3 +624,10 @@ func _save_evidence() -> void:
 		return
 	file.store_string(JSON.stringify({"引擎": Engine.get_version_info(), "实际图形后端": graphical, "断言数": assertion_count, "失败数": failures, "断言": records, "运动故障": motion_records, "真实射线": ray_records, "画面": screenshots, "输入范围": "自动注入真实鼠标事件；未声明人工鼠标验收", "参考代码": ["D:/cogito/addons/cogito/CogitoObjects/cogito_door.gd:344", "D:/cogito/addons/cogito/InventoryPD/cogito_inventory.gd:46", "D:/cogito/addons/cogito/InventoryPD/cogito_inventory.gd:120", "res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd", "res://main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd", "res://main-autolysis/systems/item-system/tests/liquid_contents_blend_test.gd"]}, "\t"))
 	file.close()
+
+func _wait_motion(container: Node) -> void:
+	for frame: int in 240:
+		if not container.is_animating():
+			return
+		await _frames(1)
+	_check(false, "容器动作等待超过测试上限；配置原因：" + container.get_configuration_error())

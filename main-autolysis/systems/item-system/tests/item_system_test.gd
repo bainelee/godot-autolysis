@@ -58,6 +58,18 @@ class TestActor extends Node3D:
 		competing_attempted = true
 		competing_place_result = inventory.try_place_on_shelf(competing_shelf)
 
+class InteractionObserver extends Node3D:
+	var count: int = 0
+	var component: AutolysisInteractionComponent
+	var recursive_result: bool = true
+	var focused_instance_at_notification: AutolysisItemInstance
+
+	func observe(actor: Node3D) -> void:
+		count += 1
+		var inventory: AutolysisInventoryController = actor.get_node("InventoryController") as AutolysisInventoryController
+		focused_instance_at_notification = inventory.get_focused_instance()
+		recursive_result = component.try_interact(actor)
+
 var world: Node3D
 var failures: int = 0
 var assertion_count: int = 0
@@ -74,6 +86,7 @@ func _run() -> void:
 	root.add_child(world)
 	await _test_inventory_and_display()
 	await _test_groups()
+	await _test_interaction_observers()
 	await _test_world_pickup()
 	await _test_shelves_and_conservation()
 	await _test_transfer_failures()
@@ -219,6 +232,44 @@ func _test_groups() -> void:
 		for index: int in range(originals.size()):
 			_check(is_instance_valid(originals[index]) and originals[index].get_parent() == tray and (originals[index] as Node3D).global_transform.is_equal_approx(transforms[index]), "原药组第%d件陈列节点及位置未改变" % index)
 		await _clear_world()
+
+
+func _test_interaction_observers() -> void:
+	var actor: TestActor = _new_actor()
+	var group: AutolysisRawMaterialGroup = CAFFEINE_GROUP.instantiate() as AutolysisRawMaterialGroup
+	world.add_child(group)
+	var component: AutolysisInteractionComponent = group.get_node("InteractionComponent") as AutolysisInteractionComponent
+	var first: InteractionObserver = InteractionObserver.new()
+	var second: InteractionObserver = InteractionObserver.new()
+	first.component = component
+	second.component = component
+	world.add_child(first)
+	world.add_child(second)
+	component.interaction_requested.connect(first.observe)
+	component.interaction_requested.connect(second.observe, CONNECT_DEFERRED)
+	var initial_notifications: int = actor.notifications
+	_check(component.can_interact(actor) and component.try_interact(actor), "生产原药组允许附加同步和延后观察订阅")
+	var received: AutolysisItemInstance = actor.inventory.get_focused_instance()
+	_check(_inventory_count(actor.inventory) == 1 and actor.notifications == initial_notifications + 1 and first.count == 1 and not first.recursive_result and first.focused_instance_at_notification == received, "生产原药组权威执行只提交一件且同步观察在提交后拒绝重入")
+	await _frames(2)
+	_check(second.count == 1 and not second.recursive_result and second.focused_instance_at_notification == received and _inventory_count(actor.inventory) == 1, "延后原药组观察不重复领取或覆盖已提交实例")
+	second.queue_free()
+	await _frames(2)
+	actor.inventory.cycle_focus(1)
+	_check(component.try_interact(actor) and _inventory_count(actor.inventory) == 2 and actor.inventory.get_slot_instance(0) == received and actor.inventory.get_focused_instance() != received, "观察对象释放后下一独立请求产生一件新实例且保留原来源身份")
+	first.queue_free()
+	await _frames(2)
+	var shelf: AutolysisRawMaterialShelf = _new_shelf()
+	var shelf_component: AutolysisInteractionComponent = shelf.get_node("InteractionComponent") as AutolysisInteractionComponent
+	var shelf_observer: InteractionObserver = InteractionObserver.new()
+	shelf_observer.component = shelf_component
+	world.add_child(shelf_observer)
+	shelf_component.interaction_requested.connect(shelf_observer.observe)
+	actor.inventory.cycle_focus(-1)
+	initial_notifications = actor.notifications
+	_check(shelf_component.try_interact(actor) and _shelf_count(shelf) == 1 and _inventory_count(actor.inventory) == 1 and shelf.get_item_at_slot(0).item_instance == received, "生产放置架附加观察后只转移一件并保留同一原药实例")
+	_check(actor.notifications == initial_notifications + 1 and shelf_observer.count == 1 and not shelf_observer.recursive_result and shelf_observer.focused_instance_at_notification == null, "放置架观察在提交后记录空手状态且不重复消耗来源")
+	await _clear_world()
 
 
 func _test_world_pickup() -> void:
