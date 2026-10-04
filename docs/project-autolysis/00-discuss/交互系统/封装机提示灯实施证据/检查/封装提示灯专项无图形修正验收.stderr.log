@@ -1,0 +1,7 @@
+ERROR: 封装机提示灯停止更新：提示灯引用、归属、网格或运行材质已失效；/root/PackingMachineDemo/PackingA
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _disable_indicator (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:194)
+       [1] _refresh_indicator (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:127)
+       [2] _test_lamp_dependency_ownership (res://main-autolysis/systems/item-system/tests/packing_indicator_test.gd:384)
+       [3] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)

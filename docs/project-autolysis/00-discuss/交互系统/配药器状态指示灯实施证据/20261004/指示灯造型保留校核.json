@@ -1,0 +1,6 @@
+{
+  "指示灯节点保持原内容": true,
+  "指示灯网格保持原尺寸": true,
+  "实际节点": "[node name=\"light_blend_machine_sign\" type=\"MeshInstance3D\" parent=\".\" unique_id=722884492]\ntransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.25, 0.40999997)\nmaterial_override = ExtResource(\"5_7w0o1\")\nmesh = SubResource(\"BoxMesh_p7yse\")",
+  "实际网格": "[sub_resource type=\"BoxMesh\" id=\"BoxMesh_p7yse\"]\nsize = Vector3(0.12, 0.02, 0.02)"
+}

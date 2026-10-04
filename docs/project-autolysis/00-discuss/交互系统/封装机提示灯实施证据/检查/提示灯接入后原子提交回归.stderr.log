@@ -1,0 +1,12 @@
+ERROR: 封装器批次1故障，保留来源并关闭入口：本轮两槽归属或取放事务失效；/root/PackingMachineDemo/PackingA
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _fail_batch (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:494)
+       [1] _complete_batch (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:420)
+       [2] _on_processing_timeout (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:411)
+ERROR: 封装器批次1故障，保留来源并关闭入口：本轮两槽归属或取放事务失效；/root/PackingMachineDemo/PackingA
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _fail_batch (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:494)
+       [1] _complete_batch (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:420)
+       [2] _on_processing_timeout (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:411)

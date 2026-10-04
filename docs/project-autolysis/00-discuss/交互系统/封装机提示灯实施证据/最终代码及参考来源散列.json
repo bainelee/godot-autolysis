@@ -1,0 +1,62 @@
+[
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_machine.gd",
+    "散列": "5BD41079A95D448A68FABDE9F7FC8B9C85FB5FF124022E935971E8FEEBAB9ECA"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_packing_0.tscn",
+    "散列": "E9581F5EABC5E225A332D7902DA2A49E5A792B7FCBF6686D5F9AA0985ABD5FAD"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\packing_machine_behavior_test.gd",
+    "散列": "D07BBE1D0A8C836C5082987320076D23429A7DF431049EA2BF607C0BC14D6CD6"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\packing_indicator_test.gd",
+    "散列": "C63EAAB4E0AF280B9B834A461AA30B280AEBBC5FA235791DBB59C10BB4F25AAF"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\packing_indicator_test.gd.uid",
+    "散列": "A866DA302D26AC3F9CC1BDDEB03E52076FD50F2F827CF2F190A4D673638A1B29"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_red_2.tres",
+    "散列": "2B956E95C8789E9EAEDD2FC9DB69630DE8028ED772C6EFFEBF77AA61320D8F30"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_4.tres",
+    "散列": "8219517EFE79E0627DD686974C2AF8E3B93419CD0F65BE24D986BF595F5504D0"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\glow_color\\mat_glow_blue_0.tres",
+    "散列": "3A6DD0BFBE7E633753E931A4C92CF4BCA6C1FA9A17EAD104F74561FFB57DD42F"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\glow_color\\mat_glow_blue_1.tres",
+    "散列": "960DBBC3544A672BF17BE2044CB51AAE8DBC1F7FB296836ACD077FCB717B8289"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\components\\interactions\\autolysis_interaction_component.gd",
+    "散列": "930F05E9497984ADDF7BBC2437D02ECEF223E3B06EAF8E110105DEC9B289DBFF"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+    "散列": "DBD057720F6760919D6AB146307403233EA8B60E6A57CA06CC48D9DE2155EF83"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_machine.gd",
+    "散列": "2DCE7778F7A04FBD0FBAA00C005ED260EF562E5301CEE98CBFEA5F7CE9959E15"
+  },
+  {
+    "路径": "D:\\cogito\\addons\\cogito\\CogitoObjects\\cogito_button.gd",
+    "散列": "E2B720B62E1076CFA1BBDF9BB8CFD9B68EB333628D26FFC799DC1C708E98380F"
+  },
+  {
+    "路径": "D:\\cogito\\addons\\cogito\\CogitoObjects\\cogito_security_camera.gd",
+    "散列": "85037FFA8E4E5A283BCD2043DE06182FF984A2D00AFA58624FEFCAFB1D1B0F0A"
+  },
+  {
+    "路径": "D:\\cogito\\main-degauss\\pistol\\scripts\\degauss_beam_ray.gd",
+    "散列": "989075391645CFB4F555401A949232BDAD023617EFA2307FF8FA01A31D5B7AFC"
+  }
+]

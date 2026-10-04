@@ -1,0 +1,850 @@
+{
+  "编制日期": "2026-10-04",
+  "性质": "只读基线取证；不是实施记录或运行测试结果",
+  "散列算法": "SHA-256（安全散列算法二百五十六位）",
+  "用户确认": "橙灯采用现有完整启动条件；槽门未关闭时仍为红灯",
+  "文件": [
+    {
+      "绝对路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_blend_0.tscn",
+      "内容散列": "f2b648c782536e0257075ea2bdfae072c947c2aabb5d692f660795b68c8f4fd4",
+      "起始行": 738,
+      "结束行": 741,
+      "代码摘录": [
+        {
+          "行号": 738,
+          "内容": "[node name=\"light_blend_machine_sign\" type=\"MeshInstance3D\" parent=\".\" unique_id=722884492]"
+        },
+        {
+          "行号": 739,
+          "内容": "transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.25, 0.40999997)"
+        },
+        {
+          "行号": 740,
+          "内容": "material_override = ExtResource(\"5_7w0o1\")"
+        },
+        {
+          "行号": 741,
+          "内容": "mesh = SubResource(\"BoxMesh_p7yse\")"
+        }
+      ]
+    },
+    {
+      "绝对路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_machine.gd",
+      "内容散列": "16533ac79cadfd2a1af41bd3a04e5cf201732a67e920df6074788ab6a022b5d4",
+      "起始行": 137,
+      "结束行": 176,
+      "代码摘录": [
+        {
+          "行号": 137,
+          "内容": "func can_start_processing() -> bool:"
+        },
+        {
+          "行号": 138,
+          "内容": "\treturn get_start_denial_reason().is_empty()"
+        },
+        {
+          "行号": 139,
+          "内容": ""
+        },
+        {
+          "行号": 140,
+          "内容": ""
+        },
+        {
+          "行号": 141,
+          "内容": "## 所有启动前提集中在只读查询；拉杆据此选择完整或受限行程。"
+        },
+        {
+          "行号": 142,
+          "内容": "func get_start_denial_reason() -> StringName:"
+        },
+        {
+          "行号": 143,
+          "内容": "\tif not _fault.is_empty():"
+        },
+        {
+          "行号": 144,
+          "内容": "\t\treturn &\"processing_fault\""
+        },
+        {
+          "行号": 145,
+          "内容": "\tif not is_configured():"
+        },
+        {
+          "行号": 146,
+          "内容": "\t\treturn &\"invalid_configuration\""
+        },
+        {
+          "行号": 147,
+          "内容": "\tif _processing:"
+        },
+        {
+          "行号": 148,
+          "内容": "\t\treturn &\"processing\""
+        },
+        {
+          "行号": 149,
+          "内容": "\tif tank_place.is_transfer_busy():"
+        },
+        {
+          "行号": 150,
+          "内容": "\t\treturn &\"transfer_busy\""
+        },
+        {
+          "行号": 151,
+          "内容": "\tvar tank: AutolysisLiquidTank = tank_place.get_stored_item()"
+        },
+        {
+          "行号": 152,
+          "内容": "\tif not is_instance_valid(tank):"
+        },
+        {
+          "行号": 153,
+          "内容": "\t\treturn &\"missing_tank\""
+        },
+        {
+          "行号": 154,
+          "内容": "\tif not tank_place.owns_item(tank) or not is_instance_valid(tank.item_instance) or not tank.item_instance.is_valid_instance():"
+        },
+        {
+          "行号": 155,
+          "内容": "\t\treturn &\"invalid_tank\""
+        },
+        {
+          "行号": 156,
+          "内容": "\tif not tank.is_empty():"
+        },
+        {
+          "行号": 157,
+          "内容": "\t\treturn &\"filled_tank\""
+        },
+        {
+          "行号": 158,
+          "内容": "\tvar material_count: int = 0"
+        },
+        {
+          "行号": 159,
+          "内容": "\tfor slot: AutolysisBlendSlot in slots:"
+        },
+        {
+          "行号": 160,
+          "内容": "\t\tif not slot.is_configured():"
+        },
+        {
+          "行号": 161,
+          "内容": "\t\t\treturn &\"invalid_slot\""
+        },
+        {
+          "行号": 162,
+          "内容": "\t\tif slot.is_transfer_busy():"
+        },
+        {
+          "行号": 163,
+          "内容": "\t\t\treturn &\"transfer_busy\""
+        },
+        {
+          "行号": 164,
+          "内容": "\t\tif not slot.is_closed():"
+        },
+        {
+          "行号": 165,
+          "内容": "\t\t\treturn &\"door_not_closed\""
+        },
+        {
+          "行号": 166,
+          "内容": "\t\tvar item: AutolysisRawMaterial = slot.get_stored_item()"
+        },
+        {
+          "行号": 167,
+          "内容": "\t\tif item == null:"
+        },
+        {
+          "行号": 168,
+          "内容": "\t\t\tcontinue"
+        },
+        {
+          "行号": 169,
+          "内容": "\t\tif not slot.owns_item(item) or not is_instance_valid(item.item_instance) or not item.item_instance.is_valid_instance():"
+        },
+        {
+          "行号": 170,
+          "内容": "\t\t\treturn &\"invalid_raw_material\""
+        },
+        {
+          "行号": 171,
+          "内容": "\t\tif item.item_definition != item.item_instance.definition or not item.item_definition.is_raw_material:"
+        },
+        {
+          "行号": 172,
+          "内容": "\t\t\treturn &\"invalid_raw_material\""
+        },
+        {
+          "行号": 173,
+          "内容": "\t\tif AutolysisLiquidContents.resolve_raw_material_definition(String(item.item_definition.item_id)) != item.item_definition:"
+        },
+        {
+          "行号": 174,
+          "内容": "\t\t\treturn &\"invalid_raw_material\""
+        },
+        {
+          "行号": 175,
+          "内容": "\t\tmaterial_count += 1"
+        },
+        {
+          "行号": 176,
+          "内容": "\treturn &\"missing_raw_material\" if material_count == 0 else &\"\""
+        }
+      ]
+    },
+    {
+      "绝对路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_slot.gd",
+      "内容散列": "1f7e4f9bc2332e21ee6eff75ec82b78a70695bd32f40b827bb999b0f4e02e960",
+      "起始行": 104,
+      "结束行": 112,
+      "代码摘录": [
+        {
+          "行号": 104,
+          "内容": "func try_begin_transfer(actor: Node3D) -> bool:"
+        },
+        {
+          "行号": 105,
+          "内容": "\tif _transfer_busy or not can_transfer(actor):"
+        },
+        {
+          "行号": 106,
+          "内容": "\t\treturn false"
+        },
+        {
+          "行号": 107,
+          "内容": "\t_transfer_busy = true"
+        },
+        {
+          "行号": 108,
+          "内容": "\treturn true"
+        },
+        {
+          "行号": 109,
+          "内容": ""
+        },
+        {
+          "行号": 110,
+          "内容": ""
+        },
+        {
+          "行号": 111,
+          "内容": "func end_transfer() -> void:"
+        },
+        {
+          "行号": 112,
+          "内容": "\t_transfer_busy = false"
+        }
+      ]
+    },
+    {
+      "绝对路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_tank_place.gd",
+      "内容散列": "cb0713758d63681d22d038862087eed6fc1f4a9b632d6b5fb24c65aa9270bd78",
+      "起始行": 80,
+      "结束行": 88,
+      "代码摘录": [
+        {
+          "行号": 80,
+          "内容": "func try_begin_transfer(actor: Node3D) -> bool:"
+        },
+        {
+          "行号": 81,
+          "内容": "\tif not can_transfer(actor):"
+        },
+        {
+          "行号": 82,
+          "内容": "\t\treturn false"
+        },
+        {
+          "行号": 83,
+          "内容": "\t_transfer_busy = true"
+        },
+        {
+          "行号": 84,
+          "内容": "\treturn true"
+        },
+        {
+          "行号": 85,
+          "内容": ""
+        },
+        {
+          "行号": 86,
+          "内容": ""
+        },
+        {
+          "行号": 87,
+          "内容": "func end_transfer() -> void:"
+        },
+        {
+          "行号": 88,
+          "内容": "\t_transfer_busy = false"
+        }
+      ]
+    },
+    {
+      "绝对路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+      "内容散列": "dbd057720f6760919d6ab146307403233ea8b60e6a57ca06cc48d9de2155ef83",
+      "起始行": 399,
+      "结束行": 403,
+      "代码摘录": [
+        {
+          "行号": 399,
+          "内容": "\t_slots[original_index] = null"
+        },
+        {
+          "行号": 400,
+          "内容": "\t_commit_visual(null)"
+        },
+        {
+          "行号": 401,
+          "内容": "\t_publish_change()"
+        },
+        {
+          "行号": 402,
+          "内容": "\t_end_blend_tank_transfer(place)"
+        },
+        {
+          "行号": 403,
+          "内容": "\treturn true"
+        }
+      ]
+    },
+    {
+      "绝对路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_red_2.tres",
+      "内容散列": "2b956e95c8789e9eaedd2fc9db69630de8028ed772c6effebf77aa61320d8f30",
+      "起始行": 1,
+      "结束行": 8,
+      "代码摘录": [
+        {
+          "行号": 1,
+          "内容": "[gd_resource type=\"StandardMaterial3D\" format=3 uid=\"uid://3as3koaxu70e\"]"
+        },
+        {
+          "行号": 2,
+          "内容": ""
+        },
+        {
+          "行号": 3,
+          "内容": "[ext_resource type=\"Texture2D\" uid=\"uid://pgn0ph0lqvqx\" path=\"res://main-autolysis/assets/textures/Prototype Textures/PNG/Light/texture_12.png\" id=\"CompressedTexture2D_24bj2\"]"
+        },
+        {
+          "行号": 4,
+          "内容": ""
+        },
+        {
+          "行号": 5,
+          "内容": "[resource]"
+        },
+        {
+          "行号": 6,
+          "内容": "albedo_color = Color(0.48, 0, 0, 1)"
+        },
+        {
+          "行号": 7,
+          "内容": "albedo_texture = ExtResource(\"CompressedTexture2D_24bj2\")"
+        },
+        {
+          "行号": 8,
+          "内容": "uv1_triplanar = true"
+        }
+      ]
+    },
+    {
+      "绝对路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\glow_color\\mat_glow_orange_0.tres",
+      "内容散列": "908e8c6d3345e2fa840b5766fb8b6f6fbb716ed9b43f48f44c69b764c279f560",
+      "起始行": 1,
+      "结束行": 11,
+      "代码摘录": [
+        {
+          "行号": 1,
+          "内容": "[gd_resource type=\"StandardMaterial3D\" format=3 uid=\"uid://b8qbsbchatvc5\"]"
+        },
+        {
+          "行号": 2,
+          "内容": ""
+        },
+        {
+          "行号": 3,
+          "内容": "[ext_resource type=\"Texture2D\" uid=\"uid://pgn0ph0lqvqx\" path=\"res://main-autolysis/assets/textures/Prototype Textures/PNG/Light/texture_12.png\" id=\"1_f8sof\"]"
+        },
+        {
+          "行号": 4,
+          "内容": ""
+        },
+        {
+          "行号": 5,
+          "内容": "[resource]"
+        },
+        {
+          "行号": 6,
+          "内容": "albedo_color = Color(1, 0.3647059, 0, 1)"
+        },
+        {
+          "行号": 7,
+          "内容": "albedo_texture = ExtResource(\"1_f8sof\")"
+        },
+        {
+          "行号": 8,
+          "内容": "emission_enabled = true"
+        },
+        {
+          "行号": 9,
+          "内容": "emission = Color(1, 0.3647059, 0, 1)"
+        },
+        {
+          "行号": 10,
+          "内容": "emission_energy_multiplier = 2.0"
+        },
+        {
+          "行号": 11,
+          "内容": "uv1_triplanar = true"
+        }
+      ]
+    },
+    {
+      "绝对路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\glow_color\\mat_glow_green_0.tres",
+      "内容散列": "abfe9c4f2c5b31468bc4a579ee899d723c7f1b293e7c1c4b6ab9e6ed6d894d6f",
+      "起始行": 1,
+      "结束行": 11,
+      "代码摘录": [
+        {
+          "行号": 1,
+          "内容": "[gd_resource type=\"StandardMaterial3D\" format=3 uid=\"uid://eju83npipt3e\"]"
+        },
+        {
+          "行号": 2,
+          "内容": ""
+        },
+        {
+          "行号": 3,
+          "内容": "[ext_resource type=\"Texture2D\" uid=\"uid://pgn0ph0lqvqx\" path=\"res://main-autolysis/assets/textures/Prototype Textures/PNG/Light/texture_12.png\" id=\"CompressedTexture2D_24bj2\"]"
+        },
+        {
+          "行号": 4,
+          "内容": ""
+        },
+        {
+          "行号": 5,
+          "内容": "[resource]"
+        },
+        {
+          "行号": 6,
+          "内容": "albedo_color = Color(0.6666666, 1, 0, 1)"
+        },
+        {
+          "行号": 7,
+          "内容": "albedo_texture = ExtResource(\"CompressedTexture2D_24bj2\")"
+        },
+        {
+          "行号": 8,
+          "内容": "emission_enabled = true"
+        },
+        {
+          "行号": 9,
+          "内容": "emission = Color(0.6166667, 1, 0, 1)"
+        },
+        {
+          "行号": 10,
+          "内容": "emission_energy_multiplier = 2.0"
+        },
+        {
+          "行号": 11,
+          "内容": "uv1_triplanar = true"
+        }
+      ]
+    },
+    {
+      "绝对路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\autolysis_liquid_tank.gd",
+      "内容散列": "d224559d39357657275a784ec3706a83dbbe4d5974bf330fa2772a1bbf0a369e",
+      "起始行": 49,
+      "结束行": 70,
+      "代码摘录": [
+        {
+          "行号": 49,
+          "内容": "func is_empty() -> bool:"
+        },
+        {
+          "行号": 50,
+          "内容": "\treturn _has_valid_instance() and item_instance.is_empty_liquid_tank()"
+        },
+        {
+          "行号": 51,
+          "内容": ""
+        },
+        {
+          "行号": 52,
+          "内容": ""
+        },
+        {
+          "行号": 53,
+          "内容": "func can_apply_contents(contents: AutolysisLiquidContents) -> bool:"
+        },
+        {
+          "行号": 54,
+          "内容": "\treturn not _pickup_finished and _has_valid_instance() and is_empty() and is_instance_valid(contents) and contents.is_valid_contents() and AutolysisLiquidTankVisual.can_apply(self)"
+        },
+        {
+          "行号": 55,
+          "内容": ""
+        },
+        {
+          "行号": 56,
+          "内容": ""
+        },
+        {
+          "行号": 57,
+          "内容": "func apply_contents(contents: AutolysisLiquidContents, notify: bool = true) -> bool:"
+        },
+        {
+          "行号": 58,
+          "内容": "\tif not can_apply_contents(contents):"
+        },
+        {
+          "行号": 59,
+          "内容": "\t\treturn false"
+        },
+        {
+          "行号": 60,
+          "内容": "\tif not item_instance.set_liquid_contents(contents, false):"
+        },
+        {
+          "行号": 61,
+          "内容": "\t\treturn false"
+        },
+        {
+          "行号": 62,
+          "内容": "\tAutolysisLiquidTankVisual.apply_instance(self, item_instance)"
+        },
+        {
+          "行号": 63,
+          "内容": "\tif notify:"
+        },
+        {
+          "行号": 64,
+          "内容": "\t\tnotify_contents_changed()"
+        },
+        {
+          "行号": 65,
+          "内容": "\treturn true"
+        },
+        {
+          "行号": 66,
+          "内容": ""
+        },
+        {
+          "行号": 67,
+          "内容": ""
+        },
+        {
+          "行号": 68,
+          "内容": "func notify_contents_changed() -> void:"
+        },
+        {
+          "行号": 69,
+          "内容": "\tif _has_valid_instance():"
+        },
+        {
+          "行号": 70,
+          "内容": "\t\titem_instance.emit_changed()"
+        }
+      ]
+    },
+    {
+      "绝对路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\autolysis_item_instance.gd",
+      "内容散列": "3e3d3a0d7fcfe9b000d2a6e6e063f50969734426afad5de035ed3b67e9d197c5",
+      "起始行": 29,
+      "结束行": 44,
+      "代码摘录": [
+        {
+          "行号": 29,
+          "内容": "func is_valid_instance() -> bool:"
+        },
+        {
+          "行号": 30,
+          "内容": "\tif not is_instance_valid(definition) or not definition.is_valid_definition():"
+        },
+        {
+          "行号": 31,
+          "内容": "\t\treturn false"
+        },
+        {
+          "行号": 32,
+          "内容": "\tif _liquid_contents != null and (not is_liquid_tank() or not _liquid_contents.is_valid_contents()):"
+        },
+        {
+          "行号": 33,
+          "内容": "\t\treturn false"
+        },
+        {
+          "行号": 34,
+          "内容": "\tif _packing_contents != null and (not is_pneumatic_capsule() or not _packing_contents.is_valid_contents()):"
+        },
+        {
+          "行号": 35,
+          "内容": "\t\treturn false"
+        },
+        {
+          "行号": 36,
+          "内容": "\treturn true"
+        },
+        {
+          "行号": 37,
+          "内容": ""
+        },
+        {
+          "行号": 38,
+          "内容": ""
+        },
+        {
+          "行号": 39,
+          "内容": "func is_liquid_tank() -> bool:"
+        },
+        {
+          "行号": 40,
+          "内容": "\treturn is_instance_valid(definition) and definition.item_id == &\"liquid_tank\" and not definition.is_raw_material"
+        },
+        {
+          "行号": 41,
+          "内容": ""
+        },
+        {
+          "行号": 42,
+          "内容": ""
+        },
+        {
+          "行号": 43,
+          "内容": "func is_empty_liquid_tank() -> bool:"
+        },
+        {
+          "行号": 44,
+          "内容": "\treturn is_valid_instance() and is_liquid_tank() and _liquid_contents == null"
+        }
+      ]
+    },
+    {
+      "绝对路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\liquid_contents_blend_test.gd",
+      "内容散列": "f6838f1eeaed7ae322f59b7abb0f0e40c5e5d5f57a88e39e01f7da210eb06bce",
+      "起始行": 166,
+      "结束行": 170,
+      "代码摘录": [
+        {
+          "行号": 166,
+          "内容": "\tvar tank: AutolysisLiquidTank = machine.tank_place.get_stored_item()"
+        },
+        {
+          "行号": 167,
+          "内容": "\tvar ids: Array[String] = [\"sodium_benzoate\", \"caffeine\", \"sodium_benzoate\"]"
+        },
+        {
+          "行号": 168,
+          "内容": "\tvar contents: AutolysisLiquidContents = AutolysisLiquidContents.create_result(ids)"
+        },
+        {
+          "行号": 169,
+          "内容": "\tcontents.set_phase_rgb(Vector3(7, 8, 9))"
+        },
+        {
+          "行号": 170,
+          "内容": "\tcheck(tank.apply_contents(contents), \"取回候选故障夹具准备满罐\")"
+        }
+      ]
+    },
+    {
+      "绝对路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\machine_batch_atomic_test.gd",
+      "内容散列": "bc1d9a44befbb73fb38ec76c650ecc9933d189ccb00df0b228ec10e50be10140",
+      "起始行": 96,
+      "结束行": 101,
+      "代码摘录": [
+        {
+          "行号": 96,
+          "内容": "\tmachine.processing_completed.connect(func(_batch_id: int, _contents: AutolysisLiquidContents) -> void:"
+        },
+        {
+          "行号": 97,
+          "内容": "\t\tobserved[\"完成次数\"] += 1"
+        },
+        {
+          "行号": 98,
+          "内容": "\t\tvar completed_tank: AutolysisLiquidTank = instance_from_id(tank_instance_id) as AutolysisLiquidTank"
+        },
+        {
+          "行号": 99,
+          "内容": "\t\t_check(not machine.is_batch_running() and not machine.is_interaction_locked() and (completed_tank == null or not completed_tank.is_empty()), mode + \"完成通知时已恢复交互且完整提交没有回退\")"
+        },
+        {
+          "行号": 100,
+          "内容": "\t)"
+        },
+        {
+          "行号": 101,
+          "内容": "\t_check(machine.try_start_processing(player), mode + \"合法前提启动唯一加工批次\")"
+        }
+      ]
+    },
+    {
+      "绝对路径": "D:\\cogito\\addons\\cogito\\CogitoObjects\\cogito_snap_slot.gd",
+      "内容散列": "de069e453582410c50ba92599deb4502c3648bea15da389690f93fcf54d6d098",
+      "起始行": 5,
+      "结束行": 7,
+      "代码摘录": [
+        {
+          "行号": 5,
+          "内容": "signal object_placed"
+        },
+        {
+          "行号": 6,
+          "内容": "signal object_removed"
+        },
+        {
+          "行号": 7,
+          "内容": "signal object_state_updated(interaction_text:String)"
+        }
+      ]
+    },
+    {
+      "绝对路径": "D:\\cogito\\addons\\cogito\\Scripts\\cogito_hover_tool.gd",
+      "内容散列": "7b0bf08535e9e87e28bf9fdb106a25fbcdfabb41f3cf255f5f85e6e69003711d",
+      "起始行": 12,
+      "结束行": 18,
+      "代码摘录": [
+        {
+          "行号": 12,
+          "内容": "var hover_tween : Tween"
+        },
+        {
+          "行号": 13,
+          "内容": ""
+        },
+        {
+          "行号": 14,
+          "内容": "# Called when the node enters the scene tree for the first time."
+        },
+        {
+          "行号": 15,
+          "内容": "func _ready() -> void:"
+        },
+        {
+          "行号": 16,
+          "内容": "\thover_tween = create_tween().set_loops()"
+        },
+        {
+          "行号": 17,
+          "内容": "\thover_tween.tween_property(self,\"global_position\", neutral_position + hover_amplitude, hover_speed).set_trans(Tween.TRANS_CUBIC)"
+        },
+        {
+          "行号": 18,
+          "内容": "\thover_tween.tween_property(self,\"global_position\", neutral_position - hover_amplitude, hover_speed).set_trans(Tween.TRANS_CUBIC)"
+        }
+      ]
+    },
+    {
+      "绝对路径": "D:\\cogito\\addons\\cogito\\PackedScenes\\laser_ray.gd",
+      "内容散列": "c23a0a828d99b1e9491953fdb1b988e5ff482b835ec1d2c21ceb785e79daf248",
+      "起始行": 19,
+      "结束行": 35,
+      "代码摘录": [
+        {
+          "行号": 19,
+          "内容": "func draw_ray(start_point: Vector3, end_point: Vector3) -> MeshInstance3D:"
+        },
+        {
+          "行号": 20,
+          "内容": "\tmesh_instance.mesh = immediate_mesh"
+        },
+        {
+          "行号": 21,
+          "内容": "\tmesh_instance.cast_shadow = MeshInstance3D.SHADOW_CASTING_SETTING_OFF"
+        },
+        {
+          "行号": 22,
+          "内容": "\t"
+        },
+        {
+          "行号": 23,
+          "内容": "\tinstanced_ray_material = laser_material.duplicate()"
+        },
+        {
+          "行号": 24,
+          "内容": "\t"
+        },
+        {
+          "行号": 25,
+          "内容": "\timmediate_mesh.surface_begin(Mesh.PRIMITIVE_LINES, instanced_ray_material)"
+        },
+        {
+          "行号": 26,
+          "内容": "\timmediate_mesh.surface_add_vertex(start_point)"
+        },
+        {
+          "行号": 27,
+          "内容": "\timmediate_mesh.surface_add_vertex(end_point)"
+        },
+        {
+          "行号": 28,
+          "内容": "\timmediate_mesh.surface_end()"
+        },
+        {
+          "行号": 29,
+          "内容": "\t"
+        },
+        {
+          "行号": 30,
+          "内容": "\tadd_child(mesh_instance)"
+        },
+        {
+          "行号": 31,
+          "内容": "\treturn mesh_instance"
+        },
+        {
+          "行号": 32,
+          "内容": "\t"
+        },
+        {
+          "行号": 33,
+          "内容": "func on_timer_timeout():"
+        },
+        {
+          "行号": 34,
+          "内容": "\tvar fade_tween = get_tree().create_tween()"
+        },
+        {
+          "行号": 35,
+          "内容": "\tfade_tween.tween_property(instanced_ray_material,\"albedo_color\", Color.TRANSPARENT, 1)"
+        }
+      ]
+    },
+    {
+      "绝对路径": "D:\\cogito\\main-degauss\\scripts\\area_music_zone.gd",
+      "内容散列": "4a1d937b1d093ca9c7c18b9983dbb6ef5055a29ba18b0d5b6ad043971706fac7",
+      "起始行": 118,
+      "结束行": 121,
+      "代码摘录": [
+        {
+          "行号": 118,
+          "内容": "func _kill_fade_tween() -> void:"
+        },
+        {
+          "行号": 119,
+          "内容": "\tif _fade_tween != null and _fade_tween.is_valid():"
+        },
+        {
+          "行号": 120,
+          "内容": "\t\t_fade_tween.kill()"
+        },
+        {
+          "行号": 121,
+          "内容": "\t_fade_tween = null"
+        }
+      ]
+    }
+  ],
+  "官方资料": [
+    "https://docs.godotengine.org/en/4.6/classes/class_tween.html",
+    "https://docs.godotengine.org/en/4.6/classes/class_basematerial3d.html#class-basematerial3d-property-emission-energy-multiplier",
+    "https://docs.godotengine.org/en/4.6/classes/class_resource.html#class-resource-method-duplicate",
+    "https://docs.godotengine.org/en/4.6/classes/class_geometryinstance3d.html#class-geometryinstance3d-property-material-override"
+  ]
+}

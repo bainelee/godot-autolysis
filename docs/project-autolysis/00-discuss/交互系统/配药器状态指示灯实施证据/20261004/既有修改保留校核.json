@@ -1,0 +1,17 @@
+[
+  {
+    "路径": "main-autolysis/scenes/01-autolysis-test.tscn",
+    "保持原内容": true,
+    "最终散列": "63D62640CC2965EC1CFCC34EB807A2AC6B3BC899A7FA5E19CD0F941BF5DB83EB"
+  },
+  {
+    "路径": "main-autolysis/assets/materials/glow_color/mat_glow_green_0.tres",
+    "保持原内容": true,
+    "最终散列": "ABFE9C4F2C5B31468BC4A579EE899D723C7F1B293E7C1C4B6AB9E6ED6D894D6F"
+  },
+  {
+    "路径": "main-autolysis/assets/materials/glow_color/mat_glow_orange_0.tres",
+    "保持原内容": true,
+    "最终散列": "908E8C6D3345E2FA840B5766FB8B6F6FBB716ED9B43F48F44C69B764C279F560"
+  }
+]

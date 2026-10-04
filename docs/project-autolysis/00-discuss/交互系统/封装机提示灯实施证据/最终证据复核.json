@@ -1,0 +1,32 @@
+{
+  "散列来源数": 15,
+  "散列不匹配数": 0,
+  "原有场景变换保持": true,
+  "最终六张画面已逐一查看": true,
+  "画面文件": [
+    {
+      "路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\封装机提示灯实施证据\\专项图形最终\\01-初始红色.png",
+      "散列": "C89F277B35037FD3049740252C063C88BEBD38B244116E2E44FE1779328FAA78"
+    },
+    {
+      "路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\封装机提示灯实施证据\\专项图形最终\\02-就绪蓝色.png",
+      "散列": "DC05B48A7B279D9ECE76608A822B23EE58E7B5B0A6CCFF9455D31164DF6CC4B2"
+    },
+    {
+      "路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\封装机提示灯实施证据\\专项图形最终\\03-运行明亮.png",
+      "散列": "50D79E90958FBD2B4F106991ED292EF03F4F611A07D93C12B49242E89687E691"
+    },
+    {
+      "路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\封装机提示灯实施证据\\专项图形最终\\04-运行暗淡.png",
+      "散列": "51DC291B28E15EFB6027ADFD6F8544C94AB7823AC22749359BFBAA221D20FD54"
+    },
+    {
+      "路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\封装机提示灯实施证据\\专项图形最终\\05-完成三灯常亮.png",
+      "散列": "756026515B2617BC814F5B3819A12738BBE3979CB807FE29ED5C8A94EA816AE0"
+    },
+    {
+      "路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\封装机提示灯实施证据\\专项图形最终\\06-取走重置.png",
+      "散列": "C305797F810F7C2B5F555510AB2FAA56FFC07906F1C752F28AB1BE05A89909F7"
+    }
+  ]
+}

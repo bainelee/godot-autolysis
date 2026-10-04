@@ -1,0 +1,37 @@
+{
+  "日期": "2026-10-04",
+  "性质": "实际实现代码与原项目、官方文档参考索引；运行结果另见检查报告",
+  "实现代码": [
+    {"文件": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn", "行号": 258, "用途": "绑定现有状态指示灯"},
+    {"文件": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn", "行号": 739, "用途": "保留原指示灯位置、网格及默认红色"},
+    {"文件": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd", "行号": 99, "用途": "物理帧一致性兜底，覆盖外部配置变动与节点释放；仅状态或监听发生偏差时安排合并刷新"},
+    {"文件": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd", "行号": 111, "用途": "校验显示依赖并建立每机独立橙色材质"},
+    {"文件": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd", "行号": 151, "用途": "统一显示优先级，复用完整启动条件"},
+    {"文件": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd", "行号": 164, "用途": "核验本机成功批次的同一合法满罐实例与实际归属"},
+    {"文件": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd", "行号": 171, "用途": "单补间控制线性往返；同态刷新不重置相位"},
+    {"文件": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd", "行号": 217, "用途": "罐位变更时断开旧罐退出及实例变化监听"},
+    {"文件": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd", "行号": 340, "用途": "实际启动后、开始通知前同步进入运行显示"},
+    {"文件": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd", "行号": 378, "用途": "完整提交、内容通知、解除运行锁、切绿和完成通知保持原子顺序"},
+    {"文件": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd", "行号": 448, "用途": "故障通知前停止闪烁、清凭据并切红"},
+    {"文件": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd", "行号": 470, "用途": "设备退出场景树时主动终止补间"},
+    {"文件": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd", "行号": 175, "用途": "原药批次静默消费段保持无新增外部通知"},
+    {"文件": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd", "行号": 239, "用途": "槽门、转移与占用变化的延后通知"},
+    {"文件": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_tank_place.gd", "行号": 154, "用途": "罐位转移和占用变化的延后通知"}
+  ],
+  "原项目代码": [
+    {"文件": "D:/cogito/addons/cogito/CogitoObjects/cogito_snap_slot.gd", "行号": 52, "用途": "实际占用变化通知模式"},
+    {"文件": "D:/cogito/addons/cogito/Scripts/cogito_hover_tool.gd", "行号": 16, "用途": "实际循环往返补间模式"},
+    {"文件": "D:/cogito/addons/cogito/PackedScenes/laser_ray.gd", "行号": 23, "用途": "实际材质复制与副本属性补间模式"},
+    {"文件": "D:/cogito/main-degauss/scripts/area_music_zone.gd", "行号": 118, "用途": "实际终止补间并清引用模式"}
+  ],
+  "官方文档": [
+    {"网址": "https://docs.godotengine.org/en/4.6/classes/class_tween.html", "用途": "顺序补间、线性过渡、物理更新、暂停与时间缩放"},
+    {"网址": "https://docs.godotengine.org/en/4.6/classes/class_tween.html#class-tween-method-bind-node", "用途": "节点绑定与退出生命周期；移出场景仍需主动终止循环"},
+    {"网址": "https://docs.godotengine.org/en/4.6/classes/class_resource.html#class-resource-method-duplicate", "用途": "复制材质，保留纹理共享"},
+    {"网址": "https://docs.godotengine.org/en/4.6/classes/class_basematerial3d.html#class-basematerial3d-property-emission-energy-multiplier", "用途": "发光能量倍率属性契约"},
+    {"网址": "https://docs.godotengine.org/en/4.6/classes/class_geometryinstance3d.html#class-geometryinstance3d-property-material-override", "用途": "整体网格材质覆盖"},
+    {"网址": "https://docs.godotengine.org/en/4.6/classes/class_callable.html#class-callable-method-call-deferred", "用途": "延后通知，避免介入库存半提交调用栈"}
+  ],
+  "波形定义": {"运行起始倍率": 2.0, "下降终值": 0.0, "上升终值": 2.0, "单向持续有效秒数": 0.5, "往返持续有效秒数": 1.0, "业务计时有效秒数": 2.0, "误差上限": "一次物理帧对应倍率变化加数值舍入容差；不通过补间循环推断批次完成"},
+  "测试边界": "自动输入与正式业务入口验收、真实引擎渲染；不声称人工鼠标操作验收"
+}

@@ -8,6 +8,13 @@ signal processing_failed(batch_id: int, reason: String)
 
 const PROCESSING_SECONDS: float = 2.0
 const NO_TYPE: int = -1
+const INDICATOR_HALF_CYCLE_SECONDS: float = 0.5
+const INDICATOR_RED_MATERIAL = preload("res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres")
+const INDICATOR_READY_MATERIAL = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres")
+const INDICATOR_BLUE_MATERIAL = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_blue_0.tres")
+const INDICATOR_GREY_MATERIAL = preload("res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres")
+
+enum IndicatorState { DEFAULT, READY, RUNNING, COMPLETED }
 
 @export var focus_target: AutolysisFocusTarget
 @export var reference_camera: Camera3D
@@ -19,6 +26,8 @@ const NO_TYPE: int = -1
 @export var type_switches: Array[AutolysisPackingTypeSwitch] = []
 @export var start_button: AutolysisPackingStartButton
 @export var processing_timer: Timer
+@export var start_indicator: MeshInstance3D
+@export var completion_indicators: Array[MeshInstance3D] = []
 
 var _configured: bool = false
 var _processing: bool = false
@@ -36,11 +45,16 @@ var _batch_tank_instance: AutolysisItemInstance
 var _batch_capsule_instance: AutolysisItemInstance
 var _batch_source: AutolysisLiquidContents
 var _batch_type: int = NO_TYPE
+var _indicator_enabled: bool = false
+var _indicator_state: int = -1
+var _indicator_blue_material: StandardMaterial3D
+var _indicator_tween: Tween
 
 
 func _ready() -> void:
 	if is_instance_valid(root_interaction):
 		root_interaction.is_enabled = false
+	_initialize_indicator()
 	if not _validate_configuration():
 		push_error("封装器配置无效：%s" % get_path())
 		return
@@ -74,6 +88,110 @@ func _ready() -> void:
 		control.toggle_interaction.is_enabled = true
 	start_button.start_interaction.is_enabled = true
 	root_interaction.is_enabled = true
+	_refresh_indicator()
+
+
+## 显示依赖独立校验；失效时只停灯，不改变封装业务许可或故障锁。
+func _initialize_indicator() -> void:
+	if not INDICATOR_RED_MATERIAL is StandardMaterial3D or not INDICATOR_READY_MATERIAL is StandardMaterial3D or not INDICATOR_BLUE_MATERIAL is StandardMaterial3D or not INDICATOR_GREY_MATERIAL is StandardMaterial3D:
+		_disable_indicator("四份提示灯材质必须为 StandardMaterial3D（标准三维材质）")
+		return
+	_indicator_blue_material = INDICATOR_BLUE_MATERIAL.duplicate() as StandardMaterial3D
+	if not _indicator_dependencies_are_valid():
+		_disable_indicator("按钮网格、双完成网格的归属、网格或独立运行材质无效")
+		return
+	_indicator_enabled = true
+	start_indicator.tree_exiting.connect(_on_indicator_exiting)
+	for indicator: MeshInstance3D in completion_indicators:
+		indicator.tree_exiting.connect(_on_indicator_exiting)
+	_set_indicator_state(IndicatorState.DEFAULT)
+	_set_completion_indicators(false)
+
+
+func _indicator_dependencies_are_valid() -> bool:
+	if not _node_is_live(start_button) or start_button.get_parent() != self or not _node_is_live(start_indicator) or start_indicator.get_parent() != start_button or start_indicator.mesh == null or not is_instance_valid(_indicator_blue_material):
+		return false
+	var completion_root: Node3D = get_node_or_null("light_packing_complete_sign") as Node3D
+	if not _node_is_live(completion_root) or completion_root.get_parent() != self or completion_indicators.size() != 2 or completion_indicators[0] == completion_indicators[1]:
+		return false
+	for indicator: MeshInstance3D in completion_indicators:
+		if not _node_is_live(indicator) or indicator.get_parent() != completion_root or indicator.mesh == null:
+			return false
+	return true
+
+
+func _refresh_indicator() -> void:
+	if not _indicator_enabled or not _node_is_live(self):
+		return
+	if not _indicator_dependencies_are_valid():
+		_disable_indicator("提示灯引用、归属、网格或运行材质已失效")
+		return
+	_set_indicator_state(_get_indicator_state())
+
+
+func _get_indicator_state() -> IndicatorState:
+	if not _fault.is_empty():
+		return IndicatorState.DEFAULT
+	if _processing:
+		return IndicatorState.RUNNING
+	if _completed_capsule_instance != null:
+		return IndicatorState.COMPLETED
+	if _node_is_live(start_button) and _node_is_live(start_button.start_interaction):
+		# 玩家组还包含发现区域；只向实际玩家查询完整交互许可。
+		for candidate: Node in get_tree().get_nodes_in_group(&"Player"):
+			if _node_is_live(candidate) and candidate is AutolysisPlayer and start_button.start_interaction.can_interact(candidate as AutolysisPlayer):
+				return IndicatorState.READY
+	return IndicatorState.DEFAULT
+
+
+func _set_indicator_state(next_state: IndicatorState) -> void:
+	if _indicator_state == next_state:
+		return
+	_stop_indicator_blink()
+	_indicator_state = next_state
+	match next_state:
+		IndicatorState.DEFAULT:
+			start_indicator.material_override = INDICATOR_RED_MATERIAL
+		IndicatorState.READY, IndicatorState.COMPLETED:
+			start_indicator.material_override = INDICATOR_READY_MATERIAL
+		IndicatorState.RUNNING:
+			_indicator_blue_material.emission_energy_multiplier = 2.0
+			start_indicator.material_override = _indicator_blue_material
+			_indicator_tween = create_tween()
+			_indicator_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+			_indicator_tween.set_pause_mode(Tween.TWEEN_PAUSE_STOP)
+			_indicator_tween.set_ignore_time_scale(false)
+			_indicator_tween.set_trans(Tween.TRANS_LINEAR)
+			_indicator_tween.set_loops()
+			_indicator_tween.tween_property(_indicator_blue_material, "emission_energy_multiplier", 0.0, INDICATOR_HALF_CYCLE_SECONDS)
+			_indicator_tween.tween_property(_indicator_blue_material, "emission_energy_multiplier", 2.0, INDICATOR_HALF_CYCLE_SECONDS)
+
+
+## 完成双灯只在初始化、成功完成与成功取走本轮胶囊的边界切换。
+func _set_completion_indicators(completed: bool) -> void:
+	if not _indicator_enabled:
+		return
+	if not _indicator_dependencies_are_valid():
+		_disable_indicator("完成双灯显示依赖已失效")
+		return
+	for indicator: MeshInstance3D in completion_indicators:
+		indicator.material_override = INDICATOR_BLUE_MATERIAL if completed else INDICATOR_GREY_MATERIAL
+
+
+func _stop_indicator_blink() -> void:
+	if is_instance_valid(_indicator_tween):
+		_indicator_tween.kill()
+	_indicator_tween = null
+
+
+func _on_indicator_exiting() -> void:
+	_stop_indicator_blink()
+	_indicator_enabled = false
+
+
+func _disable_indicator(reason: String) -> void:
+	_on_indicator_exiting()
+	push_error("封装机提示灯停止更新：%s；%s" % [reason, get_path()])
 
 
 func _create_player(animation_name: StringName, player_name: String) -> AnimationPlayer:
@@ -210,12 +328,16 @@ func _apply_selection() -> void:
 func on_packing_item_taken(place: Node3D, instance: AutolysisItemInstance) -> void:
 	if is_interaction_locked() or (place != tank_place and place != capsule_place):
 		return
+	var reset_completed: bool = _completed_capsule_instance != null
 	if _completed_capsule_instance != null:
 		if place != capsule_place or instance != _completed_capsule_instance:
 			return
 		_completed_capsule_instance = null
 	_selected_type = NO_TYPE
 	_apply_selection()
+	_refresh_indicator()
+	if reset_completed:
+		_set_completion_indicators(false)
 
 
 func can_start_processing() -> bool:
@@ -262,12 +384,14 @@ func try_start_processing(actor: Node3D) -> bool:
 	_batch_elapsed = 0.0
 	_timeout_received = false
 	processing_timer.start(PROCESSING_SECONDS)
+	_refresh_indicator()
 	start_button.play_press()
 	processing_started.emit(_batch_id)
 	return true
 
 
 func _physics_process(delta: float) -> void:
+	_refresh_indicator()
 	if not _processing or _committing or not _fault.is_empty():
 		return
 	if Engine.get_physics_frames() > _batch_start_frame:
@@ -333,6 +457,8 @@ func _complete_batch() -> void:
 	if not is_instance_valid(self) or not is_inside_tree() or is_queued_for_deletion():
 		return
 	_processing = false
+	_refresh_indicator()
+	_set_completion_indicators(true)
 	processing_completed.emit(completed_batch_id, contents)
 
 
@@ -364,6 +490,7 @@ func _fail_batch(reason: String) -> void:
 	_committing = false
 	if is_instance_valid(processing_timer):
 		processing_timer.stop()
+	_refresh_indicator()
 	push_error("封装器批次%d故障，保留来源并关闭入口：%s；%s" % [_batch_id, reason, get_path()])
 	processing_failed.emit(_batch_id, reason)
 
@@ -401,6 +528,7 @@ func _on_entry_requested(actor: Node3D) -> void:
 
 
 func _exit_tree() -> void:
+	_on_indicator_exiting()
 	if is_instance_valid(processing_timer):
 		processing_timer.stop()
 	_batch_id += 1

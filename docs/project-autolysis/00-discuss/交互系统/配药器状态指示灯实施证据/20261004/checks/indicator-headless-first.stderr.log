@@ -1,0 +1,5 @@
+SCRIPT ERROR: Invalid access to property or key 'tree_exiting' on a base object of type 'previously freed'.
+   at: _test_completed_credential_and_two_batches (res://main-autolysis/systems/item-system/tests/blend_indicator_test.gd:243)
+   GDScript backtrace (most recent call first):
+       [0] _test_completed_credential_and_two_batches (res://main-autolysis/systems/item-system/tests/blend_indicator_test.gd:243)
+       [1] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)

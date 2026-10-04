@@ -2,6 +2,8 @@ class_name AutolysisBlendTankPlace
 extends StaticBody3D
 ## 单罐位负责归属与事务；道具栏提交仍由玩家库存控制器执行。
 
+signal state_changed
+
 @export var liquid_tank_anchor: Node3D
 @export var transfer_interaction: AutolysisInteractionComponent
 @export var collision_shape: CollisionShape3D
@@ -81,11 +83,15 @@ func try_begin_transfer(actor: Node3D) -> bool:
 	if not can_transfer(actor):
 		return false
 	_transfer_busy = true
+	_emit_state_changed.call_deferred()
 	return true
 
 
 func end_transfer() -> void:
+	if not _transfer_busy:
+		return
 	_transfer_busy = false
+	_emit_state_changed.call_deferred()
 
 
 func get_stored_item() -> AutolysisLiquidTank:
@@ -117,6 +123,7 @@ func try_attach_prepared_item(item: AutolysisLiquidTank) -> bool:
 	if not is_configured():
 		_stored_item = null
 		return false
+	_emit_state_changed.call_deferred()
 	return true
 
 
@@ -125,16 +132,29 @@ func release_item(item: AutolysisLiquidTank) -> bool:
 		return false
 	_stored_item = null
 	item.blend_place = null
+	_emit_state_changed.call_deferred()
 	return true
 
 
 func rollback_prepared_item(item: Variant) -> void:
 	if is_instance_valid(machine) and (machine.is_batch_running() or not machine.get_processing_fault().is_empty()) and _stored_item == item:
 		return
+	var occupancy_changed: bool = false
 	if _stored_item == item:
 		_stored_item = null
+		occupancy_changed = true
 	if is_instance_valid(item) and item is AutolysisLiquidTank and item.blend_place == self:
 		item.blend_place = null
+		occupancy_changed = true
+	if occupancy_changed:
+		_emit_state_changed.call_deferred()
+
+
+## 延后外部通知，库存取放调用栈完成前不新增同步回调。
+func _emit_state_changed() -> void:
+	if not _node_is_live(self):
+		return
+	state_changed.emit()
 
 
 func _actor_is_focused(actor: Node3D) -> bool:

@@ -8,6 +8,12 @@ signal processing_failed(batch_id: int, reason: String)
 signal handle_pull_denied(actor: Node3D, reason: StringName)
 
 const PROCESSING_SECONDS: float = 2.0
+const INDICATOR_HALF_CYCLE_SECONDS: float = 0.5
+const INDICATOR_RED_MATERIAL = preload("res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres")
+const INDICATOR_ORANGE_MATERIAL = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_orange_0.tres")
+const INDICATOR_GREEN_MATERIAL = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_green_0.tres")
+
+enum IndicatorState { DEFAULT, READY, RUNNING, COMPLETED }
 
 @export var focus_target: AutolysisFocusTarget
 @export var reference_camera: Camera3D
@@ -17,6 +23,7 @@ const PROCESSING_SECONDS: float = 2.0
 @export var handle: AutolysisBlendHandle
 @export var tank_place: AutolysisBlendTankPlace
 @export var processing_timer: Timer
+@export var status_indicator: MeshInstance3D
 
 var _configured: bool = false
 var _processing: bool = false
@@ -30,11 +37,20 @@ var _batch_ids: Array[String] = []
 var _batch_raw_material_ids: Array[String] = []
 var _batch_tank: AutolysisLiquidTank
 var _batch_tank_instance: AutolysisItemInstance
+var _indicator_enabled: bool = false
+var _indicator_state: int = -1
+var _indicator_orange_material: StandardMaterial3D
+var _indicator_tween: Tween
+var _indicator_refresh_queued: bool = false
+var _completed_tank_instance: AutolysisItemInstance
+var _observed_tank: AutolysisLiquidTank
+var _observed_tank_instance: AutolysisItemInstance
 
 
 func _ready() -> void:
 	if is_instance_valid(root_interaction):
 		root_interaction.is_enabled = false
+	_initialize_indicator()
 	if not _validate_configuration():
 		push_error("原药混合器配置无效：%s" % get_path())
 		return
@@ -73,6 +89,151 @@ func _ready() -> void:
 	handle.drag_interaction.is_enabled = true
 	tank_place.transfer_interaction.is_enabled = true
 	root_interaction.is_enabled = true
+	for slot: AutolysisBlendSlot in slots:
+		slot.state_changed.connect(_queue_indicator_refresh)
+	tank_place.state_changed.connect(_queue_indicator_refresh)
+	_refresh_indicator()
+
+
+## 通知负责常规刷新；物理帧只在显示或监听发生偏差时合并刷新，覆盖外部释放及配置改动。
+func _physics_process(_delta: float) -> void:
+	if not _indicator_enabled:
+		return
+	if not _indicator_dependencies_are_valid():
+		_disable_indicator("指示灯引用、网格或材质已失效")
+		return
+	var current_tank: AutolysisLiquidTank = tank_place.get_stored_item() if _node_is_live(tank_place) else null
+	var current_instance: AutolysisItemInstance = current_tank.item_instance if current_tank != null else null
+	if _get_indicator_state() != _indicator_state or current_tank != _observed_tank or current_instance != _observed_tank_instance:
+		_queue_indicator_refresh()
+
+
+func _initialize_indicator() -> void:
+	if not _node_is_live(status_indicator) or status_indicator.get_parent() != self or status_indicator.mesh == null:
+		_disable_indicator("status_indicator（状态指示灯）必须绑定本机直接子级的有效网格")
+		return
+	if not INDICATOR_RED_MATERIAL is StandardMaterial3D or not INDICATOR_ORANGE_MATERIAL is StandardMaterial3D or not INDICATOR_GREEN_MATERIAL is StandardMaterial3D:
+		_disable_indicator("三份指定指示灯材质必须为 StandardMaterial3D（标准三维材质）")
+		return
+	_indicator_orange_material = INDICATOR_ORANGE_MATERIAL.duplicate() as StandardMaterial3D
+	if not is_instance_valid(_indicator_orange_material):
+		_disable_indicator("橙色材质独立副本创建失败")
+		return
+	_indicator_enabled = true
+	status_indicator.tree_exiting.connect(_on_indicator_exiting)
+	_set_indicator_state(IndicatorState.DEFAULT)
+
+
+func _indicator_dependencies_are_valid() -> bool:
+	return _node_is_live(status_indicator) and status_indicator.get_parent() == self and status_indicator.mesh != null and is_instance_valid(_indicator_orange_material)
+
+
+func _queue_indicator_refresh() -> void:
+	if not _indicator_enabled or _indicator_refresh_queued or not _node_is_live(self):
+		return
+	_indicator_refresh_queued = true
+	_refresh_indicator.call_deferred()
+
+
+func _refresh_indicator() -> void:
+	_indicator_refresh_queued = false
+	if not _indicator_enabled or not _node_is_live(self):
+		return
+	if not _indicator_dependencies_are_valid():
+		_disable_indicator("指示灯引用、网格或材质已失效")
+		return
+	_update_observed_tank()
+	if not _fault.is_empty() or not _has_completed_tank():
+		_completed_tank_instance = null
+	_set_indicator_state(_get_indicator_state())
+
+
+func _get_indicator_state() -> IndicatorState:
+	if not _fault.is_empty():
+		return IndicatorState.DEFAULT
+	if _processing:
+		return IndicatorState.RUNNING
+	if not is_configured():
+		return IndicatorState.DEFAULT
+	if _has_completed_tank():
+		return IndicatorState.COMPLETED
+	return IndicatorState.READY if can_start_processing() else IndicatorState.DEFAULT
+
+
+## 凭据只由本机成功提交建立；外部填罐或候选取回失败不得制造或提前清除凭据。
+func _has_completed_tank() -> bool:
+	if not is_instance_valid(_completed_tank_instance) or not _completed_tank_instance.is_valid_instance() or not _node_is_live(tank_place):
+		return false
+	var tank: AutolysisLiquidTank = tank_place.get_stored_item()
+	return _node_is_live(tank) and tank_place.owns_item(tank) and tank.item_instance == _completed_tank_instance and tank.item_definition == _completed_tank_instance.definition and not _completed_tank_instance.is_empty_liquid_tank()
+
+
+func _set_indicator_state(next_state: IndicatorState) -> void:
+	if _indicator_state == next_state:
+		return
+	_stop_indicator_blink()
+	_indicator_state = next_state
+	match next_state:
+		IndicatorState.DEFAULT:
+			status_indicator.material_override = INDICATOR_RED_MATERIAL
+		IndicatorState.READY:
+			_indicator_orange_material.emission_energy_multiplier = (INDICATOR_ORANGE_MATERIAL as StandardMaterial3D).emission_energy_multiplier
+			status_indicator.material_override = _indicator_orange_material
+		IndicatorState.RUNNING:
+			_indicator_orange_material.emission_energy_multiplier = 2.0
+			status_indicator.material_override = _indicator_orange_material
+			_indicator_tween = create_tween()
+			_indicator_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+			_indicator_tween.set_pause_mode(Tween.TWEEN_PAUSE_STOP)
+			_indicator_tween.set_ignore_time_scale(false)
+			_indicator_tween.set_trans(Tween.TRANS_LINEAR)
+			_indicator_tween.set_loops()
+			_indicator_tween.tween_property(_indicator_orange_material, "emission_energy_multiplier", 0.0, INDICATOR_HALF_CYCLE_SECONDS)
+			_indicator_tween.tween_property(_indicator_orange_material, "emission_energy_multiplier", 2.0, INDICATOR_HALF_CYCLE_SECONDS)
+		IndicatorState.COMPLETED:
+			status_indicator.material_override = INDICATOR_GREEN_MATERIAL
+
+
+func _stop_indicator_blink() -> void:
+	if is_instance_valid(_indicator_tween):
+		_indicator_tween.kill()
+	_indicator_tween = null
+
+
+func _update_observed_tank() -> void:
+	var current_tank: AutolysisLiquidTank = tank_place.get_stored_item() if _node_is_live(tank_place) else null
+	var current_instance: AutolysisItemInstance = current_tank.item_instance if current_tank != null else null
+	if current_tank == _observed_tank and current_instance == _observed_tank_instance:
+		return
+	_disconnect_observed_tank()
+	_observed_tank = current_tank
+	_observed_tank_instance = current_instance
+	if is_instance_valid(_observed_tank):
+		_observed_tank.tree_exiting.connect(_queue_indicator_refresh)
+	if is_instance_valid(_observed_tank_instance):
+		_observed_tank_instance.changed.connect(_queue_indicator_refresh)
+
+
+func _disconnect_observed_tank() -> void:
+	if is_instance_valid(_observed_tank) and _observed_tank.tree_exiting.is_connected(_queue_indicator_refresh):
+		_observed_tank.tree_exiting.disconnect(_queue_indicator_refresh)
+	if is_instance_valid(_observed_tank_instance) and _observed_tank_instance.changed.is_connected(_queue_indicator_refresh):
+		_observed_tank_instance.changed.disconnect(_queue_indicator_refresh)
+	_observed_tank = null
+	_observed_tank_instance = null
+
+
+func _on_indicator_exiting() -> void:
+	_stop_indicator_blink()
+	_indicator_enabled = false
+	_indicator_refresh_queued = false
+	_disconnect_observed_tank()
+	_completed_tank_instance = null
+
+
+func _disable_indicator(reason: String) -> void:
+	_on_indicator_exiting()
+	push_error("配药器状态指示灯停止更新：%s；%s" % [reason, get_path()])
 
 
 func _validate_configuration() -> bool:
@@ -198,6 +359,7 @@ func try_start_processing(actor: Node3D) -> bool:
 		if item != null:
 			_batch_raw_material_ids.append(raw_id)
 	processing_timer.start(PROCESSING_SECONDS)
+	_refresh_indicator()
 	processing_started.emit(_batch_id)
 	return true
 
@@ -242,6 +404,7 @@ func _on_processing_timeout() -> void:
 		_fail_batch("已预检液体罐拒绝静默装填")
 		return
 	var completed_tank: AutolysisLiquidTank = _batch_tank
+	var completed_tank_instance: AutolysisItemInstance = _batch_tank_instance
 	_clear_batch()
 	_committing = false
 	# 隐藏会同步发送可见性通知；保持运行锁，并在每个回调边界核验存活。
@@ -255,6 +418,8 @@ func _on_processing_timeout() -> void:
 	# 内容通知可释放设备，不继续访问已释放实例。
 	if is_instance_valid(self) and is_inside_tree() and not is_queued_for_deletion():
 		_processing = false
+		_completed_tank_instance = completed_tank_instance if _node_is_live(completed_tank) and _node_is_live(tank_place) and tank_place.owns_item(completed_tank) and completed_tank.item_instance == completed_tank_instance else null
+		_refresh_indicator()
 		processing_completed.emit(completed_batch_id, contents)
 
 
@@ -286,6 +451,8 @@ func _fail_batch(reason: String) -> void:
 	_committing = false
 	if is_instance_valid(processing_timer):
 		processing_timer.stop()
+	_completed_tank_instance = null
+	_refresh_indicator()
 	push_error("配药器批次%d故障，保持交互关闭：%s；%s" % [_batch_id, reason, get_path()])
 	processing_failed.emit(_batch_id, reason)
 
@@ -301,6 +468,7 @@ func _clear_batch() -> void:
 
 
 func _exit_tree() -> void:
+	_on_indicator_exiting()
 	if is_instance_valid(processing_timer):
 		processing_timer.stop()
 	_batch_id += 1

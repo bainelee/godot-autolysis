@@ -1,0 +1,1888 @@
+{
+  "编制日期": "2026年10月4日",
+  "取证类型": "实际文件只读核对",
+  "工程": "D:\\autolysis\\project.godot",
+  "指定引擎存在": true,
+  "运行验收已执行": false,
+  "工作区状态": [
+    " M main-autolysis/assets/materials/glow_color/mat_glow_green_0.tres",
+    " M main-autolysis/scenes/01-autolysis-test.tscn",
+    " M main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn",
+    " M main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn",
+    " M main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd",
+    " M main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd",
+    " M main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_tank_place.gd",
+    " M main-autolysis/systems/item-system/tests/liquid_contents_blend_test.gd",
+    "?? docs/project-autolysis/00-discuss/交互系统/配药器状态指示灯实施证据/",
+    "?? docs/project-autolysis/00-discuss/交互系统/配药器状态指示灯实现计划.md",
+    "?? docs/project-autolysis/00-discuss/交互系统/配药器状态指示灯计划证据/",
+    "?? main-autolysis/assets/materials/glow_color/mat_glow_blue_0.tres",
+    "?? main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+    "?? main-autolysis/assets/materials/glow_color/mat_glow_orange_0.tres",
+    "?? main-autolysis/systems/item-system/tests/blend_indicator_test.gd",
+    "?? main-autolysis/systems/item-system/tests/blend_indicator_test.gd.uid"
+  ],
+  "来源": [
+    {
+      "说明": "封装机当前场景",
+      "绝对路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_packing_0.tscn",
+      "散列算法": "SHA256（安全散列算法二百五十六位）",
+      "文件散列": "E3F938536EF8D8504859378AF0C0F76B3FCB1E8CCAB4C34F1740E1B33E4A9F3C",
+      "原始代码摘录": [
+        {
+          "行号": 1,
+          "原始内容": "[gd_scene format=3 uid=\"uid://c117w0eww7frm\"]"
+        },
+        {
+          "行号": 2,
+          "原始内容": ""
+        },
+        {
+          "行号": 3,
+          "原始内容": "[ext_resource type=\"Material\" uid=\"uid://5yjf2yjo2u7l\" path=\"res://main-autolysis/assets/materials/base_color/mat_base_grey_1.tres\" id=\"1_6bwaf\"]"
+        },
+        {
+          "行号": 4,
+          "原始内容": "[ext_resource type=\"Material\" uid=\"uid://blu42xw7rpe7b\" path=\"res://main-autolysis/assets/materials/base_color/mat_base_grey_2.tres\" id=\"2_qpgyo\"]"
+        },
+        {
+          "行号": 5,
+          "原始内容": "[ext_resource type=\"Material\" uid=\"uid://crqrmivk2bi6u\" path=\"res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres\" id=\"3_qpgyo\"]"
+        },
+        {
+          "行号": 6,
+          "原始内容": "[ext_resource type=\"Material\" uid=\"uid://daymgxnkqk8gy\" path=\"res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres\" id=\"4_0tg3w\"]"
+        },
+        {
+          "行号": 7,
+          "原始内容": "[ext_resource type=\"Material\" uid=\"uid://byanljsa6t8mu\" path=\"res://main-autolysis/assets/materials/base_color/mat_base_black_1.tres\" id=\"7_5qici\"]"
+        },
+        {
+          "行号": 8,
+          "原始内容": "[ext_resource type=\"Material\" uid=\"uid://bp35cd3s1kb3t\" path=\"res://main-autolysis/assets/materials/base_color/mat_base_grey_0.tres\" id=\"9_5qici\"]"
+        },
+        {
+          "行号": 9,
+          "原始内容": "[ext_resource type=\"Script\" path=\"res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd\" id=\"10_machine\"]"
+        },
+        {
+          "行号": 10,
+          "原始内容": "[ext_resource type=\"Script\" uid=\"uid://c1pn2s683ojtr\" path=\"res://main-autolysis/components/interactions/autolysis_focus_target.gd\" id=\"11_focus\"]"
+        },
+        {
+          "行号": 11,
+          "原始内容": "[ext_resource type=\"PackedScene\" path=\"res://main-autolysis/components/interactions/autolysis_interaction_component.tscn\" id=\"12_interaction\"]"
+        },
+        {
+          "行号": 12,
+          "原始内容": "[ext_resource type=\"Script\" path=\"res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_tank_place.gd\" id=\"13_tank_place\"]"
+        },
+        {
+          "行号": 13,
+          "原始内容": "[ext_resource type=\"Material\" uid=\"uid://buyhwikr1rnhk\" path=\"res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres\" id=\"13_vus77\"]"
+        },
+        {
+          "行号": 14,
+          "原始内容": "[ext_resource type=\"Script\" path=\"res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_capsule_place.gd\" id=\"14_capsule_place\"]"
+        },
+        {
+          "行号": 15,
+          "原始内容": "[ext_resource type=\"Script\" path=\"res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_door.gd\" id=\"15_door\"]"
+        },
+        {
+          "行号": 16,
+          "原始内容": "[ext_resource type=\"Script\" path=\"res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_type_switch.gd\" id=\"16_type_switch\"]"
+        },
+        {
+          "行号": 17,
+          "原始内容": "[ext_resource type=\"Script\" path=\"res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_start_button.gd\" id=\"17_start_button\"]"
+        },
+        {
+          "行号": 18,
+          "原始内容": "[ext_resource type=\"Material\" uid=\"uid://eju83npipt3e\" path=\"res://main-autolysis/assets/materials/glow_color/mat_glow_green_0.tres\" id=\"18_selected\"]"
+        },
+        {
+          "行号": 282,
+          "原始内容": "[node name=\"machine_packing_0\" type=\"StaticBody3D\" unique_id=1483401030 node_paths=PackedStringArray(\"focus_target\", \"reference_camera\", \"root_interaction\", \"animation_source\", \"tank_place\", \"capsule_place\", \"door\", \"type_switches\", \"start_button\", \"processing_timer\") groups=[\"interactable\"]]"
+        },
+        {
+          "行号": 283,
+          "原始内容": "script = ExtResource(\"10_machine\")"
+        },
+        {
+          "行号": 284,
+          "原始内容": "focus_target = NodePath(\"FocusTarget\")"
+        },
+        {
+          "行号": 285,
+          "原始内容": "reference_camera = NodePath(\"focus_camera\")"
+        },
+        {
+          "行号": 286,
+          "原始内容": "root_interaction = NodePath(\"InteractionComponent\")"
+        },
+        {
+          "行号": 287,
+          "原始内容": "animation_source = NodePath(\"AnimationPlayer\")"
+        },
+        {
+          "行号": 288,
+          "原始内容": "tank_place = NodePath(\"packing_tank_place\")"
+        },
+        {
+          "行号": 289,
+          "原始内容": "capsule_place = NodePath(\"packing_capsule_place\")"
+        },
+        {
+          "行号": 290,
+          "原始内容": "door = NodePath(\"door_capsules_input_bay\")"
+        },
+        {
+          "行号": 291,
+          "原始内容": "type_switches = [NodePath(\"type_switch_0\"), NodePath(\"type_switch_1\"), NodePath(\"type_switch_2\")]"
+        },
+        {
+          "行号": 292,
+          "原始内容": "start_button = NodePath(\"button_start_packing\")"
+        },
+        {
+          "行号": 293,
+          "原始内容": "processing_timer = NodePath(\"ProcessingTimer\")"
+        },
+        {
+          "行号": 505,
+          "原始内容": "[node name=\"button_start_packing\" type=\"StaticBody3D\" parent=\".\" unique_id=999260477 node_paths=PackedStringArray(\"start_interaction\", \"collision_shape\")]"
+        },
+        {
+          "行号": 506,
+          "原始内容": "transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, -0.9999998, 0, 0.99999994, -4.3711378e-08, -0.3600001, 0.65999997, 0.5)"
+        },
+        {
+          "行号": 507,
+          "原始内容": "collision_layer = 40"
+        },
+        {
+          "行号": 508,
+          "原始内容": "script = ExtResource(\"17_start_button\")"
+        },
+        {
+          "行号": 509,
+          "原始内容": "start_interaction = NodePath(\"InteractionComponent\")"
+        },
+        {
+          "行号": 510,
+          "原始内容": "collision_shape = NodePath(\"collision_button_start_packing\")"
+        },
+        {
+          "行号": 511,
+          "原始内容": "metadata/_edit_group_ = true"
+        },
+        {
+          "行号": 512,
+          "原始内容": ""
+        },
+        {
+          "行号": 513,
+          "原始内容": "[node name=\"InteractionComponent\" parent=\"button_start_packing\" unique_id=637489474 instance=ExtResource(\"12_interaction\")]"
+        },
+        {
+          "行号": 514,
+          "原始内容": "is_enabled = false"
+        },
+        {
+          "行号": 515,
+          "原始内容": ""
+        },
+        {
+          "行号": 516,
+          "原始内容": "[node name=\"button_base\" type=\"MeshInstance3D\" parent=\"button_start_packing\" unique_id=449531187]"
+        },
+        {
+          "行号": 517,
+          "原始内容": "transform = Transform3D(1, 0, 0, 0, 0.9999994, 2.842171e-14, 0, -4.6185278e-14, 0.9999994, 0, 0.009999961, 0)"
+        },
+        {
+          "行号": 518,
+          "原始内容": "material_override = ExtResource(\"7_5qici\")"
+        },
+        {
+          "行号": 519,
+          "原始内容": "mesh = SubResource(\"CylinderMesh_5qici\")"
+        },
+        {
+          "行号": 520,
+          "原始内容": ""
+        },
+        {
+          "行号": 521,
+          "原始内容": "[node name=\"button_press\" type=\"MeshInstance3D\" parent=\"button_start_packing\" unique_id=2058846999]"
+        },
+        {
+          "行号": 522,
+          "原始内容": "transform = Transform3D(1, 0, 0, 0, 0.9999996, 3.1974423e-14, 0, -3.1974423e-14, 0.9999996, 8.940697e-08, 0.030000001, -5.9604645e-08)"
+        },
+        {
+          "行号": 523,
+          "原始内容": "material_override = ExtResource(\"13_vus77\")"
+        },
+        {
+          "行号": 524,
+          "原始内容": "mesh = SubResource(\"CylinderMesh_3crod\")"
+        },
+        {
+          "行号": 525,
+          "原始内容": ""
+        },
+        {
+          "行号": 526,
+          "原始内容": "[node name=\"collision_button_start_packing\" type=\"CollisionShape3D\" parent=\"button_start_packing\" unique_id=134643547]"
+        },
+        {
+          "行号": 527,
+          "原始内容": "transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0200015, 3.5762787e-07)"
+        },
+        {
+          "行号": 528,
+          "原始内容": "shape = SubResource(\"BoxShape3D_mndtq\")"
+        },
+        {
+          "行号": 529,
+          "原始内容": ""
+        },
+        {
+          "行号": 600,
+          "原始内容": "[node name=\"AnimationPlayer\" type=\"AnimationPlayer\" parent=\".\" unique_id=1072277988]"
+        },
+        {
+          "行号": 601,
+          "原始内容": "callback_mode_process = 0"
+        },
+        {
+          "行号": 602,
+          "原始内容": "libraries/ = SubResource(\"AnimationLibrary_ri0kk\")"
+        },
+        {
+          "行号": 603,
+          "原始内容": ""
+        },
+        {
+          "行号": 604,
+          "原始内容": "[node name=\"ProcessingTimer\" type=\"Timer\" parent=\".\" unique_id=1166427253]"
+        },
+        {
+          "行号": 605,
+          "原始内容": "process_mode = 1"
+        },
+        {
+          "行号": 606,
+          "原始内容": "process_callback = 0"
+        },
+        {
+          "行号": 607,
+          "原始内容": "wait_time = 2.0"
+        },
+        {
+          "行号": 608,
+          "原始内容": "one_shot = true"
+        },
+        {
+          "行号": 609,
+          "原始内容": ""
+        },
+        {
+          "行号": 610,
+          "原始内容": "[node name=\"light_packing_complete_sign\" type=\"Node3D\" parent=\".\" unique_id=276400834]"
+        },
+        {
+          "行号": 611,
+          "原始内容": "transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40000004, 0.76, 0.5)"
+        },
+        {
+          "行号": 612,
+          "原始内容": ""
+        },
+        {
+          "行号": 613,
+          "原始内容": "[node name=\"light_packing_complete_sign_mesh_0\" type=\"MeshInstance3D\" parent=\"light_packing_complete_sign\" unique_id=559717478]"
+        },
+        {
+          "行号": 614,
+          "原始内容": "transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.030000001, 0, 0)"
+        },
+        {
+          "行号": 615,
+          "原始内容": "material_override = ExtResource(\"4_0tg3w\")"
+        },
+        {
+          "行号": 616,
+          "原始内容": "mesh = SubResource(\"BoxMesh_oaalt\")"
+        },
+        {
+          "行号": 617,
+          "原始内容": ""
+        },
+        {
+          "行号": 618,
+          "原始内容": "[node name=\"light_packing_complete_sign_mesh_1\" type=\"MeshInstance3D\" parent=\"light_packing_complete_sign\" unique_id=218387591]"
+        },
+        {
+          "行号": 619,
+          "原始内容": "transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.050000012, 0, 0)"
+        },
+        {
+          "行号": 620,
+          "原始内容": "material_override = ExtResource(\"4_0tg3w\")"
+        },
+        {
+          "行号": 621,
+          "原始内容": "mesh = SubResource(\"PrismMesh_bacen\")"
+        }
+      ]
+    },
+    {
+      "说明": "封装机当前生命周期",
+      "绝对路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_machine.gd",
+      "散列算法": "SHA256（安全散列算法二百五十六位）",
+      "文件散列": "9638E08A911CD6023B9B356C8F93688B6753EC4D082D610B8987F9198F214B1E",
+      "原始代码摘录": [
+        {
+          "行号": 1,
+          "原始内容": "class_name AutolysisPackingMachine"
+        },
+        {
+          "行号": 2,
+          "原始内容": "extends StaticBody3D"
+        },
+        {
+          "行号": 3,
+          "原始内容": "## 封装器保存唯一选择、运行来源和待取产物；两件状态在静默段共同提交。"
+        },
+        {
+          "行号": 4,
+          "原始内容": ""
+        },
+        {
+          "行号": 5,
+          "原始内容": "signal processing_started(batch_id: int)"
+        },
+        {
+          "行号": 6,
+          "原始内容": "signal processing_completed(batch_id: int, contents: AutolysisPackingContents)"
+        },
+        {
+          "行号": 7,
+          "原始内容": "signal processing_failed(batch_id: int, reason: String)"
+        },
+        {
+          "行号": 8,
+          "原始内容": ""
+        },
+        {
+          "行号": 9,
+          "原始内容": "const PROCESSING_SECONDS: float = 2.0"
+        },
+        {
+          "行号": 10,
+          "原始内容": "const NO_TYPE: int = -1"
+        },
+        {
+          "行号": 11,
+          "原始内容": ""
+        },
+        {
+          "行号": 12,
+          "原始内容": "@export var focus_target: AutolysisFocusTarget"
+        },
+        {
+          "行号": 13,
+          "原始内容": "@export var reference_camera: Camera3D"
+        },
+        {
+          "行号": 14,
+          "原始内容": "@export var root_interaction: AutolysisInteractionComponent"
+        },
+        {
+          "行号": 15,
+          "原始内容": "@export var animation_source: AnimationPlayer"
+        },
+        {
+          "行号": 16,
+          "原始内容": "@export var tank_place: AutolysisPackingTankPlace"
+        },
+        {
+          "行号": 17,
+          "原始内容": "@export var capsule_place: AutolysisPackingCapsulePlace"
+        },
+        {
+          "行号": 18,
+          "原始内容": "@export var door: AutolysisPackingDoor"
+        },
+        {
+          "行号": 19,
+          "原始内容": "@export var type_switches: Array[AutolysisPackingTypeSwitch] = []"
+        },
+        {
+          "行号": 20,
+          "原始内容": "@export var start_button: AutolysisPackingStartButton"
+        },
+        {
+          "行号": 21,
+          "原始内容": "@export var processing_timer: Timer"
+        },
+        {
+          "行号": 22,
+          "原始内容": ""
+        },
+        {
+          "行号": 23,
+          "原始内容": "var _configured: bool = false"
+        },
+        {
+          "行号": 24,
+          "原始内容": "var _processing: bool = false"
+        },
+        {
+          "行号": 25,
+          "原始内容": "var _committing: bool = false"
+        },
+        {
+          "行号": 26,
+          "原始内容": "var _fault: String = \"\""
+        },
+        {
+          "行号": 27,
+          "原始内容": "var _selected_type: int = NO_TYPE"
+        },
+        {
+          "行号": 28,
+          "原始内容": "var _completed_capsule_instance: AutolysisItemInstance"
+        },
+        {
+          "行号": 29,
+          "原始内容": "var _batch_id: int = 0"
+        },
+        {
+          "行号": 30,
+          "原始内容": "var _batch_start_frame: int = 0"
+        },
+        {
+          "行号": 31,
+          "原始内容": "var _batch_elapsed: float = 0.0"
+        },
+        {
+          "行号": 32,
+          "原始内容": "var _timeout_received: bool = false"
+        },
+        {
+          "行号": 33,
+          "原始内容": "var _batch_tank: AutolysisLiquidTank"
+        },
+        {
+          "行号": 34,
+          "原始内容": "var _batch_capsule: AutolysisPneumaticCapsule"
+        },
+        {
+          "行号": 35,
+          "原始内容": "var _batch_tank_instance: AutolysisItemInstance"
+        },
+        {
+          "行号": 36,
+          "原始内容": "var _batch_capsule_instance: AutolysisItemInstance"
+        },
+        {
+          "行号": 37,
+          "原始内容": "var _batch_source: AutolysisLiquidContents"
+        },
+        {
+          "行号": 38,
+          "原始内容": "var _batch_type: int = NO_TYPE"
+        },
+        {
+          "行号": 159,
+          "原始内容": "func get_completed_capsule_instance() -> AutolysisItemInstance:"
+        },
+        {
+          "行号": 160,
+          "原始内容": "\treturn _completed_capsule_instance"
+        },
+        {
+          "行号": 161,
+          "原始内容": ""
+        },
+        {
+          "行号": 162,
+          "原始内容": ""
+        },
+        {
+          "行号": 163,
+          "原始内容": "func are_transfers_busy() -> bool:"
+        },
+        {
+          "行号": 164,
+          "原始内容": "\treturn tank_place.is_transfer_busy() or capsule_place.is_transfer_busy()"
+        },
+        {
+          "行号": 165,
+          "原始内容": ""
+        },
+        {
+          "行号": 166,
+          "原始内容": ""
+        },
+        {
+          "行号": 167,
+          "原始内容": "func has_valid_inputs() -> bool:"
+        },
+        {
+          "行号": 168,
+          "原始内容": "\tif not tank_place.is_configured() or not capsule_place.is_configured():"
+        },
+        {
+          "行号": 169,
+          "原始内容": "\t\treturn false"
+        },
+        {
+          "行号": 170,
+          "原始内容": "\tvar tank: AutolysisLiquidTank = tank_place.get_stored_item()"
+        },
+        {
+          "行号": 171,
+          "原始内容": "\tvar capsule: AutolysisPneumaticCapsule = capsule_place.get_stored_item()"
+        },
+        {
+          "行号": 172,
+          "原始内容": "\tif not tank_place.owns_item(tank) or not capsule_place.owns_item(capsule):"
+        },
+        {
+          "行号": 173,
+          "原始内容": "\t\treturn false"
+        },
+        {
+          "行号": 174,
+          "原始内容": "\tif not is_instance_valid(tank.item_instance) or not tank.item_instance.is_valid_instance() or not tank.item_instance.is_liquid_tank() or tank.item_definition != tank.item_instance.definition:"
+        },
+        {
+          "行号": 175,
+          "原始内容": "\t\treturn false"
+        },
+        {
+          "行号": 176,
+          "原始内容": "\tif not is_instance_valid(capsule.item_instance) or not capsule.item_instance.is_valid_instance() or not capsule.item_instance.is_empty_pneumatic_capsule() or capsule.item_definition != capsule.item_instance.definition:"
+        },
+        {
+          "行号": 177,
+          "原始内容": "\t\treturn false"
+        },
+        {
+          "行号": 178,
+          "原始内容": "\treturn tank.item_instance.liquid_contents != null and tank.item_instance.liquid_contents.is_valid_contents()"
+        },
+        {
+          "行号": 188,
+          "原始内容": "func can_select_type(actor: Node3D, packing_type: int) -> bool:"
+        },
+        {
+          "行号": 189,
+          "原始内容": "\treturn packing_type >= 0 and packing_type < 3 and is_configured() and not is_interaction_locked() and _completed_capsule_instance == null and not are_transfers_busy() and has_valid_inputs() and not are_switches_animating() and is_actor_focused(actor)"
+        },
+        {
+          "行号": 190,
+          "原始内容": ""
+        },
+        {
+          "行号": 191,
+          "原始内容": ""
+        },
+        {
+          "行号": 192,
+          "原始内容": "func try_select_type(actor: Node3D, packing_type: int) -> bool:"
+        },
+        {
+          "行号": 193,
+          "原始内容": "\tif not can_select_type(actor, packing_type):"
+        },
+        {
+          "行号": 194,
+          "原始内容": "\t\treturn false"
+        },
+        {
+          "行号": 195,
+          "原始内容": "\t_selected_type = NO_TYPE if _selected_type == packing_type else packing_type"
+        },
+        {
+          "行号": 196,
+          "原始内容": "\t_apply_selection()"
+        },
+        {
+          "行号": 197,
+          "原始内容": "\treturn true"
+        },
+        {
+          "行号": 198,
+          "原始内容": ""
+        },
+        {
+          "行号": 199,
+          "原始内容": ""
+        },
+        {
+          "行号": 200,
+          "原始内容": "func _apply_selection() -> void:"
+        },
+        {
+          "行号": 201,
+          "原始内容": "\t# 先恢复旧灯，再亮新灯，使改选过程中也最多一盏发光灯。"
+        },
+        {
+          "行号": 202,
+          "原始内容": "\tfor control: AutolysisPackingTypeSwitch in type_switches:"
+        },
+        {
+          "行号": 203,
+          "原始内容": "\t\tif control.packing_type != _selected_type:"
+        },
+        {
+          "行号": 204,
+          "原始内容": "\t\t\tcontrol.set_selected(false)"
+        },
+        {
+          "行号": 205,
+          "原始内容": "\tif _selected_type >= 0:"
+        },
+        {
+          "行号": 206,
+          "原始内容": "\t\ttype_switches[_selected_type].set_selected(true)"
+        },
+        {
+          "行号": 207,
+          "原始内容": ""
+        },
+        {
+          "行号": 208,
+          "原始内容": ""
+        },
+        {
+          "行号": 209,
+          "原始内容": "## 只在库存已成功提交取物后调用；这里不发布设备通知或再次查询库存。"
+        },
+        {
+          "行号": 210,
+          "原始内容": "func on_packing_item_taken(place: Node3D, instance: AutolysisItemInstance) -> void:"
+        },
+        {
+          "行号": 211,
+          "原始内容": "\tif is_interaction_locked() or (place != tank_place and place != capsule_place):"
+        },
+        {
+          "行号": 212,
+          "原始内容": "\t\treturn"
+        },
+        {
+          "行号": 213,
+          "原始内容": "\tif _completed_capsule_instance != null:"
+        },
+        {
+          "行号": 214,
+          "原始内容": "\t\tif place != capsule_place or instance != _completed_capsule_instance:"
+        },
+        {
+          "行号": 215,
+          "原始内容": "\t\t\treturn"
+        },
+        {
+          "行号": 216,
+          "原始内容": "\t\t_completed_capsule_instance = null"
+        },
+        {
+          "行号": 217,
+          "原始内容": "\t_selected_type = NO_TYPE"
+        },
+        {
+          "行号": 218,
+          "原始内容": "\t_apply_selection()"
+        },
+        {
+          "行号": 219,
+          "原始内容": ""
+        },
+        {
+          "行号": 220,
+          "原始内容": ""
+        },
+        {
+          "行号": 221,
+          "原始内容": "func can_start_processing() -> bool:"
+        },
+        {
+          "行号": 222,
+          "原始内容": "\treturn get_start_denial_reason().is_empty()"
+        },
+        {
+          "行号": 223,
+          "原始内容": ""
+        },
+        {
+          "行号": 224,
+          "原始内容": ""
+        },
+        {
+          "行号": 225,
+          "原始内容": "func get_start_denial_reason() -> StringName:"
+        },
+        {
+          "行号": 226,
+          "原始内容": "\tif not _fault.is_empty():"
+        },
+        {
+          "行号": 227,
+          "原始内容": "\t\treturn &\"processing_fault\""
+        },
+        {
+          "行号": 228,
+          "原始内容": "\tif not is_configured():"
+        },
+        {
+          "行号": 229,
+          "原始内容": "\t\treturn &\"invalid_configuration\""
+        },
+        {
+          "行号": 230,
+          "原始内容": "\tif _processing or _committing:"
+        },
+        {
+          "行号": 231,
+          "原始内容": "\t\treturn &\"processing\""
+        },
+        {
+          "行号": 232,
+          "原始内容": "\tif _completed_capsule_instance != null:"
+        },
+        {
+          "行号": 233,
+          "原始内容": "\t\treturn &\"completed_capsule_waiting\""
+        },
+        {
+          "行号": 234,
+          "原始内容": "\tif are_transfers_busy():"
+        },
+        {
+          "行号": 235,
+          "原始内容": "\t\treturn &\"transfer_busy\""
+        },
+        {
+          "行号": 236,
+          "原始内容": "\tif not has_valid_inputs():"
+        },
+        {
+          "行号": 237,
+          "原始内容": "\t\treturn &\"invalid_inputs\""
+        },
+        {
+          "行号": 238,
+          "原始内容": "\tif _selected_type < 0 or _selected_type >= 3:"
+        },
+        {
+          "行号": 239,
+          "原始内容": "\t\treturn &\"missing_type\""
+        },
+        {
+          "行号": 240,
+          "原始内容": "\tif door.is_animating() or (not door.is_open() and not door.is_closed()):"
+        },
+        {
+          "行号": 241,
+          "原始内容": "\t\treturn &\"door_moving\""
+        },
+        {
+          "行号": 242,
+          "原始内容": "\tif are_switches_animating():"
+        },
+        {
+          "行号": 243,
+          "原始内容": "\t\treturn &\"switch_moving\""
+        },
+        {
+          "行号": 244,
+          "原始内容": "\tfor control: AutolysisPackingTypeSwitch in type_switches:"
+        },
+        {
+          "行号": 245,
+          "原始内容": "\t\tif control.is_selected() != (control.packing_type == _selected_type) or (control.is_selected() and not control.is_open()) or (not control.is_selected() and not control.is_closed()):"
+        },
+        {
+          "行号": 246,
+          "原始内容": "\t\t\treturn &\"invalid_switch_state\""
+        },
+        {
+          "行号": 247,
+          "原始内容": "\treturn &\"\""
+        },
+        {
+          "行号": 248,
+          "原始内容": ""
+        },
+        {
+          "行号": 249,
+          "原始内容": ""
+        },
+        {
+          "行号": 250,
+          "原始内容": "func try_start_processing(actor: Node3D) -> bool:"
+        },
+        {
+          "行号": 251,
+          "原始内容": "\tif not can_start_processing() or not is_actor_focused(actor):"
+        },
+        {
+          "行号": 252,
+          "原始内容": "\t\treturn false"
+        },
+        {
+          "行号": 253,
+          "原始内容": "\t_processing = true"
+        },
+        {
+          "行号": 254,
+          "原始内容": "\t_batch_id += 1"
+        },
+        {
+          "行号": 255,
+          "原始内容": "\t_batch_tank = tank_place.get_stored_item()"
+        },
+        {
+          "行号": 256,
+          "原始内容": "\t_batch_capsule = capsule_place.get_stored_item()"
+        },
+        {
+          "行号": 257,
+          "原始内容": "\t_batch_tank_instance = _batch_tank.item_instance"
+        },
+        {
+          "行号": 258,
+          "原始内容": "\t_batch_capsule_instance = _batch_capsule.item_instance"
+        },
+        {
+          "行号": 259,
+          "原始内容": "\t_batch_source = _batch_tank_instance.liquid_contents.copy_contents()"
+        },
+        {
+          "行号": 260,
+          "原始内容": "\t_batch_type = _selected_type"
+        },
+        {
+          "行号": 261,
+          "原始内容": "\t_batch_start_frame = Engine.get_physics_frames()"
+        },
+        {
+          "行号": 262,
+          "原始内容": "\t_batch_elapsed = 0.0"
+        },
+        {
+          "行号": 263,
+          "原始内容": "\t_timeout_received = false"
+        },
+        {
+          "行号": 264,
+          "原始内容": "\tprocessing_timer.start(PROCESSING_SECONDS)"
+        },
+        {
+          "行号": 265,
+          "原始内容": "\tstart_button.play_press()"
+        },
+        {
+          "行号": 266,
+          "原始内容": "\tprocessing_started.emit(_batch_id)"
+        },
+        {
+          "行号": 267,
+          "原始内容": "\treturn true"
+        },
+        {
+          "行号": 268,
+          "原始内容": ""
+        },
+        {
+          "行号": 269,
+          "原始内容": ""
+        },
+        {
+          "行号": 270,
+          "原始内容": "func _physics_process(delta: float) -> void:"
+        },
+        {
+          "行号": 271,
+          "原始内容": "\tif not _processing or _committing or not _fault.is_empty():"
+        },
+        {
+          "行号": 272,
+          "原始内容": "\t\treturn"
+        },
+        {
+          "行号": 273,
+          "原始内容": "\tif Engine.get_physics_frames() > _batch_start_frame:"
+        },
+        {
+          "行号": 274,
+          "原始内容": "\t\t_batch_elapsed += delta"
+        },
+        {
+          "行号": 275,
+          "原始内容": "\tif _timeout_received and _batch_elapsed >= PROCESSING_SECONDS:"
+        },
+        {
+          "行号": 276,
+          "原始内容": "\t\t_complete_batch()"
+        },
+        {
+          "行号": 277,
+          "原始内容": ""
+        },
+        {
+          "行号": 278,
+          "原始内容": ""
+        },
+        {
+          "行号": 279,
+          "原始内容": "func _on_processing_timeout() -> void:"
+        },
+        {
+          "行号": 280,
+          "原始内容": "\tif not _processing or _committing or _timeout_received or not _fault.is_empty():"
+        },
+        {
+          "行号": 281,
+          "原始内容": "\t\treturn"
+        },
+        {
+          "行号": 282,
+          "原始内容": "\t# 必须同时达到真实计时终点与累计物理游戏时间，提前或重复回调均不提交。"
+        },
+        {
+          "行号": 283,
+          "原始内容": "\tif not _node_is_live(processing_timer) or not processing_timer.is_stopped() or _batch_elapsed + get_physics_process_delta_time() < PROCESSING_SECONDS:"
+        },
+        {
+          "行号": 284,
+          "原始内容": "\t\treturn"
+        },
+        {
+          "行号": 285,
+          "原始内容": "\t_timeout_received = true"
+        },
+        {
+          "行号": 286,
+          "原始内容": "\tif _batch_elapsed >= PROCESSING_SECONDS:"
+        },
+        {
+          "行号": 287,
+          "原始内容": "\t\t_complete_batch()"
+        },
+        {
+          "行号": 290,
+          "原始内容": "func _complete_batch() -> void:"
+        },
+        {
+          "行号": 291,
+          "原始内容": "\tif not _processing or _committing or not _timeout_received or _batch_elapsed < PROCESSING_SECONDS:"
+        },
+        {
+          "行号": 292,
+          "原始内容": "\t\treturn"
+        },
+        {
+          "行号": 293,
+          "原始内容": "\tvar contents: AutolysisPackingContents = AutolysisPackingContents.create_result(_batch_source, _batch_type)"
+        },
+        {
+          "行号": 294,
+          "原始内容": "\tvar error: String = _get_batch_commit_error(contents)"
+        },
+        {
+          "行号": 295,
+          "原始内容": "\tif not error.is_empty():"
+        },
+        {
+          "行号": 296,
+          "原始内容": "\t\t_fail_batch(error)"
+        },
+        {
+          "行号": 297,
+          "原始内容": "\t\treturn"
+        },
+        {
+          "行号": 298,
+          "原始内容": "\tvar completed_batch_id: int = _batch_id"
+        },
+        {
+          "行号": 299,
+          "原始内容": "\tvar completed_tank: AutolysisLiquidTank = _batch_tank"
+        },
+        {
+          "行号": 300,
+          "原始内容": "\tvar completed_capsule: AutolysisPneumaticCapsule = _batch_capsule"
+        },
+        {
+          "行号": 301,
+          "原始内容": "\tvar tank_instance: AutolysisItemInstance = _batch_tank_instance"
+        },
+        {
+          "行号": 302,
+          "原始内容": "\tvar capsule_instance: AutolysisItemInstance = _batch_capsule_instance"
+        },
+        {
+          "行号": 303,
+          "原始内容": "\tvar old_tank_contents: AutolysisLiquidContents = tank_instance.liquid_contents.copy_contents()"
+        },
+        {
+          "行号": 304,
+          "原始内容": "\t_committing = true"
+        },
+        {
+          "行号": 305,
+          "原始内容": "\tvar capsule_written: bool = capsule_instance.set_packing_contents(contents, false)"
+        },
+        {
+          "行号": 306,
+          "原始内容": "\tvar tank_cleared: bool = capsule_written and tank_instance.set_liquid_contents(null, false)"
+        },
+        {
+          "行号": 307,
+          "原始内容": "\tif not capsule_written or not tank_cleared:"
+        },
+        {
+          "行号": 308,
+          "原始内容": "\t\tcapsule_instance.set_packing_contents(null, false)"
+        },
+        {
+          "行号": 309,
+          "原始内容": "\t\ttank_instance.set_liquid_contents(old_tank_contents, false)"
+        },
+        {
+          "行号": 310,
+          "原始内容": "\t\t_committing = false"
+        },
+        {
+          "行号": 311,
+          "原始内容": "\t\t_fail_batch(\"已预检两件物品拒绝静默共同提交，保留输入\")"
+        },
+        {
+          "行号": 312,
+          "原始内容": "\t\treturn"
+        },
+        {
+          "行号": 313,
+          "原始内容": "\t# 显示依赖预检完成；仍检查实际应用，失败时成对恢复原业务状态和外观。"
+        },
+        {
+          "行号": 314,
+          "原始内容": "\tvar tank_displayed: bool = AutolysisLiquidTankVisual.apply_instance(completed_tank, tank_instance)"
+        },
+        {
+          "行号": 315,
+          "原始内容": "\tvar capsule_displayed: bool = AutolysisPneumaticCapsuleVisual.apply_instance(completed_capsule, capsule_instance)"
+        },
+        {
+          "行号": 316,
+          "原始内容": "\tif not tank_displayed or not capsule_displayed:"
+        },
+        {
+          "行号": 317,
+          "原始内容": "\t\tcapsule_instance.set_packing_contents(null, false)"
+        },
+        {
+          "行号": 318,
+          "原始内容": "\t\ttank_instance.set_liquid_contents(old_tank_contents, false)"
+        },
+        {
+          "行号": 319,
+          "原始内容": "\t\tAutolysisLiquidTankVisual.apply_instance(completed_tank, tank_instance)"
+        },
+        {
+          "行号": 320,
+          "原始内容": "\t\tAutolysisPneumaticCapsuleVisual.apply_instance(completed_capsule, capsule_instance)"
+        },
+        {
+          "行号": 321,
+          "原始内容": "\t\t_committing = false"
+        },
+        {
+          "行号": 322,
+          "原始内容": "\t\t_fail_batch(\"两件物品显示应用失败，已成对恢复输入\")"
+        },
+        {
+          "行号": 323,
+          "原始内容": "\t\treturn"
+        },
+        {
+          "行号": 324,
+          "原始内容": "\t_completed_capsule_instance = capsule_instance"
+        },
+        {
+          "行号": 325,
+          "原始内容": "\t_clear_batch()"
+        },
+        {
+          "行号": 326,
+          "原始内容": "\t_committing = false"
+        },
+        {
+          "行号": 327,
+          "原始内容": "\t# 运行锁覆盖通知边界；任一观察者均只能读取空罐与已封装胶囊。"
+        },
+        {
+          "行号": 328,
+          "原始内容": "\ttank_instance.emit_changed()"
+        },
+        {
+          "行号": 329,
+          "原始内容": "\tif not is_instance_valid(self) or not is_inside_tree() or is_queued_for_deletion():"
+        },
+        {
+          "行号": 330,
+          "原始内容": "\t\treturn"
+        },
+        {
+          "行号": 331,
+          "原始内容": "\tif is_instance_valid(capsule_instance):"
+        },
+        {
+          "行号": 332,
+          "原始内容": "\t\tcapsule_instance.emit_changed()"
+        },
+        {
+          "行号": 333,
+          "原始内容": "\tif not is_instance_valid(self) or not is_inside_tree() or is_queued_for_deletion():"
+        },
+        {
+          "行号": 334,
+          "原始内容": "\t\treturn"
+        },
+        {
+          "行号": 335,
+          "原始内容": "\t_processing = false"
+        },
+        {
+          "行号": 336,
+          "原始内容": "\tprocessing_completed.emit(completed_batch_id, contents)"
+        },
+        {
+          "行号": 361,
+          "原始内容": "func _fail_batch(reason: String) -> void:"
+        },
+        {
+          "行号": 362,
+          "原始内容": "\t_fault = reason"
+        },
+        {
+          "行号": 363,
+          "原始内容": "\t_processing = false"
+        },
+        {
+          "行号": 364,
+          "原始内容": "\t_committing = false"
+        },
+        {
+          "行号": 365,
+          "原始内容": "\tif is_instance_valid(processing_timer):"
+        },
+        {
+          "行号": 366,
+          "原始内容": "\t\tprocessing_timer.stop()"
+        },
+        {
+          "行号": 367,
+          "原始内容": "\tpush_error(\"封装器批次%d故障，保留来源并关闭入口：%s；%s\" % [_batch_id, reason, get_path()])"
+        },
+        {
+          "行号": 368,
+          "原始内容": "\tprocessing_failed.emit(_batch_id, reason)"
+        },
+        {
+          "行号": 369,
+          "原始内容": ""
+        },
+        {
+          "行号": 370,
+          "原始内容": ""
+        },
+        {
+          "行号": 371,
+          "原始内容": "func _clear_batch() -> void:"
+        },
+        {
+          "行号": 372,
+          "原始内容": "\t_batch_tank = null"
+        },
+        {
+          "行号": 373,
+          "原始内容": "\t_batch_capsule = null"
+        },
+        {
+          "行号": 374,
+          "原始内容": "\t_batch_tank_instance = null"
+        },
+        {
+          "行号": 375,
+          "原始内容": "\t_batch_capsule_instance = null"
+        },
+        {
+          "行号": 376,
+          "原始内容": "\t_batch_source = null"
+        },
+        {
+          "行号": 377,
+          "原始内容": "\t_batch_type = NO_TYPE"
+        },
+        {
+          "行号": 378,
+          "原始内容": "\t_batch_elapsed = 0.0"
+        },
+        {
+          "行号": 379,
+          "原始内容": "\t_timeout_received = false"
+        },
+        {
+          "行号": 380,
+          "原始内容": ""
+        },
+        {
+          "行号": 381,
+          "原始内容": ""
+        },
+        {
+          "行号": 382,
+          "原始内容": "func is_actor_focused(actor: Node3D) -> bool:"
+        },
+        {
+          "行号": 383,
+          "原始内容": "\tif not _node_is_live(actor) or not actor is AutolysisPlayer or not focus_target.is_valid_target():"
+        },
+        {
+          "行号": 384,
+          "原始内容": "\t\treturn false"
+        },
+        {
+          "行号": 385,
+          "原始内容": "\tvar player: AutolysisPlayer = actor as AutolysisPlayer"
+        },
+        {
+          "行号": 386,
+          "原始内容": "\treturn player.is_focus_business_allowed() and _node_is_live(player.focus_controller) and player.focus_controller.is_focused_on(focus_target)"
+        },
+        {
+          "行号": 387,
+          "原始内容": ""
+        },
+        {
+          "行号": 388,
+          "原始内容": ""
+        },
+        {
+          "行号": 389,
+          "原始内容": "func _can_enter(actor: Node3D) -> bool:"
+        },
+        {
+          "行号": 390,
+          "原始内容": "\tif is_interaction_locked() or not is_configured() or not _node_is_live(actor):"
+        },
+        {
+          "行号": 391,
+          "原始内容": "\t\treturn false"
+        },
+        {
+          "行号": 392,
+          "原始内容": "\tvar controller: Node = actor.get(\"focus_controller\") as Node"
+        },
+        {
+          "行号": 393,
+          "原始内容": "\treturn _node_is_live(controller) and controller.has_method(\"can_enter\") and controller.can_enter(focus_target)"
+        },
+        {
+          "行号": 394,
+          "原始内容": ""
+        },
+        {
+          "行号": 395,
+          "原始内容": ""
+        },
+        {
+          "行号": 396,
+          "原始内容": "func _on_entry_requested(actor: Node3D) -> void:"
+        },
+        {
+          "行号": 397,
+          "原始内容": "\tif not _can_enter(actor):"
+        },
+        {
+          "行号": 398,
+          "原始内容": "\t\treturn"
+        },
+        {
+          "行号": 399,
+          "原始内容": "\tvar controller: Node = actor.get(\"focus_controller\") as Node"
+        },
+        {
+          "行号": 400,
+          "原始内容": "\tcontroller.try_enter(focus_target)"
+        },
+        {
+          "行号": 401,
+          "原始内容": ""
+        },
+        {
+          "行号": 402,
+          "原始内容": ""
+        },
+        {
+          "行号": 403,
+          "原始内容": "func _exit_tree() -> void:"
+        },
+        {
+          "行号": 404,
+          "原始内容": "\tif is_instance_valid(processing_timer):"
+        },
+        {
+          "行号": 405,
+          "原始内容": "\t\tprocessing_timer.stop()"
+        },
+        {
+          "行号": 406,
+          "原始内容": "\t_batch_id += 1"
+        },
+        {
+          "行号": 407,
+          "原始内容": "\t_processing = false"
+        },
+        {
+          "行号": 408,
+          "原始内容": "\t_committing = false"
+        },
+        {
+          "行号": 409,
+          "原始内容": "\t_clear_batch()"
+        }
+      ]
+    },
+    {
+      "说明": "开始按钮实际许可",
+      "绝对路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_start_button.gd",
+      "散列算法": "SHA256（安全散列算法二百五十六位）",
+      "文件散列": "BF13A468335C35C552C46BA30260FA84D835E5883AADEFF007B376C140F1AED1",
+      "原始代码摘录": [
+        {
+          "行号": 20,
+          "原始内容": "func configure(owner_machine: AutolysisPackingMachine, target: AutolysisFocusTarget, runtime_player: AnimationPlayer) -> bool:"
+        },
+        {
+          "行号": 21,
+          "原始内容": "\tif _configured:"
+        },
+        {
+          "行号": 22,
+          "原始内容": "\t\treturn false"
+        },
+        {
+          "行号": 23,
+          "原始内容": "\tmachine = owner_machine"
+        },
+        {
+          "行号": 24,
+          "原始内容": "\tfocus_target = target"
+        },
+        {
+          "行号": 25,
+          "原始内容": "\t_runtime_player = runtime_player"
+        },
+        {
+          "行号": 26,
+          "原始内容": "\tif not get_configuration_error().is_empty():"
+        },
+        {
+          "行号": 27,
+          "原始内容": "\t\treturn false"
+        },
+        {
+          "行号": 28,
+          "原始内容": "\t_runtime_player.play(animation_name, 0.0)"
+        },
+        {
+          "行号": 29,
+          "原始内容": "\t_runtime_player.seek(0.0, true)"
+        },
+        {
+          "行号": 30,
+          "原始内容": "\t_runtime_player.pause()"
+        },
+        {
+          "行号": 31,
+          "原始内容": "\tstart_interaction.set_availability_check(can_start)"
+        },
+        {
+          "行号": 32,
+          "原始内容": "\tstart_interaction.interaction_requested.connect(_on_start_requested)"
+        },
+        {
+          "行号": 33,
+          "原始内容": "\t_configured = true"
+        },
+        {
+          "行号": 34,
+          "原始内容": "\treturn true"
+        },
+        {
+          "行号": 70,
+          "原始内容": "func can_start(actor: Node3D) -> bool:"
+        },
+        {
+          "行号": 71,
+          "原始内容": "\treturn is_configured() and machine.is_actor_focused(actor) and machine.can_start_processing()"
+        },
+        {
+          "行号": 72,
+          "原始内容": ""
+        },
+        {
+          "行号": 73,
+          "原始内容": ""
+        },
+        {
+          "行号": 74,
+          "原始内容": "func play_press() -> void:"
+        },
+        {
+          "行号": 75,
+          "原始内容": "\t_runtime_player.play(animation_name, 0.0)"
+        },
+        {
+          "行号": 76,
+          "原始内容": "\t_runtime_player.seek(0.0, true)"
+        },
+        {
+          "行号": 77,
+          "原始内容": ""
+        },
+        {
+          "行号": 78,
+          "原始内容": ""
+        },
+        {
+          "行号": 79,
+          "原始内容": "func _on_start_requested(actor: Node3D) -> void:"
+        },
+        {
+          "行号": 80,
+          "原始内容": "\tmachine.try_start_processing(actor)"
+        }
+      ]
+    },
+    {
+      "说明": "实际交互许可查询",
+      "绝对路径": "D:\\autolysis\\main-autolysis\\components\\interactions\\autolysis_interaction_component.gd",
+      "散列算法": "SHA256（安全散列算法二百五十六位）",
+      "文件散列": "930F05E9497984ADDF7BBC2437D02ECEF223E3B06EAF8E110105DEC9B289DBFF",
+      "原始代码摘录": []
+    },
+    {
+      "说明": "成功取回后重置时序",
+      "绝对路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+      "散列算法": "SHA256（安全散列算法二百五十六位）",
+      "文件散列": "DBD057720F6760919D6AB146307403233EA8B60E6A57CA06CC48D9DE2155EF83",
+      "原始代码摘录": []
+    },
+    {
+      "说明": "玩家根节点所在组",
+      "绝对路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.tscn",
+      "散列算法": "SHA256（安全散列算法二百五十六位）",
+      "文件散列": "209987F16D30062EF025662AC1EBD3079534C6AE7548DEEA53B67A0EB67FA3FE",
+      "原始代码摘录": []
+    },
+    {
+      "说明": "组内还有发现区域与玩家许可",
+      "绝对路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.gd",
+      "散列算法": "SHA256（安全散列算法二百五十六位）",
+      "文件散列": "9C82DC959ADCBB5FE72CAE3F76ABBD58BD74CDBDFB7D52970174F2158E22EC37",
+      "原始代码摘录": [
+        {
+          "行号": 143,
+          "原始内容": "\tcrouch_raycast.add_exception(_found_area)"
+        },
+        {
+          "行号": 144,
+          "原始内容": "\t$StaircheckRayCast3D.add_exception(_found_area)"
+        },
+        {
+          "行号": 145,
+          "原始内容": "\t_found_area.add_to_group(\"Player\")"
+        },
+        {
+          "行号": 160,
+          "原始内容": "func is_interaction_input_allowed() -> bool:"
+        },
+        {
+          "行号": 161,
+          "原始内容": "\treturn _base_input_allowed() and not focus_controller.has_control() and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED"
+        },
+        {
+          "行号": 162,
+          "原始内容": ""
+        },
+        {
+          "行号": 163,
+          "原始内容": "func _base_input_allowed() -> bool:"
+        },
+        {
+          "行号": 164,
+          "原始内容": "\treturn is_inside_tree() and not is_queued_for_deletion() and not get_tree().paused and not is_movement_paused and not is_showing_ui and not is_landing_stunned"
+        },
+        {
+          "行号": 165,
+          "原始内容": ""
+        },
+        {
+          "行号": 166,
+          "原始内容": "func is_focus_input_allowed() -> bool:"
+        },
+        {
+          "行号": 167,
+          "原始内容": "\treturn is_focus_business_allowed() and Input.mouse_mode == Input.MOUSE_MODE_VISIBLE"
+        },
+        {
+          "行号": 168,
+          "原始内容": ""
+        },
+        {
+          "行号": 169,
+          "原始内容": "func is_focus_business_allowed() -> bool:"
+        },
+        {
+          "行号": 170,
+          "原始内容": "\treturn _base_input_allowed() and focus_controller.state == AutolysisFocusController.FocusState.FOCUSED"
+        }
+      ]
+    },
+    {
+      "说明": "本地已实施材质副本和闪烁模式",
+      "绝对路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_machine.gd",
+      "散列算法": "SHA256（安全散列算法二百五十六位）",
+      "文件散列": "2DCE7778F7A04FBD0FBAA00C005ED260EF562E5301CEE98CBFEA5F7CE9959E15",
+      "原始代码摘录": [
+        {
+          "行号": 111,
+          "原始内容": "func _initialize_indicator() -> void:"
+        },
+        {
+          "行号": 112,
+          "原始内容": "\tif not _node_is_live(status_indicator) or status_indicator.get_parent() != self or status_indicator.mesh == null:"
+        },
+        {
+          "行号": 113,
+          "原始内容": "\t\t_disable_indicator(\"status_indicator（状态指示灯）必须绑定本机直接子级的有效网格\")"
+        },
+        {
+          "行号": 114,
+          "原始内容": "\t\treturn"
+        },
+        {
+          "行号": 115,
+          "原始内容": "\tif not INDICATOR_RED_MATERIAL is StandardMaterial3D or not INDICATOR_ORANGE_MATERIAL is StandardMaterial3D or not INDICATOR_GREEN_MATERIAL is StandardMaterial3D:"
+        },
+        {
+          "行号": 116,
+          "原始内容": "\t\t_disable_indicator(\"三份指定指示灯材质必须为 StandardMaterial3D（标准三维材质）\")"
+        },
+        {
+          "行号": 117,
+          "原始内容": "\t\treturn"
+        },
+        {
+          "行号": 118,
+          "原始内容": "\t_indicator_orange_material = INDICATOR_ORANGE_MATERIAL.duplicate() as StandardMaterial3D"
+        },
+        {
+          "行号": 119,
+          "原始内容": "\tif not is_instance_valid(_indicator_orange_material):"
+        },
+        {
+          "行号": 120,
+          "原始内容": "\t\t_disable_indicator(\"橙色材质独立副本创建失败\")"
+        },
+        {
+          "行号": 121,
+          "原始内容": "\t\treturn"
+        },
+        {
+          "行号": 122,
+          "原始内容": "\t_indicator_enabled = true"
+        },
+        {
+          "行号": 123,
+          "原始内容": "\tstatus_indicator.tree_exiting.connect(_on_indicator_exiting)"
+        },
+        {
+          "行号": 124,
+          "原始内容": "\t_set_indicator_state(IndicatorState.DEFAULT)"
+        },
+        {
+          "行号": 171,
+          "原始内容": "func _set_indicator_state(next_state: IndicatorState) -> void:"
+        },
+        {
+          "行号": 172,
+          "原始内容": "\tif _indicator_state == next_state:"
+        },
+        {
+          "行号": 173,
+          "原始内容": "\t\treturn"
+        },
+        {
+          "行号": 174,
+          "原始内容": "\t_stop_indicator_blink()"
+        },
+        {
+          "行号": 175,
+          "原始内容": "\t_indicator_state = next_state"
+        },
+        {
+          "行号": 176,
+          "原始内容": "\tmatch next_state:"
+        },
+        {
+          "行号": 177,
+          "原始内容": "\t\tIndicatorState.DEFAULT:"
+        },
+        {
+          "行号": 178,
+          "原始内容": "\t\t\tstatus_indicator.material_override = INDICATOR_RED_MATERIAL"
+        },
+        {
+          "行号": 179,
+          "原始内容": "\t\tIndicatorState.READY:"
+        },
+        {
+          "行号": 180,
+          "原始内容": "\t\t\t_indicator_orange_material.emission_energy_multiplier = (INDICATOR_ORANGE_MATERIAL as StandardMaterial3D).emission_energy_multiplier"
+        },
+        {
+          "行号": 181,
+          "原始内容": "\t\t\tstatus_indicator.material_override = _indicator_orange_material"
+        },
+        {
+          "行号": 182,
+          "原始内容": "\t\tIndicatorState.RUNNING:"
+        },
+        {
+          "行号": 183,
+          "原始内容": "\t\t\t_indicator_orange_material.emission_energy_multiplier = 2.0"
+        },
+        {
+          "行号": 184,
+          "原始内容": "\t\t\tstatus_indicator.material_override = _indicator_orange_material"
+        },
+        {
+          "行号": 185,
+          "原始内容": "\t\t\t_indicator_tween = create_tween()"
+        },
+        {
+          "行号": 186,
+          "原始内容": "\t\t\t_indicator_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)"
+        },
+        {
+          "行号": 187,
+          "原始内容": "\t\t\t_indicator_tween.set_pause_mode(Tween.TWEEN_PAUSE_STOP)"
+        },
+        {
+          "行号": 188,
+          "原始内容": "\t\t\t_indicator_tween.set_ignore_time_scale(false)"
+        },
+        {
+          "行号": 189,
+          "原始内容": "\t\t\t_indicator_tween.set_trans(Tween.TRANS_LINEAR)"
+        },
+        {
+          "行号": 190,
+          "原始内容": "\t\t\t_indicator_tween.set_loops()"
+        },
+        {
+          "行号": 191,
+          "原始内容": "\t\t\t_indicator_tween.tween_property(_indicator_orange_material, \"emission_energy_multiplier\", 0.0, INDICATOR_HALF_CYCLE_SECONDS)"
+        },
+        {
+          "行号": 192,
+          "原始内容": "\t\t\t_indicator_tween.tween_property(_indicator_orange_material, \"emission_energy_multiplier\", 2.0, INDICATOR_HALF_CYCLE_SECONDS)"
+        },
+        {
+          "行号": 193,
+          "原始内容": "\t\tIndicatorState.COMPLETED:"
+        },
+        {
+          "行号": 194,
+          "原始内容": "\t\t\tstatus_indicator.material_override = INDICATOR_GREEN_MATERIAL"
+        },
+        {
+          "行号": 195,
+          "原始内容": ""
+        },
+        {
+          "行号": 196,
+          "原始内容": ""
+        },
+        {
+          "行号": 197,
+          "原始内容": "func _stop_indicator_blink() -> void:"
+        },
+        {
+          "行号": 198,
+          "原始内容": "\tif is_instance_valid(_indicator_tween):"
+        },
+        {
+          "行号": 199,
+          "原始内容": "\t\t_indicator_tween.kill()"
+        },
+        {
+          "行号": 200,
+          "原始内容": "\t_indicator_tween = null"
+        }
+      ]
+    },
+    {
+      "说明": "指定红色基础材质",
+      "绝对路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_red_2.tres",
+      "散列算法": "SHA256（安全散列算法二百五十六位）",
+      "文件散列": "2B956E95C8789E9EAEDD2FC9DB69630DE8028ED772C6EFFEBF77AA61320D8F30",
+      "原始代码摘录": []
+    },
+    {
+      "说明": "指定运行与完成灯材质",
+      "绝对路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\glow_color\\mat_glow_blue_0.tres",
+      "散列算法": "SHA256（安全散列算法二百五十六位）",
+      "文件散列": "3A6DD0BFBE7E633753E931A4C92CF4BCA6C1FA9A17EAD104F74561FFB57DD42F",
+      "原始代码摘录": []
+    },
+    {
+      "说明": "指定按钮就绪与完成材质",
+      "绝对路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\glow_color\\mat_glow_blue_1.tres",
+      "散列算法": "SHA256（安全散列算法二百五十六位）",
+      "文件散列": "960DBBC3544A672BF17BE2044CB51AAE8DBC1F7FB296836ACD077FCB717B8289",
+      "原始代码摘录": []
+    },
+    {
+      "说明": "指定完成灯灰色初始材质",
+      "绝对路径": "D:\\autolysis\\main-autolysis\\assets\\materials\\base_color\\mat_base_grey_4.tres",
+      "散列算法": "SHA256（安全散列算法二百五十六位）",
+      "文件散列": "8219517EFE79E0627DD686974C2AF8E3B93419CD0F65BE24D986BF595F5504D0",
+      "原始代码摘录": []
+    },
+    {
+      "说明": "原项目按钮交互",
+      "绝对路径": "D:\\cogito\\addons\\cogito\\CogitoObjects\\cogito_button.gd",
+      "散列算法": "SHA256（安全散列算法二百五十六位）",
+      "文件散列": "E2B720B62E1076CFA1BBDF9BB8CFD9B68EB333628D26FFC799DC1C708E98380F",
+      "原始代码摘录": []
+    },
+    {
+      "说明": "原项目报警灯补间",
+      "绝对路径": "D:\\cogito\\addons\\cogito\\CogitoObjects\\cogito_security_camera.gd",
+      "散列算法": "SHA256（安全散列算法二百五十六位）",
+      "文件散列": "85037FFA8E4E5A283BCD2043DE06182FF984A2D00AFA58624FEFCAFB1D1B0F0A",
+      "原始代码摘录": []
+    },
+    {
+      "说明": "原项目材质副本与属性补间",
+      "绝对路径": "D:\\cogito\\main-degauss\\pistol\\scripts\\degauss_beam_ray.gd",
+      "散列算法": "SHA256（安全散列算法二百五十六位）",
+      "文件散列": "989075391645CFB4F555401A949232BDAD023617EFA2307FF8FA01A31D5B7AFC",
+      "原始代码摘录": [
+        {
+          "行号": 46,
+          "原始内容": "func _ready() -> void:"
+        },
+        {
+          "行号": 47,
+          "原始内容": "\tvar surface_material: Material = _beam_mesh.get_surface_override_material(0)"
+        },
+        {
+          "行号": 48,
+          "原始内容": "\tif surface_material == null and _beam_mesh.mesh != null:"
+        },
+        {
+          "行号": 49,
+          "原始内容": "\t\tsurface_material = _beam_mesh.mesh.surface_get_material(0)"
+        },
+        {
+          "行号": 50,
+          "原始内容": "\tif surface_material is StandardMaterial3D:"
+        },
+        {
+          "行号": 51,
+          "原始内容": "\t\t_beam_material = (surface_material as StandardMaterial3D).duplicate() as StandardMaterial3D"
+        },
+        {
+          "行号": 52,
+          "原始内容": "\t\t_beam_mesh.set_surface_override_material(0, _beam_material)"
+        },
+        {
+          "行号": 187,
+          "原始内容": "func _start_fade() -> void:"
+        },
+        {
+          "行号": 188,
+          "原始内容": "\tif _beam_material == null:"
+        },
+        {
+          "行号": 189,
+          "原始内容": "\t\tqueue_free()"
+        },
+        {
+          "行号": 190,
+          "原始内容": "\t\treturn"
+        },
+        {
+          "行号": 191,
+          "原始内容": "\tvar fade_tween: Tween = get_tree().create_tween()"
+        },
+        {
+          "行号": 192,
+          "原始内容": "\tvar transparent_color: Color = Color(_beam_material.albedo_color, 0.0)"
+        },
+        {
+          "行号": 193,
+          "原始内容": "\tfade_tween.tween_property(_beam_material, \"albedo_color\", transparent_color, fade_duration)"
+        },
+        {
+          "行号": 194,
+          "原始内容": "\tif _beam_material.emission_enabled:"
+        },
+        {
+          "行号": 195,
+          "原始内容": "\t\tfade_tween.parallel().tween_property(_beam_material, \"emission\", Color.TRANSPARENT, fade_duration)"
+        },
+        {
+          "行号": 196,
+          "原始内容": "\tfade_tween.finished.connect(queue_free)"
+        }
+      ]
+    }
+  ],
+  "官方文档": [
+    {
+      "说明": "发光能量倍率与默认值",
+      "网址": "https://docs.godotengine.org/en/4.6/classes/class_basematerial3d.html#class-basematerial3d-property-emission-energy-multiplier",
+      "核对结果": "默认倍率为1.0，指定零号蓝色材质显式写入2.0，一号蓝色材质未写入该属性"
+    },
+    {
+      "说明": "线性补间、循环、物理更新、暂停与终止",
+      "网址": "https://docs.godotengine.org/en/4.6/classes/class_tween.html",
+      "核对结果": "支持顺序属性补间、无限循环、物理帧处理、遵守时间缩放与终止补间"
+    },
+    {
+      "说明": "复制资源",
+      "网址": "https://docs.godotengine.org/en/4.6/classes/class_resource.html#class-resource-method-duplicate",
+      "核对结果": "浅复制建立新材质实例并共享嵌套纹理资源"
+    },
+    {
+      "说明": "整个网格的覆盖材质",
+      "网址": "https://docs.godotengine.org/en/4.6/classes/class_geometryinstance3d.html#class-geometryinstance3d-property-material-override",
+      "核对结果": "覆盖网格全部表面使用的材质"
+    }
+  ]
+}

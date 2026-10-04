@@ -1,0 +1,22 @@
+[
+  {
+    "路径": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd",
+    "散列": "9638E08A911CD6023B9B356C8F93688B6753EC4D082D610B8987F9198F214B1E"
+  },
+  {
+    "路径": "main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn",
+    "散列": "E3F938536EF8D8504859378AF0C0F76B3FCB1E8CCAB4C34F1740E1B33E4A9F3C"
+  },
+  {
+    "路径": "main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd",
+    "散列": "B3482859F92FD09B2DD61223765F6111D231D2978AA918CC877BF42D9EF7DA47"
+  },
+  {
+    "路径": "main-autolysis/assets/materials/glow_color/mat_glow_blue_0.tres",
+    "散列": "3A6DD0BFBE7E633753E931A4C92CF4BCA6C1FA9A17EAD104F74561FFB57DD42F"
+  },
+  {
+    "路径": "main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+    "散列": "960DBBC3544A672BF17BE2044CB51AAE8DBC1F7FB296836ACD077FCB717B8289"
+  }
+]

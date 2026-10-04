@@ -2,6 +2,8 @@ class_name AutolysisBlendSlot
 extends AnimatableBody3D
 ## 每槽独立保存开闭与占用；道具栏提交由玩家的道具控制器负责。
 
+signal state_changed
+
 enum SlotState { CLOSED, OPENING, OPEN, CLOSING }
 
 @export var raw_material_anchor: Node3D
@@ -94,6 +96,7 @@ func try_toggle(actor: Node3D) -> bool:
 	else:
 		state = SlotState.CLOSING
 		_runtime_player.play_backwards(animation_name, 0.0)
+	_emit_state_changed.call_deferred()
 	return true
 
 
@@ -105,11 +108,15 @@ func try_begin_transfer(actor: Node3D) -> bool:
 	if _transfer_busy or not can_transfer(actor):
 		return false
 	_transfer_busy = true
+	_emit_state_changed.call_deferred()
 	return true
 
 
 func end_transfer() -> void:
+	if not _transfer_busy:
+		return
 	_transfer_busy = false
+	_emit_state_changed.call_deferred()
 
 
 func get_stored_item() -> AutolysisRawMaterial:
@@ -142,6 +149,7 @@ func try_attach_prepared_item(item: AutolysisRawMaterial) -> bool:
 		return false
 	item.transform = Transform3D.IDENTITY
 	_stored_item = item
+	_emit_state_changed.call_deferred()
 	return true
 
 
@@ -150,6 +158,7 @@ func release_item(item: AutolysisRawMaterial) -> bool:
 		return false
 	_stored_item = null
 	item.blend_slot = null
+	_emit_state_changed.call_deferred()
 	return true
 
 
@@ -175,10 +184,15 @@ func consume_processing_item(owner_machine: AutolysisBlendMachine, batch_id: int
 func rollback_prepared_item(item: Variant) -> void:
 	if is_instance_valid(machine) and (machine.is_batch_running() or not machine.get_processing_fault().is_empty()) and _stored_item == item:
 		return
+	var occupancy_changed: bool = false
 	if _stored_item == item:
 		_stored_item = null
+		occupancy_changed = true
 	if is_instance_valid(item) and item is AutolysisRawMaterial and item.blend_slot == self:
 		item.blend_slot = null
+		occupancy_changed = true
+	if occupancy_changed:
+		_emit_state_changed.call_deferred()
 
 
 func _actor_is_focused(actor: Node3D) -> bool:
@@ -216,6 +230,16 @@ func _on_animation_finished(finished_animation: StringName) -> void:
 		state = SlotState.OPEN
 	elif state == SlotState.CLOSING:
 		state = SlotState.CLOSED
+	else:
+		return
+	_emit_state_changed.call_deferred()
+
+
+## 延后外部通知，库存取放调用栈完成前不新增同步回调。
+func _emit_state_changed() -> void:
+	if not _node_is_live(self):
+		return
+	state_changed.emit()
 
 
 func _node_is_live(node: Variant) -> bool:

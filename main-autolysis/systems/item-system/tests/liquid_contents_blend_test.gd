@@ -4,6 +4,13 @@ extends "res://main-autolysis/player/tests/focus_interaction_test.gd"
 const TANK_DEFINITION: AutolysisItemDefinition = preload("res://main-autolysis/systems/item-system/items/liquid_tank.tres")
 const CABINET_SCENE: PackedScene = preload("res://main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn")
 const TANK_SCENE: PackedScene = preload("res://main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn")
+const INDICATOR_DEFAULT: int = 0
+const INDICATOR_READY: int = 1
+const INDICATOR_RUNNING: int = 2
+const INDICATOR_COMPLETED: int = 3
+const INDICATOR_RED: Material = preload("res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres")
+const INDICATOR_ORANGE: StandardMaterial3D = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_orange_0.tres")
+const INDICATOR_GREEN: Material = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_green_0.tres")
 
 class BatchClock extends Node:
 	var effective_seconds: float = 0.0
@@ -22,6 +29,7 @@ var started_batches: int = 0
 var timing_samples: Array[Dictionary] = []
 var batch_clock: BatchClock
 var batch_start_seconds: float = 0.0
+var indicator_records: Array[Dictionary] = []
 
 
 func run_checks() -> void:
@@ -35,6 +43,7 @@ func run_checks() -> void:
 	root.add_child(batch_clock)
 	_test_contents_data()
 	await _new_scene()
+	_check_indicator(INDICATOR_DEFAULT, "初次正式场景无罐无药保持红色")
 	await _enter()
 	await _test_tank_candidate_failure()
 	await _new_scene()
@@ -128,6 +137,7 @@ func _restricted_once(description: String) -> void:
 	_button(MOUSE_BUTTON_LEFT, false, point)
 	await frames(6)
 	check(machine.handle.position.is_equal_approx(Vector3(0, 0.12, 0)) and denied_count == old_denied + 1, description + "松手归顶且不追加消息")
+	_check_indicator(INDICATOR_COMPLETED if machine.get("_completed_tank_instance") != null else INDICATOR_DEFAULT, description + "受限拉杆没有产生运行闪烁且保持当前静态显示")
 
 
 func _test_restricted_handle() -> void:
@@ -168,6 +178,8 @@ func _test_tank_candidate_failure() -> void:
 	var contents: AutolysisLiquidContents = AutolysisLiquidContents.create_result(ids)
 	contents.set_phase_rgb(Vector3(7, 8, 9))
 	check(tank.apply_contents(contents), "取回候选故障夹具准备满罐")
+	await frames(2)
+	_check_indicator(INDICATOR_DEFAULT, "外部直接装填满罐不建立本机绿色完成态")
 	var held_root: Node3D = Node3D.new()
 	var broken_held: PackedScene = PackedScene.new()
 	check(broken_held.pack(held_root) == OK, "打包无内容网格但符合纯显示规则的手持夹具")
@@ -204,11 +216,14 @@ func _test_tank_and_batch() -> void:
 	await _click(_pixel(0))
 	await frames(18)
 	check(not machine.can_start_processing(), "空槽门完全打开仍阻止启动")
+	_check_indicator(INDICATOR_DEFAULT, "空槽门打开期间红色")
 	await _restricted_once("空槽门打开：")
 	await _click(_pixel(0))
 	check(not machine.can_start_processing(), "空槽门关闭运动中不能启动")
+	_check_indicator(INDICATOR_DEFAULT, "空槽门关闭动画期间红色")
 	await frames(18)
 	check(machine.can_start_processing(), "四门完全关闭、一份原药与空罐允许启动")
+	_check_indicator(INDICATOR_READY, "关门动画结束并满足完整启动条件后橙色常亮")
 	var old_denied_for_cancel: int = denied_count
 	check(machine.handle.try_begin_drag(player) and not machine.handle.is_restricted_drag(), "合法前提选择正常拖动")
 	machine.handle.apply_vertical_motion(player, 40)
@@ -221,6 +236,7 @@ func _test_tank_and_batch() -> void:
 	var tank: AutolysisLiquidTank = machine.tank_place.get_stored_item()
 	var old_completed: int = completed_batches
 	await _start_batch_input()
+	_check_indicator(INDICATOR_RUNNING, "真实拉杆完成且实际启动后橙色闪烁")
 	check(machine.slots[2].get_stored_item() == source and tank.is_empty(), "启动只记录快照，原药仍在且罐仍空")
 	var old_started: int = started_batches
 	check(not machine.try_start_processing(player) and started_batches == old_started, "同帧重入请求不建立另一批次")
@@ -236,11 +252,14 @@ func _test_tank_and_batch() -> void:
 	check(not machine.root_interaction.try_interact(player, AutolysisInteractionComponent.InteractionMode.FOCUS), "运行中根聚焦组件拒绝")
 	check(denied_count == old_denied, "运行中拉杆请求不发送禁止消息")
 	paused = true
+	var paused_energy: float = (machine.get("_indicator_orange_material") as StandardMaterial3D).emission_energy_multiplier
 	await frames(20)
 	check(is_equal_approx(machine.processing_timer.time_left, remaining) and tank.is_empty(), "暂停冻结配药游戏时间且不装填")
+	check(is_equal_approx((machine.get("_indicator_orange_material") as StandardMaterial3D).emission_energy_multiplier, paused_energy), "暂停同时冻结运行指示灯倍率")
 	paused = false
 	await _exit()
 	check(machine.is_batch_running() and not focus.can_enter(machine.focus_target) and not focus.try_enter(machine.focus_target), "运行中允许退出，公开进入接口拒绝重入")
+	_check_indicator(INDICATOR_RUNNING, "退出聚焦仍保持真实加工与闪烁")
 	for _index: int in range(150):
 		if not machine.is_batch_running():
 			break
@@ -250,12 +269,15 @@ func _test_tank_and_batch() -> void:
 	machine.processing_timer.timeout.emit()
 	check(completed_batches == old_completed + 1, "重复计时回调不重复消费或装填")
 	check(machine.slots[2].get_stored_item() == null and not tank.is_empty(), "完成后消费原药并装填留在设备中的罐")
+	_check_indicator(INDICATOR_COMPLETED, "成功提交且解除运行状态后绿色无循环")
 	check(tank.item_instance.liquid_contents.get_raw_material_ids() == ["caffeine"], "一份原药加工记录正确")
 	await _enter()
 	await _capture("02-full-tank.png")
 	var filled_instance: AutolysisItemInstance = tank.item_instance
 	await _click(_machine_pixel(machine.tank_place))
 	check(inventory.get_focused_instance() == filled_instance and machine.tank_place.get_stored_item() == null, "真实点击满罐位取回原实例")
+	_check_indicator(INDICATOR_DEFAULT, "成功取走完成罐后恢复红色")
+	check(machine.get("_completed_tank_instance") == null, "成功取罐清除完成实例凭据")
 	check(player.liquid_contents_panel.is_showing_contents() and player.liquid_contents_panel.get_contents_text().contains("原药：咖啡因"), "手持满罐显示全部内容")
 
 
@@ -329,6 +351,7 @@ func _test_batch_boundaries() -> void:
 		check(not machine.is_batch_running() and tank.item_instance.liquid_contents.get_raw_material_ids() == expected, "倒序实际装药仍按槽号收集，四份、四同种、稀疏批次均完成")
 		await _load_slot(0, CAFFEINE)
 		check(not machine.can_start_processing(), "补药后满罐仍占位时不能启动下一轮")
+		_check_indicator(INDICATOR_COMPLETED, "完成罐仍在时再次开关槽门与补药保持绿色")
 		await _restricted_once("满罐占位：")
 
 
@@ -345,6 +368,7 @@ func _test_failed_batch() -> void:
 	invalidated.queue_free()
 	await frames(125)
 	check(machine.is_interaction_locked() and machine.slots[0].get_stored_item() == retained and machine.tank_place.get_stored_item().is_empty(), "完成前来源失效时锁定设备，保留其他原药且不生成部分药液")
+	_check_indicator(INDICATOR_DEFAULT, "加工失败停止闪烁并恢复红色")
 	machine.tank_place.queue_free()
 	await frames(2)
 	check(not machine.focus_target.is_valid_target() and focus.state == INACTIVE, "已登记罐位释放后聚焦目标失效并结束会话")
@@ -353,6 +377,7 @@ func _test_failed_batch() -> void:
 func _on_batch_started(_value: Variant = null) -> void:
 	started_batches += 1
 	batch_start_seconds = batch_clock.effective_seconds
+	_check_indicator(INDICATOR_RUNNING, "加工开始信号观察到同步进入运行显示")
 
 
 func _on_batch_completed(_value: Variant = null, _contents: Variant = null) -> void:
@@ -360,9 +385,25 @@ func _on_batch_completed(_value: Variant = null, _contents: Variant = null) -> v
 	var elapsed: float = batch_clock.effective_seconds - batch_start_seconds
 	timing_samples.append({"完成有效秒数": elapsed, "开始批次数": started_batches, "完成批次数": completed_batches})
 	check(absf(elapsed - 2.0) <= 1.0 / float(Engine.physics_ticks_per_second) + 0.00001, "装填计时为两秒有效游戏时间，误差最多一物理帧")
+	_check_indicator(INDICATOR_COMPLETED, "加工完成信号观察到同步进入绿色完成显示")
+
+
+func _check_indicator(expected_state: int, description: String, target: Node3D = null) -> void:
+	var device: Node3D = machine if target == null else target
+	var lamp: MeshInstance3D = device.get("status_indicator") as MeshInstance3D
+	var orange: StandardMaterial3D = device.get("_indicator_orange_material") as StandardMaterial3D
+	var tween: Tween = device.get("_indicator_tween") as Tween
+	var actual_state: int = int(device.get("_indicator_state"))
+	var material: Material = lamp.material_override if is_instance_valid(lamp) else null
+	var material_valid: bool = material == orange if expected_state in [INDICATOR_READY, INDICATOR_RUNNING] else material == (INDICATOR_GREEN if expected_state == INDICATOR_COMPLETED else INDICATOR_RED)
+	var tween_valid: bool = tween != null and tween.is_valid()
+	var expected_tween: bool = expected_state == INDICATOR_RUNNING
+	var energy_valid: bool = expected_state != INDICATOR_READY or (orange != null and is_equal_approx(orange.emission_energy_multiplier, 2.0))
+	check(is_instance_valid(lamp) and actual_state == expected_state and material_valid and tween_valid == expected_tween and energy_valid, description)
+	indicator_records.append({"说明": description, "设备": str(device.get_path()), "状态": actual_state, "预期状态": expected_state, "物理帧": Engine.get_physics_frames(), "橙色倍率": orange.emission_energy_multiplier if orange != null else -1.0, "补间有效": tween_valid, "补间实例": tween.get_instance_id() if tween != null else 0})
 
 
 func _save_liquid_report() -> void:
 	var file: FileAccess = FileAccess.open(evidence_directory + "/liquid-contents-blend.json", FileAccess.WRITE)
 	if file != null:
-		file.store_string(JSON.stringify({"断言数": assertion_count, "失败数": failures, "断言": records, "禁止消息数": denied_count, "开始批次数": started_batches, "完成批次数": completed_batches, "计时采样": timing_samples, "射线": ray_records, "画面": screenshots, "图形后端": graphical, "输入范围": "自动注入输入；不声称本机人工鼠标验收"}, "\t"))
+		file.store_string(JSON.stringify({"断言数": assertion_count, "失败数": failures, "断言": records, "禁止消息数": denied_count, "开始批次数": started_batches, "完成批次数": completed_batches, "计时采样": timing_samples, "指示灯状态": indicator_records, "射线": ray_records, "画面": screenshots, "图形后端": graphical, "输入范围": "自动注入输入；不声称本机人工鼠标验收"}, "\t"))

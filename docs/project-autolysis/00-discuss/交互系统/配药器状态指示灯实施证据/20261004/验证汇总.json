@@ -1,0 +1,260 @@
+{
+  "日期": "2026-10-04",
+  "状态": "已实施并通过自动验收",
+  "引擎": "Godot（戈多引擎）4.6.1",
+  "显示过程": "红色待机、橙色就绪、橙色线性运行闪烁、成功完成绿色、取罐后红色",
+  "所有最终检查通过": true,
+  "最终检查": [
+    {
+      "检查": "import-final",
+      "时间": "2026-10-04T09:45:40.2846054+08:00",
+      "进程编号": 25716,
+      "退出码": 0,
+      "通过": true,
+      "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+      "窗口显示": "Hidden",
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--editor",
+        "--quit"
+      ],
+      "通过断言数": 0,
+      "预期错误计数": {},
+      "非预期错误": []
+    },
+    {
+      "检查": "atomic",
+      "时间": "2026-10-04T09:41:29.5248665+08:00",
+      "进程编号": 42824,
+      "退出码": 0,
+      "通过": true,
+      "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+      "窗口显示": "Hidden",
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/machine_batch_atomic_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/配药器状态指示灯实施证据/20261004/atomic"
+      ],
+      "通过断言数": 120,
+      "预期错误计数": {},
+      "非预期错误": []
+    },
+    {
+      "检查": "slot-transfer",
+      "时间": "2026-10-04T09:41:31.0571903+08:00",
+      "进程编号": 16472,
+      "退出码": 0,
+      "通过": true,
+      "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+      "窗口显示": "Hidden",
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/配药器状态指示灯实施证据/20261004/slot-transfer"
+      ],
+      "通过断言数": 266,
+      "预期错误计数": {},
+      "非预期错误": []
+    },
+    {
+      "检查": "handle-drag",
+      "时间": "2026-10-04T09:41:51.2991695+08:00",
+      "进程编号": 11160,
+      "退出码": 0,
+      "通过": true,
+      "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+      "窗口显示": "Hidden",
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/blend_handle_drag_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/配药器状态指示灯实施证据/20261004/handle-drag"
+      ],
+      "通过断言数": 890,
+      "预期错误计数": {},
+      "非预期错误": []
+    },
+    {
+      "检查": "indicator-headless",
+      "时间": "2026-10-04T09:42:55.6285801+08:00",
+      "进程编号": 42432,
+      "退出码": 0,
+      "通过": true,
+      "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+      "窗口显示": "Hidden",
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/blend_indicator_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/配药器状态指示灯实施证据/20261004/indicator-headless"
+      ],
+      "通过断言数": 630,
+      "预期错误计数": {},
+      "非预期错误": []
+    },
+    {
+      "检查": "indicator-rendered",
+      "时间": "2026-10-04T09:43:58.6655471+08:00",
+      "进程编号": 22108,
+      "退出码": 0,
+      "通过": true,
+      "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+      "窗口显示": "Hidden",
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/blend_indicator_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/配药器状态指示灯实施证据/20261004/indicator-rendered"
+      ],
+      "通过断言数": 629,
+      "预期错误计数": {},
+      "非预期错误": []
+    },
+    {
+      "检查": "liquid-integration-rendered",
+      "时间": "2026-10-04T09:44:35.17637+08:00",
+      "进程编号": 13776,
+      "退出码": 0,
+      "通过": true,
+      "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+      "窗口显示": "Hidden",
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/liquid_contents_blend_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/配药器状态指示灯实施证据/20261004/integration-rendered"
+      ],
+      "通过断言数": 211,
+      "预期错误计数": {
+        "^ERROR: 配药器批次1故障，保持交互关闭：本轮原药来源或实例失效：槽号3；/root/FocusInteractionDemo/MachineA$": 1
+      },
+      "非预期错误": []
+    }
+  ],
+  "无图形波形": {
+    "最大误差": 7.94728620689966E-08,
+    "报告": "indicator-headless/blend-indicator-report.json",
+    "逐帧采样数": 133
+  },
+  "图形波形": {
+    "最大误差": 7.94728620689966E-08,
+    "倍率容差": 0.0676666666666667,
+    "逐帧采样数": 133,
+    "报告": "indicator-rendered/blend-indicator-report.json"
+  },
+  "真实渲染": [
+    {
+      "橙色倍率": 2.0,
+      "灯中心平均亮度": 0.151822583940483,
+      "状态": 0,
+      "画面": "res://docs/project-autolysis/00-discuss/交互系统/配药器状态指示灯实施证据/20261004/indicator-rendered/01-default-red.png",
+      "说明": "真实引擎渲染；截图期间暂停有效游戏时间保持采样状态",
+      "采样区域": "横向280至359、纵向172至187"
+    },
+    {
+      "橙色倍率": 2.0,
+      "灯中心平均亮度": 0.621661680549899,
+      "状态": 1,
+      "画面": "res://docs/project-autolysis/00-discuss/交互系统/配药器状态指示灯实施证据/20261004/indicator-rendered/02-ready-orange.png",
+      "说明": "真实引擎渲染；截图期间暂停有效游戏时间保持采样状态",
+      "采样区域": "横向280至359、纵向172至187"
+    },
+    {
+      "橙色倍率": 2.0,
+      "灯中心平均亮度": 0.621661680549899,
+      "状态": 2,
+      "画面": "res://docs/project-autolysis/00-discuss/交互系统/配药器状态指示灯实施证据/20261004/indicator-rendered/03-running-high-orange.png",
+      "说明": "真实引擎渲染；截图期间暂停有效游戏时间保持采样状态",
+      "采样区域": "横向280至359、纵向172至187"
+    },
+    {
+      "橙色倍率": 2.22044604925031E-15,
+      "灯中心平均亮度": 0.325765650543764,
+      "状态": 2,
+      "画面": "res://docs/project-autolysis/00-discuss/交互系统/配药器状态指示灯实施证据/20261004/indicator-rendered/04-running-low-orange.png",
+      "说明": "真实引擎渲染；截图期间暂停有效游戏时间保持采样状态",
+      "采样区域": "横向280至359、纵向172至187"
+    },
+    {
+      "橙色倍率": 2.0,
+      "灯中心平均亮度": 0.921187349584031,
+      "状态": 3,
+      "画面": "res://docs/project-autolysis/00-discuss/交互系统/配药器状态指示灯实施证据/20261004/indicator-rendered/05-completed-green.png",
+      "说明": "真实引擎渲染；截图期间暂停有效游戏时间保持采样状态",
+      "采样区域": "横向280至359、纵向172至187"
+    },
+    {
+      "橙色倍率": 2.0,
+      "灯中心平均亮度": 0.151822583940483,
+      "状态": 0,
+      "画面": "res://docs/project-autolysis/00-discuss/交互系统/配药器状态指示灯实施证据/20261004/indicator-rendered/06-taken-red.png",
+      "说明": "真实引擎渲染；截图期间暂停有效游戏时间保持采样状态",
+      "采样区域": "横向280至359、纵向172至187"
+    }
+  ],
+  "既有文件保留校核": [
+    {
+      "路径": "main-autolysis/scenes/01-autolysis-test.tscn",
+      "保持原内容": true,
+      "最终散列": "63D62640CC2965EC1CFCC34EB807A2AC6B3BC899A7FA5E19CD0F941BF5DB83EB"
+    },
+    {
+      "路径": "main-autolysis/assets/materials/glow_color/mat_glow_green_0.tres",
+      "保持原内容": true,
+      "最终散列": "ABFE9C4F2C5B31468BC4A579EE899D723C7F1B293E7C1C4B6AB9E6ED6D894D6F"
+    },
+    {
+      "路径": "main-autolysis/assets/materials/glow_color/mat_glow_orange_0.tres",
+      "保持原内容": true,
+      "最终散列": "908E8C6D3345E2FA840B5766FB8B6F6FBB716ED9B43F48F44C69B764C279F560"
+    }
+  ],
+  "指示灯造型保留报告": "指示灯造型保留校核.json",
+  "实际代码及官方网址": "实现参考索引.json",
+  "首次专项修正": {
+    "记录": "checks/indicator-headless-first.json",
+    "修正": "仅修改测试，改为检查机体旧罐与旧实例监听引用以及旧实例变化信号连接；无图形与图形重跑通过，首次日志保留",
+    "实际情况": "605项断言无失败，但测试在取罐后访问已释放节点的信号产生脚本错误，包装器判定失败，连续第二批未执行"
+  },
+  "实施取舍": "常规事件合并延后刷新；增加物理帧显示及监听一致性复核，覆盖无通知的外部配置失效、节点释放及归属变动；不在运行同态刷新时重建补间",
+  "验证范围": "真实正式场景、正式库存事务、真实射线与自动输入、真实引擎隐藏窗口渲染；未进行人工鼠标体验验收",
+  "材质说明": "完成颜色沿用用户已有绿色资源；该资源现有颜色含红色分量，真实渲染呈黄绿色，原文件内容保持不变"
+}

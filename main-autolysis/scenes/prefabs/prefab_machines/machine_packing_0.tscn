@@ -6,9 +6,10 @@
 [ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="4_0tg3w"]
 [ext_resource type="Material" uid="uid://byanljsa6t8mu" path="res://main-autolysis/assets/materials/base_color/mat_base_black_1.tres" id="7_5qici"]
 [ext_resource type="Material" uid="uid://bp35cd3s1kb3t" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_0.tres" id="9_5qici"]
-[ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd" id="10_machine"]
+[ext_resource type="Script" uid="uid://cgf7gnsds1l70" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd" id="10_machine"]
 [ext_resource type="Script" uid="uid://c1pn2s683ojtr" path="res://main-autolysis/components/interactions/autolysis_focus_target.gd" id="11_focus"]
 [ext_resource type="PackedScene" path="res://main-autolysis/components/interactions/autolysis_interaction_component.tscn" id="12_interaction"]
+[ext_resource type="Material" uid="uid://3as3koaxu70e" path="res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres" id="13_start_red"]
 [ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_tank_place.gd" id="13_tank_place"]
 [ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_capsule_place.gd" id="14_capsule_place"]
 [ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_door.gd" id="15_door"]
@@ -192,10 +193,10 @@ tracks/0/path = NodePath("button_start_packing/button_press:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06, 0.12),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.06, 0.1, 0.12),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(8.940697e-08, 0.030000001, -5.9604645e-08), Vector3(0, 0.015, 0), Vector3(8.940697e-08, 0.030000001, -5.9604645e-08)]
+"values": [Vector3(8.940697e-08, 0.030000001, -5.9604645e-08), Vector3(0, 0.011, 0), Vector3(0, 0.015, 0), Vector3(8.940697e-08, 0.030000001, -5.9604645e-08)]
 }
 
 [sub_resource type="Animation" id="Animation_u74lx"]
@@ -211,7 +212,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.16, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 2.443461, 0), Vector3(0, 2.1816616, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 1.7453293, 0), Vector3(0, 1.5707964, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_5qici"]
@@ -272,7 +273,13 @@ _data = {
 &"type_switch_2_open": SubResource("Animation_y7sso")
 }
 
-[node name="machine_packing_0" type="StaticBody3D" unique_id=1483401030 node_paths=PackedStringArray("focus_target", "reference_camera", "root_interaction", "animation_source", "tank_place", "capsule_place", "door", "type_switches", "start_button", "processing_timer") groups=["interactable"]]
+[sub_resource type="BoxMesh" id="BoxMesh_oaalt"]
+size = Vector3(0.02, 0.02, 0.02)
+
+[sub_resource type="PrismMesh" id="PrismMesh_bacen"]
+size = Vector3(0.04, 0.03, 0.02)
+
+[node name="machine_packing_0" type="StaticBody3D" unique_id=1483401030 node_paths=PackedStringArray("focus_target", "reference_camera", "root_interaction", "animation_source", "tank_place", "capsule_place", "door", "type_switches", "start_button", "processing_timer", "start_indicator", "completion_indicators") groups=["interactable"]]
 script = ExtResource("10_machine")
 focus_target = NodePath("FocusTarget")
 reference_camera = NodePath("focus_camera")
@@ -284,6 +291,8 @@ door = NodePath("door_capsules_input_bay")
 type_switches = [NodePath("type_switch_0"), NodePath("type_switch_1"), NodePath("type_switch_2")]
 start_button = NodePath("button_start_packing")
 processing_timer = NodePath("ProcessingTimer")
+start_indicator = NodePath("button_start_packing/button_press")
+completion_indicators = [NodePath("light_packing_complete_sign/light_packing_complete_sign_mesh_0"), NodePath("light_packing_complete_sign/light_packing_complete_sign_mesh_1")]
 
 [node name="FocusTarget" type="Node3D" parent="." unique_id=1933980748]
 script = ExtResource("11_focus")
@@ -513,7 +522,7 @@ mesh = SubResource("CylinderMesh_5qici")
 
 [node name="button_press" type="MeshInstance3D" parent="button_start_packing" unique_id=2058846999]
 transform = Transform3D(1, 0, 0, 0, 0.9999996, 3.1974423e-14, 0, -3.1974423e-14, 0.9999996, 8.940697e-08, 0.030000001, -5.9604645e-08)
-material_override = ExtResource("4_0tg3w")
+material_override = ExtResource("13_start_red")
 mesh = SubResource("CylinderMesh_3crod")
 
 [node name="collision_button_start_packing" type="CollisionShape3D" parent="button_start_packing" unique_id=134643547]
@@ -599,3 +608,16 @@ process_mode = 1
 process_callback = 0
 wait_time = 2.0
 one_shot = true
+
+[node name="light_packing_complete_sign" type="Node3D" parent="." unique_id=276400834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40000004, 0.76, 0.5)
+
+[node name="light_packing_complete_sign_mesh_0" type="MeshInstance3D" parent="light_packing_complete_sign" unique_id=559717478]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.030000001, 0, 0)
+material_override = ExtResource("4_0tg3w")
+mesh = SubResource("BoxMesh_oaalt")
+
+[node name="light_packing_complete_sign_mesh_1" type="MeshInstance3D" parent="light_packing_complete_sign" unique_id=218387591]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.050000012, 0, 0)
+material_override = ExtResource("4_0tg3w")
+mesh = SubResource("PrismMesh_bacen")

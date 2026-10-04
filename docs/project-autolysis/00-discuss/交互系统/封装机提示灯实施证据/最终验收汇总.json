@@ -1,0 +1,188 @@
+{
+  "全部通过": true,
+  "总通过断言数": 3983.0,
+  "检查": [
+    {
+      "检查": "封装提示灯行为无图形验收",
+      "时间": "2026-10-04T11:04:19.1023724+08:00",
+      "进程编号": 17192,
+      "退出码": 0,
+      "通过": true,
+      "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+      "窗口显示": "Hidden",
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/封装机提示灯实施证据/行为无图形"
+      ],
+      "通过断言数": 739,
+      "预期错误计数": {
+        "封装器批次.*故障": 1
+      },
+      "非预期错误": []
+    },
+    {
+      "检查": "封装提示灯行为图形验收",
+      "时间": "2026-10-04T11:05:08.4249285+08:00",
+      "进程编号": 36068,
+      "退出码": 0,
+      "通过": true,
+      "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+      "窗口显示": "Hidden",
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/封装机提示灯实施证据/行为图形"
+      ],
+      "通过断言数": 738,
+      "预期错误计数": {
+        "封装器批次.*故障": 1
+      },
+      "非预期错误": []
+    },
+    {
+      "检查": "封装提示灯专项无图形最终验收",
+      "时间": "2026-10-04T11:13:05.2297142+08:00",
+      "进程编号": 15460,
+      "退出码": 0,
+      "通过": true,
+      "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+      "窗口显示": "Hidden",
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/packing_indicator_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/封装机提示灯实施证据/专项无图形最终"
+      ],
+      "通过断言数": 1019,
+      "预期错误计数": {
+        "封装器批次1故障，保留来源并关闭入口：已预检两件物品拒绝静默共同提交，保留输入": 1,
+        "封装机提示灯停止更新：提示灯引用、归属、网格或运行材质已失效": 1
+      },
+      "非预期错误": []
+    },
+    {
+      "检查": "封装提示灯专项图形最终验收",
+      "时间": "2026-10-04T11:14:03.3923003+08:00",
+      "进程编号": 38384,
+      "退出码": 0,
+      "通过": true,
+      "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+      "窗口显示": "Hidden",
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/packing_indicator_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/封装机提示灯实施证据/专项图形最终"
+      ],
+      "通过断言数": 1016,
+      "预期错误计数": {
+        "封装机提示灯停止更新：提示灯引用、归属、网格或运行材质已失效": 1,
+        "封装器批次1故障，保留来源并关闭入口：已预检两件物品拒绝静默共同提交，保留输入": 1
+      },
+      "非预期错误": []
+    },
+    {
+      "检查": "提示灯接入后运动物理回归",
+      "时间": "2026-10-04T11:06:24.2947363+08:00",
+      "进程编号": 1944,
+      "退出码": 0,
+      "通过": true,
+      "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+      "窗口显示": "Hidden",
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/packing_motion_physics_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/封装机提示灯实施证据/运动物理",
+        "--all-controls",
+        "--cycles",
+        "20"
+      ],
+      "通过断言数": 203,
+      "预期错误计数": {},
+      "非预期错误": []
+    },
+    {
+      "检查": "提示灯接入后重复开关回归",
+      "时间": "2026-10-04T11:06:45.7940452+08:00",
+      "进程编号": 26116,
+      "退出码": 0,
+      "通过": true,
+      "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+      "窗口显示": "Hidden",
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/packing_switch_repeat_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/封装机提示灯实施证据/重复开关"
+      ],
+      "通过断言数": 50,
+      "预期错误计数": {},
+      "非预期错误": []
+    },
+    {
+      "检查": "提示灯接入后原子提交回归",
+      "时间": "2026-10-04T11:07:17.0352727+08:00",
+      "进程编号": 11376,
+      "退出码": 0,
+      "通过": true,
+      "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+      "窗口显示": "Hidden",
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/packing_batch_atomic_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/封装机提示灯实施证据/原子提交"
+      ],
+      "通过断言数": 218,
+      "预期错误计数": {
+        "封装器批次.*故障.*本轮两槽归属或取放事务失效": 2
+      },
+      "非预期错误": []
+    }
+  ],
+  "说明": "仅计七组最终验收与回归；保留但不计入资源导入、专项首轮与阶段复验。"
+}

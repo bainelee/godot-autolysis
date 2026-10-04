@@ -5,6 +5,10 @@ const PACKING_DEMO: PackedScene = preload("res://main-autolysis/systems/item-sys
 const TANK_DEFINITION: AutolysisItemDefinition = preload("res://main-autolysis/systems/item-system/items/liquid_tank.tres")
 const CAPSULE_DEFINITION: AutolysisItemDefinition = preload("res://main-autolysis/systems/item-system/items/pneumatic_capsule.tres")
 const WASTE_SCENE: PackedScene = preload("res://main-autolysis/scenes/prefabs/prefab_machines/waste_liquid_storage_tank_0.tscn")
+const INDICATOR_RED: StandardMaterial3D = preload("res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres")
+const INDICATOR_BLUE_RUNNING: StandardMaterial3D = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_blue_0.tres")
+const INDICATOR_BLUE_READY: StandardMaterial3D = preload("res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres")
+const INDICATOR_GREY: StandardMaterial3D = preload("res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres")
 
 var timing_records: Array[Dictionary] = []
 var pose_records: Array[Dictionary] = []
@@ -13,6 +17,8 @@ var batch_completed_frame: int = 0
 var batch_pause_frames: int = 0
 var observer_saw_partial: bool = false
 var original_lights: Array[Material] = []
+var indicator_records: Array[Dictionary] = []
+var capsule_reset_notification_seen: bool = false
 
 
 func run_checks() -> void:
@@ -71,6 +77,7 @@ func _new_scene() -> void:
 	await frames(25)
 	check(machine.is_configured() and other_machine.is_configured(), "两台真实封装器配置有效")
 	check(machine.tank_place.get_stored_item() == null and machine.capsule_place.get_stored_item() == null and machine.get_selected_type() == -1, "两槽初始为空且没有类型选择")
+	_assert_packing_indicators(INDICATOR_RED, false, "设备初始化")
 	original_lights.clear()
 	for index: int in range(3):
 		original_lights.append(machine.get_node("light_type_switch_%d" % index).material_override)
@@ -159,6 +166,7 @@ func _test_input_matrix() -> void:
 			check(machine.try_select_type(player, 0) == should_select, "九种输入组合仅满罐加空胶囊允许选择：%d、%d" % [tank_state, capsule_state])
 			await frames(16)
 			check(machine.can_start_processing() == should_select, "九种组合启动许可与实际合法输入一致")
+			_assert_packing_indicators(INDICATOR_BLUE_READY if should_select else INDICATOR_RED, false, "输入组合%d、%d" % [tank_state, capsule_state])
 
 
 func _test_transfer_and_animation() -> void:
@@ -190,6 +198,7 @@ func _test_transfer_and_animation() -> void:
 	await _click(_body_pixel(machine.type_switches[0]))
 	await frames(2)
 	check(machine.get_selected_type() == 0 and not machine.can_start_processing(), "开关开启途中已经唯一选中但不能启动")
+	_assert_packing_indicators(INDICATOR_RED, false, "类型开关开启途中")
 	check(not machine.try_select_type(player, 1), "开关动作途中拒绝新的类型点击")
 	await _click(_body_pixel(machine.tank_place))
 	check(machine.get_selected_type() == -1 and inventory.get_focused_instance() == stored_tank_instance, "开启途中成功取罐立即取消类型")
@@ -206,6 +215,7 @@ func _test_transfer_and_animation() -> void:
 	await frames(18)
 	_record_machine_state("取消类型后")
 	check(machine.get_selected_type() == -1 and not machine.can_start_processing(), "再次点击当前类型取消选择")
+	_assert_packing_indicators(INDICATOR_RED, false, "取消类型选择")
 	_assert_original_lights()
 	var blocker: StaticBody3D = box(Vector3(0.08, 0.08, 0.08), player.camera.global_position.lerp(machine.start_button.global_position, 0.5))
 	var blocked_pixel: Vector2 = player.camera.unproject_position(machine.start_button.global_position)
@@ -220,18 +230,55 @@ func _assert_original_lights() -> void:
 		check(machine.get_node("light_type_switch_%d" % index).material_override == original_lights[index], "关闭后分别恢复第%d盏灯的原材质" % index)
 
 
+func _assert_completion_indicators(completed: bool, label: String) -> void:
+	var expected: StandardMaterial3D = INDICATOR_BLUE_RUNNING if completed else INDICATOR_GREY
+	for index: int in range(2):
+		var mesh: MeshInstance3D = machine.get_node("light_packing_complete_sign/light_packing_complete_sign_mesh_%d" % index) as MeshInstance3D
+		check(mesh.material_override == expected, "%s：第%d盏完成灯保持指定%s材质" % [label, index, "蓝色常亮" if completed else "灰色"])
+		if completed:
+			check(is_equal_approx((mesh.material_override as StandardMaterial3D).emission_energy_multiplier, 2.0), "%s：第%d盏完成灯倍率保持二" % [label, index])
+
+
+func _assert_packing_indicators(expected: StandardMaterial3D, completed: bool, label: String) -> void:
+	var mesh: MeshInstance3D = machine.get_node("button_start_packing/button_press") as MeshInstance3D
+	check(mesh.material_override == expected, "%s：开始按钮使用指定固定材质" % label)
+	check(machine.get("_indicator_tween") == null, "%s：没有残留按钮闪烁补间" % label)
+	if expected == INDICATOR_BLUE_READY:
+		check(is_equal_approx((mesh.material_override as StandardMaterial3D).emission_energy_multiplier, INDICATOR_BLUE_READY.emission_energy_multiplier), "%s：按钮就绪或完成待取沿用一号蓝色倍率" % label)
+	_assert_completion_indicators(completed, label)
+	indicator_records.append({"位置": label, "按钮材质": mesh.material_override.resource_path, "完成灯亮": completed, "物理帧": Engine.get_physics_frames(), "运行补间": machine.get("_indicator_tween") != null})
+
+
+func _assert_running_indicator(label: String) -> void:
+	var mesh: MeshInstance3D = machine.get_node("button_start_packing/button_press") as MeshInstance3D
+	var material: StandardMaterial3D = mesh.material_override as StandardMaterial3D
+	var blink: Tween = machine.get("_indicator_tween") as Tween
+	check(material != null and material == machine.get("_indicator_blue_material") and material != INDICATOR_BLUE_RUNNING, "%s：按钮使用本机独立蓝色运行材质" % label)
+	check(is_instance_valid(blink) and blink.is_valid() and blink.is_running(), "%s：只有既有运行补间持续闪烁" % label)
+	if material != null:
+		check(material.emission_energy_multiplier >= 0.0 and material.emission_energy_multiplier <= 2.0, "%s：运行发光倍率处于零至二" % label)
+	_assert_completion_indicators(false, label)
+	indicator_records.append({"位置": label, "按钮材质实例": material.get_instance_id() if material != null else 0, "倍率": material.emission_energy_multiplier if material != null else -1.0, "完成灯亮": false, "物理帧": Engine.get_physics_frames(), "运行补间": is_instance_valid(blink) and blink.is_valid()})
+
+
 func _test_batch(type_index: int) -> void:
 	var source: AutolysisLiquidContents = _source_contents(type_index)
 	var tank_instance: AutolysisItemInstance = await _put_tank(source)
 	var capsule_instance: AutolysisItemInstance = await _put_capsule()
 	check(not machine.can_start_processing(), "合法输入尚未选类型不能启动")
+	_assert_packing_indicators(INDICATOR_RED, false, "合法输入尚未选类型")
 	await _click(_body_pixel(machine.type_switches[type_index]))
 	await frames(18)
 	_record_machine_state("本轮选择后%d" % type_index)
 	check(machine.get_selected_type() == type_index and machine.can_start_processing(), "类型开启保持末帧且完全开门可启动")
+	_assert_packing_indicators(INDICATOR_BLUE_READY, false, "完全开门且类型稳定")
 	check(machine.tank_place.try_begin_transfer(player), "启动前取得真实罐位转移锁")
 	check(not machine.can_start_processing(), "转移事务未结束禁止启动")
+	await frames(1)
+	_assert_packing_indicators(INDICATOR_RED, false, "启动前取放事务保持锁定")
 	machine.tank_place.end_transfer()
+	await frames(1)
+	_assert_packing_indicators(INDICATOR_BLUE_READY, false, "启动前取放事务结束")
 	var glowing: int = 0
 	for index: int in range(3):
 		if machine.get_node("light_type_switch_%d" % index).material_override == load("res://main-autolysis/assets/materials/glow_color/mat_glow_green_0.tres"):
@@ -240,8 +287,10 @@ func _test_batch(type_index: int) -> void:
 	if type_index == 1:
 		await _click(_body_pixel(machine.door))
 		check(not machine.can_start_processing(), "关闭舱门途中禁止启动")
+		_assert_packing_indicators(INDICATOR_RED, false, "舱门关闭途中")
 		await frames(18)
 		check(machine.door.is_closed() and machine.can_start_processing(), "完全关门仍可启动")
+		_assert_packing_indicators(INDICATOR_BLUE_READY, false, "完全关门且类型稳定")
 	observer_saw_partial = false
 	if not machine.processing_started.is_connected(_record_batch_start):
 		machine.processing_started.connect(_record_batch_start)
@@ -252,6 +301,7 @@ func _test_batch(type_index: int) -> void:
 	batch_pause_frames = 0
 	await _click(_body_pixel(machine.start_button))
 	check(machine.is_batch_running() and tank_instance.liquid_contents != null and capsule_instance.is_empty_pneumatic_capsule(), "按钮接受后立即计时且完成前两件内容不变")
+	_assert_running_indicator("真实按钮点击被接受")
 	check(not machine.try_start_processing(player), "同帧重入不能启动第二批次")
 	machine.processing_timer.timeout.emit()
 	check(machine.is_batch_running() and tank_instance.liquid_contents != null and capsule_instance.is_empty_pneumatic_capsule(), "提前完成回调不能越过真实两秒计时")
@@ -259,14 +309,18 @@ func _test_batch(type_index: int) -> void:
 	check(not inventory.try_take_from_packing_tank_place(player, machine.tank_place) and not inventory.try_take_from_packing_capsule_place(player, machine.capsule_place), "运行中两个库存转移入口锁定")
 	check(not machine.root_interaction.try_interact(player, AutolysisInteractionComponent.InteractionMode.FOCUS), "运行中根设备交互锁定")
 	var remaining: float = machine.processing_timer.time_left
+	var frozen_material: StandardMaterial3D = machine.get("_indicator_blue_material") as StandardMaterial3D
+	var frozen_energy: float = frozen_material.emission_energy_multiplier
 	paused = true
 	var pause_start: int = Engine.get_physics_frames()
 	await frames(20)
 	batch_pause_frames += Engine.get_physics_frames() - pause_start
 	check(is_equal_approx(remaining, machine.processing_timer.time_left), "暂停期间计时剩余量完全不变")
+	check(is_equal_approx(frozen_energy, frozen_material.emission_energy_multiplier), "暂停期间真实按钮闪烁倍率不推进")
 	paused = false
 	await _exit()
 	check(not focus.can_enter(machine.focus_target) and not focus.try_enter(machine.focus_target), "右键退出有效且运行中拒绝重新进入")
+	_assert_running_indicator("运行中退出聚焦")
 	for _index: int in range(150):
 		if not machine.is_batch_running():
 			break
@@ -275,6 +329,7 @@ func _test_batch(type_index: int) -> void:
 	timing_records.append({"封装类型": type_index, "有效物理帧数": effective_frames, "暂停物理帧数": batch_pause_frames, "物理帧率": Engine.physics_ticks_per_second, "计时秒数": machine.PROCESSING_SECONDS})
 	check(effective_frames >= Engine.physics_ticks_per_second * 2 and effective_frames <= Engine.physics_ticks_per_second * 2 + 1, "实际接受至完成的游戏时间为两秒至一个物理采样帧误差")
 	check(not machine.is_batch_running() and tank_instance.is_empty_liquid_tank() and not capsule_instance.is_empty_pneumatic_capsule(), "退出聚焦后自然完成得到空罐和封装胶囊")
+	_assert_packing_indicators(INDICATOR_BLUE_READY, true, "退出聚焦后自然完成")
 	check(not observer_saw_partial, "所有实例变化观察者只看到成对完成状态")
 	var packed_contents: AutolysisPackingContents = capsule_instance.packing_contents
 	if packed_contents == null:
@@ -284,15 +339,20 @@ func _test_batch(type_index: int) -> void:
 	machine.processing_timer.timeout.emit()
 	check(capsule_instance.packing_contents.get_raw_material_ids() == source.get_raw_material_ids(), "重复完成回调不改变产物")
 	await _enter()
+	_assert_packing_indicators(INDICATOR_BLUE_READY, true, "完成后重新进入聚焦")
 	if not machine.door.is_open():
 		await _click(_body_pixel(machine.door))
+		_assert_packing_indicators(INDICATOR_BLUE_READY, true, "完成后舱门运动中")
 		await frames(18)
+		_assert_packing_indicators(INDICATOR_BLUE_READY, true, "完成后完全开门")
 	if type_index != 1:
 		await _click(_body_pixel(machine.tank_place))
 		check(inventory.get_focused_instance() == tank_instance and machine.get_selected_type() == type_index, "完成后先取空罐保留选中类型")
+		_assert_packing_indicators(INDICATOR_BLUE_READY, true, "完成后先取空罐")
 		check(tank_instance.set_liquid_contents(_source_contents(2)), "原罐再次装填不会改动产物")
 		await _click(_body_pixel(machine.tank_place))
 		check(machine.get_selected_type() == type_index and not machine.can_start_processing() and not machine.try_select_type(player, 1), "完成待取时补满罐仍保留类型并拒绝再封装")
+		_assert_packing_indicators(INDICATOR_BLUE_READY, true, "完成待取时补满罐")
 	if type_index == 0:
 		var capsule_definition: AutolysisItemDefinition = capsule_instance.definition
 		var original_visual: PackedScene = capsule_definition.visual_scene
@@ -302,9 +362,16 @@ func _test_batch(type_index: int) -> void:
 		empty_visual.free()
 		capsule_definition.visual_scene = broken
 		check(not inventory.try_take_from_packing_capsule_place(player, machine.capsule_place) and machine.capsule_place.get_stored_item().item_instance == capsule_instance and machine.get_selected_type() == type_index, "产物取回候选失败保持胶囊占用、完成身份与类型")
+		_assert_packing_indicators(INDICATOR_BLUE_READY, true, "产物取回候选失败")
 		capsule_definition.visual_scene = original_visual
+	capsule_reset_notification_seen = false
+	var reset_observer: Callable = _observe_capsule_take.bind(capsule_instance)
+	inventory.inventory_changed.connect(reset_observer)
 	await _click(_body_pixel(machine.capsule_place))
+	inventory.inventory_changed.disconnect(reset_observer)
 	check(inventory.get_focused_instance() == capsule_instance and machine.get_selected_type() == -1, "成功取回本轮胶囊才清除完成记录和类型")
+	check(capsule_reset_notification_seen, "真实成功取胶囊路径发布已复位的库存变化通知")
+	_assert_packing_indicators(INDICATOR_RED, false, "成功取回本轮胶囊")
 	await frames(18)
 	_assert_original_lights()
 	var panel: AutolysisLiquidContentsPanel = player.get_node("LiquidContentsPanel") as AutolysisLiquidContentsPanel
@@ -326,15 +393,35 @@ func _test_batch(type_index: int) -> void:
 func _observe_batch(tank: AutolysisItemInstance, capsule: AutolysisItemInstance) -> void:
 	if machine.is_batch_running() and tank.is_empty_liquid_tank() != (not capsule.is_empty_pneumatic_capsule()):
 		observer_saw_partial = true
+	if machine.is_batch_running() and tank.is_empty_liquid_tank() and not capsule.is_empty_pneumatic_capsule():
+		_assert_running_indicator("共同提交内容通知仍保持运行显示")
 
 
 func _record_batch_start(_batch_id: int) -> void:
 	batch_start_frame = Engine.get_physics_frames()
 	batch_completed_frame = 0
+	_assert_running_indicator("同步开始通知")
+	check(is_equal_approx((machine.get("_indicator_blue_material") as StandardMaterial3D).emission_energy_multiplier, 2.0), "同步开始通知已在倍率二进入闪烁")
+	var press_animation: AnimationPlayer = machine.start_button.get("_runtime_player") as AnimationPlayer
+	check(press_animation.is_playing() and is_zero_approx(press_animation.current_animation_position), "按钮按压动画起点的开始通知已经进入运行灯态")
 
 
 func _record_batch_end(_batch_id: int, _contents: AutolysisPackingContents) -> void:
 	batch_completed_frame = Engine.get_physics_frames()
+	_assert_packing_indicators(INDICATOR_BLUE_READY, true, "同步完成通知")
+
+
+func _observe_capsule_take(capsule: AutolysisItemInstance) -> void:
+	if inventory.get_focused_instance() != capsule:
+		return
+	capsule_reset_notification_seen = true
+	check(machine.capsule_place.get_stored_item() == null and machine.get_completed_capsule_instance() == null and machine.get_selected_type() == -1, "库存变化通知前本轮胶囊来源、完成记录和类型已经清空")
+	check(machine.capsule_place.is_transfer_busy(), "成功取胶囊库存通知仍处于原取放事务内")
+	_assert_packing_indicators(INDICATOR_RED, false, "成功取胶囊的库存变化通知")
+
+
+func _record_batch_failure(_batch_id: int, _reason: String) -> void:
+	_assert_packing_indicators(INDICATOR_RED, false, "同步失败通知")
 
 
 func _test_old_click() -> void:
@@ -403,11 +490,15 @@ func _test_source_fault() -> void:
 	var capsule: AutolysisItemInstance = await _put_capsule()
 	await _click(_body_pixel(machine.type_switches[0]))
 	await frames(18)
+	machine.processing_started.connect(_record_batch_start)
+	machine.processing_failed.connect(_record_batch_failure)
 	await _click(_body_pixel(machine.start_button))
 	check(machine.is_batch_running(), "来源变化故障批次真实启动")
+	_assert_running_indicator("来源变化故障批次启动后")
 	tank.liquid_contents.set_phase_rgb(Vector3(99, 8, 7))
 	await frames(130)
 	check(not machine.is_batch_running() and not machine.get_processing_fault().is_empty() and tank.liquid_contents != null and capsule.is_empty_pneumatic_capsule(), "完成前源字段变化拒绝提交且没有半件产物")
+	_assert_packing_indicators(INDICATOR_RED, false, "来源变化拒绝提交后")
 
 
 func _test_main_packing() -> void:
@@ -428,22 +519,27 @@ func _test_main_packing() -> void:
 	await frames(35)
 	await _enter()
 	check(machine.is_configured() and machine.tank_place.get_stored_item() == null and machine.capsule_place.get_stored_item() == null, "实际主场景封装器初始空槽并正常聚焦")
+	_assert_packing_indicators(INDICATOR_RED, false, "实际主场景初始空槽")
 	await _put_tank(_source_contents(1))
 	await _put_capsule()
 	await _click(_body_pixel(machine.type_switches[1]))
 	await frames(18)
+	_assert_packing_indicators(INDICATOR_BLUE_READY, false, "实际主场景准备完成")
 	await _capture("主场景封装器已准备.png")
 	await _click(_body_pixel(machine.start_button))
+	_assert_running_indicator("实际主场景按钮点击被接受")
 	await frames(130)
 	check(machine.tank_place.get_stored_item().is_empty() and not machine.capsule_place.get_stored_item().item_instance.is_empty_pneumatic_capsule(), "实际主场景真实射线点击完成封装")
+	_assert_packing_indicators(INDICATOR_BLUE_READY, true, "实际主场景完成封装")
 	await _click(_body_pixel(machine.capsule_place))
+	_assert_packing_indicators(INDICATOR_RED, false, "实际主场景成功取胶囊")
 	_check_capsule_pose("主场景")
 	await _capture("主场景胶囊手持.png")
 	await _exit()
 
 
 func _save_packing_report() -> void:
-	var report: Dictionary = {"图形运行": graphical, "断言数": assertion_count, "失败数": failures, "断言": records, "计时采样": timing_records, "实际射线": ray_records, "手持投影": pose_records, "截图": screenshots}
+	var report: Dictionary = {"图形运行": graphical, "断言数": assertion_count, "失败数": failures, "断言": records, "提示灯观察": indicator_records, "计时采样": timing_records, "实际射线": ray_records, "手持投影": pose_records, "截图": screenshots}
 	var file: FileAccess = FileAccess.open(evidence_directory.path_join("封装器验收报告.json"), FileAccess.WRITE)
 	if file != null:
 		file.store_string(JSON.stringify(report, "\t"))
