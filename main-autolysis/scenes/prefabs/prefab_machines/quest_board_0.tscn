@@ -4,6 +4,7 @@
 [ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="2_pgope"]
 [ext_resource type="Material" uid="uid://5yjf2yjo2u7l" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_1.tres" id="3_auxwl"]
 [ext_resource type="Material" uid="uid://bp35cd3s1kb3t" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_0.tres" id="4_u0cil"]
+[ext_resource type="PackedScene" uid="uid://ch5s6td6qpbyl" path="res://main-autolysis/scenes/prefabs/prefab_paper/quest_paper.tscn" id="5_auxwl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4qoi"]
 albedo_color = Color(0.68, 0.7, 0.66, 1)
@@ -92,7 +93,5 @@ material_override = ExtResource("3_auxwl")
 mesh = SubResource("BoxMesh_bfcjq")
 skeleton = NodePath("../../MeshInstance3D13")
 
-[node name="MeshInstance3D16" type="MeshInstance3D" parent="." unique_id=1114913200]
+[node name="MeshInstance3D16" parent="." unique_id=1273453683 instance=ExtResource("5_auxwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43999997, 0.33999997, 0.110000014)
-material_override = ExtResource("4_u0cil")
-mesh = SubResource("BoxMesh_k1sjs")

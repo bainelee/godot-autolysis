@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ch5s6td6qpbyl"]
+
+[ext_resource type="Material" uid="uid://bp35cd3s1kb3t" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_0.tres" id="1_8xiyw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4qoi"]
+albedo_color = Color(0.68, 0.7, 0.66, 1)
+roughness = 0.72
+
+[sub_resource type="BoxMesh" id="BoxMesh_k1sjs"]
+material = SubResource("StandardMaterial3D_u4qoi")
+size = Vector3(0.36, 0.48, 0.02)
+
+[node name="MeshInstance3D16" type="MeshInstance3D" unique_id=1273453683]
+material_override = ExtResource("1_8xiyw")
+mesh = SubResource("BoxMesh_k1sjs")

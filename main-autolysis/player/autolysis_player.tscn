@@ -1,21 +1,19 @@
 [gd_scene format=3 uid="uid://dtsjcbeaeibks"]
 
 [ext_resource type="Script" uid="uid://br87edn5s6nes" path="res://main-autolysis/player/autolysis_player.gd" id="1_player"]
+[ext_resource type="PackedScene" uid="uid://cbd2ojah4nun6" path="res://main-autolysis/player/components/interaction_raycast.tscn" id="10_2dndr"]
 [ext_resource type="AnimationLibrary" uid="uid://cdchpsv104er2" path="res://main-autolysis/player/assets/player_eyes.tres" id="10_tp6cj"]
+[ext_resource type="Script" uid="uid://017wlbrnndy0" path="res://main-autolysis/player/components/wieldables_sway.gd" id="12_lr21i"]
+[ext_resource type="Script" uid="uid://ua63m2y35w46" path="res://main-autolysis/player/components/item_drop_shape_cast.gd" id="14_bpb0d"]
 [ext_resource type="Script" uid="uid://b1qja1tbw5e1j" path="res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_surface_detector.gd" id="20_detector"]
 [ext_resource type="AudioStream" uid="uid://dc03jiw2a6y3j" path="res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/generic_footstep_profile.tres" id="21_generic"]
 [ext_resource type="Resource" uid="uid://ca0q2t6w08ubh" path="res://main-autolysis/systems/dynamic-footstep-system/footstep-material-library/sample_footstep_material_library.tres" id="22_library"]
-
-[ext_resource type="PackedScene" uid="uid://cbd2ojah4nun6" path="res://main-autolysis/player/components/interaction_raycast.tscn" id="10_2dndr"]
-[ext_resource type="Script" uid="uid://ua63m2y35w46" path="res://main-autolysis/player/components/item_drop_shape_cast.gd" id="14_bpb0d"]
-[ext_resource type="Script" uid="uid://017wlbrnndy0" path="res://main-autolysis/player/components/wieldables_sway.gd" id="12_lr21i"]
-
-[ext_resource type="Script" path="res://main-autolysis/player/components/autolysis_interaction_controller.gd" id="30_interaction"]
+[ext_resource type="Script" uid="uid://qv1cndasm4u1" path="res://main-autolysis/player/components/autolysis_interaction_controller.gd" id="30_interaction"]
 [ext_resource type="PackedScene" path="res://main-autolysis/ui/autolysis_crosshair.tscn" id="31_crosshair"]
-[ext_resource type="Script" path="res://main-autolysis/player/components/autolysis_inventory_controller.gd" id="32_inventory"]
-[ext_resource type="Script" path="res://main-autolysis/player/components/autolysis_held_item_presenter.gd" id="33_held"]
+[ext_resource type="Script" uid="uid://bj07gsocfhecx" path="res://main-autolysis/player/components/autolysis_inventory_controller.gd" id="32_inventory"]
+[ext_resource type="Script" uid="uid://c2co36tbj1oet" path="res://main-autolysis/player/components/autolysis_held_item_presenter.gd" id="33_held"]
 [ext_resource type="PackedScene" path="res://main-autolysis/ui/inventory/autolysis_inventory_bar.tscn" id="34_bar"]
-[ext_resource type="Script" path="res://main-autolysis/player/components/autolysis_focus_controller.gd" id="35_focus"]
+[ext_resource type="Script" uid="uid://dksg6ons8nee6" path="res://main-autolysis/player/components/autolysis_focus_controller.gd" id="35_focus"]
 [ext_resource type="PackedScene" path="res://main-autolysis/ui/inventory/autolysis_liquid_contents_panel.tscn" id="36_liquid_contents"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8vem4"]
@@ -42,8 +40,8 @@ size = Vector3(0.1, 0.1, 0.1)
 
 [node name="autolysis_player" type="CharacterBody3D" unique_id=602416880 node_paths=PackedStringArray("item_drop_shapecast") groups=["Player"]]
 process_mode = 3
-collision_mask = 9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+collision_mask = 9
 script = ExtResource("1_player")
 item_drop_shapecast = NodePath("Body/Neck/Head/Eyes/Camera/ItemDropShapeCast")
 WALKING_SPEED = 2.5
@@ -120,30 +118,6 @@ libraries/ = ExtResource("10_tp6cj")
 
 [node name="Camera" type="Camera3D" parent="Body/Neck/Head/Eyes" unique_id=1299952309]
 
-[node name="SlidingTimer" type="Timer" parent="." unique_id=275588874]
-wait_time = 1.5
-one_shot = true
-
-[node name="JumpCooldownTimer" type="Timer" parent="." unique_id=411737257]
-wait_time = 0.5
-one_shot = true
-
-[node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1923883232]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.488, 0)
-volume_db = -25.0
-max_polyphony = 8
-bus = &"SFX"
-script = ExtResource("20_detector")
-ground_collision_mask = 11
-generic_fallback_footstep_profile = ExtResource("21_generic")
-footstep_material_library = ExtResource("22_library")
-generic_fallback_landing_profile = ExtResource("21_generic")
-landing_material_library = ExtResource("22_library")
-
-[node name="LandingPlayer" type="AudioStreamPlayer3D" parent="FootstepPlayer" unique_id=1241389005]
-max_polyphony = 4
-bus = &"SFX"
-
 [node name="InteractionRaycast" parent="Body/Neck/Head/Eyes/Camera" unique_id=165015461 instance=ExtResource("10_2dndr")]
 
 [node name="CarryablePosition" type="Marker3D" parent="Body/Neck/Head/Eyes/Camera" unique_id=952068958]
@@ -161,29 +135,51 @@ script = ExtResource("14_bpb0d")
 unique_name_in_owner = true
 script = ExtResource("12_lr21i")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=43298444]
-
-[node name="HeldItemPresenter" type="Node3D" parent="Body/Neck/Head/Wieldables"]
+[node name="HeldItemPresenter" type="Node3D" parent="Body/Neck/Head/Wieldables" unique_id=1199102443]
 unique_name_in_owner = true
 script = ExtResource("33_held")
 
-[node name="InventoryController" type="Node" parent="."]
+[node name="SlidingTimer" type="Timer" parent="." unique_id=275588874]
+wait_time = 1.5
+one_shot = true
+
+[node name="JumpCooldownTimer" type="Timer" parent="." unique_id=411737257]
+wait_time = 0.5
+one_shot = true
+
+[node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1923883232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.488, 0)
+volume_db = -25.0
+max_polyphony = 8
+bus = &"SFX"
+script = ExtResource("20_detector")
+generic_fallback_footstep_profile = ExtResource("21_generic")
+footstep_material_library = ExtResource("22_library")
+generic_fallback_landing_profile = ExtResource("21_generic")
+landing_material_library = ExtResource("22_library")
+ground_collision_mask = 11
+
+[node name="LandingPlayer" type="AudioStreamPlayer3D" parent="FootstepPlayer" unique_id=1241389005]
+max_polyphony = 4
+bus = &"SFX"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=43298444]
+
+[node name="InventoryController" type="Node" parent="." unique_id=1300208029]
 script = ExtResource("32_inventory")
 
-[node name="InventoryBar" parent="." instance=ExtResource("34_bar")]
+[node name="InventoryBar" parent="." unique_id=1599390757 instance=ExtResource("34_bar")]
 
-[node name="LiquidContentsPanel" parent="." instance=ExtResource("36_liquid_contents")]
+[node name="LiquidContentsPanel" parent="." unique_id=56462371 instance=ExtResource("36_liquid_contents")]
 
-[node name="InteractionController" type="Node" parent="."]
+[node name="InteractionController" type="Node" parent="." unique_id=849023730]
 script = ExtResource("30_interaction")
 
-[node name="FocusController" type="Node" parent="."]
+[node name="FocusController" type="Node" parent="." unique_id=1900565190]
 script = ExtResource("35_focus")
 
-[node name="InteractionHUD" parent="." instance=ExtResource("31_crosshair")]
-
-[connection signal="timeout" from="SlidingTimer" to="." method="_on_sliding_timer_timeout"]
+[node name="InteractionHUD" parent="." unique_id=1768806732 instance=ExtResource("31_crosshair")]
 
 [connection signal="mouse_movement" from="." to="Body/Neck/Head/Wieldables" method="sway"]
-
 [connection signal="animation_finished" from="Body/Neck/Head/Eyes/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="SlidingTimer" to="." method="_on_sliding_timer_timeout"]
