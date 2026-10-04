@@ -1,0 +1,28 @@
+{
+  "检查": "import",
+  "时间": "2026-10-04T22:05:31.4184406+08:00",
+  "进程编号": 34016,
+  "退出码": 0,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--editor",
+    "--quit"
+  ],
+  "通过断言数": 0,
+  "预期错误计数": {},
+  "非预期错误": [
+    "SCRIPT ERROR: Parse Error: Could not parse global class \"AutolysisTelephone\" from \"res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd\".",
+    "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+    "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+    "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+    "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+    "ERROR: Failed to load script \"res://main-autolysis/systems/item-system/autolysis_raw_material_group.gd\" with error \"Parse error\".",
+    "SCRIPT ERROR: Parse Error: Expected indented block after \"for\" block.",
+    "ERROR: Failed to load script \"res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd\" with error \"Parse error\"."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "检查": "telephone-take-position-red",
+  "时间": "2026-10-04T23:28:04.8699105+08:00",
+  "进程编号": 27604,
+  "退出码": 1,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/player/tests/telephone_device_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/移除站位取筒门禁/站位红回归/internal",
+    "--take-position-regression-only"
+  ],
+  "通过断言数": 0,
+  "预期错误计数": {},
+  "非预期错误": [
+    "SCRIPT ERROR: Parse Error: Not all code paths return a value.",
+    "ERROR: Failed to load script \"res://main-autolysis/player/tests/telephone_device_test.gd\" with error \"Parse error\"."
+  ]
+}

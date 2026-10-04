@@ -1,0 +1,105 @@
+[
+	{
+		"资源": [
+			{
+				"实例": -9223372009289808424,
+				"来源": "res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/stone_footstep_profile.tres",
+				"类型": "AudioStreamRandomizer"
+			},
+			{
+				"实例": -9223372009860233775,
+				"来源": "res://main-autolysis/systems/dynamic-footstep-system/assets/audio/stone/footstep_stone_01.ogg",
+				"类型": "AudioStreamOggVorbis"
+			},
+			{
+				"实例": -9223372009877010992,
+				"来源": "res://main-autolysis/systems/dynamic-footstep-system/assets/audio/stone/footstep_stone_01.ogg::OggPacketSequence_4t0oj",
+				"类型": "OggPacketSequence"
+			},
+			{
+				"实例": -9223372009692461612,
+				"来源": "res://main-autolysis/systems/dynamic-footstep-system/assets/audio/stone/footstep_stone_02.ogg",
+				"类型": "AudioStreamOggVorbis"
+			},
+			{
+				"实例": -9223372009709238829,
+				"来源": "res://main-autolysis/systems/dynamic-footstep-system/assets/audio/stone/footstep_stone_02.ogg::OggPacketSequence_shsyq",
+				"类型": "OggPacketSequence"
+			},
+			{
+				"实例": -9223372009524689449,
+				"来源": "res://main-autolysis/systems/dynamic-footstep-system/assets/audio/stone/footstep_stone_03.ogg",
+				"类型": "AudioStreamOggVorbis"
+			},
+			{
+				"实例": -9223372009541466666,
+				"来源": "res://main-autolysis/systems/dynamic-footstep-system/assets/audio/stone/footstep_stone_03.ogg::OggPacketSequence_rgxux",
+				"类型": "OggPacketSequence"
+			},
+			{
+				"实例": -9223372009356917286,
+				"来源": "res://main-autolysis/systems/dynamic-footstep-system/assets/audio/stone/footstep_stone_04.ogg",
+				"类型": "AudioStreamOggVorbis"
+			},
+			{
+				"实例": -9223372009373694503,
+				"来源": "res://main-autolysis/systems/dynamic-footstep-system/assets/audio/stone/footstep_stone_04.ogg::OggPacketSequence_4dbdb",
+				"类型": "OggPacketSequence"
+			}
+		],
+		"阶段": "正式音频资源组"
+	},
+	{
+		"孤立节点": [],
+		"物理帧": 49,
+		"资源数": 11.0,
+		"阶段": "播放后",
+		"音频播放实例": {
+			"临时查询引用在内的引用数": 3,
+			"实例": -9223372009105259054,
+			"有效": true,
+			"类型": "AudioStreamPlaybackRandomizer"
+		},
+		"音频资源": {
+			"临时查询引用在内的引用数": 3,
+			"实例": -9223372009289808424,
+			"有效": true,
+			"类型": "AudioStreamRandomizer"
+		}
+	},
+	{
+		"孤立节点": [],
+		"物理帧": 52,
+		"资源数": 11.0,
+		"阶段": "场景释放三帧后",
+		"音频播放实例": {
+			"临时查询引用在内的引用数": 2,
+			"实例": -9223372009105259054,
+			"有效": true,
+			"类型": "AudioStreamPlaybackRandomizer"
+		},
+		"音频资源": {
+			"临时查询引用在内的引用数": 2,
+			"实例": -9223372009289808424,
+			"有效": true,
+			"类型": "AudioStreamRandomizer"
+		}
+	},
+	{
+		"处理帧数": 12480,
+		"结果": {
+			"孤立节点": [],
+			"物理帧": 12532,
+			"资源数": 2.0,
+			"阶段": "必要播放实例消失条件",
+			"音频播放实例": {
+				"有效": false
+			},
+			"音频资源": {
+				"有效": false
+			}
+		},
+		"耗时毫秒": 72,
+		"阶段": "等待实际音频播放实例释放"
+	}
+]

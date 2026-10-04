@@ -1,0 +1,477 @@
+{
+  "说明": "同一专项只取最新有效检查点，历史复验与诊断不重复累计；图形及用户最终姿态未验证",
+  "检查数量": 22,
+  "通过断言总数": 3083.0,
+  "全部通过": true,
+  "结果": [
+    {
+      "来源": "final-dependency-regressions/import.json",
+      "检查": "import",
+      "时间": "2026-10-04T22:40:55.8346025+08:00",
+      "通过": true,
+      "断言数": 0,
+      "预期错误计数": {},
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--editor",
+        "--quit",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/final-dependency-regressions/import"
+      ]
+    },
+    {
+      "来源": "device-restoration-final/telephone-device-restoration-final.json",
+      "检查": "telephone-device-restoration-final",
+      "时间": "2026-10-04T22:31:17.6603378+08:00",
+      "通过": true,
+      "断言数": 204,
+      "预期错误计数": {},
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--script",
+        "res://main-autolysis/player/tests/telephone_device_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/device-restoration-final"
+      ]
+    },
+    {
+      "来源": "final-integration/telephone-input.json",
+      "检查": "telephone-input",
+      "时间": "2026-10-04T22:27:57.7592797+08:00",
+      "通过": true,
+      "断言数": 30,
+      "预期错误计数": {},
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/telephone_input_test.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/final-integration/telephone-input"
+      ]
+    },
+    {
+      "来源": "movement-audio-cleanup-final/telephone-movement.json",
+      "检查": "telephone-movement",
+      "时间": "2026-10-04T22:39:10.7159954+08:00",
+      "通过": true,
+      "断言数": 85,
+      "预期错误计数": {},
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/telephone_movement_test.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/movement-audio-cleanup-final/telephone-movement"
+      ]
+    },
+    {
+      "来源": "final-integration/handset-inventory.json",
+      "检查": "handset-inventory",
+      "时间": "2026-10-04T22:28:02.1872943+08:00",
+      "通过": true,
+      "断言数": 123,
+      "预期错误计数": {},
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/handset_inventory_test.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/final-integration/handset-inventory"
+      ]
+    },
+    {
+      "来源": "final-integration/handset-pose.json",
+      "检查": "handset-pose",
+      "时间": "2026-10-04T22:28:04.410134+08:00",
+      "通过": true,
+      "断言数": 73,
+      "预期错误计数": {},
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/handset_pose_debug_test.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/final-integration/handset-pose"
+      ]
+    },
+    {
+      "来源": "final-dependency-regressions/telephone-dependencies.json",
+      "检查": "telephone-dependencies",
+      "时间": "2026-10-04T22:40:56.9614462+08:00",
+      "通过": true,
+      "断言数": 5,
+      "预期错误计数": {},
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/telephone_dependency_audit.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/final-dependency-regressions/telephone-dependencies"
+      ]
+    },
+    {
+      "来源": "final-dependency-regressions/telephone-commit-observers.json",
+      "检查": "telephone-commit-observers",
+      "时间": "2026-10-04T22:40:58.5899566+08:00",
+      "通过": true,
+      "断言数": 17,
+      "预期错误计数": {},
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/telephone_commit_observer_audit.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/final-dependency-regressions/telephone-commit-observers"
+      ]
+    },
+    {
+      "来源": "final-dependency-regressions/telephone-display-entry.json",
+      "检查": "telephone-display-entry",
+      "时间": "2026-10-04T22:40:59.5876212+08:00",
+      "通过": true,
+      "断言数": 4,
+      "预期错误计数": {},
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/telephone_display_entry_audit.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/final-dependency-regressions/telephone-display-entry"
+      ]
+    },
+    {
+      "来源": "final-dependency-regressions/telephone-pose-observer-input.json",
+      "检查": "telephone-pose-observer-input",
+      "时间": "2026-10-04T22:41:00.9867194+08:00",
+      "通过": true,
+      "断言数": 10,
+      "预期错误计数": {},
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/telephone_pose_observer_input_audit.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/final-dependency-regressions/telephone-pose-observer-input"
+      ]
+    },
+    {
+      "来源": "final-dependency-regressions/telephone-focus-dependency.json",
+      "检查": "telephone-focus-dependency",
+      "时间": "2026-10-04T22:41:02.0638042+08:00",
+      "通过": true,
+      "断言数": 3,
+      "预期错误计数": {},
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/telephone_focus_dependency_audit.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/final-dependency-regressions/telephone-focus-dependency"
+      ]
+    },
+    {
+      "来源": "final-lifecycle/telephone-return-cancel-dependency.json",
+      "检查": "telephone-return-cancel-dependency",
+      "时间": "2026-10-04T22:33:11.1702534+08:00",
+      "通过": true,
+      "断言数": 7,
+      "预期错误计数": {},
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/telephone_return_cancel_dependency_audit.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/final-lifecycle/telephone-return-cancel-dependency"
+      ]
+    },
+    {
+      "来源": "final-lifecycle/direct.json",
+      "检查": "direct",
+      "时间": "2026-10-04T22:33:13.1849176+08:00",
+      "通过": true,
+      "断言数": 53,
+      "预期错误计数": {},
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/direct_interaction_test.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/final-lifecycle/direct"
+      ]
+    },
+    {
+      "来源": "regression-first/migration.json",
+      "检查": "migration",
+      "时间": "2026-10-04T22:09:14.8977837+08:00",
+      "通过": true,
+      "断言数": 23,
+      "预期错误计数": {},
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/component_migration_test.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/regression-first/migration"
+      ]
+    },
+    {
+      "来源": "final-integration/focus.json",
+      "检查": "focus",
+      "时间": "2026-10-04T22:28:09.7346627+08:00",
+      "通过": true,
+      "断言数": 235,
+      "预期错误计数": {},
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/focus_interaction_test.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/final-integration/focus"
+      ]
+    },
+    {
+      "来源": "final-integration/items.json",
+      "检查": "items",
+      "时间": "2026-10-04T22:28:16.535359+08:00",
+      "通过": true,
+      "断言数": 477,
+      "预期错误计数": {},
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/item_system_test.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/final-integration/items"
+      ]
+    },
+    {
+      "来源": "regression-first/blend-transfers.json",
+      "检查": "blend-transfers",
+      "时间": "2026-10-04T22:09:45.8379216+08:00",
+      "通过": true,
+      "断言数": 324,
+      "预期错误计数": {},
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/regression-first/blend-transfers"
+      ]
+    },
+    {
+      "来源": "regression-first/tank-transactions.json",
+      "检查": "tank-transactions",
+      "时间": "2026-10-04T22:09:51.311972+08:00",
+      "通过": true,
+      "断言数": 167,
+      "预期错误计数": {
+        "事务故障候选4$": 1,
+        "事务故障候选6$": 1,
+        "事务故障候选2$": 1
+      },
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/regression-first/tank-transactions"
+      ]
+    },
+    {
+      "来源": "regression-first/packing-business.json",
+      "检查": "packing-business",
+      "时间": "2026-10-04T22:10:14.3494638+08:00",
+      "通过": true,
+      "断言数": 773,
+      "预期错误计数": {
+        "封装器批次1故障，保留来源并关闭入口：源内容原药顺序、相位或波形与启动快照不一致": 1
+      },
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/regression-first/packing-business"
+      ]
+    },
+    {
+      "来源": "regression-first/packing-atomic.json",
+      "检查": "packing-atomic",
+      "时间": "2026-10-04T22:10:24.2314562+08:00",
+      "通过": true,
+      "断言数": 240,
+      "预期错误计数": {
+        "封装器批次1故障，保留来源并关闭入口：本轮胶囊节点或槽位归属失效": 1,
+        "封装器批次1故障，保留来源并关闭入口：本轮液体罐节点或槽位归属失效": 1
+      },
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/packing_batch_atomic_test.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/regression-first/packing-atomic"
+      ]
+    },
+    {
+      "来源": "regression-first/waste.json",
+      "检查": "waste",
+      "时间": "2026-10-04T22:10:30.3138754+08:00",
+      "通过": true,
+      "断言数": 203,
+      "预期错误计数": {},
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/waste_liquid_tank_behavior_test.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/regression-first/waste"
+      ]
+    },
+    {
+      "来源": "final-lifecycle/player.json",
+      "检查": "player",
+      "时间": "2026-10-04T22:33:16.030176+08:00",
+      "通过": true,
+      "断言数": 27,
+      "预期错误计数": {},
+      "非预期错误": [],
+      "执行参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/player_smoke_test.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/final-lifecycle/player"
+      ]
+    }
+  ]
+}

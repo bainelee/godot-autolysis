@@ -1,0 +1,94 @@
+[
+  {
+    "路径": "D:\\autolysis\\main-autolysis/player/tests/telephone_device_test.gd",
+    "散列": "76A6B6162D29BBC8860A7F9BA415EAEB3CBD381148EE6C28190C410F679BC4A9"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis/player/tests/telephone_input_test.gd",
+    "散列": "D0A62BEA7ADF2EEFEA48C6C4AABE543539E339F6B4AF222039BC87EF6221638A"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis/player/tests/telephone_movement_test.gd",
+    "散列": "0E4DE5362D514EDE5EE24E6C5C45E53CB3BCCAB85A6A88E8E59DFA294FF2E6F4"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis/player/tests/handset_inventory_test.gd",
+    "散列": "097C080397736FC5D322211A4EDA55F3130D781C68B235E4F036D3F03B59C294"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis/player/tests/handset_pose_debug_test.gd",
+    "散列": "5787614BA409FB863D57E1E570207B882408EFB9AA12A2CEDAE2870B6EC50383"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis/player/tests/telephone_dependency_audit.gd",
+    "散列": "9AE0F3BE760A900189A7BEFA6C2408E22967E85FFEF2BA886172ED49E0E40624"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis/player/tests/telephone_commit_observer_audit.gd",
+    "散列": "526F3C4C190C5AE9F9ADA0087B5F95DE7F77E79579173DDFC8B16607EE473979"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis/player/tests/telephone_display_entry_audit.gd",
+    "散列": "37A94D87D5EE3F9A3D20DBD36BB92259CCE4364A20D4D9E73960238E0F3261BA"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis/player/tests/telephone_pose_observer_input_audit.gd",
+    "散列": "63708C00D50CD7D87A6E746022A58A5E779035AA5014651337E4E8C0F5AEDD7F"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis/player/tests/telephone_focus_dependency_audit.gd",
+    "散列": "D8AE138407702AAACE8C66240498C0B463641E8A52ACCE6A79175727C13E6AAC"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis/player/tests/telephone_return_cancel_dependency_audit.gd",
+    "散列": "B08834E5F071CA381917551683085EA79C2BFF6337650126643AB2C4C918D418"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis/player/tests/direct_interaction_test.gd",
+    "散列": "F3DC471240A8E69F6DA1966EF08DBEBD22FA3CBCFC6F8B9D20EDECD78F0982F7"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis/player/tests/component_migration_test.gd",
+    "散列": "28D239EC27325C222F69BAEAE4D848583D334E1051EB2BC41D2A7613DFEE2323"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis/player/tests/focus_interaction_test.gd",
+    "散列": "F430CF62004CAB069FBB49C5602C638089550DDC9D8CBEB1FA86D466D97CBA5D"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis/systems/item-system/tests/item_system_test.gd",
+    "散列": "948A594752F52E0D3DB589F80CD1952EBC6FF9BF56DD981B6150B103346F0B28"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd",
+    "散列": "743B9DBD95EB730BE89EF888BCD828490655620ECFB392D0CD476F5820F44914"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd",
+    "散列": "80C6C35FE6E0BCC25F58E9CD86268154C679E0B4ED6D5836D379FAF8C46F7BBD"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd",
+    "散列": "B957659911781F4CF884EE617CABEBBD75FAC707B506B972A7566459CEAF07FA"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis/systems/item-system/tests/packing_batch_atomic_test.gd",
+    "散列": "B01FDBB93003A32FB066E5848BC35EE0B2D7F580AE73DB3115FBA05037DC0DE6"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis/systems/item-system/tests/waste_liquid_tank_behavior_test.gd",
+    "散列": "3B192015D7A26DA20564BD363E1357AF69D67306B4B6F352C859E7CA961D3A73"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis/player/tests/player_smoke_test.gd",
+    "散列": "3314A86E043902F342BD023959DEF85C68A87FCD657587651F626B1655E768ED"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\run_telephone_verification.ps1",
+    "散列": "88C2AACD15F05A8CA63E86D2CDBBC17BD9216F560A0D3FFD52615348FE80A1CE"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\run_item_check.ps1",
+    "散列": "5B39F580B8EFE0C7327F85F66FF208D0B5B37CC5595B863BD09DC654BABBAA4F"
+  }
+]

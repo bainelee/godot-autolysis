@@ -1,0 +1,43 @@
+ERROR: Parameter "get_viewport()" is null.
+   at: _notification (scene/main/node.cpp:187)
+   GDScript backtrace (most recent call first):
+       [0] _free_player_during_display_exit (res://main-autolysis/player/tests/handset_inventory_test.gd:382)
+       [1] clear_handset (res://main-autolysis/player/components/autolysis_held_item_presenter.gd:177)
+       [2] commit_handset_return (res://main-autolysis/player/components/autolysis_inventory_controller.gd:196)
+       [3] _return (res://main-autolysis/player/tests/handset_inventory_test.gd:186)
+       [4] _failure_and_lifetime (res://main-autolysis/player/tests/handset_inventory_test.gd:491)
+       [5] _fixture (res://main-autolysis/player/tests/handset_inventory_test.gd:149)
+       [6] frames (res://main-autolysis/player/tests/handset_inventory_test.gd:101)
+ERROR: Parent node is busy adding/removing children, `remove_child()` can't be called at this time. Consider using `remove_child.call_deferred(child)` instead.
+   at: remove_child (scene/main/node.cpp:1738)
+   GDScript backtrace (most recent call first):
+       [0] _free_player_during_display_exit (res://main-autolysis/player/tests/handset_inventory_test.gd:382)
+       [1] _free_player_during_display_exit (res://main-autolysis/player/tests/handset_inventory_test.gd:382)
+       [2] clear_handset (res://main-autolysis/player/components/autolysis_held_item_presenter.gd:177)
+       [3] commit_handset_return (res://main-autolysis/player/components/autolysis_inventory_controller.gd:196)
+       [4] _return (res://main-autolysis/player/tests/handset_inventory_test.gd:186)
+       [5] _failure_and_lifetime (res://main-autolysis/player/tests/handset_inventory_test.gd:491)
+       [6] _fixture (res://main-autolysis/player/tests/handset_inventory_test.gd:149)
+       [7] frames (res://main-autolysis/player/tests/handset_inventory_test.gd:101)
+ERROR: Parent node is busy adding/removing children, `remove_child()` can't be called at this time. Consider using `remove_child.call_deferred(child)` instead.
+   at: remove_child (scene/main/node.cpp:1738)
+   GDScript backtrace (most recent call first):
+       [0] _free_player_during_display_exit (res://main-autolysis/player/tests/handset_inventory_test.gd:382)
+       [1] _free_player_during_display_exit (res://main-autolysis/player/tests/handset_inventory_test.gd:382)
+       [2] clear_handset (res://main-autolysis/player/components/autolysis_held_item_presenter.gd:177)
+       [3] commit_handset_return (res://main-autolysis/player/components/autolysis_inventory_controller.gd:196)
+       [4] _return (res://main-autolysis/player/tests/handset_inventory_test.gd:186)
+       [5] _failure_and_lifetime (res://main-autolysis/player/tests/handset_inventory_test.gd:491)
+       [6] _fixture (res://main-autolysis/player/tests/handset_inventory_test.gd:149)
+       [7] frames (res://main-autolysis/player/tests/handset_inventory_test.gd:101)
+ERROR: Condition "data.parent" is true.
+   at: ~Node (scene/main/node.cpp:4137)
+   GDScript backtrace (most recent call first):
+       [0] _free_player_during_display_exit (res://main-autolysis/player/tests/handset_inventory_test.gd:382)
+       [1] _free_player_during_display_exit (res://main-autolysis/player/tests/handset_inventory_test.gd:382)
+       [2] clear_handset (res://main-autolysis/player/components/autolysis_held_item_presenter.gd:177)
+       [3] commit_handset_return (res://main-autolysis/player/components/autolysis_inventory_controller.gd:196)
+       [4] _return (res://main-autolysis/player/tests/handset_inventory_test.gd:186)
+       [5] _failure_and_lifetime (res://main-autolysis/player/tests/handset_inventory_test.gd:491)
+       [6] _fixture (res://main-autolysis/player/tests/handset_inventory_test.gd:149)
+       [7] frames (res://main-autolysis/player/tests/handset_inventory_test.gd:101)

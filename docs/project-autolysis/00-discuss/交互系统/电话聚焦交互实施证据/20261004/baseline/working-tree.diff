@@ -1,0 +1,81 @@
+diff --git a/main-autolysis/scenes/01-autolysis-test.tscn b/main-autolysis/scenes/01-autolysis-test.tscn
+index 8898aa1..fe0d77e 100644
+--- a/main-autolysis/scenes/01-autolysis-test.tscn
++++ b/main-autolysis/scenes/01-autolysis-test.tscn
+@@ -362,7 +362,9 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.75
+ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 7.75, -1.4901161e-07, -7.5)
+ 
+ [node name="upfloor" type="Node3D" parent="Environment" unique_id=343426982]
++visible = false
+ metadata/_edit_group_ = true
++metadata/_edit_lock_ = true
+ 
+ [node name="upfloor_0" type="StaticBody3D" parent="Environment/upfloor" unique_id=2048957133]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0000005, 3.5, 5.0000005)
+@@ -1329,7 +1331,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.4
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.15, 0.59999996, 7.8)
+ 
+ [node name="MachineTelephone0" parent="interaction_prefabs/machines" unique_id=628054810 instance=ExtResource("39_t3ei3")]
+-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -8.6, 1.1999999, 12)
++transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -9.35, 1.1999999, 12)
+ 
+ [node name="waste_liquid_storage_tank_0" parent="interaction_prefabs/machines" unique_id=647522578 instance=ExtResource("35_ywlwq")]
+ transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, -0.9749999, -2.682209e-07, 10.975004)
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn b/main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn
+index 059e287..26e34e8 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn
++++ b/main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn
+@@ -271,7 +271,6 @@ metadata/_edit_lock_ = true
+ 
+ [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1528597823]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 0.3, 0.07500002)
+-visible = false
+ shape = SubResource("BoxShape3D_7hmvv")
+ 
+ [node name="mesh_static_mesh" type="Node3D" parent="." unique_id=1336857692]
+@@ -708,8 +707,8 @@ material_override = ExtResource("2_vnha0")
+ mesh = SubResource("BoxMesh_wjtth")
+ skeleton = NodePath("../../..")
+ 
+-[node name="HandleTopReference" type="Marker3D" parent="switch_handle_blend_mechine_can_reset"]
+-position = Vector3(0, 0.12, 0)
++[node name="HandleTopReference" type="Marker3D" parent="switch_handle_blend_mechine_can_reset" unique_id=1082961846]
++transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0)
+ 
+ [node name="handle_interaction" type="StaticBody3D" parent="switch_handle_blend_mechine_can_reset" unique_id=396261861 node_paths=PackedStringArray("device_root", "drag_interaction", "collision_shape", "top_reference")]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0)
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn b/main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn
+index 9ec50ec..4946e9b 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn
++++ b/main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn
+@@ -47,10 +47,17 @@ size = Vector3(0.08, 0.06, 0.04)
+ [sub_resource type="BoxShape3D" id="BoxShape3D_41drs"]
+ size = Vector3(0.52, 0.59999996, 0.26)
+ 
++[sub_resource type="BoxShape3D" id="BoxShape3D_0ycif"]
++size = Vector3(0.12, 1.6999999, 2)
++
+ [sub_resource type="BoxShape3D" id="BoxShape3D_cjmi4"]
+ size = Vector3(0.12, 0.44, 0.19999999)
+ 
+-[node name="MachineTelephone0" type="Node3D" unique_id=628054810]
++[node name="machine_telephone_0" type="Node3D" unique_id=628054810]
++
++[node name="focus_camera" type="Camera3D" parent="." unique_id=1215350079]
++transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.294, 1.133)
++fov = 55.0
+ 
+ [node name="phone_sign_light" type="MeshInstance3D" parent="." unique_id=1610007794]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13, 0.2800001, 0.20999996)
+@@ -353,6 +360,11 @@ skeleton = NodePath("../../../..")
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.060000002, 0.30000004, 0.13)
+ shape = SubResource("BoxShape3D_41drs")
+ 
++[node name="collision_move_limit" type="CollisionShape3D" parent="StaticBody3D" unique_id=1105598721]
++transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48999977, -0.34999996, 1)
++shape = SubResource("BoxShape3D_0ycif")
++debug_color = Color(0.920786, 5.6698023e-05, 0.69547755, 0.41960785)
++
+ [node name="collision_phone_hand_set_interaction" type="CollisionShape3D" parent="StaticBody3D" unique_id=619119454]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26, 0.34000006, 0.099999994)
+ shape = SubResource("BoxShape3D_cjmi4")

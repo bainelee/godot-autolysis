@@ -1,0 +1,25 @@
+[
+  {
+    "路径": "D:\\autolysis\\AGENTS.md",
+    "开始散列": "37858D04A7074AFEC6ED8DDCBF8044B3FD615B05D9B342D8C90081788D93AA99",
+    "当前散列": "37858D04A7074AFEC6ED8DDCBF8044B3FD615B05D9B342D8C90081788D93AA99",
+    "保持原状": true
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_focus_controller.gd",
+    "开始散列": "9502411F8099C37B4F1390B96D5A954853C6E36776687424D634C78EB14EB47C",
+    "当前散列": "9502411F8099C37B4F1390B96D5A954853C6E36776687424D634C78EB14EB47C",
+    "保持原状": true
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\scenes\\01-autolysis-test.tscn",
+    "开始散列": "5A151EB01E0E1A1AEDB48575AE5898A3669D56E749F80D8604331E2F2ACB7AD7",
+    "当前散列": "5A151EB01E0E1A1AEDB48575AE5898A3669D56E749F80D8604331E2F2ACB7AD7",
+    "保持原状": true
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_blend_0.tscn",
+    "开始依据": "baseline/working-tree.diff",
+    "保持原差异": true
+  }
+]

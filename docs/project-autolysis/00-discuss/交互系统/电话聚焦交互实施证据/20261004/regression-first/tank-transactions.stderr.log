@@ -1,0 +1,30 @@
+ERROR: 液体罐实例或显示依赖无效：/root/@Node3D@2/cabinet_workroom_0/liquid_tank_slot_0/事务故障候选2
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://main-autolysis/systems/item-system/autolysis_liquid_tank.gd:26)
+       [1] try_attach_prepared_item (res://main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd:201)
+       [2] try_place_in_liquid_tank_cabinet (res://main-autolysis/player/components/autolysis_inventory_controller.gd:722)
+       [3] _test_attachment_failures (res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd:275)
+       [4] _fixture (res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd:107)
+       [5] _wait_motion (res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd:371)
+       [6] _frames (res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd:67)
+ERROR: 液体罐实例或显示依赖无效：/root/@Node3D@2/cabinet_workroom_0/liquid_tank_slot_0/事务故障候选4
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://main-autolysis/systems/item-system/autolysis_liquid_tank.gd:26)
+       [1] try_attach_prepared_item (res://main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd:201)
+       [2] try_place_in_liquid_tank_cabinet (res://main-autolysis/player/components/autolysis_inventory_controller.gd:722)
+       [3] _test_attachment_failures (res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd:275)
+       [4] _fixture (res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd:107)
+       [5] _wait_motion (res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd:371)
+       [6] _frames (res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd:67)
+ERROR: 液体罐实例或显示依赖无效：/root/@Node3D@2/cabinet_workroom_0/liquid_tank_slot_0/事务故障候选6
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://main-autolysis/systems/item-system/autolysis_liquid_tank.gd:26)
+       [1] try_attach_prepared_item (res://main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd:201)
+       [2] try_place_in_liquid_tank_cabinet (res://main-autolysis/player/components/autolysis_inventory_controller.gd:722)
+       [3] _test_attachment_failures (res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd:275)
+       [4] _fixture (res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd:107)
+       [5] _wait_motion (res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd:371)
+       [6] _frames (res://main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd:67)

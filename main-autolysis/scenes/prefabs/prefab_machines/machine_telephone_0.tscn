@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://brkrki24ps4u7"]
 
+[ext_resource type="Script" uid="uid://c1pn2s683ojtr" path="res://main-autolysis/components/interactions/autolysis_focus_target.gd" id="1_focus"]
+[ext_resource type="PackedScene" path="res://main-autolysis/scenes/prefabs/prefab_machines/visuals/telephone_handset_visual.tscn" id="1_handset"]
+[ext_resource type="Script" uid="uid://b7kdmn1qas3t1" path="res://main-autolysis/components/interactions/autolysis_interaction_component.gd" id="1_interaction"]
+[ext_resource type="Script" uid="uid://gv44yp6wcbel" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd" id="1_telephone"]
 [ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="2_41drs"]
 [ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="2_t2mr4"]
 [ext_resource type="Material" uid="uid://blu42xw7rpe7b" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_2.tres" id="3_41drs"]
@@ -35,22 +39,16 @@ size = Vector3(0.02, 0.06, 0.02)
 [sub_resource type="BoxMesh" id="BoxMesh_iwuan"]
 size = Vector3(0.06, 0.02, 0.02)
 
-[sub_resource type="BoxMesh" id="BoxMesh_cjmi4"]
-size = Vector3(0.08, 0.4, 0.02)
-
-[sub_resource type="BoxMesh" id="BoxMesh_0ycif"]
-size = Vector3(0.12, 0.1, 0.06)
-
-[sub_resource type="BoxMesh" id="BoxMesh_inn5o"]
-size = Vector3(0.08, 0.06, 0.04)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_41drs"]
 size = Vector3(0.52, 0.59999996, 0.26)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ycif"]
+size = Vector3(0.12, 1.6999999, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cjmi4"]
 size = Vector3(0.12, 0.44, 0.19999999)
 
-[node name="MachineTelephone0" type="Node3D" unique_id=628054810]
+[node name="machine_telephone_0" type="Node3D" unique_id=628054810]
 
 [node name="phone_sign_light" type="MeshInstance3D" parent="." unique_id=1610007794]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13, 0.2800001, 0.20999996)
@@ -64,7 +62,31 @@ material_override = ExtResource("3_cjmi4")
 mesh = SubResource("BoxMesh_apmtd")
 skeleton = NodePath("../../StaticBody3D/mesh_phone_base")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=533765496]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=533765496 node_paths=PackedStringArray("reference_camera", "root_interaction", "focus_target", "handset_body", "handset_interaction", "handset_anchor", "handset_visual", "move_limit_body", "move_limit_shape") groups=["interactable"]]
+script = ExtResource("1_telephone")
+reference_camera = NodePath("focus_camera")
+root_interaction = NodePath("RootInteraction")
+focus_target = NodePath("FocusTarget")
+handset_body = NodePath("HandsetInteractionBody")
+handset_interaction = NodePath("HandsetInteractionBody/HandsetInteraction")
+handset_anchor = NodePath("phone_hand_set")
+handset_visual = NodePath("phone_hand_set/handset_visual")
+handset_visual_scene = ExtResource("1_handset")
+move_limit_body = NodePath("MoveLimitBody")
+move_limit_shape = NodePath("MoveLimitBody/collision_move_limit")
+handset_held_position = Vector3(0.33, -0.12, -0.27)
+handset_held_rotation_degrees = Vector3(16, 125, 12)
+
+[node name="focus_camera" type="Camera3D" parent="StaticBody3D" unique_id=1215350079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.294, 1.133)
+fov = 55.0
+
+[node name="RootInteraction" type="Node3D" parent="StaticBody3D" unique_id=806467918]
+script = ExtResource("1_interaction")
+interaction_mode = 1
+
+[node name="FocusTarget" type="Node3D" parent="StaticBody3D" unique_id=1041155835]
+script = ExtResource("1_focus")
 
 [node name="mesh_phone_base" type="MeshInstance3D" parent="StaticBody3D" unique_id=226788728]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999998, 0.099999994)
@@ -321,39 +343,30 @@ skeleton = NodePath("../../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26, 0.33999997, 0.17999999)
 metadata/_edit_group_ = true
 
-[node name="mesh_phone_hand_set" type="MeshInstance3D" parent="StaticBody3D/phone_hand_set" unique_id=1245977997]
-material_override = ExtResource("2_t2mr4")
-mesh = SubResource("BoxMesh_cjmi4")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="StaticBody3D/phone_hand_set/mesh_phone_hand_set" unique_id=1394858254]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17000002, -0.08)
-material_override = ExtResource("2_t2mr4")
-mesh = SubResource("BoxMesh_0ycif")
-skeleton = NodePath("../../..")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="StaticBody3D/phone_hand_set/mesh_phone_hand_set/MeshInstance3D4" unique_id=1443137593]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.049999997)
-material_override = ExtResource("2_t2mr4")
-mesh = SubResource("BoxMesh_inn5o")
-skeleton = NodePath("../../../..")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="StaticBody3D/phone_hand_set/mesh_phone_hand_set" unique_id=718685768]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16999999, -0.08)
-material_override = ExtResource("2_t2mr4")
-mesh = SubResource("BoxMesh_0ycif")
-skeleton = NodePath("../../..")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="StaticBody3D/phone_hand_set/mesh_phone_hand_set/MeshInstance3D5" unique_id=734105787]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.049999997)
-material_override = ExtResource("2_t2mr4")
-mesh = SubResource("BoxMesh_inn5o")
-skeleton = NodePath("../../../..")
+[node name="handset_visual" parent="StaticBody3D/phone_hand_set" unique_id=1251010941 instance=ExtResource("1_handset")]
 
 [node name="collision_base" type="CollisionShape3D" parent="StaticBody3D" unique_id=1917230047]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.060000002, 0.30000004, 0.13)
 shape = SubResource("BoxShape3D_41drs")
 
-[node name="collision_phone_hand_set_interaction" type="CollisionShape3D" parent="StaticBody3D" unique_id=619119454]
+[node name="MoveLimitBody" type="StaticBody3D" parent="StaticBody3D" unique_id=99266228]
+collision_layer = 8
+collision_mask = 0
+
+[node name="collision_move_limit" type="CollisionShape3D" parent="StaticBody3D/MoveLimitBody" unique_id=1105598721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9399997, -0.34999996, 1)
+shape = SubResource("BoxShape3D_0ycif")
+disabled = true
+debug_color = Color(0.920786, 5.6698023e-05, 0.69547755, 0.41960785)
+
+[node name="HandsetInteractionBody" type="StaticBody3D" parent="StaticBody3D" unique_id=213187505 groups=["interactable"]]
+collision_layer = 32
+collision_mask = 0
+
+[node name="collision_phone_hand_set_interaction" type="CollisionShape3D" parent="StaticBody3D/HandsetInteractionBody" unique_id=619119454]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26, 0.34000006, 0.099999994)
 shape = SubResource("BoxShape3D_cjmi4")
 debug_color = Color(0.9914015, 0, 0.2720406, 0.41960785)
+
+[node name="HandsetInteraction" type="Node3D" parent="StaticBody3D/HandsetInteractionBody" unique_id=680096042]
+script = ExtResource("1_interaction")

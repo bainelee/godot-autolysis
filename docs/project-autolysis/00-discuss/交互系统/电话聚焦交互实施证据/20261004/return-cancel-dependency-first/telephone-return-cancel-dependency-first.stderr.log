@@ -1,0 +1,6 @@
+SCRIPT ERROR: Invalid access to property or key 'disabled' on a base object of type 'previously freed'.
+   at: _snapshot (res://main-autolysis/player/tests/telephone_device_test.gd:608)
+   GDScript backtrace (most recent call first):
+       [0] _snapshot (res://main-autolysis/player/tests/telephone_device_test.gd:608)
+       [1] run_checks (res://main-autolysis/player/tests/telephone_return_cancel_dependency_audit.gd:16)
+       [2] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)

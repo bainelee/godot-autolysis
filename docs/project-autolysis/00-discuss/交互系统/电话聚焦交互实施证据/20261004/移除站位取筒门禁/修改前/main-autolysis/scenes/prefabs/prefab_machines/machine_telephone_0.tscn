@@ -1,0 +1,373 @@
+[gd_scene format=3 uid="uid://brkrki24ps4u7"]
+
+[ext_resource type="Script" uid="uid://c1pn2s683ojtr" path="res://main-autolysis/components/interactions/autolysis_focus_target.gd" id="1_focus"]
+[ext_resource type="PackedScene" path="res://main-autolysis/scenes/prefabs/prefab_machines/visuals/telephone_handset_visual.tscn" id="1_handset"]
+[ext_resource type="Script" uid="uid://b7kdmn1qas3t1" path="res://main-autolysis/components/interactions/autolysis_interaction_component.gd" id="1_interaction"]
+[ext_resource type="Script" uid="uid://gv44yp6wcbel" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd" id="1_telephone"]
+[ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="2_41drs"]
+[ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="2_t2mr4"]
+[ext_resource type="Material" uid="uid://blu42xw7rpe7b" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_2.tres" id="3_41drs"]
+[ext_resource type="Material" uid="uid://bp35cd3s1kb3t" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_0.tres" id="3_cjmi4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_41drs"]
+size = Vector3(0.04, 0.04, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_apmtd"]
+size = Vector3(0.03, 0.03, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ofhpk"]
+size = Vector3(0.4, 0.6, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r31jd"]
+size = Vector3(0.12, 0.04, 0.04)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lcapb"]
+size = Vector3(0.22, 0.06, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_iqejs"]
+size = Vector3(0.06, 0.06, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tkp73"]
+size = Vector3(0.04, 0.04, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_omhrq"]
+size = Vector3(0.06, 0.1, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fr8cf"]
+size = Vector3(0.02, 0.06, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_iwuan"]
+size = Vector3(0.06, 0.02, 0.02)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_41drs"]
+size = Vector3(0.52, 0.59999996, 0.26)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ycif"]
+size = Vector3(0.12, 1.6999999, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cjmi4"]
+size = Vector3(0.12, 0.44, 0.19999999)
+
+[node name="machine_telephone_0" type="Node3D" unique_id=628054810]
+
+[node name="phone_sign_light" type="MeshInstance3D" parent="." unique_id=1610007794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13, 0.2800001, 0.20999996)
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_41drs")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="phone_sign_light" unique_id=686113719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01000002)
+material_override = ExtResource("3_cjmi4")
+mesh = SubResource("BoxMesh_apmtd")
+skeleton = NodePath("../../StaticBody3D/mesh_phone_base")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=533765496 node_paths=PackedStringArray("reference_camera", "root_interaction", "focus_target", "handset_body", "handset_interaction", "handset_anchor", "handset_visual", "move_limit_body", "move_limit_shape") groups=["interactable"]]
+script = ExtResource("1_telephone")
+reference_camera = NodePath("focus_camera")
+root_interaction = NodePath("RootInteraction")
+focus_target = NodePath("FocusTarget")
+handset_body = NodePath("HandsetInteractionBody")
+handset_interaction = NodePath("HandsetInteractionBody/HandsetInteraction")
+handset_anchor = NodePath("phone_hand_set")
+handset_visual = NodePath("phone_hand_set/handset_visual")
+handset_visual_scene = ExtResource("1_handset")
+move_limit_body = NodePath("MoveLimitBody")
+move_limit_shape = NodePath("MoveLimitBody/collision_move_limit")
+handset_held_position = Vector3(0.33, -0.12, -0.27)
+handset_held_rotation_degrees = Vector3(16, 125, 12)
+handset_take_bounds = AABB(-0.43, -1.3, 0, 2.28, 3.1, 2)
+
+[node name="focus_camera" type="Camera3D" parent="StaticBody3D" unique_id=1215350079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.294, 1.133)
+fov = 55.0
+
+[node name="RootInteraction" type="Node3D" parent="StaticBody3D" unique_id=806467918]
+script = ExtResource("1_interaction")
+interaction_mode = 1
+
+[node name="FocusTarget" type="Node3D" parent="StaticBody3D" unique_id=1041155835]
+script = ExtResource("1_focus")
+
+[node name="mesh_phone_base" type="MeshInstance3D" parent="StaticBody3D" unique_id=226788728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999998, 0.099999994)
+material_override = ExtResource("3_41drs")
+mesh = SubResource("BoxMesh_ofhpk")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D/mesh_phone_base" unique_id=724042157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26, 0.13999996, 0)
+material_override = ExtResource("2_41drs")
+mesh = SubResource("BoxMesh_r31jd")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="StaticBody3D/mesh_phone_base" unique_id=1880139292]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, -0.060000062, 0)
+material_override = ExtResource("2_41drs")
+mesh = SubResource("BoxMesh_r31jd")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="StaticBody3D/mesh_phone_base" unique_id=976205824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049999997, -0.109999985, 0.110000014)
+material_override = ExtResource("2_41drs")
+mesh = SubResource("BoxMesh_lcapb")
+skeleton = NodePath("../..")
+
+[node name="phone_keyboard" type="Node3D" parent="StaticBody3D" unique_id=1368376539]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13, 0.5299999, 0.20999998)
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard" unique_id=203347045]
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_iqejs")
+skeleton = NodePath("../..")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard/MeshInstance3D9" unique_id=1636842561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01000002)
+material_override = ExtResource("3_cjmi4")
+mesh = SubResource("BoxMesh_tkp73")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard" unique_id=1718120215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0, 0)
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_iqejs")
+skeleton = NodePath("../..")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard/MeshInstance3D10" unique_id=1227592485]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01000002)
+material_override = ExtResource("3_cjmi4")
+mesh = SubResource("BoxMesh_tkp73")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard" unique_id=330771693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16, 0, 0)
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_iqejs")
+skeleton = NodePath("../..")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard/MeshInstance3D11" unique_id=490547375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01000002)
+material_override = ExtResource("3_cjmi4")
+mesh = SubResource("BoxMesh_tkp73")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard" unique_id=1595103919]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.08000001, 0)
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_iqejs")
+skeleton = NodePath("../..")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard/MeshInstance3D12" unique_id=1105748153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01000002)
+material_override = ExtResource("3_cjmi4")
+mesh = SubResource("BoxMesh_tkp73")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard" unique_id=1839477683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, -0.08000001, 0)
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_iqejs")
+skeleton = NodePath("../..")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard/MeshInstance3D13" unique_id=1116088849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01000002)
+material_override = ExtResource("3_cjmi4")
+mesh = SubResource("BoxMesh_tkp73")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard" unique_id=1412001997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16, -0.08000001, 0)
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_iqejs")
+skeleton = NodePath("../..")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard/MeshInstance3D14" unique_id=4831603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01000002)
+material_override = ExtResource("3_cjmi4")
+mesh = SubResource("BoxMesh_tkp73")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard" unique_id=1981916737]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16, 0)
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_iqejs")
+skeleton = NodePath("../..")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard/MeshInstance3D15" unique_id=121825010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01000002)
+material_override = ExtResource("3_cjmi4")
+mesh = SubResource("BoxMesh_tkp73")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard" unique_id=343968678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, -0.16, 0)
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_iqejs")
+skeleton = NodePath("../..")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard/MeshInstance3D16" unique_id=2003610035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01000002)
+material_override = ExtResource("3_cjmi4")
+mesh = SubResource("BoxMesh_tkp73")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard" unique_id=911443148]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16, -0.16, 0)
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_iqejs")
+skeleton = NodePath("../..")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard/MeshInstance3D17" unique_id=935990158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01000002)
+material_override = ExtResource("3_cjmi4")
+mesh = SubResource("BoxMesh_tkp73")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard" unique_id=1491497906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24, 0)
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_iqejs")
+skeleton = NodePath("../..")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard/MeshInstance3D18" unique_id=2044931275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01000002)
+material_override = ExtResource("3_cjmi4")
+mesh = SubResource("BoxMesh_tkp73")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard" unique_id=1878666641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, -0.24, 0)
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_iqejs")
+skeleton = NodePath("../..")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard/MeshInstance3D19" unique_id=731186359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01000002)
+material_override = ExtResource("3_cjmi4")
+mesh = SubResource("BoxMesh_tkp73")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D20" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard" unique_id=22722537]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16, -0.24, 0)
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_iqejs")
+skeleton = NodePath("../..")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="StaticBody3D/phone_keyboard/MeshInstance3D20" unique_id=1496324308]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01000002)
+material_override = ExtResource("3_cjmi4")
+mesh = SubResource("BoxMesh_tkp73")
+skeleton = NodePath("../../..")
+
+[node name="phone_coin_slot" type="Node3D" parent="StaticBody3D" unique_id=220095314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13000003, 0.51, 0.20999998)
+metadata/_edit_group_ = true
+
+[node name="mesh_phone_coin_slot" type="MeshInstance3D" parent="StaticBody3D/phone_coin_slot" unique_id=1091480411]
+material_override = ExtResource("2_41drs")
+mesh = SubResource("BoxMesh_omhrq")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="StaticBody3D/phone_coin_slot/mesh_phone_coin_slot" unique_id=1697748995]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02000004, 0, 0.01999998)
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_fr8cf")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="StaticBody3D/phone_coin_slot/mesh_phone_coin_slot" unique_id=1676193138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01999998, 0, 0.01999998)
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_fr8cf")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="StaticBody3D/phone_coin_slot/mesh_phone_coin_slot" unique_id=155327198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03999996, 0.01999998)
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_iwuan")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="StaticBody3D/phone_coin_slot/mesh_phone_coin_slot" unique_id=1850929818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04000002, 0.01999998)
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_iwuan")
+skeleton = NodePath("../../..")
+
+[node name="phone_return_coin_slot" type="Node3D" parent="StaticBody3D" unique_id=195428695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13000003, 0.37, 0.20999998)
+metadata/_edit_group_ = true
+
+[node name="mesh_phone_return_coin_slot" type="MeshInstance3D" parent="StaticBody3D/phone_return_coin_slot" unique_id=386172259]
+material_override = ExtResource("2_41drs")
+mesh = SubResource("BoxMesh_omhrq")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="StaticBody3D/phone_return_coin_slot/mesh_phone_return_coin_slot" unique_id=114665423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02000004, 0, 0.01999998)
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_fr8cf")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="StaticBody3D/phone_return_coin_slot/mesh_phone_return_coin_slot" unique_id=2110401680]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01999998, 0, 0.01999998)
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_fr8cf")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="StaticBody3D/phone_return_coin_slot/mesh_phone_return_coin_slot" unique_id=79439045]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03999996, 0.01999998)
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_iwuan")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="StaticBody3D/phone_return_coin_slot/mesh_phone_return_coin_slot" unique_id=56281015]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04000002, 0.01999998)
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_iwuan")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="StaticBody3D/phone_return_coin_slot/mesh_phone_return_coin_slot" unique_id=920649305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.04000002, 0.03999999)
+material_override = ExtResource("2_t2mr4")
+mesh = SubResource("BoxMesh_iwuan")
+skeleton = NodePath("../../..")
+
+[node name="phone_hand_set" type="Node3D" parent="StaticBody3D" unique_id=1416260662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26, 0.33999997, 0.17999999)
+metadata/_edit_group_ = true
+
+[node name="handset_visual" parent="StaticBody3D/phone_hand_set" unique_id=1251010941 instance=ExtResource("1_handset")]
+
+[node name="collision_base" type="CollisionShape3D" parent="StaticBody3D" unique_id=1917230047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.060000002, 0.30000004, 0.13)
+shape = SubResource("BoxShape3D_41drs")
+
+[node name="MoveLimitBody" type="StaticBody3D" parent="StaticBody3D" unique_id=99266228]
+collision_layer = 8
+collision_mask = 0
+
+[node name="collision_move_limit" type="CollisionShape3D" parent="StaticBody3D/MoveLimitBody" unique_id=1105598721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8099997, -0.34999996, 1)
+shape = SubResource("BoxShape3D_0ycif")
+disabled = true
+debug_color = Color(0.920786, 5.6698023e-05, 0.69547755, 0.41960785)
+
+[node name="HandsetInteractionBody" type="StaticBody3D" parent="StaticBody3D" unique_id=213187505 groups=["interactable"]]
+collision_layer = 32
+collision_mask = 0
+
+[node name="collision_phone_hand_set_interaction" type="CollisionShape3D" parent="StaticBody3D/HandsetInteractionBody" unique_id=619119454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26, 0.34000006, 0.099999994)
+shape = SubResource("BoxShape3D_cjmi4")
+debug_color = Color(0.9914015, 0, 0.2720406, 0.41960785)
+
+[node name="HandsetInteraction" type="Node3D" parent="StaticBody3D/HandsetInteractionBody" unique_id=680096042]
+script = ExtResource("1_interaction")

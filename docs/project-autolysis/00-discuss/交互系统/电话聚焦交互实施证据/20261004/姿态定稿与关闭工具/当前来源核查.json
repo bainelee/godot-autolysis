@@ -1,0 +1,41 @@
+{
+  "时间": "2026-10-04T22:54:06.4218492+08:00",
+  "来源": [
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+      "修改前快照匹配": true,
+      "修改后快照匹配": true,
+      "当前来源匹配": true
+    },
+    {
+      "相对路径": "main-autolysis\\player\\autolysis_player.gd",
+      "修改前快照匹配": true,
+      "修改后快照匹配": true,
+      "当前来源匹配": true
+    },
+    {
+      "相对路径": "project.godot",
+      "修改前快照匹配": true,
+      "修改后快照匹配": true,
+      "当前来源匹配": true
+    },
+    {
+      "相对路径": "main-autolysis\\player\\tests\\telephone_input_test.gd",
+      "修改前快照匹配": true,
+      "修改后快照匹配": true,
+      "当前来源匹配": true
+    },
+    {
+      "相对路径": "main-autolysis\\player\\tests\\telephone_pose_observer_input_audit.gd",
+      "修改前快照匹配": true,
+      "修改后快照匹配": true,
+      "当前来源匹配": true
+    }
+  ],
+  "检查项数": 5,
+  "通过断言数": 317.0,
+  "全部检查通过": true,
+  "快照差异空白输出": [],
+  "快照差异命令退出码": 1,
+  "工作区空白检查通过": true
+}

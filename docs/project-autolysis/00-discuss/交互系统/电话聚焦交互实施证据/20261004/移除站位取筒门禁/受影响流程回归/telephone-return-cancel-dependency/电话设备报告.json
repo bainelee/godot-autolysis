@@ -1,0 +1,159 @@
+{
+	"业务快照": [
+		{
+			"库存事务等待": false,
+			"库存持筒": false,
+			"来源事务等待": false,
+			"来源会话": 0,
+			"移动保护": false
+		}
+	],
+	"原生系统输入": false,
+	"图形验收": false,
+	"失败数": 0,
+	"断言": [
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "建立归还预处理",
+			"通过": true
+		},
+		{
+			"说明": "归还取消恢复期间限位失效解除双方预处理",
+			"通过": true
+		},
+		{
+			"说明": "无法恢复必要限位时匹配异常终止原持有",
+			"通过": true
+		},
+		{
+			"说明": "失效限位实际移除后解除移动保护",
+			"通过": true
+		}
+	],
+	"正式玩家运动轨迹": [],
+	"站位无门禁样本": [],
+	"限位同步事件": [
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 0,
+			"物理帧": 1,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 0,
+			"物理帧": 1,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 16,
+			"物理帧": 17,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 16,
+			"物理帧": 17,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 17,
+			"物理帧": 18,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 2,
+			"形状": [],
+			"普通帧": 17,
+			"物理帧": 18,
+			"目标启用": true,
+			"限位序号": 4
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 2,
+			"形状": [],
+			"普通帧": 17,
+			"物理帧": 18,
+			"目标启用": true,
+			"限位序号": 4
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [],
+			"普通帧": 18,
+			"物理帧": 19,
+			"目标启用": false,
+			"限位序号": 5
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [],
+			"普通帧": 18,
+			"物理帧": 19,
+			"目标启用": false,
+			"限位序号": 5
+		}
+	]
+}

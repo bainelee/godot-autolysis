@@ -1,0 +1,74 @@
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\347\247\273\351\231\244\347\253\231\344\275\215\345\217\226\347\255\222\351\227\250\347\246\201\\\344\277\256\346\224\271\345\211\215\\main-autolysis\\player\\tests\\telephone_dependency_audit.gd" "b/D:\\autolysis\\main-autolysis\\player\\tests\\telephone_dependency_audit.gd"
+index bb06dbf..d584ab9 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\347\247\273\351\231\244\347\253\231\344\275\215\345\217\226\347\255\222\351\227\250\347\246\201\\\344\277\256\346\224\271\345\211\215\\main-autolysis\\player\\tests\\telephone_dependency_audit.gd"
++++ "b/D:\\autolysis\\main-autolysis\\player\\tests\\telephone_dependency_audit.gd"
+@@ -17,7 +17,7 @@ func run_checks() -> void:
+ 	var actor: AutolysisPlayer = player as AutolysisPlayer
+ 	actor.collision_mask = 1
+ 	var mask_allowed: bool = telephone.can_take_handset(actor)
+-	var mask_requested: bool = telephone.request_handset_transfer(actor)
++	var mask_requested: bool = telephone.handset_interaction.try_interact(actor)
+ 	for index: int in range(90):
+ 		await frames(1)
+ 		if not telephone.is_transfer_pending():
+@@ -44,24 +44,26 @@ func run_checks() -> void:
+ 		if hit.get("rid") == actor.get_rid():
+ 			intersects_actor = true
+ 	var overlap_allowed: bool = telephone.can_take_handset(actor)
+-	var requested: bool = telephone.request_handset_transfer(actor)
++	var requested: bool = telephone.handset_interaction.try_interact(actor)
+ 	for index: int in range(90):
+ 		await frames(1)
+ 		if not telephone.is_transfer_pending():
+ 			break
+-	observations.append({"用途": "有效限位形状移至合法取筒玩家身体内，独立于活动区域配置", "形状几何实际与玩家重叠": intersects_actor, "取筒许可": overlap_allowed, "请求被接受": requested, "事务仍等待": telephone.is_transfer_pending(), "玩家独占持筒": actor.inventory_controller.has_exclusive_handset(), "电话持有者匹配": telephone.get_holder() == actor, "玩家位置": str(actor.global_position), "限位位置": str(telephone.move_limit_shape.global_position)})
+-	check(intersects_actor and not overlap_allowed and not requested and not actor.inventory_controller.has_exclusive_handset(), "合法区域内实际与限位重叠仍拒绝取筒")
++	observations.append({"用途": "必要限位形状移至真实玩家身体内，重叠只作测量而不作为取下许可", "形状几何实际与玩家重叠": intersects_actor, "取筒许可": overlap_allowed, "请求被接受": requested, "事务仍等待": telephone.is_transfer_pending(), "玩家独占持筒": actor.inventory_controller.has_exclusive_handset(), "电话持有者匹配": telephone.get_holder() == actor, "玩家位置": str(actor.global_position), "限位位置": str(telephone.move_limit_shape.global_position)})
++	check(intersects_actor and overlap_allowed and requested and actor.inventory_controller.has_exclusive_handset() and telephone.get_holder() == actor and telephone._shape_is_active_in_world(telephone.move_limit_shape), "实际限位重叠不拒绝正式取下且真实边界完成启用")
++	await _normal_return(actor, "实际限位重叠")
+ 	actor.collision_layer = 0
+ 	var zero_layer_allowed: bool = telephone.can_take_handset(actor)
+-	var zero_layer_requested: bool = telephone.request_handset_transfer(actor)
++	var zero_layer_requested: bool = telephone.handset_interaction.try_interact(actor)
+ 	for index: int in range(90):
+ 		await frames(1)
+ 		if not telephone.is_transfer_pending():
+ 			break
+ 	var recovery: KinematicCollision3D = KinematicCollision3D.new()
+ 	var physically_overlapped: bool = actor.test_move(actor.global_transform, Vector3.ZERO, recovery, 0.001, true)
+-	observations.append({"用途": "玩家物理层为零但移动掩码有效时的重叠检查复核", "玩家物理层": actor.collision_layer, "玩家掩码": actor.collision_mask, "取筒许可": zero_layer_allowed, "请求被接受": zero_layer_requested, "实际玩家持筒": actor.inventory_controller.has_exclusive_handset(), "零运动实际恢复碰撞": physically_overlapped, "碰撞来源": str(recovery.get_collider().get_path()) if physically_overlapped else ""})
+-	check(not zero_layer_allowed and not zero_layer_requested and not actor.inventory_controller.has_exclusive_handset(), "玩家实体层零无法证明启用安全时拒绝取筒")
++	observations.append({"用途": "玩家物理层为零但必要移动掩码有效，原重叠证明要求已经删除", "玩家物理层": actor.collision_layer, "玩家掩码": actor.collision_mask, "取筒许可": zero_layer_allowed, "请求被接受": zero_layer_requested, "实际玩家持筒": actor.inventory_controller.has_exclusive_handset(), "零运动实际恢复碰撞": physically_overlapped, "碰撞来源": str(recovery.get_collider().get_path()) if physically_overlapped else ""})
++	check(zero_layer_allowed and zero_layer_requested and actor.inventory_controller.has_exclusive_handset() and telephone.get_holder() == actor and telephone._shape_is_active_in_world(telephone.move_limit_shape), "删除玩家重叠证明门禁后零实体层仍可正式取下且必要移动掩码保持")
++	await _normal_return(actor, "零实体层重叠")
+ 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(directory))
+ 	var file: FileAccess = FileAccess.open(directory.path_join("必要物理依赖复核.json"), FileAccess.WRITE)
+ 	file.store_string(JSON.stringify(observations, "\t"))
+@@ -73,6 +75,17 @@ func run_checks() -> void:
+ 	quit(1 if failures > 0 else 0)
+ 
+ 
++func _normal_return(actor: AutolysisPlayer, label: String) -> void:
++	check(telephone.handset_interaction.try_interact(actor), label + "通过正式听筒组件请求归还")
++	for index: int in range(90):
++		if not telephone.is_transfer_pending():
++			break
++		await frames(1)
++	var returned: bool = not actor.inventory_controller.has_exclusive_handset() and telephone.get_holder() == null and telephone.move_limit_shape.disabled and not telephone._shape_is_active_in_world(telephone.move_limit_shape)
++	check(returned, label + "正式归还成对完成且实际边界已停用")
++	observations.append({"用途": label + "正式归还", "成对归还完成": returned, "事务仍等待": telephone.is_transfer_pending(), "限位已停用": telephone.move_limit_shape.disabled, "实际物理限位仍启用": telephone._shape_is_active_in_world(telephone.move_limit_shape)})
++
++
+ func fixture() -> void:
+ 	root.size = Vector2i(1280, 720)
+ 	world = Node3D.new()
+@@ -89,7 +102,8 @@ func fixture() -> void:
+ 	actor.focus_controller.configure(actor, actor.camera, actor.held_item_presenter, headless_entry)
+ 	check(actor.focus_controller.try_enter(telephone.focus_target), "必要依赖复核使用正式电话进入聚焦")
+ 	await frames(20)
+-	check(telephone.can_take_handset(actor), "正式默认配置建立合法取筒起点")
++	actor.set_physics_process(false)
++	check(telephone.can_take_handset(actor), "正式默认非几何依赖建立稳定聚焦取筒起点")
+ 
+ 
+ func headless_entry() -> bool:

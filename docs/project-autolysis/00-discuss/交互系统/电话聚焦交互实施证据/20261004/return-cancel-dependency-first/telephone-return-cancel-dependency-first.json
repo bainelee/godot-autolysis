@@ -1,0 +1,27 @@
+{
+  "检查": "telephone-return-cancel-dependency-first",
+  "时间": "2026-10-04T22:30:19.0853083+08:00",
+  "进程编号": 9696,
+  "退出码": 1,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/player/tests/telephone_return_cancel_dependency_audit.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/return-cancel-dependency-first"
+  ],
+  "通过断言数": 4,
+  "预期错误计数": {},
+  "非预期错误": [
+    "失败：归还取消恢复期间限位失效解除双方预处理",
+    "失败：无法恢复必要限位时匹配异常终止原持有",
+    "失败：失效限位实际移除后解除移动保护",
+    "SCRIPT ERROR: Invalid access to property or key 'disabled' on a base object of type 'previously freed'."
+  ]
+}

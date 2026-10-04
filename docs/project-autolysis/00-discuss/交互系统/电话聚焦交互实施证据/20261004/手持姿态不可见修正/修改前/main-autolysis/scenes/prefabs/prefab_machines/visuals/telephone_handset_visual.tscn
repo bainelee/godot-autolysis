@@ -1,0 +1,38 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="1_material"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_handle"]
+size = Vector3(0.08, 0.4, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_end"]
+size = Vector3(0.12, 0.1, 0.06)
+
+[sub_resource type="BoxMesh" id="BoxMesh_inset"]
+size = Vector3(0.08, 0.06, 0.04)
+
+[node name="telephone_handset_visual" type="Node3D"]
+
+[node name="mesh_phone_hand_set" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_material")
+mesh = SubResource("BoxMesh_handle")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="mesh_phone_hand_set"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17000002, -0.08)
+material_override = ExtResource("1_material")
+mesh = SubResource("BoxMesh_end")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="mesh_phone_hand_set/MeshInstance3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.049999997)
+material_override = ExtResource("1_material")
+mesh = SubResource("BoxMesh_inset")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="mesh_phone_hand_set"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16999999, -0.08)
+material_override = ExtResource("1_material")
+mesh = SubResource("BoxMesh_end")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="mesh_phone_hand_set/MeshInstance3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.049999997)
+material_override = ExtResource("1_material")
+mesh = SubResource("BoxMesh_inset")

@@ -1,0 +1,25 @@
+{
+  "检查数": 15,
+  "通过断言数": 988.0,
+  "全部检查退出零且非预期错误为空": true,
+  "全部引擎检查为无图形": true,
+  "来源快照数量": 12,
+  "本次修改数量": 5,
+  "保持散列一致数量": 7,
+  "本次修改路径": [
+    "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+    "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+    "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_device_test.gd",
+    "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_dependency_audit.gd",
+    "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_movement_test.gd"
+  ],
+  "保持散列一致路径": [
+    "D:\\autolysis\\main-autolysis\\player\\autolysis_player.gd",
+    "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+    "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_held_item_presenter.gd",
+    "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_focus_ray_query.gd",
+    "D:\\autolysis\\main-autolysis\\components\\interactions\\autolysis_focus_target.gd",
+    "D:\\autolysis\\main-autolysis\\scenes\\01-autolysis-test.tscn",
+    "D:\\autolysis\\main-autolysis\\player\\tests\\run_telephone_verification.ps1"
+  ]
+}

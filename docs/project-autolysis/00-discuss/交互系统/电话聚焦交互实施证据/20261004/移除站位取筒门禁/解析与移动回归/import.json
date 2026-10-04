@@ -1,0 +1,24 @@
+{
+  "检查": "import",
+  "时间": "2026-10-04T23:35:24.9265929+08:00",
+  "进程编号": 15552,
+  "退出码": 0,
+  "通过": true,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--editor",
+    "--quit",
+    "--",
+    "--evidence-dir",
+    "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/移除站位取筒门禁/解析与移动回归/import"
+  ],
+  "通过断言数": 0,
+  "预期错误计数": {},
+  "非预期错误": []
+}

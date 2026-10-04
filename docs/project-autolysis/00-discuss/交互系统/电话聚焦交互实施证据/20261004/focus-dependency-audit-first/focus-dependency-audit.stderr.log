@@ -1,0 +1,396 @@
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+SCRIPT ERROR: Invalid access to property or key 'session_id' on a base object of type 'previously freed'.
+   at: AutolysisTelephone._poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+   GDScript backtrace (most recent call first):
+       [0] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:200)
+       [1] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:180)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_control' in base 'previously freed'.
+   at: AutolysisPlayer._physics_process (res://main-autolysis/player/autolysis_player.gd:448)
+   GDScript backtrace (most recent call first):
+       [0] _physics_process (res://main-autolysis/player/autolysis_player.gd:448)

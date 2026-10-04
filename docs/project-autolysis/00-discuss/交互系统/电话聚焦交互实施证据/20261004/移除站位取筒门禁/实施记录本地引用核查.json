@@ -1,0 +1,157 @@
+[
+  {
+    "文档目标": "修改前来源散列.json",
+    "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话聚焦交互实施证据\\20261004\\移除站位取筒门禁\\修改前来源散列.json",
+    "存在": true
+  },
+  {
+    "文档目标": "开始工作区状态.txt",
+    "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话聚焦交互实施证据\\20261004\\移除站位取筒门禁\\开始工作区状态.txt",
+    "存在": true
+  },
+  {
+    "文档目标": "开始工作区差异.diff",
+    "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话聚焦交互实施证据\\20261004\\移除站位取筒门禁\\开始工作区差异.diff",
+    "存在": true
+  },
+  {
+    "文档目标": "修改前/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd",
+    "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话聚焦交互实施证据\\20261004\\移除站位取筒门禁\\修改前\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+    "存在": true
+  },
+  {
+    "文档目标": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:124",
+    "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+    "存在": true
+  },
+  {
+    "文档目标": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:196",
+    "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+    "存在": true
+  },
+  {
+    "文档目标": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:247",
+    "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+    "存在": true
+  },
+  {
+    "文档目标": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:397",
+    "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+    "存在": true
+  },
+  {
+    "文档目标": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn:77",
+    "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+    "存在": true
+  },
+  {
+    "文档目标": "生产最小补丁/静态核查.json",
+    "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话聚焦交互实施证据\\20261004\\移除站位取筒门禁\\生产最小补丁\\静态核查.json",
+    "存在": true
+  },
+  {
+    "文档目标": "生产最小补丁/实际差异.diff",
+    "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话聚焦交互实施证据\\20261004\\移除站位取筒门禁\\生产最小补丁\\实际差异.diff",
+    "存在": true
+  },
+  {
+    "文档目标": "D:/autolysis/main-autolysis/player/components/interaction_raycast.tscn:6",
+    "实际路径": "D:\\autolysis\\main-autolysis\\player\\components\\interaction_raycast.tscn",
+    "存在": true
+  },
+  {
+    "文档目标": "D:/autolysis/main-autolysis/player/components/interaction_raycast.gd:15",
+    "实际路径": "D:\\autolysis\\main-autolysis\\player\\components\\interaction_raycast.gd",
+    "存在": true
+  },
+  {
+    "文档目标": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn:348",
+    "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+    "存在": true
+  },
+  {
+    "文档目标": "D:/autolysis/main-autolysis/player/components/autolysis_focus_ray_query.gd:5",
+    "实际路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_focus_ray_query.gd",
+    "存在": true
+  },
+  {
+    "文档目标": "D:/cogito/addons/cogito/Scripts/interaction_raycast.gd:46",
+    "实际路径": "D:\\cogito\\addons\\cogito\\Scripts\\interaction_raycast.gd",
+    "存在": true
+  },
+  {
+    "文档目标": "D:/cogito/addons/cogito/Components/interaction_raycast.tscn:34",
+    "实际路径": "D:\\cogito\\addons\\cogito\\Components\\interaction_raycast.tscn",
+    "存在": true
+  },
+  {
+    "文档目标": "站位红回归修正/telephone-take-position-red.json",
+    "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话聚焦交互实施证据\\20261004\\移除站位取筒门禁\\站位红回归修正\\telephone-take-position-red.json",
+    "存在": true
+  },
+  {
+    "文档目标": "站位红回归修正/internal/电话设备报告.json",
+    "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话聚焦交互实施证据\\20261004\\移除站位取筒门禁\\站位红回归修正\\internal\\电话设备报告.json",
+    "存在": true
+  },
+  {
+    "文档目标": "站位红回归修正/telephone_device_test.red.gd",
+    "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话聚焦交互实施证据\\20261004\\移除站位取筒门禁\\站位红回归修正\\telephone_device_test.red.gd",
+    "存在": true
+  },
+  {
+    "文档目标": "取下与依赖回归/telephone-device.json",
+    "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话聚焦交互实施证据\\20261004\\移除站位取筒门禁\\取下与依赖回归\\telephone-device.json",
+    "存在": true
+  },
+  {
+    "文档目标": "取下与依赖回归/telephone-dependencies.json",
+    "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话聚焦交互实施证据\\20261004\\移除站位取筒门禁\\取下与依赖回归\\telephone-dependencies.json",
+    "存在": true
+  },
+  {
+    "文档目标": "受影响流程回归/检查汇总.json",
+    "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话聚焦交互实施证据\\20261004\\移除站位取筒门禁\\受影响流程回归\\检查汇总.json",
+    "存在": true
+  },
+  {
+    "文档目标": "解析与移动回归/检查汇总.json",
+    "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话聚焦交互实施证据\\20261004\\移除站位取筒门禁\\解析与移动回归\\检查汇总.json",
+    "存在": true
+  },
+  {
+    "文档目标": "解析与移动回归/telephone-movement/电话移动轨迹.json",
+    "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话聚焦交互实施证据\\20261004\\移除站位取筒门禁\\解析与移动回归\\telephone-movement\\电话移动轨迹.json",
+    "存在": true
+  },
+  {
+    "文档目标": "移动专项维护记录.md",
+    "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话聚焦交互实施证据\\20261004\\移除站位取筒门禁\\移动专项维护记录.md",
+    "存在": true
+  },
+  {
+    "文档目标": "最终自动验收汇总.json",
+    "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话聚焦交互实施证据\\20261004\\移除站位取筒门禁\\最终自动验收汇总.json",
+    "存在": true
+  },
+  {
+    "文档目标": "最终来源与验收核查.ps1",
+    "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话聚焦交互实施证据\\20261004\\移除站位取筒门禁\\最终来源与验收核查.ps1",
+    "存在": true
+  },
+  {
+    "文档目标": "最终核查汇总.json",
+    "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话聚焦交互实施证据\\20261004\\移除站位取筒门禁\\最终核查汇总.json",
+    "存在": true
+  },
+  {
+    "文档目标": "修改后来源散列.json",
+    "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话聚焦交互实施证据\\20261004\\移除站位取筒门禁\\修改后来源散列.json",
+    "存在": true
+  },
+  {
+    "文档目标": "生产最小补丁/只读复核记录.md",
+    "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话聚焦交互实施证据\\20261004\\移除站位取筒门禁\\生产最小补丁\\只读复核记录.md",
+    "存在": true
+  }
+]

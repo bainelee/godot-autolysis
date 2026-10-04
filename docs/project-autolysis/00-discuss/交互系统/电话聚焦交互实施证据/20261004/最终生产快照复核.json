@@ -1,0 +1,54 @@
+[
+  {
+    "路径": "D:\\autolysis\\project.godot",
+    "快照匹配": true
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.gd",
+    "快照匹配": true
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.tscn",
+    "快照匹配": true
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_interaction_controller.gd",
+    "快照匹配": true
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+    "快照匹配": true
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_held_item_presenter.gd",
+    "快照匹配": true
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_focus_ray_query.gd",
+    "快照匹配": true
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\components\\interactions\\autolysis_focus_target.gd",
+    "快照匹配": true
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+    "快照匹配": true
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+    "快照匹配": true
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\visuals\\telephone_handset_visual.tscn",
+    "快照匹配": true
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\ui\\autolysis_handset_pose_debug.gd",
+    "快照匹配": true
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\ui\\autolysis_handset_pose_debug.tscn",
+    "快照匹配": true
+  }
+]

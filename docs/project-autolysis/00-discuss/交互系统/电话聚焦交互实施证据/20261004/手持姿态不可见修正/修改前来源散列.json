@@ -1,0 +1,46 @@
+[
+  {
+    "路径": "D:\\autolysis\\project.godot",
+    "散列": "F96A132D3B959C525CED166AA2E29364F833AAA68523A4BBFE68705D844D6C43"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.gd",
+    "散列": "4FFF368DC5B166499A5DDE1728FFB1F41D8D1E7C85B0AB82D6B860183DA7FC53"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.tscn",
+    "散列": "1B8D2CF8BFAFB8A302A10D6A214AB94255131E81CE77AE5AA37F4CE4820BFBEE"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_held_item_presenter.gd",
+    "散列": "DFE11039E41797A2B3852F8059A9965DC6701233782300B1A4F79A708A3CB664"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_focus_controller.gd",
+    "散列": "9502411F8099C37B4F1390B96D5A954853C6E36776687424D634C78EB14EB47C"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+    "散列": "1D46919AAA65969C01981E99F380B122E46ECD982BD81D369F91C4C21DD1A681"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+    "散列": "338D7C6EA710ED2FF60719EF2366F6390A5175F1802DDBFFB65A96979D171663"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+    "散列": "A10F6F060A1BF4FE737C5B9A6FA99590A5F7E852093E6C51C3FA5205BE85D37E"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\visuals\\telephone_handset_visual.tscn",
+    "散列": "1A17500A3074EAF1E11757E80DD050CA24ABDCE74EA6BE45BD4D8764929CCFB1"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\ui\\autolysis_handset_pose_debug.gd",
+    "散列": "4E787CE16794A83F22F6CF443284CB78A76D37B1F74C88B3967CED025483CF55"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\run_telephone_verification.ps1",
+    "散列": "88C2AACD15F05A8CA63E86D2CDBBC17BD9216F560A0D3FFD52615348FE80A1CE"
+  }
+]

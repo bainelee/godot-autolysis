@@ -1,0 +1,189 @@
+{
+  "时间": "2026-10-04T23:14:29.4218991+08:00",
+  "来源": [
+    {
+      "相对路径": "project.godot",
+      "本次新增": false,
+      "本次修改": false,
+      "修改前快照匹配": true,
+      "修改后快照匹配": true,
+      "当前来源匹配": true
+    },
+    {
+      "相对路径": "main-autolysis\\player\\autolysis_player.gd",
+      "本次新增": false,
+      "本次修改": false,
+      "修改前快照匹配": true,
+      "修改后快照匹配": true,
+      "当前来源匹配": true
+    },
+    {
+      "相对路径": "main-autolysis\\player\\autolysis_player.tscn",
+      "本次新增": false,
+      "本次修改": false,
+      "修改前快照匹配": true,
+      "修改后快照匹配": true,
+      "当前来源匹配": true
+    },
+    {
+      "相对路径": "main-autolysis\\player\\components\\autolysis_held_item_presenter.gd",
+      "本次新增": false,
+      "本次修改": true,
+      "修改前快照匹配": true,
+      "修改后快照匹配": true,
+      "当前来源匹配": true
+    },
+    {
+      "相对路径": "main-autolysis\\player\\components\\autolysis_focus_controller.gd",
+      "本次新增": false,
+      "本次修改": false,
+      "修改前快照匹配": true,
+      "修改后快照匹配": true,
+      "当前来源匹配": true
+    },
+    {
+      "相对路径": "main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+      "本次新增": false,
+      "本次修改": false,
+      "修改前快照匹配": true,
+      "修改后快照匹配": true,
+      "当前来源匹配": true
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+      "本次新增": false,
+      "本次修改": false,
+      "修改前快照匹配": true,
+      "修改后快照匹配": true,
+      "当前来源匹配": true
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+      "本次新增": false,
+      "本次修改": false,
+      "修改前快照匹配": true,
+      "修改后快照匹配": true,
+      "当前来源匹配": true
+    },
+    {
+      "相对路径": "main-autolysis\\scenes\\prefabs\\prefab_machines\\visuals\\telephone_handset_visual.tscn",
+      "本次新增": false,
+      "本次修改": false,
+      "修改前快照匹配": true,
+      "修改后快照匹配": true,
+      "当前来源匹配": true
+    },
+    {
+      "相对路径": "main-autolysis\\ui\\autolysis_handset_pose_debug.gd",
+      "本次新增": false,
+      "本次修改": false,
+      "修改前快照匹配": true,
+      "修改后快照匹配": true,
+      "当前来源匹配": true
+    },
+    {
+      "相对路径": "main-autolysis\\player\\tests\\run_telephone_verification.ps1",
+      "本次新增": false,
+      "本次修改": true,
+      "修改前快照匹配": true,
+      "修改后快照匹配": true,
+      "当前来源匹配": true
+    },
+    {
+      "相对路径": "main-autolysis\\player\\tests\\telephone_handset_view_test.gd",
+      "本次新增": true,
+      "本次修改": true,
+      "修改前快照匹配": null,
+      "修改后快照匹配": true,
+      "当前来源匹配": true
+    },
+    {
+      "相对路径": "main-autolysis\\player\\tests\\telephone_handset_view_test.gd.uid",
+      "本次新增": true,
+      "本次修改": true,
+      "修改前快照匹配": null,
+      "修改后快照匹配": true,
+      "当前来源匹配": true
+    }
+  ],
+  "检查项数": 11,
+  "通过断言数": 1237.0,
+  "全部检查通过": true,
+  "正式原因探针残留": [],
+  "本次快照空白输出": [],
+  "工作区空白检查通过": true,
+  "实施记录本地引用": [
+    {
+      "引用": "D:/autolysis/AGENTS.md",
+      "存在": true
+    },
+    {
+      "引用": "../../../电话聚焦交互与听筒手持实现计划.md",
+      "存在": true
+    },
+    {
+      "引用": "C:/Users/baine/.codex/skills/diagnosing-bugs/SKILL.md",
+      "存在": true
+    },
+    {
+      "引用": "D:/cogito/addons/cogito/Components/PlayerInteractionComponent.gd:223",
+      "存在": true
+    },
+    {
+      "引用": "D:/cogito/addons/cogito/Scripts/wieldables_sway.gd:9",
+      "存在": true
+    },
+    {
+      "引用": "视野首轮记录.md",
+      "存在": true
+    },
+    {
+      "引用": "投影因果变体记录.md",
+      "存在": true
+    },
+    {
+      "引用": "D:/autolysis/main-autolysis/player/components/autolysis_held_item_presenter.gd:17",
+      "存在": true
+    },
+    {
+      "引用": "D:/autolysis/main-autolysis/player/components/autolysis_held_item_presenter.gd:31",
+      "存在": true
+    },
+    {
+      "引用": "D:/autolysis/main-autolysis/player/components/autolysis_held_item_presenter.gd:151",
+      "存在": true
+    },
+    {
+      "引用": "D:/autolysis/main-autolysis/player/components/autolysis_held_item_presenter.gd:189",
+      "存在": true
+    },
+    {
+      "引用": "当前来源核查.json",
+      "存在": true
+    },
+    {
+      "引用": "最终有效检查汇总.json",
+      "存在": true
+    },
+    {
+      "引用": "最终无图形检查/检查汇总.json",
+      "存在": true
+    },
+    {
+      "引用": "清理后视野复验/检查汇总.json",
+      "存在": true
+    },
+    {
+      "引用": "修改前来源散列.json",
+      "存在": true
+    },
+    {
+      "引用": "修改后来源散列.json",
+      "存在": true
+    },
+    {
+      "引用": "本次源文件差异.diff",
+      "存在": true
+    }
+  ]
+}

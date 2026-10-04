@@ -1,0 +1,41 @@
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_exclusive_handset' in base 'previously freed'.
+   at: AutolysisPlayer._sync_handset_pose_panel (res://main-autolysis/player/autolysis_player.gd:257)
+   GDScript backtrace (most recent call first):
+       [0] _sync_handset_pose_panel (res://main-autolysis/player/autolysis_player.gd:257)
+       [1] _process (res://main-autolysis/player/autolysis_player.gd:290)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_exclusive_handset' in base 'previously freed'.
+   at: AutolysisPlayer._sync_handset_pose_panel (res://main-autolysis/player/autolysis_player.gd:257)
+   GDScript backtrace (most recent call first):
+       [0] _sync_handset_pose_panel (res://main-autolysis/player/autolysis_player.gd:257)
+       [1] _process (res://main-autolysis/player/autolysis_player.gd:290)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_exclusive_handset' in base 'previously freed'.
+   at: AutolysisPlayer._sync_handset_pose_panel (res://main-autolysis/player/autolysis_player.gd:257)
+   GDScript backtrace (most recent call first):
+       [0] _sync_handset_pose_panel (res://main-autolysis/player/autolysis_player.gd:257)
+       [1] _process (res://main-autolysis/player/autolysis_player.gd:290)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_exclusive_handset' in base 'previously freed'.
+   at: AutolysisPlayer._sync_handset_pose_panel (res://main-autolysis/player/autolysis_player.gd:257)
+   GDScript backtrace (most recent call first):
+       [0] _sync_handset_pose_panel (res://main-autolysis/player/autolysis_player.gd:257)
+       [1] _process (res://main-autolysis/player/autolysis_player.gd:290)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_exclusive_handset' in base 'previously freed'.
+   at: AutolysisPlayer._sync_handset_pose_panel (res://main-autolysis/player/autolysis_player.gd:257)
+   GDScript backtrace (most recent call first):
+       [0] _sync_handset_pose_panel (res://main-autolysis/player/autolysis_player.gd:257)
+       [1] _process (res://main-autolysis/player/autolysis_player.gd:290)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_exclusive_handset' in base 'previously freed'.
+   at: AutolysisPlayer._sync_handset_pose_panel (res://main-autolysis/player/autolysis_player.gd:257)
+   GDScript backtrace (most recent call first):
+       [0] _sync_handset_pose_panel (res://main-autolysis/player/autolysis_player.gd:257)
+       [1] _process (res://main-autolysis/player/autolysis_player.gd:290)
+SCRIPT ERROR: Invalid call. Nonexistent function 'has_exclusive_handset' in base 'previously freed'.
+   at: AutolysisPlayer._sync_handset_pose_panel (res://main-autolysis/player/autolysis_player.gd:257)
+   GDScript backtrace (most recent call first):
+       [0] _sync_handset_pose_panel (res://main-autolysis/player/autolysis_player.gd:257)
+       [1] abort_session (res://main-autolysis/player/components/autolysis_focus_controller.gd:193)
+       [2] _on_dependency_exiting (res://main-autolysis/player/components/autolysis_focus_controller.gd:197)
+SCRIPT ERROR: Invalid access to property or key 'is_step' on a base object of type 'CharacterBody3D (AutolysisPlayer)'.
+   at: _test_main_scene_movement (res://main-autolysis/player/tests/telephone_device_test.gd:445)
+   GDScript backtrace (most recent call first):
+       [0] _test_main_scene_movement (res://main-autolysis/player/tests/telephone_device_test.gd:445)
+       [1] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)

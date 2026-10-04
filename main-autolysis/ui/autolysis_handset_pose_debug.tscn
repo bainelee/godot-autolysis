@@ -1,0 +1,182 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://main-autolysis/ui/autolysis_handset_pose_debug.gd" id="1_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_background"]
+bg_color = Color(0.035, 0.045, 0.055, 0.94)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5, 0.58, 0.63, 0.65)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_left = 6
+corner_radius_bottom_right = 6
+
+[node name="HandsetPoseDebug" type="CanvasLayer"]
+layer = 8
+script = ExtResource("1_script")
+
+[node name="Layout" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Layout"]
+visible = false
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -408.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 520.0
+grow_horizontal = 0
+mouse_force_pass_scroll_events = false
+theme_override_styles/panel = SubResource("StyleBoxFlat_background")
+
+[node name="Margin" type="MarginContainer" parent="Layout/Panel"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 12
+
+[node name="Rows" type="VBoxContainer" parent="Layout/Panel/Margin"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Layout/Panel/Margin/Rows"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 20
+text = "听筒姿态临时调节"
+
+[node name="Shortcut" type="Label" parent="Layout/Panel/Margin/Rows"]
+layout_mode = 2
+mouse_filter = 2
+text = "普通模式：按姿态调节键开启或关闭鼠标编辑。聚焦期间可直接编辑。"
+autowrap_mode = 2
+
+[node name="Axes" type="GridContainer" parent="Layout/Panel/Margin/Rows"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 6
+columns = 2
+
+[node name="Axis0" type="Label" parent="Layout/Panel/Margin/Rows/Axes"]
+layout_mode = 2
+mouse_filter = 2
+text = "位置横轴（局部）"
+
+[node name="Value0" type="SpinBox" parent="Layout/Panel/Margin/Rows/Axes"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_force_pass_scroll_events = false
+step = 0.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Axis1" type="Label" parent="Layout/Panel/Margin/Rows/Axes"]
+layout_mode = 2
+mouse_filter = 2
+text = "位置纵轴（局部）"
+
+[node name="Value1" type="SpinBox" parent="Layout/Panel/Margin/Rows/Axes"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_force_pass_scroll_events = false
+step = 0.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Axis2" type="Label" parent="Layout/Panel/Margin/Rows/Axes"]
+layout_mode = 2
+mouse_filter = 2
+text = "位置深度轴（局部）"
+
+[node name="Value2" type="SpinBox" parent="Layout/Panel/Margin/Rows/Axes"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_force_pass_scroll_events = false
+step = 0.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Axis3" type="Label" parent="Layout/Panel/Margin/Rows/Axes"]
+layout_mode = 2
+mouse_filter = 2
+text = "旋转横轴（度）"
+
+[node name="Value3" type="SpinBox" parent="Layout/Panel/Margin/Rows/Axes"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_force_pass_scroll_events = false
+step = 0.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Axis4" type="Label" parent="Layout/Panel/Margin/Rows/Axes"]
+layout_mode = 2
+mouse_filter = 2
+text = "旋转纵轴（度）"
+
+[node name="Value4" type="SpinBox" parent="Layout/Panel/Margin/Rows/Axes"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_force_pass_scroll_events = false
+step = 0.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Axis5" type="Label" parent="Layout/Panel/Margin/Rows/Axes"]
+layout_mode = 2
+mouse_filter = 2
+text = "旋转深度轴（度）"
+
+[node name="Value5" type="SpinBox" parent="Layout/Panel/Margin/Rows/Axes"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_force_pass_scroll_events = false
+step = 0.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Buttons" type="HBoxContainer" parent="Layout/Panel/Margin/Rows"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Copy" type="Button" parent="Layout/Panel/Margin/Rows/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_force_pass_scroll_events = false
+text = "复制当前数值"
+
+[node name="Reset" type="Button" parent="Layout/Panel/Margin/Rows/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_force_pass_scroll_events = false
+text = "恢复本次初始值"
+
+[node name="Status" type="Label" parent="Layout/Panel/Margin/Rows"]
+layout_mode = 2
+mouse_filter = 2
+text = "位置与角度起值仅供测试，尚待用户确定。"
+autowrap_mode = 2
+
+[node name="Values" type="TextEdit" parent="Layout/Panel/Margin/Rows"]
+custom_minimum_size = Vector2(0, 136)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_force_pass_scroll_events = false
+editable = false
+wrap_mode = 1
+context_menu_enabled = false

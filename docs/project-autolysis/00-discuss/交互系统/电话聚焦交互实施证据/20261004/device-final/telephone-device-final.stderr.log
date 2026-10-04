@@ -1,0 +1,14 @@
+ERROR: Object is locked and can't be freed.
+   at: callp (core/object/object.cpp:890)
+   GDScript backtrace (most recent call first):
+       [0] _on_sync (res://main-autolysis/player/tests/telephone_device_test.gd:601)
+       [1] _emit_sync (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:521)
+       [2] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:216)
+       [3] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:184)
+SCRIPT ERROR: Attempted to free a locked object (calling or emitting).
+   at: _on_sync (res://main-autolysis/player/tests/telephone_device_test.gd:601)
+   GDScript backtrace (most recent call first):
+       [0] _on_sync (res://main-autolysis/player/tests/telephone_device_test.gd:601)
+       [1] _emit_sync (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:521)
+       [2] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:216)
+       [3] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:184)

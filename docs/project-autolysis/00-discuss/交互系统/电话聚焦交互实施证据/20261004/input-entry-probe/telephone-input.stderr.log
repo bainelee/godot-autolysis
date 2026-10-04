@@ -1,0 +1,16 @@
+WARNING: This control can't grab focus. Use set_focus_mode() and set_focus_behavior_recursive() to allow a control to get focus.
+   at: grab_focus (scene/gui/control.cpp:2365)
+   GDScript backtrace (most recent call first):
+       [0] run_checks (res://main-autolysis/player/tests/telephone_input_test.gd:53)
+       [1] _click (res://main-autolysis/player/tests/telephone_input_test.gd:182)
+       [2] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+WARNING: This control can't grab focus. Use set_focus_mode() and set_focus_behavior_recursive() to allow a control to get focus.
+   at: grab_focus (scene/gui/control.cpp:2365)
+   GDScript backtrace (most recent call first):
+       [0] run_checks (res://main-autolysis/player/tests/telephone_input_test.gd:92)
+       [1] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+WARNING: This control can't grab focus. Use set_focus_mode() and set_focus_behavior_recursive() to allow a control to get focus.
+   at: grab_focus (scene/gui/control.cpp:2365)
+   GDScript backtrace (most recent call first):
+       [0] run_checks (res://main-autolysis/player/tests/telephone_input_test.gd:120)
+       [1] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)

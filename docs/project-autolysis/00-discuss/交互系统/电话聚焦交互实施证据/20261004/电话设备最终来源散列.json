@@ -1,0 +1,27 @@
+[
+  {
+    "来源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+    "算法": "SHA256（安全散列算法二百五十六位）",
+    "散列": "A10F6F060A1BF4FE737C5B9A6FA99590A5F7E852093E6C51C3FA5205BE85D37E"
+  },
+  {
+    "来源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+    "算法": "SHA256（安全散列算法二百五十六位）",
+    "散列": "2BBB8D4DFB4FE05B1546A4BA3D812A86C6A8A6C23DBE8D8E3B7FAE929A083F0A"
+  },
+  {
+    "来源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\visuals\\telephone_handset_visual.tscn",
+    "算法": "SHA256（安全散列算法二百五十六位）",
+    "散列": "1A17500A3074EAF1E11757E80DD050CA24ABDCE74EA6BE45BD4D8764929CCFB1"
+  },
+  {
+    "来源路径": "D:\\autolysis\\main-autolysis\\components\\interactions\\autolysis_focus_target.gd",
+    "算法": "SHA256（安全散列算法二百五十六位）",
+    "散列": "A3C2C75F0F81434FB99336B9E1EE71A6EBB54E9DB1C4B4D4B24EED7C3445B032"
+  },
+  {
+    "来源路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_focus_ray_query.gd",
+    "算法": "SHA256（安全散列算法二百五十六位）",
+    "散列": "9CD1DAEC39D2D4F2CB651592ADA1ECC713FD4BE19289A53EDBCD0D049751E13F"
+  }
+]

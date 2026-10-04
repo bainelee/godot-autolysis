@@ -1,0 +1,238 @@
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\347\247\273\351\231\244\347\253\231\344\275\215\345\217\226\347\255\222\351\227\250\347\246\201\\\344\277\256\346\224\271\345\211\215\\main-autolysis\\player\\tests\\telephone_movement_test.gd" "b/D:\\autolysis\\main-autolysis\\player\\tests\\telephone_movement_test.gd"
+index f187c91..6c9f169 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\347\247\273\351\231\244\347\253\231\344\275\215\345\217\226\347\255\222\351\227\250\347\246\201\\\344\277\256\346\224\271\345\211\215\\main-autolysis\\player\\tests\\telephone_movement_test.gd"
++++ "b/D:\\autolysis\\main-autolysis\\player\\tests\\telephone_movement_test.gd"
+@@ -1,12 +1,16 @@
+ extends "res://main-autolysis/player/tests/player_smoke_test.gd"
+ ## 正式主场景真实玩家物理处理的走、跑、蹲与斜向轨迹；无原生输入。
+ 
++const GEOMETRY_TOLERANCE: float = 0.005
++const PROBE_CLEARANCE: float = 0.05
++
+ var telephone: AutolysisTelephone
+ var records: Array[Dictionary] = []
+ var trajectories: Array[Dictionary] = []
+ var evidence_directory: String = preload("res://main-autolysis/systems/item-system/tests/test_evidence.gd").directory("res://docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/movement")
+ var actor: AutolysisPlayer
+ var origin: Vector3 = Vector3(-9.35, 0.8005, 11)
++var asset_measurements: Dictionary = {}
+ 
+ 
+ func check(condition: bool, description: String) -> void:
+@@ -22,7 +26,8 @@ func run_checks() -> void:
+ 	telephone = world.get_node("interaction_prefabs/machines/MachineTelephone0/StaticBody3D") as AutolysisTelephone
+ 	actor.focus_controller.configure(actor, actor.camera, actor.held_item_presenter, _headless_entry_allowed)
+ 	await reset_player(origin)
+-	check(actor.focus_controller.try_enter(telephone.focus_target), "主场景合法口袋位置可进入原电话聚焦")
++	_capture_asset_measurements()
++	check(actor.focus_controller.try_enter(telephone.focus_target), "主场景测试起点可进入原电话聚焦")
+ 	await frames(20)
+ 	check(telephone.request_handset_transfer(actor), "主场景合法身体可请求取筒")
+ 	await _settle_transfer()
+@@ -36,6 +41,7 @@ func run_checks() -> void:
+ 		PackedStringArray(["right", "forward"]), PackedStringArray(["right", "back"]),
+ 		PackedStringArray(["left", "forward"]), PackedStringArray(["left", "back"]),
+ 	]
++	var matrix_touched_limit: bool = false
+ 	for mode: String in ["行走", "奔跑", "蹲行"]:
+ 		for actions: PackedStringArray in directions:
+ 			await reset_player(origin)
+@@ -48,38 +54,75 @@ func run_checks() -> void:
+ 				Input.action_press(action)
+ 			var trace: Array[Dictionary] = []
+ 			var contacts: Dictionary = {}
+-			var stayed_inside: bool = true
++			var did_not_penetrate: bool = true
++			var reached_other_side: bool = false
++			var passed_limit_end: bool = false
+ 			for sample_index: int in range(120):
+ 				await frames(1)
+ 				var local: Vector3 = telephone.to_local(actor.global_position)
+-				# 仅用于当前正式资产测量；不参与生产取放或普通动作完成。
+-				stayed_inside = stayed_inside and local.x > -0.43 and local.x < 1.85 and local.z > 0 and local.z < 2
++				# 仅测量实际限位实体；当前资产有端部缺口，不构造固定允许区域。
++				var footprint: AABB = _actor_bounds_in_limit()
++				var half_size: Vector3 = (telephone.move_limit_shape.shape as BoxShape3D).size * 0.5
++				var deep_overlap: bool = _actor_penetrates_limit()
++				did_not_penetrate = did_not_penetrate and not deep_overlap
++				reached_other_side = reached_other_side or footprint.end.x < -half_size.x
++				passed_limit_end = passed_limit_end or footprint.end.z < -half_size.z or footprint.position.z > half_size.z
+ 				for collision_index: int in actor.get_slide_collision_count():
+ 					var collider: Node = actor.get_slide_collision(collision_index).get_collider() as Node
+ 					if is_instance_valid(collider):
+ 						contacts[str(collider.get_path())] = true
++						matrix_touched_limit = matrix_touched_limit or collider == telephone.move_limit_body
+ 				if sample_index % 5 == 0:
+-					trace.append({"物理帧": Engine.get_physics_frames(), "全局位置": [actor.global_position.x, actor.global_position.y, actor.global_position.z], "电话局部位置": [local.x, local.y, local.z], "速度": [actor.velocity.x, actor.velocity.y, actor.velocity.z], "蹲伏": actor.is_crouching})
++					trace.append({"物理帧": Engine.get_physics_frames(), "全局位置": [actor.global_position.x, actor.global_position.y, actor.global_position.z], "电话局部位置": [local.x, local.y, local.z], "限位局部身体包围盒": str(footprint), "限位实体深重叠": deep_overlap, "速度": [actor.velocity.x, actor.velocity.y, actor.velocity.z], "蹲伏": actor.is_crouching})
+ 			for action: String in actions:
+ 				Input.action_release(action)
+ 			Input.action_release("sprint")
+ 			var distance: float = Vector2(actor.global_position.x - start.x, actor.global_position.z - start.z).length()
+-			trajectories.append({"模式": mode, "引擎内部动作": actions, "位移": distance, "保持内部": stayed_inside, "碰撞来源": contacts.keys(), "采样": trace})
+-			check(stayed_inside, "%s模式%s实际移动轨迹未越过电话活动边界" % [mode, "、".join(actions)])
+-			check(distance > 0.05, "%s模式%s在边界内部存在实际移动" % [mode, "、".join(actions)])
++			trajectories.append({"模式": mode, "引擎内部动作": actions, "位移": distance, "未深穿透实际限位": did_not_penetrate, "到达限位另一侧": reached_other_side, "足迹曾完全移到端部外": passed_limit_end, "端部绕行": reached_other_side and passed_limit_end, "碰撞来源": contacts.keys(), "采样": trace})
++			check(did_not_penetrate, "%s模式%s实际移动未深穿透当前限位实体" % [mode, "、".join(actions)])
++			check(distance > 0.05, "%s模式%s存在实际移动" % [mode, "、".join(actions)])
+ 			check(actor.inventory_controller.has_exclusive_handset() and not telephone.move_limit_shape.disabled, "%s模式运动后持物和限位仍属于同一会话" % mode)
++	check(matrix_touched_limit, "二十四条轨迹至少一次按真实物理身份接触当前限位")
++	asset_measurements["二十四条轨迹接触当前限位"] = matrix_touched_limit
+ 	# 验证沿临时墙贴边走动，台阶逻辑不能将薄墙当作可跨台阶。
+-	# 主场景出生根本身旋转80度；定向诊断只将本次实例转为世界轴，避免把按键名当作世界方向。
+-	actor.rotation = Vector3.ZERO
++	# 只定向本次玩家实例：右移动作朝当前盒面，前移动作沿盒深轴。
++	var limit_basis: Basis = telephone.move_limit_shape.global_basis.orthonormalized()
++	actor.global_basis = Basis(-limit_basis.x, limit_basis.y, -limit_basis.z)
+ 	await reset_player(origin)
++	var probe_start: Vector3 = _limit_probe_start()
++	await reset_player(probe_start)
+ 	Input.action_press("right")
+-	await frames(50)
++	var edge_contacts: Dictionary = {}
++	var edge_touched_limit: bool = false
++	for sample_index: int in range(60):
++		await frames(1)
++		for collision_index: int in actor.get_slide_collision_count():
++			var collider: Node = actor.get_slide_collision(collision_index).get_collider() as Node
++			if is_instance_valid(collider):
++				edge_contacts[str(collider.get_path())] = true
++				edge_touched_limit = edge_touched_limit or collider == telephone.move_limit_body
++		if edge_touched_limit:
++			break
+ 	Input.action_press("forward")
+ 	var before_edge: Vector3 = actor.global_position
+-	await frames(50)
++	var before_edge_local: Vector3 = telephone.move_limit_shape.to_local(before_edge)
++	var edge_footprint: AABB = _actor_bounds_in_limit()
++	var edge_distance: float = ((telephone.move_limit_shape.shape as BoxShape3D).size.z * 0.5 - edge_footprint.end.z) * 0.5
++	var edge_did_not_penetrate: bool = true
++	for sample_index: int in range(60):
++		await frames(1)
++		edge_did_not_penetrate = edge_did_not_penetrate and not _actor_penetrates_limit()
++		for collision_index: int in actor.get_slide_collision_count():
++			var collider: Node = actor.get_slide_collision(collision_index).get_collider() as Node
++			if is_instance_valid(collider):
++				edge_contacts[str(collider.get_path())] = true
++		if telephone.move_limit_shape.to_local(actor.global_position).z - before_edge_local.z >= edge_distance:
++			break
+ 	Input.action_release("right")
+ 	Input.action_release("forward")
+-	check(actor.global_position.z < before_edge.z - 0.05 and telephone.to_local(actor.global_position).x > -0.43, "贴临时墙沿边移动仍可进行且台阶路径没有跨越活动墙")
++	var edge_end_local: Vector3 = telephone.move_limit_shape.to_local(actor.global_position)
++	check(edge_touched_limit and edge_distance > 0.05 and edge_end_local.z > before_edge_local.z + 0.05 and edge_end_local.x > 0.0 and edge_did_not_penetrate, "贴当前限位实体沿边移动且台阶路径没有跨墙")
++	asset_measurements["贴墙"] = {"起点": str(probe_start), "沿边目标距离": edge_distance, "实际沿边距离": edge_end_local.z - before_edge_local.z, "真实接触限位": edge_touched_limit, "未深穿透": edge_did_not_penetrate, "碰撞来源": edge_contacts.keys()}
+ 	await reset_player(origin)
+ 	var held_session: int = telephone.get_holder_session_id()
+ 	paused = true
+@@ -95,19 +138,35 @@ func run_checks() -> void:
+ 	check(telephone.move_limit_shape.disabled and not actor.inventory_controller.has_exclusive_handset(), "归还同步完成后只停用临时限位")
+ 	actor.focus_controller.request_exit()
+ 	await frames(20)
+-	await reset_player(origin)
++	await reset_player(probe_start)
+ 	var east_probe: KinematicCollision3D = KinematicCollision3D.new()
+-	var east_blocked: bool = actor.test_move(actor.global_transform, Vector3(0.8, 0, 0), east_probe)
++	var passage_footprint: AABB = _actor_bounds_in_limit()
++	var passage_half_size: Vector3 = (telephone.move_limit_shape.shape as BoxShape3D).size * 0.5
++	var passage_start_local: Vector3 = telephone.move_limit_shape.to_local(actor.global_position)
++	var passage_target_x: float = -passage_half_size.x - (passage_footprint.end.x - passage_start_local.x) - PROBE_CLEARANCE
++	var passage_motion: Vector3 = telephone.move_limit_shape.global_basis * Vector3(passage_target_x - passage_start_local.x, 0, 0)
++	var east_blocked: bool = actor.test_move(actor.global_transform, passage_motion, east_probe)
+ 	check(not east_blocked or east_probe.get_collider() != telephone.move_limit_body, "归还后原临时墙物理身份不再阻挡运动")
++	await reset_player(origin)
++	var fixed_wall: StaticBody3D = world.get_node("Environment/wall/wall_room0_25") as StaticBody3D
+ 	var south_probe: KinematicCollision3D = KinematicCollision3D.new()
+-	var south_blocked: bool = actor.test_move(actor.global_transform, Vector3(0, 0, -1.5), south_probe)
+-	check(south_blocked and south_probe.get_collider() != telephone.move_limit_body, "归还后固定房间墙仍存在并以实际身份区分")
++	var south_blocked: bool = actor.test_move(actor.global_transform, Vector3(0, 0, fixed_wall.global_position.z - actor.global_position.z), south_probe)
++	check(south_blocked and south_probe.get_collider() == fixed_wall, "归还后当前固定房间墙仍以真实物理身份阻挡")
+ 	east_probe = null
+ 	south_probe = null
++	await reset_player(probe_start)
+ 	Input.action_press("right")
+-	await frames(45)
++	var passage_wait_limit: int = ceili(passage_motion.length() / actor.WALKING_SPEED * Engine.physics_ticks_per_second) + 60
++	var passage_frames: int = 0
++	for sample_index: int in range(passage_wait_limit):
++		await frames(1)
++		passage_frames += 1
++		if _actor_bounds_in_limit().end.x < -passage_half_size.x - GEOMETRY_TOLERANCE:
++			break
+ 	Input.action_release("right")
+-	check(actor.global_position.x > -8.8, "归还后真实玩家可以通过原临时限位位置")
++	var passage_end: AABB = _actor_bounds_in_limit()
++	check(passage_end.end.x < -passage_half_size.x - GEOMETRY_TOLERANCE, "归还后真实玩家完整身体足迹穿过当前限位盒的另一侧")
++	asset_measurements["归还穿越"] = {"起点": str(probe_start), "测量运动向量": str(passage_motion), "目标根横轴": passage_target_x, "实际限位局部身体包围盒": str(passage_end), "实际物理帧": passage_frames, "等待上限": passage_wait_limit}
+ 	actor.set_physics_process(false)
+ 	var audio_playbacks: Array[WeakRef] = _stop_audio_and_capture_playbacks(world)
+ 	world.queue_free()
+@@ -120,11 +179,67 @@ func run_checks() -> void:
+ 	check(not _audio_playbacks_alive(audio_playbacks), "场景退出前实际音频播放实例已释放")
+ 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(evidence_directory))
+ 	var file: FileAccess = FileAccess.open(evidence_directory.path_join("电话移动轨迹.json"), FileAccess.WRITE)
+-	file.store_string(JSON.stringify({"断言": records, "失败": failures, "运动轨迹": trajectories, "音频清理": {"播放实例数": audio_playbacks.size(), "耗时毫秒": Time.get_ticks_msec() - audio_cleanup_started, "实例均已释放": not _audio_playbacks_alive(audio_playbacks)}, "输入方式": "无图形引擎动作状态；正式玩家物理处理；无系统输入"}, "\t"))
++	file.store_string(JSON.stringify({"断言": records, "失败": failures, "运动轨迹": trajectories, "资产测量": asset_measurements, "测量用途": "当前限位盒、玩家真实足迹及固定墙的实体阻挡与端部绕行验收；不表示封闭活动区域，不参与生产取放许可", "音频清理": {"播放实例数": audio_playbacks.size(), "耗时毫秒": Time.get_ticks_msec() - audio_cleanup_started, "实例均已释放": not _audio_playbacks_alive(audio_playbacks)}, "输入方式": "无图形引擎动作状态；正式玩家物理处理；无系统输入"}, "\t"))
+ 	file.close()
+ 	quit(1 if failures > 0 else 0)
+ 
+ 
++func _actor_bounds_in_limit() -> AABB:
++	var bounds: AABB
++	var first: bool = true
++	for collision: CollisionShape3D in [actor.standing_collision_shape, actor.crouching_collision_shape]:
++		if collision.disabled:
++			continue
++		var half_size: Vector3 = (collision.shape as BoxShape3D).size * 0.5
++		var relative: Transform3D = telephone.move_limit_shape.global_transform.affine_inverse() * collision.global_transform
++		for x: float in [-half_size.x, half_size.x]:
++			for y: float in [-half_size.y, half_size.y]:
++				for z: float in [-half_size.z, half_size.z]:
++					var point: Vector3 = relative * Vector3(x, y, z)
++					bounds = AABB(point, Vector3.ZERO) if first else bounds.expand(point)
++					first = false
++	return bounds
++
++
++func _actor_penetrates_limit() -> bool:
++	# 缩小独立查询盒只排除接触面容差，不改玩家或限位的共享形状。
++	for collision: CollisionShape3D in [actor.standing_collision_shape, actor.crouching_collision_shape]:
++		if collision.disabled:
++			continue
++		var query_shape: BoxShape3D = BoxShape3D.new()
++		query_shape.size = (collision.shape as BoxShape3D).size - Vector3.ONE * GEOMETRY_TOLERANCE * 2.0
++		var query: PhysicsShapeQueryParameters3D = PhysicsShapeQueryParameters3D.new()
++		query.shape = query_shape
++		query.transform = collision.global_transform
++		query.collision_mask = telephone.move_limit_body.collision_layer
++		for hit: Dictionary in actor.get_world_3d().direct_space_state.intersect_shape(query, 64):
++			if hit.get("collider") == telephone.move_limit_body:
++				return true
++	return false
++
++
++func _limit_probe_start() -> Vector3:
++	var root_local: Vector3 = telephone.move_limit_shape.to_local(actor.global_position)
++	var footprint: AABB = _actor_bounds_in_limit()
++	var local: Vector3 = telephone.move_limit_shape.to_local(origin)
++	local.x = (telephone.move_limit_shape.shape as BoxShape3D).size.x * 0.5 + root_local.x - footprint.position.x + PROBE_CLEARANCE
++	local.z = 0.0
++	return telephone.move_limit_shape.to_global(local)
++
++
++func _capture_asset_measurements() -> void:
++	asset_measurements = {"限位形状路径": str(telephone.move_limit_shape.get_path()), "限位盒尺寸": str((telephone.move_limit_shape.shape as BoxShape3D).size), "限位相对电话变换": str(telephone.global_transform.affine_inverse() * telephone.move_limit_shape.global_transform), "限位全局变换": str(telephone.move_limit_shape.global_transform), "初始玩家实际足迹": str(_actor_bounds_in_limit()), "几何接触容差": GEOMETRY_TOLERANCE, "探针与盒面的初始及终点净距": PROBE_CLEARANCE, "固定墙": []}
++	for path: String in ["Environment/wall/wall_room0_24/CollisionShape3D", "Environment/wall/wall_room0_25/CollisionShape3D", "Environment/wall/wall_room0_8/CollisionShape3D"]:
++		var collision: CollisionShape3D = world.get_node(path) as CollisionShape3D
++		var bounds: AABB
++		var first: bool = true
++		for point: Vector3 in (collision.shape as ConcavePolygonShape3D).get_faces():
++			var world_point: Vector3 = collision.global_transform * point
++			bounds = AABB(world_point, Vector3.ZERO) if first else bounds.expand(world_point)
++			first = false
++		asset_measurements["固定墙"].append({"物理来源": str(collision.get_parent().get_path()), "实际顶点全局包围盒": str(bounds)})
++
++
+ func _stop_audio_and_capture_playbacks(scene: Node) -> Array[WeakRef]:
+ 	var references: Array[WeakRef] = []
+ 	for node: Node in scene.find_children("*", "AudioStreamPlayer3D", true, false):

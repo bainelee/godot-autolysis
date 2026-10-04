@@ -1,0 +1,21 @@
+{
+  "检查": "original-boundary-after-parser",
+  "时间": "2026-10-04T22:06:22.3385398+08:00",
+  "进程编号": 39108,
+  "退出码": 1,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/player/tests/telephone_boundary_probe.gd"
+  ],
+  "通过断言数": 1,
+  "预期错误计数": {},
+  "非预期错误": [
+    "失败：实际玩家可绕过原薄墙南端离开电话区域"
+  ]
+}

@@ -1,0 +1,231 @@
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\347\247\273\351\231\244\347\253\231\344\275\215\345\217\226\347\255\222\351\227\250\347\246\201\\\344\277\256\346\224\271\345\211\215\\main-autolysis\\player\\tests\\telephone_device_test.gd" "b/D:\\autolysis\\main-autolysis\\player\\tests\\telephone_device_test.gd"
+index 469c327..22934a9 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\347\247\273\351\231\244\347\253\231\344\275\215\345\217\226\347\255\222\351\227\250\347\246\201\\\344\277\256\346\224\271\345\211\215\\main-autolysis\\player\\tests\\telephone_device_test.gd"
++++ "b/D:\\autolysis\\main-autolysis\\player\\tests\\telephone_device_test.gd"
+@@ -6,7 +6,9 @@ const PHONE_SCENE: PackedScene = preload("res://main-autolysis/scenes/prefabs/pr
+ const BASELINE_PHONE: PackedScene = preload("res://docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/baseline/main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn")
+ const BASELINE_MAIN: PackedScene = preload("res://docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/baseline/main-autolysis/scenes/01-autolysis-test.tscn")
+ const CAFFEINE: AutolysisItemDefinition = preload("res://main-autolysis/systems/item-system/items/caffeine.tres")
+-const PHONE_EXPORTS: Array[StringName] = [&"reference_camera", &"root_interaction", &"focus_target", &"handset_body", &"handset_interaction", &"handset_anchor", &"handset_visual", &"handset_visual_scene", &"move_limit_body", &"move_limit_shape", &"additional_move_limit_shapes", &"handset_held_position", &"handset_held_rotation_degrees", &"handset_held_scale", &"handset_take_bounds"]
++const PHONE_EXPORTS: Array[StringName] = [&"reference_camera", &"root_interaction", &"focus_target", &"handset_body", &"handset_interaction", &"handset_anchor", &"handset_visual", &"handset_visual_scene", &"move_limit_body", &"move_limit_shape", &"additional_move_limit_shapes", &"handset_held_position", &"handset_held_rotation_degrees", &"handset_held_scale"]
++## 删除前场景明确配置的区域，仅证明样本在旧区域外，不参与任何取筒许可。
++const REMOVED_TAKE_BOUNDS: AABB = AABB(Vector3(-0.43, -1.3, 0), Vector3(2.28, 3.1, 2))
+ 
+ class FixtureTelephone extends AutolysisTelephone:
+ 	var refuse_take: bool = false
+@@ -37,6 +39,7 @@ var records: Array[Dictionary] = []
+ var snapshots: Array[Dictionary] = []
+ var sync_events: Array[Dictionary] = []
+ var motion_records: Array[Dictionary] = []
++var position_records: Array[Dictionary] = []
+ var take_notifications: int = 0
+ var return_notifications: int = 0
+ var abort_notifications: int = 0
+@@ -57,16 +60,19 @@ func check(condition: bool, description: String) -> void:
+ func run_checks() -> void:
+ 	root.size = Vector2i(1280, 720)
+ 	await _new_scene()
+-	_test_asset_migration()
+-	await _test_focus_queries()
+-	await _test_safe_take_positions()
+-	await _test_paired_holding()
+-	await _test_cancel_pause_and_old_callbacks()
+-	await _test_failure_rollback()
+-	await _test_visibility_callback_boundaries()
+-	await _test_local_dependency_lifecycle()
+-	await _test_asset_variants()
+-	await _test_observer_release()
++	if OS.get_cmdline_user_args().has("--take-position-regression-only"):
++		await _test_safe_take_positions()
++	else:
++		_test_asset_migration()
++		await _test_focus_queries()
++		await _test_safe_take_positions()
++		await _test_paired_holding()
++		await _test_cancel_pause_and_old_callbacks()
++		await _test_failure_rollback()
++		await _test_visibility_callback_boundaries()
++		await _test_local_dependency_lifecycle()
++		await _test_asset_variants()
++		await _test_observer_release()
+ 	_save_report()
+ 	for action: StringName in [&"forward", &"back", &"left", &"right", &"sprint", &"crouch"]:
+ 		Input.action_release(action)
+@@ -179,7 +185,7 @@ func _test_asset_migration() -> void:
+ 	check(old.get_node("focus_camera").global_transform.is_equal_approx(phone.reference_camera.global_transform), "原电话聚焦相机迁移后的实际全局变换保持")
+ 	check(is_equal_approx(old.get_node("focus_camera").fov, phone.reference_camera.fov), "原电话聚焦相机场角保持")
+ 	check(old.get_node("StaticBody3D/collision_phone_hand_set_interaction").global_transform.is_equal_approx(phone.handset_body.get_node("collision_phone_hand_set_interaction").global_transform), "听筒独立物理入口迁移保持实际全局变换")
+-	check(old.get_node("StaticBody3D/collision_move_limit").global_transform.is_equal_approx(phone.move_limit_shape.global_transform), "限位独立物理体迁移保持实际全局变换")
++	# 限位变换由用户当前资产决定；不再用首次迁移快照固定其位置。
+ 	var old_visual: Node3D = old.get_node("StaticBody3D/phone_hand_set")
+ 	check(old_visual.global_transform.is_equal_approx(phone.handset_anchor.global_transform), "听筒挂机锚点原场景实际全局变换保持")
+ 	var old_meshes: Array[Node] = old_visual.find_children("*", "MeshInstance3D", true, false)
+@@ -235,6 +241,7 @@ func _test_focus_queries() -> void:
+ 
+ 
+ func _test_safe_take_positions() -> void:
++	await _new_scene()
+ 	player.global_position = Vector3(-8.4, 0.8005, 11)
+ 	var base_shape: CollisionShape3D = phone.get_node("collision_base")
+ 	var origin: Vector3 = player.camera.global_position
+@@ -242,32 +249,92 @@ func _test_safe_take_positions() -> void:
+ 	var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(origin, origin + direction * 2.0, 3, [player.get_rid()])
+ 	check(phone.get_world_3d().direct_space_state.intersect_ray(query).get("collider") == phone, "实际边界外身体位置仍可在普通两米射线范围命中电话根")
+ 	await _enter()
+-	check(not phone.can_take_handset(player), "边界外身体拒绝取筒但允许电话聚焦")
+-	player.global_position = phone.to_global(Vector3(-0.49, -0.3995, 1))
+-	await frames(2)
+-	check(not phone.can_take_handset(player), "身体与待启用限位重叠时拒绝取筒")
+-	player.global_position = Vector3(-9.35, 0.8005, 11)
+-	await frames(2)
+-	check(phone.can_take_handset(player), "合法内侧正式站立身体可取筒")
++	check(not REMOVED_TAKE_BOUNDS.has_point(phone.to_local(player.global_position)), "正式根射线可达的玩家样本位于已删除的旧取筒区域外")
++	await _position_take_and_return("旧取筒区域外正式站位")
++	for sample: String in ["贴近当前限位", "重叠当前限位", "零实体层重叠当前限位"]:
++		await _new_scene()
++		await _enter()
++		var target: Vector3 = phone.move_limit_shape.global_position
++		if sample == "贴近当前限位":
++			var separation: float = phone.move_limit_shape.shape.size.x * 0.5 + player.standing_collision_shape.shape.size.x * 0.5 + 0.02
++			target += phone.move_limit_shape.global_basis.x.normalized() * separation
++		target.y = player.global_position.y
++		player.global_position = target
++		await frames(2)
++		var overlapping: bool = _limit_intersects_player()
++		check(not overlapping if sample == "贴近当前限位" else overlapping, sample + "样本由用户当前真实限位变换构造且几何事实经过实际查询")
++		if sample == "零实体层重叠当前限位":
++			player.collision_layer = 0
++		await _position_take_and_return(sample)
++	await _new_scene()
++	await _enter()
++	var requested: bool = phone.handset_interaction.try_interact(player)
++	check(requested and phone.is_transfer_pending(), "位置变更样本通过正式入口建立取下预处理")
++	player.global_position = phone.to_global(Vector3(-3, -0.3995, 1))
++	phone.move_limit_shape.global_position = Vector3(player.global_position.x, phone.move_limit_shape.global_position.y, player.global_position.z)
++	await _position_take_and_return("预处理后玩家移出旧区域且真实限位移入身体", requested)
++	for boundary: String in ["同步确认", "来源提交可见性", "持物通知", "完成通知"]:
++		await _new_scene()
++		await _enter()
++		match boundary:
++			"同步确认":
++				observer_action = "move-outside-on-confirm"
++			"来源提交可见性":
++				visibility_action = "move-overlap"
++			"持物通知":
++				holding_observer_action = "move-outside"
++			"完成通知":
++				completion_observer_action = "move-overlap"
++		await _position_take_and_return(boundary + "回调只改变玩家几何站位")
++	await _new_scene()
++	await _enter()
+ 	player.collision_mask = 1
+ 	check(not phone.can_take_handset(player), "玩家实际掩码缺限位层时拒绝取筒")
+ 	player.collision_mask = 9
+-	player.collision_layer = 0
+-	check(not phone.can_take_handset(player) and not phone.request_handset_transfer(player), "当前实际重叠探针缺少可查询玩家层时拒绝取筒")
+-	var old_limit_transform: Transform3D = phone.move_limit_shape.transform
+-	phone.move_limit_shape.global_position = player.global_position
+-	await frames(2)
+-	check(not phone.can_take_handset(player) and not phone.request_handset_transfer(player) and not inventory.get_handset_transfer_pending() and phone.move_limit_shape.disabled, "零层玩家与移入身体的实际限位形状拒绝取筒且无占用残留")
+-	player.collision_layer = 1
+-	phone.move_limit_shape.transform = old_limit_transform
+-	await frames(2)
+ 	phone.move_limit_body.collision_layer = 1
+ 	check(not phone.can_take_handset(player), "限位层失效时仅拒绝取筒")
+ 	phone.move_limit_body.collision_layer = 8
+-	var old_bounds: AABB = phone.handset_take_bounds
+-	phone.handset_take_bounds = AABB()
+-	check(not phone.can_take_handset(player), "缺少明确安全区域配置拒绝取筒")
+-	phone.handset_take_bounds = old_bounds
++
++
++func _position_take_and_return(label: String, already_requested: bool = false) -> void:
++	var before_take: int = take_notifications
++	var before_return: int = return_notifications
++	var before_abort: int = abort_notifications
++	var requested: bool = already_requested or phone.handset_interaction.try_interact(player)
++	check(requested, label + "通过正式听筒入口接受取下")
++	await _wait(func() -> bool: return not phone.is_transfer_pending(), label + "等待真实启用或回滚完成")
++	var held: bool = inventory.has_exclusive_handset() and phone.get_holder() == player and inventory.get_handset_session_id() == phone.get_holder_session_id()
++	position_records.append({"阶段": label, "请求已分发": requested, "双方正常持有": held, "玩家全局位置": _vector(player.global_position), "当前真实限位位置": _vector(phone.move_limit_shape.global_position), "旧区域包含玩家原点": REMOVED_TAKE_BOUNDS.has_point(phone.to_local(player.global_position)), "玩家实体层": player.collision_layer, "来源与库存占用序号": [phone.get_holder_session_id(), inventory.get_handset_session_id()]})
++	check(held, label + "不因距离、区域或重叠取消正常成对取下")
++	if not held:
++		return
++	check(not phone.move_limit_shape.disabled and phone._shape_is_active_in_world(phone.move_limit_shape), label + "限位实际在物理世界启用")
++	await frames(2)
++	check(inventory.has_exclusive_handset() and phone.get_holder() == player and take_notifications == before_take + 1 and abort_notifications == before_abort, label + "提交与通知后仍持筒且正常完成只通知一次")
++	await _return()
++	check(phone.move_limit_shape.disabled and not phone._shape_is_active_in_world(phone.move_limit_shape) and return_notifications == before_return + 1, label + "正式归还后实际限位停用且完成一次")
++
++
++func _limit_intersects_player() -> bool:
++	var query: PhysicsShapeQueryParameters3D = PhysicsShapeQueryParameters3D.new()
++	query.shape = phone.move_limit_shape.shape
++	query.transform = phone.move_limit_shape.global_transform
++	query.collision_mask = player.collision_layer
++	while true:
++		var hits: Array[Dictionary] = phone.get_world_3d().direct_space_state.intersect_shape(query)
++		var exclusions: Array[RID] = query.exclude
++		var added: bool = false
++		for hit: Dictionary in hits:
++			var hit_rid: RID = hit.get("rid", RID())
++			if hit_rid == player.get_rid():
++				return true
++			if not exclusions.has(hit_rid):
++				exclusions.append(hit_rid)
++				added = true
++		if not added:
++			return false
++		query.exclude = exclusions
++	return false
+ 
+ 
+ func _test_paired_holding() -> void:
+@@ -539,6 +606,9 @@ func _on_taken(_actor: Node3D, _session: int) -> void:
+ 	if completion_observer_action == "cancel":
+ 		completion_observer_action = ""
+ 		phone.cancel_handset_transfer()
++	elif completion_observer_action == "move-overlap":
++		completion_observer_action = ""
++		_move_player_overlapping_current_limit()
+ 
+ 
+ func _on_returned(_actor: Node3D, _session: int) -> void:
+@@ -557,6 +627,9 @@ func _on_held_changed() -> void:
+ 	if holding_observer_action == "release-limit" and inventory.has_exclusive_handset():
+ 		holding_observer_action = ""
+ 		phone.move_limit_shape.free()
++	elif holding_observer_action == "move-outside" and inventory.has_exclusive_handset():
++		holding_observer_action = ""
++		player.global_position = phone.to_global(Vector3(-3, -0.3995, 1))
+ 
+ 
+ func _on_visibility_changed() -> void:
+@@ -569,6 +642,12 @@ func _on_visibility_changed() -> void:
+ 		inventory.abort_handset_session(phone, session, "来源可见性回调中的测试异常终止")
+ 	elif action == "release-limit":
+ 		phone.move_limit_shape.free()
++	elif action == "move-overlap":
++		_move_player_overlapping_current_limit()
++
++
++func _move_player_overlapping_current_limit() -> void:
++	player.global_position = Vector3(phone.move_limit_shape.global_position.x, player.global_position.y, phone.move_limit_shape.global_position.z)
+ 
+ 
+ func _on_handset_display_entered(_node: Node) -> void:
+@@ -598,6 +677,8 @@ func _on_sync(event: Dictionary) -> void:
+ 				player.free()
+ 			"immediate-inventory-on-confirm":
+ 				inventory.free()
++			"move-outside-on-confirm":
++				player.global_position = phone.to_global(Vector3(-3, -0.3995, 1))
+ 
+ 
+ func _snapshot(label: String) -> void:
+@@ -616,4 +697,4 @@ func _save_report() -> void:
+ 	var directory: String = ProjectSettings.globalize_path(evidence_directory)
+ 	DirAccess.make_dir_recursive_absolute(directory)
+ 	var file: FileAccess = FileAccess.open(directory.path_join("电话设备报告.json"), FileAccess.WRITE)
+-	file.store_string(JSON.stringify({"断言": records, "失败数": failures, "业务快照": snapshots, "限位同步事件": sync_events, "正式玩家运动轨迹": motion_records, "图形验收": false, "原生系统输入": false}, "\t"))
++	file.store_string(JSON.stringify({"断言": records, "失败数": failures, "业务快照": snapshots, "站位无门禁样本": position_records, "限位同步事件": sync_events, "正式玩家运动轨迹": motion_records, "图形验收": false, "原生系统输入": false}, "\t"))

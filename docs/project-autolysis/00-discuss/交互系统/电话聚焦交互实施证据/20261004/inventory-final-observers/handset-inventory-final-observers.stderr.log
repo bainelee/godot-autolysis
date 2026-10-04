@@ -1,0 +1,18 @@
+ERROR: Attempted to set an invalid (previously freed?) object instance into a 'TypedArray'.
+   at: _internal_validate_object (core/variant/container_type_validate.h:96)
+   GDScript backtrace (most recent call first):
+       [0] _disconnect_handset_dependencies (res://main-autolysis/player/components/autolysis_inventory_controller.gd:355)
+       [1] abort_handset_session (res://main-autolysis/player/components/autolysis_inventory_controller.gd:237)
+       [2] commit_handset_take (res://main-autolysis/player/components/autolysis_inventory_controller.gd:172)
+       [3] _failure_and_lifetime (res://main-autolysis/player/tests/handset_inventory_test.gd:469)
+       [4] _fixture (res://main-autolysis/player/tests/handset_inventory_test.gd:149)
+       [5] frames (res://main-autolysis/player/tests/handset_inventory_test.gd:101)
+ERROR: Condition "!_p->typed.validate(value, "set")" is true.
+   at: set (core/variant/array.cpp:520)
+   GDScript backtrace (most recent call first):
+       [0] _disconnect_handset_dependencies (res://main-autolysis/player/components/autolysis_inventory_controller.gd:355)
+       [1] abort_handset_session (res://main-autolysis/player/components/autolysis_inventory_controller.gd:237)
+       [2] commit_handset_take (res://main-autolysis/player/components/autolysis_inventory_controller.gd:172)
+       [3] _failure_and_lifetime (res://main-autolysis/player/tests/handset_inventory_test.gd:469)
+       [4] _fixture (res://main-autolysis/player/tests/handset_inventory_test.gd:149)
+       [5] frames (res://main-autolysis/player/tests/handset_inventory_test.gd:101)

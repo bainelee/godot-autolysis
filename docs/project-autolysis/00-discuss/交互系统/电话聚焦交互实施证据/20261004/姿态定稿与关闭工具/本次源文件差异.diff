@@ -1,0 +1,80 @@
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\345\247\277\346\200\201\345\256\232\347\250\277\344\270\216\345\205\263\351\227\255\345\267\245\345\205\267\\\344\277\256\346\224\271\345\211\215/main-autolysis/player/autolysis_player.gd" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\345\247\277\346\200\201\345\256\232\347\250\277\344\270\216\345\205\263\351\227\255\345\267\245\345\205\267\\\344\277\256\346\224\271\345\220\216/main-autolysis/player/autolysis_player.gd"
+index 14adda3..94ce390 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\345\247\277\346\200\201\345\256\232\347\250\277\344\270\216\345\205\263\351\227\255\345\267\245\345\205\267\\\344\277\256\346\224\271\345\211\215/main-autolysis/player/autolysis_player.gd"
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\345\247\277\346\200\201\345\256\232\347\250\277\344\270\216\345\205\263\351\227\255\345\267\245\345\205\267\\\344\277\256\346\224\271\345\220\216/main-autolysis/player/autolysis_player.gd"
+@@ -131,7 +131,7 @@ var _active_found_shape: StringName = &""
+ @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
+ @onready var focus_controller: AutolysisFocusController = $FocusController
+ @export_group("听筒姿态调节")
+-@export var handset_pose_debug_enabled: bool = true
++@export var handset_pose_debug_enabled: bool = false
+ @export var handset_pose_debug_action: StringName = &"handset_pose_debug"
+ @onready var handset_pose_debug: AutolysisHandsetPoseDebug = get_node_or_null("HandsetPoseDebug") as AutolysisHandsetPoseDebug
+ var _handset_adjusting: bool = false
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\345\247\277\346\200\201\345\256\232\347\250\277\344\270\216\345\205\263\351\227\255\345\267\245\345\205\267\\\344\277\256\346\224\271\345\211\215/main-autolysis/player/tests/telephone_input_test.gd" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\345\247\277\346\200\201\345\256\232\347\250\277\344\270\216\345\205\263\351\227\255\345\267\245\345\205\267\\\344\277\256\346\224\271\345\220\216/main-autolysis/player/tests/telephone_input_test.gd"
+index 383aec3..b207a38 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\345\247\277\346\200\201\345\256\232\347\250\277\344\270\216\345\205\263\351\227\255\345\267\245\345\205\267\\\344\277\256\346\224\271\345\211\215/main-autolysis/player/tests/telephone_input_test.gd"
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\345\247\277\346\200\201\345\256\232\347\250\277\344\270\216\345\205\263\351\227\255\345\267\245\345\205\267\\\344\277\256\346\224\271\345\220\216/main-autolysis/player/tests/telephone_input_test.gd"
+@@ -27,6 +27,12 @@ func run_checks() -> void:
+ 	world.add_child(player)
+ 	await reset_player(Vector3(0, 0.9, 1))
+ 	var actor: AutolysisPlayer = player as AutolysisPlayer
++	# 正式默认已关闭工具并取消键位；本专项显式启用保留的调节功能。
++	actor.handset_pose_debug_enabled = true
++	var original_pose_bindings: Array[InputEvent] = InputMap.action_get_events(actor.handset_pose_debug_action)
++	var pose_key: InputEventKey = InputEventKey.new()
++	pose_key.physical_keycode = KEY_P
++	InputMap.action_add_event(actor.handset_pose_debug_action, pose_key)
+ 	var inventory: AutolysisInventoryController = actor.inventory_controller
+ 	var panel: AutolysisHandsetPoseDebug = actor.handset_pose_debug
+ 	if DisplayServer.get_name() == "headless":
+@@ -149,6 +155,9 @@ func run_checks() -> void:
+ 	var report: FileAccess = FileAccess.open(evidence_directory.path_join("电话输入结果.json"), FileAccess.WRITE)
+ 	report.store_string(JSON.stringify({"断言": records, "失败": failures, "输入方式": "无图形引擎内部事件及明确故障调用；没有系统指针操作"}, "\t"))
+ 	report.close()
++	InputMap.action_erase_events(actor.handset_pose_debug_action)
++	for binding: InputEvent in original_pose_bindings:
++		InputMap.action_add_event(actor.handset_pose_debug_action, binding)
+ 	world.queue_free()
+ 	await frames(3)
+ 	quit(1 if failures > 0 else 0)
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\345\247\277\346\200\201\345\256\232\347\250\277\344\270\216\345\205\263\351\227\255\345\267\245\345\205\267\\\344\277\256\346\224\271\345\211\215/main-autolysis/player/tests/telephone_pose_observer_input_audit.gd" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\345\247\277\346\200\201\345\256\232\347\250\277\344\270\216\345\205\263\351\227\255\345\267\245\345\205\267\\\344\277\256\346\224\271\345\220\216/main-autolysis/player/tests/telephone_pose_observer_input_audit.gd"
+index 107d2ac..fc76ac1 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\345\247\277\346\200\201\345\256\232\347\250\277\344\270\216\345\205\263\351\227\255\345\267\245\345\205\267\\\344\277\256\346\224\271\345\211\215/main-autolysis/player/tests/telephone_pose_observer_input_audit.gd"
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\345\247\277\346\200\201\345\256\232\347\250\277\344\270\216\345\205\263\351\227\255\345\267\245\345\205\267\\\344\277\256\346\224\271\345\220\216/main-autolysis/player/tests/telephone_pose_observer_input_audit.gd"
+@@ -13,6 +13,8 @@ func run_checks() -> void:
+ 	for target_name: String in ["库存", "聚焦控制器"]:
+ 		await fixture()
+ 		var actor: AutolysisPlayer = player as AutolysisPlayer
++		# 本专项只验证保留工具的观察边界；不依赖正式默认启用。
++		actor.handset_pose_debug_enabled = true
+ 		telephone.request_handset_transfer(actor)
+ 		await frames(12)
+ 		check(actor.inventory_controller.has_exclusive_handset(), "观察者释放探针先建立正式持筒聚焦")
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\345\247\277\346\200\201\345\256\232\347\250\277\344\270\216\345\205\263\351\227\255\345\267\245\345\205\267\\\344\277\256\346\224\271\345\211\215/main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\345\247\277\346\200\201\345\256\232\347\250\277\344\270\216\345\205\263\351\227\255\345\267\245\345\205\267\\\344\277\256\346\224\271\345\220\216/main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn"
+index 3c89543..af80281 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\345\247\277\346\200\201\345\256\232\347\250\277\344\270\216\345\205\263\351\227\255\345\267\245\345\205\267\\\344\277\256\346\224\271\345\211\215/main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn"
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\345\247\277\346\200\201\345\256\232\347\250\277\344\270\216\345\205\263\351\227\255\345\267\245\345\205\267\\\344\277\256\346\224\271\345\220\216/main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn"
+@@ -72,6 +72,8 @@ handset_interaction = NodePath("HandsetInteractionBody/HandsetInteraction")
+ handset_anchor = NodePath("phone_hand_set")
+ handset_visual = NodePath("phone_hand_set/handset_visual")
+ handset_visual_scene = ExtResource("1_handset")
++handset_held_position = Vector3(0.33, -0.12, -0.27)
++handset_held_rotation_degrees = Vector3(16, 125, 12)
+ move_limit_body = NodePath("MoveLimitBody")
+ move_limit_shape = NodePath("MoveLimitBody/collision_move_limit")
+ handset_take_bounds = AABB(-0.43, -1.3, 0, 2.28, 3.1, 2)
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\345\247\277\346\200\201\345\256\232\347\250\277\344\270\216\345\205\263\351\227\255\345\267\245\345\205\267\\\344\277\256\346\224\271\345\211\215/project.godot" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\345\247\277\346\200\201\345\256\232\347\250\277\344\270\216\345\205\263\351\227\255\345\267\245\345\205\267\\\344\277\256\346\224\271\345\220\216/project.godot"
+index c70a6d7..917e386 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\345\247\277\346\200\201\345\256\232\347\250\277\344\270\216\345\205\263\351\227\255\345\267\245\345\205\267\\\344\277\256\346\224\271\345\211\215/project.godot"
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\345\247\277\346\200\201\345\256\232\347\250\277\344\270\216\345\205\263\351\227\255\345\267\245\345\205\267\\\344\277\256\346\224\271\345\220\216/project.godot"
+@@ -107,8 +107,7 @@ focus_exit={
+ }
+ handset_pose_debug={
+ "deadzone": 0.5,
+-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+-]
++"events": []
+ }
+ 
+ [layer_names]

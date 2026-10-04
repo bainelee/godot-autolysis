@@ -1,0 +1,104 @@
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\347\247\273\351\231\244\347\253\231\344\275\215\345\217\226\347\255\222\351\227\250\347\246\201\\\344\277\256\346\224\271\345\211\215\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd" "b/D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd"
+index 64f12b6..df36275 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256\\20261004\\\347\247\273\351\231\244\347\253\231\344\275\215\345\217\226\347\255\222\351\227\250\347\246\201\\\344\277\256\346\224\271\345\211\215\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd"
++++ "b/D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd"
+@@ -23,8 +23,6 @@ signal state_changed()
+ @export var handset_held_position: Vector3 = Vector3(0.24, -0.23, -0.48)
+ @export var handset_held_rotation_degrees: Vector3 = Vector3(-8, -18, 12)
+ @export var handset_held_scale: Vector3 = Vector3.ONE
+-## 明确配置的活动边界内部区域，只保护启用时身体位于边界内部。
+-@export var handset_take_bounds: AABB
+ 
+ var _configured: bool = false
+ var _holder: Node3D
+@@ -126,7 +124,7 @@ func get_move_limit_shapes() -> Array[CollisionShape3D]:
+ func can_take_handset(actor: Node3D) -> bool:
+ 	if not is_configured() or is_transfer_pending() or is_instance_valid(_holder) or not is_actor_focused(actor):
+ 		return false
+-	if not _visual_dependencies_valid() or not _limit_dependencies_valid() or not _actor_limit_mask_valid(actor) or not _actor_inside_take_bounds(actor) or not _actor_clear_of_limit_shapes(actor):
++	if not _visual_dependencies_valid() or not _limit_dependencies_valid() or not _actor_limit_mask_valid(actor):
+ 		return false
+ 	var inventory: AutolysisInventoryController = _inventory_of(actor)
+ 	return _live(inventory) and inventory.can_take_handset(actor, self)
+@@ -209,7 +207,7 @@ func _poll_transfer() -> void:
+ 			cancel_handset_transfer()
+ 		elif not paused_input and not _transfer_inventory.is_handset_transfer_current(_transfer_actor, self, _transfer_token):
+ 			cancel_handset_transfer()
+-		elif not _visual_dependencies_valid() or (not _transfer_is_return and (not _limit_dependencies_valid() or not _actor_limit_mask_valid(_transfer_actor) or not _actor_inside_take_bounds(_transfer_actor) or not _actor_clear_of_limit_shapes(_transfer_actor))):
++		elif not _visual_dependencies_valid() or (not _transfer_is_return and (not _limit_dependencies_valid() or not _actor_limit_mask_valid(_transfer_actor))):
+ 			cancel_handset_transfer()
+ 	if _limit_write_applied != _limit_revision or not _limit_matches(_limit_target_enabled):
+ 		return
+@@ -247,14 +245,14 @@ func _poll_transfer() -> void:
+ 
+ 
+ func _commit_taken(actor: Variant, token: int) -> bool:
+-	if token != _transfer_token or _transfer_is_return or _transfer_restoring or not _live(actor) or not _visual_dependencies_valid() or _holder_session != 0 or not _limit_matches(true) or not _actor_limit_mask_valid(actor) or not _actor_inside_take_bounds(actor) or not _actor_clear_of_limit_shapes(actor):
++	if token != _transfer_token or _transfer_is_return or _transfer_restoring or not _live(actor) or not _visual_dependencies_valid() or _holder_session != 0 or not _limit_matches(true) or not _actor_limit_mask_valid(actor):
+ 		return false
+ 	var revision: int = _limit_revision
+ 	_holder = actor
+ 	_holder_session = token
+ 	handset_visual.visible = false
+ 	# 可见性通知也是同步可调用边界；取消、异常清理或释放不能伪报来源提交成功。
+-	return _live(self) and _live(actor) and token == _transfer_token and revision == _limit_revision and not _transfer_restoring and _limit_target_enabled and _holder == actor and _holder_session == token and _visual_dependencies_valid() and _limit_dependencies_valid() and _actor_limit_mask_valid(actor) and _limit_matches(true) and _actor_inside_take_bounds(actor) and _actor_clear_of_limit_shapes(actor)
++	return _live(self) and _live(actor) and token == _transfer_token and revision == _limit_revision and not _transfer_restoring and _limit_target_enabled and _holder == actor and _holder_session == token and _visual_dependencies_valid() and _limit_dependencies_valid() and _actor_limit_mask_valid(actor) and _limit_matches(true)
+ 
+ 
+ func _rollback_taken(actor: Variant, token: int) -> void:
+@@ -433,44 +431,8 @@ func _visual_dependencies_valid() -> bool:
+ 	return _live(handset_anchor) and is_ancestor_of(handset_anchor) and _live(handset_visual) and handset_anchor.is_ancestor_of(handset_visual) and is_instance_valid(handset_visual_scene) and handset_visual_scene.can_instantiate()
+ 
+ 
+-func _actor_inside_take_bounds(actor: Node3D) -> bool:
+-	if not _live(actor) or not actor is PhysicsBody3D or not handset_take_bounds.has_volume():
+-		return false
+-	var found_shape: bool = false
+-	for owner_id: int in actor.get_shape_owners():
+-		if actor.is_shape_owner_disabled(owner_id):
+-			continue
+-		for shape_index: int in actor.shape_owner_get_shape_count(owner_id):
+-			var shape: Shape3D = actor.shape_owner_get_shape(owner_id, shape_index)
+-			if not shape is BoxShape3D:
+-				return false
+-			found_shape = true
+-			var body_to_phone: Transform3D = global_transform.affine_inverse() * actor.global_transform * actor.shape_owner_get_transform(owner_id)
+-			var half_size: Vector3 = shape.size * 0.5
+-			for x: float in [-half_size.x, half_size.x]:
+-				for y: float in [-half_size.y, half_size.y]:
+-					for z: float in [-half_size.z, half_size.z]:
+-						if not handset_take_bounds.has_point(body_to_phone * Vector3(x, y, z)):
+-							return false
+-	return found_shape
+-
+-
+-func _actor_clear_of_limit_shapes(actor: Node3D) -> bool:
+-	# 当前真实重叠探针按玩家实体层查询；零层无法证明启用安全，不能将空结果当作无重叠。
+-	if not _live(actor) or not actor is PhysicsBody3D or actor.collision_layer == 0:
+-		return false
+-	for shape: CollisionShape3D in _owned_limit_shapes():
+-		var query: PhysicsShapeQueryParameters3D = PhysicsShapeQueryParameters3D.new()
+-		query.shape = shape.shape
+-		query.transform = shape.global_transform
+-		query.collision_mask = actor.collision_layer
+-		if _shape_query_hits_body(query, actor):
+-			return false
+-	return true
+-
+-
+-## 排除已检查的其他物理体再查，避免默认返回容量截断来源或玩家身份。
+-func _shape_query_hits_body(query: PhysicsShapeQueryParameters3D, body: PhysicsBody3D, shape_owner: Node = null) -> bool:
++## 排除已检查的其他物理体再查，避免默认返回容量截断来源物理身份。
++func _shape_query_hits_body(query: PhysicsShapeQueryParameters3D, body: PhysicsBody3D, shape_owner: Node) -> bool:
+ 	var space: PhysicsDirectSpaceState3D = body.get_world_3d().direct_space_state
+ 	while true:
+ 		var hits: Array[Dictionary] = space.intersect_shape(query)
+@@ -479,8 +441,6 @@ func _shape_query_hits_body(query: PhysicsShapeQueryParameters3D, body: PhysicsB
+ 		for hit: Dictionary in hits:
+ 			var body_rid: RID = hit.get("rid", RID())
+ 			if body_rid == body.get_rid():
+-				if shape_owner == null:
+-					return true
+ 				var owner_id: int = body.shape_find_owner(int(hit.get("shape", -1)))
+ 				if body.shape_owner_get_owner(owner_id) == shape_owner:
+ 					return true

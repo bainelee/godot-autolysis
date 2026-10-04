@@ -1,0 +1,1678 @@
+[
+	{
+		"孤立节点": [],
+		"物理帧": 1,
+		"缓存资源": [
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223372001639397883,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_grey_1.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223371999173147114,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 7,
+				"实例": -9223372004676073997,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223371999357696491,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223371999542245868,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223372004306975244,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/glow_color/mat_glow_green_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372004491524623,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/glow_color/mat_glow_orange_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223372002092382718,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/liquid_tank/liquid_tank_empty.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223372001907833340,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/liquid_tank/liquid_tank_filled.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 30,
+				"实例": -9223372008752937525,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/components/interactions/autolysis_focus_target.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 51,
+				"实例": -9223372008148957746,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/components/interactions/autolysis_interaction_component.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223372008870378038,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/autolysis_focus_controller.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223371997445093869,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/autolysis_focus_ray_query.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 9,
+				"实例": -9223372008987818551,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/autolysis_held_item_presenter.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372000397883893,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/autolysis_interaction_controller.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 33,
+				"实例": -9223372008635497012,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/autolysis_inventory_controller.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223372000515324406,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/interaction_raycast.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372009457580603,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/tests/player_smoke_test.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223372010917198408,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/tests/telephone_movement_resource_audit.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372009575021116,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/tests/telephone_movement_test.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 35,
+				"实例": -9223372009222699577,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/autolysis_player.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 11,
+				"实例": -9223372006269909535,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 13,
+				"实例": -9223372006152469022,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 24,
+				"实例": -9223372007091993126,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 20,
+				"实例": -9223372006974552613,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_tank_place.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 19,
+				"实例": -9223372006739671587,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_capsule_place.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223372006622231074,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_door.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 17,
+				"实例": -9223372006035028509,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223371998535612910,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223372006387350048,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_start_button.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 20,
+				"实例": -9223372006857112100,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_tank_place.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 16,
+				"实例": -9223372006504790561,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_type_switch.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 7,
+				"实例": -9223372009340140090,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223372003149347333,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_waste_liquid_storage_tank.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223371998049073641,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_material_library.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223371997713529318,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_material_profile.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223371997931633128,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_surface.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372000632764919,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_surface_detector.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223372010313218626,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/tests/test_evidence.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 26,
+				"实例": -9223372005313608214,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_item_definition.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 51,
+				"实例": -9223372005196167701,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_item_instance.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 20,
+				"实例": -9223372004004985361,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_liquid_contents.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 38,
+				"实例": -9223372004155980306,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_liquid_tank.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 9,
+				"实例": -9223372003384228359,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 13,
+				"实例": -9223372002998352388,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_liquid_tank_visual.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 13,
+				"实例": -9223372002713139714,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_packing_contents.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 16,
+				"实例": -9223372003266787846,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_pneumatic_capsule.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 10,
+				"实例": -9223372002394372609,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_pneumatic_capsule_visual.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 25,
+				"实例": -9223372005548489240,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_raw_material.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223372005431048727,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_raw_material_shelf.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372000163002867,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/ui/inventory/autolysis_inventory_bar.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372000045562354,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/ui/inventory/autolysis_liquid_contents_panel.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372000280443380,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/ui/autolysis_crosshair.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223371999928121841,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/ui/autolysis_handset_pose_debug.gd"
+			}
+		],
+		"资源数": 55.0,
+		"阶段": "移动开始前"
+	},
+	{
+		"孤立节点": [],
+		"物理帧": 46,
+		"缓存资源": [
+			{
+				"临时查询引用在内的引用数": 17,
+				"实例": -9223371989928901005,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_black_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 7,
+				"实例": -9223371988939045237,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_black_1.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 17,
+				"实例": -9223371993435339219,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_blue_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223371985365498116,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_blue_2.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 38,
+				"实例": -9223371984576968979,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_brown_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 38,
+				"实例": -9223371989073262967,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_brown_1.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 37,
+				"实例": -9223371989224257936,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_brown_2.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223371985667488010,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_darkblue_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 13,
+				"实例": -9223371975718598626,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_darkblue_1.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 7,
+				"实例": -9223371987647199558,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_green_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223371989794683275,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_green_2.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 27,
+				"实例": -9223371991690508716,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_green_3.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 33,
+				"实例": -9223371982194604232,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_green_4.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 74,
+				"实例": -9223371992260934077,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_grey_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 66,
+				"实例": -9223372001639397883,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_grey_1.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 75,
+				"实例": -9223371992411929024,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_grey_2.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 333,
+				"实例": -9223371994039319007,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 94,
+				"实例": -9223371999173147114,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 16,
+				"实例": -9223371990398663067,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_orange_1.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223371985516493063,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_red_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371986170804502,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_red_1.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 29,
+				"实例": -9223372004676073997,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 31,
+				"实例": -9223371992965577163,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_red_3.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 9,
+				"实例": -9223371987412318526,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_white_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223371987278100796,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_white_1.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223371985801705740,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_translucent/mat_trans_white_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223371999357696491,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223371999542245868,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 10,
+				"实例": -9223372004306975244,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/glow_color/mat_glow_green_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223372004491524623,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/glow_color/mat_glow_orange_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 21,
+				"实例": -9223371993905101277,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/glow_color/mat_glow_white_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 8,
+				"实例": -9223372002092382718,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/liquid_tank/liquid_tank_empty.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223372001907833340,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/liquid_tank/liquid_tank_filled.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 33,
+				"实例": -9223372008752937525,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/components/interactions/autolysis_focus_target.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 91,
+				"实例": -9223372008148957746,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/components/interactions/autolysis_interaction_component.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371975013955536,
+				"类型": "AnimationLibrary",
+				"路径": "res://main-autolysis/player/assets/player_eyes.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 7,
+				"实例": -9223372008870378038,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/autolysis_focus_controller.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223371997445093869,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/autolysis_focus_ray_query.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 10,
+				"实例": -9223372008987818551,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/autolysis_held_item_presenter.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223372000397883893,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/autolysis_interaction_controller.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 38,
+				"实例": -9223372008635497012,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/autolysis_inventory_controller.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 7,
+				"实例": -9223372000515324406,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/interaction_raycast.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223371974594525133,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/item_drop_shape_cast.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223371974896515023,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/wieldables_sway.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372009457580603,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/tests/player_smoke_test.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223372010917198408,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/tests/telephone_movement_resource_audit.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372009575021116,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/tests/telephone_movement_test.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 36,
+				"实例": -9223372009222699577,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/autolysis_player.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 12,
+				"实例": -9223372006269909535,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 14,
+				"实例": -9223372006152469022,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 33,
+				"实例": -9223372007091993126,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 21,
+				"实例": -9223372006974552613,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_tank_place.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 20,
+				"实例": -9223372006739671587,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_capsule_place.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 7,
+				"实例": -9223372006622231074,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_door.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 18,
+				"实例": -9223372006035028509,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223371998535612910,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 7,
+				"实例": -9223372006387350048,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_start_button.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 21,
+				"实例": -9223372006857112100,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_tank_place.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 23,
+				"实例": -9223372006504790561,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_type_switch.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 8,
+				"实例": -9223372009340140090,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 7,
+				"实例": -9223372003149347333,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_waste_liquid_storage_tank.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371985113839865,
+				"类型": "PackedScene",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/visuals/liquid_tank_visual.tscn"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371977396320260,
+				"类型": "PackedScene",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/visuals/pneumatic_capsule_visual.tscn"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371976255469555,
+				"类型": "PackedScene",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/visuals/telephone_handset_visual.tscn"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371978218403859,
+				"类型": "PackedScene",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_raw_materials/visuals/rm_caffeine_visual.tscn"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371991539513767,
+				"类型": "PackedScene",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_raw_materials/visuals/rm_sodium_benzoate_visual.tscn"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371972447041465,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/assets/materials/example_dirt.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371971524294572,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/assets/materials/example_grass.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371971406854054,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/assets/materials/example_stone.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371970500884382,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/assets/materials/example_wood.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223371970383443857,
+				"类型": "Resource",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/footstep-material-library/sample_footstep_material_library.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371972564481968,
+				"类型": "AudioStreamRandomizer",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/dirt_footstep_profile.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223371973436897212,
+				"类型": "AudioStreamRandomizer",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/generic_footstep_profile.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371971641735075,
+				"类型": "AudioStreamRandomizer",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/grass_footstep_profile.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 11,
+				"实例": -9223371975416608731,
+				"类型": "AudioStreamRandomizer",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/stone_footstep_profile.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371970618324885,
+				"类型": "AudioStreamRandomizer",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/wood_footstep_profile.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223371998049073641,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_material_library.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 10,
+				"实例": -9223371997713529318,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_material_profile.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 13,
+				"实例": -9223371997931633128,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_surface.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223372000632764919,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_surface_detector.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223371977832527885,
+				"类型": "Resource",
+				"路径": "res://main-autolysis/systems/item-system/items/caffeine.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 9,
+				"实例": -9223371984828627211,
+				"类型": "Resource",
+				"路径": "res://main-autolysis/systems/item-system/items/liquid_tank.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371976691677180,
+				"类型": "Resource",
+				"路径": "res://main-autolysis/systems/item-system/items/pneumatic_capsule.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223371990868425120,
+				"类型": "Resource",
+				"路径": "res://main-autolysis/systems/item-system/items/sodium_benzoate.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223372010313218626,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/tests/test_evidence.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 32,
+				"实例": -9223372005313608214,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_item_definition.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 58,
+				"实例": -9223372005196167701,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_item_instance.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 20,
+				"实例": -9223372004004985361,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_liquid_contents.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 43,
+				"实例": -9223372004155980306,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_liquid_tank.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 10,
+				"实例": -9223372003384228359,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 13,
+				"实例": -9223372002998352388,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_liquid_tank_visual.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 13,
+				"实例": -9223372002713139714,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_packing_contents.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 16,
+				"实例": -9223372003266787846,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_pneumatic_capsule.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223371977262102553,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_pneumatic_capsule_shelf.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 10,
+				"实例": -9223372002394372609,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_pneumatic_capsule_visual.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 28,
+				"实例": -9223372005548489240,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_raw_material.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223371991405296065,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_raw_material_group.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 7,
+				"实例": -9223372005431048727,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_raw_material_shelf.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223372000163002867,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/ui/inventory/autolysis_inventory_bar.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223372000045562354,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/ui/inventory/autolysis_liquid_contents_panel.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223372000280443380,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/ui/autolysis_crosshair.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223371999928121841,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/ui/autolysis_handset_pose_debug.gd"
+			}
+		],
+		"资源数": 598.0,
+		"阶段": "主场景入树后"
+	},
+	{
+		"孤立节点": [],
+		"物理帧": 4631,
+		"缓存资源": [
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223372001639397883,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_grey_1.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223371999173147114,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 7,
+				"实例": -9223372004676073997,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223371999357696491,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223371999542245868,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223372004306975244,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/glow_color/mat_glow_green_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372004491524623,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/glow_color/mat_glow_orange_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223372002092382718,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/liquid_tank/liquid_tank_empty.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223372001907833340,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/liquid_tank/liquid_tank_filled.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 30,
+				"实例": -9223372008752937525,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/components/interactions/autolysis_focus_target.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 55,
+				"实例": -9223372008148957746,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/components/interactions/autolysis_interaction_component.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223372008870378038,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/autolysis_focus_controller.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223371997445093869,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/autolysis_focus_ray_query.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 9,
+				"实例": -9223372008987818551,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/autolysis_held_item_presenter.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372000397883893,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/autolysis_interaction_controller.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 37,
+				"实例": -9223372008635497012,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/autolysis_inventory_controller.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223372000515324406,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/interaction_raycast.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371974594525133,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/item_drop_shape_cast.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371974896515023,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/wieldables_sway.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372009457580603,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/tests/player_smoke_test.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223372010917198408,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/tests/telephone_movement_resource_audit.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372009575021116,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/tests/telephone_movement_test.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 35,
+				"实例": -9223372009222699577,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/autolysis_player.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 11,
+				"实例": -9223372006269909535,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 13,
+				"实例": -9223372006152469022,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 24,
+				"实例": -9223372007091993126,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 20,
+				"实例": -9223372006974552613,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_tank_place.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 19,
+				"实例": -9223372006739671587,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_capsule_place.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223372006622231074,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_door.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 17,
+				"实例": -9223372006035028509,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223371998535612910,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223372006387350048,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_start_button.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 20,
+				"实例": -9223372006857112100,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_tank_place.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 16,
+				"实例": -9223372006504790561,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_type_switch.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 7,
+				"实例": -9223372009340140090,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223372003149347333,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_waste_liquid_storage_tank.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223371975416608731,
+				"类型": "AudioStreamRandomizer",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/stone_footstep_profile.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223371998049073641,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_material_library.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223371997713529318,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_material_profile.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223371997931633128,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_surface.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372000632764919,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_surface_detector.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223372010313218626,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/tests/test_evidence.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 28,
+				"实例": -9223372005313608214,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_item_definition.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 52,
+				"实例": -9223372005196167701,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_item_instance.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 20,
+				"实例": -9223372004004985361,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_liquid_contents.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 38,
+				"实例": -9223372004155980306,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_liquid_tank.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 9,
+				"实例": -9223372003384228359,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 13,
+				"实例": -9223372002998352388,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_liquid_tank_visual.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 13,
+				"实例": -9223372002713139714,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_packing_contents.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 16,
+				"实例": -9223372003266787846,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_pneumatic_capsule.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371977262102553,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_pneumatic_capsule_shelf.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 10,
+				"实例": -9223372002394372609,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_pneumatic_capsule_visual.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 25,
+				"实例": -9223372005548489240,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_raw_material.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371991405296065,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_raw_material_group.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223372005431048727,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_raw_material_shelf.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372000163002867,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/ui/inventory/autolysis_inventory_bar.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372000045562354,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/ui/inventory/autolysis_liquid_contents_panel.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372000280443380,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/ui/autolysis_crosshair.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223371999928121841,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/ui/autolysis_handset_pose_debug.gd"
+			}
+		],
+		"资源数": 68.0,
+		"阶段": "主场景释放三帧后"
+	},
+	{
+		"孤立节点": [],
+		"物理帧": 4661,
+		"缓存资源": [
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223372001639397883,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_grey_1.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223371999173147114,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 7,
+				"实例": -9223372004676073997,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223371999357696491,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223371999542245868,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223372004306975244,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/glow_color/mat_glow_green_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372004491524623,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/glow_color/mat_glow_orange_0.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223372002092382718,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/liquid_tank/liquid_tank_empty.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223372001907833340,
+				"类型": "StandardMaterial3D",
+				"路径": "res://main-autolysis/assets/materials/liquid_tank/liquid_tank_filled.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 30,
+				"实例": -9223372008752937525,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/components/interactions/autolysis_focus_target.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 55,
+				"实例": -9223372008148957746,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/components/interactions/autolysis_interaction_component.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223372008870378038,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/autolysis_focus_controller.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223371997445093869,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/autolysis_focus_ray_query.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 9,
+				"实例": -9223372008987818551,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/autolysis_held_item_presenter.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372000397883893,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/autolysis_interaction_controller.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 37,
+				"实例": -9223372008635497012,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/autolysis_inventory_controller.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223372000515324406,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/interaction_raycast.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371974594525133,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/item_drop_shape_cast.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371974896515023,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/components/wieldables_sway.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372009457580603,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/tests/player_smoke_test.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223372010917198408,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/tests/telephone_movement_resource_audit.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372009575021116,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/tests/telephone_movement_test.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 35,
+				"实例": -9223372009222699577,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/player/autolysis_player.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 11,
+				"实例": -9223372006269909535,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 13,
+				"实例": -9223372006152469022,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 24,
+				"实例": -9223372007091993126,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 20,
+				"实例": -9223372006974552613,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_tank_place.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 19,
+				"实例": -9223372006739671587,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_capsule_place.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223372006622231074,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_door.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 17,
+				"实例": -9223372006035028509,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223371998535612910,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223372006387350048,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_start_button.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 20,
+				"实例": -9223372006857112100,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_tank_place.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 16,
+				"实例": -9223372006504790561,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_type_switch.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 7,
+				"实例": -9223372009340140090,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 6,
+				"实例": -9223372003149347333,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_waste_liquid_storage_tank.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223371975416608731,
+				"类型": "AudioStreamRandomizer",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/stone_footstep_profile.tres"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223371998049073641,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_material_library.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223371997713529318,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_material_profile.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 3,
+				"实例": -9223371997931633128,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_surface.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372000632764919,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_surface_detector.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223372010313218626,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/tests/test_evidence.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 28,
+				"实例": -9223372005313608214,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_item_definition.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 52,
+				"实例": -9223372005196167701,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_item_instance.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 20,
+				"实例": -9223372004004985361,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_liquid_contents.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 38,
+				"实例": -9223372004155980306,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_liquid_tank.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 9,
+				"实例": -9223372003384228359,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 13,
+				"实例": -9223372002998352388,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_liquid_tank_visual.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 13,
+				"实例": -9223372002713139714,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_packing_contents.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 16,
+				"实例": -9223372003266787846,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_pneumatic_capsule.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371977262102553,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_pneumatic_capsule_shelf.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 10,
+				"实例": -9223372002394372609,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_pneumatic_capsule_visual.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 25,
+				"实例": -9223372005548489240,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_raw_material.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 2,
+				"实例": -9223371991405296065,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_raw_material_group.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 5,
+				"实例": -9223372005431048727,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/systems/item-system/autolysis_raw_material_shelf.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372000163002867,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/ui/inventory/autolysis_inventory_bar.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372000045562354,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/ui/inventory/autolysis_liquid_contents_panel.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223372000280443380,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/ui/autolysis_crosshair.gd"
+			},
+			{
+				"临时查询引用在内的引用数": 4,
+				"实例": -9223371999928121841,
+				"类型": "GDScript",
+				"路径": "res://main-autolysis/ui/autolysis_handset_pose_debug.gd"
+			}
+		],
+		"资源数": 68.0,
+		"阶段": "额外三十帧后"
+	}
+]

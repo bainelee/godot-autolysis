@@ -1,0 +1,126 @@
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:32)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:43)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:345)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:93)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:153)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:210)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:226)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:303)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:326)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:493)
+ERROR: Failed to load script "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd:239)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd:241)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd:241)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_tank_place.gd:157)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_tank_place.gd:161)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_tank_place.gd:161)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:170)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:170)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:564)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:566)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:566)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd:533)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd:533)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_inventory_controller.gd:136)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_inventory_controller.gd:285)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_inventory_controller.gd:302)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_inventory_controller.gd:367)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_inventory_controller.gd:954)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_inventory_controller.gd:989)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_inventory_controller.gd:989)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_inventory_controller.gd:1038)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_inventory_controller.gd:1038)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_inventory_controller.gd:1068)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_inventory_controller.gd:1209)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/systems/item-system/autolysis_liquid_tank.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_tank_place.gd:0)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd:209)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd:213)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd:213)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd:491)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd:493)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd:493)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/components/interactions/autolysis_focus_target.gd:0)
+ERROR: Failed to load script "res://main-autolysis/components/interactions/autolysis_focus_target.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+SCRIPT ERROR: Parse Error: Expected indented block after "if" block.
+   at: GDScript::reload (res://main-autolysis/player/autolysis_player.gd:356)
+ERROR: Failed to load script "res://main-autolysis/player/autolysis_player.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_interaction_controller.gd:212)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_interaction_controller.gd:214)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_interaction_controller.gd:214)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_interaction_controller.gd:330)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_interaction_controller.gd:330)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_interaction_controller.gd:358)
+ERROR: Failed to load script "res://main-autolysis/player/components/autolysis_interaction_controller.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_focus_controller.gd:14)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_focus_controller.gd:35)
+ERROR: Failed to load script "res://main-autolysis/player/components/autolysis_focus_controller.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+SCRIPT ERROR: Parse Error: Could not resolve class "res://main-autolysis/player/tests/telephone_dependency_audit.gd".
+   at: GDScript::reload (res://main-autolysis/player/tests/telephone_pose_observer_input_audit.gd:1)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/tests/telephone_pose_observer_input_audit.gd:15)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/tests/telephone_pose_observer_input_audit.gd:15)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/tests/telephone_pose_observer_input_audit.gd:53)
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisPlayer" from "res://main-autolysis/player/autolysis_player.gd".
+   at: GDScript::reload (res://main-autolysis/player/tests/telephone_pose_observer_input_audit.gd:53)
+ERROR: Failed to load script "res://main-autolysis/player/tests/telephone_pose_observer_input_audit.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)

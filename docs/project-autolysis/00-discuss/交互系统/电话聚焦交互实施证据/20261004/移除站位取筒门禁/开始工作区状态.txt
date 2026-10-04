@@ -1,0 +1,57 @@
+ M main-autolysis/components/interactions/autolysis_focus_target.gd
+ M main-autolysis/player/autolysis_player.gd
+ M main-autolysis/player/autolysis_player.tscn
+ M main-autolysis/player/components/autolysis_focus_ray_query.gd
+ M main-autolysis/player/components/autolysis_held_item_presenter.gd
+ M main-autolysis/player/components/autolysis_interaction_controller.gd
+ M main-autolysis/player/components/autolysis_inventory_controller.gd
+ M main-autolysis/scenes/01-autolysis-test.tscn
+ M main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn
+ M main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn
+ M project.godot
+?? "docs/project-autolysis/00-discuss/\344\272\244\344\272\222\347\263\273\347\273\237/\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\344\270\216\345\220\254\347\255\222\346\211\213\346\214\201\345\256\236\347\216\260\350\256\241\345\210\222.md"
+?? "docs/project-autolysis/00-discuss/\344\272\244\344\272\222\347\263\273\347\273\237/\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\345\256\236\346\226\275\350\257\201\346\215\256/"
+?? "docs/project-autolysis/00-discuss/\344\272\244\344\272\222\347\263\273\347\273\237/\347\224\265\350\257\235\350\201\232\347\204\246\344\272\244\344\272\222\350\256\241\345\210\222\350\257\201\346\215\256/"
+?? main-autolysis/assets/audio/sound_fx/phone/sfx_phone_default_0.wav
+?? main-autolysis/assets/audio/sound_fx/phone/sfx_phone_default_0.wav.import
+?? main-autolysis/player/tests/handset_inventory_test.gd
+?? main-autolysis/player/tests/handset_inventory_test.gd.uid
+?? main-autolysis/player/tests/handset_pose_debug_test.gd
+?? main-autolysis/player/tests/handset_pose_debug_test.gd.uid
+?? main-autolysis/player/tests/run_telephone_verification.ps1
+?? main-autolysis/player/tests/telephone_audio_cleanup_audit.gd
+?? main-autolysis/player/tests/telephone_audio_cleanup_audit.gd.uid
+?? main-autolysis/player/tests/telephone_boundary_probe.gd
+?? main-autolysis/player/tests/telephone_boundary_probe.gd.uid
+?? main-autolysis/player/tests/telephone_commit_observer_audit.gd
+?? main-autolysis/player/tests/telephone_commit_observer_audit.gd.uid
+?? main-autolysis/player/tests/telephone_dependency_audit.gd
+?? main-autolysis/player/tests/telephone_dependency_audit.gd.uid
+?? main-autolysis/player/tests/telephone_device_test.gd
+?? main-autolysis/player/tests/telephone_device_test.gd.uid
+?? main-autolysis/player/tests/telephone_display_entry_audit.gd
+?? main-autolysis/player/tests/telephone_display_entry_audit.gd.uid
+?? main-autolysis/player/tests/telephone_focus_dependency_audit.gd
+?? main-autolysis/player/tests/telephone_focus_dependency_audit.gd.uid
+?? main-autolysis/player/tests/telephone_handset_view_test.gd
+?? main-autolysis/player/tests/telephone_handset_view_test.gd.uid
+?? main-autolysis/player/tests/telephone_input_test.gd
+?? main-autolysis/player/tests/telephone_input_test.gd.uid
+?? main-autolysis/player/tests/telephone_limit_sync_probe.gd
+?? main-autolysis/player/tests/telephone_limit_sync_probe.gd.uid
+?? main-autolysis/player/tests/telephone_movement_leak_probe.gd
+?? main-autolysis/player/tests/telephone_movement_leak_probe.gd.uid
+?? main-autolysis/player/tests/telephone_movement_resource_audit.gd
+?? main-autolysis/player/tests/telephone_movement_resource_audit.gd.uid
+?? main-autolysis/player/tests/telephone_movement_test.gd
+?? main-autolysis/player/tests/telephone_movement_test.gd.uid
+?? main-autolysis/player/tests/telephone_pose_observer_input_audit.gd
+?? main-autolysis/player/tests/telephone_pose_observer_input_audit.gd.uid
+?? main-autolysis/player/tests/telephone_return_cancel_dependency_audit.gd
+?? main-autolysis/player/tests/telephone_return_cancel_dependency_audit.gd.uid
+?? main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd
+?? main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd.uid
+?? main-autolysis/scenes/prefabs/prefab_machines/visuals/telephone_handset_visual.tscn
+?? main-autolysis/ui/autolysis_handset_pose_debug.gd
+?? main-autolysis/ui/autolysis_handset_pose_debug.gd.uid
+?? main-autolysis/ui/autolysis_handset_pose_debug.tscn

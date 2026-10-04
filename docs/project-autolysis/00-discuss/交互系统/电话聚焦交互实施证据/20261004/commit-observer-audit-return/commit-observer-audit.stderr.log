@@ -1,0 +1,6 @@
+SCRIPT ERROR: Invalid access to property or key 'position' on a base object of type 'Dictionary'.
+   at: AutolysisInventoryController.commit_handset_take (res://main-autolysis/player/components/autolysis_inventory_controller.gd:156)
+   GDScript backtrace (most recent call first):
+       [0] commit_handset_take (res://main-autolysis/player/components/autolysis_inventory_controller.gd:156)
+       [1] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:222)
+       [2] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:170)

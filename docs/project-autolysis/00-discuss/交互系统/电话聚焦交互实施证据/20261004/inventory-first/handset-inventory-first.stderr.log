@@ -1,0 +1,70 @@
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisTelephone" from "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd".
+   at: GDScript::reload (res://main-autolysis/components/interactions/autolysis_focus_target.gd:208)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/systems/item-system/autolysis_raw_material.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_inventory_controller.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_interaction_controller.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/player/autolysis_player.gd:0)
+ERROR: Failed to load script "res://main-autolysis/player/autolysis_player.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+ERROR: 原药混合器配置无效：/root/@Node3D@3/machine_blend_0
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd:57)
+       [1] _add_asset (res://main-autolysis/player/tests/handset_inventory_test.gd:229)
+       [2] _check_all_bypasses (res://main-autolysis/player/tests/handset_inventory_test.gd:247)
+       [3] _basic_and_bypasses (res://main-autolysis/player/tests/handset_inventory_test.gd:219)
+       [4] run_checks (res://main-autolysis/player/tests/handset_inventory_test.gd:99)
+       [5] _fixture (res://main-autolysis/player/tests/handset_inventory_test.gd:139)
+       [6] frames (res://main-autolysis/player/tests/handset_inventory_test.gd:92)
+ERROR: 封装器配置无效：/root/@Node3D@3/machine_packing_0
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd:63)
+       [1] _add_asset (res://main-autolysis/player/tests/handset_inventory_test.gd:229)
+       [2] _check_all_bypasses (res://main-autolysis/player/tests/handset_inventory_test.gd:252)
+       [3] _basic_and_bypasses (res://main-autolysis/player/tests/handset_inventory_test.gd:219)
+       [4] run_checks (res://main-autolysis/player/tests/handset_inventory_test.gd:99)
+       [5] _fixture (res://main-autolysis/player/tests/handset_inventory_test.gd:139)
+       [6] frames (res://main-autolysis/player/tests/handset_inventory_test.gd:92)
+SCRIPT ERROR: Cannot call method 'gui_get_focus_owner' on a null value.
+   at: AutolysisHandsetPoseDebug._discard_editing (res://main-autolysis/ui/autolysis_handset_pose_debug.gd:343)
+   GDScript backtrace (most recent call first):
+       [0] _discard_editing (res://main-autolysis/ui/autolysis_handset_pose_debug.gd:343)
+       [1] clear_session (res://main-autolysis/ui/autolysis_handset_pose_debug.gd:97)
+       [2] _exit_tree (res://main-autolysis/player/autolysis_player.gd:323)
+SCRIPT ERROR: Cannot call method 'gui_get_focus_owner' on a null value.
+   at: AutolysisHandsetPoseDebug._discard_editing (res://main-autolysis/ui/autolysis_handset_pose_debug.gd:343)
+   GDScript backtrace (most recent call first):
+       [0] _discard_editing (res://main-autolysis/ui/autolysis_handset_pose_debug.gd:343)
+       [1] clear_session (res://main-autolysis/ui/autolysis_handset_pose_debug.gd:97)
+       [2] _exit_tree (res://main-autolysis/player/autolysis_player.gd:323)
+SCRIPT ERROR: Cannot call method 'gui_get_focus_owner' on a null value.
+   at: AutolysisHandsetPoseDebug._discard_editing (res://main-autolysis/ui/autolysis_handset_pose_debug.gd:343)
+   GDScript backtrace (most recent call first):
+       [0] _discard_editing (res://main-autolysis/ui/autolysis_handset_pose_debug.gd:343)
+       [1] clear_session (res://main-autolysis/ui/autolysis_handset_pose_debug.gd:97)
+       [2] _exit_tree (res://main-autolysis/player/autolysis_player.gd:323)
+SCRIPT ERROR: Cannot call method 'gui_get_focus_owner' on a null value.
+   at: AutolysisHandsetPoseDebug._discard_editing (res://main-autolysis/ui/autolysis_handset_pose_debug.gd:343)
+   GDScript backtrace (most recent call first):
+       [0] _discard_editing (res://main-autolysis/ui/autolysis_handset_pose_debug.gd:343)
+       [1] clear_session (res://main-autolysis/ui/autolysis_handset_pose_debug.gd:97)
+       [2] _exit_tree (res://main-autolysis/player/autolysis_player.gd:323)
+SCRIPT ERROR: Cannot call method 'gui_get_focus_owner' on a null value.
+   at: AutolysisHandsetPoseDebug._discard_editing (res://main-autolysis/ui/autolysis_handset_pose_debug.gd:343)
+   GDScript backtrace (most recent call first):
+       [0] _discard_editing (res://main-autolysis/ui/autolysis_handset_pose_debug.gd:343)
+       [1] clear_session (res://main-autolysis/ui/autolysis_handset_pose_debug.gd:97)
+       [2] _exit_tree (res://main-autolysis/player/autolysis_player.gd:323)
+SCRIPT ERROR: Cannot call method 'gui_get_focus_owner' on a null value.
+   at: AutolysisHandsetPoseDebug._discard_editing (res://main-autolysis/ui/autolysis_handset_pose_debug.gd:343)
+   GDScript backtrace (most recent call first):
+       [0] _discard_editing (res://main-autolysis/ui/autolysis_handset_pose_debug.gd:343)
+       [1] clear_session (res://main-autolysis/ui/autolysis_handset_pose_debug.gd:97)
+       [2] _exit_tree (res://main-autolysis/player/autolysis_player.gd:323)

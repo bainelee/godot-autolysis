@@ -1,0 +1,27 @@
+{
+  "检查": "telephone-handset-view-first",
+  "时间": "2026-10-04T23:04:49.9772328+08:00",
+  "进程编号": 6900,
+  "退出码": 1,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/player/tests/telephone_handset_view_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/手持姿态不可见修正/视野首轮/internal"
+  ],
+  "通过断言数": 24,
+  "预期错误计数": {},
+  "非预期错误": [
+    "失败：聚焦稳定态，工具关闭正常持筒应至少存在一片落在近远裁剪和侧面视锥内的实际网格三角面",
+    "失败：聚焦稳定态，工具开启正常持筒应至少存在一片落在近远裁剪和侧面视锥内的实际网格三角面"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "检查": "handset-inventory-second",
+  "时间": "2026-10-04T22:06:50.7948355+08:00",
+  "进程编号": 21712,
+  "退出码": 1,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/player/tests/handset_inventory_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/inventory-second/internal"
+  ],
+  "通过断言数": 94,
+  "预期错误计数": {},
+  "非预期错误": [
+    "失败：已释放来源引用可安全幂等清理",
+    "ERROR: Object is locked and can't be freed.",
+    "SCRIPT ERROR: Attempted to free a locked object (calling or emitting)."
+  ]
+}

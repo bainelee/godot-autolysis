@@ -1,0 +1,4 @@
+SCRIPT ERROR: Parse Error: Not all code paths return a value.
+   at: GDScript::reload (res://main-autolysis/player/tests/telephone_device_test.gd:318)
+ERROR: Failed to load script "res://main-autolysis/player/tests/telephone_device_test.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)

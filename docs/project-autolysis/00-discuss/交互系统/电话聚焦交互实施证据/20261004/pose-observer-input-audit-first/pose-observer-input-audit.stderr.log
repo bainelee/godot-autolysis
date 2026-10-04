@@ -1,0 +1,21 @@
+SCRIPT ERROR: Invalid call. Nonexistent function 'get_focused_index' in base 'previously freed'.
+   at: AutolysisInteractionController._handle_focus_input (res://main-autolysis/player/components/autolysis_interaction_controller.gd:237)
+   GDScript backtrace (most recent call first):
+       [0] _handle_focus_input (res://main-autolysis/player/components/autolysis_interaction_controller.gd:237)
+       [1] _unhandled_input (res://main-autolysis/player/components/autolysis_interaction_controller.gd:128)
+       [2] run_checks (res://main-autolysis/player/tests/telephone_pose_observer_input_audit.gd:35)
+       [3] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'state' on a base object of type 'previously freed'.
+   at: AutolysisPlayer.is_focus_business_allowed (res://main-autolysis/player/autolysis_player.gd:182)
+   GDScript backtrace (most recent call first):
+       [0] is_focus_business_allowed (res://main-autolysis/player/autolysis_player.gd:182)
+       [1] is_focus_input_allowed (res://main-autolysis/player/autolysis_player.gd:179)
+       [2] _handle_focus_input (res://main-autolysis/player/components/autolysis_interaction_controller.gd:228)
+       [3] _unhandled_input (res://main-autolysis/player/components/autolysis_interaction_controller.gd:128)
+       [4] run_checks (res://main-autolysis/player/tests/telephone_pose_observer_input_audit.gd:35)
+       [5] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+SCRIPT ERROR: Invalid access to property or key 'state' on a base object of type 'previously freed'.
+   at: AutolysisPlayer._sync_handset_pose_panel (res://main-autolysis/player/autolysis_player.gd:277)
+   GDScript backtrace (most recent call first):
+       [0] _sync_handset_pose_panel (res://main-autolysis/player/autolysis_player.gd:277)
+       [1] _process (res://main-autolysis/player/autolysis_player.gd:295)

@@ -1,0 +1,23 @@
+{
+  "检查": "telephone-load-only",
+  "时间": "2026-10-04T22:23:35.1411557+08:00",
+  "进程编号": 13752,
+  "退出码": 0,
+  "通过": true,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/player/tests/telephone_movement_leak_probe.gd",
+    "--",
+    "--load-only"
+  ],
+  "通过断言数": 0,
+  "预期错误计数": {},
+  "非预期错误": []
+}

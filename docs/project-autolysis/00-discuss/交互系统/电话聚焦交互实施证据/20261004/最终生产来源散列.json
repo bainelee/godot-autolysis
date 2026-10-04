@@ -1,0 +1,67 @@
+[
+  {
+    "路径": "D:\\autolysis\\project.godot",
+    "散列算法": "SHA256",
+    "散列": "7DEFFAB4332010339AA9B33A51F6B239D266639B91ACC66526836081F90C6EC0"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.gd",
+    "散列算法": "SHA256",
+    "散列": "4AFC564E7F036FE93F6F286FF73DFCD26EAF5956CAB74E5822FF45B1BA7F6E96"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.tscn",
+    "散列算法": "SHA256",
+    "散列": "1B8D2CF8BFAFB8A302A10D6A214AB94255131E81CE77AE5AA37F4CE4820BFBEE"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_interaction_controller.gd",
+    "散列算法": "SHA256",
+    "散列": "13CA6AA890A3C2160BA759D1936E445211E61A87C59221CFA636BD48C2B55179"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+    "散列算法": "SHA256",
+    "散列": "1D46919AAA65969C01981E99F380B122E46ECD982BD81D369F91C4C21DD1A681"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_held_item_presenter.gd",
+    "散列算法": "SHA256",
+    "散列": "DFE11039E41797A2B3852F8059A9965DC6701233782300B1A4F79A708A3CB664"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_focus_ray_query.gd",
+    "散列算法": "SHA256",
+    "散列": "9CD1DAEC39D2D4F2CB651592ADA1ECC713FD4BE19289A53EDBCD0D049751E13F"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\components\\interactions\\autolysis_focus_target.gd",
+    "散列算法": "SHA256",
+    "散列": "A3C2C75F0F81434FB99336B9E1EE71A6EBB54E9DB1C4B4D4B24EED7C3445B032"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+    "散列算法": "SHA256",
+    "散列": "A10F6F060A1BF4FE737C5B9A6FA99590A5F7E852093E6C51C3FA5205BE85D37E"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+    "散列算法": "SHA256",
+    "散列": "2BBB8D4DFB4FE05B1546A4BA3D812A86C6A8A6C23DBE8D8E3B7FAE929A083F0A"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\visuals\\telephone_handset_visual.tscn",
+    "散列算法": "SHA256",
+    "散列": "1A17500A3074EAF1E11757E80DD050CA24ABDCE74EA6BE45BD4D8764929CCFB1"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\ui\\autolysis_handset_pose_debug.gd",
+    "散列算法": "SHA256",
+    "散列": "4E787CE16794A83F22F6CF443284CB78A76D37B1F74C88B3967CED025483CF55"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\ui\\autolysis_handset_pose_debug.tscn",
+    "散列算法": "SHA256",
+    "散列": "4FB2A43F5A80F659E3E12CB0F6FE639AA268E2CC085CAA32BF73567735645196"
+  }
+]

@@ -23,7 +23,8 @@ func refresh_target(include_place_shelves: bool = false, include_liquid_tank_cab
 		if is_colliding() and is_instance_valid(collider) and collider is Node3D:
 			var spatial: Node3D = collider as Node3D
 			if spatial.is_inside_tree() and not spatial.is_queued_for_deletion() and spatial.is_in_group(&"interactable"):
-				target = spatial
+				if not spatial is AutolysisTelephone or to_local(get_collision_point()).length() <= target_position.length() * 0.3:
+					target = spatial
 	var next_id: int = target.get_instance_id() if is_instance_valid(target) else 0
 	if next_id != _target_id:
 		_target_id = next_id

@@ -1,0 +1,27 @@
+{
+  "检查": "handset-inventory-final-return-observers",
+  "时间": "2026-10-04T22:11:17.2147393+08:00",
+  "进程编号": 13260,
+  "退出码": -1073740940,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/player/tests/handset_inventory_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/inventory-final-return-observers/internal"
+  ],
+  "通过断言数": 109,
+  "预期错误计数": {},
+  "非预期错误": [
+    "ERROR: Parameter \"get_viewport()\" is null.",
+    "ERROR: Parent node is busy adding/removing children, `remove_child()` can't be called at this time. Consider using `remove_child.call_deferred(child)` instead.",
+    "ERROR: Parent node is busy adding/removing children, `remove_child()` can't be called at this time. Consider using `remove_child.call_deferred(child)` instead.",
+    "ERROR: Condition \"data.parent\" is true."
+  ]
+}

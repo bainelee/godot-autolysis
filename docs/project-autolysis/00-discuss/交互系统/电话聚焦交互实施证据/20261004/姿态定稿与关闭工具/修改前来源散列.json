@@ -1,0 +1,22 @@
+[
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+    "散列": "2BBB8D4DFB4FE05B1546A4BA3D812A86C6A8A6C23DBE8D8E3B7FAE929A083F0A"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.gd",
+    "散列": "4AFC564E7F036FE93F6F286FF73DFCD26EAF5956CAB74E5822FF45B1BA7F6E96"
+  },
+  {
+    "路径": "D:\\autolysis\\project.godot",
+    "散列": "7DEFFAB4332010339AA9B33A51F6B239D266639B91ACC66526836081F90C6EC0"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_input_test.gd",
+    "散列": "D0A62BEA7ADF2EEFEA48C6C4AABE543539E339F6B4AF222039BC87EF6221638A"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_pose_observer_input_audit.gd",
+    "散列": "63708C00D50CD7D87A6E746022A58A5E779035AA5014651337E4E8C0F5AEDD7F"
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+    "修改前散列": "A10F6F060A1BF4FE737C5B9A6FA99590A5F7E852093E6C51C3FA5205BE85D37E",
+    "修改后散列": "4C0DB83E515539BC72C1EE8B75043C53874977681BF87F414B9847DF67F832A0",
+    "本次发生变化": true,
+    "预期本次修改": true
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+    "修改前散列": "9AA7BA23940655DA052AD880B1C04024AE935DAA942A19BFE50954177FABEC11",
+    "修改后散列": "7F7F183FDF1CB4E44085A857511422739FDE0D47E6E40CB5CE6205888F22B452",
+    "本次发生变化": true,
+    "预期本次修改": true
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_device_test.gd",
+    "修改前散列": "76A6B6162D29BBC8860A7F9BA415EAEB3CBD381148EE6C28190C410F679BC4A9",
+    "修改后散列": "DDA56220219F4C50C4B1EA2AC1CDE0262C4D3A5632975F9D012A866FD665F331",
+    "本次发生变化": true,
+    "预期本次修改": true
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_dependency_audit.gd",
+    "修改前散列": "9AE0F3BE760A900189A7BEFA6C2408E22967E85FFEF2BA886172ED49E0E40624",
+    "修改后散列": "713BDD5B81FAD21A1BC2117951DE21238C2B745467716F9EE5A54A00BFDC8B1D",
+    "本次发生变化": true,
+    "预期本次修改": true
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_movement_test.gd",
+    "修改前散列": "0E4DE5362D514EDE5EE24E6C5C45E53CB3BCCAB85A6A88E8E59DFA294FF2E6F4",
+    "修改后散列": "D393FA206CD05EAE2799BA09AB9307AEF4DF7F88DDEEEAB4F140FE37B6134D0E",
+    "本次发生变化": true,
+    "预期本次修改": true
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.gd",
+    "修改前散列": "4FFF368DC5B166499A5DDE1728FFB1F41D8D1E7C85B0AB82D6B860183DA7FC53",
+    "修改后散列": "4FFF368DC5B166499A5DDE1728FFB1F41D8D1E7C85B0AB82D6B860183DA7FC53",
+    "本次发生变化": false,
+    "预期本次修改": false
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+    "修改前散列": "1D46919AAA65969C01981E99F380B122E46ECD982BD81D369F91C4C21DD1A681",
+    "修改后散列": "1D46919AAA65969C01981E99F380B122E46ECD982BD81D369F91C4C21DD1A681",
+    "本次发生变化": false,
+    "预期本次修改": false
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_held_item_presenter.gd",
+    "修改前散列": "83E442720EA448DA1B858761F003877A4F1ED4BFBD8A40B6741F5D22C8C32A14",
+    "修改后散列": "83E442720EA448DA1B858761F003877A4F1ED4BFBD8A40B6741F5D22C8C32A14",
+    "本次发生变化": false,
+    "预期本次修改": false
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_focus_ray_query.gd",
+    "修改前散列": "9CD1DAEC39D2D4F2CB651592ADA1ECC713FD4BE19289A53EDBCD0D049751E13F",
+    "修改后散列": "9CD1DAEC39D2D4F2CB651592ADA1ECC713FD4BE19289A53EDBCD0D049751E13F",
+    "本次发生变化": false,
+    "预期本次修改": false
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\components\\interactions\\autolysis_focus_target.gd",
+    "修改前散列": "A3C2C75F0F81434FB99336B9E1EE71A6EBB54E9DB1C4B4D4B24EED7C3445B032",
+    "修改后散列": "A3C2C75F0F81434FB99336B9E1EE71A6EBB54E9DB1C4B4D4B24EED7C3445B032",
+    "本次发生变化": false,
+    "预期本次修改": false
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\scenes\\01-autolysis-test.tscn",
+    "修改前散列": "5A151EB01E0E1A1AEDB48575AE5898A3669D56E749F80D8604331E2F2ACB7AD7",
+    "修改后散列": "5A151EB01E0E1A1AEDB48575AE5898A3669D56E749F80D8604331E2F2ACB7AD7",
+    "本次发生变化": false,
+    "预期本次修改": false
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\run_telephone_verification.ps1",
+    "修改前散列": "2B2B4BF79C1165EE1D09817239D2D0E1B6488B887D1B3A4CA40ACA947766ED19",
+    "修改后散列": "2B2B4BF79C1165EE1D09817239D2D0E1B6488B887D1B3A4CA40ACA947766ED19",
+    "本次发生变化": false,
+    "预期本次修改": false
+  }
+]

@@ -1,0 +1,4 @@
+SCRIPT ERROR: Parse Error: Could not parse global class "AutolysisTelephone" from "res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd".
+   at: GDScript::reload (res://main-autolysis/player/tests/telephone_boundary_probe.gd:13)
+ERROR: Failed to load script "res://main-autolysis/player/tests/telephone_boundary_probe.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)

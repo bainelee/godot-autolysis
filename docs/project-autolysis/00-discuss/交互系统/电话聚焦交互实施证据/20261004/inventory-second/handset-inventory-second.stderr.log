@@ -1,0 +1,16 @@
+ERROR: Object is locked and can't be freed.
+   at: callp (core/object/object.cpp:890)
+   GDScript backtrace (most recent call first):
+       [0] commit_take (res://main-autolysis/player/tests/handset_inventory_test.gd:41)
+       [1] commit_handset_take (res://main-autolysis/player/components/autolysis_inventory_controller.gd:147)
+       [2] _failure_and_lifetime (res://main-autolysis/player/tests/handset_inventory_test.gd:405)
+       [3] _fixture (res://main-autolysis/player/tests/handset_inventory_test.gd:145)
+       [4] frames (res://main-autolysis/player/tests/handset_inventory_test.gd:98)
+SCRIPT ERROR: Attempted to free a locked object (calling or emitting).
+   at: FixtureTelephone.commit_take (res://main-autolysis/player/tests/handset_inventory_test.gd:41)
+   GDScript backtrace (most recent call first):
+       [0] commit_take (res://main-autolysis/player/tests/handset_inventory_test.gd:41)
+       [1] commit_handset_take (res://main-autolysis/player/components/autolysis_inventory_controller.gd:147)
+       [2] _failure_and_lifetime (res://main-autolysis/player/tests/handset_inventory_test.gd:405)
+       [3] _fixture (res://main-autolysis/player/tests/handset_inventory_test.gd:145)
+       [4] frames (res://main-autolysis/player/tests/handset_inventory_test.gd:98)

@@ -1,0 +1,26 @@
+[
+  {
+    "路径": "D:\\cogito\\addons\\cogito\\Components\\Interactions\\BasicInteraction.gd",
+    "散列": "840E5AA45DCDBDD3DDAFF5C80117A03C4BA11F3EE1D3782A4A52002491317300"
+  },
+  {
+    "路径": "D:\\cogito\\main-degauss\\prefabs\\box\\scripts\\degauss_lockable_focus_object.gd",
+    "散列": "F298937F438B7C2A837BFC452A09B7D964E49C834E442A695CE01765F6347248"
+  },
+  {
+    "路径": "D:\\cogito\\addons\\cogito\\InventoryPD\\CogitoQuickSlots.gd",
+    "散列": "D595AE1FC5C8B9AD3575638DD3A79B569D8F17F89ABD7E7884932FC82AFC7328"
+  },
+  {
+    "路径": "D:\\cogito\\addons\\cogito\\Components\\PlayerInteractionComponent.gd",
+    "散列": "78DE8D1B12F2697E53FFB9E4206F986DB26692859F6B81C0A11576FD8FC97291"
+  },
+  {
+    "路径": "D:\\cogito\\addons\\cogito\\InventoryPD\\CustomResources\\WieldableItemPD.gd",
+    "散列": "C17D789C89BA109BF2D1BFFD74F92F1D74CDDA7C813F7A4A1D090EEF496DE91D"
+  },
+  {
+    "路径": "D:\\cogito\\addons\\cogito\\Scripts\\wieldables_sway.gd",
+    "散列": "26C9EC6363551E822D8FA356195C9F8E8D68D9BB1353DB8132EE9891367421FD"
+  }
+]
