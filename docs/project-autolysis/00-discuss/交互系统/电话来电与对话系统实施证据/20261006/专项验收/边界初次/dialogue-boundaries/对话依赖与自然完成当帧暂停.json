@@ -1,0 +1,418 @@
+{
+	"失败数": 7,
+	"引擎": {
+		"build": "official",
+		"hash": "14d19694e0c88a3f9e82d899a0400f27a24c176e",
+		"hex": 263681,
+		"major": 4,
+		"minor": 6,
+		"patch": 1,
+		"status": "stable",
+		"string": "4.6.1-stable (official)",
+		"timestamp": 0
+	},
+	"断言": [
+		{
+			"说明": "边界专项实际使用无图形后端",
+			"通过": true
+		},
+		{
+			"说明": "实际非法排版字段明确拒绝准备并有具体原因：subtitle_font_size（测试字段）",
+			"通过": true
+		},
+		{
+			"说明": "实际非法排版字段明确拒绝准备并有具体原因：subtitle_max_width（测试字段）",
+			"通过": true
+		},
+		{
+			"说明": "实际非法排版字段明确拒绝准备并有具体原因：subtitle_single_line_height（测试字段）",
+			"通过": true
+		},
+		{
+			"说明": "实际非法排版字段明确拒绝准备并有具体原因：subtitle_horizontal_padding（测试字段）",
+			"通过": true
+		},
+		{
+			"说明": "实际非法排版字段明确拒绝准备并有具体原因：subtitle_inventory_gap（测试字段）",
+			"通过": true
+		},
+		{
+			"说明": "实际非法排版字段明确拒绝准备并有具体原因：subtitle_screen_margin（测试字段）",
+			"通过": true
+		},
+		{
+			"说明": "极窄实际视口仍允许有效配置播放而不以尺寸终止会话",
+			"通过": true
+		},
+		{
+			"说明": "业务正常完成接收者已看到字幕隐藏",
+			"通过": true
+		},
+		{
+			"说明": "正常业务完成发布期间新准备返回忙碌",
+			"通过": true
+		},
+		{
+			"说明": "极窄视口零等待也由真实语音和自然渐隐完成一次",
+			"通过": true
+		},
+		{
+			"说明": "句后计时器自然到期当帧暂停用例开始真实播放",
+			"通过": true
+		},
+		{
+			"说明": "等待上限仅用于验收失败：真实句后计时器自然到期保存待同步",
+			"通过": false
+		},
+		{
+			"说明": "真实句后到期当帧暂停保留原会话不提前渐隐或完成",
+			"通过": false
+		},
+		{
+			"说明": "暂停中句后自然到期待同步保留",
+			"通过": false
+		},
+		{
+			"说明": "业务正常完成接收者已看到字幕隐藏",
+			"通过": true
+		},
+		{
+			"说明": "正常业务完成发布期间新准备返回忙碌",
+			"通过": true
+		},
+		{
+			"说明": "句后自然到期待同步恢复后仅完成一次",
+			"通过": true
+		},
+		{
+			"说明": "最后渐隐自然完成当帧暂停用例开始真实播放",
+			"通过": true
+		},
+		{
+			"说明": "业务正常完成接收者已看到字幕隐藏",
+			"通过": true
+		},
+		{
+			"说明": "正常业务完成发布期间新准备返回忙碌",
+			"通过": true
+		},
+		{
+			"说明": "等待上限仅用于验收失败：最后渐隐原生自然完成保存待同步",
+			"通过": false
+		},
+		{
+			"说明": "最后渐隐自然完成当帧暂停不提交正常完成",
+			"通过": false
+		},
+		{
+			"说明": "已完成最后渐隐的字幕保留零透明度待同步而不重播",
+			"通过": false
+		},
+		{
+			"说明": "最后自然渐隐完成待同步在暂停中不发布业务",
+			"通过": false
+		},
+		{
+			"说明": "恢复后只提交一次原正常完成并隐藏全部字幕",
+			"通过": true
+		},
+		{
+			"说明": "source（依赖变体）开始真实会话",
+			"通过": true
+		},
+		{
+			"说明": "异常业务接收者取得真实原因",
+			"通过": true
+		},
+		{
+			"说明": "source（依赖变体）释放只终止原会话一次并不发正常完成",
+			"通过": true
+		},
+		{
+			"说明": "source（依赖变体）异常记录保留实际原因",
+			"通过": true
+		},
+		{
+			"说明": "subtitle（依赖变体）开始真实会话",
+			"通过": true
+		},
+		{
+			"说明": "异常业务接收者取得真实原因",
+			"通过": true
+		},
+		{
+			"说明": "subtitle（依赖变体）释放只终止原会话一次并不发正常完成",
+			"通过": true
+		},
+		{
+			"说明": "subtitle（依赖变体）异常记录保留实际原因",
+			"通过": true
+		},
+		{
+			"说明": "voice（依赖变体）开始真实会话",
+			"通过": true
+		},
+		{
+			"说明": "异常业务接收者取得真实原因",
+			"通过": true
+		},
+		{
+			"说明": "voice（依赖变体）释放只终止原会话一次并不发正常完成",
+			"通过": true
+		},
+		{
+			"说明": "voice（依赖变体）异常记录保留实际原因",
+			"通过": true
+		},
+		{
+			"说明": "字幕同步可见观察取消边界准备成功",
+			"通过": true
+		},
+		{
+			"说明": "异常业务接收者取得真实原因",
+			"通过": true
+		},
+		{
+			"说明": "字幕同步显示观察中取消不会启动旧语音且异常唯一",
+			"通过": true
+		},
+		{
+			"说明": "同步显示观察取消完成音频与字幕成对清理",
+			"通过": true
+		}
+	],
+	"自然完成观察次序": [
+		{
+			"人工完成信号": false,
+			"原连接数量": 1,
+			"播放令牌": 3,
+			"用途": "原生最后补间完成当帧前置菜单观察"
+		}
+	],
+	"边界采样": [
+		{
+			"audio_playing": true,
+			"audio_position": 0.096000000834465,
+			"completion_pending": "",
+			"dialogue_id": "single_test",
+			"hold_remaining": 0.0,
+			"index": 0,
+			"last_result": {
+
+			},
+			"paused": false,
+			"source_id": 54123300674,
+			"stage": "voice",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (16.0, -394.0), S: (32.0, 296.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 15.5,
+				"index": 0,
+				"inventory_rect": "[P: (-143.0, -90.0), S: (350.0, 80.0)]",
+				"line_count": 9,
+				"natural_size": "(192.0, 29.0)",
+				"text": "你很快会习惯的。",
+				"text_height": 285.0,
+				"text_rect": "[P: (31.5, -388.5), S: (1.0, 285.0)]",
+				"token": 1,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (64.0, 70.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 1
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "single_test",
+			"hold_remaining": 0.0,
+			"index": 0,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "正常完成",
+				"reason": "",
+				"source_id": 54123300674,
+				"token": 1
+			},
+			"paused": true,
+			"source_id": 54123300674,
+			"stage": "fade",
+			"subtitle": {
+				"alpha": 0.965499997138977,
+				"background_rect": "[P: (528.0, 512.0), S: (224.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 0,
+				"inventory_rect": "[P: (465.0, 560.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(192.0, 29.0)",
+				"text": "你很快会习惯的。",
+				"text_height": 29.0,
+				"text_rect": "[P: (544.0, 517.5), S: (192.0, 29.0)]",
+				"token": 2,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 0.965499997138977,
+			"token": 2
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "",
+			"hold_remaining": 0.0,
+			"index": -1,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "正常完成",
+				"reason": "",
+				"source_id": 54123300674,
+				"token": 3
+			},
+			"paused": true,
+			"source_id": 0,
+			"stage": "idle",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (528.0, 512.0), S: (224.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": -1,
+				"inventory_rect": "[P: (465.0, 560.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(192.0, 29.0)",
+				"text": "",
+				"text_height": 29.0,
+				"text_rect": "[P: (544.0, 517.5), S: (192.0, 29.0)]",
+				"token": 0,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": false
+			},
+			"subtitle_alpha": 1.0,
+			"token": 0
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "",
+			"hold_remaining": 0.0,
+			"index": -1,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "对话来源离开场景树",
+				"source_id": 54123300674,
+				"token": 4
+			},
+			"paused": false,
+			"source_id": 0,
+			"stage": "idle",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (528.0, 512.0), S: (224.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": -1,
+				"inventory_rect": "[P: (465.0, 560.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(192.0, 29.0)",
+				"text": "",
+				"text_height": 29.0,
+				"text_rect": "[P: (544.0, 517.5), S: (192.0, 29.0)]",
+				"token": 0,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": false
+			},
+			"subtitle_alpha": 1.0,
+			"token": 0
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "",
+			"hold_remaining": 0.0,
+			"index": -1,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "字幕必要依赖失效",
+				"source_id": 123329316674,
+				"token": 1
+			},
+			"paused": false,
+			"source_id": 0,
+			"stage": "idle",
+			"subtitle": {
+
+			},
+			"subtitle_alpha": 0.0,
+			"token": 0
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "",
+			"hold_remaining": 0.0,
+			"index": -1,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "语音播放器失效",
+				"source_id": 126617650919,
+				"token": 1
+			},
+			"paused": false,
+			"source_id": 0,
+			"stage": "idle",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (528.0, 512.0), S: (224.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": -1,
+				"inventory_rect": "[P: (465.0, 560.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(192.0, 29.0)",
+				"text": "",
+				"text_height": 29.0,
+				"text_rect": "[P: (544.0, 517.5), S: (192.0, 29.0)]",
+				"token": 0,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": false
+			},
+			"subtitle_alpha": 1.0,
+			"token": 0
+		}
+	]
+}

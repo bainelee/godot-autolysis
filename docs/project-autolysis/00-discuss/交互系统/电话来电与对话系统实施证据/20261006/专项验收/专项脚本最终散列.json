@@ -1,0 +1,38 @@
+[
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_timing_probe.gd",
+    "散列": "0F06B7764DA81FF3853CE09F7530CAFAEBE20AE959648F7E4E991A6A619C6639"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_ring_start_probe.gd",
+    "散列": "22ACD6D4783FA3B8C24AC2E4A921371B9ACA5F0A726F0FB5D581006B6DC37C4C"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\tests\\dialogue_system_test.gd",
+    "散列": "8D787894C6D5D2303027DDC691EFA432BEABC22DB2A02650C9F87981CF3082B0"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\tests\\dialogue_boundary_test.gd",
+    "散列": "0D3A8A44B1ED321867037D24378B7EEC0B2C034CD34E392BCCE42A33A9272B36"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_call_test.gd",
+    "散列": "9A6CD9365F141E1527F87066DD2C0F33F39B6906D79F62F5D447D8C1F426596A"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_runtime_once_test.gd",
+    "散列": "924A4AB4EC64ED227269A4F57F4354DF75898A68FFAF131BF5AC118E32AB5327"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_call_gameplay_test.gd",
+    "散列": "49A11DA1DADEA410501F21FCCA901F3E0E613740C1BFD4F0E4FFFC4713252463"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_call_boundary_test.gd",
+    "散列": "9AFEF045B1746472AA00745820F9B08486A18B2F83EB4786DC2F449A933D5ABF"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\tests\\run_telephone_verification.ps1",
+    "散列": "F6F74F28C96D39BBFDE375D34F34019B61593FDCF553D661D69116E0C0315DB0"
+  }
+]

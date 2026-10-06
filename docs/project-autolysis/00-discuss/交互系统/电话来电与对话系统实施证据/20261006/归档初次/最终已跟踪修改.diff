@@ -1,0 +1,602 @@
+diff --git a/main-autolysis/player/autolysis_player.gd b/main-autolysis/player/autolysis_player.gd
+index 94ce390..9d37a3b 100644
+--- a/main-autolysis/player/autolysis_player.gd
++++ b/main-autolysis/player/autolysis_player.gd
+@@ -2,6 +2,7 @@ class_name AutolysisPlayer
+ extends CharacterBody3D
+ 
+ signal mouse_movement(relative_mouse_movement: Vector2)
++signal dialogue_pause_changed(paused: bool)
+ @export var item_drop_shapecast: ShapeCast3D
+ 
+ @export_group("移动参数")
+@@ -95,8 +96,19 @@ var stun_time_total: float = 0.0
+ var stun_time_left: float = 0.0
+ var stun_pitch_target: float = 0.0
+ var fall_stun_head_duck: bool = false
+-var is_movement_paused: bool = false
+-var is_showing_ui: bool = false
++var is_movement_paused: bool = false:
++	set(value):
++		if is_movement_paused == value:
++			return
++		is_movement_paused = value
++		_sync_dialogue_pause_state(true)
++var is_showing_ui: bool = false:
++	set(value):
++		if is_showing_ui == value:
++			return
++		is_showing_ui = value
++		_sync_dialogue_pause_state(true)
++var _dialogue_paused: bool = false
+ var jumped_from_slide: bool = false
+ var was_in_air: bool = false
+ @export var landing_threshold: float = -2.0
+@@ -127,6 +139,7 @@ var _active_found_shape: StringName = &""
+ @onready var inventory_controller: AutolysisInventoryController = $InventoryController
+ @onready var held_item_presenter: AutolysisHeldItemPresenter = %HeldItemPresenter
+ @onready var inventory_bar: AutolysisInventoryBar = $InventoryBar
++@onready var dialogue_player: AutolysisDialoguePlayer = $DialoguePlayer
+ @onready var liquid_contents_panel: AutolysisLiquidContentsPanel = $LiquidContentsPanel
+ @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
+ @onready var focus_controller: AutolysisFocusController = $FocusController
+@@ -157,6 +170,8 @@ func _ready() -> void:
+ 	interaction_controller.direct_availability_changed.connect(interaction_crosshair.set_direct_available)
+ 	inventory_controller.configure(held_item_presenter, is_inventory_input_allowed)
+ 	inventory_bar.configure(inventory_controller)
++	dialogue_player.setup(self, inventory_bar)
++	_sync_dialogue_pause_state()
+ 	liquid_contents_panel.configure(inventory_controller)
+ 	inventory_controller.inventory_changed.connect(interaction_controller.refresh_state)
+ 	inventory_controller.inventory_changed.connect(interaction_controller.clear_pending_clicks)
+@@ -175,6 +190,24 @@ func is_interaction_input_allowed() -> bool:
+ func _base_input_allowed() -> bool:
+ 	return is_inside_tree() and not is_queued_for_deletion() and not get_tree().paused and not is_movement_paused and not is_showing_ui and not is_landing_stunned and not _handset_adjusting
+ 
++
++func is_dialogue_timing_paused() -> bool:
++	return not is_inside_tree() or get_tree().paused or is_movement_paused or is_showing_ui
++
++
++func is_dialogue_local_timing_paused() -> bool:
++	return is_movement_paused or is_showing_ui
++
++
++func _sync_dialogue_pause_state(force_publish: bool = false) -> void:
++	if not is_inside_tree():
++		return
++	var paused: bool = is_dialogue_timing_paused()
++	if paused == _dialogue_paused and not force_publish:
++		return
++	_dialogue_paused = paused
++	dialogue_pause_changed.emit(paused)
++
+ func _focus_is_live() -> bool:
+ 	return is_instance_valid(focus_controller) and focus_controller.is_inside_tree() and not focus_controller.is_queued_for_deletion()
+ 
+@@ -296,6 +329,7 @@ func _on_handset_window_focus_entered() -> void:
+ 
+ 
+ func _process(_delta: float) -> void:
++	_sync_dialogue_pause_state()
+ 	if _handset_adjusting and (get_tree().paused or is_movement_paused or is_showing_ui or is_landing_stunned or not _handset_inventory_is_live() or not handset_pose_debug_enabled or not is_instance_valid(handset_pose_debug) or handset_pose_debug.is_queued_for_deletion() or not handset_pose_debug.test_enabled):
+ 		set_handset_adjusting(false)
+ 	_sync_handset_pose_panel()
+diff --git a/main-autolysis/player/autolysis_player.tscn b/main-autolysis/player/autolysis_player.tscn
+index 9636823..76e6249 100644
+--- a/main-autolysis/player/autolysis_player.tscn
++++ b/main-autolysis/player/autolysis_player.tscn
+@@ -16,6 +16,7 @@
+ [ext_resource type="Script" uid="uid://dksg6ons8nee6" path="res://main-autolysis/player/components/autolysis_focus_controller.gd" id="35_focus"]
+ [ext_resource type="PackedScene" path="res://main-autolysis/ui/inventory/autolysis_liquid_contents_panel.tscn" id="36_liquid_contents"]
+ [ext_resource type="PackedScene" path="res://main-autolysis/ui/autolysis_handset_pose_debug.tscn" id="37_handset_pose"]
++[ext_resource type="PackedScene" path="res://main-autolysis/systems/dialogue-system/autolysis_dialogue_player.tscn" id="38_dialogue"]
+ 
+ [sub_resource type="BoxShape3D" id="BoxShape3D_8vem4"]
+ size = Vector3(0.6, 1.7, 0.6)
+@@ -173,6 +174,8 @@ script = ExtResource("32_inventory")
+ 
+ [node name="LiquidContentsPanel" parent="." unique_id=56462371 instance=ExtResource("36_liquid_contents")]
+ 
++[node name="DialoguePlayer" parent="." instance=ExtResource("38_dialogue")]
++
+ [node name="HandsetPoseDebug" parent="." instance=ExtResource("37_handset_pose")]
+ 
+ [node name="InteractionController" type="Node" parent="." unique_id=849023730]
+diff --git a/main-autolysis/player/components/autolysis_inventory_controller.gd b/main-autolysis/player/components/autolysis_inventory_controller.gd
+index d34230d..247b528 100644
+--- a/main-autolysis/player/components/autolysis_inventory_controller.gd
++++ b/main-autolysis/player/components/autolysis_inventory_controller.gd
+@@ -78,6 +78,10 @@ func get_handset_session_id() -> int:
+ 	return _handset_session
+ 
+ 
++func is_handset_session_committed(source: Node3D, actor: Node3D, session: int) -> bool:
++	return session > 0 and _handset_session_committed and _handset_source == source and _handset_actor == actor and _handset_session == session
++
++
+ func get_handset_display() -> Node3D:
+ 	return _presenter.get_display() if _handset_session > 0 and _node_is_live(_presenter) else null
+ 
+@@ -106,6 +110,10 @@ func begin_handset_take(actor: Node3D, source: Node3D, scene: PackedScene, posit
+ 	if not _presenter.can_prepare_handset(scene, pose["position"], pose["rotation_degrees"], scale_value):
+ 		return 0
+ 	_start_handset_transfer(actor, source, false)
++	if not _prepare_handset_source_business(actor, source, false, 0, _handset_transfer_token):
++		_clear_handset_transfer()
++		_busy = _publication_depth > 0
++		return 0
+ 	_handset_transfer_scene = scene
+ 	_handset_transfer_pose = pose.duplicate()
+ 	_handset_transfer_pose["scale"] = scale_value
+@@ -118,13 +126,17 @@ func begin_handset_take(actor: Node3D, source: Node3D, scene: PackedScene, posit
+ 
+ 
+ func can_return_handset(actor: Node3D, source: Node3D) -> bool:
+-	return not _busy and _handset_session > 0 and _handset_source == source and _handset_actor == actor and _handset_actor_valid(actor, source) and is_handset_display_session(source, get_handset_display(), _handset_session)
++	return not _busy and _handset_session > 0 and _handset_source == source and _handset_actor == actor and _handset_actor_valid(actor, source) and not _handset_source_return_blocked(actor, source, _handset_session) and is_handset_display_session(source, get_handset_display(), _handset_session)
+ 
+ 
+ func begin_handset_return(actor: Node3D, source: Node3D) -> int:
+ 	if not can_return_handset(actor, source):
+ 		return 0
+ 	_start_handset_transfer(actor, source, true)
++	if not _prepare_handset_source_business(actor, source, true, _handset_session, _handset_transfer_token):
++		_clear_handset_transfer()
++		_busy = _publication_depth > 0
++		return 0
+ 	return _handset_transfer_token
+ 
+ 
+@@ -136,7 +148,7 @@ func is_handset_transfer_current(actor: Node3D, source: Node3D, token: int) -> b
+ 	if (actor as AutolysisPlayer).focus_controller.session_id != _handset_transfer_focus or get_focused_instance() != null:
+ 		return false
+ 	if _handset_transfer_returning:
+-		return _handset_actor == actor and _handset_source == source and _handset_session > 0 and is_handset_display_session(source, get_handset_display(), _handset_session)
++		return _handset_actor == actor and _handset_source == source and _handset_session > 0 and not _handset_source_return_blocked(actor, source, _handset_session) and is_handset_display_session(source, get_handset_display(), _handset_session)
+ 	return _handset_session == 0 and is_instance_valid(_handset_candidate) and not _handset_candidate.is_queued_for_deletion() and _handset_candidate.get_parent() == null
+ 
+ 
+@@ -188,6 +200,10 @@ func commit_handset_take(actor: Node3D, source: Node3D, token: int, commit_sourc
+ 		_rollback_current_handset_transfer(actor, source, token, rollback_source)
+ 		abort_handset_session(source, token, "听筒模型入树后电话必要来源依赖失效。")
+ 		return false
++	# 唯一来源业务入口不可由公开调用方省略；最早持物观察前先建立接听归属与归还锁。
++	if not _commit_handset_source_business(false, actor, source, token, token):
++		_rollback_unpublished_handset_take(actor, source, token, presenter, rollback_source)
++		return false
+ 	_handset_candidate = null
+ 	_store_handset_pose(source, _handset_position, _handset_rotation)
+ 	_watch_handset_dependencies()
+@@ -195,6 +211,8 @@ func commit_handset_take(actor: Node3D, source: Node3D, token: int, commit_sourc
+ 	_holding_revision += 1
+ 	_clear_handset_transfer()
+ 	_publish_handset_change(notify_source, actor, source)
++	if is_instance_valid(self) and _node_is_live(actor) and _node_is_live(source):
++		_activate_handset_source_effects(false, actor, source, token, token)
+ 	return true
+ 
+ 
+@@ -213,6 +231,9 @@ func commit_handset_return(actor: Node3D, source: Node3D, token: int, commit_sou
+ 	if not committed is bool or not committed or not _handset_commit_identity_current(actor, source, token, true, presenter, revision, index, focus_session) or _handset_session != session or not is_handset_transfer_current(actor, source, token) or get_handset_display() != display:
+ 		_rollback_current_handset_transfer(actor, source, token, rollback_source)
+ 		return false
++	if _handset_source_return_blocked(actor, source, session) or not _commit_handset_source_business(true, actor, source, session, token):
++		_rollback_current_handset_transfer(actor, source, token, rollback_source)
++		return false
+ 	_disconnect_handset_dependencies()
+ 	_reset_handset_state()
+ 	_holding_revision += 1
+@@ -220,6 +241,8 @@ func commit_handset_return(actor: Node3D, source: Node3D, token: int, commit_sou
+ 	presenter.clear_handset(source, session)
+ 	if is_instance_valid(self):
+ 		_publish_handset_change(notify_source, actor, source)
++	if is_instance_valid(self) and _node_is_live(actor) and _node_is_live(source):
++		_activate_handset_source_effects(true, actor, source, session, token)
+ 	return true
+ 
+ 
+@@ -304,6 +327,9 @@ func _start_handset_transfer(actor: Node3D, source: Node3D, returning: bool) ->
+ 
+ func _clear_handset_transfer() -> void:
+ 	var candidate: Node3D = _handset_candidate
++	var source: Node3D = _handset_transfer_source
++	var actor: Node3D = _handset_transfer_actor
++	var transaction: int = _handset_transfer_token
+ 	_handset_candidate = null
+ 	_handset_transfer_source = null
+ 	_handset_transfer_actor = null
+@@ -314,6 +340,8 @@ func _clear_handset_transfer() -> void:
+ 	_handset_transfer_returning = false
+ 	_handset_transfer_scene = null
+ 	_handset_transfer_pose.clear()
++	if _node_is_live(source) and source.has_method("cancel_handset_business_preparation"):
++		source.cancel_handset_business_preparation(actor, transaction)
+ 	if is_instance_valid(candidate) and not candidate.is_queued_for_deletion():
+ 		if candidate.is_inside_tree():
+ 			candidate.queue_free()
+@@ -359,6 +387,46 @@ func _rollback_current_handset_transfer(actor: Variant, source: Variant, token:
+ 		_call_handset_rollback(callback)
+ 
+ 
++func _rollback_unpublished_handset_take(actor: Node3D, source: Node3D, token: int, presenter: AutolysisHeldItemPresenter, rollback_source: Callable) -> void:
++	if _handset_transfer_token != token or _handset_transfer_actor != actor or _handset_transfer_source != source:
++		return
++	_rollback_current_handset_transfer(actor, source, token, rollback_source)
++	if not is_instance_valid(self) or _handset_transfer_token != token or _handset_transfer_actor != actor or _handset_transfer_source != source:
++		return
++	if _handset_source == source and _handset_actor == actor and _handset_session == token:
++		_reset_handset_state()
++	if _node_is_live(source) and source.has_method("cancel_handset_business_preparation"):
++		source.cancel_handset_business_preparation(actor, token)
++	if not is_instance_valid(self) or _handset_transfer_token != token or _handset_transfer_actor != actor or _handset_transfer_source != source:
++		return
++	if is_instance_valid(presenter):
++		presenter.clear_handset(source, token)
++	# 候选仍由本次预处理拥有，沿现有取消恢复确认真实限位停用后再清除事务。
++
++
++func _prepare_handset_source_business(actor: Node3D, source: Node3D, returning: bool, session: int, transaction: int) -> bool:
++	if not _node_is_live(source) or not source.has_method("prepare_handset_business_transfer"):
++		return false
++	var accepted: Variant = source.prepare_handset_business_transfer(actor, returning, session, transaction)
++	return _node_is_live(self) and _node_is_live(actor) and _node_is_live(source) and accepted is bool and accepted and _handset_transfer_source == source and _handset_transfer_actor == actor and _handset_transfer_token == transaction and _handset_transfer_returning == returning and _busy and not _handset_cleaning and _handset_actor_valid(actor, source)
++
++
++func _commit_handset_source_business(returning: bool, actor: Node3D, source: Node3D, session: int, transaction: int) -> bool:
++	if not _node_is_live(source) or not source.has_method("commit_handset_business_completion"):
++		return false
++	var accepted: Variant = source.commit_handset_business_completion(returning, actor, session, transaction)
++	return _node_is_live(self) and _node_is_live(actor) and _node_is_live(source) and accepted is bool and accepted and _handset_transfer_source == source and _handset_transfer_actor == actor and _handset_transfer_token == transaction and _handset_transfer_returning == returning and _handset_session == session and _handset_source == source and _handset_actor == actor and _busy and not _handset_cleaning and _handset_actor_valid(actor, source) and is_handset_display_session(source, get_handset_display(), session)
++
++
++func _activate_handset_source_effects(returning: bool, actor: Node3D, source: Node3D, session: int, transaction: int) -> void:
++	if source.has_method("activate_handset_completion_effects"):
++		source.activate_handset_completion_effects(returning, actor, session, transaction)
++
++
++func _handset_source_return_blocked(actor: Node3D, source: Node3D, session: int) -> bool:
++	return _node_is_live(source) and source.has_method("is_handset_return_blocked") and bool(source.is_handset_return_blocked(actor, session))
++
++
+ func _handset_commit_identity_current(actor: Variant, source: Variant, token: int, returning: bool, presenter: Variant, revision: int, index: int, focus_session: int) -> bool:
+ 	if token <= 0 or _handset_transfer_token != token or _handset_transfer_actor != actor or _handset_transfer_source != source or _handset_transfer_returning != returning or not _busy or _handset_cleaning:
+ 		return false
+@@ -419,6 +487,9 @@ func _process(_delta: float) -> void:
+ 		return
+ 	if _busy or _presenter.is_handset_display(_handset_source, _presenter.get_display(), _handset_session):
+ 		return
++	if _handset_source_return_blocked(_handset_actor, _handset_source, _handset_session):
++		abort_handset_session(_handset_source, _handset_session, "通话期间必要听筒显示失效。")
++		return
+ 	# 显示丢失先按本次配置和运行调节值重建，不解除持有。
+ 	_busy = true
+ 	var source: Node3D = _handset_source
+diff --git a/main-autolysis/player/tests/handset_inventory_test.gd b/main-autolysis/player/tests/handset_inventory_test.gd
+index a62d817..f6061ea 100644
+--- a/main-autolysis/player/tests/handset_inventory_test.gd
++++ b/main-autolysis/player/tests/handset_inventory_test.gd
+@@ -36,6 +36,15 @@ class FixtureTelephone extends Node3D:
+ 	var free_actor_on_commit: bool = false
+ 	var refuse_commit: bool = false
+ 
++	func prepare_handset_business_transfer(_actor: Node3D, returning: bool, held_session: int, transaction: int) -> bool:
++		return transaction > 0 and (not returning or held_session == session)
++
++	func commit_handset_business_completion(returning: bool, actor: Node3D, held_session: int, transaction: int) -> bool:
++		return transaction > 0 and held_session > 0 and ((holder == null and session == 0) if returning else (holder == actor and session == held_session))
++
++	func is_handset_return_blocked(_actor: Node3D, _session: int) -> bool:
++		return false
++
+ 	func commit_take(actor: Node3D, token: int) -> bool:
+ 		if refuse_commit:
+ 			return false
+diff --git a/main-autolysis/player/tests/run_telephone_verification.ps1 b/main-autolysis/player/tests/run_telephone_verification.ps1
+index 494247c..ca22e13 100644
+--- a/main-autolysis/player/tests/run_telephone_verification.ps1
++++ b/main-autolysis/player/tests/run_telephone_verification.ps1
+@@ -8,7 +8,7 @@ $ErrorActionPreference = 'Stop'
+ $projectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..\..'))
+ $runner = Join-Path $projectRoot 'main-autolysis\systems\item-system\tests\run_item_check.ps1'
+ if (-not $EvidenceRoot) {
+-    $EvidenceRoot = Join-Path $projectRoot ('docs\project-autolysis\00-discuss\交互系统\电话聚焦交互复验\' + (Get-Date -Format 'yyyyMMdd-HHmmss'))
++    $EvidenceRoot = Join-Path $projectRoot ('docs\project-autolysis\00-discuss\交互系统\电话来电与对话系统实施证据\20261006\专项验收\统一复验-' + (Get-Date -Format 'yyyyMMdd-HHmmss'))
+ }
+ $EvidenceRoot = [IO.Path]::GetFullPath($EvidenceRoot)
+ if ((Test-Path -LiteralPath $EvidenceRoot) -and @(Get-ChildItem -LiteralPath $EvidenceRoot -Force).Count -gt 0) {
+@@ -18,6 +18,18 @@ $playerTests = 'res://main-autolysis/player/tests/'
+ $itemTests = 'res://main-autolysis/systems/item-system/tests/'
+ $cases = @(
+     @{Name='import'; Import=$true},
++    @{Name='telephone-timing'; Script=$playerTests+'telephone_timing_probe.gd'; FixedFps=0},
++    @{Name='telephone-ring-start'; Script=$playerTests+'telephone_ring_start_probe.gd'; FixedFps=0},
++    @{Name='dialogue-system'; Script=$playerTests+'dialogue_system_test.gd'; FixedFps=0},
++    @{Name='dialogue-boundaries'; Script=$playerTests+'dialogue_boundary_test.gd'; FixedFps=0},
++    @{Name='dialogue-configurations'; Script='res://main-autolysis/systems/dialogue-system/tests/dialogue_configuration_check.gd'; FixedFps=0},
++    @{Name='dialogue-visibility'; Script='res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd'; FixedFps=0},
++    @{Name='telephone-call'; Script=$playerTests+'telephone_call_test.gd'; FixedFps=0},
++    @{Name='telephone-call-boundaries'; Script=$playerTests+'telephone_call_boundary_test.gd'; FixedFps=0},
++    @{Name='telephone-call-gameplay'; Script=$playerTests+'telephone_call_gameplay_test.gd'; FixedFps=0},
++    @{Name='telephone-call-entry'; Script=$playerTests+'telephone_call_entry_test.gd'; FixedFps=0},
++    @{Name='telephone-runtime-wait'; Script=$playerTests+'telephone_runtime_once_test.gd'; FixedFps=0},
++    @{Name='telephone-runtime-reject'; Script=$playerTests+'telephone_runtime_once_test.gd'; FixedFps=0; Arguments=@('--reject-request')},
+     @{Name='telephone-device'; Script=$playerTests+'telephone_device_test.gd'},
+     @{Name='telephone-input'; Script=$playerTests+'telephone_input_test.gd'},
+     @{Name='telephone-handset-view'; Script=$playerTests+'telephone_handset_view_test.gd'},
+@@ -58,6 +70,8 @@ foreach ($case in $selected) {
+     }
+     if ($case.Import) { $parameters.Import = $true }
+     else { $parameters.ScriptPath = $case.Script }
++    if ($case.ContainsKey('FixedFps')) { $parameters.FixedFps = $case.FixedFps }
++    if ($case.Arguments) { $parameters.UserArguments += $case.Arguments }
+     if ($case.Errors) { $parameters.ExpectedErrorPatterns = $case.Errors }
+     Write-Output ('开始无图形检查：' + $case.Name)
+     & $runner @parameters
+diff --git a/main-autolysis/player/tests/telephone_device_test.gd b/main-autolysis/player/tests/telephone_device_test.gd
+index 22934a9..4efc674 100644
+--- a/main-autolysis/player/tests/telephone_device_test.gd
++++ b/main-autolysis/player/tests/telephone_device_test.gd
+@@ -6,13 +6,23 @@ const PHONE_SCENE: PackedScene = preload("res://main-autolysis/scenes/prefabs/pr
+ const BASELINE_PHONE: PackedScene = preload("res://docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/baseline/main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn")
+ const BASELINE_MAIN: PackedScene = preload("res://docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/baseline/main-autolysis/scenes/01-autolysis-test.tscn")
+ const CAFFEINE: AutolysisItemDefinition = preload("res://main-autolysis/systems/item-system/items/caffeine.tres")
+-const PHONE_EXPORTS: Array[StringName] = [&"reference_camera", &"root_interaction", &"focus_target", &"handset_body", &"handset_interaction", &"handset_anchor", &"handset_visual", &"handset_visual_scene", &"move_limit_body", &"move_limit_shape", &"additional_move_limit_shapes", &"handset_held_position", &"handset_held_rotation_degrees", &"handset_held_scale"]
++const PHONE_EXPORTS: Array[StringName] = [&"reference_camera", &"root_interaction", &"focus_target", &"handset_body", &"handset_interaction", &"handset_anchor", &"handset_visual", &"handset_visual_scene", &"move_limit_body", &"move_limit_shape", &"additional_move_limit_shapes", &"handset_held_position", &"handset_held_rotation_degrees", &"handset_held_scale", &"call_controller"]
+ ## 删除前场景明确配置的区域，仅证明样本在旧区域外，不参与任何取筒许可。
+ const REMOVED_TAKE_BOUNDS: AABB = AABB(Vector3(-0.43, -1.3, 0), Vector3(2.28, 3.1, 2))
+ 
+ class FixtureTelephone extends AutolysisTelephone:
+ 	var refuse_take: bool = false
+ 	var refuse_return: bool = false
++	var refuse_business_take: bool = false
++	var refuse_business_return: bool = false
++	var refuse_business_take_after_commit: bool = false
++	var refuse_business_return_after_commit: bool = false
++
++	func commit_handset_business_completion(returning: bool, actor: Node3D, session: int, transaction: int) -> bool:
++		if (returning and refuse_business_return) or (not returning and refuse_business_take):
++			return false
++		var accepted: bool = super.commit_handset_business_completion(returning, actor, session, transaction)
++		return accepted and not ((returning and refuse_business_return_after_commit) or (not returning and refuse_business_take_after_commit))
+ 
+ 	func _commit_taken(actor: Variant, token: int) -> bool:
+ 		return false if refuse_take else super._commit_taken(actor, token)
+diff --git a/main-autolysis/scenes/01-autolysis-test.tscn b/main-autolysis/scenes/01-autolysis-test.tscn
+index fe0d77e..e9eddee 100644
+--- a/main-autolysis/scenes/01-autolysis-test.tscn
++++ b/main-autolysis/scenes/01-autolysis-test.tscn
+@@ -39,6 +39,8 @@
+ [ext_resource type="Script" uid="uid://be6kbvjw1rm7x" path="res://main-autolysis/systems/dynamic-footstep-system/scripts/footstep_surface.gd" id="90_surface"]
+ [ext_resource type="AudioStream" uid="uid://crct05slcrgcq" path="res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/stone_footstep_profile.tres" id="91_stone"]
+ [ext_resource type="PackedScene" uid="uid://dtsjcbeaeibks" path="res://main-autolysis/player/autolysis_player.tscn" id="99_autolysis_player"]
++[ext_resource type="Script" path="res://main-autolysis/player/components/autolysis_telephone_call_test_trigger.gd" id="100_call_trigger"]
++[ext_resource type="Resource" path="res://main-autolysis/systems/dialogue-system/chat_0.tres" id="101_dialogue"]
+ 
+ [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4jecm"]
+ sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+@@ -285,6 +287,12 @@ data = PackedVector3Array(-1.1999999, 0.29999998, 0.5, 1.1999999, 0.29999998, 0.
+ process_mode = 0
+ transform = Transform3D(0.17364824, 0, -0.9848078, 0, 1, 0, 0.9848078, 0, 0.17364824, -2.6399965, 0.9, 2.254367)
+ 
++[node name="TelephoneCallTestTrigger" type="Node" parent="." node_paths=PackedStringArray("telephone", "player")]
++script = ExtResource("100_call_trigger")
++telephone = NodePath("../interaction_prefabs/machines/MachineTelephone0/StaticBody3D")
++player = NodePath("../autolysis_player")
++dialogue_definition = ExtResource("101_dialogue")
++
+ [node name="world" type="Node3D" parent="." unique_id=1128936372]
+ 
+ [node name="WorldEnvironment" type="WorldEnvironment" parent="world" unique_id=1464016727]
+@@ -362,7 +370,6 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.75
+ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 7.75, -1.4901161e-07, -7.5)
+ 
+ [node name="upfloor" type="Node3D" parent="Environment" unique_id=343426982]
+-visible = false
+ metadata/_edit_group_ = true
+ metadata/_edit_lock_ = true
+ 
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn b/main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn
+index 68d3e84..86d17b2 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn
++++ b/main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn
+@@ -4,6 +4,8 @@
+ [ext_resource type="PackedScene" path="res://main-autolysis/scenes/prefabs/prefab_machines/visuals/telephone_handset_visual.tscn" id="1_handset"]
+ [ext_resource type="Script" uid="uid://b7kdmn1qas3t1" path="res://main-autolysis/components/interactions/autolysis_interaction_component.gd" id="1_interaction"]
+ [ext_resource type="Script" uid="uid://gv44yp6wcbel" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd" id="1_telephone"]
++[ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_call_controller.gd" id="1_call"]
++[ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_default_0.wav" id="1_ring"]
+ [ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="2_41drs"]
+ [ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="2_t2mr4"]
+ [ext_resource type="Material" uid="uid://blu42xw7rpe7b" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_2.tres" id="3_41drs"]
+@@ -62,7 +64,7 @@ material_override = ExtResource("3_cjmi4")
+ mesh = SubResource("BoxMesh_apmtd")
+ skeleton = NodePath("../../StaticBody3D/mesh_phone_base")
+ 
+-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=533765496 node_paths=PackedStringArray("reference_camera", "root_interaction", "focus_target", "handset_body", "handset_interaction", "handset_anchor", "handset_visual", "move_limit_body", "move_limit_shape") groups=["interactable"]]
++[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=533765496 node_paths=PackedStringArray("reference_camera", "root_interaction", "focus_target", "handset_body", "handset_interaction", "handset_anchor", "handset_visual", "move_limit_body", "move_limit_shape", "call_controller") groups=["interactable"]]
+ script = ExtResource("1_telephone")
+ reference_camera = NodePath("focus_camera")
+ root_interaction = NodePath("RootInteraction")
+@@ -74,9 +76,27 @@ handset_visual = NodePath("phone_hand_set/handset_visual")
+ handset_visual_scene = ExtResource("1_handset")
+ move_limit_body = NodePath("MoveLimitBody")
+ move_limit_shape = NodePath("MoveLimitBody/collision_move_limit")
++call_controller = NodePath("CallController")
+ handset_held_position = Vector3(0.33, -0.12, -0.27)
+ handset_held_rotation_degrees = Vector3(16, 125, 12)
+ 
++[node name="CallController" type="Node3D" parent="StaticBody3D" node_paths=PackedStringArray("telephone", "timing_root", "deferred_timer", "ring_player")]
++script = ExtResource("1_call")
++telephone = NodePath("..")
++timing_root = NodePath("Timing")
++deferred_timer = NodePath("Timing/DeferredRingTimer")
++ring_player = NodePath("Timing/RingPlayer")
++ring_stream = ExtResource("1_ring")
++
++[node name="Timing" type="Node3D" parent="StaticBody3D/CallController"]
++process_mode = 1
++
++[node name="DeferredRingTimer" type="Timer" parent="StaticBody3D/CallController/Timing"]
++one_shot = true
++
++[node name="RingPlayer" type="AudioStreamPlayer3D" parent="StaticBody3D/CallController/Timing"]
++bus = &"SFX"
++
+ [node name="focus_camera" type="Camera3D" parent="StaticBody3D" unique_id=1215350079]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.294, 1.133)
+ fov = 55.0
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd
+index df36275..6e7b807 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd
++++ b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd
+@@ -19,6 +19,7 @@ signal state_changed()
+ @export var move_limit_body: StaticBody3D
+ @export var move_limit_shape: CollisionShape3D
+ @export var additional_move_limit_shapes: Array[CollisionShape3D] = []
++@export var call_controller: Node
+ ## 临时起值来自现有普通道具定义，最终值由用户调节记录确定。
+ @export var handset_held_position: Vector3 = Vector3(0.24, -0.23, -0.48)
+ @export var handset_held_rotation_degrees: Vector3 = Vector3(-8, -18, 12)
+@@ -95,6 +96,56 @@ func is_transfer_pending() -> bool:
+ 	return _transfer_token > 0 or _limit_cleanup_pending
+ 
+ 
++func request_call(definition: Resource, context: Node) -> bool:
++	return _live(call_controller) and call_controller.request_call(definition, context)
++
++
++func is_telephone_call_source_valid() -> bool:
++	return _live(self) and _visual_dependencies_valid() and _limit_dependencies_valid()
++
++
++func is_handset_stably_docked() -> bool:
++	return is_telephone_call_source_valid() and _holder_session == 0 and _holder == null and not is_transfer_pending() and not _limit_target_enabled and _limit_write_applied == _limit_revision and _limit_matches(false)
++
++
++func has_committed_handset_hold() -> bool:
++	if _transfer_is_return and _return_holder_session > 0 and _live(_transfer_inventory):
++		return _transfer_inventory.is_handset_session_committed(self, _transfer_actor, _return_holder_session)
++	var inventory: AutolysisInventoryController = _inventory_of(_holder)
++	return _live(inventory) and inventory.is_handset_session_committed(self, _holder, _holder_session)
++
++
++func is_handset_return_blocked(actor: Node3D, session: int) -> bool:
++	return _live(call_controller) and call_controller.is_handset_return_blocked(actor, session)
++
++
++func prepare_handset_business_transfer(actor: Node3D, returning: bool, session: int, transaction: int) -> bool:
++	if returning and is_handset_return_blocked(actor, session):
++		return false
++	return not _live(call_controller) or call_controller.prepare_handset_business_transfer(actor, returning, session, transaction)
++
++
++func cancel_handset_business_preparation(actor: Node3D, transaction: int) -> void:
++	if _live(call_controller):
++		call_controller.cancel_handset_business_preparation(actor, transaction)
++
++
++func commit_handset_business_completion(returning: bool, actor: Node3D, session: int, transaction: int) -> bool:
++	if transaction != _transfer_token or returning != _transfer_is_return or _transfer_restoring or _transfer_actor != actor or not _live(actor) or not _live(_transfer_inventory):
++		return false
++	if returning:
++		if session != _return_holder_session or _holder_session != 0 or _holder != null or is_handset_return_blocked(actor, session) or not _limit_matches(false):
++			return false
++	elif not is_committed_handset_valid(actor, session) or session != transaction:
++		return false
++	return not _live(call_controller) or call_controller.commit_handset_business_completion(returning, actor, session, transaction)
++
++
++func activate_handset_completion_effects(returning: bool, actor: Node3D, session: int, transaction: int) -> void:
++	if _live(call_controller):
++		call_controller.activate_handset_completion_effects(returning, actor, session, transaction)
++
++
+ func get_holder() -> Node3D:
+ 	return _holder if _live(_holder) else null
+ 
+@@ -131,7 +182,7 @@ func can_take_handset(actor: Node3D) -> bool:
+ 
+ 
+ func can_return_handset(actor: Node3D) -> bool:
+-	if not is_configured() or is_transfer_pending() or not is_actor_focused(actor) or not owns_handset(actor, _holder_session):
++	if not is_configured() or is_transfer_pending() or not is_actor_focused(actor) or not owns_handset(actor, _holder_session) or is_handset_return_blocked(actor, _holder_session):
+ 		return false
+ 	# 已失效的限位不阻止仍可安全完成的原来源归还。
+ 	var inventory: AutolysisInventoryController = _inventory_of(actor)
+@@ -258,6 +309,8 @@ func _commit_taken(actor: Variant, token: int) -> bool:
+ func _rollback_taken(actor: Variant, token: int) -> void:
+ 	if token != _transfer_token or _transfer_is_return:
+ 		return
++	if _live(call_controller):
++		call_controller.rollback_handset_business_completion(actor, token)
+ 	if _holder == actor and _holder_session == token:
+ 		_holder = null
+ 		_holder_session = 0
+@@ -266,18 +319,20 @@ func _rollback_taken(actor: Variant, token: int) -> void:
+ 
+ 
+ func _commit_returned(actor: Variant, token: int) -> bool:
+-	if token != _transfer_token or not _transfer_is_return or _transfer_restoring or not _live(actor) or not owns_handset(actor, _return_holder_session) or not _visual_dependencies_valid() or not _limit_matches(false):
++	if token != _transfer_token or not _transfer_is_return or _transfer_restoring or not _live(actor) or not owns_handset(actor, _return_holder_session) or is_handset_return_blocked(actor, _return_holder_session) or not _visual_dependencies_valid() or not _limit_matches(false):
+ 		return false
+ 	var revision: int = _limit_revision
+ 	_holder = null
+ 	_holder_session = 0
+ 	handset_visual.visible = true
+-	return _live(self) and _live(actor) and token == _transfer_token and revision == _limit_revision and not _transfer_restoring and not _limit_target_enabled and _holder == null and _holder_session == 0 and _visual_dependencies_valid() and _limit_matches(false)
++	return _live(self) and _live(actor) and token == _transfer_token and revision == _limit_revision and not _transfer_restoring and not _limit_target_enabled and _holder == null and _holder_session == 0 and not is_handset_return_blocked(actor, _return_holder_session) and _visual_dependencies_valid() and _limit_matches(false)
+ 
+ 
+ func _rollback_returned(actor: Variant, token: int) -> void:
+ 	if token != _transfer_token or not _transfer_is_return:
+ 		return
++	if _live(call_controller):
++		call_controller.rollback_handset_business_completion(actor, token)
+ 	if not _live(actor):
+ 		abort_handset_holder(actor, _return_holder_session, "归还回滚玩家已经失效")
+ 		return
+@@ -319,6 +374,8 @@ func abort_handset_holder(actor: Variant, session: int, reason: String) -> void:
+ 	var matches_return: bool = _transfer_is_return and _transfer_actor == actor and _return_holder_session == session and session > 0
+ 	if not matches_holder and not matches_take and not matches_return:
+ 		return
++	if _live(call_controller):
++		call_controller.cancel_call(reason)
+ 	_holder = null
+ 	_holder_session = 0
+ 	_transfer_token = 0
+@@ -487,6 +544,8 @@ func _emit_sync(event: String) -> void:
+ 
+ func _exit_tree() -> void:
+ 	_limit_revision += 1
++	if _live(call_controller):
++		call_controller.cancel_call("电话来源离树")
+ 	var inventory: AutolysisInventoryController = _transfer_inventory if is_instance_valid(_transfer_inventory) else _inventory_of(_holder)
+ 	if _live(inventory):
+ 		inventory.abort_handset_session(self, _holder_session if _holder_session > 0 else _transfer_token, "电话来源离树")
+diff --git a/project.godot b/project.godot
+index 917e386..9f2496a 100644
+--- a/project.godot
++++ b/project.godot
+@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.6", "Forward Plus")
+ 
+ buses/default_bus_layout="res://main-autolysis/assets/audio/buses/default_bus_layout.tres"
+ 
++[autoload]
++
++AutolysisRuntimeSession="*res://main-autolysis/systems/runtime-session/autolysis_runtime_session.gd"
++
+ [display]
+ 
+ window/size/viewport_width=1920
+@@ -109,6 +113,10 @@ handset_pose_debug={
+ "deadzone": 0.5,
+ "events": []
+ }
++telephone_call_test={
++"deadzone": 0.5,
++"events": [Object(InputEventKey,"physical_keycode":79)]
++}
+ 
+ [layer_names]
+ 

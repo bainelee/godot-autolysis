@@ -1,0 +1,27 @@
+{
+  "检查": "电话来电边界专项",
+  "时间": "2026-10-06T13:30:05.8031663+08:00",
+  "进程编号": 2956,
+  "退出码": 1,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/player/tests/telephone_call_boundary_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/交互系统/电话来电与对话系统实施证据/20261006/电话边界专项/初次/details"
+  ],
+  "通过断言数": 92,
+  "预期错误计数": {},
+  "非预期错误": [
+    "失败：最早持物观察来源立即释放释放使本次准备异常一次且无旧表现开始或正常完成",
+    "失败：观察释放来源后库存与显示匹配清理",
+    "ERROR: Object is locked and can't be freed.",
+    "SCRIPT ERROR: Attempted to free a locked object (calling or emitting)."
+  ]
+}

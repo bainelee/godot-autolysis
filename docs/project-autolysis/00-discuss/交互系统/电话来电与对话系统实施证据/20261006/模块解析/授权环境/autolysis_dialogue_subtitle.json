@@ -1,0 +1,12 @@
+{
+  "脚本": "main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.gd",
+  "参数": [
+    "--headless",
+    "--path",
+    "D:\\autolysis",
+    "--check-only",
+    "--script",
+    "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.gd"
+  ],
+  "退出码": 0
+}

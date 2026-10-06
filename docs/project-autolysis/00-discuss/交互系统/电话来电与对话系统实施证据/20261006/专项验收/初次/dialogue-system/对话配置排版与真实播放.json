@@ -1,0 +1,3120 @@
+{
+	"失败数": 0,
+	"完成结果": {
+		"dialogue_id": "chat_0",
+		"index": 8,
+		"outcome": "正常完成",
+		"reason": "",
+		"source_id": 53687093057,
+		"token": 4
+	},
+	"引擎": {
+		"build": "official",
+		"hash": "14d19694e0c88a3f9e82d899a0400f27a24c176e",
+		"hex": 263681,
+		"major": 4,
+		"minor": 6,
+		"patch": 1,
+		"status": "stable",
+		"string": "4.6.1-stable (official)",
+		"timestamp": 0
+	},
+	"排版": [
+		{
+			"alpha": 1.0,
+			"background_rect": "[P: (528.0, 512.0), S: (224.0, 40.0)]",
+			"font_height": 29.0,
+			"font_name": "Noto Sans SC",
+			"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+			"font_size": 24,
+			"horizontal_padding": 16.0,
+			"index": 0,
+			"inventory_rect": "[P: (465.0, 560.0), S: (350.0, 80.0)]",
+			"line_count": 1,
+			"natural_size": "(192.0, 29.0)",
+			"text": "你很快会习惯的。",
+			"text_height": 29.0,
+			"text_rect": "[P: (544.0, 517.5), S: (192.0, 29.0)]",
+			"token": 700,
+			"vertical_padding": 5.5,
+			"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+			"visible": true
+		},
+		{
+			"alpha": 1.0,
+			"background_rect": "[P: (276.0, 512.0), S: (728.0, 40.0)]",
+			"font_height": 29.0,
+			"font_name": "Noto Sans SC",
+			"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+			"font_size": 24,
+			"horizontal_padding": 16.0,
+			"index": 1,
+			"inventory_rect": "[P: (465.0, 560.0), S: (350.0, 80.0)]",
+			"line_count": 1,
+			"natural_size": "(696.0, 29.0)",
+			"text": "现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。",
+			"text_height": 29.0,
+			"text_rect": "[P: (292.0, 517.5), S: (696.0, 29.0)]",
+			"token": 700,
+			"vertical_padding": 5.5,
+			"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+			"visible": true
+		},
+		{
+			"alpha": 1.0,
+			"background_rect": "[P: (140.0, 352.0), S: (1000.0, 200.0)]",
+			"font_height": 29.0,
+			"font_name": "Noto Sans SC",
+			"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+			"font_size": 24,
+			"horizontal_padding": 16.0,
+			"index": 2,
+			"inventory_rect": "[P: (465.0, 560.0), S: (350.0, 80.0)]",
+			"line_count": 6,
+			"natural_size": "(5568.0, 29.0)",
+			"text": "现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。",
+			"text_height": 189.0,
+			"text_rect": "[P: (156.0, 357.5), S: (968.0, 189.0)]",
+			"token": 700,
+			"vertical_padding": 5.5,
+			"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+			"visible": true
+		},
+		{
+			"alpha": 1.0,
+			"background_rect": "[P: (16.0, 0.0), S: (388.0, 552.0)]",
+			"font_height": 29.0,
+			"font_name": "Noto Sans SC",
+			"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+			"font_size": 24,
+			"horizontal_padding": 16.0,
+			"index": 3,
+			"inventory_rect": "[P: (35.0, 560.0), S: (350.0, 80.0)]",
+			"line_count": 17,
+			"natural_size": "(5568.0, 29.0)",
+			"text": "现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。",
+			"text_height": 541.0,
+			"text_rect": "[P: (32.0, 5.5), S: (356.0, 541.0)]",
+			"token": 700,
+			"vertical_padding": 5.5,
+			"viewport_rect": "[P: (0.0, 0.0), S: (420.0, 720.0)]",
+			"visible": true
+		},
+		{
+			"alpha": 1.0,
+			"background_rect": "[P: (16.0, 256.0), S: (388.0, 296.0)]",
+			"font_height": 29.0,
+			"font_name": "Noto Sans SC",
+			"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+			"font_size": 24,
+			"horizontal_padding": 16.0,
+			"index": 4,
+			"inventory_rect": "[P: (35.0, 560.0), S: (350.0, 80.0)]",
+			"line_count": 9,
+			"natural_size": "(2951.0, 29.0)",
+			"text": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+			"text_height": 285.0,
+			"text_rect": "[P: (32.0, 261.5), S: (356.0, 285.0)]",
+			"token": 700,
+			"vertical_padding": 5.5,
+			"viewport_rect": "[P: (0.0, 0.0), S: (420.0, 720.0)]",
+			"visible": true
+		},
+		{
+			"alpha": 1.0,
+			"background_rect": "[P: (16.0, 226.0), S: (388.0, 296.0)]",
+			"font_height": 29.0,
+			"font_name": "Noto Sans SC",
+			"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+			"font_size": 24,
+			"horizontal_padding": 16.0,
+			"index": 4,
+			"inventory_rect": "[P: (35.0, 530.0), S: (350.0, 80.0)]",
+			"line_count": 9,
+			"natural_size": "(2951.0, 29.0)",
+			"text": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+			"text_height": 285.0,
+			"text_rect": "[P: (32.0, 231.5), S: (356.0, 285.0)]",
+			"token": 700,
+			"vertical_padding": 5.5,
+			"viewport_rect": "[P: (0.0, 0.0), S: (420.0, 720.0)]",
+			"visible": true
+		}
+	],
+	"断言": [
+		{
+			"说明": "专项实际使用无图形后端",
+			"通过": true
+		},
+		{
+			"说明": "首段明确九句有序文本与语音快照",
+			"通过": true
+		},
+		{
+			"说明": "独立原文配置真实可读取",
+			"通过": true
+		},
+		{
+			"说明": "中文表格实际表头只有稳定键及中文列",
+			"通过": true
+		},
+		{
+			"说明": "中文配置有序且编号唯一：第0句",
+			"通过": true
+		},
+		{
+			"说明": "原文与中文首次逐字一致：第0句",
+			"通过": true
+		},
+		{
+			"说明": "运行译文逐句来自明确中文翻译资源：第0句",
+			"通过": true
+		},
+		{
+			"说明": "第0句语音映射使用对应实际文件",
+			"通过": true
+		},
+		{
+			"说明": "中文配置有序且编号唯一：第1句",
+			"通过": true
+		},
+		{
+			"说明": "原文与中文首次逐字一致：第1句",
+			"通过": true
+		},
+		{
+			"说明": "运行译文逐句来自明确中文翻译资源：第1句",
+			"通过": true
+		},
+		{
+			"说明": "第1句语音映射使用对应实际文件",
+			"通过": true
+		},
+		{
+			"说明": "中文配置有序且编号唯一：第2句",
+			"通过": true
+		},
+		{
+			"说明": "原文与中文首次逐字一致：第2句",
+			"通过": true
+		},
+		{
+			"说明": "运行译文逐句来自明确中文翻译资源：第2句",
+			"通过": true
+		},
+		{
+			"说明": "第2句语音映射使用对应实际文件",
+			"通过": true
+		},
+		{
+			"说明": "中文配置有序且编号唯一：第3句",
+			"通过": true
+		},
+		{
+			"说明": "原文与中文首次逐字一致：第3句",
+			"通过": true
+		},
+		{
+			"说明": "运行译文逐句来自明确中文翻译资源：第3句",
+			"通过": true
+		},
+		{
+			"说明": "第3句语音映射使用对应实际文件",
+			"通过": true
+		},
+		{
+			"说明": "中文配置有序且编号唯一：第4句",
+			"通过": true
+		},
+		{
+			"说明": "原文与中文首次逐字一致：第4句",
+			"通过": true
+		},
+		{
+			"说明": "运行译文逐句来自明确中文翻译资源：第4句",
+			"通过": true
+		},
+		{
+			"说明": "第4句语音映射使用对应实际文件",
+			"通过": true
+		},
+		{
+			"说明": "中文配置有序且编号唯一：第5句",
+			"通过": true
+		},
+		{
+			"说明": "原文与中文首次逐字一致：第5句",
+			"通过": true
+		},
+		{
+			"说明": "运行译文逐句来自明确中文翻译资源：第5句",
+			"通过": true
+		},
+		{
+			"说明": "第5句语音映射使用对应实际文件",
+			"通过": true
+		},
+		{
+			"说明": "中文配置有序且编号唯一：第6句",
+			"通过": true
+		},
+		{
+			"说明": "原文与中文首次逐字一致：第6句",
+			"通过": true
+		},
+		{
+			"说明": "运行译文逐句来自明确中文翻译资源：第6句",
+			"通过": true
+		},
+		{
+			"说明": "第6句语音映射使用对应实际文件",
+			"通过": true
+		},
+		{
+			"说明": "中文配置有序且编号唯一：第7句",
+			"通过": true
+		},
+		{
+			"说明": "原文与中文首次逐字一致：第7句",
+			"通过": true
+		},
+		{
+			"说明": "运行译文逐句来自明确中文翻译资源：第7句",
+			"通过": true
+		},
+		{
+			"说明": "第7句语音映射使用对应实际文件",
+			"通过": true
+		},
+		{
+			"说明": "中文配置有序且编号唯一：第8句",
+			"通过": true
+		},
+		{
+			"说明": "原文与中文首次逐字一致：第8句",
+			"通过": true
+		},
+		{
+			"说明": "运行译文逐句来自明确中文翻译资源：第8句",
+			"通过": true
+		},
+		{
+			"说明": "第8句语音映射使用对应实际文件",
+			"通过": true
+		},
+		{
+			"说明": "第四句没有新增末尾标点",
+			"通过": true
+		},
+		{
+			"说明": "修改独立原文配置对象不改变明确中文资源快照",
+			"通过": true
+		},
+		{
+			"说明": "显式中文资源变体决定运行译文",
+			"通过": true
+		},
+		{
+			"说明": "缺键变体明确拒绝并报告原因",
+			"通过": true
+		},
+		{
+			"说明": "空译文变体明确拒绝并报告原因",
+			"通过": true
+		},
+		{
+			"说明": "重复编号变体明确拒绝并报告原因",
+			"通过": true
+		},
+		{
+			"说明": "缺语音变体明确拒绝并报告原因",
+			"通过": true
+		},
+		{
+			"说明": "循环语音变体明确拒绝并报告原因",
+			"通过": true
+		},
+		{
+			"说明": "负等待变体明确拒绝并报告原因",
+			"通过": true
+		},
+		{
+			"说明": "短句准备字幕布局",
+			"通过": true
+		},
+		{
+			"说明": "短句同步显示当前布局",
+			"通过": true
+		},
+		{
+			"说明": "短句背景实际矩形水平居中",
+			"通过": true
+		},
+		{
+			"说明": "短句背景底边在实际道具栏顶边上方八像素",
+			"通过": true
+		},
+		{
+			"说明": "短句实际宽度包含内边距且不超过上限及可用视口",
+			"通过": true
+		},
+		{
+			"说明": "短句实际字体字号保持二十四",
+			"通过": true
+		},
+		{
+			"说明": "短句单行背景实际高度四十像素",
+			"通过": true
+		},
+		{
+			"说明": "短句背景依实际字体宽度自适应而非固定最大宽",
+			"通过": true
+		},
+		{
+			"说明": "首段最长句准备字幕布局",
+			"通过": true
+		},
+		{
+			"说明": "首段最长句同步显示当前布局",
+			"通过": true
+		},
+		{
+			"说明": "首段最长句背景实际矩形水平居中",
+			"通过": true
+		},
+		{
+			"说明": "首段最长句背景底边在实际道具栏顶边上方八像素",
+			"通过": true
+		},
+		{
+			"说明": "首段最长句实际宽度包含内边距且不超过上限及可用视口",
+			"通过": true
+		},
+		{
+			"说明": "首段最长句实际字体字号保持二十四",
+			"通过": true
+		},
+		{
+			"说明": "实际字幕字体第0句全部字形存在",
+			"通过": true
+		},
+		{
+			"说明": "实际字幕字体第1句全部字形存在",
+			"通过": true
+		},
+		{
+			"说明": "实际字幕字体第2句全部字形存在",
+			"通过": true
+		},
+		{
+			"说明": "实际字幕字体第3句全部字形存在",
+			"通过": true
+		},
+		{
+			"说明": "实际字幕字体第4句全部字形存在",
+			"通过": true
+		},
+		{
+			"说明": "实际字幕字体第5句全部字形存在",
+			"通过": true
+		},
+		{
+			"说明": "实际字幕字体第6句全部字形存在",
+			"通过": true
+		},
+		{
+			"说明": "实际字幕字体第7句全部字形存在",
+			"通过": true
+		},
+		{
+			"说明": "实际字幕字体第8句全部字形存在",
+			"通过": true
+		},
+		{
+			"说明": "实际字号二十四字体单行高度可完整容纳四十像素背景",
+			"通过": true
+		},
+		{
+			"说明": "长中文准备字幕布局",
+			"通过": true
+		},
+		{
+			"说明": "长中文同步显示当前布局",
+			"通过": true
+		},
+		{
+			"说明": "长中文背景实际矩形水平居中",
+			"通过": true
+		},
+		{
+			"说明": "长中文背景底边在实际道具栏顶边上方八像素",
+			"通过": true
+		},
+		{
+			"说明": "长中文实际宽度包含内边距且不超过上限及可用视口",
+			"通过": true
+		},
+		{
+			"说明": "长中文实际字体字号保持二十四",
+			"通过": true
+		},
+		{
+			"说明": "长中文真实换行且背景高度依实际排版增长",
+			"通过": true
+		},
+		{
+			"说明": "多行背景使用真实排版高度与单行上下留白",
+			"通过": true
+		},
+		{
+			"说明": "窄视口准备字幕布局",
+			"通过": true
+		},
+		{
+			"说明": "窄视口同步显示当前布局",
+			"通过": true
+		},
+		{
+			"说明": "窄视口背景实际矩形水平居中",
+			"通过": true
+		},
+		{
+			"说明": "窄视口背景底边在实际道具栏顶边上方八像素",
+			"通过": true
+		},
+		{
+			"说明": "窄视口实际宽度包含内边距且不超过上限及可用视口",
+			"通过": true
+		},
+		{
+			"说明": "窄视口实际字体字号保持二十四",
+			"通过": true
+		},
+		{
+			"说明": "窄视口按真实可用宽度增加换行",
+			"通过": true
+		},
+		{
+			"说明": "连续长词准备字幕布局",
+			"通过": true
+		},
+		{
+			"说明": "连续长词同步显示当前布局",
+			"通过": true
+		},
+		{
+			"说明": "连续长词背景实际矩形水平居中",
+			"通过": true
+		},
+		{
+			"说明": "连续长词背景底边在实际道具栏顶边上方八像素",
+			"通过": true
+		},
+		{
+			"说明": "连续长词实际宽度包含内边距且不超过上限及可用视口",
+			"通过": true
+		},
+		{
+			"说明": "连续长词实际字体字号保持二十四",
+			"通过": true
+		},
+		{
+			"说明": "连续长词按智能换行限定文本控件宽度",
+			"通过": true
+		},
+		{
+			"说明": "道具栏真实布局移动后字幕保持八像素间距",
+			"通过": true
+		},
+		{
+			"说明": "旧布局回调注入不能覆盖新句",
+			"通过": true
+		},
+		{
+			"说明": "字幕及背景忽略鼠标且不取得焦点",
+			"通过": true
+		},
+		{
+			"说明": "字幕及背景忽略鼠标且不取得焦点",
+			"通过": true
+		},
+		{
+			"说明": "准备独占令牌且不显示字幕",
+			"通过": true
+		},
+		{
+			"说明": "准备未启动时其他会话被忙碌拒绝",
+			"通过": true
+		},
+		{
+			"说明": "暂停中启动请求被登记为待启动",
+			"通过": true
+		},
+		{
+			"说明": "暂停待启动保留原令牌且不显示或被新准备覆盖",
+			"通过": true
+		},
+		{
+			"说明": "异常业务接收者取得真实原因",
+			"通过": true
+		},
+		{
+			"说明": "匹配令牌显式取消成功",
+			"通过": true
+		},
+		{
+			"说明": "显式取消隐藏字幕且只异常通知一次",
+			"通过": true
+		},
+		{
+			"说明": "已失效旧令牌不能重复取消",
+			"通过": true
+		},
+		{
+			"说明": "零秒等待可以正常准备",
+			"通过": true
+		},
+		{
+			"说明": "异常业务接收者取得真实原因",
+			"通过": true
+		},
+		{
+			"说明": "运行中准备快照保留原句后等待",
+			"通过": true
+		},
+		{
+			"说明": "异常业务接收者取得真实原因",
+			"通过": true
+		},
+		{
+			"说明": "实际开始第0句同时使用对应中文和真实语音",
+			"通过": true
+		},
+		{
+			"说明": "实际开始第0句文字背景与语音同时存在且透明度复原",
+			"通过": true
+		},
+		{
+			"说明": "九句正式资源准备并启动真实逐句播放",
+			"通过": true
+		},
+		{
+			"说明": "第0句只有真实语音自然结束后才开始句后保留",
+			"通过": true
+		},
+		{
+			"说明": "实际开始第1句同时使用对应中文和真实语音",
+			"通过": true
+		},
+		{
+			"说明": "实际开始第1句文字背景与语音同时存在且透明度复原",
+			"通过": true
+		},
+		{
+			"说明": "第1句只有真实语音自然结束后才开始句后保留",
+			"通过": true
+		},
+		{
+			"说明": "实际开始第2句同时使用对应中文和真实语音",
+			"通过": true
+		},
+		{
+			"说明": "实际开始第2句文字背景与语音同时存在且透明度复原",
+			"通过": true
+		},
+		{
+			"说明": "第2句只有真实语音自然结束后才开始句后保留",
+			"通过": true
+		},
+		{
+			"说明": "实际开始第3句同时使用对应中文和真实语音",
+			"通过": true
+		},
+		{
+			"说明": "实际开始第3句文字背景与语音同时存在且透明度复原",
+			"通过": true
+		},
+		{
+			"说明": "第3句只有真实语音自然结束后才开始句后保留",
+			"通过": true
+		},
+		{
+			"说明": "实际开始第4句同时使用对应中文和真实语音",
+			"通过": true
+		},
+		{
+			"说明": "实际开始第4句文字背景与语音同时存在且透明度复原",
+			"通过": true
+		},
+		{
+			"说明": "第4句只有真实语音自然结束后才开始句后保留",
+			"通过": true
+		},
+		{
+			"说明": "实际开始第5句同时使用对应中文和真实语音",
+			"通过": true
+		},
+		{
+			"说明": "实际开始第5句文字背景与语音同时存在且透明度复原",
+			"通过": true
+		},
+		{
+			"说明": "第5句只有真实语音自然结束后才开始句后保留",
+			"通过": true
+		},
+		{
+			"说明": "实际开始第6句同时使用对应中文和真实语音",
+			"通过": true
+		},
+		{
+			"说明": "实际开始第6句文字背景与语音同时存在且透明度复原",
+			"通过": true
+		},
+		{
+			"说明": "第6句只有真实语音自然结束后才开始句后保留",
+			"通过": true
+		},
+		{
+			"说明": "实际开始第7句同时使用对应中文和真实语音",
+			"通过": true
+		},
+		{
+			"说明": "实际开始第7句文字背景与语音同时存在且透明度复原",
+			"通过": true
+		},
+		{
+			"说明": "第7句只有真实语音自然结束后才开始句后保留",
+			"通过": true
+		},
+		{
+			"说明": "实际开始第8句同时使用对应中文和真实语音",
+			"通过": true
+		},
+		{
+			"说明": "实际开始第8句文字背景与语音同时存在且透明度复原",
+			"通过": true
+		},
+		{
+			"说明": "第8句只有真实语音自然结束后才开始句后保留",
+			"通过": true
+		},
+		{
+			"说明": "业务正常完成接收者已看到字幕隐藏",
+			"通过": true
+		},
+		{
+			"说明": "正常业务完成发布期间新准备返回忙碌",
+			"通过": true
+		},
+		{
+			"说明": "正常完成观察期间新准备仍返回忙碌",
+			"通过": true
+		},
+		{
+			"说明": "正常完成观察期间新准备仍返回忙碌",
+			"通过": true
+		},
+		{
+			"说明": "九句自然音频与最后渐隐完成仅一次业务及两位观察通知",
+			"通过": true
+		},
+		{
+			"说明": "九句真实音频自然完成次数与开始顺序均准确",
+			"通过": true
+		},
+		{
+			"说明": "九句末句收尾后文字和背景隐藏",
+			"通过": true
+		},
+		{
+			"说明": "真实逐句开始顺序为零至八且不跳句",
+			"通过": true
+		},
+		{
+			"说明": "正常业务和观察发布收尾后播放容量释放",
+			"通过": true
+		},
+		{
+			"说明": "异常业务接收者取得真实原因",
+			"通过": true
+		}
+	],
+	"阶段采样": [
+		{
+			"audio_playing": true,
+			"audio_position": 0.096000000834465,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 0,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "voice",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (372.0, 482.0), S: (536.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 0,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(504.0, 29.0)",
+				"text": "早上好，马蒂亚斯中士。很高兴你平安抵达了。",
+				"text_height": 29.0,
+				"text_rect": "[P: (388.0, 487.5), S: (504.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 4310014,
+			"普通帧": 22,
+			"物理帧": 54
+		},
+		{
+			"audio_playing": true,
+			"audio_position": 0.096000000834465,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 0,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "voice",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (372.0, 482.0), S: (536.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 0,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(504.0, 29.0)",
+				"text": "早上好，马蒂亚斯中士。很高兴你平安抵达了。",
+				"text_height": 29.0,
+				"text_rect": "[P: (388.0, 487.5), S: (504.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 4332379,
+			"普通帧": 22,
+			"物理帧": 54
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 1.5,
+			"index": 0,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "hold",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (372.0, 482.0), S: (536.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 0,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(504.0, 29.0)",
+				"text": "早上好，马蒂亚斯中士。很高兴你平安抵达了。",
+				"text_height": 29.0,
+				"text_rect": "[P: (388.0, 487.5), S: (504.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 8632199,
+			"普通帧": 643,
+			"物理帧": 319
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 1.5,
+			"index": 0,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "hold",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (372.0, 482.0), S: (536.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 0,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(504.0, 29.0)",
+				"text": "早上好，马蒂亚斯中士。很高兴你平安抵达了。",
+				"text_height": 29.0,
+				"text_rect": "[P: (388.0, 487.5), S: (504.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 8632477,
+			"普通帧": 644,
+			"物理帧": 320
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 0,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "fade",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (372.0, 482.0), S: (536.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 0,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(504.0, 29.0)",
+				"text": "早上好，马蒂亚斯中士。很高兴你平安抵达了。",
+				"text_height": 29.0,
+				"text_rect": "[P: (388.0, 487.5), S: (504.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 10109270,
+			"普通帧": 859,
+			"物理帧": 409
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 0,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "fade",
+			"subtitle": {
+				"alpha": 0.965520024299622,
+				"background_rect": "[P: (372.0, 482.0), S: (536.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 0,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(504.0, 29.0)",
+				"text": "早上好，马蒂亚斯中士。很高兴你平安抵达了。",
+				"text_height": 29.0,
+				"text_rect": "[P: (388.0, 487.5), S: (504.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 0.965520024299622,
+			"token": 4,
+			"墙钟微秒": 10115993,
+			"普通帧": 860,
+			"物理帧": 410
+		},
+		{
+			"audio_playing": true,
+			"audio_position": 0.0746666640043259,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 1,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "voice",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (504.0, 482.0), S: (272.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 1,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(240.0, 29.0)",
+				"text": "前线的情况不容乐观。",
+				"text_height": 29.0,
+				"text_rect": "[P: (520.0, 487.5), S: (240.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 10354244,
+			"普通帧": 888,
+			"物理帧": 421
+		},
+		{
+			"audio_playing": true,
+			"audio_position": 0.096000000834465,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 1,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "voice",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (504.0, 482.0), S: (272.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 1,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(240.0, 29.0)",
+				"text": "前线的情况不容乐观。",
+				"text_height": 29.0,
+				"text_rect": "[P: (520.0, 487.5), S: (240.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 10354464,
+			"普通帧": 889,
+			"物理帧": 423
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 1.5,
+			"index": 1,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "hold",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (504.0, 482.0), S: (272.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 1,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(240.0, 29.0)",
+				"text": "前线的情况不容乐观。",
+				"text_height": 29.0,
+				"text_rect": "[P: (520.0, 487.5), S: (240.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 14476460,
+			"普通帧": 1481,
+			"物理帧": 669
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 1.5,
+			"index": 1,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "hold",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (504.0, 482.0), S: (272.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 1,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(240.0, 29.0)",
+				"text": "前线的情况不容乐观。",
+				"text_height": 29.0,
+				"text_rect": "[P: (520.0, 487.5), S: (240.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 14476730,
+			"普通帧": 1482,
+			"物理帧": 671
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 1,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "fade",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (504.0, 482.0), S: (272.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 1,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(240.0, 29.0)",
+				"text": "前线的情况不容乐观。",
+				"text_height": 29.0,
+				"text_rect": "[P: (520.0, 487.5), S: (240.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 15939758,
+			"普通帧": 1695,
+			"物理帧": 759
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 1,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "fade",
+			"subtitle": {
+				"alpha": 0.965520024299622,
+				"background_rect": "[P: (504.0, 482.0), S: (272.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 1,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(240.0, 29.0)",
+				"text": "前线的情况不容乐观。",
+				"text_height": 29.0,
+				"text_rect": "[P: (520.0, 487.5), S: (240.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 0.965520024299622,
+			"token": 4,
+			"墙钟微秒": 15946382,
+			"普通帧": 1696,
+			"物理帧": 759
+		},
+		{
+			"audio_playing": true,
+			"audio_position": 0.096000000834465,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 2,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "voice",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (336.0, 482.0), S: (608.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 2,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(576.0, 29.0)",
+				"text": "你这次的任务依然艰巨，但我们相信你的能力和忠诚。",
+				"text_height": 29.0,
+				"text_rect": "[P: (352.0, 487.5), S: (576.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 16187390,
+			"普通帧": 1724,
+			"物理帧": 771
+		},
+		{
+			"audio_playing": true,
+			"audio_position": 0.096000000834465,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 2,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "voice",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (336.0, 482.0), S: (608.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 2,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(576.0, 29.0)",
+				"text": "你这次的任务依然艰巨，但我们相信你的能力和忠诚。",
+				"text_height": 29.0,
+				"text_rect": "[P: (352.0, 487.5), S: (576.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 16187742,
+			"普通帧": 1725,
+			"物理帧": 773
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 1.5,
+			"index": 2,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "hold",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (336.0, 482.0), S: (608.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 2,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(576.0, 29.0)",
+				"text": "你这次的任务依然艰巨，但我们相信你的能力和忠诚。",
+				"text_height": 29.0,
+				"text_rect": "[P: (352.0, 487.5), S: (576.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 21698825,
+			"普通帧": 2518,
+			"物理帧": 1102
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 1.5,
+			"index": 2,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "hold",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (336.0, 482.0), S: (608.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 2,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(576.0, 29.0)",
+				"text": "你这次的任务依然艰巨，但我们相信你的能力和忠诚。",
+				"text_height": 29.0,
+				"text_rect": "[P: (352.0, 487.5), S: (576.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 21699064,
+			"普通帧": 2519,
+			"物理帧": 1104
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 2,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "fade",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (336.0, 482.0), S: (608.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 2,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(576.0, 29.0)",
+				"text": "你这次的任务依然艰巨，但我们相信你的能力和忠诚。",
+				"text_height": 29.0,
+				"text_rect": "[P: (352.0, 487.5), S: (576.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 23155144,
+			"普通帧": 2731,
+			"物理帧": 1192
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 2,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "fade",
+			"subtitle": {
+				"alpha": 0.965520024299622,
+				"background_rect": "[P: (336.0, 482.0), S: (608.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 2,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(576.0, 29.0)",
+				"text": "你这次的任务依然艰巨，但我们相信你的能力和忠诚。",
+				"text_height": 29.0,
+				"text_rect": "[P: (352.0, 487.5), S: (576.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 0.965520024299622,
+			"token": 4,
+			"墙钟微秒": 23161825,
+			"普通帧": 2732,
+			"物理帧": 1192
+		},
+		{
+			"audio_playing": true,
+			"audio_position": 0.096000000834465,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 3,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "voice",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (468.0, 482.0), S: (344.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 3,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(312.0, 29.0)",
+				"text": "与你之前的临床医疗任务不同",
+				"text_height": 29.0,
+				"text_rect": "[P: (484.0, 487.5), S: (312.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 23464668,
+			"普通帧": 2760,
+			"物理帧": 1204
+		},
+		{
+			"audio_playing": true,
+			"audio_position": 0.096000000834465,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 3,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "voice",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (468.0, 482.0), S: (344.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 3,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(312.0, 29.0)",
+				"text": "与你之前的临床医疗任务不同",
+				"text_height": 29.0,
+				"text_rect": "[P: (484.0, 487.5), S: (312.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 23465042,
+			"普通帧": 2761,
+			"物理帧": 1210
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 1.5,
+			"index": 3,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "hold",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (468.0, 482.0), S: (344.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 3,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(312.0, 29.0)",
+				"text": "与你之前的临床医疗任务不同",
+				"text_height": 29.0,
+				"text_rect": "[P: (484.0, 487.5), S: (312.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 26220618,
+			"普通帧": 3156,
+			"物理帧": 1374
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 1.5,
+			"index": 3,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "hold",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (468.0, 482.0), S: (344.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 3,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(312.0, 29.0)",
+				"text": "与你之前的临床医疗任务不同",
+				"text_height": 29.0,
+				"text_rect": "[P: (484.0, 487.5), S: (312.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 26220868,
+			"普通帧": 3157,
+			"物理帧": 1376
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 3,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "fade",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (468.0, 482.0), S: (344.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 3,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(312.0, 29.0)",
+				"text": "与你之前的临床医疗任务不同",
+				"text_height": 29.0,
+				"text_rect": "[P: (484.0, 487.5), S: (312.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 27683871,
+			"普通帧": 3370,
+			"物理帧": 1464
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 3,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "fade",
+			"subtitle": {
+				"alpha": 0.965520024299622,
+				"background_rect": "[P: (468.0, 482.0), S: (344.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 3,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(312.0, 29.0)",
+				"text": "与你之前的临床医疗任务不同",
+				"text_height": 29.0,
+				"text_rect": "[P: (484.0, 487.5), S: (312.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 0.965520024299622,
+			"token": 4,
+			"墙钟微秒": 27690555,
+			"普通帧": 3371,
+			"物理帧": 1464
+		},
+		{
+			"audio_playing": true,
+			"audio_position": 0.096000000834465,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 4,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "voice",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (324.0, 482.0), S: (632.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 4,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(600.0, 29.0)",
+				"text": "海尔塔十四号研究所是一个配备先进设备的药物配给站。",
+				"text_height": 29.0,
+				"text_rect": "[P: (340.0, 487.5), S: (600.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 27953634,
+			"普通帧": 3399,
+			"物理帧": 1476
+		},
+		{
+			"audio_playing": true,
+			"audio_position": 0.096000000834465,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 4,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "voice",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (324.0, 482.0), S: (632.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 4,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(600.0, 29.0)",
+				"text": "海尔塔十四号研究所是一个配备先进设备的药物配给站。",
+				"text_height": 29.0,
+				"text_rect": "[P: (340.0, 487.5), S: (600.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 27954003,
+			"普通帧": 3400,
+			"物理帧": 1479
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 1.5,
+			"index": 4,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "hold",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (324.0, 482.0), S: (632.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 4,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(600.0, 29.0)",
+				"text": "海尔塔十四号研究所是一个配备先进设备的药物配给站。",
+				"text_height": 29.0,
+				"text_rect": "[P: (340.0, 487.5), S: (600.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 35297594,
+			"普通帧": 4458,
+			"物理帧": 1917
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 1.5,
+			"index": 4,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "hold",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (324.0, 482.0), S: (632.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 4,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(600.0, 29.0)",
+				"text": "海尔塔十四号研究所是一个配备先进设备的药物配给站。",
+				"text_height": 29.0,
+				"text_rect": "[P: (340.0, 487.5), S: (600.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 35297856,
+			"普通帧": 4459,
+			"物理帧": 1921
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 4,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "fade",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (324.0, 482.0), S: (632.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 4,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(600.0, 29.0)",
+				"text": "海尔塔十四号研究所是一个配备先进设备的药物配给站。",
+				"text_height": 29.0,
+				"text_rect": "[P: (340.0, 487.5), S: (600.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 36747059,
+			"普通帧": 4670,
+			"物理帧": 2008
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 4,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "fade",
+			"subtitle": {
+				"alpha": 0.965520024299622,
+				"background_rect": "[P: (324.0, 482.0), S: (632.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 4,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(600.0, 29.0)",
+				"text": "海尔塔十四号研究所是一个配备先进设备的药物配给站。",
+				"text_height": 29.0,
+				"text_rect": "[P: (340.0, 487.5), S: (600.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 0.965520024299622,
+			"token": 4,
+			"墙钟微秒": 36753657,
+			"普通帧": 4671,
+			"物理帧": 2008
+		},
+		{
+			"audio_playing": true,
+			"audio_position": 0.096000000834465,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 5,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "voice",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (300.0, 482.0), S: (680.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 5,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(648.0, 29.0)",
+				"text": "为了你的安全，你将在设施内完成为期十五天的封闭式任务。",
+				"text_height": 29.0,
+				"text_rect": "[P: (316.0, 487.5), S: (648.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 37019756,
+			"普通帧": 4699,
+			"物理帧": 2020
+		},
+		{
+			"audio_playing": true,
+			"audio_position": 0.096000000834465,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 5,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "voice",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (300.0, 482.0), S: (680.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 5,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(648.0, 29.0)",
+				"text": "为了你的安全，你将在设施内完成为期十五天的封闭式任务。",
+				"text_height": 29.0,
+				"text_rect": "[P: (316.0, 487.5), S: (648.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 37020057,
+			"普通帧": 4700,
+			"物理帧": 2023
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 1.5,
+			"index": 5,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "hold",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (300.0, 482.0), S: (680.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 5,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(648.0, 29.0)",
+				"text": "为了你的安全，你将在设施内完成为期十五天的封闭式任务。",
+				"text_height": 29.0,
+				"text_rect": "[P: (316.0, 487.5), S: (648.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 42597347,
+			"普通帧": 5503,
+			"物理帧": 2356
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 1.5,
+			"index": 5,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "hold",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (300.0, 482.0), S: (680.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 5,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(648.0, 29.0)",
+				"text": "为了你的安全，你将在设施内完成为期十五天的封闭式任务。",
+				"text_height": 29.0,
+				"text_rect": "[P: (316.0, 487.5), S: (648.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 42597607,
+			"普通帧": 5504,
+			"物理帧": 2359
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 5,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "fade",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (300.0, 482.0), S: (680.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 5,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(648.0, 29.0)",
+				"text": "为了你的安全，你将在设施内完成为期十五天的封闭式任务。",
+				"text_height": 29.0,
+				"text_rect": "[P: (316.0, 487.5), S: (648.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 44060576,
+			"普通帧": 5717,
+			"物理帧": 2446
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 5,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "fade",
+			"subtitle": {
+				"alpha": 0.965520024299622,
+				"background_rect": "[P: (300.0, 482.0), S: (680.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 5,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(648.0, 29.0)",
+				"text": "为了你的安全，你将在设施内完成为期十五天的封闭式任务。",
+				"text_height": 29.0,
+				"text_rect": "[P: (316.0, 487.5), S: (648.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 0.965520024299622,
+			"token": 4,
+			"墙钟微秒": 44067285,
+			"普通帧": 5718,
+			"物理帧": 2447
+		},
+		{
+			"audio_playing": true,
+			"audio_position": 0.096000000834465,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 6,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "voice",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (276.0, 482.0), S: (728.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 6,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(696.0, 29.0)",
+				"text": "现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。",
+				"text_height": 29.0,
+				"text_rect": "[P: (292.0, 487.5), S: (696.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 44330651,
+			"普通帧": 5746,
+			"物理帧": 2458
+		},
+		{
+			"audio_playing": true,
+			"audio_position": 0.096000000834465,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 6,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "voice",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (276.0, 482.0), S: (728.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 6,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(696.0, 29.0)",
+				"text": "现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。",
+				"text_height": 29.0,
+				"text_rect": "[P: (292.0, 487.5), S: (696.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 44330902,
+			"普通帧": 5747,
+			"物理帧": 2462
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 1.5,
+			"index": 6,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "hold",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (276.0, 482.0), S: (728.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 6,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(696.0, 29.0)",
+				"text": "现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。",
+				"text_height": 29.0,
+				"text_rect": "[P: (292.0, 487.5), S: (696.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 50641577,
+			"普通帧": 6658,
+			"物理帧": 2839
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 1.5,
+			"index": 6,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "hold",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (276.0, 482.0), S: (728.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 6,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(696.0, 29.0)",
+				"text": "现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。",
+				"text_height": 29.0,
+				"text_rect": "[P: (292.0, 487.5), S: (696.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 50641844,
+			"普通帧": 6659,
+			"物理帧": 2841
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 6,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "fade",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (276.0, 482.0), S: (728.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 6,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(696.0, 29.0)",
+				"text": "现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。",
+				"text_height": 29.0,
+				"text_rect": "[P: (292.0, 487.5), S: (696.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 52118559,
+			"普通帧": 6874,
+			"物理帧": 2930
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 6,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "fade",
+			"subtitle": {
+				"alpha": 0.965520024299622,
+				"background_rect": "[P: (276.0, 482.0), S: (728.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 6,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(696.0, 29.0)",
+				"text": "现在开始你的第一天吧。具体任务信息可以在“通知中心”查看。",
+				"text_height": 29.0,
+				"text_rect": "[P: (292.0, 487.5), S: (696.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 0.965520024299622,
+			"token": 4,
+			"墙钟微秒": 52125261,
+			"普通帧": 6875,
+			"物理帧": 2930
+		},
+		{
+			"audio_playing": true,
+			"audio_position": 0.096000000834465,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 7,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "voice",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (396.0, 482.0), S: (488.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 7,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(456.0, 29.0)",
+				"text": "如果对设备操作有任何疑问，请查阅手册。",
+				"text_height": 29.0,
+				"text_rect": "[P: (412.0, 487.5), S: (456.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 52385925,
+			"普通帧": 6903,
+			"物理帧": 2942
+		},
+		{
+			"audio_playing": true,
+			"audio_position": 0.096000000834465,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 7,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "voice",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (396.0, 482.0), S: (488.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 7,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(456.0, 29.0)",
+				"text": "如果对设备操作有任何疑问，请查阅手册。",
+				"text_height": 29.0,
+				"text_rect": "[P: (412.0, 487.5), S: (456.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 52386167,
+			"普通帧": 6904,
+			"物理帧": 2945
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 1.5,
+			"index": 7,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "hold",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (396.0, 482.0), S: (488.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 7,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(456.0, 29.0)",
+				"text": "如果对设备操作有任何疑问，请查阅手册。",
+				"text_height": 29.0,
+				"text_rect": "[P: (412.0, 487.5), S: (456.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 57686554,
+			"普通帧": 7666,
+			"物理帧": 3261
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 1.5,
+			"index": 7,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "hold",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (396.0, 482.0), S: (488.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 7,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(456.0, 29.0)",
+				"text": "如果对设备操作有任何疑问，请查阅手册。",
+				"text_height": 29.0,
+				"text_rect": "[P: (412.0, 487.5), S: (456.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 57686902,
+			"普通帧": 7667,
+			"物理帧": 3264
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 7,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "fade",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (396.0, 482.0), S: (488.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 7,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(456.0, 29.0)",
+				"text": "如果对设备操作有任何疑问，请查阅手册。",
+				"text_height": 29.0,
+				"text_rect": "[P: (412.0, 487.5), S: (456.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 59135939,
+			"普通帧": 7878,
+			"物理帧": 3351
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 7,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "fade",
+			"subtitle": {
+				"alpha": 0.965520024299622,
+				"background_rect": "[P: (396.0, 482.0), S: (488.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 7,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(456.0, 29.0)",
+				"text": "如果对设备操作有任何疑问，请查阅手册。",
+				"text_height": 29.0,
+				"text_rect": "[P: (412.0, 487.5), S: (456.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 0.965520024299622,
+			"token": 4,
+			"墙钟微秒": 59142650,
+			"普通帧": 7879,
+			"物理帧": 3351
+		},
+		{
+			"audio_playing": true,
+			"audio_position": 0.096000000834465,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 8,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "voice",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (528.0, 482.0), S: (224.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 8,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(192.0, 29.0)",
+				"text": "你很快会习惯的。",
+				"text_height": 29.0,
+				"text_rect": "[P: (544.0, 487.5), S: (192.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 59407984,
+			"普通帧": 7907,
+			"物理帧": 3363
+		},
+		{
+			"audio_playing": true,
+			"audio_position": 0.096000000834465,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 8,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "voice",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (528.0, 482.0), S: (224.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 8,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(192.0, 29.0)",
+				"text": "你很快会习惯的。",
+				"text_height": 29.0,
+				"text_rect": "[P: (544.0, 487.5), S: (192.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 59408215,
+			"普通帧": 7908,
+			"物理帧": 3367
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 1.5,
+			"index": 8,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "hold",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (528.0, 482.0), S: (224.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 8,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(192.0, 29.0)",
+				"text": "你很快会习惯的。",
+				"text_height": 29.0,
+				"text_rect": "[P: (544.0, 487.5), S: (192.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 61752311,
+			"普通帧": 8242,
+			"物理帧": 3505
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 1.5,
+			"index": 8,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "hold",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (528.0, 482.0), S: (224.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 8,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(192.0, 29.0)",
+				"text": "你很快会习惯的。",
+				"text_height": 29.0,
+				"text_rect": "[P: (544.0, 487.5), S: (192.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 61752625,
+			"普通帧": 8243,
+			"物理帧": 3508
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 8,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "fade",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (528.0, 482.0), S: (224.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 8,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(192.0, 29.0)",
+				"text": "你很快会习惯的。",
+				"text_height": 29.0,
+				"text_rect": "[P: (544.0, 487.5), S: (192.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4,
+			"墙钟微秒": 63208865,
+			"普通帧": 8455,
+			"物理帧": 3595
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "chat_0",
+			"hold_remaining": 0.0,
+			"index": 8,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "快照测试清理",
+				"source_id": 53687093057,
+				"token": 3
+			},
+			"paused": false,
+			"source_id": 53687093057,
+			"stage": "fade",
+			"subtitle": {
+				"alpha": 0.965520024299622,
+				"background_rect": "[P: (528.0, 482.0), S: (224.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 8,
+				"inventory_rect": "[P: (465.0, 530.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(192.0, 29.0)",
+				"text": "你很快会习惯的。",
+				"text_height": 29.0,
+				"text_rect": "[P: (544.0, 487.5), S: (192.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 0.965520024299622,
+			"token": 4,
+			"墙钟微秒": 63215377,
+			"普通帧": 8456,
+			"物理帧": 3596
+		}
+	]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "生产路径": "main-autolysis\\systems\\dialogue-system\\dialogue_source.cfg",
+    "前散列": "61D4A02EFC6F651D5BEB9A5DA45D7611FC37343B11DE3AB25095392F921D7D6A",
+    "后散列": "61D4A02EFC6F651D5BEB9A5DA45D7611FC37343B11DE3AB25095392F921D7D6A",
+    "未改变": true
+  },
+  {
+    "生产路径": "main-autolysis\\systems\\dialogue-system\\dialogue_zh.csv",
+    "前散列": "15026799246DF934270A1955A139D21814CE2A069CA3BC0BB8E01E28B1F57A1A",
+    "后散列": "15026799246DF934270A1955A139D21814CE2A069CA3BC0BB8E01E28B1F57A1A",
+    "未改变": true
+  },
+  {
+    "生产路径": "main-autolysis\\systems\\dialogue-system\\autolysis_dialogue_definition.gd",
+    "前散列": "899374781079D5B2ACB0836563783B56E113E9F5F9E6130DBA3156129C022A2F",
+    "后散列": "899374781079D5B2ACB0836563783B56E113E9F5F9E6130DBA3156129C022A2F",
+    "未改变": true
+  },
+  {
+    "生产路径": "main-autolysis\\assets\\audio\\speech\\chat_0\\chat_0_0.wav",
+    "前散列": "FBE19B3BA02257781C4F9F21139CDA472DAEC47AC020DB3F4FAFF1347884BD33",
+    "后散列": "FBE19B3BA02257781C4F9F21139CDA472DAEC47AC020DB3F4FAFF1347884BD33",
+    "未改变": true
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\phone\\sfx_phone_busy_busy signal_0.wav",
+    "字节数": 200044,
+    "散列": "C9BB14EC5384457042644D3103386814F4402CD55E47CA75213865BFAD3E59EE"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\phone\\sfx_phone_busy_busy signal_0.wav.import",
+    "字节数": 583,
+    "散列": "8092CFCB8A945D0F13A3BB210472D329B8B275E4C6280198C2F32D8C278A0352"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\phone\\sfx_phone_default_0.wav",
+    "字节数": 1760044,
+    "散列": "3E8106C40C4DC0D03BF5AC3E476760B6E695C5C9116910512D25A4EFAA7C8CA9"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\phone\\sfx_phone_default_0.wav.import",
+    "字节数": 558,
+    "散列": "800AD5E46A38BD6C6FD716C495201DB0260B898DA91ECEB9140F887750D361BA"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\phone\\sfx_phone_hang_up_other_side_0.wav",
+    "字节数": 150344,
+    "散列": "13BC37F46174AF8881B996564B6508B3A994ED3E94BB4507E6161F6BBED67749"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\phone\\sfx_phone_hang_up_other_side_0.wav.import",
+    "字节数": 590,
+    "散列": "B55C38EC311407BBACC31AD93958FF012257456A1147C4FE0410E57AA102628F"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\phone\\sfx_phone_hang_up_self_0.wav",
+    "字节数": 64616,
+    "散列": "2E0F789FFEAA5EB7162B943F412E86D4DECCDE0F9DA67C3A45A8994DA5A9447B"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\phone\\sfx_phone_hang_up_self_0.wav.import",
+    "字节数": 573,
+    "散列": "2CF754BFFB6F56E782FDB057BE2DB89DA6488CED08E7B2B7213CBAAF21861579"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\phone\\sfx_phone_hang_up_self_1.wav",
+    "字节数": 73080,
+    "散列": "0EEEFDBED6F8EA760E2A3AB8568E64BDC85010FCFF125ED6DCD637CBDF0D02F8"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\phone\\sfx_phone_hang_up_self_1.wav.import",
+    "字节数": 573,
+    "散列": "AE52B12F163BE7DD5CA3E940C27143C76E0321F0E4D0CE9B2281351E18F5197D"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\phone\\sfx_phone_pick_up_self_0.wav",
+    "字节数": 43272,
+    "散列": "E0142FDC931FB8883B2132A2C303AA1006263E7E3939C3C5D9C04DF7D3CA548E"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\phone\\sfx_phone_pick_up_self_0.wav.import",
+    "字节数": 573,
+    "散列": "CB72723F7D4AE28131369303D643F6E58D40C5273D9886110A5A54C225801C53"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\phone\\sfx_phone_ring_0.wav",
+    "字节数": 1428524,
+    "散列": "7862DB3EBE91AB067E4A6168CBC7E6DDB99AB0D69F8F599314402B0A798642B9"
+  },
+  {
+    "路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\phone\\sfx_phone_ring_0.wav.import",
+    "字节数": 548,
+    "散列": "1629EA9553A483B23E9523C53C215614AF9B1A86D04F535CC0AC716F91C9C1EE"
+  }
+]

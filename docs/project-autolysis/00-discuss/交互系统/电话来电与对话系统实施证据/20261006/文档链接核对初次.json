@@ -1,0 +1,1288 @@
+{
+  "时间": "2026-10-06T13:40:29.5282506+08:00",
+  "通过": false,
+  "本地链接数": 142,
+  "不同目标数": 97,
+  "带行号链接数": 66,
+  "失败数": 1,
+  "明细": [
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话来电与对话系统实施证据/20261006/实施记录.md",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话来电与对话系统讨论p1.md",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统讨论p1.md",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/scenes/01-autolysis-test.tscn:1332",
+      "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\01-autolysis-test.tscn",
+      "存在": true,
+      "行号": 1332,
+      "实际行数": 1364,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn:65",
+      "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+      "存在": true,
+      "行号": 65,
+      "实际行数": 392,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:196",
+      "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+      "存在": true,
+      "行号": 196,
+      "实际行数": 555,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:143",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+      "存在": true,
+      "行号": 143,
+      "实际行数": 1515,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:201",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+      "存在": true,
+      "行号": 201,
+      "实际行数": 1515,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:247",
+      "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+      "存在": true,
+      "行号": 247,
+      "实际行数": 555,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:374",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+      "存在": true,
+      "行号": 374,
+      "实际行数": 1515,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:94",
+      "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+      "存在": true,
+      "行号": 94,
+      "实际行数": 555,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:124",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+      "存在": true,
+      "行号": 124,
+      "实际行数": 1515,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:160",
+      "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+      "存在": true,
+      "行号": 160,
+      "实际行数": 555,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:249",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+      "存在": true,
+      "行号": 249,
+      "实际行数": 1515,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:316",
+      "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+      "存在": true,
+      "行号": 316,
+      "实际行数": 555,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/autolysis_player.gd:351",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.gd",
+      "存在": true,
+      "行号": 351,
+      "实际行数": 952,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/autolysis_player.tscn:43",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.tscn",
+      "存在": true,
+      "行号": 43,
+      "实际行数": 191,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:47",
+      "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+      "存在": true,
+      "行号": 47,
+      "实际行数": 555,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:47",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+      "存在": true,
+      "行号": 47,
+      "实际行数": 1515,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/autolysis_player.gd:158",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.gd",
+      "存在": true,
+      "行号": 158,
+      "实际行数": 952,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/ui/inventory/autolysis_inventory_bar.gd:36",
+      "实际路径": "D:\\autolysis\\main-autolysis\\ui\\inventory\\autolysis_inventory_bar.gd",
+      "存在": true,
+      "行号": 36,
+      "实际行数": 67,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/ui/inventory/autolysis_inventory_bar.tscn:7",
+      "实际路径": "D:\\autolysis\\main-autolysis\\ui\\inventory\\autolysis_inventory_bar.tscn",
+      "存在": true,
+      "行号": 7,
+      "实际行数": 42,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/assets/audio/buses/default_bus_layout.tres:4",
+      "实际路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\buses\\default_bus_layout.tres",
+      "存在": true,
+      "行号": 4,
+      "实际行数": 5,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/assets/audio/sound_fx/phone/sfx_phone_default_0.wav.import:21",
+      "实际路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\phone\\sfx_phone_default_0.wav.import",
+      "存在": true,
+      "行号": 21,
+      "实际行数": 24,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/assets/audio/speech/chat_0/chat_0_0.wav.import:21",
+      "实际路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\speech\\chat_0\\chat_0_0.wav.import",
+      "存在": true,
+      "行号": 21,
+      "实际行数": 24,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/project.godot:11",
+      "实际路径": "D:\\autolysis\\project.godot",
+      "存在": true,
+      "行号": 11,
+      "实际行数": 133,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/cogito/addons/cogito/Components/Interactions/BasicInteraction.gd:14",
+      "实际路径": "D:\\cogito\\addons\\cogito\\Components\\Interactions\\BasicInteraction.gd",
+      "存在": true,
+      "行号": 14,
+      "实际行数": 34,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/cogito/addons/cogito/Components/Interactions/DialogicInteraction.gd:20",
+      "实际路径": "D:\\cogito\\addons\\cogito\\Components\\Interactions\\DialogicInteraction.gd",
+      "存在": true,
+      "行号": 20,
+      "实际行数": 40,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/cogito/addons/cogito/Components/Interactions/DialogueNodesInteraction.gd:19",
+      "实际路径": "D:\\cogito\\addons\\cogito\\Components\\Interactions\\DialogueNodesInteraction.gd",
+      "存在": true,
+      "行号": 19,
+      "实际行数": 39,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/cogito/addons/cogito/EasyMenus/Scripts/pause_menu_controller.gd:69",
+      "实际路径": "D:\\cogito\\addons\\cogito\\EasyMenus\\Scripts\\pause_menu_controller.gd",
+      "存在": true,
+      "行号": 69,
+      "实际行数": 192,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/cogito/addons/cogito/Scripts/player_hud_manager.gd:293",
+      "实际路径": "D:\\cogito\\addons\\cogito\\Scripts\\player_hud_manager.gd",
+      "存在": true,
+      "行号": 293,
+      "实际行数": 375,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/cogito/project.godot:265",
+      "实际路径": "D:\\cogito\\project.godot",
+      "存在": true,
+      "行号": 265,
+      "实际行数": 298,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/cogito/addons/cogito/Localization/scripts/translation_key_dict.gd:4",
+      "实际路径": "D:\\cogito\\addons\\cogito\\Localization\\scripts\\translation_key_dict.gd",
+      "存在": true,
+      "行号": 4,
+      "实际行数": 4,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/cogito/addons/cogito/Localization/scripts/language_select.gd:64",
+      "实际路径": "D:\\cogito\\addons\\cogito\\Localization\\scripts\\language_select.gd",
+      "存在": true,
+      "行号": 64,
+      "实际行数": 94,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:187",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+      "存在": true,
+      "行号": 187,
+      "实际行数": 1515,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:213",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+      "存在": true,
+      "行号": 213,
+      "实际行数": 1515,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:356",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+      "存在": true,
+      "行号": 356,
+      "实际行数": 1515,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:133",
+      "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+      "存在": true,
+      "行号": 133,
+      "实际行数": 555,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:141",
+      "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+      "存在": true,
+      "行号": 141,
+      "实际行数": 555,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:120",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+      "存在": true,
+      "行号": 120,
+      "实际行数": 1515,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:131",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+      "存在": true,
+      "行号": 131,
+      "实际行数": 1515,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:201",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+      "存在": true,
+      "行号": 201,
+      "实际行数": 1515,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:268",
+      "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+      "存在": true,
+      "行号": 268,
+      "实际行数": 555,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/assets/audio/speech/chat_0/chat_0_0.wav",
+      "实际路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\speech\\chat_0\\chat_0_0.wav",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/assets/audio/speech/chat_0/chat_0_1.wav",
+      "实际路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\speech\\chat_0\\chat_0_1.wav",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/assets/audio/speech/chat_0/chat_0_2.wav",
+      "实际路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\speech\\chat_0\\chat_0_2.wav",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/assets/audio/speech/chat_0/chat_0_3.wav",
+      "实际路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\speech\\chat_0\\chat_0_3.wav",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/assets/audio/speech/chat_0/chat_0_4.wav",
+      "实际路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\speech\\chat_0\\chat_0_4.wav",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/assets/audio/speech/chat_0/chat_0_5.wav",
+      "实际路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\speech\\chat_0\\chat_0_5.wav",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/assets/audio/speech/chat_0/chat_0_6.wav",
+      "实际路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\speech\\chat_0\\chat_0_6.wav",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/assets/audio/speech/chat_0/chat_0_7.wav",
+      "实际路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\speech\\chat_0\\chat_0_7.wav",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/assets/audio/speech/chat_0/chat_0_8.wav",
+      "实际路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\speech\\chat_0\\chat_0_8.wav",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/assets/audio/sound_fx/phone/sfx_phone_default_0.wav",
+      "实际路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\phone\\sfx_phone_default_0.wav",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/assets/audio/sound_fx/phone/sfx_phone_default_0.wav.import:24",
+      "实际路径": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\phone\\sfx_phone_default_0.wav.import",
+      "存在": true,
+      "行号": 24,
+      "实际行数": 24,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/autolysis_player.gd:175",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.gd",
+      "存在": true,
+      "行号": 175,
+      "实际行数": 952,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:106",
+      "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+      "存在": true,
+      "行号": 106,
+      "实际行数": 555,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_focus_controller.gd:140",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_focus_controller.gd",
+      "存在": true,
+      "行号": 140,
+      "实际行数": 223,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:374",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+      "存在": true,
+      "行号": 374,
+      "实际行数": 1515,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/systems",
+      "实际路径": "D:\\autolysis\\main-autolysis\\systems",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts",
+      "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn",
+      "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/components",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\components",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/autolysis_player.gd",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.gd",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/autolysis_player.tscn",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.tscn",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/ui",
+      "实际路径": "D:\\autolysis\\main-autolysis\\ui",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/project.godot",
+      "实际路径": "D:\\autolysis\\project.godot",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/scenes/01-autolysis-test.tscn",
+      "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\01-autolysis-test.tscn",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/tests",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\tests",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/tests/run_telephone_verification.ps1",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\tests\\run_telephone_verification.ps1",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/systems/item-system/tests/run_item_check.ps1:23",
+      "实际路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\run_item_check.ps1",
+      "存在": true,
+      "行号": 23,
+      "实际行数": 64,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/tests/telephone_device_test.gd:340",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_device_test.gd",
+      "存在": true,
+      "行号": 340,
+      "实际行数": 710,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/tests/handset_inventory_test.gd:179",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\tests\\handset_inventory_test.gd",
+      "存在": true,
+      "行号": 179,
+      "实际行数": 567,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/tests/telephone_commit_observer_audit.gd:12",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_commit_observer_audit.gd",
+      "存在": true,
+      "行号": 12,
+      "实际行数": 134,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/tests/telephone_input_test.gd:17",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_input_test.gd",
+      "存在": true,
+      "行号": 17,
+      "实际行数": 201,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/main-autolysis/player/tests/telephone_movement_test.gd:126",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_movement_test.gd",
+      "存在": true,
+      "行号": 126,
+      "实际行数": 270,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/AGENTS.md",
+      "实际路径": "D:\\autolysis\\AGENTS.md",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话聚焦交互与听筒手持实现计划.md",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话聚焦交互与听筒手持实现计划.md",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/道具系统/容器开闭动画控制修正实现计划.md",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\容器开闭动画控制修正实现计划.md",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/道具系统/容器开闭动画控制实施证据/20261004/实施记录.md",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\容器开闭动画控制实施证据\\20261004\\实施记录.md",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话来电与对话系统实现计划p1.md",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实现计划p1.md",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "/D:/autolysis/AGENTS.md",
+      "实际路径": "D:\\autolysis\\AGENTS.md",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "实施前工作区.txt",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施前工作区.txt",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "实施前主场景修改.diff",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施前主场景修改.diff",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "实施前散列.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施前散列.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "/D:/cogito/addons/cogito/Components/Interactions/BasicInteraction.gd:14",
+      "实际路径": "D:\\cogito\\addons\\cogito\\Components\\Interactions\\BasicInteraction.gd",
+      "存在": true,
+      "行号": 14,
+      "实际行数": 34,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "/D:/cogito/addons/cogito/Components/Interactions/DialogicInteraction.gd:20",
+      "实际路径": "D:\\cogito\\addons\\cogito\\Components\\Interactions\\DialogicInteraction.gd",
+      "存在": true,
+      "行号": 20,
+      "实际行数": 40,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "/D:/cogito/addons/cogito/EasyMenus/Scripts/pause_menu_controller.gd:69",
+      "实际路径": "D:\\cogito\\addons\\cogito\\EasyMenus\\Scripts\\pause_menu_controller.gd",
+      "存在": true,
+      "行号": 69,
+      "实际行数": 192,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "/D:/cogito/addons/cogito/Scripts/player_hud_manager.gd:293",
+      "实际路径": "D:\\cogito\\addons\\cogito\\Scripts\\player_hud_manager.gd",
+      "存在": true,
+      "行号": 293,
+      "实际行数": 375,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/道具系统/容器开闭动画控制修正实现计划.md",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\容器开闭动画控制修正实现计划.md",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/道具系统/容器开闭动画控制实施证据/20261004/实施记录.md",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\道具系统\\容器开闭动画控制实施证据\\20261004\\实施记录.md",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "/D:/autolysis/main-autolysis/systems/runtime-session/autolysis_runtime_session.gd:6",
+      "实际路径": "D:\\autolysis\\main-autolysis\\systems\\runtime-session\\autolysis_runtime_session.gd",
+      "存在": true,
+      "行号": 6,
+      "实际行数": 14,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_telephone_call_test_trigger.gd:14",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_telephone_call_test_trigger.gd",
+      "存在": true,
+      "行号": 14,
+      "实际行数": 36,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_call_controller.gd:46",
+      "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone_call_controller.gd",
+      "存在": true,
+      "行号": 46,
+      "实际行数": 392,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:133",
+      "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+      "存在": true,
+      "行号": 133,
+      "实际行数": 555,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:204",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+      "存在": true,
+      "行号": 204,
+      "实际行数": 1515,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:414",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+      "存在": true,
+      "行号": 414,
+      "实际行数": 1515,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "/D:/autolysis/main-autolysis/scenes/prefab_machines/scripts/autolysis_telephone_call_controller.gd:145",
+      "实际路径": "D:\\autolysis\\main-autolysis\\scenes\\prefab_machines\\scripts\\autolysis_telephone_call_controller.gd",
+      "存在": false,
+      "行号": 145,
+      "实际行数": 0,
+      "通过": false
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "/D:/autolysis/main-autolysis/systems/dialogue-system/autolysis_dialogue_definition.gd:13",
+      "实际路径": "D:\\autolysis\\main-autolysis\\systems\\dialogue-system\\autolysis_dialogue_definition.gd",
+      "存在": true,
+      "行号": 13,
+      "实际行数": 65,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "/D:/autolysis/main-autolysis/systems/dialogue-system/autolysis_dialogue_player.gd:65",
+      "实际路径": "D:\\autolysis\\main-autolysis\\systems\\dialogue-system\\autolysis_dialogue_player.gd",
+      "存在": true,
+      "行号": 65,
+      "实际行数": 461,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "/D:/autolysis/main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.gd:136",
+      "实际路径": "D:\\autolysis\\main-autolysis\\ui\\dialogue\\autolysis_dialogue_subtitle.gd",
+      "存在": true,
+      "行号": 136,
+      "实际行数": 194,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "/D:/autolysis/main-autolysis/player/autolysis_player.gd:194",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\autolysis_player.gd",
+      "存在": true,
+      "行号": 194,
+      "实际行数": 952,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "既有回归/初次/检查汇总.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\既有回归\\初次\\检查汇总.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "主场景入口/初次/telephone-call-entry.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\主场景入口\\初次\\telephone-call-entry.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "时序探针/授权环境/timing-probe.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\时序探针\\授权环境\\timing-probe.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "对话配置/授权环境/对话配置核验.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\对话配置\\授权环境\\对话配置核验.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "专项验收/初次/dialogue-system.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\专项验收\\初次\\dialogue-system.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "专项验收/实际处理时长补验/dialogue-boundaries.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\专项验收\\实际处理时长补验\\dialogue-boundaries.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "字幕可见性边界/同步离树复验/字幕可见性边界.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\字幕可见性边界\\同步离树复验\\字幕可见性边界.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "专项验收/铃声中途采样修正/telephone-call.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\专项验收\\铃声中途采样修正\\telephone-call.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "专项验收/铃声中途采样修正/telephone-ring-start.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\专项验收\\铃声中途采样修正\\telephone-ring-start.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "电话边界专项/最后渐隐完成锁/电话来电边界专项.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\电话边界专项\\最后渐隐完成锁\\电话来电边界专项.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "专项验收/通话移动与容量初验/telephone-call-gameplay.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\专项验收\\通话移动与容量初验\\telephone-call-gameplay.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "主场景入口/初次/telephone-call-entry.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\主场景入口\\初次\\telephone-call-entry.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "最终受影响复验/检查汇总.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\最终受影响复验\\检查汇总.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "文本文件隔离/生产文件散列.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\文本文件隔离\\生产文件散列.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "文本文件隔离/基线字幕.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\文本文件隔离\\基线字幕.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "文本文件隔离/仅原文字幕.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\文本文件隔离\\仅原文字幕.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "文本文件隔离/修改中文字幕.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\文本文件隔离\\修改中文字幕.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "验收矩阵.md",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\验收矩阵.md",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "最终检查状态.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\最终检查状态.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "主场景已有修改保留核对.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\主场景已有修改保留核对.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "最终文件散列.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\最终文件散列.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "最终已跟踪修改.diff",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\最终已跟踪修改.diff",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "差异空白检查.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\差异空白检查.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "归档证据.ps1",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\归档证据.ps1",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "/D:/autolysis/main-autolysis/player/tests/run_telephone_verification.ps1",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\tests\\run_telephone_verification.ps1",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施记录.md",
+      "引用": "/D:/autolysis/main-autolysis/systems/dialogue-system/tests/run_dialogue_localization_isolation.ps1",
+      "实际路径": "D:\\autolysis\\main-autolysis\\systems\\dialogue-system\\tests\\run_dialogue_localization_isolation.ps1",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\验收矩阵.md",
+      "引用": "实施前",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\实施前",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\验收矩阵.md",
+      "引用": "时序探针/授权环境/时序与字体测量.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\时序探针\\授权环境\\时序与字体测量.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\验收矩阵.md",
+      "引用": "专项验收/初次/dialogue-system/对话配置排版与真实播放.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\专项验收\\初次\\dialogue-system\\对话配置排版与真实播放.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\验收矩阵.md",
+      "引用": "专项验收/铃声中途采样修正/telephone-call/电话来电成对事务暂停与异常.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\专项验收\\铃声中途采样修正\\telephone-call\\电话来电成对事务暂停与异常.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\验收矩阵.md",
+      "引用": "专项验收/实际处理时长补验/dialogue-boundaries/对话依赖与自然完成当帧暂停.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\专项验收\\实际处理时长补验\\dialogue-boundaries\\对话依赖与自然完成当帧暂停.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\验收矩阵.md",
+      "引用": "电话边界专项/最后渐隐完成锁/details/来电到期提交观察与来源生命周期.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\电话边界专项\\最后渐隐完成锁\\details\\来电到期提交观察与来源生命周期.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\验收矩阵.md",
+      "引用": "主场景入口",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\主场景入口",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\验收矩阵.md",
+      "引用": "最终受影响复验/检查汇总.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\最终受影响复验\\检查汇总.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\验收矩阵.md",
+      "引用": "专项验收/通话移动与容量初验/telephone-call-gameplay/通话真实移动与容量忙碌.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\专项验收\\通话移动与容量初验\\telephone-call-gameplay\\通话真实移动与容量忙碌.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\验收矩阵.md",
+      "引用": "文本文件隔离",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\文本文件隔离",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\验收矩阵.md",
+      "引用": "字幕可见性边界/同步离树复验/可见性边界核验.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\字幕可见性边界\\同步离树复验\\可见性边界核验.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\验收矩阵.md",
+      "引用": "对话配置/授权环境/配置核验.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\对话配置\\授权环境\\配置核验.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\验收矩阵.md",
+      "引用": "时序探针/字体/字体测量.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\时序探针\\字体\\字体测量.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\验收矩阵.md",
+      "引用": "专项验收/铃声中途采样修正/telephone-ring-start/空间铃声首次启动与暂停.json",
+      "实际路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\专项验收\\铃声中途采样修正\\telephone-ring-start\\空间铃声首次启动与暂停.json",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    },
+    {
+      "文档": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\验收矩阵.md",
+      "引用": "/D:/autolysis/main-autolysis/player/tests/run_telephone_verification.ps1",
+      "实际路径": "D:\\autolysis\\main-autolysis\\player\\tests\\run_telephone_verification.ps1",
+      "存在": true,
+      "行号": 0,
+      "实际行数": 0,
+      "通过": true
+    }
+  ]
+}

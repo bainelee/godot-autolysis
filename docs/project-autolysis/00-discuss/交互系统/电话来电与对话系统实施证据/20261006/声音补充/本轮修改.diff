@@ -1,0 +1,356 @@
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\声音补充\\实施前\\autolysis_telephone_call_controller.gd" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\声音补充\\最终源码\\autolysis_telephone_call_controller.gd"
+index 81ec0cb..6da122e 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\声音补充\\实施前\\autolysis_telephone_call_controller.gd"
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\声音补充\\最终源码\\autolysis_telephone_call_controller.gd"
+@@ -7,9 +7,11 @@ enum Stage { IDLE, RESOLVING, WAIT_RETURN, DELAYED, ACTIVE, TALKING, COMPLETED,
+ @export var telephone: AutolysisTelephone
+ @export var timing_root: Node
+ @export var deferred_timer: Timer
++@export var answer_delay_timer: Timer
+ @export var ring_player: AudioStreamPlayer3D
+ @export var ring_stream: AudioStreamWAV
+ @export var deferred_ring_delay: float = 2.0
++@export var answer_delay_seconds: float = 0.5
+ 
+ var last_abort_record: Dictionary = {}
+ var last_ring_error: String = ""
+@@ -34,6 +36,9 @@ var _handset_display: Node3D
+ var _source_id: int = 0
+ var _source_path: String = ""
+ var _business_snapshot: Dictionary = {}
++var _answer_waiting: bool = false
++var _answer_delay_expired: bool = false
++var _answer_callback: Callable
+ 
+ 
+ func _ready() -> void:
+@@ -42,6 +47,8 @@ func _ready() -> void:
+ 		timing_root.process_mode = Node.PROCESS_MODE_PAUSABLE
+ 	if _live(deferred_timer):
+ 		deferred_timer.one_shot = true
++	if _live(answer_delay_timer):
++		answer_delay_timer.one_shot = true
+ 
+ 
+ func request_call(definition: Resource, context: Node) -> bool:
+@@ -52,6 +59,8 @@ func request_call(definition: Resource, context: Node) -> bool:
+ 		return false
+ 	if not _live(timing_root) or not _live(deferred_timer) or not timing_root.is_ancestor_of(deferred_timer) or not is_finite(deferred_ring_delay) or deferred_ring_delay < 0.0:
+ 		return false
++	if not _answer_timing_valid():
++		return false
+ 	_call_serial += 1
+ 	_source_id = telephone.get_instance_id()
+ 	_source_path = str(telephone.get_path())
+@@ -70,11 +79,18 @@ func is_handset_return_blocked(actor: Node3D, session: int) -> bool:
+ 	return _stage == Stage.TALKING and session > 0 and _holder == actor and _holder_session == session and _playback_token > 0
+ 
+ 
++func has_pending_call_event() -> bool:
++	return _stage in [Stage.RESOLVING, Stage.WAIT_RETURN, Stage.DELAYED, Stage.ACTIVE, Stage.TALKING]
++
++
+ func prepare_handset_business_transfer(actor: Node3D, returning: bool, session: int, transaction: int) -> bool:
+ 	if returning:
+ 		return not is_handset_return_blocked(actor, session)
+ 	if _stage != Stage.ACTIVE:
+ 		return true
++	if not _answer_timing_valid():
++		cancel_call("接听准备时接听等待计时依赖或配置失效")
++		return false
+ 	if not _definition is AutolysisDialogueDefinition:
+ 		cancel_call("接听准备时对话定义资源类型无效")
+ 		return false
+@@ -180,7 +196,8 @@ func cancel_call(reason: String) -> void:
+ 		return
+ 	var playback: int = _playback_token
+ 	var playback_snapshot: Dictionary = _player.get_session_snapshot() if _live(_player) and playback > 0 else {}
+-	var current_line: int = int(playback_snapshot.get("index", -1)) if _stage == Stage.TALKING and not _pending_effects and int(playback_snapshot.get("token", 0)) == playback else -1
++	var voice_started: bool = playback_snapshot.get("stage", &"") in [AutolysisDialoguePlayer.VOICE, AutolysisDialoguePlayer.HOLD, AutolysisDialoguePlayer.FADE, AutolysisDialoguePlayer.FINISHING]
++	var current_line: int = int(playback_snapshot.get("index", -1)) if _stage == Stage.TALKING and voice_started and int(playback_snapshot.get("token", 0)) == playback else -1
+ 	last_abort_record = {"来电序号": _call_serial, "播放令牌": playback, "对话编号": str(_definition.get("dialogue_id")) if _definition is AutolysisDialogueDefinition else "", "当前句索引": current_line, "来源": _source_path, "来源实例身份": _source_id, "原持有会话": _holder_session, "原因": reason}
+ 	_stage = Stage.ABORTED
+ 	_business_snapshot.clear()
+@@ -194,14 +211,16 @@ func cancel_call(reason: String) -> void:
+ 	_pending_effects = false
+ 	_delay_expired = false
+ 	_stop_deferred_timer()
++	_stop_answer_delay()
+ 	_stop_ring()
++	var abort_record: Dictionary = last_abort_record.duplicate(true)
+ 	if _live(_player) and playback > 0:
+ 		_player.cancel_dialogue(playback, reason)
+-	print("电话来电异常终止：", JSON.stringify(last_abort_record))
++	print("电话来电异常终止：", JSON.stringify(abort_record))
+ 
+ 
+ func get_call_snapshot() -> Dictionary:
+-	return {"stage": _stage, "call_serial": _call_serial, "wait_serial": _wait_serial, "delay_expired": _delay_expired, "delay_remaining": deferred_timer.time_left if _live(deferred_timer) else 0.0, "playback_token": _playback_token, "holder_session": _holder_session, "pending_effects": _pending_effects}
++	return {"stage": _stage, "call_serial": _call_serial, "wait_serial": _wait_serial, "delay_expired": _delay_expired, "delay_remaining": deferred_timer.time_left if _live(deferred_timer) else 0.0, "playback_token": _playback_token, "holder_session": _holder_session, "pending_effects": _pending_effects, "answer_waiting": _answer_waiting, "answer_delay_expired": _answer_delay_expired, "answer_delay_remaining": answer_delay_timer.time_left if _live(answer_delay_timer) else 0.0}
+ 
+ 
+ func _process(_delta: float) -> void:
+@@ -218,7 +237,15 @@ func _process(_delta: float) -> void:
+ 		if not _live(_holder) or not telephone.owns_handset(_holder, _holder_session):
+ 			cancel_call("通话持有玩家或原听筒会话失效")
+ 			return
++		if (_pending_effects or _answer_waiting or _answer_delay_expired) and not _answer_timing_valid():
++			cancel_call("通话接听等待计时依赖失效")
++			return
++		var owner_guard: WeakRef = weakref(self)
+ 		_start_pending_effects()
++		if owner_guard.get_ref() == null or not _live(self):
++			return
++		if _answer_delay_expired:
++			_start_answered_dialogue()
+ 	elif _stage == Stage.DELAYED:
+ 		_start_pending_effects()
+ 		if _delay_expired and not _paused() and telephone.is_handset_stably_docked():
+@@ -266,9 +293,52 @@ func _start_pending_effects() -> void:
+ 		if not _live(_player) or not _player.has_prepared_dialogue(_playback_token, telephone):
+ 			cancel_call("成对接听观察后已准备播放会话失效")
+ 			return
++		if not _answer_timing_valid():
++			cancel_call("成对接听观察后接听等待计时依赖失效")
++			return
+ 		_pending_effects = false
+-		if not _player.start_prepared_dialogue(_playback_token):
+-			cancel_call("成对接听完成后无法启动已准备对话")
++		_stop_answer_delay()
++		if answer_delay_seconds == 0.0:
++			_answer_delay_expired = true
++			_start_answered_dialogue()
++		else:
++			_answer_waiting = true
++			_answer_callback = _on_answer_delay_timeout.bind(_call_serial, _playback_token, _holder_session)
++			answer_delay_timer.timeout.connect(_answer_callback, CONNECT_ONE_SHOT)
++			answer_delay_timer.start(answer_delay_seconds)
++
++
++func _answer_timing_valid() -> bool:
++	return _live(timing_root) and _live(answer_delay_timer) and timing_root.is_ancestor_of(answer_delay_timer) and is_finite(answer_delay_seconds) and answer_delay_seconds >= 0.0
++
++
++func _on_answer_delay_timeout(serial: int, token: int, session: int) -> void:
++	if not _answer_waiting or _stage != Stage.TALKING or serial != _call_serial or token != _playback_token or session != _holder_session:
++		return
++	_answer_waiting = false
++	_answer_delay_expired = true
++	if not _paused():
++		_start_answered_dialogue()
++
++
++func _start_answered_dialogue() -> void:
++	if not _answer_delay_expired or _stage != Stage.TALKING or _paused():
++		return
++	if not _answer_timing_valid():
++		cancel_call("接听等待自然完成时计时依赖失效")
++		return
++	if not _live(telephone) or not _live(_holder) or not telephone.owns_handset(_holder, _holder_session) or not _live(_player) or not _player.has_prepared_dialogue(_playback_token, telephone):
++		cancel_call("接听等待结束时原持有或已准备对话失效")
++		return
++	_answer_delay_expired = false
++	var serial: int = _call_serial
++	var token: int = _playback_token
++	var owner_guard: WeakRef = weakref(self)
++	var started: bool = _player.start_prepared_dialogue(token)
++	if owner_guard.get_ref() == null:
++		return
++	if not started and _stage == Stage.TALKING and serial == _call_serial and token == _playback_token:
++		cancel_call("接听等待完成后无法启动已准备对话")
+ 
+ 
+ func _on_delay_timeout(serial: int) -> void:
+@@ -285,7 +355,11 @@ func _on_dialogue_finished(token: int, _dialogue_id: StringName, source: Node, s
+ 	if not _live(telephone) or not _live(_holder) or not telephone.owns_handset(_holder, _holder_session):
+ 		cancel_call("正常对话收尾时听筒会话失效")
+ 		return
++	var actor: Node3D = _holder
++	var session: int = _holder_session
++	var audio: Node = telephone.handset_audio
+ 	_stage = Stage.COMPLETED
++	_stop_answer_delay()
+ 	_disconnect_handset_display()
+ 	_playback_token = 0
+ 	_holder = null
+@@ -293,6 +367,9 @@ func _on_dialogue_finished(token: int, _dialogue_id: StringName, source: Node, s
+ 	_prepared_actor = null
+ 	_prepared_transaction = 0
+ 	_pending_effects = false
++	# 正常完成已经解除业务归还锁；后续挂机声和忙音只属于原持筒表现。
++	if _live(audio):
++		audio.play_remote_hang_up(actor, session)
+ 
+ 
+ func _on_dialogue_aborted(token: int, _dialogue_id: StringName, source: Node, reason: String, serial: int) -> void:
+@@ -349,6 +426,16 @@ func _stop_deferred_timer() -> void:
+ 	_delay_callback = Callable()
+ 
+ 
++func _stop_answer_delay() -> void:
++	if is_instance_valid(answer_delay_timer):
++		answer_delay_timer.stop()
++		if _answer_callback.is_valid() and answer_delay_timer.timeout.is_connected(_answer_callback):
++			answer_delay_timer.timeout.disconnect(_answer_callback)
++	_answer_callback = Callable()
++	_answer_waiting = false
++	_answer_delay_expired = false
++
++
+ func _watch_handset_display() -> bool:
+ 	var inventory: AutolysisInventoryController = _holder.get_node_or_null("InventoryController") as AutolysisInventoryController if _live(_holder) else null
+ 	var display: Node3D = inventory.get_handset_display() if _live(inventory) else null
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\声音补充\\实施前\\autolysis_telephone.gd" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\声音补充\\最终源码\\autolysis_telephone.gd"
+index 6e7b807..4252c91 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\声音补充\\实施前\\autolysis_telephone.gd"
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\声音补充\\最终源码\\autolysis_telephone.gd"
+@@ -20,6 +20,7 @@ signal state_changed()
+ @export var move_limit_shape: CollisionShape3D
+ @export var additional_move_limit_shapes: Array[CollisionShape3D] = []
+ @export var call_controller: Node
++@export var handset_audio: Node
+ ## 临时起值来自现有普通道具定义，最终值由用户调节记录确定。
+ @export var handset_held_position: Vector3 = Vector3(0.24, -0.23, -0.48)
+ @export var handset_held_rotation_degrees: Vector3 = Vector3(-8, -18, 12)
+@@ -42,6 +43,9 @@ var _limit_cleanup_pending: bool = false
+ var _guard_actor: AutolysisPlayer
+ var _guard_serial: int = 0
+ var last_limit_recovery_reason: String = ""
++var _last_effects_transaction: int = 0
++var _last_effects_returning: bool = false
++var _last_effects_actor_id: int = 0
+ 
+ 
+ func _ready() -> void:
+@@ -142,10 +146,32 @@ func commit_handset_business_completion(returning: bool, actor: Node3D, session:
+ 
+ 
+ func activate_handset_completion_effects(returning: bool, actor: Node3D, session: int, transaction: int) -> void:
++	if not _completion_effects_current(returning, actor, session, transaction):
++		return
++	var actor_id: int = actor.get_instance_id()
++	if _last_effects_transaction == transaction and _last_effects_returning == returning and _last_effects_actor_id == actor_id:
++		return
++	_last_effects_transaction = transaction
++	_last_effects_returning = returning
++	_last_effects_actor_id = actor_id
++	var owner_guard: WeakRef = weakref(self)
++	if _live(handset_audio) and handset_audio.has_method("activate_handset_completion_effects"):
++		handset_audio.activate_handset_completion_effects(returning, actor, session, transaction)
++	# 音效表现是同步可调用边界；观察后续会话不能被本次旧完成继续驱动。
++	if owner_guard.get_ref() == null or not _completion_effects_current(returning, actor, session, transaction):
++		return
+ 	if _live(call_controller):
+ 		call_controller.activate_handset_completion_effects(returning, actor, session, transaction)
+ 
+ 
++func _completion_effects_current(returning: bool, actor: Node3D, session: int, transaction: int) -> bool:
++	if not _live(self) or not _live(actor) or not _live(_transfer_inventory) or transaction <= 0 or transaction != _transfer_token or _transfer_actor != actor or returning != _transfer_is_return or _transfer_restoring:
++		return false
++	if returning:
++		return session > 0 and session == _return_holder_session and _holder_session == 0 and _holder == null and _transfer_inventory.get_handset_session_id() == 0 and _transfer_inventory.get_handset_source() == null and _visual_dependencies_valid() and _limit_matches(false)
++	return session == transaction and is_committed_handset_valid(actor, session) and _transfer_inventory.is_handset_session_committed(self, actor, session) and _transfer_inventory.is_handset_display_session(self, _transfer_inventory.get_handset_display(), session)
++
++
+ func get_holder() -> Node3D:
+ 	return _holder if _live(_holder) else null
+ 
+@@ -374,6 +400,8 @@ func abort_handset_holder(actor: Variant, session: int, reason: String) -> void:
+ 	var matches_return: bool = _transfer_is_return and _transfer_actor == actor and _return_holder_session == session and session > 0
+ 	if not matches_holder and not matches_take and not matches_return:
+ 		return
++	if _live(handset_audio) and handset_audio.has_method("stop_handset_audio"):
++		handset_audio.stop_handset_audio(reason)
+ 	if _live(call_controller):
+ 		call_controller.cancel_call(reason)
+ 	_holder = null
+@@ -544,6 +572,8 @@ func _emit_sync(event: String) -> void:
+ 
+ func _exit_tree() -> void:
+ 	_limit_revision += 1
++	if _live(handset_audio) and handset_audio.has_method("stop_handset_audio"):
++		handset_audio.stop_handset_audio("电话来源离树")
+ 	if _live(call_controller):
+ 		call_controller.cancel_call("电话来源离树")
+ 	var inventory: AutolysisInventoryController = _transfer_inventory if is_instance_valid(_transfer_inventory) else _inventory_of(_holder)
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\声音补充\\实施前\\machine_telephone_0.tscn" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\声音补充\\最终源码\\machine_telephone_0.tscn"
+index 0a72394..e17fab8 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\声音补充\\实施前\\machine_telephone_0.tscn"
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\电话来电与对话系统实施证据\\20261006\\声音补充\\最终源码\\machine_telephone_0.tscn"
+@@ -6,6 +6,12 @@
+ [ext_resource type="Script" uid="uid://gv44yp6wcbel" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd" id="1_telephone"]
+ [ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_call_controller.gd" id="1_call"]
+ [ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_ring_0.wav" id="1_ring"]
++[ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_audio_controller.gd" id="1_handset_audio"]
++[ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_pick_up_self_0.wav" id="1_pickup"]
++[ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_self_0.wav" id="1_hangup"]
++[ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_default_0.wav" id="1_default"]
++[ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_other_side_0.wav" id="1_remote_hangup"]
++[ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_busy_busy signal_0.wav" id="1_busy"]
+ [ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="2_41drs"]
+ [ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="2_t2mr4"]
+ [ext_resource type="Material" uid="uid://blu42xw7rpe7b" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_2.tres" id="3_41drs"]
+@@ -64,7 +70,7 @@ material_override = ExtResource("3_cjmi4")
+ mesh = SubResource("BoxMesh_apmtd")
+ skeleton = NodePath("../../StaticBody3D/mesh_phone_base")
+ 
+-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=533765496 node_paths=PackedStringArray("reference_camera", "root_interaction", "focus_target", "handset_body", "handset_interaction", "handset_anchor", "handset_visual", "move_limit_body", "move_limit_shape", "call_controller") groups=["interactable"]]
++[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=533765496 node_paths=PackedStringArray("reference_camera", "root_interaction", "focus_target", "handset_body", "handset_interaction", "handset_anchor", "handset_visual", "move_limit_body", "move_limit_shape", "call_controller", "handset_audio") groups=["interactable"]]
+ script = ExtResource("1_telephone")
+ reference_camera = NodePath("focus_camera")
+ root_interaction = NodePath("RootInteraction")
+@@ -77,16 +83,19 @@ handset_visual_scene = ExtResource("1_handset")
+ move_limit_body = NodePath("MoveLimitBody")
+ move_limit_shape = NodePath("MoveLimitBody/collision_move_limit")
+ call_controller = NodePath("CallController")
++handset_audio = NodePath("HandsetAudio")
+ handset_held_position = Vector3(0.33, -0.12, -0.27)
+ handset_held_rotation_degrees = Vector3(16, 125, 12)
+ 
+-[node name="CallController" type="Node3D" parent="StaticBody3D" node_paths=PackedStringArray("telephone", "timing_root", "deferred_timer", "ring_player")]
++[node name="CallController" type="Node3D" parent="StaticBody3D" node_paths=PackedStringArray("telephone", "timing_root", "deferred_timer", "answer_delay_timer", "ring_player")]
+ script = ExtResource("1_call")
+ telephone = NodePath("..")
+ timing_root = NodePath("Timing")
+ deferred_timer = NodePath("Timing/DeferredRingTimer")
++answer_delay_timer = NodePath("Timing/AnswerDelayTimer")
+ ring_player = NodePath("Timing/RingPlayer")
+ ring_stream = ExtResource("1_ring")
++answer_delay_seconds = 0.5
+ 
+ [node name="Timing" type="Node3D" parent="StaticBody3D/CallController"]
+ process_mode = 1
+@@ -94,9 +103,33 @@ process_mode = 1
+ [node name="DeferredRingTimer" type="Timer" parent="StaticBody3D/CallController/Timing"]
+ one_shot = true
+ 
++[node name="AnswerDelayTimer" type="Timer" parent="StaticBody3D/CallController/Timing"]
++one_shot = true
++
+ [node name="RingPlayer" type="AudioStreamPlayer3D" parent="StaticBody3D/CallController/Timing"]
+ bus = &"SFX"
+ 
++[node name="HandsetAudio" type="Node" parent="StaticBody3D" node_paths=PackedStringArray("telephone", "timing_root", "action_player", "receiver_player")]
++script = ExtResource("1_handset_audio")
++telephone = NodePath("..")
++timing_root = NodePath("Timing")
++action_player = NodePath("Timing/ActionPlayer")
++receiver_player = NodePath("Timing/ReceiverPlayer")
++pickup_stream = ExtResource("1_pickup")
++hangup_stream = ExtResource("1_hangup")
++default_stream = ExtResource("1_default")
++remote_hangup_stream = ExtResource("1_remote_hangup")
++busy_stream = ExtResource("1_busy")
++
++[node name="Timing" type="Node" parent="StaticBody3D/HandsetAudio"]
++process_mode = 1
++
++[node name="ActionPlayer" type="AudioStreamPlayer" parent="StaticBody3D/HandsetAudio/Timing"]
++bus = &"SFX"
++
++[node name="ReceiverPlayer" type="AudioStreamPlayer" parent="StaticBody3D/HandsetAudio/Timing"]
++bus = &"SFX"
++
+ [node name="focus_camera" type="Camera3D" parent="StaticBody3D" unique_id=1215350079]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.294, 1.133)
+ fov = 55.0

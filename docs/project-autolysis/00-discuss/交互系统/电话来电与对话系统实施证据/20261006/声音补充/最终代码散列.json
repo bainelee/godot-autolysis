@@ -1,0 +1,26 @@
+[
+  {
+    "路径": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_audio_controller.gd",
+    "散列": "4C6E6816B9A6D48F3BCAB476C0610450969A0B46925871E94FF38592773A4682"
+  },
+  {
+    "路径": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_call_controller.gd",
+    "散列": "1B14BEC0839870757766727EF08CF9FB1E6A52D7F95F700F7E73D87AA683FBF8"
+  },
+  {
+    "路径": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd",
+    "散列": "4A80BD30D95FE63369218A35EDF95427EB0AD50D74586E4917E58FA680A78A59"
+  },
+  {
+    "路径": "main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn",
+    "散列": "95B707EC99F2192A8978BC4F39F125B8E35B00551D90A7DFBEDBB055CBC62400"
+  },
+  {
+    "路径": "main-autolysis/systems/dialogue-system/autolysis_dialogue_definition.gd",
+    "散列": "3CAFCD0072CC466DB638D938297B0E53235792A37E5C624CA2EBF77530CDD3B8"
+  },
+  {
+    "路径": "main-autolysis/systems/dialogue-system/chat_0.tres",
+    "散列": "FDFC86C6D1C193F3E0815E153980BB05A98F284000B92DC318D4AAA70B35B024"
+  }
+]

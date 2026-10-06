@@ -1,0 +1,23 @@
+{
+  "检查": "font-probe",
+  "时间": "2026-10-06T13:23:26.6052678+08:00",
+  "进程编号": 7884,
+  "退出码": 0,
+  "通过": true,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/player/tests/telephone_timing_probe.gd",
+    "--",
+    "--font-only",
+    "--evidence-dir",
+    "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/电话来电与对话系统实施证据/20261006/时序探针/字体"
+  ],
+  "通过断言数": 0,
+  "预期错误计数": {},
+  "非预期错误": []
+}

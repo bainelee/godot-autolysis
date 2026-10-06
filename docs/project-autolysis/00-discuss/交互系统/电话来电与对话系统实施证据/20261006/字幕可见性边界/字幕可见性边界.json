@@ -1,0 +1,33 @@
+{
+  "检查": "字幕可见性边界",
+  "时间": "2026-10-06T13:30:50.3293913+08:00",
+  "进程编号": 40592,
+  "退出码": 1,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/交互系统/电话来电与对话系统实施证据/20261006/字幕可见性边界"
+  ],
+  "通过断言数": 16,
+  "预期错误计数": {},
+  "非预期错误": [
+    "ERROR: Object is locked and can't be freed.",
+    "SCRIPT ERROR: Attempted to free a locked object (calling or emitting).",
+    "ERROR: 失败：公开启动在释放后安全返回失败：显示释放播放器",
+    "ERROR: 失败：释放变体只异常一次且没有正常完成：显示释放播放器",
+    "ERROR: 失败：仍存活播放器释放匹配播放容量：显示释放播放器",
+    "ERROR: Object is locked and can't be freed.",
+    "SCRIPT ERROR: Attempted to free a locked object (calling or emitting).",
+    "ERROR: 失败：公开启动在释放后安全返回失败：句开始释放播放器",
+    "ERROR: 失败：释放变体只异常一次且没有正常完成：句开始释放播放器",
+    "ERROR: 失败：仍存活播放器释放匹配播放容量：句开始释放播放器"
+  ]
+}

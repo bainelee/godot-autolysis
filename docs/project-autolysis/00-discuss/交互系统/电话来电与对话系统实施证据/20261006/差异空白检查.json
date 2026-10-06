@@ -1,0 +1,18 @@
+{
+  "退出码": 0,
+  "通过": true,
+  "输出": [
+    "warning: in the working copy of 'main-autolysis/player/assets/player_eyes.tres', LF will be replaced by CRLF the next time Git touches it",
+    "warning: in the working copy of 'main-autolysis/player/autolysis_player.gd', LF will be replaced by CRLF the next time Git touches it",
+    "warning: in the working copy of 'main-autolysis/player/autolysis_player.tscn', LF will be replaced by CRLF the next time Git touches it",
+    "warning: in the working copy of 'main-autolysis/player/components/autolysis_inventory_controller.gd', LF will be replaced by CRLF the next time Git touches it",
+    "warning: in the working copy of 'main-autolysis/player/tests/handset_inventory_test.gd', LF will be replaced by CRLF the next time Git touches it",
+    "warning: in the working copy of 'main-autolysis/player/tests/run_telephone_verification.ps1', LF will be replaced by CRLF the next time Git touches it",
+    "warning: in the working copy of 'main-autolysis/player/tests/telephone_device_test.gd', LF will be replaced by CRLF the next time Git touches it",
+    "warning: in the working copy of 'main-autolysis/scenes/01-autolysis-test.tscn', LF will be replaced by CRLF the next time Git touches it",
+    "warning: in the working copy of 'main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn', LF will be replaced by CRLF the next time Git touches it",
+    "warning: in the working copy of 'main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd', LF will be replaced by CRLF the next time Git touches it",
+    "warning: in the working copy of 'main-autolysis/systems/dynamic-footstep-system/footstep-material-library/sample_footstep_material_library.tres', LF will be replaced by CRLF the next time Git touches it",
+    "warning: in the working copy of 'project.godot', LF will be replaced by CRLF the next time Git touches it"
+  ]
+}

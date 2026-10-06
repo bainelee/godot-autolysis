@@ -1,0 +1,22 @@
+{
+  "检查": "字幕可见性边界",
+  "时间": "2026-10-06T13:31:08.3422031+08:00",
+  "进程编号": 40196,
+  "退出码": 0,
+  "通过": true,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/交互系统/电话来电与对话系统实施证据/20261006/字幕可见性边界/复验"
+  ],
+  "通过断言数": 24,
+  "预期错误计数": {},
+  "非预期错误": []
+}

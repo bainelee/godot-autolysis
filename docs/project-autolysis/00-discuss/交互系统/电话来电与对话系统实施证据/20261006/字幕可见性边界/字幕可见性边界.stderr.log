@@ -1,0 +1,60 @@
+ERROR: Object is locked and can't be freed.
+   at: callp (core/object/object.cpp:890)
+   GDScript backtrace (most recent call first):
+       [0] _visibility_changed (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:83)
+       [1] show_prepared_line (res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.gd:83)
+       [2] _begin_line (res://main-autolysis/systems/dialogue-system/autolysis_dialogue_player.gd:249)
+       [3] start_prepared_dialogue (res://main-autolysis/systems/dialogue-system/autolysis_dialogue_player.gd:123)
+       [4] _run (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:56)
+SCRIPT ERROR: Attempted to free a locked object (calling or emitting).
+   at: _visibility_changed (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:83)
+   GDScript backtrace (most recent call first):
+       [0] _visibility_changed (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:83)
+       [1] show_prepared_line (res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.gd:83)
+       [2] _begin_line (res://main-autolysis/systems/dialogue-system/autolysis_dialogue_player.gd:249)
+       [3] start_prepared_dialogue (res://main-autolysis/systems/dialogue-system/autolysis_dialogue_player.gd:123)
+       [4] _run (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:56)
+ERROR: 失败：公开启动在释放后安全返回失败：显示释放播放器
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _check (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:109)
+       [1] _run (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:62)
+ERROR: 失败：释放变体只异常一次且没有正常完成：显示释放播放器
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _check (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:109)
+       [1] _run (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:63)
+ERROR: 失败：仍存活播放器释放匹配播放容量：显示释放播放器
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _check (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:109)
+       [1] _run (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:65)
+ERROR: Object is locked and can't be freed.
+   at: callp (core/object/object.cpp:890)
+   GDScript backtrace (most recent call first):
+       [0] _line_started (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:90)
+       [1] _begin_line (res://main-autolysis/systems/dialogue-system/autolysis_dialogue_player.gd:266)
+       [2] start_prepared_dialogue (res://main-autolysis/systems/dialogue-system/autolysis_dialogue_player.gd:123)
+       [3] _run (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:56)
+SCRIPT ERROR: Attempted to free a locked object (calling or emitting).
+   at: _line_started (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:90)
+   GDScript backtrace (most recent call first):
+       [0] _line_started (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:90)
+       [1] _begin_line (res://main-autolysis/systems/dialogue-system/autolysis_dialogue_player.gd:266)
+       [2] start_prepared_dialogue (res://main-autolysis/systems/dialogue-system/autolysis_dialogue_player.gd:123)
+       [3] _run (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:56)
+ERROR: 失败：公开启动在释放后安全返回失败：句开始释放播放器
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _check (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:109)
+       [1] _run (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:62)
+ERROR: 失败：释放变体只异常一次且没有正常完成：句开始释放播放器
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _check (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:109)
+       [1] _run (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:63)
+ERROR: 失败：仍存活播放器释放匹配播放容量：句开始释放播放器
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _check (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:109)
+       [1] _run (res://main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd:65)

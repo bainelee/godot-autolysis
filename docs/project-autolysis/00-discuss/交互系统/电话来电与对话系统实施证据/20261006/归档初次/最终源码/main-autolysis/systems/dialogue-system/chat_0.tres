@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="AutolysisDialogueDefinition" load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://main-autolysis/systems/dialogue-system/autolysis_dialogue_definition.gd" id="1_script"]
+[ext_resource type="Translation" path="res://main-autolysis/systems/dialogue-system/dialogue_zh.zh.translation" id="2_zh"]
+[ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/speech/chat_0/chat_0_0.wav" id="3_voice_0"]
+[ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/speech/chat_0/chat_0_1.wav" id="4_voice_1"]
+[ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/speech/chat_0/chat_0_2.wav" id="5_voice_2"]
+[ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/speech/chat_0/chat_0_3.wav" id="6_voice_3"]
+[ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/speech/chat_0/chat_0_4.wav" id="7_voice_4"]
+[ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/speech/chat_0/chat_0_5.wav" id="8_voice_5"]
+[ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/speech/chat_0/chat_0_6.wav" id="9_voice_6"]
+[ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/speech/chat_0/chat_0_7.wav" id="10_voice_7"]
+[ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/speech/chat_0/chat_0_8.wav" id="11_voice_8"]
+
+[resource]
+script = ExtResource("1_script")
+dialogue_id = &"chat_0"
+line_ids = PackedStringArray("chat_0_0", "chat_0_1", "chat_0_2", "chat_0_3", "chat_0_4", "chat_0_5", "chat_0_6", "chat_0_7", "chat_0_8")
+voice_streams = Array[AudioStream]([ExtResource("3_voice_0"), ExtResource("4_voice_1"), ExtResource("5_voice_2"), ExtResource("6_voice_3"), ExtResource("7_voice_4"), ExtResource("8_voice_5"), ExtResource("9_voice_6"), ExtResource("10_voice_7"), ExtResource("11_voice_8")])
+chinese_translation = ExtResource("2_zh")
+post_voice_hold_seconds = 1.5
+subtitle_fade_seconds = 0.2

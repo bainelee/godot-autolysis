@@ -1,0 +1,16 @@
+ERROR: Object is locked and can't be freed.
+   at: callp (core/object/object.cpp:890)
+   GDScript backtrace (most recent call first):
+       [0] _first_release_observer (res://main-autolysis/player/tests/telephone_call_boundary_test.gd:117)
+       [1] _publish_handset_change (res://main-autolysis/player/components/autolysis_inventory_controller.gd:446)
+       [2] commit_handset_take (res://main-autolysis/player/components/autolysis_inventory_controller.gd:213)
+       [3] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:289)
+       [4] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:233)
+SCRIPT ERROR: Attempted to free a locked object (calling or emitting).
+   at: _first_release_observer (res://main-autolysis/player/tests/telephone_call_boundary_test.gd:117)
+   GDScript backtrace (most recent call first):
+       [0] _first_release_observer (res://main-autolysis/player/tests/telephone_call_boundary_test.gd:117)
+       [1] _publish_handset_change (res://main-autolysis/player/components/autolysis_inventory_controller.gd:446)
+       [2] commit_handset_take (res://main-autolysis/player/components/autolysis_inventory_controller.gd:213)
+       [3] _poll_transfer (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:289)
+       [4] _physics_process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:233)

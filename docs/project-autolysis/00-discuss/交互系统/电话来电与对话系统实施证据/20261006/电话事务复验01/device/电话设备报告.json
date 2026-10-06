@@ -1,0 +1,5808 @@
+{
+	"业务快照": [
+		{
+			"四格身份": [
+				0,
+				-9223371599221092363,
+				0,
+				0
+			],
+			"实际限位启用": false,
+			"持有会话": 0,
+			"持物序号": 4,
+			"挂机可见": true,
+			"来源会话": 0,
+			"玩家位置": [
+				-9.35000038146973,
+				0.800499975681305,
+				11.0
+			],
+			"选中索引": 0,
+			"阶段": "正式取放完成",
+			"限位停用": true
+		}
+	],
+	"原生系统输入": false,
+	"图形验收": false,
+	"失败数": 0,
+	"断言": [
+		{
+			"说明": "原电话聚焦相机迁移后的实际全局变换保持",
+			"通过": true
+		},
+		{
+			"说明": "原电话聚焦相机场角保持",
+			"通过": true
+		},
+		{
+			"说明": "听筒独立物理入口迁移保持实际全局变换",
+			"通过": true
+		},
+		{
+			"说明": "听筒挂机锚点原场景实际全局变换保持",
+			"通过": true
+		},
+		{
+			"说明": "纯模型提取保留原资产实际五个网格",
+			"通过": true
+		},
+		{
+			"说明": "提取网格尺寸与来源一致：mesh_phone_hand_set（来源网格路径）",
+			"通过": true
+		},
+		{
+			"说明": "提取网格材质与来源一致：mesh_phone_hand_set（来源网格路径）",
+			"通过": true
+		},
+		{
+			"说明": "提取网格相对变换与来源一致：mesh_phone_hand_set（来源网格路径）",
+			"通过": true
+		},
+		{
+			"说明": "提取网格尺寸与来源一致：mesh_phone_hand_set/MeshInstance3D4（来源网格路径）",
+			"通过": true
+		},
+		{
+			"说明": "提取网格材质与来源一致：mesh_phone_hand_set/MeshInstance3D4（来源网格路径）",
+			"通过": true
+		},
+		{
+			"说明": "提取网格相对变换与来源一致：mesh_phone_hand_set/MeshInstance3D4（来源网格路径）",
+			"通过": true
+		},
+		{
+			"说明": "提取网格尺寸与来源一致：mesh_phone_hand_set/MeshInstance3D4/MeshInstance3D5（来源网格路径）",
+			"通过": true
+		},
+		{
+			"说明": "提取网格材质与来源一致：mesh_phone_hand_set/MeshInstance3D4/MeshInstance3D5（来源网格路径）",
+			"通过": true
+		},
+		{
+			"说明": "提取网格相对变换与来源一致：mesh_phone_hand_set/MeshInstance3D4/MeshInstance3D5（来源网格路径）",
+			"通过": true
+		},
+		{
+			"说明": "提取网格尺寸与来源一致：mesh_phone_hand_set/MeshInstance3D5（来源网格路径）",
+			"通过": true
+		},
+		{
+			"说明": "提取网格材质与来源一致：mesh_phone_hand_set/MeshInstance3D5（来源网格路径）",
+			"通过": true
+		},
+		{
+			"说明": "提取网格相对变换与来源一致：mesh_phone_hand_set/MeshInstance3D5（来源网格路径）",
+			"通过": true
+		},
+		{
+			"说明": "提取网格尺寸与来源一致：mesh_phone_hand_set/MeshInstance3D5/MeshInstance3D5（来源网格路径）",
+			"通过": true
+		},
+		{
+			"说明": "提取网格材质与来源一致：mesh_phone_hand_set/MeshInstance3D5/MeshInstance3D5（来源网格路径）",
+			"通过": true
+		},
+		{
+			"说明": "提取网格相对变换与来源一致：mesh_phone_hand_set/MeshInstance3D5/MeshInstance3D5（来源网格路径）",
+			"通过": true
+		},
+		{
+			"说明": "共享纯模型无业务脚本、碰撞或交互分组",
+			"通过": true
+		},
+		{
+			"说明": "正式主场景电话实例变换保持实施前基线",
+			"通过": true
+		},
+		{
+			"说明": "实际读取实施前主场景电话实例变换来源",
+			"通过": true
+		},
+		{
+			"说明": "电话明确聚焦登记有效",
+			"通过": true
+		},
+		{
+			"说明": "各电话限位初始停用",
+			"通过": true
+		},
+		{
+			"说明": "普通模式不直接取下听筒",
+			"通过": true
+		},
+		{
+			"说明": "普通掩码实际射线命中基座且不会被听筒内部层遮挡",
+			"通过": true
+		},
+		{
+			"说明": "电话基座接受聚焦请求",
+			"通过": true
+		},
+		{
+			"说明": "聚焦过渡期间拒绝取筒",
+			"通过": true
+		},
+		{
+			"说明": "稳定聚焦真实射线首命中解析唯一听筒入口",
+			"通过": true
+		},
+		{
+			"说明": "真实外部首命中遮挡不被电话分支穿透",
+			"通过": true
+		},
+		{
+			"说明": "未登记内部层物体不能借用电话入口",
+			"通过": true
+		},
+		{
+			"说明": "遮挡移除后同一真实射线恢复听筒入口",
+			"通过": true
+		},
+		{
+			"说明": "电话聚焦可以正常退出",
+			"通过": true
+		},
+		{
+			"说明": "实际边界外身体位置仍可在普通两米射线范围命中电话根",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式根射线可达的玩家样本位于已删除的旧取筒区域外",
+			"通过": true
+		},
+		{
+			"说明": "旧取筒区域外正式站位通过正式听筒入口接受取下",
+			"通过": true
+		},
+		{
+			"说明": "旧取筒区域外正式站位不因距离、区域或重叠取消正常成对取下",
+			"通过": true
+		},
+		{
+			"说明": "旧取筒区域外正式站位限位实际在物理世界启用",
+			"通过": true
+		},
+		{
+			"说明": "旧取筒区域外正式站位提交与通知后仍持筒且正常完成只通知一次",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "旧取筒区域外正式站位正式归还后实际限位停用且完成一次",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "贴近当前限位样本由用户当前真实限位变换构造且几何事实经过实际查询",
+			"通过": true
+		},
+		{
+			"说明": "贴近当前限位通过正式听筒入口接受取下",
+			"通过": true
+		},
+		{
+			"说明": "贴近当前限位不因距离、区域或重叠取消正常成对取下",
+			"通过": true
+		},
+		{
+			"说明": "贴近当前限位限位实际在物理世界启用",
+			"通过": true
+		},
+		{
+			"说明": "贴近当前限位提交与通知后仍持筒且正常完成只通知一次",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "贴近当前限位正式归还后实际限位停用且完成一次",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "重叠当前限位样本由用户当前真实限位变换构造且几何事实经过实际查询",
+			"通过": true
+		},
+		{
+			"说明": "重叠当前限位通过正式听筒入口接受取下",
+			"通过": true
+		},
+		{
+			"说明": "重叠当前限位不因距离、区域或重叠取消正常成对取下",
+			"通过": true
+		},
+		{
+			"说明": "重叠当前限位限位实际在物理世界启用",
+			"通过": true
+		},
+		{
+			"说明": "重叠当前限位提交与通知后仍持筒且正常完成只通知一次",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "重叠当前限位正式归还后实际限位停用且完成一次",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "零实体层重叠当前限位样本由用户当前真实限位变换构造且几何事实经过实际查询",
+			"通过": true
+		},
+		{
+			"说明": "零实体层重叠当前限位通过正式听筒入口接受取下",
+			"通过": true
+		},
+		{
+			"说明": "零实体层重叠当前限位不因距离、区域或重叠取消正常成对取下",
+			"通过": true
+		},
+		{
+			"说明": "零实体层重叠当前限位限位实际在物理世界启用",
+			"通过": true
+		},
+		{
+			"说明": "零实体层重叠当前限位提交与通知后仍持筒且正常完成只通知一次",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "零实体层重叠当前限位正式归还后实际限位停用且完成一次",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "位置变更样本通过正式入口建立取下预处理",
+			"通过": true
+		},
+		{
+			"说明": "预处理后玩家移出旧区域且真实限位移入身体通过正式听筒入口接受取下",
+			"通过": true
+		},
+		{
+			"说明": "预处理后玩家移出旧区域且真实限位移入身体不因距离、区域或重叠取消正常成对取下",
+			"通过": true
+		},
+		{
+			"说明": "预处理后玩家移出旧区域且真实限位移入身体限位实际在物理世界启用",
+			"通过": true
+		},
+		{
+			"说明": "预处理后玩家移出旧区域且真实限位移入身体提交与通知后仍持筒且正常完成只通知一次",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "预处理后玩家移出旧区域且真实限位移入身体正式归还后实际限位停用且完成一次",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "同步确认回调只改变玩家几何站位通过正式听筒入口接受取下",
+			"通过": true
+		},
+		{
+			"说明": "同步确认回调只改变玩家几何站位不因距离、区域或重叠取消正常成对取下",
+			"通过": true
+		},
+		{
+			"说明": "同步确认回调只改变玩家几何站位限位实际在物理世界启用",
+			"通过": true
+		},
+		{
+			"说明": "同步确认回调只改变玩家几何站位提交与通知后仍持筒且正常完成只通知一次",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "同步确认回调只改变玩家几何站位正式归还后实际限位停用且完成一次",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "来源提交可见性回调只改变玩家几何站位通过正式听筒入口接受取下",
+			"通过": true
+		},
+		{
+			"说明": "来源提交可见性回调只改变玩家几何站位不因距离、区域或重叠取消正常成对取下",
+			"通过": true
+		},
+		{
+			"说明": "来源提交可见性回调只改变玩家几何站位限位实际在物理世界启用",
+			"通过": true
+		},
+		{
+			"说明": "来源提交可见性回调只改变玩家几何站位提交与通知后仍持筒且正常完成只通知一次",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "来源提交可见性回调只改变玩家几何站位正式归还后实际限位停用且完成一次",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "持物通知回调只改变玩家几何站位通过正式听筒入口接受取下",
+			"通过": true
+		},
+		{
+			"说明": "持物通知回调只改变玩家几何站位不因距离、区域或重叠取消正常成对取下",
+			"通过": true
+		},
+		{
+			"说明": "持物通知回调只改变玩家几何站位限位实际在物理世界启用",
+			"通过": true
+		},
+		{
+			"说明": "持物通知回调只改变玩家几何站位提交与通知后仍持筒且正常完成只通知一次",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "持物通知回调只改变玩家几何站位正式归还后实际限位停用且完成一次",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "完成通知回调只改变玩家几何站位通过正式听筒入口接受取下",
+			"通过": true
+		},
+		{
+			"说明": "完成通知回调只改变玩家几何站位不因距离、区域或重叠取消正常成对取下",
+			"通过": true
+		},
+		{
+			"说明": "完成通知回调只改变玩家几何站位限位实际在物理世界启用",
+			"通过": true
+		},
+		{
+			"说明": "完成通知回调只改变玩家几何站位提交与通知后仍持筒且正常完成只通知一次",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "完成通知回调只改变玩家几何站位正式归还后实际限位停用且完成一次",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "玩家实际掩码缺限位层时拒绝取筒",
+			"通过": true
+		},
+		{
+			"说明": "限位层失效时仅拒绝取筒",
+			"通过": true
+		},
+		{
+			"说明": "只读取筒查询不改变空手状态",
+			"通过": true
+		},
+		{
+			"说明": "只读取筒查询不改变空手状态",
+			"通过": true
+		},
+		{
+			"说明": "只读取筒查询不改变空手状态",
+			"通过": true
+		},
+		{
+			"说明": "只读许可不创建占用、不切换限位或隐藏挂机展示",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "双方来源会话匹配且持物序号只增加一次",
+			"通过": true
+		},
+		{
+			"说明": "取下只显示玩家听筒并确认真实限位启用",
+			"通过": true
+		},
+		{
+			"说明": "取下完成和持物观察通知各一次",
+			"通过": true
+		},
+		{
+			"说明": "当前格为空与实际空手明确区分",
+			"通过": true
+		},
+		{
+			"说明": "其他格原实例和选中索引保持",
+			"通过": true
+		},
+		{
+			"说明": "权威选格入口两个方向拒绝持筒切换",
+			"通过": true
+		},
+		{
+			"说明": "电话聚焦可以正常退出",
+			"通过": true
+		},
+		{
+			"说明": "正常退出聚焦保留持筒会话和限位",
+			"通过": true
+		},
+		{
+			"说明": "稳定持筒已解除短暂同步移动保护",
+			"通过": true
+		},
+		{
+			"说明": "持筒不扩大为禁止进入另一电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "另一电话不能取第二听筒或解除原来源会话",
+			"通过": true
+		},
+		{
+			"说明": "电话聚焦可以正常退出",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "挂机模型隐藏后原交互区仍由真实射线命中",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "放回只显示挂机听筒且真实限位停用",
+			"通过": true
+		},
+		{
+			"说明": "取放完成和持物观察各按成功次数通知",
+			"通过": true
+		},
+		{
+			"说明": "归还保留库存身份且不修改另一电话限位",
+			"通过": true
+		},
+		{
+			"说明": "放回后权威选格入口两个方向恢复",
+			"通过": true
+		},
+		{
+			"说明": "开始取下预处理",
+			"通过": true
+		},
+		{
+			"说明": "启用待同步期间维持移动保护和库存互斥",
+			"通过": true
+		},
+		{
+			"说明": "取下取消恢复挂机并在实际停用后解除保护",
+			"通过": true
+		},
+		{
+			"说明": "开始延后写入回调取消用例",
+			"通过": true
+		},
+		{
+			"说明": "旧延后启用回调不覆盖取消后的停用目标",
+			"通过": true
+		},
+		{
+			"说明": "开始同步观察重入取消用例",
+			"通过": true
+		},
+		{
+			"说明": "同步确认观察重入取消不会提交旧取筒请求",
+			"通过": true
+		},
+		{
+			"说明": "开始取下后立即全局暂停",
+			"通过": true
+		},
+		{
+			"说明": "全局暂停保留取下预处理和保护而不提前提交",
+			"通过": true
+		},
+		{
+			"说明": "恢复后同一取下事务提交成功",
+			"通过": true
+		},
+		{
+			"说明": "开始归还后显式取消",
+			"通过": true
+		},
+		{
+			"说明": "归还取消保持原持有和真实限位启用",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "旧来源会话清理和旧限位序号不清除后来持有",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "开始取下后退出聚焦",
+			"通过": true
+		},
+		{
+			"说明": "待同步取下可请求退出聚焦",
+			"通过": true
+		},
+		{
+			"说明": "取下待同步退出完成限位恢复后解除保护",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "候选准备失败不进入电话碰撞预处理",
+			"通过": true
+		},
+		{
+			"说明": "候选失败保持挂机与停用状态",
+			"通过": true
+		},
+		{
+			"说明": "开始手持呈现提交失败用例",
+			"通过": true
+		},
+		{
+			"说明": "呈现提交失败成对回滚并恢复真实限位停用",
+			"通过": true
+		},
+		{
+			"说明": "开始来源取下拒绝用例",
+			"通过": true
+		},
+		{
+			"说明": "来源拒绝取下不留下半提交",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "开始来源归还拒绝用例",
+			"通过": true
+		},
+		{
+			"说明": "归还提交失败保持匹配持有、切换锁与实际边界",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "所有失败预处理均不发布玩家成功取放通知",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "开始取下可见性观察取消用例",
+			"通过": true
+		},
+		{
+			"说明": "取下隐藏观察显式取消不伪报提交或留下半占用",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "开始归还可见性观察取消用例",
+			"通过": true
+		},
+		{
+			"说明": "归还显示观察取消按提交前持有恢复真实启用边界",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "开始取下可见性观察异常终止用例",
+			"通过": true
+		},
+		{
+			"说明": "取下可见性观察异常终止不留下旧事务或永久保护",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "开始归还可见性观察异常终止用例",
+			"通过": true
+		},
+		{
+			"说明": "归还可见性观察异常终止不会回滚为失效持有",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "开始取下隐藏观察立即释放必要限位用例",
+			"通过": true
+		},
+		{
+			"说明": "隐藏观察释放必要限位不发成功取下并成对恢复",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "开始手持显示入树立即释放必要限位用例",
+			"通过": true
+		},
+		{
+			"说明": "显示入树释放必要限位在正常完成前清理匹配会话",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "开始持物观察立即释放必要限位用例",
+			"通过": true
+		},
+		{
+			"说明": "持物观察释放必要限位不继续发电话正常取下完成",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "已提交取下的完成观察不能取消回未持有边界",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "已提交归还的完成观察不能重启临时边界",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "仅聚焦相机释放终止聚焦而保留持筒和限位",
+			"通过": true
+		},
+		{
+			"说明": "替换相机后显式重新登记聚焦引用",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "持有中实际玩家掩码失效按匹配会话异常清理并停用边界",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "限位已排队释放仍可安全请求原来源归还",
+			"通过": true
+		},
+		{
+			"说明": "必要限位缺失的安全归还记录实际原因并清除占用",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "持有中限位物理体释放终止匹配会话且不留下永久移动保护",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "仅玩家显示实例释放按当前配置恢复而保留来源会话",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "电话实例旋转及听筒引用重组改名不因旧名称层级失效",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "有效独立六轴及缩放配置精确应用到本次纯模型",
+			"通过": true
+		},
+		{
+			"说明": "变体听筒当前运行姿态可调节",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "同来源放回再取沿用本次运行缓存",
+			"通过": true
+		},
+		{
+			"说明": "调节缓存不修改电话导出配置或共享模型资源",
+			"通过": true
+		},
+		{
+			"说明": "仅调节面板释放不解除持有也不阻止原电话归还",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "归还变体听筒保持用户配置的挂机锚点姿态",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "重新载入正式场景恢复电话导出起值而不沿用前场景缓存",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "开始同步观察释放边界：free-player-on-confirm（释放故障注入标识）",
+			"通过": true
+		},
+		{
+			"说明": "同步确认观察释放玩家或库存后来源恢复挂机及限位停用",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "开始同步观察释放边界：free-inventory-on-confirm（释放故障注入标识）",
+			"通过": true
+		},
+		{
+			"说明": "同步确认观察释放玩家或库存后来源恢复挂机及限位停用",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "开始同步观察释放边界：free-source-on-confirm（释放故障注入标识）",
+			"通过": true
+		},
+		{
+			"说明": "同步确认观察释放来源后没有库存占用或保护残留",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "开始同步观察释放边界：immediate-player-on-confirm（释放故障注入标识）",
+			"通过": true
+		},
+		{
+			"说明": "同步确认观察释放玩家或库存后来源恢复挂机及限位停用",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "开始同步观察释放边界：immediate-inventory-on-confirm（释放故障注入标识）",
+			"通过": true
+		},
+		{
+			"说明": "同步确认观察释放玩家或库存后来源恢复挂机及限位停用",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "稳定持有的来源卸载清除显示与独占并释放移动保护",
+			"通过": true
+		}
+	],
+	"正式玩家运动轨迹": [],
+	"站位无门禁样本": [
+		{
+			"双方正常持有": true,
+			"当前真实限位位置": [
+				-8.41000080108643,
+				0.849999964237213,
+				11.0
+			],
+			"旧区域包含玩家原点": false,
+			"来源与库存占用序号": [
+				1,
+				1
+			],
+			"玩家全局位置": [
+				-8.39999961853027,
+				0.800499975681305,
+				11.0
+			],
+			"玩家实体层": 1,
+			"请求已分发": true,
+			"阶段": "旧取筒区域外正式站位"
+		},
+		{
+			"双方正常持有": true,
+			"当前真实限位位置": [
+				-8.41000080108643,
+				0.849999964237213,
+				11.0
+			],
+			"旧区域包含玩家原点": false,
+			"来源与库存占用序号": [
+				1,
+				1
+			],
+			"玩家全局位置": [
+				-8.79000091552734,
+				0.800499975681305,
+				11.0
+			],
+			"玩家实体层": 1,
+			"请求已分发": true,
+			"阶段": "贴近当前限位"
+		},
+		{
+			"双方正常持有": true,
+			"当前真实限位位置": [
+				-8.41000080108643,
+				0.849999964237213,
+				11.0
+			],
+			"旧区域包含玩家原点": false,
+			"来源与库存占用序号": [
+				1,
+				1
+			],
+			"玩家全局位置": [
+				-8.41000080108643,
+				0.800499975681305,
+				11.0
+			],
+			"玩家实体层": 1,
+			"请求已分发": true,
+			"阶段": "重叠当前限位"
+		},
+		{
+			"双方正常持有": true,
+			"当前真实限位位置": [
+				-8.41000080108643,
+				0.849999964237213,
+				11.0
+			],
+			"旧区域包含玩家原点": false,
+			"来源与库存占用序号": [
+				1,
+				1
+			],
+			"玩家全局位置": [
+				-8.41000080108643,
+				0.800499975681305,
+				11.0
+			],
+			"玩家实体层": 0,
+			"请求已分发": true,
+			"阶段": "零实体层重叠当前限位"
+		},
+		{
+			"双方正常持有": true,
+			"当前真实限位位置": [
+				-6.35000038146973,
+				0.849999964237213,
+				11.0
+			],
+			"旧区域包含玩家原点": false,
+			"来源与库存占用序号": [
+				1,
+				1
+			],
+			"玩家全局位置": [
+				-6.35000038146973,
+				0.80049991607666,
+				11.0
+			],
+			"玩家实体层": 1,
+			"请求已分发": true,
+			"阶段": "预处理后玩家移出旧区域且真实限位移入身体"
+		},
+		{
+			"双方正常持有": true,
+			"当前真实限位位置": [
+				-8.41000080108643,
+				0.849999964237213,
+				11.0
+			],
+			"旧区域包含玩家原点": false,
+			"来源与库存占用序号": [
+				1,
+				1
+			],
+			"玩家全局位置": [
+				-6.35000038146973,
+				0.80049991607666,
+				11.0
+			],
+			"玩家实体层": 1,
+			"请求已分发": true,
+			"阶段": "同步确认回调只改变玩家几何站位"
+		},
+		{
+			"双方正常持有": true,
+			"当前真实限位位置": [
+				-8.41000080108643,
+				0.849999964237213,
+				11.0
+			],
+			"旧区域包含玩家原点": false,
+			"来源与库存占用序号": [
+				1,
+				1
+			],
+			"玩家全局位置": [
+				-8.41000080108643,
+				0.800499975681305,
+				11.0
+			],
+			"玩家实体层": 1,
+			"请求已分发": true,
+			"阶段": "来源提交可见性回调只改变玩家几何站位"
+		},
+		{
+			"双方正常持有": true,
+			"当前真实限位位置": [
+				-8.41000080108643,
+				0.849999964237213,
+				11.0
+			],
+			"旧区域包含玩家原点": false,
+			"来源与库存占用序号": [
+				1,
+				1
+			],
+			"玩家全局位置": [
+				-6.35000038146973,
+				0.80049991607666,
+				11.0
+			],
+			"玩家实体层": 1,
+			"请求已分发": true,
+			"阶段": "持物通知回调只改变玩家几何站位"
+		},
+		{
+			"双方正常持有": true,
+			"当前真实限位位置": [
+				-8.41000080108643,
+				0.849999964237213,
+				11.0
+			],
+			"旧区域包含玩家原点": false,
+			"来源与库存占用序号": [
+				1,
+				1
+			],
+			"玩家全局位置": [
+				-8.41000080108643,
+				0.800499975681305,
+				11.0
+			],
+			"玩家实体层": 1,
+			"请求已分发": true,
+			"阶段": "完成通知回调只改变玩家几何站位"
+		}
+	],
+	"限位同步事件": [
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 0,
+			"物理帧": 1,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 0,
+			"物理帧": 1,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 58,
+			"物理帧": 49,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 58,
+			"物理帧": 49,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 87,
+			"物理帧": 65,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 87,
+			"物理帧": 65,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 88,
+			"物理帧": 66,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 90,
+			"物理帧": 73,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 90,
+			"物理帧": 73,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 91,
+			"物理帧": 74,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 93,
+			"物理帧": 82,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 93,
+			"物理帧": 82,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 130,
+			"物理帧": 100,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 130,
+			"物理帧": 100,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 131,
+			"物理帧": 101,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 133,
+			"物理帧": 109,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 133,
+			"物理帧": 109,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 134,
+			"物理帧": 110,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 136,
+			"物理帧": 118,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 136,
+			"物理帧": 118,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 176,
+			"物理帧": 136,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 176,
+			"物理帧": 136,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 177,
+			"物理帧": 137,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 179,
+			"物理帧": 143,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 179,
+			"物理帧": 143,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 180,
+			"物理帧": 144,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 182,
+			"物理帧": 149,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 182,
+			"物理帧": 149,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 217,
+			"物理帧": 166,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 217,
+			"物理帧": 166,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 218,
+			"物理帧": 167,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 220,
+			"物理帧": 171,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 220,
+			"物理帧": 171,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 221,
+			"物理帧": 172,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 223,
+			"物理帧": 178,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 223,
+			"物理帧": 178,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 255,
+			"物理帧": 193,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 255,
+			"物理帧": 193,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 256,
+			"物理帧": 194,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 258,
+			"物理帧": 200,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 258,
+			"物理帧": 200,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 259,
+			"物理帧": 201,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 261,
+			"物理帧": 209,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 261,
+			"物理帧": 209,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 294,
+			"物理帧": 225,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 294,
+			"物理帧": 225,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 297,
+			"物理帧": 226,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 299,
+			"物理帧": 230,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 299,
+			"物理帧": 230,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 300,
+			"物理帧": 231,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 302,
+			"物理帧": 236,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 302,
+			"物理帧": 236,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 337,
+			"物理帧": 251,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 337,
+			"物理帧": 251,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 339,
+			"物理帧": 252,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 341,
+			"物理帧": 255,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 341,
+			"物理帧": 255,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 342,
+			"物理帧": 256,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 344,
+			"物理帧": 266,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 344,
+			"物理帧": 266,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 378,
+			"物理帧": 282,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 378,
+			"物理帧": 282,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 379,
+			"物理帧": 283,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 381,
+			"物理帧": 292,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 381,
+			"物理帧": 292,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 382,
+			"物理帧": 293,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 384,
+			"物理帧": 305,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 384,
+			"物理帧": 305,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 414,
+			"物理帧": 321,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 414,
+			"物理帧": 321,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 415,
+			"物理帧": 322,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 417,
+			"物理帧": 331,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 417,
+			"物理帧": 331,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 418,
+			"物理帧": 332,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 420,
+			"物理帧": 346,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 420,
+			"物理帧": 346,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 451,
+			"物理帧": 361,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 451,
+			"物理帧": 361,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 452,
+			"物理帧": 362,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 527,
+			"物理帧": 416,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 527,
+			"物理帧": 416,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 528,
+			"物理帧": 417,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 3,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 528,
+			"物理帧": 421,
+			"目标启用": false,
+			"限位序号": 5
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 3,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 528,
+			"物理帧": 421,
+			"目标启用": false,
+			"限位序号": 5
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 3,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 529,
+			"物理帧": 422,
+			"目标启用": false,
+			"限位序号": 5
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 4,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 529,
+			"物理帧": 429,
+			"目标启用": true,
+			"限位序号": 6
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 4,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 529,
+			"物理帧": 429,
+			"目标启用": false,
+			"限位序号": 7
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 4,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 529,
+			"物理帧": 429,
+			"目标启用": false,
+			"限位序号": 7
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 4,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 530,
+			"物理帧": 430,
+			"目标启用": false,
+			"限位序号": 7
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 5,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 530,
+			"物理帧": 433,
+			"目标启用": true,
+			"限位序号": 8
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 5,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 530,
+			"物理帧": 433,
+			"目标启用": true,
+			"限位序号": 8
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 5,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 531,
+			"物理帧": 434,
+			"目标启用": true,
+			"限位序号": 8
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 5,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 531,
+			"物理帧": 434,
+			"目标启用": false,
+			"限位序号": 9
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 5,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 531,
+			"物理帧": 434,
+			"目标启用": false,
+			"限位序号": 9
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 5,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 531,
+			"物理帧": 435,
+			"目标启用": false,
+			"限位序号": 9
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 6,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 531,
+			"物理帧": 438,
+			"目标启用": true,
+			"限位序号": 10
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 6,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 531,
+			"物理帧": 438,
+			"目标启用": true,
+			"限位序号": 10
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 6,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 532,
+			"物理帧": 439,
+			"目标启用": true,
+			"限位序号": 10
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 6,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 532,
+			"物理帧": 440,
+			"目标启用": true,
+			"限位序号": 10
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 6,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 532,
+			"物理帧": 441,
+			"目标启用": true,
+			"限位序号": 10
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 6,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 532,
+			"物理帧": 442,
+			"目标启用": true,
+			"限位序号": 10
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 6,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 536,
+			"物理帧": 443,
+			"目标启用": true,
+			"限位序号": 10
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 6,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 539,
+			"物理帧": 444,
+			"目标启用": true,
+			"限位序号": 10
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 6,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 542,
+			"物理帧": 445,
+			"目标启用": true,
+			"限位序号": 10
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 7,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 542,
+			"物理帧": 445,
+			"目标启用": true,
+			"限位序号": 12
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 7,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 542,
+			"物理帧": 445,
+			"目标启用": true,
+			"限位序号": 12
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 7,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 543,
+			"物理帧": 446,
+			"目标启用": true,
+			"限位序号": 12
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 8,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 543,
+			"物理帧": 447,
+			"目标启用": false,
+			"限位序号": 13
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 8,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 543,
+			"物理帧": 447,
+			"目标启用": false,
+			"限位序号": 13
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 8,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 544,
+			"物理帧": 448,
+			"目标启用": false,
+			"限位序号": 13
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 9,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 544,
+			"物理帧": 450,
+			"目标启用": true,
+			"限位序号": 14
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 9,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 544,
+			"物理帧": 450,
+			"目标启用": true,
+			"限位序号": 14
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 9,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 545,
+			"物理帧": 451,
+			"目标启用": true,
+			"限位序号": 14
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 10,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 547,
+			"物理帧": 454,
+			"目标启用": false,
+			"限位序号": 15
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 10,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 547,
+			"物理帧": 454,
+			"目标启用": false,
+			"限位序号": 15
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 10,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 548,
+			"物理帧": 455,
+			"目标启用": false,
+			"限位序号": 15
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 11,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 548,
+			"物理帧": 456,
+			"目标启用": true,
+			"限位序号": 16
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 11,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 548,
+			"物理帧": 456,
+			"目标启用": true,
+			"限位序号": 16
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 11,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 549,
+			"物理帧": 457,
+			"目标启用": false,
+			"限位序号": 17
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 11,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 549,
+			"物理帧": 457,
+			"目标启用": false,
+			"限位序号": 17
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 11,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 549,
+			"物理帧": 458,
+			"目标启用": false,
+			"限位序号": 17
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 570,
+			"物理帧": 470,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 570,
+			"物理帧": 470,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 599,
+			"物理帧": 485,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 599,
+			"物理帧": 485,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 600,
+			"物理帧": 486,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 600,
+			"物理帧": 486,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 600,
+			"物理帧": 486,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 600,
+			"物理帧": 487,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 3,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 600,
+			"物理帧": 493,
+			"目标启用": true,
+			"限位序号": 4
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 3,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 600,
+			"物理帧": 493,
+			"目标启用": true,
+			"限位序号": 4
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 3,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 601,
+			"物理帧": 494,
+			"目标启用": true,
+			"限位序号": 4
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 3,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 601,
+			"物理帧": 494,
+			"目标启用": false,
+			"限位序号": 5
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 3,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 601,
+			"物理帧": 494,
+			"目标启用": false,
+			"限位序号": 5
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 3,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 601,
+			"物理帧": 495,
+			"目标启用": false,
+			"限位序号": 5
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 4,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 601,
+			"物理帧": 500,
+			"目标启用": true,
+			"限位序号": 6
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 4,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 601,
+			"物理帧": 500,
+			"目标启用": true,
+			"限位序号": 6
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 4,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 602,
+			"物理帧": 501,
+			"目标启用": true,
+			"限位序号": 6
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 5,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 602,
+			"物理帧": 503,
+			"目标启用": false,
+			"限位序号": 7
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 5,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 602,
+			"物理帧": 503,
+			"目标启用": false,
+			"限位序号": 7
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 5,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 603,
+			"物理帧": 504,
+			"目标启用": false,
+			"限位序号": 7
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 5,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 603,
+			"物理帧": 504,
+			"目标启用": true,
+			"限位序号": 8
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 5,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 603,
+			"物理帧": 504,
+			"目标启用": true,
+			"限位序号": 8
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 5,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 603,
+			"物理帧": 505,
+			"目标启用": true,
+			"限位序号": 8
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 6,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 603,
+			"物理帧": 506,
+			"目标启用": false,
+			"限位序号": 9
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 6,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 603,
+			"物理帧": 506,
+			"目标启用": false,
+			"限位序号": 9
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 6,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 604,
+			"物理帧": 507,
+			"目标启用": false,
+			"限位序号": 9
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 606,
+			"物理帧": 514,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 606,
+			"物理帧": 514,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 638,
+			"物理帧": 529,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 638,
+			"物理帧": 529,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 640,
+			"物理帧": 530,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 640,
+			"物理帧": 530,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 640,
+			"物理帧": 530,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 642,
+			"物理帧": 531,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 642,
+			"物理帧": 531,
+			"目标启用": true,
+			"限位序号": 4
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 642,
+			"物理帧": 531,
+			"目标启用": true,
+			"限位序号": 4
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 643,
+			"物理帧": 532,
+			"目标启用": true,
+			"限位序号": 4
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 3,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 643,
+			"物理帧": 534,
+			"目标启用": false,
+			"限位序号": 5
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 3,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 643,
+			"物理帧": 534,
+			"目标启用": false,
+			"限位序号": 5
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 3,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 644,
+			"物理帧": 535,
+			"目标启用": false,
+			"限位序号": 5
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 3,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 644,
+			"物理帧": 535,
+			"目标启用": true,
+			"限位序号": 6
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 3,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 644,
+			"物理帧": 535,
+			"目标启用": true,
+			"限位序号": 6
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 3,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 644,
+			"物理帧": 536,
+			"目标启用": true,
+			"限位序号": 6
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 4,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 644,
+			"物理帧": 538,
+			"目标启用": false,
+			"限位序号": 7
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 4,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 644,
+			"物理帧": 538,
+			"目标启用": false,
+			"限位序号": 7
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 4,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 645,
+			"物理帧": 539,
+			"目标启用": false,
+			"限位序号": 7
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 5,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 645,
+			"物理帧": 541,
+			"目标启用": true,
+			"限位序号": 8
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 5,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 645,
+			"物理帧": 541,
+			"目标启用": true,
+			"限位序号": 8
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 5,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 646,
+			"物理帧": 542,
+			"目标启用": true,
+			"限位序号": 8
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 646,
+			"物理帧": 542,
+			"目标启用": false,
+			"限位序号": 9
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 646,
+			"物理帧": 542,
+			"目标启用": false,
+			"限位序号": 9
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 6,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 646,
+			"物理帧": 544,
+			"目标启用": true,
+			"限位序号": 10
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 6,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 646,
+			"物理帧": 544,
+			"目标启用": true,
+			"限位序号": 10
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 6,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 647,
+			"物理帧": 545,
+			"目标启用": true,
+			"限位序号": 10
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 7,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 647,
+			"物理帧": 547,
+			"目标启用": false,
+			"限位序号": 11
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 7,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 647,
+			"物理帧": 547,
+			"目标启用": false,
+			"限位序号": 11
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 7,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 648,
+			"物理帧": 548,
+			"目标启用": false,
+			"限位序号": 11
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 648,
+			"物理帧": 548,
+			"目标启用": false,
+			"限位序号": 12
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 648,
+			"物理帧": 548,
+			"目标启用": false,
+			"限位序号": 12
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 654,
+			"物理帧": 553,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 654,
+			"物理帧": 553,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 689,
+			"物理帧": 569,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 689,
+			"物理帧": 569,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 691,
+			"物理帧": 570,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [],
+			"普通帧": 691,
+			"物理帧": 570,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [],
+			"普通帧": 691,
+			"物理帧": 570,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [],
+			"普通帧": 693,
+			"物理帧": 571,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 695,
+			"物理帧": 574,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 695,
+			"物理帧": 574,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 730,
+			"物理帧": 590,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 730,
+			"物理帧": 590,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 732,
+			"物理帧": 591,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [],
+			"普通帧": 732,
+			"物理帧": 591,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [],
+			"普通帧": 732,
+			"物理帧": 591,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 736,
+			"物理帧": 595,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 736,
+			"物理帧": 595,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 770,
+			"物理帧": 611,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 770,
+			"物理帧": 611,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 773,
+			"物理帧": 612,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [],
+			"普通帧": 773,
+			"物理帧": 612,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [],
+			"普通帧": 773,
+			"物理帧": 612,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 778,
+			"物理帧": 615,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 778,
+			"物理帧": 615,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 811,
+			"物理帧": 631,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 811,
+			"物理帧": 631,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 814,
+			"物理帧": 632,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 814,
+			"物理帧": 632,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 814,
+			"物理帧": 632,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 815,
+			"物理帧": 633,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 819,
+			"物理帧": 644,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 819,
+			"物理帧": 644,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 853,
+			"物理帧": 660,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 853,
+			"物理帧": 660,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 854,
+			"物理帧": 661,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 876,
+			"物理帧": 676,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 876,
+			"物理帧": 676,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 877,
+			"物理帧": 677,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 3,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 877,
+			"物理帧": 677,
+			"目标启用": true,
+			"限位序号": 4
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 3,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 877,
+			"物理帧": 677,
+			"目标启用": true,
+			"限位序号": 4
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 3,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 878,
+			"物理帧": 678,
+			"目标启用": true,
+			"限位序号": 4
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 879,
+			"物理帧": 683,
+			"目标启用": false,
+			"限位序号": 5
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 879,
+			"物理帧": 683,
+			"目标启用": false,
+			"限位序号": 5
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 4,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 886,
+			"物理帧": 687,
+			"目标启用": true,
+			"限位序号": 6
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 4,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 886,
+			"物理帧": 687,
+			"目标启用": true,
+			"限位序号": 6
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 4,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 887,
+			"物理帧": 688,
+			"目标启用": true,
+			"限位序号": 6
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 5,
+			"形状": [],
+			"普通帧": 887,
+			"物理帧": 690,
+			"目标启用": false,
+			"限位序号": 7
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 5,
+			"形状": [],
+			"普通帧": 887,
+			"物理帧": 690,
+			"目标启用": false,
+			"限位序号": 7
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 5,
+			"形状": [],
+			"普通帧": 888,
+			"物理帧": 691,
+			"目标启用": false,
+			"限位序号": 7
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 890,
+			"物理帧": 697,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 890,
+			"物理帧": 697,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 923,
+			"物理帧": 712,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 923,
+			"物理帧": 712,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 924,
+			"物理帧": 713,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [],
+			"普通帧": 925,
+			"物理帧": 714,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [],
+			"普通帧": 925,
+			"物理帧": 714,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 931,
+			"物理帧": 720,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 931,
+			"物理帧": 720,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 961,
+			"物理帧": 735,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 961,
+			"物理帧": 735,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 963,
+			"物理帧": 736,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 966,
+			"物理帧": 740,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 966,
+			"物理帧": 740,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 967,
+			"物理帧": 741,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 969,
+			"物理帧": 747,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 969,
+			"物理帧": 747,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1002,
+			"物理帧": 764,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1002,
+			"物理帧": 764,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1003,
+			"物理帧": 765,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1003,
+			"物理帧": 765,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1003,
+			"物理帧": 765,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1004,
+			"物理帧": 766,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 3,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1004,
+			"物理帧": 773,
+			"目标启用": true,
+			"限位序号": 4
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 3,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1004,
+			"物理帧": 773,
+			"目标启用": true,
+			"限位序号": 4
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 3,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1005,
+			"物理帧": 774,
+			"目标启用": true,
+			"限位序号": 4
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 4,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1010,
+			"物理帧": 784,
+			"目标启用": false,
+			"限位序号": 5
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 4,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1010,
+			"物理帧": 784,
+			"目标启用": false,
+			"限位序号": 5
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 4,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1011,
+			"物理帧": 785,
+			"目标启用": false,
+			"限位序号": 5
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1016,
+			"物理帧": 794,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1016,
+			"物理帧": 794,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1051,
+			"物理帧": 810,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1051,
+			"物理帧": 810,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1053,
+			"物理帧": 811,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1053,
+			"物理帧": 811,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1053,
+			"物理帧": 811,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 2,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1054,
+			"物理帧": 812,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1056,
+			"物理帧": 817,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1056,
+			"物理帧": 817,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1089,
+			"物理帧": 832,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1089,
+			"物理帧": 832,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1091,
+			"物理帧": 833,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1091,
+			"物理帧": 833,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1091,
+			"物理帧": 833,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1105,
+			"物理帧": 840,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1105,
+			"物理帧": 840,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1139,
+			"物理帧": 856,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1139,
+			"物理帧": 856,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1140,
+			"物理帧": 857,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1140,
+			"物理帧": 857,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1140,
+			"物理帧": 857,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1152,
+			"物理帧": 867,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1152,
+			"物理帧": 867,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1191,
+			"物理帧": 883,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1191,
+			"物理帧": 883,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1192,
+			"物理帧": 884,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1204,
+			"物理帧": 893,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1204,
+			"物理帧": 893,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1233,
+			"物理帧": 908,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1233,
+			"物理帧": 908,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1235,
+			"物理帧": 909,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1235,
+			"物理帧": 909,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1235,
+			"物理帧": 909,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1249,
+			"物理帧": 917,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1249,
+			"物理帧": 917,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1282,
+			"物理帧": 932,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1282,
+			"物理帧": 932,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1284,
+			"物理帧": 933,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1284,
+			"物理帧": 933,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1284,
+			"物理帧": 933,
+			"目标启用": false,
+			"限位序号": 3
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1297,
+			"物理帧": 941,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 0,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1297,
+			"物理帧": 941,
+			"目标启用": false,
+			"限位序号": 1
+		},
+		{
+			"事件": "延后属性写入已请求",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": true,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": false
+				}
+			],
+			"普通帧": 1334,
+			"物理帧": 956,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "延后属性写入已执行",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1334,
+			"物理帧": 956,
+			"目标启用": true,
+			"限位序号": 2
+		},
+		{
+			"事件": "真实物理目标已确认",
+			"事务序号": 1,
+			"形状": [
+				{
+					"停用": false,
+					"形状": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/MoveLimitBody/collision_move_limit",
+					"真实物理启用": true
+				}
+			],
+			"普通帧": 1335,
+			"物理帧": 957,
+			"目标启用": true,
+			"限位序号": 2
+		}
+	]
+}

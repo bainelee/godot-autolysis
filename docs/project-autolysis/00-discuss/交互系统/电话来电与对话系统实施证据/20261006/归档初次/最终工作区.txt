@@ -1,0 +1,40 @@
+ M main-autolysis/player/autolysis_player.gd
+ M main-autolysis/player/autolysis_player.tscn
+ M main-autolysis/player/components/autolysis_inventory_controller.gd
+ M main-autolysis/player/tests/handset_inventory_test.gd
+ M main-autolysis/player/tests/run_telephone_verification.ps1
+ M main-autolysis/player/tests/telephone_device_test.gd
+ M main-autolysis/scenes/01-autolysis-test.tscn
+ M main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn
+ M main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd
+ M project.godot
+?? docs/project-autolysis/00-discuss/交互系统/电话来电与对话系统实施证据/
+?? docs/project-autolysis/00-discuss/交互系统/电话来电与对话系统实现计划p1.md
+?? docs/project-autolysis/00-discuss/交互系统/电话来电与对话系统讨论p1.md
+?? main-autolysis/assets/audio/sound_fx/phone/sfx_phone_ring_0.wav
+?? main-autolysis/assets/audio/sound_fx/phone/sfx_phone_ring_0.wav.import
+?? main-autolysis/assets/audio/speech/
+?? main-autolysis/player/components/autolysis_telephone_call_test_trigger.gd
+?? main-autolysis/player/components/autolysis_telephone_call_test_trigger.gd.uid
+?? main-autolysis/player/tests/dialogue_boundary_test.gd
+?? main-autolysis/player/tests/dialogue_boundary_test.gd.uid
+?? main-autolysis/player/tests/dialogue_system_test.gd
+?? main-autolysis/player/tests/dialogue_system_test.gd.uid
+?? main-autolysis/player/tests/telephone_call_boundary_test.gd
+?? main-autolysis/player/tests/telephone_call_boundary_test.gd.uid
+?? main-autolysis/player/tests/telephone_call_entry_test.gd
+?? main-autolysis/player/tests/telephone_call_entry_test.gd.uid
+?? main-autolysis/player/tests/telephone_call_gameplay_test.gd
+?? main-autolysis/player/tests/telephone_call_test.gd
+?? main-autolysis/player/tests/telephone_call_test.gd.uid
+?? main-autolysis/player/tests/telephone_ring_start_probe.gd
+?? main-autolysis/player/tests/telephone_ring_start_probe.gd.uid
+?? main-autolysis/player/tests/telephone_runtime_once_test.gd
+?? main-autolysis/player/tests/telephone_runtime_once_test.gd.uid
+?? main-autolysis/player/tests/telephone_timing_probe.gd
+?? main-autolysis/player/tests/telephone_timing_probe.gd.uid
+?? main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_call_controller.gd
+?? main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_call_controller.gd.uid
+?? main-autolysis/systems/dialogue-system/
+?? main-autolysis/systems/runtime-session/
+?? main-autolysis/ui/dialogue/

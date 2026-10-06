@@ -1,0 +1,480 @@
+{
+	"失败数": 0,
+	"实际处理时长": [
+		{
+			"墙钟微秒": 7513005,
+			"实际处理秒": 1.504201,
+			"最大单次处理秒": 0.015151,
+			"配置秒": 1.5,
+			"阶段": "句后等待"
+		},
+		{
+			"墙钟微秒": 7698940,
+			"实际处理秒": 0.201530333333332,
+			"最大单次处理秒": 0.0399636666666667,
+			"配置秒": 0.2,
+			"阶段": "最后渐隐"
+		},
+		{
+			"墙钟微秒": 10448416,
+			"实际处理秒": 0.275998999999996,
+			"最大单次处理秒": 0.070225,
+			"配置秒": 0.27,
+			"阶段": "句后等待"
+		},
+		{
+			"墙钟微秒": 10634980,
+			"实际处理秒": 0.201722333333336,
+			"最大单次处理秒": 0.070225,
+			"配置秒": 0.2,
+			"阶段": "最后渐隐"
+		}
+	],
+	"引擎": {
+		"build": "official",
+		"hash": "14d19694e0c88a3f9e82d899a0400f27a24c176e",
+		"hex": 263681,
+		"major": 4,
+		"minor": 6,
+		"patch": 1,
+		"status": "stable",
+		"string": "4.6.1-stable (official)",
+		"timestamp": 0
+	},
+	"断言": [
+		{
+			"说明": "边界专项实际使用无图形后端",
+			"通过": true
+		},
+		{
+			"说明": "实际非法排版字段明确拒绝准备并有具体原因：subtitle_font_size（测试字段）",
+			"通过": true
+		},
+		{
+			"说明": "实际非法排版字段明确拒绝准备并有具体原因：subtitle_max_width（测试字段）",
+			"通过": true
+		},
+		{
+			"说明": "实际非法排版字段明确拒绝准备并有具体原因：subtitle_single_line_height（测试字段）",
+			"通过": true
+		},
+		{
+			"说明": "实际非法排版字段明确拒绝准备并有具体原因：subtitle_horizontal_padding（测试字段）",
+			"通过": true
+		},
+		{
+			"说明": "实际非法排版字段明确拒绝准备并有具体原因：subtitle_inventory_gap（测试字段）",
+			"通过": true
+		},
+		{
+			"说明": "实际非法排版字段明确拒绝准备并有具体原因：subtitle_screen_margin（测试字段）",
+			"通过": true
+		},
+		{
+			"说明": "极窄实际视口仍允许有效配置播放而不以尺寸终止会话",
+			"通过": true
+		},
+		{
+			"说明": "业务正常完成接收者已看到字幕隐藏",
+			"通过": true
+		},
+		{
+			"说明": "正常业务完成发布期间新准备返回忙碌",
+			"通过": true
+		},
+		{
+			"说明": "极窄视口零等待也由真实语音和自然渐隐完成一次",
+			"通过": true
+		},
+		{
+			"说明": "可配置等待及快照时长测量开始真实语音",
+			"通过": true
+		},
+		{
+			"说明": "句后等待实际处理时长符合本次配置快照且误差限来自本次最大处理步长",
+			"通过": true
+		},
+		{
+			"说明": "最后渐隐实际处理时长符合零点二秒且误差限来自本次最大处理步长",
+			"通过": true
+		},
+		{
+			"说明": "业务正常完成接收者已看到字幕隐藏",
+			"通过": true
+		},
+		{
+			"说明": "正常业务完成发布期间新准备返回忙碌",
+			"通过": true
+		},
+		{
+			"说明": "可配置等待及快照时长测量开始真实语音",
+			"通过": true
+		},
+		{
+			"说明": "句后等待实际处理时长符合本次配置快照且误差限来自本次最大处理步长",
+			"通过": true
+		},
+		{
+			"说明": "最后渐隐实际处理时长符合零点二秒且误差限来自本次最大处理步长",
+			"通过": true
+		},
+		{
+			"说明": "业务正常完成接收者已看到字幕隐藏",
+			"通过": true
+		},
+		{
+			"说明": "正常业务完成发布期间新准备返回忙碌",
+			"通过": true
+		},
+		{
+			"说明": "句后计时器自然到期当帧暂停用例开始真实播放",
+			"通过": true
+		},
+		{
+			"说明": "真实句后到期当帧暂停保留原会话不提前渐隐或完成",
+			"通过": true
+		},
+		{
+			"说明": "暂停中句后自然到期待同步保留",
+			"通过": true
+		},
+		{
+			"说明": "业务正常完成接收者已看到字幕隐藏",
+			"通过": true
+		},
+		{
+			"说明": "正常业务完成发布期间新准备返回忙碌",
+			"通过": true
+		},
+		{
+			"说明": "句后自然到期待同步恢复后仅完成一次",
+			"通过": true
+		},
+		{
+			"说明": "最后渐隐自然完成当帧暂停用例开始真实播放",
+			"通过": true
+		},
+		{
+			"说明": "最后渐隐自然完成当帧暂停不提交正常完成",
+			"通过": true
+		},
+		{
+			"说明": "已完成最后渐隐的字幕保留零透明度待同步而不重播",
+			"通过": true
+		},
+		{
+			"说明": "最后自然渐隐完成待同步在暂停中不发布业务",
+			"通过": true
+		},
+		{
+			"说明": "业务正常完成接收者已看到字幕隐藏",
+			"通过": true
+		},
+		{
+			"说明": "正常业务完成发布期间新准备返回忙碌",
+			"通过": true
+		},
+		{
+			"说明": "恢复后只提交一次原正常完成并隐藏全部字幕",
+			"通过": true
+		},
+		{
+			"说明": "source（依赖变体）开始真实会话",
+			"通过": true
+		},
+		{
+			"说明": "异常业务接收者取得真实原因",
+			"通过": true
+		},
+		{
+			"说明": "source（依赖变体）释放只终止原会话一次并不发正常完成",
+			"通过": true
+		},
+		{
+			"说明": "source（依赖变体）异常记录保留实际原因",
+			"通过": true
+		},
+		{
+			"说明": "subtitle（依赖变体）开始真实会话",
+			"通过": true
+		},
+		{
+			"说明": "异常业务接收者取得真实原因",
+			"通过": true
+		},
+		{
+			"说明": "subtitle（依赖变体）释放只终止原会话一次并不发正常完成",
+			"通过": true
+		},
+		{
+			"说明": "subtitle（依赖变体）异常记录保留实际原因",
+			"通过": true
+		},
+		{
+			"说明": "voice（依赖变体）开始真实会话",
+			"通过": true
+		},
+		{
+			"说明": "异常业务接收者取得真实原因",
+			"通过": true
+		},
+		{
+			"说明": "voice（依赖变体）释放只终止原会话一次并不发正常完成",
+			"通过": true
+		},
+		{
+			"说明": "voice（依赖变体）异常记录保留实际原因",
+			"通过": true
+		},
+		{
+			"说明": "字幕同步可见观察取消边界准备成功",
+			"通过": true
+		},
+		{
+			"说明": "异常业务接收者取得真实原因",
+			"通过": true
+		},
+		{
+			"说明": "字幕同步显示观察中取消不会启动旧语音且异常唯一",
+			"通过": true
+		},
+		{
+			"说明": "同步显示观察取消完成音频与字幕成对清理",
+			"通过": true
+		}
+	],
+	"自然完成观察次序": [
+		{
+			"人工完成信号": false,
+			"原连接数量": 1,
+			"播放令牌": 5,
+			"用途": "原生最后补间完成当帧前置菜单观察"
+		}
+	],
+	"边界采样": [
+		{
+			"audio_playing": true,
+			"audio_position": 0.00533333327621222,
+			"completion_pending": "",
+			"dialogue_id": "single_test",
+			"hold_remaining": 0.0,
+			"index": 0,
+			"last_result": {
+
+			},
+			"paused": false,
+			"source_id": 54223963971,
+			"stage": "voice",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (16.0, -394.0), S: (32.0, 296.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 15.5,
+				"index": 0,
+				"inventory_rect": "[P: (-143.0, -90.0), S: (350.0, 80.0)]",
+				"line_count": 9,
+				"natural_size": "(192.0, 29.0)",
+				"text": "你很快会习惯的。",
+				"text_height": 285.0,
+				"text_rect": "[P: (31.5, -388.5), S: (1.0, 285.0)]",
+				"token": 1,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (64.0, 70.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 1
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "hold",
+			"dialogue_id": "single_test",
+			"hold_remaining": 0.0,
+			"index": 0,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "正常完成",
+				"reason": "",
+				"source_id": 54223963971,
+				"token": 3
+			},
+			"paused": true,
+			"source_id": 54223963971,
+			"stage": "hold",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (528.0, 512.0), S: (224.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 0,
+				"inventory_rect": "[P: (465.0, 560.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(192.0, 29.0)",
+				"text": "你很快会习惯的。",
+				"text_height": 29.0,
+				"text_rect": "[P: (544.0, 517.5), S: (192.0, 29.0)]",
+				"token": 4,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 1.0,
+			"token": 4
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "fade",
+			"dialogue_id": "single_test",
+			"hold_remaining": 0.0,
+			"index": 0,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "正常完成",
+				"reason": "",
+				"source_id": 54223963971,
+				"token": 4
+			},
+			"paused": true,
+			"source_id": 54223963971,
+			"stage": "fade",
+			"subtitle": {
+				"alpha": 0.0,
+				"background_rect": "[P: (528.0, 512.0), S: (224.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": 0,
+				"inventory_rect": "[P: (465.0, 560.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(192.0, 29.0)",
+				"text": "你很快会习惯的。",
+				"text_height": 29.0,
+				"text_rect": "[P: (544.0, 517.5), S: (192.0, 29.0)]",
+				"token": 5,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": true
+			},
+			"subtitle_alpha": 0.0,
+			"token": 5
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "",
+			"hold_remaining": 0.0,
+			"index": -1,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "对话来源失效",
+				"source_id": 54223963971,
+				"token": 6
+			},
+			"paused": false,
+			"source_id": 0,
+			"stage": "idle",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (528.0, 512.0), S: (224.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": -1,
+				"inventory_rect": "[P: (465.0, 560.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(192.0, 29.0)",
+				"text": "",
+				"text_height": 29.0,
+				"text_rect": "[P: (544.0, 517.5), S: (192.0, 29.0)]",
+				"token": 0,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": false
+			},
+			"subtitle_alpha": 1.0,
+			"token": 0
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "",
+			"hold_remaining": 0.0,
+			"index": -1,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "字幕必要依赖失效",
+				"source_id": 101602821949,
+				"token": 1
+			},
+			"paused": false,
+			"source_id": 0,
+			"stage": "idle",
+			"subtitle": {
+
+			},
+			"subtitle_alpha": 0.0,
+			"token": 0
+		},
+		{
+			"audio_playing": false,
+			"audio_position": 0.0,
+			"completion_pending": "",
+			"dialogue_id": "",
+			"hold_remaining": 0.0,
+			"index": -1,
+			"last_result": {
+				"dialogue_id": "single_test",
+				"index": 0,
+				"outcome": "异常终止",
+				"reason": "语音播放器失效",
+				"source_id": 104891156198,
+				"token": 1
+			},
+			"paused": false,
+			"source_id": 0,
+			"stage": "idle",
+			"subtitle": {
+				"alpha": 1.0,
+				"background_rect": "[P: (528.0, 512.0), S: (224.0, 40.0)]",
+				"font_height": 29.0,
+				"font_name": "Noto Sans SC",
+				"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+				"font_size": 24,
+				"horizontal_padding": 16.0,
+				"index": -1,
+				"inventory_rect": "[P: (465.0, 560.0), S: (350.0, 80.0)]",
+				"line_count": 1,
+				"natural_size": "(192.0, 29.0)",
+				"text": "",
+				"text_height": 29.0,
+				"text_rect": "[P: (544.0, 517.5), S: (192.0, 29.0)]",
+				"token": 0,
+				"vertical_padding": 5.5,
+				"viewport_rect": "[P: (0.0, 0.0), S: (1280.0, 720.0)]",
+				"visible": false
+			},
+			"subtitle_alpha": 1.0,
+			"token": 0
+		}
+	]
+}

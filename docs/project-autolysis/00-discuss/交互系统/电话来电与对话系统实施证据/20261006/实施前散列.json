@@ -1,0 +1,38 @@
+[
+  {
+    "文件": "AGENTS.md",
+    "散列": "37858D04A7074AFEC6ED8DDCBF8044B3FD615B05D9B342D8C90081788D93AA99"
+  },
+  {
+    "文件": "project.godot",
+    "散列": "F96A132D3B959C525CED166AA2E29364F833AAA68523A4BBFE68705D844D6C43"
+  },
+  {
+    "文件": "main-autolysis/player/autolysis_player.gd",
+    "散列": "4FFF368DC5B166499A5DDE1728FFB1F41D8D1E7C85B0AB82D6B860183DA7FC53"
+  },
+  {
+    "文件": "main-autolysis/player/autolysis_player.tscn",
+    "散列": "1B8D2CF8BFAFB8A302A10D6A214AB94255131E81CE77AE5AA37F4CE4820BFBEE"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_inventory_controller.gd",
+    "散列": "1D46919AAA65969C01981E99F380B122E46ECD982BD81D369F91C4C21DD1A681"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd",
+    "散列": "4C0DB83E515539BC72C1EE8B75043C53874977681BF87F414B9847DF67F832A0"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn",
+    "散列": "2DE9692F619100E3393EB0A8AA9C21C0EBC25333AD93FF29C2A8B917663BF6E7"
+  },
+  {
+    "文件": "main-autolysis/scenes/01-autolysis-test.tscn",
+    "散列": "E6F6B7DEAEDFCCBF442BEFB988564A263C21AD3380B9E2A6C8161104717F1098"
+  },
+  {
+    "文件": "main-autolysis/player/tests/run_telephone_verification.ps1",
+    "散列": "2B2B4BF79C1165EE1D09817239D2D0E1B6488B887D1B3A4CA40ACA947766ED19"
+  }
+]

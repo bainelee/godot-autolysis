@@ -1,0 +1,440 @@
+{
+  "时间": "2026-10-06T13:42:37.5053600+08:00",
+  "通过": true,
+  "文件数": 72,
+  "改变数": 0,
+  "明细": [
+    {
+      "路径": "main-autolysis/player/autolysis_player.gd",
+      "归档散列": "BCDCE1020514E40B7D04BEC909634235ADAD6C49227CB88387F3529097541FB9",
+      "实际散列": "BCDCE1020514E40B7D04BEC909634235ADAD6C49227CB88387F3529097541FB9",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/autolysis_player.tscn",
+      "归档散列": "DE47A6E95E53E9F2CE16EA240629630BAC72B056170AEE584A68475EB6BC19AC",
+      "实际散列": "DE47A6E95E53E9F2CE16EA240629630BAC72B056170AEE584A68475EB6BC19AC",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/components/autolysis_inventory_controller.gd",
+      "归档散列": "D9647DA624327B35FC6B932F4FFCC5220D5F246A48C911848558368AAE9E7F2C",
+      "实际散列": "D9647DA624327B35FC6B932F4FFCC5220D5F246A48C911848558368AAE9E7F2C",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/components/autolysis_telephone_call_test_trigger.gd",
+      "归档散列": "E693FB85374A4D8B79F42A978BEC95504CBE776DF2A103B23DD3BC424E82EB31",
+      "实际散列": "E693FB85374A4D8B79F42A978BEC95504CBE776DF2A103B23DD3BC424E82EB31",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/components/autolysis_telephone_call_test_trigger.gd.uid",
+      "归档散列": "F2F9030906EC83A35D05D5A24DEDD9792572A702E0F928C1E468F2B0D2825D5F",
+      "实际散列": "F2F9030906EC83A35D05D5A24DEDD9792572A702E0F928C1E468F2B0D2825D5F",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/tests/dialogue_boundary_test.gd",
+      "归档散列": "0D3A8A44B1ED321867037D24378B7EEC0B2C034CD34E392BCCE42A33A9272B36",
+      "实际散列": "0D3A8A44B1ED321867037D24378B7EEC0B2C034CD34E392BCCE42A33A9272B36",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/tests/dialogue_boundary_test.gd.uid",
+      "归档散列": "97FC3B82B7735FC211CEACEA8959860F8159E18647AED0AA2BE6B5FA6DFA5C30",
+      "实际散列": "97FC3B82B7735FC211CEACEA8959860F8159E18647AED0AA2BE6B5FA6DFA5C30",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/tests/dialogue_system_test.gd",
+      "归档散列": "8D787894C6D5D2303027DDC691EFA432BEABC22DB2A02650C9F87981CF3082B0",
+      "实际散列": "8D787894C6D5D2303027DDC691EFA432BEABC22DB2A02650C9F87981CF3082B0",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/tests/dialogue_system_test.gd.uid",
+      "归档散列": "1A7B0889F1C22A2FA64F8012FAA0FE9C6B6E9B653C6B532975419D432F65E219",
+      "实际散列": "1A7B0889F1C22A2FA64F8012FAA0FE9C6B6E9B653C6B532975419D432F65E219",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/tests/handset_inventory_test.gd",
+      "归档散列": "0F4C5B4B2473B18D54C3D81FC1CBC4F4D010FC0B80438820AFAC5461EEA27941",
+      "实际散列": "0F4C5B4B2473B18D54C3D81FC1CBC4F4D010FC0B80438820AFAC5461EEA27941",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/tests/run_telephone_verification.ps1",
+      "归档散列": "30586497F88FDB1BAB3725CCD692EF3CBB2BD26E280AF586CD5742E6F6F6793D",
+      "实际散列": "30586497F88FDB1BAB3725CCD692EF3CBB2BD26E280AF586CD5742E6F6F6793D",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/tests/telephone_call_boundary_test.gd",
+      "归档散列": "9AFEF045B1746472AA00745820F9B08486A18B2F83EB4786DC2F449A933D5ABF",
+      "实际散列": "9AFEF045B1746472AA00745820F9B08486A18B2F83EB4786DC2F449A933D5ABF",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/tests/telephone_call_boundary_test.gd.uid",
+      "归档散列": "1BC4702E70BD92C190A22ED99B4DF6F1EE3876121DE2768144402F3B97AAF75B",
+      "实际散列": "1BC4702E70BD92C190A22ED99B4DF6F1EE3876121DE2768144402F3B97AAF75B",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/tests/telephone_call_entry_test.gd",
+      "归档散列": "6A27EDF2BB6CCEDBC93F69A440CDCCC172F4D903133163EDD7AD5792AD17D92F",
+      "实际散列": "6A27EDF2BB6CCEDBC93F69A440CDCCC172F4D903133163EDD7AD5792AD17D92F",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/tests/telephone_call_entry_test.gd.uid",
+      "归档散列": "0BA5154B69B4B146A5973943124A2D093465F70A02EF8A6B66834C0D5F3C5C10",
+      "实际散列": "0BA5154B69B4B146A5973943124A2D093465F70A02EF8A6B66834C0D5F3C5C10",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/tests/telephone_call_gameplay_test.gd",
+      "归档散列": "49A11DA1DADEA410501F21FCCA901F3E0E613740C1BFD4F0E4FFFC4713252463",
+      "实际散列": "49A11DA1DADEA410501F21FCCA901F3E0E613740C1BFD4F0E4FFFC4713252463",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/tests/telephone_call_test.gd",
+      "归档散列": "9A6CD9365F141E1527F87066DD2C0F33F39B6906D79F62F5D447D8C1F426596A",
+      "实际散列": "9A6CD9365F141E1527F87066DD2C0F33F39B6906D79F62F5D447D8C1F426596A",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/tests/telephone_call_test.gd.uid",
+      "归档散列": "55331F365D2B36AC471BE662245F683160AF1D2C1FB21DC8BD94AADB68B469AA",
+      "实际散列": "55331F365D2B36AC471BE662245F683160AF1D2C1FB21DC8BD94AADB68B469AA",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/tests/telephone_device_test.gd",
+      "归档散列": "53E75D40D63E7C582468CE70F85013C2FE1D4921200A77C2ADD7CDAE3913B327",
+      "实际散列": "53E75D40D63E7C582468CE70F85013C2FE1D4921200A77C2ADD7CDAE3913B327",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/tests/telephone_return_lock_boundary_test.gd",
+      "归档散列": "4FFE7E27023D8A8D5D04FDB6B1A78B832FC5C3B1656BCEB8114984BC486A40AE",
+      "实际散列": "4FFE7E27023D8A8D5D04FDB6B1A78B832FC5C3B1656BCEB8114984BC486A40AE",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/tests/telephone_ring_start_probe.gd",
+      "归档散列": "22ACD6D4783FA3B8C24AC2E4A921371B9ACA5F0A726F0FB5D581006B6DC37C4C",
+      "实际散列": "22ACD6D4783FA3B8C24AC2E4A921371B9ACA5F0A726F0FB5D581006B6DC37C4C",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/tests/telephone_ring_start_probe.gd.uid",
+      "归档散列": "5587B7025D57D5D72C8FBC68FB4614DF18613BAF91D269712D518E05CBBF0873",
+      "实际散列": "5587B7025D57D5D72C8FBC68FB4614DF18613BAF91D269712D518E05CBBF0873",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/tests/telephone_runtime_once_test.gd",
+      "归档散列": "924A4AB4EC64ED227269A4F57F4354DF75898A68FFAF131BF5AC118E32AB5327",
+      "实际散列": "924A4AB4EC64ED227269A4F57F4354DF75898A68FFAF131BF5AC118E32AB5327",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/tests/telephone_runtime_once_test.gd.uid",
+      "归档散列": "579CCB897DAA98609AF199FEF3DC35E60367C08010AE68E2B0C5FF444A47DFCB",
+      "实际散列": "579CCB897DAA98609AF199FEF3DC35E60367C08010AE68E2B0C5FF444A47DFCB",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/tests/telephone_timing_probe.gd",
+      "归档散列": "0F06B7764DA81FF3853CE09F7530CAFAEBE20AE959648F7E4E991A6A619C6639",
+      "实际散列": "0F06B7764DA81FF3853CE09F7530CAFAEBE20AE959648F7E4E991A6A619C6639",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/player/tests/telephone_timing_probe.gd.uid",
+      "归档散列": "5062B6913CFE7FF147D70C73066A4BF205F9BA10B883476D7B0EA1FEB22CB59F",
+      "实际散列": "5062B6913CFE7FF147D70C73066A4BF205F9BA10B883476D7B0EA1FEB22CB59F",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/scenes/01-autolysis-test.tscn",
+      "归档散列": "A3BD81C4D24C549E54C3A5E87E96FAE08377B432B2A2703975210CC6ED546861",
+      "实际散列": "A3BD81C4D24C549E54C3A5E87E96FAE08377B432B2A2703975210CC6ED546861",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn",
+      "归档散列": "6E241400A1FDFD97C9D5789605CB0E1AD715EF0105DCFD32960E7DC29C42B49A",
+      "实际散列": "6E241400A1FDFD97C9D5789605CB0E1AD715EF0105DCFD32960E7DC29C42B49A",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_call_controller.gd",
+      "归档散列": "C87D3D483050B27B7CFD3A51E7903551CEA2C7D095B1AF8909D0C994D2107C4C",
+      "实际散列": "C87D3D483050B27B7CFD3A51E7903551CEA2C7D095B1AF8909D0C994D2107C4C",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_call_controller.gd.uid",
+      "归档散列": "DDEB475562B8D9D83BB4F867A6B9C4868CE1F8D0CD5A1E9373FD83EE4D719255",
+      "实际散列": "DDEB475562B8D9D83BB4F867A6B9C4868CE1F8D0CD5A1E9373FD83EE4D719255",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd",
+      "归档散列": "345028F961F9431FCBB412046364430E09B6DC787710261C10547BD7B66B5093",
+      "实际散列": "345028F961F9431FCBB412046364430E09B6DC787710261C10547BD7B66B5093",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/systems/dialogue-system/autolysis_dialogue_definition.gd",
+      "归档散列": "899374781079D5B2ACB0836563783B56E113E9F5F9E6130DBA3156129C022A2F",
+      "实际散列": "899374781079D5B2ACB0836563783B56E113E9F5F9E6130DBA3156129C022A2F",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/systems/dialogue-system/autolysis_dialogue_definition.gd.uid",
+      "归档散列": "7F95F2D62DBBB4F9338D2AB22B3A69C7F97AB1A7E7882E84427C309821814AEE",
+      "实际散列": "7F95F2D62DBBB4F9338D2AB22B3A69C7F97AB1A7E7882E84427C309821814AEE",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/systems/dialogue-system/autolysis_dialogue_player.gd",
+      "归档散列": "B40411208E3A91628031D97F584D29D3BE6463225EC8E3C98A12615172510B3D",
+      "实际散列": "B40411208E3A91628031D97F584D29D3BE6463225EC8E3C98A12615172510B3D",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/systems/dialogue-system/autolysis_dialogue_player.gd.uid",
+      "归档散列": "276486CB678BCBF1853D7E9F5EB207A4C8A86D8D14FD4A12DE9B7CFC538263A2",
+      "实际散列": "276486CB678BCBF1853D7E9F5EB207A4C8A86D8D14FD4A12DE9B7CFC538263A2",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/systems/dialogue-system/autolysis_dialogue_player.tscn",
+      "归档散列": "EC8E7954E537D5462AEE8C795CD90B5E6759CF89A11026E2E784F5116B3DD167",
+      "实际散列": "EC8E7954E537D5462AEE8C795CD90B5E6759CF89A11026E2E784F5116B3DD167",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/systems/dialogue-system/chat_0.tres",
+      "归档散列": "BD10B1F5FFD6A72195AF29C8C961B3D81C89FCE7936F17230493E761F5098654",
+      "实际散列": "BD10B1F5FFD6A72195AF29C8C961B3D81C89FCE7936F17230493E761F5098654",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/systems/dialogue-system/dialogue_source.cfg",
+      "归档散列": "61D4A02EFC6F651D5BEB9A5DA45D7611FC37343B11DE3AB25095392F921D7D6A",
+      "实际散列": "61D4A02EFC6F651D5BEB9A5DA45D7611FC37343B11DE3AB25095392F921D7D6A",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/systems/dialogue-system/dialogue_zh.csv",
+      "归档散列": "15026799246DF934270A1955A139D21814CE2A069CA3BC0BB8E01E28B1F57A1A",
+      "实际散列": "15026799246DF934270A1955A139D21814CE2A069CA3BC0BB8E01E28B1F57A1A",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/systems/dialogue-system/dialogue_zh.csv.import",
+      "归档散列": "F9A7C7ED3B2EA4B366C75A7F5FAC81405248F8382E1A41D872B658046366512F",
+      "实际散列": "F9A7C7ED3B2EA4B366C75A7F5FAC81405248F8382E1A41D872B658046366512F",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/systems/dialogue-system/dialogue_zh.zh.translation",
+      "归档散列": "76DF3059D4247E21463B69B116F668F4F2F8B834B65DB8E5151EC90A59898981",
+      "实际散列": "76DF3059D4247E21463B69B116F668F4F2F8B834B65DB8E5151EC90A59898981",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/systems/dialogue-system/tests/dialogue_configuration_check.gd",
+      "归档散列": "53E7280686C5523EDAB087AC7918175659D49154A5D95C004DEC0B492DACA55E",
+      "实际散列": "53E7280686C5523EDAB087AC7918175659D49154A5D95C004DEC0B492DACA55E",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/systems/dialogue-system/tests/dialogue_configuration_check.gd.uid",
+      "归档散列": "2802D362F775B03BDC26ED8580EA62681F16EDAF843D06D251CB0179605CCB3F",
+      "实际散列": "2802D362F775B03BDC26ED8580EA62681F16EDAF843D06D251CB0179605CCB3F",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd",
+      "归档散列": "B141B1FC9DFB897563BD2384BAB736739BF51527CA67E305BA628E703ABF8C5A",
+      "实际散列": "B141B1FC9DFB897563BD2384BAB736739BF51527CA67E305BA628E703ABF8C5A",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd.uid",
+      "归档散列": "FF8B3CDF685CEB789021F400932DC8E98F5BD4E48D64056CA8516748379C633C",
+      "实际散列": "FF8B3CDF685CEB789021F400932DC8E98F5BD4E48D64056CA8516748379C633C",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/systems/dialogue-system/tests/run_dialogue_localization_isolation.ps1",
+      "归档散列": "6C244FC838392A61719F4AF8D0248DA49120743E39D62DB0636A956A185BF97D",
+      "实际散列": "6C244FC838392A61719F4AF8D0248DA49120743E39D62DB0636A956A185BF97D",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/systems/runtime-session/autolysis_runtime_session.gd",
+      "归档散列": "1DCAB3FF9B36104ECFA6852E5A76E33234B41AF38A70DB7E8916F3685C05A93E",
+      "实际散列": "1DCAB3FF9B36104ECFA6852E5A76E33234B41AF38A70DB7E8916F3685C05A93E",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/systems/runtime-session/autolysis_runtime_session.gd.uid",
+      "归档散列": "9283B187B4A299D8F3E41ACA12700724AE4572C7220C18CC66CB8279C79AC763",
+      "实际散列": "9283B187B4A299D8F3E41ACA12700724AE4572C7220C18CC66CB8279C79AC763",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.gd",
+      "归档散列": "B52F22887328E66196B2F31E43841C8E07A4DFEBE2F2D3E6D7363BC238F3D9DC",
+      "实际散列": "B52F22887328E66196B2F31E43841C8E07A4DFEBE2F2D3E6D7363BC238F3D9DC",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.gd.uid",
+      "归档散列": "C5DBFF6FAADCEE243F95B7525465237EC2C220A1447F73490670E3B47F64C47E",
+      "实际散列": "C5DBFF6FAADCEE243F95B7525465237EC2C220A1447F73490670E3B47F64C47E",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn",
+      "归档散列": "206725AC0E48C5A6F9EDB18EBD8417A8F71FDF753968730443F9A0E94B9D8CBF",
+      "实际散列": "206725AC0E48C5A6F9EDB18EBD8417A8F71FDF753968730443F9A0E94B9D8CBF",
+      "通过": true
+    },
+    {
+      "路径": "project.godot",
+      "归档散列": "30F104218D4A7512D591D406747D51DEADCE19288C96220DCAA3EDC1A821CCCB",
+      "实际散列": "30F104218D4A7512D591D406747D51DEADCE19288C96220DCAA3EDC1A821CCCB",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_default_0.wav",
+      "归档散列": "3E8106C40C4DC0D03BF5AC3E476760B6E695C5C9116910512D25A4EFAA7C8CA9",
+      "实际散列": "3E8106C40C4DC0D03BF5AC3E476760B6E695C5C9116910512D25A4EFAA7C8CA9",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_default_0.wav.import",
+      "归档散列": "800AD5E46A38BD6C6FD716C495201DB0260B898DA91ECEB9140F887750D361BA",
+      "实际散列": "800AD5E46A38BD6C6FD716C495201DB0260B898DA91ECEB9140F887750D361BA",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/assets/audio/speech/chat_0/chat_0_0.wav",
+      "归档散列": "FBE19B3BA02257781C4F9F21139CDA472DAEC47AC020DB3F4FAFF1347884BD33",
+      "实际散列": "FBE19B3BA02257781C4F9F21139CDA472DAEC47AC020DB3F4FAFF1347884BD33",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/assets/audio/speech/chat_0/chat_0_0.wav.import",
+      "归档散列": "F178EE8644A9887420018A27B89488590CED09B1D81D88E79C7D3C6A42E01E55",
+      "实际散列": "F178EE8644A9887420018A27B89488590CED09B1D81D88E79C7D3C6A42E01E55",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/assets/audio/speech/chat_0/chat_0_1.wav",
+      "归档散列": "DFE496DD0F4AF39A37D6ED7ABDAB17C9CD35F15F9836FFA2F45C0EC22E5D729A",
+      "实际散列": "DFE496DD0F4AF39A37D6ED7ABDAB17C9CD35F15F9836FFA2F45C0EC22E5D729A",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/assets/audio/speech/chat_0/chat_0_1.wav.import",
+      "归档散列": "3823D375E8C7DAE965C501AC172F13B102494FD654F589E3324FC9646FD722A5",
+      "实际散列": "3823D375E8C7DAE965C501AC172F13B102494FD654F589E3324FC9646FD722A5",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/assets/audio/speech/chat_0/chat_0_2.wav",
+      "归档散列": "6AD69671CBE43FABA041EBC930326705A2C71A4EA887C4417831869EBD5A0DEA",
+      "实际散列": "6AD69671CBE43FABA041EBC930326705A2C71A4EA887C4417831869EBD5A0DEA",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/assets/audio/speech/chat_0/chat_0_2.wav.import",
+      "归档散列": "482BFB74072EB979BE061E4C31C2F85F1E1E8667ADDD2D37A7F971DE0129C446",
+      "实际散列": "482BFB74072EB979BE061E4C31C2F85F1E1E8667ADDD2D37A7F971DE0129C446",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/assets/audio/speech/chat_0/chat_0_3.wav",
+      "归档散列": "3B0BB949D9A5F7359DA88B25DBACA633B0F8F381121BE46F5AFD64C083201625",
+      "实际散列": "3B0BB949D9A5F7359DA88B25DBACA633B0F8F381121BE46F5AFD64C083201625",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/assets/audio/speech/chat_0/chat_0_3.wav.import",
+      "归档散列": "C83C78FD0803CBDFD9F068643167003EFC8875C67048188CF7CC3B55EEBECE53",
+      "实际散列": "C83C78FD0803CBDFD9F068643167003EFC8875C67048188CF7CC3B55EEBECE53",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/assets/audio/speech/chat_0/chat_0_4.wav",
+      "归档散列": "BC31BAA1CAC82D421D9248036B229ABFE32B52332A121BAB0E91427F2DA95380",
+      "实际散列": "BC31BAA1CAC82D421D9248036B229ABFE32B52332A121BAB0E91427F2DA95380",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/assets/audio/speech/chat_0/chat_0_4.wav.import",
+      "归档散列": "17340F1C2E4D98FB15B42C27CD5A30CD377888A5154F88BB5ED50D2FB466AF06",
+      "实际散列": "17340F1C2E4D98FB15B42C27CD5A30CD377888A5154F88BB5ED50D2FB466AF06",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/assets/audio/speech/chat_0/chat_0_5.wav",
+      "归档散列": "A4465ABA7EB688568D1C7A212A6E040CFE1E4832511A99ABDA0E7E31047FCF57",
+      "实际散列": "A4465ABA7EB688568D1C7A212A6E040CFE1E4832511A99ABDA0E7E31047FCF57",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/assets/audio/speech/chat_0/chat_0_5.wav.import",
+      "归档散列": "9572E045412A76E407FF0CAD633BF3DF5CCA2D47604B16B54C764111DD0FF8DD",
+      "实际散列": "9572E045412A76E407FF0CAD633BF3DF5CCA2D47604B16B54C764111DD0FF8DD",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/assets/audio/speech/chat_0/chat_0_6.wav",
+      "归档散列": "B90AC274BADEB3B5AE4A2A29B5DAD195968BCEB4F30023ADDD61854490EEC17A",
+      "实际散列": "B90AC274BADEB3B5AE4A2A29B5DAD195968BCEB4F30023ADDD61854490EEC17A",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/assets/audio/speech/chat_0/chat_0_6.wav.import",
+      "归档散列": "7BFBA1E7D39CF3AC03EDA1C15087FEC26DB13362948BC7C66A2547DB102B3524",
+      "实际散列": "7BFBA1E7D39CF3AC03EDA1C15087FEC26DB13362948BC7C66A2547DB102B3524",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/assets/audio/speech/chat_0/chat_0_7.wav",
+      "归档散列": "2EC96AD784A1DBD3B78619E8F4BC573D97977FEDE74BFD96F536ED382FC8EB01",
+      "实际散列": "2EC96AD784A1DBD3B78619E8F4BC573D97977FEDE74BFD96F536ED382FC8EB01",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/assets/audio/speech/chat_0/chat_0_7.wav.import",
+      "归档散列": "D76AB57F846456CC8DE2FA0C60E5734C76A6B8277CEBFDB54339B2D6D0FE6D87",
+      "实际散列": "D76AB57F846456CC8DE2FA0C60E5734C76A6B8277CEBFDB54339B2D6D0FE6D87",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/assets/audio/speech/chat_0/chat_0_8.wav",
+      "归档散列": "CAE8E82CF37087D8464BCBAB9E796671C11B6619A9C99105A9868BC9B02A188D",
+      "实际散列": "CAE8E82CF37087D8464BCBAB9E796671C11B6619A9C99105A9868BC9B02A188D",
+      "通过": true
+    },
+    {
+      "路径": "main-autolysis/assets/audio/speech/chat_0/chat_0_8.wav.import",
+      "归档散列": "4C65C46A5C91D4846AF8EE75EAB9CBFED6EF70D0367D6E55E769ADEA1124CCAD",
+      "实际散列": "4C65C46A5C91D4846AF8EE75EAB9CBFED6EF70D0367D6E55E769ADEA1124CCAD",
+      "通过": true
+    }
+  ]
+}

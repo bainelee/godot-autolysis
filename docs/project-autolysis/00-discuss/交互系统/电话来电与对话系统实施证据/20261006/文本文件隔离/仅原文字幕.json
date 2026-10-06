@@ -1,0 +1,16 @@
+{
+	"实际字幕": "早上好，马蒂亚斯中士。很高兴你平安抵达了。",
+	"引擎": {
+		"build": "official",
+		"hash": "14d19694e0c88a3f9e82d899a0400f27a24c176e",
+		"hex": 263681,
+		"major": 4,
+		"minor": 6,
+		"patch": 1,
+		"status": "stable",
+		"string": "4.6.1-stable (official)",
+		"timestamp": 0
+	},
+	"通过": true,
+	"预期字幕": "早上好，马蒂亚斯中士。很高兴你平安抵达了。"
+}

@@ -1,0 +1,12 @@
+{
+  "脚本": "main-autolysis/systems/dialogue-system/autolysis_dialogue_player.gd",
+  "参数": [
+    "--headless",
+    "--path",
+    "D:\\autolysis",
+    "--check-only",
+    "--script",
+    "res://main-autolysis/systems/dialogue-system/autolysis_dialogue_player.gd"
+  ],
+  "退出码": 0
+}
