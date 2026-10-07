@@ -1,0 +1,82 @@
+[
+  {
+    "来源": "AGENTS.md",
+    "最终散列": "37858D04A7074AFEC6ED8DDCBF8044B3FD615B05D9B342D8C90081788D93AA99",
+    "实施前散列": "37858D04A7074AFEC6ED8DDCBF8044B3FD615B05D9B342D8C90081788D93AA99"
+  },
+  {
+    "来源": "project.godot",
+    "最终散列": "8B3D40BE8C27B2D811A8385ECAD55CFC0B9D055DC2ABDD80055112927D91C2FB",
+    "实施前散列": "8B3D40BE8C27B2D811A8385ECAD55CFC0B9D055DC2ABDD80055112927D91C2FB"
+  },
+  {
+    "来源": "main-autolysis/components/interactions/autolysis_focus_target.gd",
+    "最终散列": "1E176620462432B13AB66404990582AFA27E66C38C701BC4474036CD57275D0A",
+    "实施前散列": "B4324ADEF6FE2AAC83B418D9FC8199B24A1A41B95DD12164E13F6CD33FAC864C"
+  },
+  {
+    "来源": "main-autolysis/player/components/autolysis_focus_ray_query.gd",
+    "最终散列": "D5D0C1D70262C50B541B18116345A2FB6BD6D0B3CE8FD0A6F8BCE91BBA8C4A90",
+    "实施前散列": "89B0E788799D2DBAD973D56EF33FA4887AC898076D51FD2E9BAA06FA84615DA3"
+  },
+  {
+    "来源": "main-autolysis/player/components/autolysis_inventory_controller.gd",
+    "最终散列": "041B7A676B8F7FFDEC0D5E8F6FDF1C646329CCC08F222A4FBB2FDDF342218408",
+    "实施前散列": "1FABE990CF5DB4DE96D2D6B487D75EC99B402D5D90FC88A83B392E96DAF52D46"
+  },
+  {
+    "来源": "main-autolysis/player/components/autolysis_held_item_presenter.gd",
+    "最终散列": "D2A6AC51E4DED0C1E3B06DBDA53570DFDFC58EEAD8A8FE3CB24A88457CC6C598",
+    "实施前散列": "D1420C36E3D966206B36A62EBBEDE5976EE6A4674C0CE3B9F4566F475F4D02BF"
+  },
+  {
+    "来源": "main-autolysis/scenes/prefabs/prefab_machines/quest_board_0.tscn",
+    "最终散列": "7C744FFE336217E5E9C5499A1DAC28A493B6E611467F5E490DE0CDD9448A2C66",
+    "实施前散列": "28E5443DEACB60C44B764FC5186246ED94D34C172BFB87AA89D7C54893D57080"
+  },
+  {
+    "来源": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_board.gd",
+    "最终散列": "899AE82D77301E398C3D05DE307690EFE0505FF7316E1ECB3AA3F05C2E82309C",
+    "实施前散列": null
+  },
+  {
+    "来源": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_board.gd.uid",
+    "最终散列": "F7D2CD369EF8EF41DFB276EE4F473CE87128E2669031A6D0F6A16FBF800BF6DD",
+    "实施前散列": null
+  },
+  {
+    "来源": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_board_slot.gd",
+    "最终散列": "204CB13FDA1B22842B0682CBDF21438E85C602C928BC55EDBF1EE0A3311C792B",
+    "实施前散列": null
+  },
+  {
+    "来源": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_board_slot.gd.uid",
+    "最终散列": "F3CA7259769804FEC05759424A2E4BE77045E781C17D9F6F92C7527C7C20B2B7",
+    "实施前散列": null
+  },
+  {
+    "来源": "main-autolysis/player/tests/quest_board_interaction_test.gd",
+    "最终散列": "9352DAD5B61DF141581E5800DF93D22A3CFB3B4979079B2D3B22A98512112A2E",
+    "实施前散列": null
+  },
+  {
+    "来源": "main-autolysis/player/tests/quest_board_interaction_test.gd.uid",
+    "最终散列": "E4B28CAB43A14267F35B755E24F3045B10086B3EFF3262AEE63DA8249B4BD9AC",
+    "实施前散列": null
+  },
+  {
+    "来源": "main-autolysis/player/tests/quest_board_transfer_test.gd",
+    "最终散列": "20FE1F588EE22075646A3421AE974AA10B7498F3692CA8587BF859FB2F455764",
+    "实施前散列": null
+  },
+  {
+    "来源": "main-autolysis/player/tests/quest_board_transfer_test.gd.uid",
+    "最终散列": "4A8815E594338C11C8DF0D7CAD7E8E3764BC66ECB13219EE605A27968D32B3BD",
+    "实施前散列": null
+  },
+  {
+    "来源": "main-autolysis/systems/item-system/tests/run_item_check.ps1",
+    "最终散列": "5B39F580B8EFE0C7327F85F66FF208D0B5B37CC5595B863BD09DC654BABBAA4F",
+    "实施前散列": null
+  }
+]

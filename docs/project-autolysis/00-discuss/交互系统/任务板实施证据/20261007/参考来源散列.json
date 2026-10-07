@@ -1,0 +1,26 @@
+[
+  {
+    "来源": "D:\\cogito\\addons\\cogito\\Components\\PlayerInteractionComponent.gd",
+    "散列": "78DE8D1B12F2697E53FFB9E4206F986DB26692859F6B81C0A11576FD8FC97291"
+  },
+  {
+    "来源": "D:\\cogito\\addons\\cogito\\Components\\Interactions\\BasicInteraction.gd",
+    "散列": "840E5AA45DCDBDD3DDAFF5C80117A03C4BA11F3EE1D3782A4A52002491317300"
+  },
+  {
+    "来源": "D:\\cogito\\addons\\cogito\\InventoryPD\\cogito_inventory.gd",
+    "散列": "1E5B3767B3E1A91C6F402CEB12348A2192082526ECA034B7676AE2E15EDEBD29"
+  },
+  {
+    "来源": "D:\\autolysis\\main-autolysis\\systems\\item-system\\autolysis_item_instance.gd",
+    "散列": "5C42EF022F951D04EDB864A46F490C0FF5F444C6666DE4FD9F3F903F2DA5AC23"
+  },
+  {
+    "来源": "D:\\autolysis\\main-autolysis\\systems\\item-system\\autolysis_quest_paper_visual.gd",
+    "散列": "F637099042418F06BF39CC19B3DDC83D31FB868D4889A2DABD2AC2CD1E358E88"
+  },
+  {
+    "来源": "D:\\autolysis\\main-autolysis\\systems\\quest-print-system\\autolysis_quest_paper_contents.gd",
+    "散列": "3471BFC8F1956A5C7B165D370FAB0D1486ADC29F72973BD02E93FF6AFF827B14"
+  }
+]

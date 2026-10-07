@@ -1,0 +1,2350 @@
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\345\237\272\347\272\277/main-autolysis/components/interactions/autolysis_focus_target.gd" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/components/interactions/autolysis_focus_target.gd"
+index 5e458bc..6cc2b94 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\345\237\272\347\272\277/main-autolysis/components/interactions/autolysis_focus_target.gd"
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/components/interactions/autolysis_focus_target.gd"
+@@ -25,6 +25,9 @@ var _quest_configured: bool = false
+ var _quest_button: PhysicsBody3D
+ var _quest_paper: PhysicsBody3D
+ var _quest_paper_serial: int = 0
++var _quest_board_configured: bool = false
++var _quest_board_slots: Array = []
++var _quest_board_targets: Dictionary = {}
+ 
+ 
+ func configure(root: PhysicsBody3D, camera: Camera3D, interaction: AutolysisInteractionComponent, slots: Array[AutolysisBlendSlot], handles: Array[AutolysisBlendHandle] = [], tank_place: AutolysisBlendTankPlace = null) -> bool:
+@@ -39,6 +42,7 @@ func configure(root: PhysicsBody3D, camera: Camera3D, interaction: AutolysisInte
+ 	_clear_packing_registration()
+ 	_clear_telephone_registration()
+ 	_clear_quest_registration()
++	_clear_quest_board_registration()
+ 	for slot: AutolysisBlendSlot in slots:
+ 		if not _blend_slot_registration_valid(slot, root):
+ 			return false
+@@ -76,6 +80,7 @@ func configure_packing(root: PhysicsBody3D, camera: Camera3D, interaction: Autol
+ 	_clear_packing_registration()
+ 	_clear_telephone_registration()
+ 	_clear_quest_registration()
++	_clear_quest_board_registration()
+ 	if not root is AutolysisPackingMachine or type_switches.size() != 3:
+ 		return false
+ 	var controls: Array[Node3D] = [tank_place, capsule_place, door, start_button]
+@@ -106,6 +111,7 @@ func configure_telephone(root: PhysicsBody3D, camera: Camera3D, interaction: Aut
+ 	_clear_packing_registration()
+ 	_clear_telephone_registration()
+ 	_clear_quest_registration()
++	_clear_quest_board_registration()
+ 	_telephone_handset_body = handset_body
+ 	_telephone_handset_interaction = handset_interaction
+ 	_telephone_configured = true
+@@ -125,11 +131,45 @@ func configure_quest(root: PhysicsBody3D, camera: Camera3D, interaction: Autolys
+ 	_clear_packing_registration()
+ 	_clear_telephone_registration()
+ 	_clear_quest_registration()
++	_clear_quest_board_registration()
+ 	_quest_button = button
+ 	_quest_configured = true
+ 	return is_valid_target()
+ 
+ 
++## 登记槽引用而非节点名称；单槽入口失效不撤销整个任务板聚焦。
++func configure_quest_board(root: PhysicsBody3D, camera: Camera3D, interaction: AutolysisInteractionComponent, slots: Array[AutolysisQuestBoardSlot]) -> bool:
++	device_root = root
++	reference_camera = camera
++	root_interaction = interaction
++	_registered_targets.clear()
++	_slots.clear()
++	_registered_handles.clear()
++	_tank_place = null
++	_has_tank_place = false
++	_clear_packing_registration()
++	_clear_telephone_registration()
++	_clear_quest_registration()
++	_clear_quest_board_registration()
++	if not _node_is_live(root) or not root is AutolysisQuestBoard or slots.is_empty():
++		return false
++	_quest_board_slots.assign(slots)
++	for slot: Variant in slots:
++		if not _node_is_live(slot):
++			continue
++		if not slot is AutolysisQuestBoardSlot or not root.is_ancestor_of(slot) or slot.get_board() != root or slot.get_focus_target() != self or _quest_board_targets.has(slot):
++			_clear_quest_board_registration()
++			return false
++		_quest_board_targets[slot] = slot
++	_quest_board_configured = true
++	return is_valid_target()
++
++
++func clear_quest_board_registration(root: Variant) -> void:
++	if _quest_board_configured and device_root == root:
++		_clear_quest_board_registration()
++
++
+ func register_quest_paper(paper: PhysicsBody3D, serial: int) -> bool:
+ 	if not _quest_configured or not is_valid_target() or not _node_is_live(paper) or not paper is AutolysisQuestPaper or serial <= 0:
+ 		return false
+@@ -167,6 +207,8 @@ func is_valid_target() -> bool:
+ 		return _telephone_registration_valid()
+ 	if _quest_configured:
+ 		return device_root is AutolysisQuestMachine and device_root.focus_target == self
++	if _quest_board_configured:
++		return _quest_board_registration_valid()
+ 	if _slots.is_empty():
+ 		return false
+ 	for slot: Variant in _slots:
+@@ -186,7 +228,7 @@ func is_valid_target() -> bool:
+ 
+ 
+ func owns_target(body: Variant) -> bool:
+-	return _node_is_live(body) and is_valid_target() and (_registered_targets.has(body) or _registered_handles.has(body) or body == _tank_place or _packing_targets.has(body) or (_telephone_configured and body == _telephone_handset_body) or _quest_body_registered(body))
++	return _node_is_live(body) and is_valid_target() and (_registered_targets.has(body) or _registered_handles.has(body) or body == _tank_place or _packing_targets.has(body) or (_telephone_configured and body == _telephone_handset_body) or _quest_body_registered(body) or _quest_board_body_registered(body))
+ 
+ 
+ func get_inner_target(body: Variant) -> Node3D:
+@@ -225,6 +267,10 @@ func get_quest_target_for_target(body: Variant) -> Node3D:
+ 	return body as Node3D if _quest_configured and owns_target(body) else null
+ 
+ 
++func get_quest_board_slot_for_target(body: Variant) -> AutolysisQuestBoardSlot:
++	return body as AutolysisQuestBoardSlot if _quest_board_configured and owns_target(body) else null
++
++
+ func get_packing_capsule_place_for_target(body: Variant) -> AutolysisPackingCapsulePlace:
+ 	return _packing_capsule_place if owns_target(body) and body == _packing_capsule_place else null
+ 
+@@ -264,6 +310,22 @@ func _clear_quest_registration() -> void:
+ 	_quest_paper_serial = 0
+ 
+ 
++func _clear_quest_board_registration() -> void:
++	_quest_board_configured = false
++	_quest_board_slots.clear()
++	_quest_board_targets.clear()
++
++
++func _quest_board_registration_valid() -> bool:
++	return device_root is AutolysisQuestBoard and not _quest_board_slots.is_empty() and device_root.get_configuration_error().is_empty() and device_root.matches_focus_registration(self, reference_camera, root_interaction, _quest_board_slots)
++
++
++func _quest_board_body_registered(body: Variant) -> bool:
++	if not _quest_board_configured or not _node_is_live(body) or not body is AutolysisQuestBoardSlot or _quest_board_targets.get(body) != body:
++		return false
++	return device_root.owns_slot(body) and body.is_configured()
++
++
+ ## 控制件失效仅拒绝该入口，核心聚焦登记不依赖可选按钮表现。
+ func _quest_body_registered(body: Variant) -> bool:
+ 	if not _quest_configured or not _node_is_live(body):
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\345\237\272\347\272\277/main-autolysis/player/components/autolysis_focus_ray_query.gd" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/player/components/autolysis_focus_ray_query.gd"
+index 488009c..017fc49 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\345\237\272\347\272\277/main-autolysis/player/components/autolysis_focus_ray_query.gd"
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/player/components/autolysis_focus_ray_query.gd"
+@@ -25,6 +25,10 @@ func query_target(camera: Camera3D, mouse_position: Vector2, target: AutolysisFo
+ 	query.collide_with_areas = false
+ 	var first_hit: Dictionary = world.direct_space_state.intersect_ray(query)
+ 	var first_body: Node = first_hit.get("collider") as Node
++	# 任务板只解析本板显式登记槽的首命中；不越过其他板或外部遮挡。
++	var quest_board_slot: AutolysisQuestBoardSlot = target.get_quest_board_slot_for_target(first_body)
++	if quest_board_slot != null:
++		return quest_board_slot
+ 	# 通知中心只解析本机登记的打印按钮或本次纸张首命中。
+ 	var quest_target: Node3D = target.get_quest_target_for_target(first_body)
+ 	if quest_target != null:
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\345\237\272\347\272\277/main-autolysis/player/components/autolysis_held_item_presenter.gd" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/player/components/autolysis_held_item_presenter.gd"
+index c04b091..95010b5 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\345\237\272\347\272\277/main-autolysis/player/components/autolysis_held_item_presenter.gd"
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/player/components/autolysis_held_item_presenter.gd"
+@@ -14,6 +14,18 @@ var _camera_follow_perspective: bool = false
+ var _instance: AutolysisItemInstance
+ var _handset_source: Node3D
+ var _handset_session: int = 0
++var _replacement_actor: Node3D
++var _replacement_inventory: AutolysisInventoryController
++var _replacement_source: AutolysisQuestBoardSlot
++var _replacement_token: int = 0
++var _replacement_previous_display: Node3D
++var _replacement_previous_instance: AutolysisItemInstance
++var _replacement_previous_visible: bool = false
++var _replacement_candidate: Node3D
++var _replacement_instance: AutolysisItemInstance
++var _replacement_staged: bool = false
++var _replacement_committed: bool = false
++var _replacement_material_valid: bool = false
+ 
+ 
+ func begin_camera_follow(camera: Camera3D) -> bool:
+@@ -92,7 +104,7 @@ func prepare_instance(instance: AutolysisItemInstance) -> Node3D:
+ 
+ func commit_prepared(visual: Node3D) -> void:
+ 	# 普通装备入口不能覆盖设备绑定的独占显示。
+-	if _handset_session != 0:
++	if _handset_session != 0 or _replacement_token != 0:
+ 		return
+ 	watch_instance(null)
+ 	var previous: Node3D = _display
+@@ -128,34 +140,43 @@ func commit_prepared(visual: Node3D) -> void:
+ 
+ 
+ func watch_instance(instance: AutolysisItemInstance) -> void:
+-	if _handset_session != 0 and instance != null:
++	if _replacement_token != 0 or (_handset_session != 0 and instance != null):
+ 		return
++	_set_instance_binding(instance)
++	_refresh_instance_material()
++
++
++func _set_instance_binding(instance: AutolysisItemInstance) -> void:
+ 	if _instance != instance:
+ 		if _instance != null and _instance.changed.is_connected(_refresh_instance_material):
+ 			_instance.changed.disconnect(_refresh_instance_material)
+ 		_instance = instance
+ 		if _instance != null:
+ 			_instance.changed.connect(_refresh_instance_material)
+-	_refresh_instance_material()
+ 
+ 
+ func _refresh_instance_material() -> void:
+-	if _instance == null or _instance.definition == null or not is_instance_valid(_display):
++	var visual: Node3D = _display
++	# 暂存替换保留原绑定；原实例通知仍只刷新原显示。
++	if _replacement_token != 0 and not _replacement_committed:
++		visual = _replacement_previous_display
++	if _instance == null or _instance.definition == null or not is_instance_valid(visual) or visual.is_queued_for_deletion():
+ 		return
+ 	if _instance.is_liquid_tank():
+-		if not AutolysisLiquidTankVisual.apply_instance(_display, _instance):
++		if not AutolysisLiquidTankVisual.apply_instance(visual, _instance):
+ 			push_error("当前手持液体罐显示依赖或内容无效。")
+ 	elif _instance.is_pneumatic_capsule():
+-		if not AutolysisPneumaticCapsuleVisual.apply_instance(_display, _instance):
++		if not AutolysisPneumaticCapsuleVisual.apply_instance(visual, _instance):
+ 			push_error("当前手持气动胶囊显示依赖或内容无效。")
+ 	elif _instance.is_quest_paper():
+-		if not QUEST_PAPER_VISUAL.apply_instance(_display, _instance):
+-			if is_instance_valid(self) and not is_queued_for_deletion() and is_instance_valid(_display) and not _display.is_queued_for_deletion():
++		if not QUEST_PAPER_VISUAL.apply_instance(visual, _instance):
++			if is_instance_valid(self) and not is_queued_for_deletion() and is_instance_valid(visual) and not visual.is_queued_for_deletion():
+ 				push_error("当前手持任务文件显示依赖或内容无效。")
+ 
+ 
+ func _exit_tree() -> void:
+-	watch_instance(null)
++	_set_instance_binding(null)
++	_disconnect_replacement_instance()
+ 
+ 
+ func get_display() -> Node3D:
+@@ -197,6 +218,8 @@ func prepare_handset(scene: PackedScene, position_value: Vector3, rotation_value
+ 
+ 
+ func commit_handset_prepared(visual: Node3D, source: Node3D, session: int) -> bool:
++	if _replacement_token != 0:
++		return false
+ 	if not is_instance_valid(source) or session <= 0 or not is_instance_valid(visual) or visual.is_queued_for_deletion() or visual.get_parent() != null:
+ 		return false
+ 	if _handset_session != 0 and (_handset_source != source or _handset_session != session):
+@@ -235,6 +258,8 @@ func commit_handset_prepared(visual: Node3D, source: Node3D, session: int) -> bo
+ 
+ 
+ func clear_handset(source: Variant, session: int) -> bool:
++	if _replacement_token != 0:
++		return false
+ 	if _handset_source != source or _handset_session != session or session <= 0:
+ 		return false
+ 	var previous: Node3D = _display
+@@ -267,6 +292,177 @@ func apply_handset_pose(source: Node3D, display: Node3D, session: int, position_
+ 	return true
+ 
+ 
++## 本次显示替换与指定槽令牌共同归属同一库存及玩家。
++func begin_replacement(actor: Node3D, inventory: AutolysisInventoryController, source: AutolysisQuestBoardSlot, token: int) -> bool:
++	if _replacement_token != 0 or _handset_session != 0 or not _replacement_node_is_live(self) or not _replacement_node_is_live(actor) or not _replacement_node_is_live(inventory) or not _replacement_node_is_live(source):
++		return false
++	if not source.is_transfer_current(actor, inventory, token):
++		return false
++	_replacement_actor = actor
++	_replacement_inventory = inventory
++	_replacement_source = source
++	_replacement_token = token
++	_replacement_previous_display = get_display()
++	_replacement_previous_instance = _instance
++	_replacement_previous_visible = _replacement_previous_display.visible if _replacement_previous_display != null else false
++	_replacement_staged = false
++	_replacement_committed = false
++	_replacement_material_valid = false
++	return true
++
++
++func stage_replacement(actor: Node3D, inventory: AutolysisInventoryController, source: AutolysisQuestBoardSlot, token: int, visual: Node3D, instance: AutolysisItemInstance) -> bool:
++	if not _replacement_is_current(actor, inventory, source, token) or _replacement_staged or _replacement_committed or not _replacement_node_is_live(source) or not source.is_transfer_current(actor, inventory, token):
++		return false
++	if _display != _replacement_previous_display or _instance != _replacement_previous_instance:
++		return false
++	if instance == null:
++		if visual != null:
++			return false
++	elif not is_instance_valid(instance) or not instance.is_valid_instance() or not instance.is_quest_paper() or not is_instance_valid(visual) or visual.is_queued_for_deletion() or visual.get_parent() != null or QUEST_PAPER_VISUAL.get_instance(visual) != instance:
++		return false
++	_replacement_candidate = visual
++	_replacement_instance = instance
++	_replacement_staged = true
++	_display = visual
++	if visual != null:
++		visual.hide()
++		if not is_instance_valid(self) or not is_instance_valid(visual) or visual.is_queued_for_deletion():
++			return false
++		add_child(visual)
++		if not is_instance_valid(self) or not _replacement_node_is_live(visual) or visual.get_parent() != self:
++			return false
++		instance.changed.connect(_refresh_replacement_instance)
++		_refresh_replacement_instance()
++		if not is_instance_valid(self) or not _replacement_material_valid or not _replacement_node_is_live(visual):
++			return false
++	var previous: Node3D = _replacement_previous_display
++	if _replacement_node_is_live(previous):
++		previous.hide()
++		if not is_instance_valid(self):
++			return false
++	if visual != null:
++		visual.show()
++		if not is_instance_valid(self):
++			return false
++	sync_camera_follow()
++	if not is_instance_valid(self):
++		return false
++	return can_finalize_replacement(actor, inventory, source, token)
++
++
++func can_finalize_replacement(actor: Variant, inventory: Variant, source: Variant, token: int) -> bool:
++	if not _replacement_is_current(actor, inventory, source, token) or not _replacement_staged or _replacement_committed or _handset_session != 0:
++		return false
++	if not _replacement_node_is_live(self) or not _replacement_node_is_live(actor) or not _replacement_node_is_live(inventory) or not _replacement_node_is_live(source) or not source.is_transfer_current(actor, inventory, token):
++		return false
++	if _instance != _replacement_previous_instance or _display != _replacement_candidate:
++		return false
++	if _replacement_previous_display != null and (not _replacement_node_is_live(_replacement_previous_display) or _replacement_previous_display.get_parent() != self):
++		return false
++	if _replacement_previous_instance != null and _replacement_previous_instance.is_quest_paper() and _replacement_previous_display != null and QUEST_PAPER_VISUAL.get_instance(_replacement_previous_display) != _replacement_previous_instance:
++		return false
++	if _replacement_instance == null:
++		return _display == null
++	if not _replacement_material_valid or not _replacement_node_is_live(_display) or _display.get_parent() != self or QUEST_PAPER_VISUAL.get_instance(_display) != _replacement_instance:
++		return false
++	var front: MeshInstance3D = QUEST_PAPER_VISUAL.get_front(_display)
++	return front != null and front.mesh != null and QUEST_PAPER_VISUAL.get_viewport(_display) != null and (_replacement_instance.quest_paper_contents == null or QUEST_PAPER_VISUAL.get_view(_display) != null)
++
++
++## 双方预检通过后调用；只更换绑定，不操作节点树或可见性。
++func finalize_replacement(actor: Variant, inventory: Variant, source: Variant, token: int) -> bool:
++	if not _replacement_is_current(actor, inventory, source, token) or not _replacement_staged or _replacement_committed:
++		return false
++	_disconnect_replacement_instance()
++	_set_instance_binding(_replacement_instance)
++	_replacement_committed = true
++	return true
++
++
++func cleanup_replacement(actor: Variant, inventory: Variant, source: Variant, token: int) -> void:
++	if not _replacement_is_current(actor, inventory, source, token) or not _replacement_committed:
++		return
++	var previous: Variant = _replacement_previous_display
++	_replacement_previous_display = null
++	_dispose_replacement_visual(previous)
++
++
++func rollback_replacement(actor: Variant, inventory: Variant, source: Variant, token: int) -> void:
++	if not _replacement_is_current(actor, inventory, source, token) or _replacement_committed:
++		return
++	_disconnect_replacement_instance()
++	var candidate: Variant = _replacement_candidate
++	var previous: Variant = _replacement_previous_display
++	var previous_matches: bool = _replacement_node_is_live(previous) and previous.get_parent() == self
++	if previous_matches and _replacement_previous_instance != null and _replacement_previous_instance.is_quest_paper():
++		previous_matches = QUEST_PAPER_VISUAL.get_instance(previous) == _replacement_previous_instance
++	if _display == _replacement_candidate or not _replacement_staged:
++		_display = previous if previous_matches else null
++	# 入树回调可能曾移出又重新挂接呈现器；只恢复本次仍匹配的原绑定。
++	if _replacement_node_is_live(self) and (_instance == null or _instance == _replacement_previous_instance):
++		_set_instance_binding(_replacement_previous_instance)
++	_replacement_candidate = null
++	_replacement_instance = null
++	_replacement_staged = false
++	_replacement_material_valid = false
++	# 仅恢复仍属于本呈现器且匹配原逐件来源的存活显示。
++	if previous_matches and _display == previous:
++		previous.visible = _replacement_previous_visible
++		if not is_instance_valid(self):
++			return
++	_dispose_replacement_visual(candidate)
++	if is_instance_valid(self) and _replacement_node_is_live(self):
++		sync_camera_follow()
++
++
++func end_replacement(actor: Variant, inventory: Variant, source: Variant, token: int) -> void:
++	if not _replacement_is_current(actor, inventory, source, token):
++		return
++	_replacement_actor = null
++	_replacement_inventory = null
++	_replacement_source = null
++	_replacement_token = 0
++	_replacement_previous_display = null
++	_replacement_previous_instance = null
++	_replacement_candidate = null
++	_replacement_instance = null
++	_replacement_staged = false
++	_replacement_committed = false
++	_replacement_material_valid = false
++
++
++func _replacement_is_current(actor: Variant, inventory: Variant, source: Variant, token: int) -> bool:
++	return token > 0 and token == _replacement_token and actor == _replacement_actor and inventory == _replacement_inventory and source == _replacement_source
++
++
++func _refresh_replacement_instance() -> void:
++	_replacement_material_valid = false
++	if _replacement_instance == null or not _replacement_node_is_live(_replacement_candidate):
++		return
++	var applied: bool = QUEST_PAPER_VISUAL.apply_instance(_replacement_candidate, _replacement_instance)
++	if is_instance_valid(self):
++		_replacement_material_valid = applied
++
++
++func _disconnect_replacement_instance() -> void:
++	if _replacement_instance != null and _replacement_instance.changed.is_connected(_refresh_replacement_instance):
++		_replacement_instance.changed.disconnect(_refresh_replacement_instance)
++
++
++func _dispose_replacement_visual(visual: Variant) -> void:
++	if not is_instance_valid(visual) or not visual is Node3D:
++		return
++	if visual.get_parent() == self:
++		remove_child(visual)
++	if is_instance_valid(visual):
++		visual.queue_free()
++
++
++func _replacement_node_is_live(node: Variant) -> bool:
++	return is_instance_valid(node) and node is Node and node.is_inside_tree() and not node.is_queued_for_deletion()
++
++
+ func _is_display_scene_state(state: SceneState) -> bool:
+ 	if state == null or state.get_node_count() == 0:
+ 		return false
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\345\237\272\347\272\277/main-autolysis/player/components/autolysis_inventory_controller.gd" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/player/components/autolysis_inventory_controller.gd"
+index 324a7e9..df747d8 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\345\237\272\347\272\277/main-autolysis/player/components/autolysis_inventory_controller.gd"
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/player/components/autolysis_inventory_controller.gd"
+@@ -1165,6 +1165,211 @@ func _end_packing_transfer(place: Variant) -> void:
+ 		_busy = false
+ 
+ 
++## 任务板保存原逐件资源；只读许可不建立候选、占用或通知。
++func can_place_in_quest_board_slot(actor: Node3D, slot: AutolysisQuestBoardSlot) -> bool:
++	if (_busy and not _publishing) or not _quest_board_actor_valid(actor, slot) or not slot.can_transfer(actor, _publishing):
++		return false
++	var instance: AutolysisItemInstance = get_focused_instance()
++	return _quest_board_instance_valid(instance) and slot.get_stored_instance() == null
++
++
++func try_place_in_quest_board_slot(actor: Node3D, slot: AutolysisQuestBoardSlot) -> bool:
++	if _busy or not can_place_in_quest_board_slot(actor, slot):
++		return false
++	return _try_quest_board_transfer(actor, slot, true)
++
++
++func can_take_from_quest_board_slot(actor: Node3D, slot: AutolysisQuestBoardSlot) -> bool:
++	if (_busy and not _publishing) or not _quest_board_actor_valid(actor, slot) or not slot.can_transfer(actor, _publishing) or get_focused_instance() != null:
++		return false
++	var instance: AutolysisItemInstance = slot.get_stored_instance()
++	if not _quest_board_instance_valid(instance) or _slots.has(instance):
++		return false
++	var display: Node3D = slot.get_display()
++	# 资源登记是来源；缺失纸面不把占用误判为空，也不阻止取回。
++	return display == null or (display.get_parent() == slot.get_anchor() and AutolysisQuestPaperVisual.get_instance(display) == instance)
++
++
++func try_take_from_quest_board_slot(actor: Node3D, slot: AutolysisQuestBoardSlot) -> bool:
++	if _busy or not can_take_from_quest_board_slot(actor, slot):
++		return false
++	return _try_quest_board_transfer(actor, slot, false)
++
++
++func _quest_board_actor_valid(actor: Variant, slot: Variant) -> bool:
++	if not _quest_actor_valid(actor) or not actor.is_focus_business_allowed() or not _node_is_live(slot) or not slot is AutolysisQuestBoardSlot:
++		return false
++	var descriptor: AutolysisFocusTarget = actor.focus_controller.get_focus_target()
++	var board: Variant = slot.get_board()
++	return _node_is_live(board) and board is AutolysisQuestBoard and board.is_actor_focused(actor) and _node_is_live(descriptor) and descriptor == slot.get_focus_target() and descriptor.device_root == board and descriptor.get_quest_board_slot_for_target(slot) == slot
++
++
++static func _quest_board_instance_valid(instance: Variant) -> bool:
++	return is_instance_valid(instance) and instance is AutolysisItemInstance and instance.is_valid_instance() and instance.is_quest_paper()
++
++
++static func _quest_board_contents_match(instance: AutolysisItemInstance, snapshot: AutolysisQuestPaperContents) -> bool:
++	var current: AutolysisQuestPaperContents = instance.quest_paper_contents
++	if current == null or snapshot == null:
++		return current == snapshot
++	return current.get_task_id() == snapshot.get_task_id() and current.get_data_lines() == snapshot.get_data_lines() and current.get_group_gap_before_lines() == snapshot.get_group_gap_before_lines()
++
++
++func _try_quest_board_transfer(actor: Node3D, slot: AutolysisQuestBoardSlot, placing: bool) -> bool:
++	var instance: AutolysisItemInstance = get_focused_instance() if placing else slot.get_stored_instance()
++	var context: Dictionary = {
++		"inventory": self, "actor": actor, "slot": slot, "placing": placing,
++		"board": slot.get_board(), "anchor": slot.get_anchor(),
++		"focus": actor.focus_controller, "descriptor": actor.focus_controller.get_focus_target(),
++		"session": actor.focus_controller.session_id, "index": _focused_index,
++		"revision": _holding_revision, "slot_revision": slot.get_revision(),
++		"instance": instance, "definition": instance.definition, "contents": instance.quest_paper_contents,
++		"presenter": _presenter, "source_display": slot.get_display(),
++		"token": 0, "inventory_staged": false, "source_staged": false,
++		"replacement_started": false, "finalized": false,
++	}
++	_busy = true
++	context["token"] = slot.begin_transfer(actor, self)
++	if not _node_is_live(self) or context["token"] <= 0 or not _quest_board_context_valid(context, false):
++		AutolysisInventoryController._rollback_quest_board_transfer(context, null)
++		return false
++	var presenter: AutolysisHeldItemPresenter = context["presenter"]
++	context["replacement_started"] = presenter.begin_replacement(actor, self, slot, context["token"])
++	if not _node_is_live(self) or not context["replacement_started"] or not _quest_board_context_valid(context, false):
++		AutolysisInventoryController._rollback_quest_board_transfer(context, null)
++		return false
++	var visual: Node3D = slot.prepare_visual(instance) if placing else _prepare_visual(instance)
++	if not _node_is_live(self) or not is_instance_valid(visual) or visual.is_queued_for_deletion() or visual.get_parent() != null or not _quest_board_context_valid(context, false):
++		AutolysisInventoryController._rollback_quest_board_transfer(context, visual)
++		return false
++	if placing:
++		if not slot.attach_prepared_visual(actor, self, context["token"], visual, instance) or not _node_is_live(self) or not _quest_board_context_valid(context, false):
++			AutolysisInventoryController._rollback_quest_board_transfer(context, visual)
++			return false
++		if not _node_is_live(visual) or visual.get_parent() != context["anchor"] or AutolysisQuestPaperVisual.get_instance(visual) != instance:
++			AutolysisInventoryController._rollback_quest_board_transfer(context, visual)
++			return false
++		context["source_staged"] = slot.stage_place(actor, self, context["token"], visual, instance)
++	else:
++		context["source_staged"] = slot.stage_take(actor, self, context["token"], instance)
++	if not _node_is_live(self) or not context["source_staged"]:
++		AutolysisInventoryController._rollback_quest_board_transfer(context, visual)
++		return false
++	# 暂存不发通知且不增加修订；所有展示回调后仍能按本次身份撤回。
++	_slots[context["index"]] = null if placing else instance
++	context["inventory_staged"] = true
++	var held_visual: Node3D = null if placing else visual
++	var held_instance: AutolysisItemInstance = null if placing else instance
++	if not presenter.stage_replacement(actor, self, slot, context["token"], held_visual, held_instance) or not _node_is_live(self) or not _quest_board_context_valid(context, true):
++		AutolysisInventoryController._rollback_quest_board_transfer(context, visual)
++		return false
++	if placing:
++		if not _node_is_live(visual) or visual.get_parent() != context["anchor"] or slot.get_display() != visual or AutolysisQuestPaperVisual.get_instance(visual) != instance:
++			AutolysisInventoryController._rollback_quest_board_transfer(context, visual)
++			return false
++	elif not _node_is_live(visual) or visual.get_parent() != presenter or presenter.get_display() != visual or AutolysisQuestPaperVisual.get_instance(visual) != instance:
++		AutolysisInventoryController._rollback_quest_board_transfer(context, visual)
++		return false
++	if not slot.can_finalize_transfer(actor, self, context["token"]) or not presenter.can_finalize_replacement(actor, self, slot, context["token"]):
++		AutolysisInventoryController._rollback_quest_board_transfer(context, visual)
++		return false
++	# 预检与两方最终字段提交之间没有外部回调，构成同一同步提交点。
++	slot.finalize_transfer(actor, self, context["token"])
++	presenter.finalize_replacement(actor, self, slot, context["token"])
++	context["finalized"] = true
++	_holding_revision += 1
++	AutolysisInventoryController._finish_quest_board_transfer(context)
++	return true
++
++
++func _quest_board_context_valid(context: Dictionary, staged: bool) -> bool:
++	var actor: Variant = context["actor"]
++	var slot: Variant = context["slot"]
++	if not _node_is_live(self) or not _quest_board_actor_valid(actor, slot) or _presenter != context["presenter"]:
++		return false
++	var expected_held: Variant = context["instance"] if context["placing"] != staged else null
++	if _focused_index != context["index"] or _holding_revision != context["revision"] or get_focused_instance() != expected_held:
++		return false
++	var focus: Variant = context["focus"]
++	var descriptor: Variant = context["descriptor"]
++	if not _node_is_live(focus) or actor.focus_controller != focus or focus.session_id != context["session"] or not _node_is_live(descriptor) or focus.get_focus_target() != descriptor or not focus.is_focused_on(descriptor):
++		return false
++	var instance: Variant = context["instance"]
++	if not _quest_board_instance_valid(instance) or instance.definition != context["definition"] or not _quest_board_contents_match(instance, context["contents"]):
++		return false
++	if slot.get_board() != context["board"] or slot.get_anchor() != context["anchor"] or not _node_is_live(context["anchor"]) or slot.get_revision() != context["slot_revision"] or not slot.is_transfer_current(actor, self, context["token"]):
++		return false
++	var expected_stored: Variant = context["instance"] if context["placing"] == staged else null
++	if slot.get_stored_instance() != expected_stored:
++		return false
++	if not context["placing"]:
++		var source: Variant = context["source_display"]
++		# 原显示可被释放；仍存活的来源必须继续匹配原件与锚点。
++		if _node_is_live(source) and (source.get_parent() != context["anchor"] or AutolysisQuestPaperVisual.get_instance(source) != instance):
++			return false
++	return true
++
++
++static func _rollback_quest_board_transfer(context: Dictionary, visual: Variant) -> void:
++	if context["finalized"]:
++		return
++	var inventory: Variant = context["inventory"]
++	var actor: Variant = context["actor"]
++	var slot: Variant = context["slot"]
++	var presenter: Variant = context["presenter"]
++	var token: int = context["token"]
++	if is_instance_valid(inventory) and context["inventory_staged"]:
++		var expected: Variant = null if context["placing"] else context["instance"]
++		if inventory.get_slot_instance(context["index"]) == expected:
++			inventory._slots[context["index"]] = context["instance"] if context["placing"] else null
++	if is_instance_valid(presenter) and context["replacement_started"]:
++		presenter.rollback_replacement(actor, inventory, slot, token)
++	if is_instance_valid(slot) and token > 0:
++		slot.rollback_transfer(actor, inventory, token)
++	# 候选只能属于本次请求；释放后不再访问父级或成员。
++	if is_instance_valid(visual) and visual is Node and not visual.is_queued_for_deletion():
++		if visual.is_inside_tree():
++			visual.queue_free()
++		else:
++			visual.free()
++	if is_instance_valid(presenter) and context["replacement_started"]:
++		presenter.end_replacement(actor, inventory, slot, token)
++	if is_instance_valid(slot) and token > 0:
++		slot.end_transfer(actor, inventory, token)
++	if is_instance_valid(inventory):
++		inventory._busy = inventory._publication_depth > 0
++
++
++static func _finish_quest_board_transfer(context: Dictionary) -> void:
++	var inventory: Variant = context["inventory"]
++	var actor: Variant = context["actor"]
++	var slot: Variant = context["slot"]
++	var presenter: Variant = context["presenter"]
++	var token: int = context["token"]
++	# 已完成转移后，清理或通知中的失效不能撤销已提交资源。
++	if is_instance_valid(presenter):
++		presenter.cleanup_replacement(actor, inventory, slot, token)
++	if is_instance_valid(slot):
++		slot.cleanup_transfer(actor, inventory, token)
++	if _node_is_live(inventory):
++		inventory._publication_depth += 1
++		inventory._publishing = true
++		inventory.inventory_changed.emit()
++		if _node_is_live(inventory):
++			inventory.held_item_changed.emit()
++	if _node_is_live(slot):
++		slot.notify_transfer(actor, inventory, token)
++	if is_instance_valid(presenter):
++		presenter.end_replacement(actor, inventory, slot, token)
++	if is_instance_valid(slot):
++		slot.end_transfer(actor, inventory, token)
++	if is_instance_valid(inventory):
++		if inventory._publishing:
++			inventory._publication_depth -= 1
++		inventory._publishing = inventory._publication_depth > 0
++		inventory._busy = inventory._publication_depth > 0
++
++
+ ## 任务文件有独立来源合同，不进入世界原料或其他设备取出分支。
+ func can_take_quest_paper(actor: Node3D, paper: AutolysisQuestPaper) -> bool:
+ 	if (_busy and not _publishing) or not _quest_actor_valid(actor) or not _node_is_live(paper) or get_focused_instance() != null:
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/player/tests/quest_board_interaction_test.gd" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/player/tests/quest_board_interaction_test.gd"
+new file mode 100644
+index 0000000..408049b
+--- /dev/null
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/player/tests/quest_board_interaction_test.gd"
+@@ -0,0 +1,378 @@
++extends SceneTree
++## 正式任务板、正式玩家与主场景的无图形交互验收；不定位系统指针。
++
++const PLAYER_SCENE: PackedScene = preload("res://main-autolysis/player/autolysis_player.tscn")
++const BOARD_SCENE: PackedScene = preload("res://main-autolysis/scenes/prefabs/prefab_machines/quest_board_0.tscn")
++const MAIN_SCENE: PackedScene = preload("res://main-autolysis/scenes/01-autolysis-test.tscn")
++const PAPER: AutolysisItemDefinition = preload("res://main-autolysis/systems/item-system/items/quest_paper.tres")
++const FIRST_TASK: AutolysisQuestPrintDefinition = preload("res://main-autolysis/systems/quest-print-system/quests/quest_test_0.tres")
++const INVALID_PIXEL: Vector2 = Vector2(-10000.0, -10000.0)
++
++var world: Node3D
++var player: AutolysisPlayer
++var board: AutolysisQuestBoard
++var inventory: AutolysisInventoryController
++var query: AutolysisFocusRayQuery = AutolysisFocusRayQuery.new()
++var failures: int = 0
++var records: Array[Dictionary] = []
++var measurements: Array[Dictionary] = []
++var original_accumulation: bool = true
++var evidence_directory: String = preload("res://main-autolysis/systems/item-system/tests/test_evidence.gd").directory("res://docs/project-autolysis/00-discuss/交互系统/任务板实施证据/20261007/checks/interaction")
++
++
++func _initialize() -> void:
++	call_deferred("run_checks")
++
++
++func check(condition: bool, description: String) -> void:
++	records.append({"说明": description, "通过": condition})
++	print(("通过：" if condition else "失败：") + description)
++	if not condition:
++		failures += 1
++
++
++func frames(count: int) -> void:
++	for index: int in count:
++		await physics_frame
++		await process_frame
++
++
++func run_checks() -> void:
++	if DisplayServer.get_name() != "headless":
++		push_error("任务板交互专项禁止启动图形后端。")
++		quit(1)
++		return
++	root.size = Vector2i(1920, 1080)
++	original_accumulation = Input.use_accumulated_input
++	Input.use_accumulated_input = false
++	await _fixture()
++	await _entry_and_session()
++	await _ray_and_display()
++	await _queued_clicks()
++	await _local_dependencies()
++	await _main_scene()
++	paused = false
++	Input.use_accumulated_input = original_accumulation
++	if is_instance_valid(world):
++		world.queue_free()
++	await frames(3)
++	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(evidence_directory))
++	var report: FileAccess = FileAccess.open(evidence_directory.path_join("任务板交互断言.json"), FileAccess.WRITE)
++	if report == null:
++		check(false, "任务板交互报告可写入本轮证据目录")
++	else:
++		report.store_string(JSON.stringify({"失败数": failures, "断言数": records.size(), "记录": records, "测量": measurements, "输入方式": "无图形后端引擎内部输入；普通入口仅替换捕获鼠标许可；未执行图形或原生指针"}, "\t"))
++		report.close()
++	print("任务板交互专项断言数：", records.size(), "；失败数：", failures)
++	quit(1 if failures > 0 else 0)
++
++
++func _ordinary_input_allowed() -> bool:
++	# 无图形后端不实现捕获鼠标；其余正式玩家门控保持原样。
++	return player._base_input_allowed() and not player.focus_controller.has_control()
++
++
++func _fixture(main_scene: bool = false) -> void:
++	paused = false
++	if is_instance_valid(world):
++		world.queue_free()
++		await frames(3)
++	if main_scene:
++		world = MAIN_SCENE.instantiate()
++		root.add_child(world)
++		player = world.get_node("autolysis_player") as AutolysisPlayer
++		board = world.get_node("interaction_prefabs/machines/quest_board_0") as AutolysisQuestBoard
++	else:
++		world = Node3D.new()
++		root.add_child(world)
++		player = PLAYER_SCENE.instantiate() as AutolysisPlayer
++		world.add_child(player)
++		board = BOARD_SCENE.instantiate() as AutolysisQuestBoard
++		board.position = Vector3(2.0, 0.5, -1.0)
++		board.rotation.y = 0.23
++		world.add_child(board)
++	player.set_physics_process(false)
++	player._clear_landing_stun()
++	inventory = player.inventory_controller
++	player.focus_controller.configure(player, player.camera, player.held_item_presenter, _ordinary_input_allowed)
++	player.interaction_controller.configure(player, player.interaction_raycast, _ordinary_input_allowed, inventory, player.focus_controller)
++	await frames(3)
++	check(board.is_configured() and board.focus_target.is_valid_target(), "正式任务板核心引用与明确槽登记有效")
++	check(board.slots.size() == 3, "当前任务板配置三个独立槽入口")
++
++
++func _button(button: MouseButton, pressed: bool, point: Vector2) -> void:
++	var event: InputEventMouseButton = InputEventMouseButton.new()
++	event.button_index = button
++	event.button_mask = MOUSE_BUTTON_MASK_LEFT if button == MOUSE_BUTTON_LEFT and pressed else 0
++	event.pressed = pressed
++	event.position = point
++	event.global_position = point
++	Input.parse_input_event(event)
++	Input.flush_buffered_events()
++
++
++func _click(point: Vector2, button: MouseButton = MOUSE_BUTTON_LEFT) -> void:
++	_button(button, true, point)
++	await frames(1)
++	_button(button, false, point)
++	await frames(1)
++
++
++func _aim_board() -> void:
++	var collision: CollisionShape3D = board.get_node("collision_board") as CollisionShape3D
++	player.global_position = board.to_global(Vector3(0.0, -1.0, 1.2))
++	player.camera.global_transform = board.reference_camera.global_transform
++	player.camera.look_at(collision.global_position, Vector3.UP)
++	await frames(2)
++	check(player.interaction_raycast.refresh_target() == board, "普通中心射线首命中实际板面根体")
++
++
++func _enter() -> void:
++	await _aim_board()
++	await _click(Vector2(root.size) * 0.5)
++	check(player.focus_controller.state == AutolysisFocusController.FocusState.ENTERING, "板面鼠标输入经正式分发建立进入过渡")
++	await frames(25)
++	check(player.focus_controller.is_focused_on(board.focus_target), "任务板正式聚焦过渡完成")
++
++
++func _pixel(slot: AutolysisQuestBoardSlot) -> Vector2:
++	var center: Vector2 = player.camera.unproject_position(slot.global_position)
++	var exclusions: Array[RID] = [player.get_rid(), player._found_area.get_rid()]
++	for radius: int in [0, 2, 6, 12, 24]:
++		for x: int in range(-radius, radius + 1, 2):
++			for y: int in range(-radius, radius + 1, 2):
++				var point: Vector2 = center + Vector2(x, y)
++				if query.query_target(player.camera, point, board.focus_target, exclusions) == slot:
++					measurements.append({"类型": "正式槽射线", "槽路径": str(slot.get_path()), "像素": point, "相机变换": player.camera.global_transform, "槽变换": slot.global_transform})
++					return point
++	return INVALID_PIXEL
++
++
++func _instance() -> AutolysisItemInstance:
++	var instance: AutolysisItemInstance = AutolysisItemInstance.create(PAPER)
++	instance.set_quest_paper_contents(FIRST_TASK.create_contents())
++	return instance
++
++
++func _entry_and_session() -> void:
++	var instance: AutolysisItemInstance = _instance()
++	# 普通状态接收夹具不需要捕获鼠标；取放许可仍由正式聚焦状态决定。
++	inventory.configure(player.held_item_presenter, player._base_input_allowed)
++	check(inventory.try_receive_instance(instance), "正式库存接收测试任务文件")
++	check(not inventory.can_place_in_quest_board_slot(player, board.slots[0]), "未聚焦本板时拒绝直接放置")
++	await _aim_board()
++	_button(MOUSE_BUTTON_LEFT, true, Vector2(root.size) * 0.5)
++	await frames(1)
++	_button(MOUSE_BUTTON_LEFT, false, Vector2(root.size) * 0.5)
++	check(player.focus_controller.state == AutolysisFocusController.FocusState.ENTERING, "普通板面入口进入本板会话")
++	check(not inventory.can_place_in_quest_board_slot(player, board.slots[0]) and not inventory.try_place_in_quest_board_slot(player, board.slots[0]), "进入过渡拒绝槽取放且保留原来源")
++	await frames(25)
++	check(player.focus_controller.is_focused_on(board.focus_target), "正式会话完成后开放本板槽入口")
++	check(player.camera.global_transform.is_equal_approx(board.reference_camera.global_transform) and is_equal_approx(player.camera.fov, board.reference_camera.fov), "玩家相机到达作者参照相机完整变换与视场")
++	player.is_movement_paused = true
++	check(not inventory.can_place_in_quest_board_slot(player, board.slots[0]) and not inventory.try_place_in_quest_board_slot(player, board.slots[0]), "菜单暂停拒绝槽取放")
++	player.is_movement_paused = false
++	paused = true
++	check(not inventory.can_place_in_quest_board_slot(player, board.slots[0]), "场景树暂停拒绝槽取放")
++	paused = false
++	var point: Vector2 = _pixel(board.slots[0])
++	check(point != INVALID_PIXEL, "聚焦相机实际射线可达零号空槽")
++	if point != INVALID_PIXEL:
++		await _click(point)
++	check(board.slots[0].get_stored_instance() == instance and inventory.get_focused_instance() == null, "正式左键将原实例仅放入命中零号槽")
++	await _click(point, MOUSE_BUTTON_RIGHT)
++	await frames(25)
++	check(not player.focus_controller.has_control() and board.slots[0].get_stored_instance() == instance, "正式右键退出保留板上原文件")
++	await _enter()
++	player.is_movement_paused = true
++	await frames(2)
++	player.is_movement_paused = false
++	await frames(2)
++	check(player.focus_controller.is_focused_on(board.focus_target) and board.slots[0].get_stored_instance() == instance, "暂停与恢复保持本板稳定聚焦和占用")
++	await _click(_pixel(board.slots[0]))
++	check(inventory.get_focused_instance() == instance and board.slots[0].get_stored_instance() == null, "重新聚焦后正式入口取回同一实例")
++
++
++func _raw_ray(point: Vector2, mask: int, excluded: Array[RID]) -> Dictionary:
++	var origin: Vector3 = player.camera.project_ray_origin(point)
++	var parameters: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(origin, origin + player.camera.project_ray_normal(point) * 2.0, mask, excluded)
++	parameters.hit_from_inside = true
++	parameters.collide_with_areas = false
++	return world.get_world_3d().direct_space_state.intersect_ray(parameters)
++
++
++func _blocker(point: Vector2, layer: int = 1) -> StaticBody3D:
++	var body: StaticBody3D = StaticBody3D.new()
++	body.collision_layer = layer
++	body.collision_mask = 0
++	var collision: CollisionShape3D = CollisionShape3D.new()
++	var shape: BoxShape3D = BoxShape3D.new()
++	shape.size = Vector3(0.08, 0.08, 0.025)
++	collision.shape = shape
++	body.add_child(collision)
++	world.add_child(body)
++	var origin: Vector3 = player.camera.project_ray_origin(point)
++	body.global_position = origin + player.camera.project_ray_normal(point) * 0.35
++	return body
++
++
++func _ray_and_display() -> void:
++	for index: int in board.slots.size():
++		var slot: AutolysisQuestBoardSlot = board.slots[index]
++		check(slot.collision_layer == 32 and slot.collision_mask == 0, "第%d槽使用聚焦层32与零碰撞掩码" % index)
++		check(slot.get_node_or_null("quest_paper_%d" % index) == null, "第%d槽已删除示意纸节点" % index)
++		var point: Vector2 = _pixel(slot)
++		check(point != INVALID_PIXEL, "第%d空槽正式聚焦射线可达" % index)
++		if point == INVALID_PIXEL:
++			continue
++		var excluded: Array[RID] = [board.get_rid(), player.get_rid(), player._found_area.get_rid()]
++		check(_raw_ray(point, 3, excluded).get("collider") != slot, "第%d槽不参与普通掩码3射线" % index)
++		if inventory.get_focused_instance() == null:
++			check(inventory.try_receive_instance(_instance()), "为第%d槽准备正式手持文件" % index)
++		await _click(point)
++		var display: Node3D = slot.get_display()
++		check(slot.get_stored_instance() != null and is_instance_valid(display) and display.get_parent() == slot, "第%d槽正式文件显示归属实际命中锚点" % index)
++		if is_instance_valid(display):
++			check(_display_only(display), "第%d槽纸面无拾取碰撞或独立交互入口" % index)
++			_measure_projection(slot, display, "独立预制体")
++		check(query.query_target(player.camera, point, board.focus_target, [player.get_rid(), player._found_area.get_rid()]) == slot, "第%d槽占用后射线仍命中原槽入口" % index)
++		var blocker: StaticBody3D = _blocker(point)
++		await frames(2)
++		check(query.query_target(player.camera, point, board.focus_target, [player.get_rid(), player._found_area.get_rid()]) == null, "第%d槽外部墙体首命中阻挡正式聚焦查询" % index)
++		await _click(point)
++		check(slot.get_stored_instance() != null and inventory.get_focused_instance() == null, "第%d槽遮挡点击不穿透取回" % index)
++		blocker.queue_free()
++		await frames(2)
++		await _click(point)
++		check(slot.get_stored_instance() == null and inventory.get_focused_instance() != null, "第%d槽解除遮挡后正式点击取回" % index)
++
++
++func _display_only(node: Node) -> bool:
++	if node is CollisionObject3D or node is CollisionShape3D or node is AutolysisInteractionComponent:
++		return false
++	for child: Node in node.get_children():
++		if not _display_only(child):
++			return false
++	return true
++
++
++func _measure_projection(slot: AutolysisQuestBoardSlot, display: Node3D, source: String) -> void:
++	var front: MeshInstance3D = AutolysisQuestPaperVisual.get_front(display)
++	var view: AutolysisQuestPaperView = AutolysisQuestPaperVisual.get_view(display)
++	check(front != null and view != null, source + "纸面存在正面与全文视图")
++	if front == null or view == null:
++		return
++	var bounds: AABB = front.get_aabb()
++	var points: Array[Vector2] = []
++	var inside: bool = true
++	var rectangle: Rect2 = Rect2(Vector2.ZERO, Vector2(root.size))
++	for local: Vector3 in [bounds.position, bounds.position + Vector3(bounds.size.x, 0.0, 0.0), bounds.position + Vector3(bounds.size.x, bounds.size.y, 0.0), bounds.position + Vector3(0.0, bounds.size.y, 0.0)]:
++		var position: Vector3 = front.to_global(local)
++		var projected: Vector2 = player.camera.unproject_position(position)
++		points.append(projected)
++		inside = inside and not player.camera.is_position_behind(position) and rectangle.has_point(projected)
++	var facing: float = front.global_basis.z.normalized().dot((player.camera.global_position - front.global_position).normalized())
++	check(inside and facing > 0.0, source + "纸面几何投影在视口内且正面朝向配置相机")
++	check(view.get_visible_data_line_indices().size() == slot.get_stored_instance().quest_paper_contents.get_line_count(), source + "纸面直接显示完整正文而不重播打印")
++	measurements.append({"类型": "无图形纸面几何投影", "来源": source, "槽": str(slot.get_path()), "视口": root.size, "纸面四角": points, "正面朝向点积": facing, "全部在视口内": inside, "视觉可读性": "未验证；需要图形许可"})
++
++
++func _queued_clicks() -> void:
++	await _fixture()
++	await _enter()
++	var instance: AutolysisItemInstance = _instance()
++	check(inventory.try_receive_instance(instance), "旧点击测试接收正式文件")
++	var point: Vector2 = _pixel(board.slots[1])
++	player.interaction_controller.set_physics_process(false)
++	_button(MOUSE_BUTTON_LEFT, true, point)
++	_button(MOUSE_BUTTON_LEFT, false, point)
++	inventory._holding_revision += 1
++	player.interaction_controller.set_physics_process(true)
++	await frames(2)
++	check(board.slots[1].get_stored_instance() == null and inventory.get_focused_instance() == instance, "排队点击持有修订变化后拒绝旧请求")
++	player.interaction_controller.set_physics_process(false)
++	_button(MOUSE_BUTTON_LEFT, true, point)
++	_button(MOUSE_BUTTON_LEFT, false, point)
++	check(player.focus_controller.request_exit(), "排队点击期间正式退出作废旧会话")
++	await frames(25)
++	player.interaction_controller.set_physics_process(true)
++	await _enter()
++	check(board.slots[1].get_stored_instance() == null and inventory.get_focused_instance() == instance, "旧会话点击不会在重入后提交")
++	player.interaction_controller.set_physics_process(false)
++	for index: int in range(2):
++		_button(MOUSE_BUTTON_LEFT, true, point)
++		_button(MOUSE_BUTTON_LEFT, false, point)
++	player.interaction_controller.set_physics_process(true)
++	await frames(2)
++	check(board.slots[1].get_stored_instance() == instance and inventory.get_focused_instance() == null, "同批两次点击仅转移一次，不反向取回")
++
++
++func _local_dependencies() -> void:
++	await _fixture()
++	await _enter()
++	var failed_slot: AutolysisQuestBoardSlot = board.slots[0]
++	var collision: CollisionShape3D = failed_slot.get_node("collision_quest_paper_slot_0") as CollisionShape3D
++	collision.disabled = true
++	await frames(2)
++	check(player.focus_controller.is_focused_on(board.focus_target) and _pixel(board.slots[1]) != INVALID_PIXEL, "单槽碰撞禁用不关闭其他槽或整板聚焦")
++	check(inventory.try_receive_instance(_instance()) and inventory.try_place_in_quest_board_slot(player, board.slots[1]), "单槽失效时其他槽仍能正式放置")
++	var instance: AutolysisItemInstance = board.slots[1].get_stored_instance()
++	var display: Node3D = board.slots[1].get_display()
++	display.queue_free()
++	await frames(3)
++	check(board.slots[1].get_stored_instance() == instance and player.focus_controller.is_focused_on(board.focus_target), "实际删除槽纸面仍保留原资源占用与聚焦")
++	await _click(_pixel(board.slots[1]))
++	check(inventory.get_focused_instance() == instance and board.slots[1].get_stored_instance() == null, "纸面实际释放后正式槽入口取回同一实例")
++	board.slots[1].transfer_interaction.queue_free()
++	await frames(3)
++	check(player.focus_controller.is_focused_on(board.focus_target) and _pixel(board.slots[2]) != INVALID_PIXEL, "单槽交互组件实际释放不关闭其他槽或整板聚焦")
++	board.slots[0].queue_free()
++	await frames(3)
++	check(player.focus_controller.is_focused_on(board.focus_target) and _pixel(board.slots[2]) != INVALID_PIXEL, "单槽物理体实际释放不关闭其他槽或整板聚焦")
++	check(inventory.try_place_in_quest_board_slot(player, board.slots[2]), "单槽组件及物理体释放后剩余有效槽仍能正式放置")
++	board.reference_camera.queue_free()
++	await frames(3)
++	check(not player.focus_controller.has_control(), "核心参照相机释放安全结束本板聚焦")
++	await _fixture()
++	await _enter()
++	board.queue_free()
++	await frames(3)
++	check(not player.focus_controller.has_control(), "板根释放安全归还玩家聚焦控制")
++	await _fixture()
++	await _enter()
++	board.root_interaction.clear_execution_handler()
++	await frames(3)
++	check(not player.focus_controller.has_control() and not board.is_configured(), "根唯一执行绑定清除使核心登记失效并结束聚焦")
++	await _fixture()
++	await _enter()
++	board.focus_target.clear_quest_board_registration(board)
++	await frames(3)
++	check(not player.focus_controller.has_control() and not board.focus_target.is_valid_target(), "显式任务板登记清除使核心描述失效并结束聚焦")
++
++
++func _main_scene() -> void:
++	await _fixture(true)
++	check(board.global_position.is_equal_approx(Vector3(-2.2, 1.5, 7.6)), "主场景实际任务板保持作者已保存世界位置")
++	await _enter()
++	for index: int in board.slots.size():
++		var slot: AutolysisQuestBoardSlot = board.slots[index]
++		var point: Vector2 = _pixel(slot)
++		check(point != INVALID_PIXEL, "主场景保留全部周边物理体时第%d槽可达" % index)
++		if point == INVALID_PIXEL:
++			continue
++		var instance: AutolysisItemInstance = _instance()
++		check(inventory.try_receive_instance(instance), "主场景第%d槽准备正式手持文件" % index)
++		await _click(point)
++		check(slot.get_stored_instance() == instance, "主场景正式点击第%d槽仅放入命中槽" % index)
++		if is_instance_valid(slot.get_display()):
++			_measure_projection(slot, slot.get_display(), "主场景")
++		var blocker: StaticBody3D = _blocker(point)
++		await frames(2)
++		var raw: Dictionary = _raw_ray(point, 35, [board.get_rid(), player.get_rid(), player._found_area.get_rid()])
++		check(raw.get("collider") == blocker and query.query_target(player.camera, point, board.focus_target, [player.get_rid(), player._found_area.get_rid()]) == null, "主场景第%d槽实际外部首命中遮挡不被穿透" % index)
++		blocker.queue_free()
++		await frames(2)
++		await _click(point)
++		check(slot.get_stored_instance() == null and inventory.get_focused_instance() == instance, "主场景第%d槽正式入口取回同件文件" % index)
++		check(inventory.cycle_focus(1), "主场景主动切换到下一空道具格")
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/player/tests/quest_board_interaction_test.gd.uid" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/player/tests/quest_board_interaction_test.gd.uid"
+new file mode 100644
+index 0000000..4cf7f02
+--- /dev/null
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/player/tests/quest_board_interaction_test.gd.uid"
+@@ -0,0 +1 @@
++uid://bde865nrtji3
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/player/tests/quest_board_transfer_test.gd" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/player/tests/quest_board_transfer_test.gd"
+new file mode 100644
+index 0000000..ad7685c
+--- /dev/null
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/player/tests/quest_board_transfer_test.gd"
+@@ -0,0 +1,720 @@
++extends SceneTree
++## 库存主导任务板取放事务验收；故障注入只使用正式同步回调边界。
++
++const PLAYER_SCENE: PackedScene = preload("res://main-autolysis/player/autolysis_player.tscn")
++const BOARD_SCENE: PackedScene = preload("res://main-autolysis/scenes/prefabs/prefab_machines/quest_board_0.tscn")
++const MACHINE_SCENE: PackedScene = preload("res://main-autolysis/scenes/prefabs/prefab_machines/quest_machine_0.tscn")
++const PAPER: AutolysisItemDefinition = preload("res://main-autolysis/systems/item-system/items/quest_paper.tres")
++const CAFFEINE: AutolysisItemDefinition = preload("res://main-autolysis/systems/item-system/items/caffeine.tres")
++const FIRST_TASK: AutolysisQuestPrintDefinition = preload("res://main-autolysis/systems/quest-print-system/quests/quest_test_0.tres")
++
++class FaultInventory extends AutolysisInventoryController:
++	var fail_preparation: bool = false
++	var preparation_hook: Callable
++
++	func _prepare_visual(instance: AutolysisItemInstance) -> Node3D:
++		if fail_preparation:
++			return null
++		var candidate: Node3D = super._prepare_visual(instance)
++		var hook: Callable = preparation_hook
++		if hook.is_valid():
++			hook.call()
++		return candidate
++
++class FaultSlot extends AutolysisQuestBoardSlot:
++	var fail_preparation: bool = false
++	var preparation_hook: Callable
++
++	func prepare_visual(instance: AutolysisItemInstance) -> Node3D:
++		if fail_preparation:
++			return null
++		var candidate: Node3D = super.prepare_visual(instance)
++		var hook: Callable = preparation_hook
++		if hook.is_valid():
++			hook.call()
++		return candidate
++
++var world: Node3D
++var player: AutolysisPlayer
++var inventory: FaultInventory
++var board: AutolysisQuestBoard
++var slot: FaultSlot
++var expected_instance: AutolysisItemInstance
++var failures: int = 0
++var records: Array[Dictionary] = []
++var measurements: Array[Dictionary] = []
++var observation_count: int = 0
++var observation_consistent: bool = true
++var reentry_blocked: bool = true
++var placing: bool = true
++var mutation_mode: StringName = &"task_id"
++var callback_case: StringName
++var callback_calls: int = 0
++var evidence_directory: String = preload("res://main-autolysis/systems/item-system/tests/test_evidence.gd").directory("res://docs/project-autolysis/00-discuss/交互系统/任务板实施证据/20261007/checks/transfer")
++
++
++func _initialize() -> void:
++	call_deferred("run_checks")
++
++
++func check(condition: bool, description: String) -> void:
++	records.append({"说明": description, "通过": condition})
++	print(("通过：" if condition else "失败：") + description)
++	if not condition:
++		failures += 1
++
++
++func frames(count: int) -> void:
++	for index: int in count:
++		await physics_frame
++		await process_frame
++
++
++func run_checks() -> void:
++	if DisplayServer.get_name() != "headless":
++		push_error("任务板转移专项禁止启动图形后端。")
++		quit(1)
++		return
++	root.size = Vector2i(1920, 1080)
++	await _three_slots_and_identity()
++	await _gates_and_queries()
++	await _preparation_failures()
++	await _contents_boundaries()
++	await _reversible_display_boundaries()
++	await _candidate_dependency_boundaries()
++	await _release_boundaries()
++	await _immediate_release_boundaries()
++	await _observation_boundaries()
++	await _completed_cleanup_boundaries()
++	await _renamed_nested_references()
++	await _released_printer()
++	paused = false
++	if is_instance_valid(world):
++		world.queue_free()
++	await frames(3)
++	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(evidence_directory))
++	var report: FileAccess = FileAccess.open(evidence_directory.path_join("任务板转移断言.json"), FileAccess.WRITE)
++	if report == null:
++		check(false, "任务板转移报告可写入本轮证据目录")
++	else:
++		report.store_string(JSON.stringify({"失败数": failures, "断言数": records.size(), "记录": records, "测量": measurements, "方式": "无图形正式库存入口与同步回调故障注入；未执行图形或原生指针"}, "\t"))
++		report.close()
++	print("任务板转移专项断言数：", records.size(), "；失败数：", failures)
++	quit(1 if failures > 0 else 0)
++
++
++func _entry_allowed() -> bool:
++	return player._base_input_allowed() and not player.focus_controller.has_control()
++
++
++func _fixture(occupied: bool = false, nested: bool = false) -> void:
++	paused = false
++	if is_instance_valid(world):
++		world.queue_free()
++		await frames(3)
++	world = Node3D.new()
++	root.add_child(world)
++	player = PLAYER_SCENE.instantiate() as AutolysisPlayer
++	var old_inventory: Node = player.get_node("InventoryController")
++	player.remove_child(old_inventory)
++	old_inventory.free()
++	inventory = FaultInventory.new()
++	inventory.name = "InventoryController"
++	player.add_child(inventory)
++	world.add_child(player)
++	player.set_physics_process(false)
++	player.set_process_input(false)
++	player.set_process_unhandled_input(false)
++	player._clear_landing_stun()
++	player.focus_controller.configure(player, player.camera, player.held_item_presenter, _entry_allowed)
++	board = BOARD_SCENE.instantiate() as AutolysisQuestBoard
++	# 本夹具不保存场景；移植前解除原保存归属，防止合法重挂触发所有者警告。
++	for child: Node in board.find_children("*", "", true, false):
++		child.owner = null
++	var original: AutolysisQuestBoardSlot = board.slots[0]
++	slot = FaultSlot.new()
++	slot.name = original.name
++	slot.transform = original.transform
++	slot.collision_layer = original.collision_layer
++	slot.collision_mask = original.collision_mask
++	slot.collision_shape = original.collision_shape
++	slot.transfer_interaction = original.transfer_interaction
++	slot.paper_position = original.paper_position
++	slot.paper_rotation_degrees = original.paper_rotation_degrees
++	slot.paper_scale = original.paper_scale
++	for child: Node in original.get_children():
++		original.remove_child(child)
++		slot.add_child(child)
++	board.remove_child(original)
++	board.add_child(slot)
++	board.slots[0] = slot
++	original.free()
++	if nested:
++		var holder: Node3D = Node3D.new()
++		holder.name = "显式槽引用容器"
++		board.add_child(holder)
++		for index: int in board.slots.size():
++			var target: AutolysisQuestBoardSlot = board.slots[index]
++			board.remove_child(target)
++			holder.add_child(target)
++			target.name = "已重命名槽%d" % index
++	board.position = Vector3(2.0, 0.5, -1.0)
++	board.rotation.y = 0.23
++	world.add_child(board)
++	await frames(3)
++	check(board.is_configured() and slot.is_configured(), "真实任务板与故障夹具槽保持生产引用合同")
++	check(player.focus_controller.try_enter(board.focus_target), "正式玩家通过任务板聚焦入口建立事务夹具")
++	await frames(25)
++	check(player.focus_controller.is_focused_on(board.focus_target), "事务夹具等待真实聚焦过渡完成")
++	expected_instance = _paper("任务板事务原件")
++	check(inventory.try_receive_instance(expected_instance), "正式库存接收原逐件任务文件")
++	if occupied:
++		check(inventory.try_place_in_quest_board_slot(player, slot), "正式入口建立待取原件占用")
++	callback_calls = 0
++	observation_count = 0
++	observation_consistent = true
++	reentry_blocked = true
++
++
++func _paper(task_id: String, blank: bool = false) -> AutolysisItemInstance:
++	var instance: AutolysisItemInstance = AutolysisItemInstance.create(PAPER)
++	if not blank:
++		instance.set_quest_paper_contents(AutolysisQuestPaperContents.create_result(task_id, PackedStringArray(["委托编号：07003141", "目标原文第二行", "排版分组第三行"]), PackedInt32Array([2])))
++	return instance
++
++
++func _same_contents(first: AutolysisQuestPaperContents, second: AutolysisQuestPaperContents) -> bool:
++	if first == null or second == null:
++		return first == second
++	return first.get_task_id() == second.get_task_id() and first.get_data_lines() == second.get_data_lines() and first.get_group_gap_before_lines() == second.get_group_gap_before_lines()
++
++
++func _select(index: int) -> void:
++	for count: int in AutolysisInventoryController.SLOT_COUNT:
++		if inventory.get_focused_index() == index:
++			return
++		check(inventory.cycle_focus(1), "正式库存主动切格成功")
++	check(inventory.get_focused_index() == index, "正式选中指定库存格")
++
++
++func _identity_count(instance: AutolysisItemInstance) -> int:
++	var count: int = 0
++	if is_instance_valid(inventory) and not inventory.is_queued_for_deletion():
++		for index: int in AutolysisInventoryController.SLOT_COUNT:
++			if inventory.get_slot_instance(index) == instance:
++				count += 1
++	if is_instance_valid(board) and not board.is_queued_for_deletion():
++		for target: AutolysisQuestBoardSlot in board.slots:
++			if is_instance_valid(target) and not target.is_queued_for_deletion() and target.get_stored_instance() == instance:
++				count += 1
++	return count
++
++
++func _subscription_count(instance: AutolysisItemInstance, observer: Object) -> int:
++	var count: int = 0
++	for connection: Dictionary in instance.changed.get_connections():
++		var callback: Callable = connection["callable"]
++		if callback.get_object() == observer:
++			count += 1
++	return count
++
++
++func _held_matches(instance: AutolysisItemInstance) -> bool:
++	var presenter: AutolysisHeldItemPresenter = player.held_item_presenter
++	var display: Node3D = presenter.get_display()
++	return is_instance_valid(display) and not display.is_queued_for_deletion() and display.get_parent() == presenter and display.visible and presenter._instance == instance and AutolysisQuestPaperVisual.get_instance(display) == instance and _subscription_count(instance, presenter) == 1
++
++
++func _locks_released() -> bool:
++	return not inventory._busy and slot._transfer_token == 0 and player.held_item_presenter._replacement_token == 0
++
++
++func _three_slots_and_identity() -> void:
++	await _fixture()
++	var originals: Array[AutolysisItemInstance] = [expected_instance, _paper("任务板事务原件"), _paper("合法空白文件", true)]
++	var snapshots: Array[AutolysisQuestPaperContents] = []
++	check(originals[0] != originals[1] and _same_contents(originals[0].quest_paper_contents, originals[1].quest_paper_contents), "相同任务标识与正文的两件资源保持不同逐件身份")
++	await _select(3)
++	check(inventory.try_receive_item(CAFFEINE), "未参与转移的其他道具格保存原料")
++	var untouched: AutolysisItemInstance = inventory.get_slot_instance(3)
++	await _select(0)
++	for index: int in board.slots.size():
++		var instance: AutolysisItemInstance = originals[index]
++		snapshots.append(instance.quest_paper_contents)
++		if index > 0:
++			check(inventory.try_receive_instance(instance), "第%d槽准备另一正式逐件任务文件" % index)
++		var focused: int = inventory.get_focused_index()
++		check(_identity_count(instance) == 1, "第%d槽放置前存活来源数量为一" % index)
++		check(inventory.can_place_in_quest_board_slot(player, board.slots[index]) and inventory.try_place_in_quest_board_slot(player, board.slots[index]), "第%d槽正式放置原件成功" % index)
++		check(inventory.get_focused_index() == focused and inventory.get_focused_instance() == null and board.slots[index].get_stored_instance() == instance, "第%d槽放置只清空当前格与占用命中槽，格号不变" % index)
++		check(_identity_count(instance) == 1 and _same_contents(instance.quest_paper_contents, snapshots[index]) and inventory.get_slot_instance(3) == untouched, "第%d槽放置保持逐件身份、完整内容与未参与库存格守恒" % index)
++		check(_subscription_count(instance, player.held_item_presenter) == 0 and _subscription_count(instance, board.slots[index]) == 1, "第%d槽成功放置后资源订阅从手持移至本槽" % index)
++	var first_display: Node3D = board.slots[0].get_display()
++	var second_display: Node3D = board.slots[1].get_display()
++	check(AutolysisQuestPaperVisual.get_front(first_display).material_overlay != AutolysisQuestPaperVisual.get_front(second_display).material_overlay, "相同任务两张纸面持有独立文字材质")
++	var blank_display: Node3D = board.slots[2].get_display()
++	check(originals[2].is_valid_instance() and AutolysisQuestPaperVisual.get_instance(blank_display) == originals[2] and AutolysisQuestPaperVisual.get_view(blank_display) == null, "合法空白任务纸按既有定义保存同件空正文")
++	for index: int in [2, 0, 1]:
++		var instance: AutolysisItemInstance = originals[index]
++		var focused: int = inventory.get_focused_index()
++		check(inventory.try_take_from_quest_board_slot(player, board.slots[index]), "按不同顺序取回第%d槽原件" % index)
++		check(board.slots[index].get_stored_instance() == null and inventory.get_focused_instance() == instance and inventory.get_focused_index() == focused and _held_matches(instance), "第%d槽取回清空本槽、恢复原件手持与原选格号" % index)
++		check(_identity_count(instance) == 1 and _same_contents(instance.quest_paper_contents, snapshots[index]) and inventory.get_slot_instance(3) == untouched, "第%d槽取回后身份、空白或完整正文及其他格守恒" % index)
++		check(_subscription_count(instance, board.slots[index]) == 0 and not inventory.try_take_from_quest_board_slot(player, board.slots[index]), "第%d槽取回解除槽订阅且重复取回不复制文件" % index)
++		await _select(posmod(focused + 1, 3))
++	for instance: AutolysisItemInstance in originals:
++		check(_identity_count(instance) == 1, "三槽往返后每件原资源在存活库存和任务板内恰好一份")
++
++
++func _gates_and_queries() -> void:
++	await _fixture()
++	var children_before: int = slot.get_child_count()
++	var slot_revision: int = slot.get_revision()
++	var held_revision: int = inventory.get_holding_revision()
++	var display: Node3D = player.held_item_presenter.get_display()
++	for count: int in range(5):
++		check(inventory.can_place_in_quest_board_slot(player, slot) and not inventory.can_take_from_quest_board_slot(player, slot), "只读查询返回实际空槽与任务手持许可")
++	check(children_before == slot.get_child_count() and slot_revision == slot.get_revision() and held_revision == inventory.get_holding_revision() and player.held_item_presenter.get_display() == display and slot._transfer_token == 0, "重复许可查询不创建显示、不占槽、不修改修订或手持")
++	check(inventory.try_place_in_quest_board_slot(player, slot), "拒绝矩阵建立占用槽")
++	check(not inventory.try_place_in_quest_board_slot(player, board.slots[1]), "空手点击空槽不转移资源")
++	check(inventory.try_receive_item(CAFFEINE), "正式手持非任务类型输入")
++	var blocker: AutolysisItemInstance = inventory.get_focused_instance()
++	check(not inventory.can_place_in_quest_board_slot(player, board.slots[1]) and not inventory.try_place_in_quest_board_slot(player, board.slots[1]), "非任务类型拒绝空槽放置")
++	check(not inventory.can_take_from_quest_board_slot(player, slot) and not inventory.try_take_from_quest_board_slot(player, slot) and inventory.get_focused_instance() == blocker and slot.get_stored_instance() == expected_instance, "任意手持占用拒绝取回和替换，双方来源保持")
++	await _select(1)
++	check(inventory.can_take_from_quest_board_slot(player, slot), "主动切到空格后允许取回，其他格有物不影响空手")
++	inventory._handset_transfer_token = 1
++	check(not inventory.can_take_from_quest_board_slot(player, slot) and not inventory.try_take_from_quest_board_slot(player, slot), "听筒交接互斥拒绝任务板取回")
++	inventory._handset_transfer_token = 0
++	inventory._handset_session = 1
++	check(not inventory.can_take_from_quest_board_slot(player, slot), "听筒独占持有拒绝任务板取回")
++	inventory._handset_session = 0
++	var token: int = slot.begin_transfer(player, inventory)
++	check(token > 0 and not inventory.can_take_from_quest_board_slot(player, slot) and not inventory.try_take_from_quest_board_slot(player, slot), "同槽已持转移令牌拒绝第二次竞争请求")
++	var other_actor: AutolysisPlayer = PLAYER_SCENE.instantiate() as AutolysisPlayer
++	world.add_child(other_actor)
++	other_actor.set_physics_process(false)
++	check(not slot.is_transfer_current(other_actor, inventory, token) and not slot.is_transfer_current(player, other_actor.inventory_controller, token), "其他玩家及库存不能借用原转移令牌")
++	slot.end_transfer(other_actor, inventory, token)
++	check(slot.is_transfer_current(player, inventory, token), "错误发起者不能结束本次槽转移")
++	slot.end_transfer(player, inventory, token)
++	other_actor.queue_free()
++	player.is_showing_ui = true
++	check(not inventory.can_take_from_quest_board_slot(player, slot), "玩家界面输入关闭拒绝任务板取回")
++	player.is_showing_ui = false
++	check(player.focus_controller.request_exit(), "正式退出本板用于错误设备许可核查")
++	await frames(25)
++	var other_board: AutolysisQuestBoard = BOARD_SCENE.instantiate() as AutolysisQuestBoard
++	other_board.position = Vector3(5.0, 0.0, -1.0)
++	world.add_child(other_board)
++	check(player.focus_controller.try_enter(other_board.focus_target), "正式聚焦另一任务板")
++	await frames(25)
++	check(not inventory.can_take_from_quest_board_slot(player, slot) and not inventory.try_take_from_quest_board_slot(player, slot) and slot.get_stored_instance() == expected_instance, "错误任务板会话拒绝原板取回且保留原资源")
++
++
++func _execute() -> bool:
++	return inventory.try_place_in_quest_board_slot(player, slot) if placing else inventory.try_take_from_quest_board_slot(player, slot)
++
++
++func _preparation_failures() -> void:
++	for direction: bool in [true, false]:
++		placing = direction
++		await _fixture(not placing)
++		var previous: Node3D = player.held_item_presenter.get_display() if placing else slot.get_display()
++		slot.fail_preparation = placing
++		inventory.fail_preparation = not placing
++		check(not _execute(), "显示准备失败拒绝" + ("放置" if placing else "取回"))
++		check(_identity_count(expected_instance) == 1 and _locks_released() and (player.held_item_presenter.get_display() == previous if placing else slot.get_display() == previous), "准备失败保留来源、原显示及双方互斥清理")
++		slot.fail_preparation = false
++		inventory.fail_preparation = false
++		for fault: StringName in [&"revision", &"selection", &"exit"]:
++			await _fixture(not placing)
++			callback_case = fault
++			if placing:
++				slot.preparation_hook = _preparation_callback
++			else:
++				inventory.preparation_hook = _preparation_callback
++			check(not _execute() and callback_calls == 1, "准备回调改变" + ("持有修订" if fault == &"revision" else "选格" if fault == &"selection" else "聚焦会话") + "拒绝旧事务")
++			check(_identity_count(expected_instance) == 1 and _locks_released(), "准备上下文失效保持同件来源且释放事务锁")
++			if placing:
++				check(inventory.get_slot_instance(0) == expected_instance and _held_matches(expected_instance), "放置准备失效保持原库存格与有效手持显示")
++			else:
++				check(slot.get_stored_instance() == expected_instance and slot.get_display() != null and inventory.get_slot_instance(0) == null, "取回准备失效保持槽来源和当前空格")
++			inventory._focused_index = 0
++	# 有效显示场景缺少纸面适配依赖，绑定失败不应被误报为成功。
++	await _fixture()
++	var definition: AutolysisItemDefinition = PAPER.duplicate() as AutolysisItemDefinition
++	var empty_root: Node3D = Node3D.new()
++	var empty_scene: PackedScene = PackedScene.new()
++	empty_scene.pack(empty_root)
++	empty_root.free()
++	definition.visual_scene = empty_scene
++	expected_instance.definition = definition
++	check(expected_instance.is_valid_instance() and not inventory.try_place_in_quest_board_slot(player, slot), "合法纯显示资产缺少纸面绑定依赖时拒绝放置")
++	check(inventory.get_focused_instance() == expected_instance and slot.get_stored_instance() == null and _locks_released(), "纸面绑定失败保持原资源且不发布槽占用")
++
++
++func _preparation_callback() -> void:
++	callback_calls += 1
++	match callback_case:
++		&"revision":
++			inventory._holding_revision += 1
++		&"selection":
++			check(not inventory.cycle_focus(1), "准备期间正式切格入口拒绝重入")
++			inventory._focused_index = 1
++		&"exit":
++			player.focus_controller.request_exit()
++
++
++func _changed_contents(original: AutolysisQuestPaperContents) -> AutolysisQuestPaperContents:
++	if mutation_mode == &"blank":
++		return null
++	if original == null:
++		return FIRST_TASK.create_contents()
++	var task_id: String = original.get_task_id()
++	var lines: PackedStringArray = original.get_data_lines()
++	var gaps: PackedInt32Array = original.get_group_gap_before_lines()
++	match mutation_mode:
++		&"task_id":
++			task_id = "回调中改变任务标识"
++		&"data_lines":
++			lines[0] = "回调中改变有效正文：07003141"
++		&"group_gaps":
++			gaps = PackedInt32Array([1])
++	return AutolysisQuestPaperContents.create_result(task_id, lines, gaps)
++
++
++func _mutate_contents(_candidate: Node) -> void:
++	callback_calls += 1
++	expected_instance.set_quest_paper_contents(_changed_contents(expected_instance.quest_paper_contents), false)
++
++
++func _contents_boundaries() -> void:
++	for direction: bool in [true, false]:
++		placing = direction
++		for mode: StringName in [&"task_id", &"data_lines", &"group_gaps", &"blank"]:
++			await _fixture(not placing)
++			mutation_mode = mode
++			var original: AutolysisQuestPaperContents = expected_instance.quest_paper_contents
++			var expected_change: AutolysisQuestPaperContents = _changed_contents(original)
++			var source_display: Node3D = player.held_item_presenter.get_display() if placing else slot.get_display()
++			var source: Node = slot if placing else player.held_item_presenter
++			source.child_entered_tree.connect(_mutate_contents)
++			check(not _execute() and callback_calls == 1, "显示入树改变" + ("任务标识" if mode == &"task_id" else "正文" if mode == &"data_lines" else "分组" if mode == &"group_gaps" else "正文为空状态") + "撤回" + ("放置" if placing else "取回"))
++			source.child_entered_tree.disconnect(_mutate_contents)
++			check(_identity_count(expected_instance) == 1 and _same_contents(expected_instance.quest_paper_contents, expected_change) and _locks_released(), "内容故障仅撤回本次转移，实际内容变更和原件身份保留")
++			if placing:
++				check(inventory.get_focused_instance() == expected_instance and slot.get_stored_instance() == null and player.held_item_presenter.get_display() == source_display and _held_matches(expected_instance), "内容变化回滚恢复原手持节点、实例绑定与唯一订阅")
++			else:
++				check(slot.get_stored_instance() == expected_instance and slot.get_display() == source_display and source_display.visible and inventory.get_focused_instance() == null and player.held_item_presenter.get_display() == null, "内容变化回滚恢复原槽来源与显示，手持无候选残留")
++			check(_execute(), "故障解除后同件有效新内容可以正式转移")
++			check(_identity_count(expected_instance) == 1 and _same_contents(expected_instance.quest_paper_contents, expected_change), "新请求采用当前真实内容而不恢复过期正文")
++		await _fixture()
++		check(expected_instance.set_quest_paper_contents(null), "合法任务原件可以形成空正文输入")
++		if not placing:
++			check(inventory.try_place_in_quest_board_slot(player, slot), "正式槽保存合法空白原件")
++		mutation_mode = &"task_id"
++		var blank_source: Node = slot if placing else player.held_item_presenter
++		blank_source.child_entered_tree.connect(_mutate_contents)
++		check(not _execute() and expected_instance.quest_paper_contents != null, "显示入树将空白原件改变为有效全文时拒绝过期空快照")
++		blank_source.child_entered_tree.disconnect(_mutate_contents)
++		check(_identity_count(expected_instance) == 1 and _locks_released() and (_held_matches(expected_instance) if placing else slot.get_stored_instance() == expected_instance), "单方为空的内容故障保持原件与有效来源显示")
++		check(_execute(), "空白改为全文后新事务可以正式接收当前内容")
++
++
++func _visibility_fault(display: Node3D) -> void:
++	callback_calls += 1
++	match callback_case:
++		&"exit":
++			if not display.visible:
++				player.focus_controller.request_exit()
++		&"pause":
++			if not display.visible:
++				player.is_movement_paused = true
++		&"candidate":
++			if display.visible:
++				display.queue_free()
++
++
++func _candidate_entry(candidate: Node) -> void:
++	callback_calls += 1
++	if callback_case == &"candidate":
++		candidate.queue_free()
++	elif callback_case == &"visibility":
++		(candidate as Node3D).hide()
++		(candidate as Node3D).visibility_changed.connect(_candidate_visibility.bind(candidate))
++
++
++func _candidate_visibility(candidate: Node3D) -> void:
++	if candidate.visible:
++		candidate.queue_free()
++
++
++func _reversible_display_boundaries() -> void:
++	for direction: bool in [true, false]:
++		placing = direction
++		for fault: StringName in [&"exit", &"pause"]:
++			await _fixture(not placing)
++			callback_case = fault
++			var previous: Node3D = player.held_item_presenter.get_display() if placing else slot.get_display()
++			previous.visibility_changed.connect(_visibility_fault.bind(previous))
++			check(not _execute(), "旧显示隐藏回调" + ("退出聚焦" if fault == &"exit" else "暂停") + "撤回未完成事务")
++			check(callback_calls >= 1 and _identity_count(expected_instance) == 1 and previous.visible and not previous.is_queued_for_deletion() and _locks_released(), "暂存隐藏失败恢复同一旧显示可见性、唯一原件及锁")
++			if placing:
++				check(_held_matches(expected_instance), "可撤回放置恢复原手持绑定与唯一资源监听")
++			else:
++				check(slot.get_stored_instance() == expected_instance and slot.get_display() == previous and player.held_item_presenter.get_display() == null, "可撤回取回恢复原槽显示且无手持候选残留")
++		for fault: StringName in [&"candidate", &"visibility"]:
++			await _fixture(not placing)
++			callback_case = fault
++			var source: Node = slot if placing else player.held_item_presenter
++			var previous: Node3D = player.held_item_presenter.get_display() if placing else slot.get_display()
++			source.child_entered_tree.connect(_candidate_entry)
++			check(not _execute() and callback_calls >= 1, "候选" + ("入树释放" if fault == &"candidate" else "显示回调释放") + "拒绝未完成事务")
++			source.child_entered_tree.disconnect(_candidate_entry)
++			check(_identity_count(expected_instance) == 1 and previous.visible and not previous.is_queued_for_deletion() and _locks_released(), "候选生命周期故障保持原件、原显示并清理双方锁")
++			check(_held_matches(expected_instance) if placing else slot.get_stored_instance() == expected_instance and slot.get_display() == previous and player.held_item_presenter.get_display() == null, "候选故障回滚保留有效显示与原来源绑定")
++			check(_execute(), "候选故障解除后正式入口可继续转移")
++
++
++func _dependency_entry(candidate: Node) -> void:
++	(candidate as Node3D).hide()
++	(candidate as Node3D).visibility_changed.connect(_dependency_visibility.bind(candidate))
++
++
++func _dependency_visibility(candidate: Node3D) -> void:
++	if not candidate.visible:
++		return
++	callback_calls += 1
++	var dependency: Node
++	match callback_case:
++		&"front":
++			dependency = AutolysisQuestPaperVisual.get_front(candidate)
++		&"viewport":
++			dependency = AutolysisQuestPaperVisual.get_viewport(candidate)
++		&"view":
++			dependency = AutolysisQuestPaperVisual.get_view(candidate)
++	if is_instance_valid(dependency):
++		dependency.queue_free()
++
++
++func _candidate_dependency_boundaries() -> void:
++	for direction: bool in [true, false]:
++		placing = direction
++		for target: StringName in [&"front", &"viewport", &"view"]:
++			await _fixture(not placing)
++			callback_case = target
++			var source: Node = slot if placing else player.held_item_presenter
++			var previous: Node3D = player.held_item_presenter.get_display() if placing else slot.get_display()
++			source.child_entered_tree.connect(_dependency_entry)
++			check(not _execute() and callback_calls >= 1, "候选显示回调仅释放" + ("纸面正面" if target == &"front" else "纸面视口" if target == &"viewport" else "全文视图") + "时拒绝统一提交")
++			source.child_entered_tree.disconnect(_dependency_entry)
++			check(_identity_count(expected_instance) == 1 and _locks_released() and previous.visible and not previous.is_queued_for_deletion(), "候选展示局部依赖失效保持原件来源、原显示与互斥清理")
++			check(_held_matches(expected_instance) if placing else slot.get_stored_instance() == expected_instance and slot.get_display() == previous and player.held_item_presenter.get_display() == null, "仅候选纸面依赖失效不误清稳定来源显示和订阅")
++			check(_execute(), "候选纸面依赖故障解除后正式入口可继续转移")
++
++
++func _release_callback(_candidate: Node) -> void:
++	callback_calls += 1
++	match callback_case:
++		&"slot":
++			slot.queue_free()
++		&"board":
++			board.queue_free()
++		&"player":
++			player.queue_free()
++		&"presenter":
++			player.held_item_presenter.queue_free()
++
++
++func _release_boundaries() -> void:
++	for direction: bool in [true, false]:
++		placing = direction
++		for fault: StringName in [&"slot", &"board", &"player", &"presenter"]:
++			await _fixture(not placing)
++			callback_case = fault
++			var source: Node = slot if placing else player.held_item_presenter
++			source.child_entered_tree.connect(_release_callback)
++			check(not _execute() and callback_calls == 1, "候选入树排队释放" + ("槽" if fault == &"slot" else "板根" if fault == &"board" else "玩家" if fault == &"player" else "呈现器") + "时不伪报转移成功")
++			if placing:
++				check(inventory.get_focused_instance() == expected_instance, "放置生命周期失效保留原库存来源")
++				if fault == &"slot" or fault == &"board":
++					check(_held_matches(expected_instance) and not inventory._busy, "世界来源排队释放后原库存手持仍有效且解锁")
++			else:
++				check(inventory.get_focused_instance() == null and not inventory._busy, "取回生命周期失效不提交库存候选且清理库存锁")
++				if fault == &"player" or fault == &"presenter":
++					check(slot.get_stored_instance() == expected_instance and slot.get_display() != null and slot._transfer_token == 0, "玩家侧失效匹配恢复仍存活槽来源、显示与槽锁")
++			await frames(3)
++
++
++func _immediate_release_callback() -> void:
++	callback_calls += 1
++	match callback_case:
++		&"slot":
++			_retire_active_node(slot)
++		&"board":
++			board.free()
++		&"player":
++			player.free()
++		&"presenter":
++			player.held_item_presenter.free()
++		&"inventory":
++			_retire_active_node(inventory)
++
++
++func _retire_active_node(target: Node) -> void:
++	# 正在执行方法的对象拒绝直接释放；实际父生命周期释放仍能销毁其子节点。
++	# 临时父级离树，避免入树锁；本段结束后目标必须已经实际失效。
++	var parent: Node = target.get_parent()
++	if parent != null:
++		parent.remove_child(target)
++	var retiring_parent: Node = Node.new()
++	retiring_parent.add_child(target)
++	retiring_parent.free()
++	check(not is_instance_valid(target), "离树临时父生命周期变体实际销毁目标对象，不直接调用执行中对象释放")
++
++
++func _surviving_locks_clear() -> bool:
++	if is_instance_valid(inventory) and inventory._busy:
++		return false
++	if is_instance_valid(slot) and slot._transfer_token != 0:
++		return false
++	if is_instance_valid(player) and is_instance_valid(player.held_item_presenter) and player.held_item_presenter._replacement_token != 0:
++		return false
++	return true
++
++
++func _immediate_release_boundaries() -> void:
++	for direction: bool in [true, false]:
++		placing = direction
++		for target: StringName in [&"slot", &"board", &"player", &"presenter", &"inventory"]:
++			await _fixture(not placing)
++			callback_case = target
++			var original_slot_display: Node3D = slot.get_display()
++			if placing:
++				slot.preparation_hook = _immediate_release_callback
++			else:
++				inventory.preparation_hook = _immediate_release_callback
++			check(not _execute() and callback_calls == 1, "离树候选准备回调立即释放" + ("槽" if target == &"slot" else "板根" if target == &"board" else "玩家" if target == &"player" else "呈现器" if target == &"presenter" else "库存") + "拒绝旧事务")
++			var dependency_alive: bool = is_instance_valid(slot) if target == &"slot" else is_instance_valid(board) if target == &"board" else is_instance_valid(player) if target == &"player" else is_instance_valid(inventory) if target == &"inventory" else is_instance_valid(player.held_item_presenter)
++			check(not dependency_alive, "准备阶段生命周期操作完成后指定对象实际不存在")
++			measurements.append({"类型": "准备回调立即生命周期终止", "方向": "放置" if placing else "取回", "目标": "槽" if target == &"slot" else "板根" if target == &"board" else "玩家" if target == &"player" else "呈现器" if target == &"presenter" else "库存", "实际不存在": not dependency_alive, "操作": "离树临时父生命周期销毁变体" if target == &"slot" or target == &"inventory" else "释放实际生产父级或呈现器"})
++			check(_surviving_locks_clear(), "立即释放依赖后只清理仍存活对象的本次事务锁")
++			if placing:
++				if is_instance_valid(inventory):
++					check(inventory.get_focused_instance() == expected_instance, "放置立即失效保留仍存活库存原件来源")
++				if is_instance_valid(slot):
++					check(slot.get_stored_instance() == null and slot.get_display() == null, "放置立即失效不建立未成功的槽资源或显示")
++				if target == &"slot" or target == &"board" or target == &"inventory":
++					check(is_instance_valid(player) and _held_matches(expected_instance), "立即释放世界来源或库存后原手持显示仍绑定原件")
++			else:
++				if is_instance_valid(inventory):
++					check(inventory.get_focused_instance() == null, "取回立即失效不提交候选库存原件")
++				if is_instance_valid(slot):
++					check(slot.get_stored_instance() == expected_instance and slot.get_display() == original_slot_display and original_slot_display.visible, "取回立即失效匹配恢复仍存活槽原资源与原显示")
++				if target == &"slot" or target == &"board" or target == &"inventory":
++					check(is_instance_valid(player) and player.held_item_presenter.get_display() == null, "立即释放来源或库存后不伪报取回显示恢复")
++			await frames(3)
++
++
++func _observe_final() -> void:
++	observation_count += 1
++	var inventory_expected: AutolysisItemInstance = null if placing else expected_instance
++	var slot_expected: AutolysisItemInstance = expected_instance if placing else null
++	observation_consistent = observation_consistent and inventory.get_focused_instance() == inventory_expected and slot.get_stored_instance() == slot_expected and _identity_count(expected_instance) == 1
++	if placing:
++		observation_consistent = observation_consistent and player.held_item_presenter.get_display() == null and slot.get_display() != null and slot.get_display().visible
++		observation_consistent = observation_consistent and inventory.can_take_from_quest_board_slot(player, slot) and not inventory.can_place_in_quest_board_slot(player, slot)
++	else:
++		observation_consistent = observation_consistent and _held_matches(expected_instance) and slot.get_display() == null
++		observation_consistent = observation_consistent and inventory.can_place_in_quest_board_slot(player, slot) and not inventory.can_take_from_quest_board_slot(player, slot)
++	reentry_blocked = reentry_blocked and not inventory.try_place_in_quest_board_slot(player, slot) and not inventory.try_take_from_quest_board_slot(player, slot) and not inventory.try_receive_item(CAFFEINE) and not inventory.cycle_focus(1)
++
++
++func _observe_final_second() -> void:
++	_observe_final()
++
++
++func _observation_boundaries() -> void:
++	for direction: bool in [true, false]:
++		placing = direction
++		await _fixture(not placing)
++		inventory.held_item_changed.connect(_observe_final)
++		inventory.held_item_changed.connect(_observe_final_second)
++		slot.state_changed.connect(_observe_final)
++		check(_execute(), "多个库存与槽观察者下正式事务只提交一次")
++		check(observation_count == 3 and observation_consistent, "三个最早观察通知均读取库存、槽、显示与身份一致终态")
++		check(reentry_blocked and _locks_released(), "成功通知期间取放、普通接收与切格重入拒绝，通知后锁释放")
++		measurements.append({"方向": "放置" if placing else "取回", "逐件身份": expected_instance.get_instance_id(), "观察通知数": observation_count, "终态一致": observation_consistent, "重入拒绝": reentry_blocked})
++
++
++func _cleanup_callback() -> void:
++	callback_calls += 1
++	if callback_case == &"board":
++		board.queue_free()
++	elif callback_case == &"player":
++		player.queue_free()
++
++
++func _completed_cleanup_boundaries() -> void:
++	for direction: bool in [true, false]:
++		placing = direction
++		for target: StringName in [&"board", &"player"]:
++			await _fixture(not placing)
++			callback_case = target
++			var previous: Node3D = player.held_item_presenter.get_display() if placing else slot.get_display()
++			previous.tree_exiting.connect(_cleanup_callback)
++			check(_execute() and callback_calls == 1, "最终成功清理旧显示期间排队释放" + ("板根" if target == &"board" else "玩家") + "仍返回成功")
++			check(inventory.get_focused_instance() == (null if placing else expected_instance) and slot.get_stored_instance() == (expected_instance if placing else null), "成功后的生命周期清理不撤销已提交库存与槽终态")
++			await frames(3)
++			if placing and target == &"player":
++				check(not is_instance_valid(player) and slot.get_stored_instance() == expected_instance, "玩家实际释放后已放入文件继续归属存活槽")
++			elif not placing and target == &"board":
++				check(not is_instance_valid(board) and inventory.get_focused_instance() == expected_instance and _held_matches(expected_instance), "板根实际释放后已取回文件继续归属存活库存与有效手持")
++	await _fixture(true)
++	placing = false
++	callback_case = &"board"
++	slot.state_changed.connect(_cleanup_callback)
++	check(_execute() and callback_calls == 1 and inventory.get_focused_instance() == expected_instance, "最终槽观察者释放板根不撤销已经成功取回的文件")
++	await frames(3)
++	check(not is_instance_valid(board) and inventory.get_focused_instance() == expected_instance and _held_matches(expected_instance), "成功通知后板根实际释放保持已取得原件与手持全文")
++
++
++func _renamed_nested_references() -> void:
++	await _fixture(false, true)
++	check(slot.get_parent() != board and slot.name == "已重命名槽0" and board.owns_slot(slot), "重命名与嵌套后显式归属引用保持有效")
++	check(inventory.try_place_in_quest_board_slot(player, slot) and inventory.try_take_from_quest_board_slot(player, slot), "更新显式引用的重命名嵌套槽仍可原件往返")
++	check(inventory.get_focused_instance() == expected_instance and _held_matches(expected_instance) and _identity_count(expected_instance) == 1, "嵌套变体取放保持身份与手持绑定")
++
++
++func _released_printer() -> void:
++	await _fixture()
++	check(inventory.try_place_in_quest_board_slot(player, board.slots[2]), "临时将夹具原件移至独立槽以腾空当前格")
++	check(player.focus_controller.request_exit(), "退出任务板准备真实打印来源")
++	await frames(25)
++	var machine: AutolysisQuestMachine = MACHINE_SCENE.instantiate() as AutolysisQuestMachine
++	for field: StringName in [&"first_descent_seconds", &"first_wait_seconds", &"first_left_seconds", &"print_line_seconds", &"return_left_seconds", &"next_line_seconds", &"center_seconds", &"reset_seconds"]:
++		machine.set(field, 0.002)
++	world.add_child(machine)
++	check(player.focus_controller.try_enter(machine.focus_target), "正式聚焦原打印设备")
++	await frames(25)
++	check(machine.request_task_print(FIRST_TASK, player) and machine.try_start_print(player), "原设备正式受理并启动本份任务打印")
++	for count: int in range(240):
++		if machine.state == AutolysisQuestMachine.PrintState.COMPLETE:
++			break
++		await frames(1)
++	check(machine.state == AutolysisQuestMachine.PrintState.COMPLETE, "原设备真实有限动作完成本份任务")
++	var paper: AutolysisQuestPaper = machine.get_current_paper()
++	if paper == null:
++		return
++	var printed: AutolysisItemInstance = paper.get_item_instance()
++	check(inventory.try_take_quest_paper(player, paper), "正式库存从原打印设备取得本份原件")
++	check(player.focus_controller.request_exit(), "正式退出原打印设备")
++	await frames(25)
++	check(player.focus_controller.try_enter(board.focus_target), "重新聚焦任务板承接真实打印原件")
++	await frames(25)
++	check(inventory.try_place_in_quest_board_slot(player, slot), "真实打印原件通过任务板正式接口放置")
++	machine.queue_free()
++	await frames(4)
++	check(not is_instance_valid(machine) and slot.get_stored_instance() == printed, "原打印设备实际释放后任务板占用仍保存原件")
++	check(inventory.try_take_from_quest_board_slot(player, slot) and inventory.get_focused_instance() == printed and _held_matches(printed), "打印来源已释放仍可正式取回同件全文文件")
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/player/tests/quest_board_transfer_test.gd.uid" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/player/tests/quest_board_transfer_test.gd.uid"
+new file mode 100644
+index 0000000..2c7fbb3
+--- /dev/null
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/player/tests/quest_board_transfer_test.gd.uid"
+@@ -0,0 +1 @@
++uid://c1o3sb3d27bl4
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\345\237\272\347\272\277/main-autolysis/scenes/prefabs/prefab_machines/quest_board_0.tscn" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/scenes/prefabs/prefab_machines/quest_board_0.tscn"
+index cabc7db..f283607 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\345\237\272\347\272\277/main-autolysis/scenes/prefabs/prefab_machines/quest_board_0.tscn"
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/scenes/prefabs/prefab_machines/quest_board_0.tscn"
+@@ -3,7 +3,10 @@
+ [ext_resource type="Material" uid="uid://b5q4un6jg32v8" path="res://main-autolysis/assets/materials/base_color/mat_base_brown_1.tres" id="1_pgope"]
+ [ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="2_pgope"]
+ [ext_resource type="Material" uid="uid://5yjf2yjo2u7l" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_1.tres" id="3_auxwl"]
+-[ext_resource type="PackedScene" path="res://main-autolysis/scenes/prefabs/prefab_paper/quest_paper_blank.tscn" id="5_auxwl"]
++[ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_board.gd" id="4_board"]
++[ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_board_slot.gd" id="5_slot"]
++[ext_resource type="Script" uid="uid://b7kdmn1qas3t1" path="res://main-autolysis/components/interactions/autolysis_interaction_component.gd" id="6_interaction"]
++[ext_resource type="Script" uid="uid://c1pn2s683ojtr" path="res://main-autolysis/components/interactions/autolysis_focus_target.gd" id="7_focus"]
+ 
+ [sub_resource type="BoxShape3D" id="BoxShape3D_auxwl"]
+ size = Vector3(0.39999998, 0.53999996, 0.04)
+@@ -28,7 +31,19 @@ size = Vector3(0.4, 0.04, 0.02)
+ material = SubResource("StandardMaterial3D_f3uus")
+ size = Vector3(0.36, 0.02, 0.01)
+ 
+-[node name="quest_board_0" type="StaticBody3D" unique_id=1038604359]
++[node name="quest_board_0" type="StaticBody3D" unique_id=1038604359 node_paths=PackedStringArray("focus_target", "reference_camera", "root_interaction", "slots") groups=["interactable"]]
++script = ExtResource("4_board")
++focus_target = NodePath("FocusTarget")
++reference_camera = NodePath("focus_camera")
++root_interaction = NodePath("InteractionComponent")
++slots = [NodePath("quest_paper_slot_0"), NodePath("quest_paper_slot_1"), NodePath("quest_paper_slot_2")]
++
++[node name="InteractionComponent" type="Node3D" parent="."]
++script = ExtResource("6_interaction")
++interaction_mode = 1
++
++[node name="FocusTarget" type="Node3D" parent="."]
++script = ExtResource("7_focus")
+ 
+ [node name="collision_board" type="CollisionShape3D" parent="." unique_id=1807916904]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9604645e-08, 0.40000004, 0.06499997)
+@@ -86,32 +101,50 @@ material_override = ExtResource("3_auxwl")
+ mesh = SubResource("BoxMesh_bfcjq")
+ skeleton = NodePath("../../MeshInstance3D13")
+ 
+-[node name="quest_paper_slot_0" type="StaticBody3D" parent="." unique_id=1324575958]
++[node name="quest_paper_slot_0" type="StaticBody3D" parent="." unique_id=1324575958 node_paths=PackedStringArray("transfer_interaction", "collision_shape") groups=["interactable"]]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44000003, 0.33999997, 0.12000001)
++collision_layer = 32
++collision_mask = 0
++script = ExtResource("5_slot")
++transfer_interaction = NodePath("InteractionComponent")
++collision_shape = NodePath("collision_quest_paper_slot_0")
++
++[node name="InteractionComponent" type="Node3D" parent="quest_paper_slot_0"]
++script = ExtResource("6_interaction")
+ 
+ [node name="collision_quest_paper_slot_0" type="CollisionShape3D" parent="quest_paper_slot_0" unique_id=867188877]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 0.01000008, -4.4703484e-08)
+ shape = SubResource("BoxShape3D_auxwl")
+ debug_color = Color(0.94486976, 7.508397e-06, 0.5973587, 0.41960785)
+ 
+-[node name="quest_paper_0" parent="quest_paper_slot_0" unique_id=1337118035 instance=ExtResource("5_auxwl")]
+-
+-[node name="quest_paper_slot_1" type="StaticBody3D" parent="." unique_id=1623937927]
++[node name="quest_paper_slot_1" type="StaticBody3D" parent="." unique_id=1623937927 node_paths=PackedStringArray("transfer_interaction", "collision_shape") groups=["interactable"]]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9802322e-08, 0.33999997, 0.12000001)
++collision_layer = 32
++collision_mask = 0
++script = ExtResource("5_slot")
++transfer_interaction = NodePath("InteractionComponent")
++collision_shape = NodePath("collision_quest_paper_slot_1")
++
++[node name="InteractionComponent" type="Node3D" parent="quest_paper_slot_1"]
++script = ExtResource("6_interaction")
+ 
+ [node name="collision_quest_paper_slot_1" type="CollisionShape3D" parent="quest_paper_slot_1" unique_id=647946047]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 0.01000008, -4.4703484e-08)
+ shape = SubResource("BoxShape3D_auxwl")
+ debug_color = Color(0.94486976, 7.508397e-06, 0.5973587, 0.41960785)
+ 
+-[node name="quest_paper_1" parent="quest_paper_slot_1" unique_id=1504474072 instance=ExtResource("5_auxwl")]
+-
+-[node name="quest_paper_slot_2" type="StaticBody3D" parent="." unique_id=1753393517]
++[node name="quest_paper_slot_2" type="StaticBody3D" parent="." unique_id=1753393517 node_paths=PackedStringArray("transfer_interaction", "collision_shape") groups=["interactable"]]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43999997, 0.33999997, 0.12000001)
++collision_layer = 32
++collision_mask = 0
++script = ExtResource("5_slot")
++transfer_interaction = NodePath("InteractionComponent")
++collision_shape = NodePath("collision_quest_paper_slot_2")
++
++[node name="InteractionComponent" type="Node3D" parent="quest_paper_slot_2"]
++script = ExtResource("6_interaction")
+ 
+ [node name="collision_quest_paper_slot_2" type="CollisionShape3D" parent="quest_paper_slot_2" unique_id=540559296]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 0.01000008, -4.4703484e-08)
+ shape = SubResource("BoxShape3D_auxwl")
+ debug_color = Color(0.94486976, 7.508397e-06, 0.5973587, 0.41960785)
+-
+-[node name="quest_paper_2" parent="quest_paper_slot_2" unique_id=1273453683 instance=ExtResource("5_auxwl")]
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_board.gd" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_board.gd"
+new file mode 100644
+index 0000000..57e2476
+--- /dev/null
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_board.gd"
+@@ -0,0 +1,113 @@
++class_name AutolysisQuestBoard
++extends StaticBody3D
++## 任务板拥有显式聚焦登记；各槽独立拥有文件来源与局部取放入口。
++
++@export var focus_target: AutolysisFocusTarget
++@export var reference_camera: Camera3D
++@export var root_interaction: AutolysisInteractionComponent
++@export var slots: Array[AutolysisQuestBoardSlot] = []
++
++var _configured: bool = false
++var _registered_slots: Array = []
++
++
++func _ready() -> void:
++	if _live(root_interaction) and root_interaction.get_parent() == self:
++		root_interaction.is_enabled = false
++	var error: String = get_configuration_error()
++	if not error.is_empty():
++		push_warning("任务板配置无效：%s" % error)
++		return
++	_registered_slots.assign(slots)
++	for slot: Variant in _registered_slots:
++		if not _live(slot):
++			push_warning("任务板槽引用失效；仅停止对应槽入口")
++			continue
++		if not slot.configure(self, focus_target):
++			push_warning("任务板槽入口配置无效：%s" % slot.get_configuration_error())
++	if not focus_target.configure_quest_board(self, reference_camera, root_interaction, slots):
++		push_warning("任务板聚焦登记失败")
++		return
++	root_interaction.set_availability_check(_can_enter)
++	root_interaction.set_execution_handler(_on_entry_requested)
++	_configured = true
++	root_interaction.is_enabled = true
++
++
++## 核心登记保护设备、相机和唯一根入口；槽入口配置按槽分别核查。
++func get_configuration_error() -> String:
++	if not _live(self) or not _live(focus_target) or focus_target.get_parent() != self:
++		return "任务板缺少直属聚焦描述"
++	if not _live(reference_camera) or not is_ancestor_of(reference_camera):
++		return "任务板缺少本板聚焦相机"
++	if not _live(root_interaction) or root_interaction.get_parent() != self or root_interaction.interaction_mode != AutolysisInteractionComponent.InteractionMode.FOCUS:
++		return "任务板缺少直属聚焦交互入口"
++	var interaction_count: int = 0
++	var target_count: int = 0
++	for child: Node in get_children():
++		if child is AutolysisInteractionComponent:
++			interaction_count += 1
++		if child is AutolysisFocusTarget:
++			target_count += 1
++	if interaction_count != 1 or target_count != 1:
++		return "任务板必须配置唯一直属根交互组件与聚焦描述"
++	if slots.is_empty():
++		return "任务板缺少显式槽登记"
++	var seen: Array = []
++	for slot: Variant in slots:
++		# 已释放的单槽不影响其余槽的核心聚焦登记。
++		if not _live(slot):
++			continue
++		if not is_ancestor_of(slot) or seen.has(slot):
++			return "任务板槽引用必须互异且属于本板"
++		seen.append(slot)
++	if _configured and not root_interaction.has_execution_handler(_on_entry_requested):
++		return "任务板根业务执行绑定失效"
++	return ""
++
++
++func is_configured() -> bool:
++	return _configured and get_configuration_error().is_empty() and focus_target.is_valid_target()
++
++
++## 不递归查询聚焦有效性，供描述器核对本次配置来源是否被替换。
++func matches_focus_registration(target: AutolysisFocusTarget, camera: Camera3D, interaction: AutolysisInteractionComponent, registered_slots: Array) -> bool:
++	return focus_target == target and reference_camera == camera and root_interaction == interaction and _registered_slots == registered_slots and slots == registered_slots
++
++
++func owns_slot(slot: Variant) -> bool:
++	return _live(self) and _live(slot) and slot is AutolysisQuestBoardSlot and _registered_slots.has(slot) and is_ancestor_of(slot) and slot.get_board() == self and slot.get_focus_target() == focus_target
++
++
++func is_actor_focused(actor: Node3D) -> bool:
++	if not _live(actor) or not actor is AutolysisPlayer or not is_configured():
++		return false
++	var player: AutolysisPlayer = actor as AutolysisPlayer
++	return player.is_focus_business_allowed() and _live(player.focus_controller) and player.focus_controller.is_focused_on(focus_target)
++
++
++func _can_enter(actor: Node3D) -> bool:
++	if not is_configured() or not _live(actor) or not actor is AutolysisPlayer:
++		return false
++	var player: AutolysisPlayer = actor as AutolysisPlayer
++	return _live(player.focus_controller) and player.focus_controller.can_enter(focus_target)
++
++
++func _on_entry_requested(actor: Node3D) -> void:
++	if _can_enter(actor):
++		(actor as AutolysisPlayer).focus_controller.try_enter(focus_target)
++
++
++func _exit_tree() -> void:
++	_configured = false
++	if is_instance_valid(root_interaction) and root_interaction.get_parent() == self:
++		root_interaction.is_enabled = false
++		root_interaction.clear_execution_handler()
++		root_interaction.clear_availability_check()
++	if is_instance_valid(focus_target):
++		focus_target.clear_quest_board_registration(self)
++	_registered_slots.clear()
++
++
++func _live(node: Variant) -> bool:
++	return is_instance_valid(node) and node is Node and node.is_inside_tree() and not node.is_queued_for_deletion()
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_board.gd.uid" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_board.gd.uid"
+new file mode 100644
+index 0000000..6512e74
+--- /dev/null
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_board.gd.uid"
+@@ -0,0 +1 @@
++uid://dp30u45q2oan2
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_board_slot.gd" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_board_slot.gd"
+new file mode 100644
+index 0000000..59b6883
+--- /dev/null
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_board_slot.gd"
+@@ -0,0 +1,343 @@
++class_name AutolysisQuestBoardSlot
++extends StaticBody3D
++## 槽位只保存逐件来源；库存控制器决定双方的最终提交点。
++
++signal state_changed
++
++const QUEST_PAPER_VISUAL: Script = preload("res://main-autolysis/systems/item-system/autolysis_quest_paper_visual.gd")
++
++enum TransferStage { NONE, PLACE, TAKE }
++
++@export var collision_shape: CollisionShape3D
++@export var transfer_interaction: AutolysisInteractionComponent
++@export var paper_position: Vector3 = Vector3.ZERO
++@export var paper_rotation_degrees: Vector3 = Vector3.ZERO
++@export var paper_scale: Vector3 = Vector3.ONE
++
++var _board: AutolysisQuestBoard
++var _focus_target: AutolysisFocusTarget
++var _configured: bool = false
++var _stored_instance: AutolysisItemInstance
++var _display: Node3D
++var _watched_instance: AutolysisItemInstance
++var _revision: int = 0
++var _transfer_serial: int = 0
++var _transfer_token: int = 0
++var _transfer_actor: Node3D
++var _transfer_inventory: AutolysisInventoryController
++var _transfer_stage: TransferStage = TransferStage.NONE
++var _transfer_original_instance: AutolysisItemInstance
++var _transfer_original_display: Node3D
++var _transfer_original_visible: bool = false
++var _transfer_candidate: Node3D
++var _transfer_candidate_instance: AutolysisItemInstance
++var _transfer_committed: bool = false
++
++
++func configure(board: AutolysisQuestBoard, target: AutolysisFocusTarget) -> bool:
++	if _configured:
++		return _board == board and _focus_target == target and is_configured()
++	_board = board
++	_focus_target = target
++	_configured = true
++	if _node_is_live(transfer_interaction):
++		transfer_interaction.set_availability_check(_can_transfer_interact)
++		transfer_interaction.set_execution_handler(_on_transfer_requested)
++	return is_configured()
++
++
++func get_configuration_error() -> String:
++	if not _configured or not _node_is_live(self):
++		return "任务文件槽未配置或不在有效场景树中"
++	if not _node_is_live(_board) or not _board.is_ancestor_of(self) or not _board.owns_slot(self):
++		return "任务文件槽未归属于显式登记的任务板"
++	if not _node_is_live(_focus_target) or _board.focus_target != _focus_target or not _board.is_ancestor_of(_focus_target):
++		return "任务文件槽聚焦描述归属无效"
++	if not _node_is_live(collision_shape) or collision_shape.get_parent() != self or collision_shape.shape == null or collision_shape.disabled:
++		return "任务文件槽碰撞形状未绑定、失效或不直属本槽"
++	if not _node_is_live(transfer_interaction) or transfer_interaction.get_parent() != self:
++		return "任务文件槽取放组件未绑定或不直属本槽"
++	var component_count: int = 0
++	for child: Node in get_children():
++		if child is AutolysisInteractionComponent:
++			component_count += 1
++	if component_count != 1 or transfer_interaction.interaction_mode != AutolysisInteractionComponent.InteractionMode.DIRECT or not transfer_interaction.has_execution_handler(_on_transfer_requested):
++		return "任务文件槽必须具有唯一直属直接交互组件及本槽执行入口"
++	return ""
++
++
++func is_configured() -> bool:
++	return get_configuration_error().is_empty()
++
++
++func get_board() -> AutolysisQuestBoard:
++	return _board if _node_is_live(_board) else null
++
++
++func get_focus_target() -> AutolysisFocusTarget:
++	return _focus_target if _node_is_live(_focus_target) else null
++
++
++func get_anchor() -> Node3D:
++	return self if _node_is_live(self) else null
++
++
++func get_revision() -> int:
++	return _revision
++
++
++func get_stored_instance() -> AutolysisItemInstance:
++	return _stored_instance
++
++
++func get_display() -> Node3D:
++	return _display if _display_is_live(_display) else null
++
++
++func is_occupied() -> bool:
++	return _stored_instance != null
++
++
++func can_transfer(actor: Variant, allow_busy: bool = false) -> bool:
++	return _node_is_live(actor) and actor is Node3D and is_configured() and (allow_busy or _transfer_token == 0) and _board.is_actor_focused(actor)
++
++
++func begin_transfer(actor: Node3D, inventory: AutolysisInventoryController) -> int:
++	if not can_transfer(actor) or not _node_is_live(inventory) or not actor is AutolysisPlayer:
++		return 0
++	if (actor as AutolysisPlayer).inventory_controller != inventory:
++		return 0
++	_transfer_serial += 1
++	_transfer_token = _transfer_serial
++	_transfer_actor = actor
++	_transfer_inventory = inventory
++	_transfer_original_instance = _stored_instance
++	_transfer_original_display = get_display()
++	_transfer_original_visible = _transfer_original_display.visible if _transfer_original_display != null else false
++	_transfer_stage = TransferStage.NONE
++	_transfer_committed = false
++	return _transfer_token
++
++
++## 令牌只能由发起它的玩家及库存使用；查询不变更互斥或占用。
++func is_transfer_current(actor: Variant, inventory: Variant, token: int) -> bool:
++	return token > 0 and token == _transfer_token and actor == _transfer_actor and inventory == _transfer_inventory
++
++
++func prepare_visual(instance: AutolysisItemInstance) -> Node3D:
++	if not is_instance_valid(instance) or not instance.is_valid_instance() or not instance.is_quest_paper():
++		return null
++	if not paper_position.is_finite() or not paper_rotation_degrees.is_finite() or not paper_scale.is_finite():
++		return null
++	var scene: PackedScene = instance.definition.visual_scene
++	if scene == null or not scene.can_instantiate():
++		return null
++	var candidate: Node = scene.instantiate()
++	if not candidate is Node3D or not _is_display_only(candidate):
++		if is_instance_valid(candidate):
++			candidate.free()
++		return null
++	var visual: Node3D = candidate as Node3D
++	visual.position = paper_position
++	visual.rotation_degrees = paper_rotation_degrees
++	visual.scale = paper_scale
++	if not QUEST_PAPER_VISUAL.apply_instance(visual, instance):
++		if is_instance_valid(visual):
++			visual.free()
++		return null
++	return visual
++
++
++func attach_prepared_visual(actor: Node3D, inventory: AutolysisInventoryController, token: int, visual: Node3D, instance: AutolysisItemInstance) -> bool:
++	if not is_transfer_current(actor, inventory, token) or not can_transfer(actor, true) or _transfer_stage != TransferStage.NONE or _stored_instance != null or _transfer_candidate != null:
++		return false
++	if not _display_is_live(visual, false) or visual.get_parent() != null or QUEST_PAPER_VISUAL.get_instance(visual) != instance:
++		return false
++	_transfer_candidate = visual
++	_transfer_candidate_instance = instance
++	visual.hide()
++	if not is_instance_valid(self) or not _display_is_live(visual, false):
++		return false
++	add_child(visual)
++	if not is_instance_valid(self):
++		return false
++	return is_transfer_current(actor, inventory, token) and can_transfer(actor, true) and _candidate_matches(visual, instance)
++
++
++func stage_place(actor: Node3D, inventory: AutolysisInventoryController, token: int, visual: Node3D, instance: AutolysisItemInstance) -> bool:
++	if not is_transfer_current(actor, inventory, token) or not can_transfer(actor, true) or _transfer_stage != TransferStage.NONE or _stored_instance != null or not _candidate_matches(visual, instance):
++		return false
++	_transfer_stage = TransferStage.PLACE
++	_stored_instance = instance
++	_display = visual
++	_watch_instance(instance)
++	var applied: bool = _refresh_stored_visual()
++	if not is_instance_valid(self) or not applied or not _display_is_live(visual):
++		return false
++	visual.show()
++	if not is_instance_valid(self):
++		return false
++	return can_finalize_transfer(actor, inventory, token)
++
++
++func stage_take(actor: Node3D, inventory: AutolysisInventoryController, token: int, instance: AutolysisItemInstance) -> bool:
++	if not is_transfer_current(actor, inventory, token) or not can_transfer(actor, true) or _transfer_stage != TransferStage.NONE or _stored_instance != instance or _transfer_original_instance != instance:
++		return false
++	var previous: Node3D = get_display()
++	if previous != null and (previous.get_parent() != self or QUEST_PAPER_VISUAL.get_instance(previous) != instance):
++		return false
++	_transfer_stage = TransferStage.TAKE
++	_stored_instance = null
++	_display = null
++	if previous != null:
++		previous.hide()
++	if not is_instance_valid(self):
++		return false
++	return can_finalize_transfer(actor, inventory, token)
++
++
++func can_finalize_transfer(actor: Variant, inventory: Variant, token: int) -> bool:
++	if not is_transfer_current(actor, inventory, token) or _transfer_committed or not _node_is_live(actor) or not _node_is_live(inventory) or not can_transfer(actor, true):
++		return false
++	if _transfer_stage == TransferStage.PLACE:
++		return _transfer_original_instance == null and _stored_instance == _transfer_candidate_instance and _display == _transfer_candidate and _candidate_matches(_display, _stored_instance)
++	if _transfer_stage == TransferStage.TAKE:
++		if _stored_instance != null or _display != null or not is_instance_valid(_transfer_original_instance):
++			return false
++		return not _display_is_live(_transfer_original_display) or (_transfer_original_display.get_parent() == self and QUEST_PAPER_VISUAL.get_instance(_transfer_original_display) == _transfer_original_instance)
++	return false
++
++
++## 调用方先核验双方；本段只修改字段与信号连接，不调用显示或观察回调。
++func finalize_transfer(actor: Variant, inventory: Variant, token: int) -> bool:
++	if not is_transfer_current(actor, inventory, token) or _transfer_committed or _transfer_stage == TransferStage.NONE:
++		return false
++	_transfer_committed = true
++	_revision += 1
++	if _transfer_stage == TransferStage.TAKE:
++		_watch_instance(null)
++	return true
++
++
++func cleanup_transfer(actor: Variant, inventory: Variant, token: int) -> void:
++	if not is_transfer_current(actor, inventory, token) or not _transfer_committed or _transfer_stage != TransferStage.TAKE:
++		return
++	var previous: Variant = _transfer_original_display
++	_transfer_original_display = null
++	_dispose_visual(previous)
++
++
++func rollback_transfer(actor: Variant, inventory: Variant, token: int) -> void:
++	if not is_transfer_current(actor, inventory, token) or _transfer_committed:
++		return
++	var candidate: Variant = _transfer_candidate
++	if _transfer_stage == TransferStage.PLACE and _stored_instance == _transfer_candidate_instance and _display == _transfer_candidate:
++		_stored_instance = _transfer_original_instance
++		_display = null
++		_watch_instance(_transfer_original_instance)
++	elif _transfer_stage == TransferStage.TAKE and _stored_instance == null and _display == null:
++		_stored_instance = _transfer_original_instance
++		var previous: Variant = _transfer_original_display
++		if _display_is_live(previous) and previous.get_parent() == self and QUEST_PAPER_VISUAL.get_instance(previous) == _stored_instance:
++			_display = previous
++			previous.visible = _transfer_original_visible
++			if not is_instance_valid(self):
++				return
++	_transfer_candidate = null
++	_transfer_candidate_instance = null
++	_transfer_stage = TransferStage.NONE
++	_dispose_visual(candidate)
++
++
++func notify_transfer(actor: Variant, inventory: Variant, token: int) -> void:
++	if is_transfer_current(actor, inventory, token) and _transfer_committed and _node_is_live(self):
++		state_changed.emit()
++
++
++func end_transfer(actor: Variant, inventory: Variant, token: int) -> void:
++	if not is_transfer_current(actor, inventory, token):
++		return
++	_transfer_token = 0
++	_transfer_actor = null
++	_transfer_inventory = null
++	_transfer_stage = TransferStage.NONE
++	_transfer_original_instance = null
++	_transfer_original_display = null
++	_transfer_candidate = null
++	_transfer_candidate_instance = null
++	_transfer_committed = false
++
++
++func _candidate_matches(visual: Variant, instance: AutolysisItemInstance) -> bool:
++	if _transfer_candidate != visual or _transfer_candidate_instance != instance or not _display_is_live(visual) or visual.get_parent() != self or not is_instance_valid(instance) or not instance.is_valid_instance() or not instance.is_quest_paper() or QUEST_PAPER_VISUAL.get_instance(visual) != instance:
++		return false
++	var front: MeshInstance3D = QUEST_PAPER_VISUAL.get_front(visual)
++	return front != null and front.mesh != null and QUEST_PAPER_VISUAL.get_viewport(visual) != null and (instance.quest_paper_contents == null or QUEST_PAPER_VISUAL.get_view(visual) != null)
++
++
++func _watch_instance(instance: AutolysisItemInstance) -> void:
++	if _watched_instance == instance:
++		return
++	if _watched_instance != null and _watched_instance.changed.is_connected(_refresh_stored_visual):
++		_watched_instance.changed.disconnect(_refresh_stored_visual)
++	_watched_instance = instance
++	if instance != null:
++		instance.changed.connect(_refresh_stored_visual)
++
++
++func _refresh_stored_visual() -> bool:
++	var visual: Node3D = get_display()
++	if _transfer_stage == TransferStage.TAKE and not _transfer_committed:
++		visual = _transfer_original_display if _display_is_live(_transfer_original_display) else null
++	if _watched_instance == null or visual == null or visual.get_parent() != self:
++		return false
++	return QUEST_PAPER_VISUAL.apply_instance(visual, _watched_instance)
++
++
++func _can_transfer_interact(actor: Node3D) -> bool:
++	if not _node_is_live(actor) or not actor is AutolysisPlayer:
++		return false
++	var inventory: AutolysisInventoryController = (actor as AutolysisPlayer).inventory_controller
++	return _node_is_live(inventory) and (inventory.can_place_in_quest_board_slot(actor, self) or inventory.can_take_from_quest_board_slot(actor, self))
++
++
++func _on_transfer_requested(actor: Node3D) -> void:
++	if not _node_is_live(actor) or not actor is AutolysisPlayer:
++		return
++	var inventory: AutolysisInventoryController = (actor as AutolysisPlayer).inventory_controller
++	if not _node_is_live(inventory):
++		return
++	if is_occupied():
++		inventory.try_take_from_quest_board_slot(actor, self)
++	else:
++		inventory.try_place_in_quest_board_slot(actor, self)
++
++
++func _exit_tree() -> void:
++	_watch_instance(null)
++
++
++func _dispose_visual(visual: Variant) -> void:
++	if not is_instance_valid(visual) or not visual is Node3D:
++		return
++	if visual.get_parent() == self:
++		remove_child(visual)
++	if is_instance_valid(visual):
++		visual.queue_free()
++
++
++func _node_is_live(node: Variant) -> bool:
++	return is_instance_valid(node) and node is Node and node.is_inside_tree() and not node.is_queued_for_deletion()
++
++
++func _display_is_live(node: Variant, require_tree: bool = true) -> bool:
++	return is_instance_valid(node) and node is Node3D and not node.is_queued_for_deletion() and (not require_tree or node.is_inside_tree())
++
++
++func _is_display_only(node: Node) -> bool:
++	if node is CollisionObject3D or node is CollisionShape3D or node is AutolysisInteractionComponent or node.is_in_group(&"interactable") or node.get_script() != null:
++		return false
++	for child: Node in node.get_children():
++		if not _is_display_only(child):
++			return false
++	return true
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_board_slot.gd.uid" "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_board_slot.gd.uid"
+new file mode 100644
+index 0000000..e04e98f
+--- /dev/null
++++ "b/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\235\277\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\257\224\350\276\203\346\234\200\347\273\210/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_board_slot.gd.uid"
+@@ -0,0 +1 @@
++uid://dx1lvdfoftowe

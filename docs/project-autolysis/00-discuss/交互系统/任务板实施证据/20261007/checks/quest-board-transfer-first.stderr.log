@@ -1,0 +1,402 @@
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] _three_slots_and_identity (res://main-autolysis/player/tests/quest_board_transfer_test.gd:227)
+       [2] run_checks (res://main-autolysis/player/tests/quest_board_transfer_test.gd:79)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] _three_slots_and_identity (res://main-autolysis/player/tests/quest_board_transfer_test.gd:227)
+       [2] run_checks (res://main-autolysis/player/tests/quest_board_transfer_test.gd:79)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'quest_paper_slot_1' as child to '显式槽引用容器' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:153)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'quest_paper_slot_2' as child to '显式槽引用容器' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:153)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'InteractionComponent' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+WARNING: Adding 'collision_quest_paper_slot_0' as child to 'quest_paper_slot_0' will make owner 'quest_board_0' inconsistent. Consider unsetting the owner beforehand.
+   at: add_child (scene/main/node.cpp:1716)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:141)
+       [1] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)

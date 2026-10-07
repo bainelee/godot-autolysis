@@ -1,0 +1,43 @@
+{
+  "检查": "quest-board-transfer-final",
+  "时间": "2026-10-07T18:49:12.4053271+08:00",
+  "进程编号": 47952,
+  "退出码": 1,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/player/tests/quest_board_transfer_test.gd",
+    "--",
+    "--evidence-dir",
+    "res://docs/project-autolysis/00-discuss/交互系统/任务板实施证据/20261007/checks/quest-board-transfer-final"
+  ],
+  "通过断言数": 499,
+  "预期错误计数": {},
+  "非预期错误": [
+    "失败：离树候选准备回调立即释放槽拒绝旧事务",
+    "失败：放置立即失效保留仍存活库存原件来源",
+    "失败：放置立即失效不建立未成功的槽资源或显示",
+    "失败：立即释放世界来源或库存后原手持显示仍绑定原件",
+    "失败：离树候选准备回调立即释放库存拒绝旧事务",
+    "失败：放置立即失效保留仍存活库存原件来源",
+    "失败：放置立即失效不建立未成功的槽资源或显示",
+    "失败：立即释放世界来源或库存后原手持显示仍绑定原件",
+    "失败：离树候选准备回调立即释放库存拒绝旧事务",
+    "失败：取回立即失效不提交候选库存原件",
+    "失败：取回立即失效匹配恢复仍存活槽原资源与原显示",
+    "失败：立即释放来源或库存后不伪报取回显示恢复",
+    "ERROR: Object is locked and can't be freed.",
+    "SCRIPT ERROR: Attempted to free a locked object (calling or emitting).",
+    "ERROR: Object is locked and can't be freed.",
+    "SCRIPT ERROR: Attempted to free a locked object (calling or emitting).",
+    "ERROR: Object is locked and can't be freed.",
+    "SCRIPT ERROR: Attempted to free a locked object (calling or emitting)."
+  ]
+}

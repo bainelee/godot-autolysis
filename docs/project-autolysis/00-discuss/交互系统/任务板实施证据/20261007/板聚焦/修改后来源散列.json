@@ -1,0 +1,18 @@
+[
+  {
+    "来源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_quest_board.gd",
+    "来源散列": "899AE82D77301E398C3D05DE307690EFE0505FF7316E1ECB3AA3F05C2E82309C"
+  },
+  {
+    "来源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_board_0.tscn",
+    "来源散列": "7C744FFE336217E5E9C5499A1DAC28A493B6E611467F5E490DE0CDD9448A2C66"
+  },
+  {
+    "来源路径": "D:\\autolysis\\main-autolysis\\components\\interactions\\autolysis_focus_target.gd",
+    "来源散列": "1E176620462432B13AB66404990582AFA27E66C38C701BC4474036CD57275D0A"
+  },
+  {
+    "来源路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_focus_ray_query.gd",
+    "来源散列": "D5D0C1D70262C50B541B18116345A2FB6BD6D0B3CE8FD0A6F8BCE91BBA8C4A90"
+  }
+]

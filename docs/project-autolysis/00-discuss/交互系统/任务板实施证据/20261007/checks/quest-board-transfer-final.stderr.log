@@ -1,0 +1,66 @@
+ERROR: Object is locked and can't be freed.
+   at: callp (core/object/object.cpp:890)
+   GDScript backtrace (most recent call first):
+       [0] _immediate_release_callback (res://main-autolysis/player/tests/quest_board_transfer_test.gd:516)
+       [1] prepare_visual (res://main-autolysis/player/tests/quest_board_transfer_test.gd:34)
+       [2] _try_quest_board_transfer (res://main-autolysis/player/components/autolysis_inventory_controller.gd:1241)
+       [3] try_place_in_quest_board_slot (res://main-autolysis/player/components/autolysis_inventory_controller.gd:1179)
+       [4] _execute (res://main-autolysis/player/tests/quest_board_transfer_test.gd:315)
+       [5] _immediate_release_boundaries (res://main-autolysis/player/tests/quest_board_transfer_test.gd:548)
+       [6] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:175)
+       [7] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+SCRIPT ERROR: Attempted to free a locked object (calling or emitting).
+   at: _immediate_release_callback (res://main-autolysis/player/tests/quest_board_transfer_test.gd:516)
+   GDScript backtrace (most recent call first):
+       [0] _immediate_release_callback (res://main-autolysis/player/tests/quest_board_transfer_test.gd:516)
+       [1] prepare_visual (res://main-autolysis/player/tests/quest_board_transfer_test.gd:34)
+       [2] _try_quest_board_transfer (res://main-autolysis/player/components/autolysis_inventory_controller.gd:1241)
+       [3] try_place_in_quest_board_slot (res://main-autolysis/player/components/autolysis_inventory_controller.gd:1179)
+       [4] _execute (res://main-autolysis/player/tests/quest_board_transfer_test.gd:315)
+       [5] _immediate_release_boundaries (res://main-autolysis/player/tests/quest_board_transfer_test.gd:548)
+       [6] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:175)
+       [7] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+ERROR: Object is locked and can't be freed.
+   at: callp (core/object/object.cpp:890)
+   GDScript backtrace (most recent call first):
+       [0] _immediate_release_callback (res://main-autolysis/player/tests/quest_board_transfer_test.gd:524)
+       [1] prepare_visual (res://main-autolysis/player/tests/quest_board_transfer_test.gd:34)
+       [2] _try_quest_board_transfer (res://main-autolysis/player/components/autolysis_inventory_controller.gd:1241)
+       [3] try_place_in_quest_board_slot (res://main-autolysis/player/components/autolysis_inventory_controller.gd:1179)
+       [4] _execute (res://main-autolysis/player/tests/quest_board_transfer_test.gd:315)
+       [5] _immediate_release_boundaries (res://main-autolysis/player/tests/quest_board_transfer_test.gd:548)
+       [6] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:175)
+       [7] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+SCRIPT ERROR: Attempted to free a locked object (calling or emitting).
+   at: _immediate_release_callback (res://main-autolysis/player/tests/quest_board_transfer_test.gd:524)
+   GDScript backtrace (most recent call first):
+       [0] _immediate_release_callback (res://main-autolysis/player/tests/quest_board_transfer_test.gd:524)
+       [1] prepare_visual (res://main-autolysis/player/tests/quest_board_transfer_test.gd:34)
+       [2] _try_quest_board_transfer (res://main-autolysis/player/components/autolysis_inventory_controller.gd:1241)
+       [3] try_place_in_quest_board_slot (res://main-autolysis/player/components/autolysis_inventory_controller.gd:1179)
+       [4] _execute (res://main-autolysis/player/tests/quest_board_transfer_test.gd:315)
+       [5] _immediate_release_boundaries (res://main-autolysis/player/tests/quest_board_transfer_test.gd:548)
+       [6] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:175)
+       [7] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+ERROR: Object is locked and can't be freed.
+   at: callp (core/object/object.cpp:890)
+   GDScript backtrace (most recent call first):
+       [0] _immediate_release_callback (res://main-autolysis/player/tests/quest_board_transfer_test.gd:524)
+       [1] _prepare_visual (res://main-autolysis/player/tests/quest_board_transfer_test.gd:21)
+       [2] _try_quest_board_transfer (res://main-autolysis/player/components/autolysis_inventory_controller.gd:1241)
+       [3] try_take_from_quest_board_slot (res://main-autolysis/player/components/autolysis_inventory_controller.gd:1196)
+       [4] _execute (res://main-autolysis/player/tests/quest_board_transfer_test.gd:315)
+       [5] _immediate_release_boundaries (res://main-autolysis/player/tests/quest_board_transfer_test.gd:548)
+       [6] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:175)
+       [7] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)
+SCRIPT ERROR: Attempted to free a locked object (calling or emitting).
+   at: _immediate_release_callback (res://main-autolysis/player/tests/quest_board_transfer_test.gd:524)
+   GDScript backtrace (most recent call first):
+       [0] _immediate_release_callback (res://main-autolysis/player/tests/quest_board_transfer_test.gd:524)
+       [1] _prepare_visual (res://main-autolysis/player/tests/quest_board_transfer_test.gd:21)
+       [2] _try_quest_board_transfer (res://main-autolysis/player/components/autolysis_inventory_controller.gd:1241)
+       [3] try_take_from_quest_board_slot (res://main-autolysis/player/components/autolysis_inventory_controller.gd:1196)
+       [4] _execute (res://main-autolysis/player/tests/quest_board_transfer_test.gd:315)
+       [5] _immediate_release_boundaries (res://main-autolysis/player/tests/quest_board_transfer_test.gd:548)
+       [6] _fixture (res://main-autolysis/player/tests/quest_board_transfer_test.gd:175)
+       [7] frames (res://main-autolysis/player/tests/quest_board_transfer_test.gd:70)

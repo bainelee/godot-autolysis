@@ -1,0 +1,211 @@
+{
+  "日期": "2026-10-07",
+  "测试项数": 9,
+  "解析项数": 1,
+  "通过断言数": 1705.0,
+  "全部通过": true,
+  "有效检查": [
+    {
+      "记录路径": "checks/import-final.json",
+      "检查": "import-final",
+      "通过": true,
+      "退出码": 0,
+      "通过断言数": 0,
+      "非预期错误": [],
+      "错误流字节数": 0,
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--editor",
+        "--quit"
+      ]
+    },
+    {
+      "记录路径": "checks/quest-board-interaction-final.json",
+      "检查": "quest-board-interaction-final",
+      "通过": true,
+      "退出码": 0,
+      "通过断言数": 135,
+      "非预期错误": [],
+      "错误流字节数": 0,
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/quest_board_interaction_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/任务板实施证据/20261007/checks/quest-board-interaction-final"
+      ]
+    },
+    {
+      "记录路径": "checks/quest-board-transfer-complete.json",
+      "检查": "quest-board-transfer-complete",
+      "通过": true,
+      "退出码": 0,
+      "通过断言数": 573,
+      "非预期错误": [],
+      "错误流字节数": 0,
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/quest_board_transfer_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/任务板实施证据/20261007/checks/quest-board-transfer-complete"
+      ]
+    },
+    {
+      "记录路径": "checks/direct.json",
+      "检查": "direct",
+      "通过": true,
+      "退出码": 0,
+      "通过断言数": 53,
+      "非预期错误": [],
+      "错误流字节数": 0,
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--script",
+        "res://main-autolysis/player/tests/direct_interaction_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/任务板实施证据/20261007/checks/direct"
+      ]
+    },
+    {
+      "记录路径": "checks/migration.json",
+      "检查": "migration",
+      "通过": true,
+      "退出码": 0,
+      "通过断言数": 23,
+      "非预期错误": [],
+      "错误流字节数": 0,
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--script",
+        "res://main-autolysis/player/tests/component_migration_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/任务板实施证据/20261007/checks/migration"
+      ]
+    },
+    {
+      "记录路径": "checks/focus.json",
+      "检查": "focus",
+      "通过": true,
+      "退出码": 0,
+      "通过断言数": 235,
+      "非预期错误": [],
+      "错误流字节数": 0,
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--script",
+        "res://main-autolysis/player/tests/focus_interaction_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/任务板实施证据/20261007/checks/focus"
+      ]
+    },
+    {
+      "记录路径": "checks/paper-inventory.json",
+      "检查": "paper-inventory",
+      "通过": true,
+      "退出码": 0,
+      "通过断言数": 274,
+      "非预期错误": [],
+      "错误流字节数": 0,
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--script",
+        "res://main-autolysis/player/tests/quest_paper_inventory_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/任务板实施证据/20261007/checks/paper-inventory"
+      ]
+    },
+    {
+      "记录路径": "checks/held-text-final-dir/held-text-final-dir.json",
+      "检查": "held-text-final-dir",
+      "通过": true,
+      "退出码": 0,
+      "通过断言数": 85,
+      "非预期错误": [],
+      "错误流字节数": 0,
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--script",
+        "res://main-autolysis/player/tests/quest_held_text_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/任务板实施证据/20261007/checks/held-text-final-dir/内部报告"
+      ]
+    },
+    {
+      "记录路径": "checks/blend-transfer.json",
+      "检查": "blend-transfer",
+      "通过": true,
+      "退出码": 0,
+      "通过断言数": 324,
+      "非预期错误": [],
+      "错误流字节数": 0,
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--script",
+        "res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/任务板实施证据/20261007/checks/blend-transfer"
+      ]
+    },
+    {
+      "记录路径": "checks/telephone-focus.json",
+      "检查": "telephone-focus",
+      "通过": true,
+      "退出码": 0,
+      "通过断言数": 3,
+      "非预期错误": [],
+      "错误流字节数": 0,
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--script",
+        "res://main-autolysis/player/tests/telephone_focus_dependency_audit.gd",
+        "--",
+        "--evidence-dir",
+        "res://docs/project-autolysis/00-discuss/交互系统/任务板实施证据/20261007/checks/telephone-focus"
+      ]
+    }
+  ],
+  "未验证": [
+    "图形纸面视觉可读性",
+    "原生系统指针操作",
+    "人工编辑器操作"
+  ],
+  "历史保留": [
+    "首次导入用户目录权限失败",
+    "首次转移测试夹具所有者警告",
+    "扩大释放首轮测试直接释放执行中对象被引擎锁拒绝"
+  ],
+  "计数说明": "只计算最终有效检查，历史首轮与中间复验不重复计数"
+}

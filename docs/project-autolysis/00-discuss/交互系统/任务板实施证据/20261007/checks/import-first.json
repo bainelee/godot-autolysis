@@ -1,0 +1,27 @@
+{
+  "检查": "import-first",
+  "时间": "2026-10-07T18:45:10.3419577+08:00",
+  "进程编号": 26140,
+  "退出码": 0,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--editor",
+    "--quit"
+  ],
+  "通过断言数": 0,
+  "预期错误计数": {},
+  "非预期错误": [
+    "ERROR: Could not create editor data directory: C:/Users/baine/AppData/Roaming/Godot",
+    "ERROR: Could not create editor config directory: C:/Users/baine/AppData/Roaming/Godot",
+    "ERROR: Could not open 'user://' directory: 'user://'.",
+    "ERROR: Safe save failed. This may be a permissions problem, but also may happen because you are running a paranoid antivirus. If this is the case, please switch to Windows Defender or disable the 'safe save' option in editor settings. This makes it work, but increases the risk of file corruption in a crash.",
+    "ERROR: Cannot open directory 'C:/Users/baine/AppData/Roaming/Godot/feature_profiles'.",
+    "ERROR: Can't save resource to empty path. Provide non-empty path or a Resource with non-empty resource_path.",
+    "ERROR: Error saving editor settings to "
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "开始时间": "2026-10-07T18:37:12+08:00",
+  "结束时间": "2026-10-07T18:37:14+08:00",
+  "引擎路径": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "启动参数": [
+    "--headless",
+    "--path",
+    "D:\\autolysis",
+    "--script",
+    "res://docs/project-autolysis/00-discuss/交互系统/任务板计划证据/20261007/用户调整后/quest_board_scene_probe.gd"
+  ],
+  "工作目录": "D:\\autolysis",
+  "实际命令": "& \"D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe\" --headless --path \"D:\\autolysis\" --script \"res://docs/project-autolysis/00-discuss/交互系统/任务板计划证据/20261007/用户调整后/quest_board_scene_probe.gd\"",
+  "无图形限制": "使用 --headless（无图形）；未开启图形窗口，未激活应用，未注入输入；Hidden（隐藏）参数只是本机进程启动附加配置，无图形由引擎显示后端探针验证。",
+  "退出码": 0,
+  "任务板场景SHA256（安全散列）执行前": "28E5443DEACB60C44B764FC5186246ED94D34C172BFB87AA89D7C54893D57080",
+  "任务板场景SHA256（安全散列）执行后": "28E5443DEACB60C44B764FC5186246ED94D34C172BFB87AA89D7C54893D57080",
+  "示意纸场景SHA256（安全散列）执行前": "C9ABAAED7C7CDF207A90CAF3C81EB844A05499EE887905D4D978283ED7469ECD",
+  "示意纸场景SHA256（安全散列）执行后": "C9ABAAED7C7CDF207A90CAF3C81EB844A05499EE887905D4D978283ED7469ECD",
+  "生产场景未改动": true
+}

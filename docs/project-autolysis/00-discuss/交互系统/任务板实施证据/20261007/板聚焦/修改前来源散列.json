@@ -1,0 +1,42 @@
+[
+  {
+    "来源路径": "D:\\autolysis\\AGENTS.md",
+    "来源散列": "37858D04A7074AFEC6ED8DDCBF8044B3FD615B05D9B342D8C90081788D93AA99"
+  },
+  {
+    "来源路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\任务板聚焦与任务文件取放实现计划.md",
+    "来源散列": "BC7727F00AA93F9619C34DC58029E274DC65F1DA038E60B1C1278F467A97B760"
+  },
+  {
+    "来源路径": "D:\\autolysis\\main-autolysis\\components\\interactions\\autolysis_focus_target.gd",
+    "来源散列": "B4324ADEF6FE2AAC83B418D9FC8199B24A1A41B95DD12164E13F6CD33FAC864C"
+  },
+  {
+    "来源路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_focus_ray_query.gd",
+    "来源散列": "89B0E788799D2DBAD973D56EF33FA4887AC898076D51FD2E9BAA06FA84615DA3"
+  },
+  {
+    "来源路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_focus_controller.gd",
+    "来源散列": "9502411F8099C37B4F1390B96D5A954853C6E36776687424D634C78EB14EB47C"
+  },
+  {
+    "来源路径": "D:\\autolysis\\main-autolysis\\components\\interactions\\autolysis_interaction_component.gd",
+    "来源散列": "FB38CBAA492FAA58F62AC9E4C28CEDB3E9AD918C9641D49E7A56B0DF037BA961"
+  },
+  {
+    "来源路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_board_0.tscn",
+    "来源散列": "28E5443DEACB60C44B764FC5186246ED94D34C172BFB87AA89D7C54893D57080"
+  },
+  {
+    "来源路径": "D:\\cogito\\addons\\cogito\\Components\\Interactions\\BasicInteraction.gd",
+    "来源散列": "840E5AA45DCDBDD3DDAFF5C80117A03C4BA11F3EE1D3782A4A52002491317300"
+  },
+  {
+    "来源路径": "D:\\cogito\\addons\\cogito\\Components\\PlayerInteractionComponent.gd",
+    "来源散列": "78DE8D1B12F2697E53FFB9E4206F986DB26692859F6B81C0A11576FD8FC97291"
+  },
+  {
+    "来源路径": "D:\\cogito\\addons\\cogito\\InventoryPD\\cogito_inventory.gd",
+    "来源散列": "1E5B3767B3E1A91C6F402CEB12348A2192082526ECA034B7676AE2E15EDEBD29"
+  }
+]
