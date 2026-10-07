@@ -1,0 +1,30 @@
+[
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_paper/quest_paper.tscn",
+    "摘要": "CBF544E1C2E38ABCB25B61668929A2E059E88344F95F4F43E21918440E4A09E8"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_paper/autolysis_quest_paper.gd",
+    "摘要": "D336DCE4E00623E1BFD0A5A7D82EC3BA36DC047F933FEA06C490806E9B227B5E"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_paper/visuals/quest_paper_visual.tscn",
+    "摘要": "EABED60C931572EF6A1ED185E90B447C25690E4F1F78D8B16B50CD8EF290FE49"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_quest_paper_visual.gd",
+    "摘要": "4A12F9E628C75CDE2055ADE2A7153066E0DEC29E03E5B2D84F535E68302CB33F"
+  },
+  {
+    "文件": "main-autolysis/ui/quest-paper/autolysis_quest_paper_view.tscn",
+    "摘要": "A360DD39452236AB45D397196580C5BB2198A815D25ACA26DE99F37D55ED3F39"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/paper/mat_paper_test_0.tres",
+    "摘要": "BAEB4FB2325DCE52EB058FFF82A9FE442858E0315E6309B542F7339E71242421"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/paper/mat_paper_test_1.tres",
+    "摘要": "240D8C01FE1A547607BB19CF136747AF7A97FB3B201EA68E1E415A5C6EDA4C72"
+  }
+]

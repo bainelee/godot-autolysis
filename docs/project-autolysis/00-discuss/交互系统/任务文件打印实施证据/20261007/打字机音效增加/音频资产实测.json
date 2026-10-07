@@ -1,0 +1,107 @@
+[
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\machine\\typewriter\\typewriter_axis_back_0.wav",
+    "声道": 2,
+    "采样率": 44100,
+    "采样位数": 16,
+    "每秒字节数": 176400,
+    "采样数据字节数": 1156552,
+    "秒数": 6.556417233560091,
+    "原始块标识": [
+      "fmt ",
+      "data"
+    ],
+    "包含循环元数据": false,
+    "文件散列": "387A8CA52F44CBF8060540C9AA01E71BC2E6416E3F02A48A25361E5E854E3B4B"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\machine\\typewriter\\typewriter_ding_0.wav",
+    "声道": 2,
+    "采样率": 44100,
+    "采样位数": 16,
+    "每秒字节数": 176400,
+    "采样数据字节数": 77340,
+    "秒数": 0.4384353741496599,
+    "原始块标识": [
+      "fmt ",
+      "data"
+    ],
+    "包含循环元数据": false,
+    "文件散列": "A9F1F13D1C4446D07E36A98F61A34CB5EAF6D6CB4B9DCD86D9BAAD5067CCA7CD"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\machine\\typewriter\\typewriter_print_main_back.wav",
+    "声道": 2,
+    "采样率": 44100,
+    "采样位数": 16,
+    "每秒字节数": 176400,
+    "采样数据字节数": 136908,
+    "秒数": 0.7761224489795918,
+    "原始块标识": [
+      "fmt ",
+      "data"
+    ],
+    "包含循环元数据": false,
+    "文件散列": "AA32F58C0DD3EE043B4C6617580E972F01222874CB2415BB0179775C2D98CFE3"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\machine\\typewriter\\typewriter_single_type_0.wav",
+    "声道": 2,
+    "采样率": 44100,
+    "采样位数": 16,
+    "每秒字节数": 176400,
+    "采样数据字节数": 43384,
+    "秒数": 0.24594104308390022,
+    "原始块标识": [
+      "fmt ",
+      "data"
+    ],
+    "包含循环元数据": false,
+    "文件散列": "3259B460DB11B119CACB20E161728ADD3E4CA933B160B3F3602782CA49DFAED8"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\machine\\typewriter\\typewriter_single_type_1.wav",
+    "声道": 2,
+    "采样率": 44100,
+    "采样位数": 16,
+    "每秒字节数": 176400,
+    "采样数据字节数": 74552,
+    "秒数": 0.42263038548752835,
+    "原始块标识": [
+      "fmt ",
+      "data"
+    ],
+    "包含循环元数据": false,
+    "文件散列": "30F1D768C91FB4321EB5222644990E2B278FAE5CE516A25BFC12840FDC15C2C7"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\machine\\typewriter\\typewriter_single_type_2.wav",
+    "声道": 2,
+    "采样率": 44100,
+    "采样位数": 16,
+    "每秒字节数": 176400,
+    "采样数据字节数": 39612,
+    "秒数": 0.2245578231292517,
+    "原始块标识": [
+      "fmt ",
+      "data"
+    ],
+    "包含循环元数据": false,
+    "文件散列": "5F69E7C043526A0CD96A67D020CB5B36C9D8F0D2A5CABF7D857E35B0B33D696F"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\assets\\audio\\sound_fx\\machine\\typewriter\\typewriter_single_type_3.wav",
+    "声道": 2,
+    "采样率": 44100,
+    "采样位数": 16,
+    "每秒字节数": 176400,
+    "采样数据字节数": 38880,
+    "秒数": 0.22040816326530613,
+    "原始块标识": [
+      "fmt ",
+      "data"
+    ],
+    "包含循环元数据": false,
+    "文件散列": "E60ED5B8BDA308DB7CF9A728830661282C7E2C34F130F88E766EC89C802D3318"
+  }
+]

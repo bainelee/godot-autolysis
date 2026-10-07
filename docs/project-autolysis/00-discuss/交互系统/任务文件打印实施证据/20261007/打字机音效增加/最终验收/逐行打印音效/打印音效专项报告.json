@@ -1,0 +1,8716 @@
+{
+	"参数": [
+		"--script",
+		"res://main-autolysis/systems/quest-print-system/tests/quest_machine_audio_test.gd"
+	],
+	"场景": [
+		{
+			"名称": "六项真实随机选择",
+			"实际种子": 3,
+			"实际音频完成数": 1,
+			"底层驱动": "Dummy",
+			"指定选择": 0,
+			"选择事件": [
+				{
+					"choice": 0,
+					"event": "typing_choice",
+					"phase": "",
+					"physics_frame": 3,
+					"seconds": 0.0,
+					"ticks_usec": 1005173
+				},
+				{
+					"choice": 0,
+					"event": "typing_choice",
+					"phase": "",
+					"physics_frame": 122,
+					"seconds": 0.0,
+					"ticks_usec": 1384536
+				}
+			],
+			"音频采样率": 44100.0
+		},
+		{
+			"名称": "六项真实随机选择",
+			"实际种子": 11,
+			"实际音频完成数": 1,
+			"底层驱动": "Dummy",
+			"指定选择": 1,
+			"选择事件": [
+				{
+					"choice": 1,
+					"event": "typing_choice",
+					"phase": "",
+					"physics_frame": 201,
+					"seconds": 0.0,
+					"ticks_usec": 1771828
+				},
+				{
+					"choice": 2,
+					"event": "typing_choice",
+					"phase": "",
+					"physics_frame": 413,
+					"seconds": 0.0,
+					"ticks_usec": 2218490
+				}
+			],
+			"音频采样率": 44100.0
+		},
+		{
+			"名称": "六项真实随机选择",
+			"实际种子": 8,
+			"实际音频完成数": 1,
+			"底层驱动": "Dummy",
+			"指定选择": 2,
+			"选择事件": [
+				{
+					"choice": 2,
+					"event": "typing_choice",
+					"phase": "",
+					"physics_frame": 498,
+					"seconds": 0.0,
+					"ticks_usec": 2560791
+				},
+				{
+					"choice": 1,
+					"event": "typing_choice",
+					"phase": "",
+					"physics_frame": 629,
+					"seconds": 0.0,
+					"ticks_usec": 2867898
+				}
+			],
+			"音频采样率": 44100.0
+		},
+		{
+			"名称": "六项真实随机选择",
+			"实际种子": 1,
+			"实际音频完成数": 1,
+			"底层驱动": "Dummy",
+			"指定选择": 3,
+			"选择事件": [
+				{
+					"choice": 3,
+					"event": "typing_choice",
+					"phase": "",
+					"physics_frame": 709,
+					"seconds": 0.0,
+					"ticks_usec": 3216326
+				},
+				{
+					"choice": 0,
+					"event": "typing_choice",
+					"phase": "",
+					"physics_frame": 839,
+					"seconds": 0.0,
+					"ticks_usec": 3515861
+				}
+			],
+			"音频采样率": 44100.0
+		},
+		{
+			"名称": "六项真实随机选择",
+			"实际种子": 2,
+			"实际音频完成数": 0,
+			"底层驱动": "Dummy",
+			"指定选择": 4,
+			"选择事件": [
+				{
+					"choice": 4,
+					"event": "typing_choice",
+					"phase": "",
+					"physics_frame": 941,
+					"seconds": 0.25,
+					"ticks_usec": 3927439
+				},
+				{
+					"choice": 3,
+					"event": "typing_choice",
+					"phase": "",
+					"physics_frame": 956,
+					"seconds": 0.0,
+					"ticks_usec": 4002835
+				}
+			],
+			"音频采样率": 44100.0
+		},
+		{
+			"名称": "六项真实随机选择",
+			"实际种子": 0,
+			"实际音频完成数": 0,
+			"底层驱动": "Dummy",
+			"指定选择": 5,
+			"选择事件": [
+				{
+					"choice": 5,
+					"event": "typing_choice",
+					"phase": "",
+					"physics_frame": 1033,
+					"seconds": 0.4,
+					"ticks_usec": 4260766
+				},
+				{
+					"choice": 3,
+					"event": "typing_choice",
+					"phase": "",
+					"physics_frame": 1057,
+					"seconds": 0.0,
+					"ticks_usec": 4347199
+				}
+			],
+			"音频采样率": 44100.0
+		},
+		{
+			"名称": "静音真实暂停恢复",
+			"场景树暂停": false,
+			"扣除暂停物理帧": 20,
+			"暂停前": {
+				"choice": 4,
+				"events": [
+					{
+						"choice": 4,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1142,
+						"seconds": 0.25,
+						"ticks_usec": 4716408
+					}
+				],
+				"gap_remaining": 0.2,
+				"paused": true,
+				"typing_active": true
+			},
+			"暂停后": {
+				"choice": 4,
+				"events": [
+					{
+						"choice": 4,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1142,
+						"seconds": 0.25,
+						"ticks_usec": 4716408
+					}
+				],
+				"gap_remaining": 0.2,
+				"paused": true,
+				"typing_active": true
+			},
+			"有效停顿实测秒": 0.266666666666667,
+			"选择": 4,
+			"选择事件": [
+				{
+					"choice": 4,
+					"event": "typing_choice",
+					"phase": "",
+					"physics_frame": 1142,
+					"seconds": 0.25,
+					"ticks_usec": 4716408
+				},
+				{
+					"choice": 3,
+					"event": "typing_choice",
+					"phase": "",
+					"physics_frame": 1178,
+					"seconds": 0.0,
+					"ticks_usec": 4791684
+				}
+			]
+		},
+		{
+			"名称": "静音真实暂停恢复",
+			"场景树暂停": false,
+			"扣除暂停物理帧": 20,
+			"暂停前": {
+				"choice": 5,
+				"events": [
+					{
+						"choice": 5,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1182,
+						"seconds": 0.4,
+						"ticks_usec": 4916342
+					}
+				],
+				"gap_remaining": 0.35,
+				"paused": true,
+				"typing_active": true
+			},
+			"暂停后": {
+				"choice": 5,
+				"events": [
+					{
+						"choice": 5,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1182,
+						"seconds": 0.4,
+						"ticks_usec": 4916342
+					}
+				],
+				"gap_remaining": 0.35,
+				"paused": true,
+				"typing_active": true
+			},
+			"有效停顿实测秒": 0.416666666666667,
+			"选择": 5,
+			"选择事件": [
+				{
+					"choice": 5,
+					"event": "typing_choice",
+					"phase": "",
+					"physics_frame": 1182,
+					"seconds": 0.4,
+					"ticks_usec": 4916342
+				},
+				{
+					"choice": 3,
+					"event": "typing_choice",
+					"phase": "",
+					"physics_frame": 1227,
+					"seconds": 0.0,
+					"ticks_usec": 5010807
+				}
+			]
+		},
+		{
+			"名称": "静音真实暂停恢复",
+			"场景树暂停": true,
+			"扣除暂停物理帧": 20,
+			"暂停前": {
+				"choice": 4,
+				"events": [
+					{
+						"choice": 4,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1231,
+						"seconds": 0.25,
+						"ticks_usec": 5138626
+					}
+				],
+				"gap_remaining": 0.2,
+				"paused": true,
+				"typing_active": true
+			},
+			"暂停后": {
+				"choice": 4,
+				"events": [
+					{
+						"choice": 4,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1231,
+						"seconds": 0.25,
+						"ticks_usec": 5138626
+					}
+				],
+				"gap_remaining": 0.2,
+				"paused": true,
+				"typing_active": true
+			},
+			"有效停顿实测秒": 0.266666666666667,
+			"选择": 4,
+			"选择事件": [
+				{
+					"choice": 4,
+					"event": "typing_choice",
+					"phase": "",
+					"physics_frame": 1231,
+					"seconds": 0.25,
+					"ticks_usec": 5138626
+				},
+				{
+					"choice": 3,
+					"event": "typing_choice",
+					"phase": "",
+					"physics_frame": 1267,
+					"seconds": 0.0,
+					"ticks_usec": 5208175
+				}
+			]
+		},
+		{
+			"名称": "静音真实暂停恢复",
+			"场景树暂停": true,
+			"扣除暂停物理帧": 20,
+			"暂停前": {
+				"choice": 5,
+				"events": [
+					{
+						"choice": 5,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1271,
+						"seconds": 0.4,
+						"ticks_usec": 5338210
+					}
+				],
+				"gap_remaining": 0.35,
+				"paused": true,
+				"typing_active": true
+			},
+			"暂停后": {
+				"choice": 5,
+				"events": [
+					{
+						"choice": 5,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1271,
+						"seconds": 0.4,
+						"ticks_usec": 5338210
+					}
+				],
+				"gap_remaining": 0.35,
+				"paused": true,
+				"typing_active": true
+			},
+			"有效停顿实测秒": 0.416666666666667,
+			"选择": 5,
+			"选择事件": [
+				{
+					"choice": 5,
+					"event": "typing_choice",
+					"phase": "",
+					"physics_frame": 1271,
+					"seconds": 0.4,
+					"ticks_usec": 5338210
+				},
+				{
+					"choice": 3,
+					"event": "typing_choice",
+					"phase": "",
+					"physics_frame": 1316,
+					"seconds": 0.0,
+					"ticks_usec": 5424852
+				}
+			]
+		},
+		{
+			"可编辑音高": 0.200000002980232,
+			"名称": "敲击真实混音暂停",
+			"恢复位置": 0.0232199542224407,
+			"稳定暂停位置": 0.00290249427780509,
+			"音效快照": {
+				"choice": 0,
+				"events": [
+					{
+						"choice": 0,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1320,
+						"seconds": 0.0,
+						"ticks_usec": 5549567
+					}
+				],
+				"gap_remaining": 0.0,
+				"paused": false,
+				"typing_active": true
+			}
+		},
+		{
+			"名称": "正式打印音效生命周期",
+			"实际数据": [
+				"a"
+			],
+			"机械快照": {
+				"config": {
+					"axis_reset": "(0.0, 0.0, 0.0)",
+					"capacity": 21,
+					"center": "(0.1, 0.0, 0.0)",
+					"center_time": 0.05,
+					"first": "(0.0, -0.1, 0.0)",
+					"first_descent": 0.05,
+					"first_left": 0.05,
+					"first_wait": 0.05,
+					"left": "(-0.07, 0.0, 0.0)",
+					"minimum": -0.5,
+					"next_line": 0.05,
+					"print_line": 0.05,
+					"reset_time": 0.05,
+					"return_left": 0.05,
+					"right": "(0.27, 0.0, 0.0)",
+					"spacing": 0.02
+				},
+				"events": [
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 1430,
+						"serial": 1,
+						"state": 1,
+						"ticks_usec": 5938388
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 1430,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 5986772
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 1430,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 5987105
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 1432,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6050618
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 1432,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6050702
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 1435,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6052161
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_left",
+						"physics_frame": 1435,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6052410
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_left",
+						"physics_frame": 1438,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6053616
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "print_line",
+						"physics_frame": 1438,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6053824
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "print_line",
+						"physics_frame": 1441,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6054972
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 1441,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6055080
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 1441,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 6055129
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "center",
+						"physics_frame": 1441,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 6055304
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "center",
+						"physics_frame": 1444,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 6056404
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "axis_reset",
+						"physics_frame": 1444,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 6056842
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "axis_reset",
+						"physics_frame": 1447,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 6058127
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 1447,
+						"serial": 2,
+						"state": 4,
+						"ticks_usec": 6058243
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_completed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 1447,
+						"serial": 2,
+						"state": 4,
+						"ticks_usec": 6058376
+					}
+				],
+				"failure": "",
+				"finished_pending": false,
+				"first_left_done": true,
+				"line": 0,
+				"mechanical_count": 1,
+				"phase": "",
+				"serial": 2,
+				"state": 4,
+				"take_token": 0
+			},
+			"机械非空行数": 1,
+			"音效快照": {
+				"choice": -1,
+				"events": [
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "first_left",
+						"physics_frame": 1435,
+						"seconds": 0.0,
+						"ticks_usec": 6052345
+					},
+					{
+						"choice": 1,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1438,
+						"seconds": 0.0,
+						"ticks_usec": 6053754
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1441,
+						"seconds": 0.0,
+						"ticks_usec": 6054870
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1441,
+						"seconds": 0.0,
+						"ticks_usec": 6054910
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "center",
+						"physics_frame": 1441,
+						"seconds": 0.0,
+						"ticks_usec": 6055241
+					},
+					{
+						"choice": -1,
+						"event": "axis_return_started",
+						"phase": "axis_reset",
+						"physics_frame": 1444,
+						"seconds": 0.0,
+						"ticks_usec": 6056777
+					},
+					{
+						"choice": -1,
+						"event": "axis_return_stopped",
+						"phase": "",
+						"physics_frame": 1447,
+						"seconds": 0.0,
+						"ticks_usec": 6058059
+					}
+				],
+				"gap_remaining": 0.0,
+				"paused": false,
+				"typing_active": false
+			}
+		},
+		{
+			"名称": "正式打印音效生命周期",
+			"实际数据": [
+				"",
+				"a",
+				"",
+				"b",
+				""
+			],
+			"机械快照": {
+				"config": {
+					"axis_reset": "(0.0, 0.0, 0.0)",
+					"capacity": 21,
+					"center": "(0.1, 0.0, 0.0)",
+					"center_time": 0.05,
+					"first": "(0.0, -0.1, 0.0)",
+					"first_descent": 0.05,
+					"first_left": 0.05,
+					"first_wait": 0.05,
+					"left": "(-0.07, 0.0, 0.0)",
+					"minimum": -0.5,
+					"next_line": 0.05,
+					"print_line": 0.05,
+					"reset_time": 0.05,
+					"return_left": 0.05,
+					"right": "(0.27, 0.0, 0.0)",
+					"spacing": 0.02
+				},
+				"events": [
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 1452,
+						"serial": 1,
+						"state": 1,
+						"ticks_usec": 6205075
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 1452,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6251183
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 1452,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6251384
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 1454,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6317338
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 1454,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6317405
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 1457,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6318365
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 1457,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6318494
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "next_line",
+						"physics_frame": 1457,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6318802
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "next_line",
+						"physics_frame": 1460,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6319834
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "first_left",
+						"physics_frame": 1460,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6320074
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "first_left",
+						"physics_frame": 1463,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6321155
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "print_line",
+						"physics_frame": 1463,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6321332
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "print_line",
+						"physics_frame": 1466,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6322433
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 1466,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6322538
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "return_left",
+						"physics_frame": 1466,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6322690
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "return_left",
+						"physics_frame": 1469,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6323920
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 2,
+						"phase": "next_line",
+						"physics_frame": 1469,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6324091
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 2,
+						"phase": "next_line",
+						"physics_frame": 1472,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6325465
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 2,
+						"phase": "",
+						"physics_frame": 1472,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6325679
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 3,
+						"phase": "next_line",
+						"physics_frame": 1472,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6325839
+					},
+					{
+						"axis_position": "(0.0, -0.16, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 3,
+						"phase": "next_line",
+						"physics_frame": 1475,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6327016
+					},
+					{
+						"axis_position": "(0.0, -0.16, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 3,
+						"phase": "print_line",
+						"physics_frame": 1475,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6327177
+					},
+					{
+						"axis_position": "(0.0, -0.16, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 3,
+						"phase": "print_line",
+						"physics_frame": 1478,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6328342
+					},
+					{
+						"axis_position": "(0.0, -0.16, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 3,
+						"phase": "",
+						"physics_frame": 1478,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6328445
+					},
+					{
+						"axis_position": "(0.0, -0.16, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 3,
+						"phase": "return_left",
+						"physics_frame": 1478,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6328603
+					},
+					{
+						"axis_position": "(0.0, -0.16, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 3,
+						"phase": "return_left",
+						"physics_frame": 1481,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6329433
+					},
+					{
+						"axis_position": "(0.0, -0.16, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 4,
+						"phase": "next_line",
+						"physics_frame": 1481,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6329571
+					},
+					{
+						"axis_position": "(0.0, -0.18, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 4,
+						"phase": "next_line",
+						"physics_frame": 1484,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6329990
+					},
+					{
+						"axis_position": "(0.0, -0.18, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 4,
+						"phase": "",
+						"physics_frame": 1484,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6330128
+					},
+					{
+						"axis_position": "(0.0, -0.18, 0.0)",
+						"event": "state_changed",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 4,
+						"phase": "",
+						"physics_frame": 1484,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 6330175
+					},
+					{
+						"axis_position": "(0.0, -0.18, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 4,
+						"phase": "center",
+						"physics_frame": 1484,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 6330331
+					},
+					{
+						"axis_position": "(0.0, -0.18, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 4,
+						"phase": "center",
+						"physics_frame": 1487,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 6330710
+					},
+					{
+						"axis_position": "(0.0, -0.18, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 4,
+						"phase": "axis_reset",
+						"physics_frame": 1487,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 6331051
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 4,
+						"phase": "axis_reset",
+						"physics_frame": 1490,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 6331474
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 4,
+						"phase": "",
+						"physics_frame": 1490,
+						"serial": 2,
+						"state": 4,
+						"ticks_usec": 6331571
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_completed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 4,
+						"phase": "",
+						"physics_frame": 1490,
+						"serial": 2,
+						"state": 4,
+						"ticks_usec": 6331695
+					}
+				],
+				"failure": "",
+				"finished_pending": false,
+				"first_left_done": true,
+				"line": 4,
+				"mechanical_count": 5,
+				"phase": "",
+				"serial": 2,
+				"state": 4,
+				"take_token": 0
+			},
+			"机械非空行数": 2,
+			"音效快照": {
+				"choice": -1,
+				"events": [
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "first_left",
+						"physics_frame": 1460,
+						"seconds": 0.0,
+						"ticks_usec": 6320008
+					},
+					{
+						"choice": 1,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1463,
+						"seconds": 0.0,
+						"ticks_usec": 6321265
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1466,
+						"seconds": 0.0,
+						"ticks_usec": 6322340
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1466,
+						"seconds": 0.0,
+						"ticks_usec": 6322373
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1466,
+						"seconds": 0.0,
+						"ticks_usec": 6322627
+					},
+					{
+						"choice": 4,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1475,
+						"seconds": 0.25,
+						"ticks_usec": 6327116
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1478,
+						"seconds": 0.0,
+						"ticks_usec": 6328242
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1478,
+						"seconds": 0.0,
+						"ticks_usec": 6328279
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1478,
+						"seconds": 0.0,
+						"ticks_usec": 6328539
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "center",
+						"physics_frame": 1484,
+						"seconds": 0.0,
+						"ticks_usec": 6330267
+					},
+					{
+						"choice": -1,
+						"event": "axis_return_started",
+						"phase": "axis_reset",
+						"physics_frame": 1487,
+						"seconds": 0.0,
+						"ticks_usec": 6330990
+					},
+					{
+						"choice": -1,
+						"event": "axis_return_stopped",
+						"phase": "",
+						"physics_frame": 1490,
+						"seconds": 0.0,
+						"ticks_usec": 6331419
+					}
+				],
+				"gap_remaining": 0.0,
+				"paused": false,
+				"typing_active": false
+			}
+		},
+		{
+			"名称": "正式打印音效生命周期",
+			"实际数据": [
+				"",
+				"",
+				""
+			],
+			"机械快照": {
+				"config": {
+					"axis_reset": "(0.0, 0.0, 0.0)",
+					"capacity": 21,
+					"center": "(0.1, 0.0, 0.0)",
+					"center_time": 0.05,
+					"first": "(0.0, -0.1, 0.0)",
+					"first_descent": 0.05,
+					"first_left": 0.05,
+					"first_wait": 0.05,
+					"left": "(-0.07, 0.0, 0.0)",
+					"minimum": -0.5,
+					"next_line": 0.05,
+					"print_line": 0.05,
+					"reset_time": 0.05,
+					"return_left": 0.05,
+					"right": "(0.27, 0.0, 0.0)",
+					"spacing": 0.02
+				},
+				"events": [
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 1495,
+						"serial": 1,
+						"state": 1,
+						"ticks_usec": 6471742
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 1495,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6517743
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 1495,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6517961
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 1497,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6584148
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 1497,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6584218
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 1500,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6585638
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 1500,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6585769
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "next_line",
+						"physics_frame": 1500,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6585911
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "next_line",
+						"physics_frame": 1503,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6587145
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 1503,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6587282
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 2,
+						"phase": "next_line",
+						"physics_frame": 1503,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6587416
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 2,
+						"phase": "next_line",
+						"physics_frame": 1506,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6588501
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 2,
+						"phase": "",
+						"physics_frame": 1506,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6588627
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 2,
+						"phase": "",
+						"physics_frame": 1506,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 6588678
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 2,
+						"phase": "center",
+						"physics_frame": 1506,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 6588871
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 2,
+						"phase": "center",
+						"physics_frame": 1509,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 6590033
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 2,
+						"phase": "axis_reset",
+						"physics_frame": 1509,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 6590533
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 2,
+						"phase": "axis_reset",
+						"physics_frame": 1512,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 6591678
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 2,
+						"phase": "",
+						"physics_frame": 1512,
+						"serial": 2,
+						"state": 4,
+						"ticks_usec": 6591840
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_completed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 2,
+						"phase": "",
+						"physics_frame": 1512,
+						"serial": 2,
+						"state": 4,
+						"ticks_usec": 6591968
+					}
+				],
+				"failure": "",
+				"finished_pending": false,
+				"first_left_done": false,
+				"line": 2,
+				"mechanical_count": 3,
+				"phase": "",
+				"serial": 2,
+				"state": 4,
+				"take_token": 0
+			},
+			"机械非空行数": 0,
+			"音效快照": {
+				"choice": -1,
+				"events": [
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "center",
+						"physics_frame": 1506,
+						"seconds": 0.0,
+						"ticks_usec": 6588808
+					},
+					{
+						"choice": -1,
+						"event": "axis_return_started",
+						"phase": "axis_reset",
+						"physics_frame": 1509,
+						"seconds": 0.0,
+						"ticks_usec": 6590379
+					},
+					{
+						"choice": -1,
+						"event": "axis_return_stopped",
+						"phase": "",
+						"physics_frame": 1512,
+						"seconds": 0.0,
+						"ticks_usec": 6591591
+					}
+				],
+				"gap_remaining": 0.0,
+				"paused": false,
+				"typing_active": false
+			}
+		},
+		{
+			"名称": "正式打印音效生命周期",
+			"实际数据": [
+				" ",
+				"\t",
+				""
+			],
+			"机械快照": {
+				"config": {
+					"axis_reset": "(0.0, 0.0, 0.0)",
+					"capacity": 21,
+					"center": "(0.1, 0.0, 0.0)",
+					"center_time": 0.05,
+					"first": "(0.0, -0.1, 0.0)",
+					"first_descent": 0.05,
+					"first_left": 0.05,
+					"first_wait": 0.05,
+					"left": "(-0.07, 0.0, 0.0)",
+					"minimum": -0.5,
+					"next_line": 0.05,
+					"print_line": 0.05,
+					"reset_time": 0.05,
+					"return_left": 0.05,
+					"right": "(0.27, 0.0, 0.0)",
+					"spacing": 0.02
+				},
+				"events": [
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 1517,
+						"serial": 1,
+						"state": 1,
+						"ticks_usec": 6760764
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 1517,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6806719
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 1517,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6806938
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 1519,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6873228
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 1519,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6873299
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 1522,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6874863
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_left",
+						"physics_frame": 1522,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6875102
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_left",
+						"physics_frame": 1525,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6876207
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "print_line",
+						"physics_frame": 1525,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6876345
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "print_line",
+						"physics_frame": 1528,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6877389
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 1528,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6877501
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "return_left",
+						"physics_frame": 1528,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6877660
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "return_left",
+						"physics_frame": 1531,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6878894
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "next_line",
+						"physics_frame": 1531,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6879073
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "next_line",
+						"physics_frame": 1534,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6880452
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "print_line",
+						"physics_frame": 1534,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6880630
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "print_line",
+						"physics_frame": 1537,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6881755
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 1537,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6881862
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "return_left",
+						"physics_frame": 1537,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6882026
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "return_left",
+						"physics_frame": 1540,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6883242
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 2,
+						"phase": "next_line",
+						"physics_frame": 1540,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6883386
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 2,
+						"phase": "next_line",
+						"physics_frame": 1543,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6884471
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 2,
+						"phase": "",
+						"physics_frame": 1543,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 6884598
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "state_changed",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 2,
+						"phase": "",
+						"physics_frame": 1543,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 6884650
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 2,
+						"phase": "center",
+						"physics_frame": 1543,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 6884873
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 2,
+						"phase": "center",
+						"physics_frame": 1546,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 6885821
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 2,
+						"phase": "axis_reset",
+						"physics_frame": 1546,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 6886156
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 2,
+						"phase": "axis_reset",
+						"physics_frame": 1549,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 6886545
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 2,
+						"phase": "",
+						"physics_frame": 1549,
+						"serial": 2,
+						"state": 4,
+						"ticks_usec": 6886648
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_completed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 2,
+						"phase": "",
+						"physics_frame": 1549,
+						"serial": 2,
+						"state": 4,
+						"ticks_usec": 6886761
+					}
+				],
+				"failure": "",
+				"finished_pending": false,
+				"first_left_done": true,
+				"line": 2,
+				"mechanical_count": 3,
+				"phase": "",
+				"serial": 2,
+				"state": 4,
+				"take_token": 0
+			},
+			"机械非空行数": 2,
+			"音效快照": {
+				"choice": -1,
+				"events": [
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "first_left",
+						"physics_frame": 1522,
+						"seconds": 0.0,
+						"ticks_usec": 6875030
+					},
+					{
+						"choice": 5,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1525,
+						"seconds": 0.4,
+						"ticks_usec": 6876282
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1528,
+						"seconds": 0.0,
+						"ticks_usec": 6877290
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1528,
+						"seconds": 0.0,
+						"ticks_usec": 6877330
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1528,
+						"seconds": 0.0,
+						"ticks_usec": 6877599
+					},
+					{
+						"choice": 3,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1534,
+						"seconds": 0.0,
+						"ticks_usec": 6880568
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1537,
+						"seconds": 0.0,
+						"ticks_usec": 6881655
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1537,
+						"seconds": 0.0,
+						"ticks_usec": 6881693
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1537,
+						"seconds": 0.0,
+						"ticks_usec": 6881961
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "center",
+						"physics_frame": 1543,
+						"seconds": 0.0,
+						"ticks_usec": 6884791
+					},
+					{
+						"choice": -1,
+						"event": "axis_return_started",
+						"phase": "axis_reset",
+						"physics_frame": 1546,
+						"seconds": 0.0,
+						"ticks_usec": 6886094
+					},
+					{
+						"choice": -1,
+						"event": "axis_return_stopped",
+						"phase": "",
+						"physics_frame": 1549,
+						"seconds": 0.0,
+						"ticks_usec": 6886492
+					}
+				],
+				"gap_remaining": 0.0,
+				"paused": false,
+				"typing_active": false
+			}
+		},
+		{
+			"名称": "正式打印音效生命周期",
+			"实际数据": [
+				"数据行0",
+				"数据行1",
+				"数据行2",
+				"数据行3",
+				"数据行4",
+				"数据行5",
+				"数据行6",
+				"数据行7",
+				"数据行8",
+				"数据行9",
+				"数据行10",
+				"数据行11",
+				"数据行12",
+				"数据行13",
+				"数据行14",
+				"数据行15",
+				"数据行16",
+				"数据行17",
+				"数据行18",
+				"数据行19",
+				"数据行20",
+				"数据行21",
+				"数据行22",
+				"数据行23",
+				"数据行24"
+			],
+			"机械快照": {
+				"config": {
+					"axis_reset": "(0.0, 0.0, 0.0)",
+					"capacity": 21,
+					"center": "(0.1, 0.0, 0.0)",
+					"center_time": 0.05,
+					"first": "(0.0, -0.1, 0.0)",
+					"first_descent": 0.05,
+					"first_left": 0.05,
+					"first_wait": 0.05,
+					"left": "(-0.07, 0.0, 0.0)",
+					"minimum": -0.5,
+					"next_line": 0.05,
+					"print_line": 0.05,
+					"reset_time": 0.05,
+					"return_left": 0.05,
+					"right": "(0.27, 0.0, 0.0)",
+					"spacing": 0.02
+				},
+				"events": [
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 1554,
+						"serial": 1,
+						"state": 1,
+						"ticks_usec": 7027493
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 1554,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7078804
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 1554,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7079071
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 1556,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7140492
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 1556,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7140594
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 1559,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7142017
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_left",
+						"physics_frame": 1559,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7142303
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_left",
+						"physics_frame": 1562,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7143628
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "print_line",
+						"physics_frame": 1562,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7143801
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "print_line",
+						"physics_frame": 1565,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7144973
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 1565,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7145128
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "return_left",
+						"physics_frame": 1565,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7145317
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "return_left",
+						"physics_frame": 1568,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7146693
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "next_line",
+						"physics_frame": 1568,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7146883
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "next_line",
+						"physics_frame": 1571,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7147880
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "print_line",
+						"physics_frame": 1571,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7148071
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "print_line",
+						"physics_frame": 1574,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7149395
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 1574,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7149529
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "return_left",
+						"physics_frame": 1574,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7149720
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "return_left",
+						"physics_frame": 1577,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7150859
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 2,
+						"phase": "next_line",
+						"physics_frame": 1577,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7151033
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 2,
+						"phase": "next_line",
+						"physics_frame": 1580,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7152108
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 2,
+						"phase": "print_line",
+						"physics_frame": 1580,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7152297
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 2,
+						"phase": "print_line",
+						"physics_frame": 1583,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7153322
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 2,
+						"phase": "",
+						"physics_frame": 1583,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7153455
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 2,
+						"phase": "return_left",
+						"physics_frame": 1583,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7153641
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 2,
+						"phase": "return_left",
+						"physics_frame": 1586,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7154119
+					},
+					{
+						"axis_position": "(0.0, -0.14, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 3,
+						"phase": "next_line",
+						"physics_frame": 1586,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7154287
+					},
+					{
+						"axis_position": "(0.0, -0.16, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 3,
+						"phase": "next_line",
+						"physics_frame": 1589,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7154648
+					},
+					{
+						"axis_position": "(0.0, -0.16, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 3,
+						"phase": "print_line",
+						"physics_frame": 1589,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7154924
+					},
+					{
+						"axis_position": "(0.0, -0.16, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 3,
+						"phase": "print_line",
+						"physics_frame": 1592,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7155508
+					},
+					{
+						"axis_position": "(0.0, -0.16, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 3,
+						"phase": "",
+						"physics_frame": 1592,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7155669
+					},
+					{
+						"axis_position": "(0.0, -0.16, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 3,
+						"phase": "return_left",
+						"physics_frame": 1592,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7155891
+					},
+					{
+						"axis_position": "(0.0, -0.16, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 3,
+						"phase": "return_left",
+						"physics_frame": 1595,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7156401
+					},
+					{
+						"axis_position": "(0.0, -0.16, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 4,
+						"phase": "next_line",
+						"physics_frame": 1595,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7156578
+					},
+					{
+						"axis_position": "(0.0, -0.18, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 4,
+						"phase": "next_line",
+						"physics_frame": 1598,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7156945
+					},
+					{
+						"axis_position": "(0.0, -0.18, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 4,
+						"phase": "print_line",
+						"physics_frame": 1598,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7157153
+					},
+					{
+						"axis_position": "(0.0, -0.18, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 4,
+						"phase": "print_line",
+						"physics_frame": 1601,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7157688
+					},
+					{
+						"axis_position": "(0.0, -0.18, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 4,
+						"phase": "",
+						"physics_frame": 1601,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7157821
+					},
+					{
+						"axis_position": "(0.0, -0.18, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 4,
+						"phase": "return_left",
+						"physics_frame": 1601,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7158103
+					},
+					{
+						"axis_position": "(0.0, -0.18, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 4,
+						"phase": "return_left",
+						"physics_frame": 1604,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7158669
+					},
+					{
+						"axis_position": "(0.0, -0.18, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 5,
+						"phase": "next_line",
+						"physics_frame": 1604,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7158884
+					},
+					{
+						"axis_position": "(0.0, -0.2, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 5,
+						"phase": "next_line",
+						"physics_frame": 1607,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7159332
+					},
+					{
+						"axis_position": "(0.0, -0.2, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 5,
+						"phase": "print_line",
+						"physics_frame": 1607,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7159517
+					},
+					{
+						"axis_position": "(0.0, -0.2, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 5,
+						"phase": "print_line",
+						"physics_frame": 1610,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7159949
+					},
+					{
+						"axis_position": "(0.0, -0.2, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 5,
+						"phase": "",
+						"physics_frame": 1610,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7160082
+					},
+					{
+						"axis_position": "(0.0, -0.2, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 5,
+						"phase": "return_left",
+						"physics_frame": 1610,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7160261
+					},
+					{
+						"axis_position": "(0.0, -0.2, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 5,
+						"phase": "return_left",
+						"physics_frame": 1613,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7160723
+					},
+					{
+						"axis_position": "(0.0, -0.2, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 6,
+						"phase": "next_line",
+						"physics_frame": 1613,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7160889
+					},
+					{
+						"axis_position": "(0.0, -0.22, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 6,
+						"phase": "next_line",
+						"physics_frame": 1616,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7161238
+					},
+					{
+						"axis_position": "(0.0, -0.22, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 6,
+						"phase": "print_line",
+						"physics_frame": 1616,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7161439
+					},
+					{
+						"axis_position": "(0.0, -0.22, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 6,
+						"phase": "print_line",
+						"physics_frame": 1619,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7161968
+					},
+					{
+						"axis_position": "(0.0, -0.22, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 6,
+						"phase": "",
+						"physics_frame": 1619,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7162106
+					},
+					{
+						"axis_position": "(0.0, -0.22, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 6,
+						"phase": "return_left",
+						"physics_frame": 1619,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7162284
+					},
+					{
+						"axis_position": "(0.0, -0.22, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 6,
+						"phase": "return_left",
+						"physics_frame": 1622,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7162748
+					},
+					{
+						"axis_position": "(0.0, -0.22, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 7,
+						"phase": "next_line",
+						"physics_frame": 1622,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7162913
+					},
+					{
+						"axis_position": "(0.0, -0.24, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 7,
+						"phase": "next_line",
+						"physics_frame": 1625,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7163316
+					},
+					{
+						"axis_position": "(0.0, -0.24, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 7,
+						"phase": "print_line",
+						"physics_frame": 1625,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7163522
+					},
+					{
+						"axis_position": "(0.0, -0.24, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 7,
+						"phase": "print_line",
+						"physics_frame": 1628,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7164123
+					},
+					{
+						"axis_position": "(0.0, -0.24, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 7,
+						"phase": "",
+						"physics_frame": 1628,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7164272
+					},
+					{
+						"axis_position": "(0.0, -0.24, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 7,
+						"phase": "return_left",
+						"physics_frame": 1628,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7164476
+					},
+					{
+						"axis_position": "(0.0, -0.24, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 7,
+						"phase": "return_left",
+						"physics_frame": 1631,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7165091
+					},
+					{
+						"axis_position": "(0.0, -0.24, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 8,
+						"phase": "next_line",
+						"physics_frame": 1631,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7165352
+					},
+					{
+						"axis_position": "(0.0, -0.26, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 8,
+						"phase": "next_line",
+						"physics_frame": 1634,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7165756
+					},
+					{
+						"axis_position": "(0.0, -0.26, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 8,
+						"phase": "print_line",
+						"physics_frame": 1634,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7165948
+					},
+					{
+						"axis_position": "(0.0, -0.26, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 8,
+						"phase": "print_line",
+						"physics_frame": 1637,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7166373
+					},
+					{
+						"axis_position": "(0.0, -0.26, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 8,
+						"phase": "",
+						"physics_frame": 1637,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7166503
+					},
+					{
+						"axis_position": "(0.0, -0.26, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 8,
+						"phase": "return_left",
+						"physics_frame": 1637,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7166677
+					},
+					{
+						"axis_position": "(0.0, -0.26, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 8,
+						"phase": "return_left",
+						"physics_frame": 1640,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7167288
+					},
+					{
+						"axis_position": "(0.0, -0.26, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 9,
+						"phase": "next_line",
+						"physics_frame": 1640,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7167620
+					},
+					{
+						"axis_position": "(0.0, -0.28, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 9,
+						"phase": "next_line",
+						"physics_frame": 1643,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7168306
+					},
+					{
+						"axis_position": "(0.0, -0.28, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 9,
+						"phase": "print_line",
+						"physics_frame": 1643,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7168648
+					},
+					{
+						"axis_position": "(0.0, -0.28, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 9,
+						"phase": "print_line",
+						"physics_frame": 1646,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7169426
+					},
+					{
+						"axis_position": "(0.0, -0.28, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 9,
+						"phase": "",
+						"physics_frame": 1646,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7169640
+					},
+					{
+						"axis_position": "(0.0, -0.28, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 9,
+						"phase": "return_left",
+						"physics_frame": 1646,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7169990
+					},
+					{
+						"axis_position": "(0.0, -0.28, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 9,
+						"phase": "return_left",
+						"physics_frame": 1649,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7170689
+					},
+					{
+						"axis_position": "(0.0, -0.28, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 10,
+						"phase": "next_line",
+						"physics_frame": 1649,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7170879
+					},
+					{
+						"axis_position": "(0.0, -0.3, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 10,
+						"phase": "next_line",
+						"physics_frame": 1652,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7171525
+					},
+					{
+						"axis_position": "(0.0, -0.3, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 10,
+						"phase": "print_line",
+						"physics_frame": 1652,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7171914
+					},
+					{
+						"axis_position": "(0.0, -0.3, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 10,
+						"phase": "print_line",
+						"physics_frame": 1655,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7172740
+					},
+					{
+						"axis_position": "(0.0, -0.3, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 10,
+						"phase": "",
+						"physics_frame": 1655,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7172940
+					},
+					{
+						"axis_position": "(0.0, -0.3, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 10,
+						"phase": "return_left",
+						"physics_frame": 1655,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7173361
+					},
+					{
+						"axis_position": "(0.0, -0.3, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 10,
+						"phase": "return_left",
+						"physics_frame": 1658,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7174067
+					},
+					{
+						"axis_position": "(0.0, -0.3, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 11,
+						"phase": "next_line",
+						"physics_frame": 1658,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7174327
+					},
+					{
+						"axis_position": "(0.0, -0.32, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 11,
+						"phase": "next_line",
+						"physics_frame": 1661,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7174854
+					},
+					{
+						"axis_position": "(0.0, -0.32, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 11,
+						"phase": "print_line",
+						"physics_frame": 1661,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7175203
+					},
+					{
+						"axis_position": "(0.0, -0.32, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 11,
+						"phase": "print_line",
+						"physics_frame": 1664,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7176025
+					},
+					{
+						"axis_position": "(0.0, -0.32, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 11,
+						"phase": "",
+						"physics_frame": 1664,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7176323
+					},
+					{
+						"axis_position": "(0.0, -0.32, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 11,
+						"phase": "return_left",
+						"physics_frame": 1664,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7176662
+					},
+					{
+						"axis_position": "(0.0, -0.32, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 11,
+						"phase": "return_left",
+						"physics_frame": 1667,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7177346
+					},
+					{
+						"axis_position": "(0.0, -0.32, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 12,
+						"phase": "next_line",
+						"physics_frame": 1667,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7177524
+					},
+					{
+						"axis_position": "(0.0, -0.34, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 12,
+						"phase": "next_line",
+						"physics_frame": 1670,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7177898
+					},
+					{
+						"axis_position": "(0.0, -0.34, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 12,
+						"phase": "print_line",
+						"physics_frame": 1670,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7178078
+					},
+					{
+						"axis_position": "(0.0, -0.34, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 12,
+						"phase": "print_line",
+						"physics_frame": 1673,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7178501
+					},
+					{
+						"axis_position": "(0.0, -0.34, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 12,
+						"phase": "",
+						"physics_frame": 1673,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7178634
+					},
+					{
+						"axis_position": "(0.0, -0.34, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 12,
+						"phase": "return_left",
+						"physics_frame": 1673,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7178808
+					},
+					{
+						"axis_position": "(0.0, -0.34, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 12,
+						"phase": "return_left",
+						"physics_frame": 1676,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7179329
+					},
+					{
+						"axis_position": "(0.0, -0.34, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 13,
+						"phase": "next_line",
+						"physics_frame": 1676,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7179502
+					},
+					{
+						"axis_position": "(0.0, -0.36, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 13,
+						"phase": "next_line",
+						"physics_frame": 1679,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7179903
+					},
+					{
+						"axis_position": "(0.0, -0.36, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 13,
+						"phase": "print_line",
+						"physics_frame": 1679,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7180119
+					},
+					{
+						"axis_position": "(0.0, -0.36, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 13,
+						"phase": "print_line",
+						"physics_frame": 1682,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7180600
+					},
+					{
+						"axis_position": "(0.0, -0.36, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 13,
+						"phase": "",
+						"physics_frame": 1682,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7180753
+					},
+					{
+						"axis_position": "(0.0, -0.36, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 13,
+						"phase": "return_left",
+						"physics_frame": 1682,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7180943
+					},
+					{
+						"axis_position": "(0.0, -0.36, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 13,
+						"phase": "return_left",
+						"physics_frame": 1685,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7181421
+					},
+					{
+						"axis_position": "(0.0, -0.36, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 14,
+						"phase": "next_line",
+						"physics_frame": 1685,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7181589
+					},
+					{
+						"axis_position": "(0.0, -0.38, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 14,
+						"phase": "next_line",
+						"physics_frame": 1688,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7182003
+					},
+					{
+						"axis_position": "(0.0, -0.38, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 14,
+						"phase": "print_line",
+						"physics_frame": 1688,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7182200
+					},
+					{
+						"axis_position": "(0.0, -0.38, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 14,
+						"phase": "print_line",
+						"physics_frame": 1691,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7182622
+					},
+					{
+						"axis_position": "(0.0, -0.38, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 14,
+						"phase": "",
+						"physics_frame": 1691,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7182752
+					},
+					{
+						"axis_position": "(0.0, -0.38, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 14,
+						"phase": "return_left",
+						"physics_frame": 1691,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7182926
+					},
+					{
+						"axis_position": "(0.0, -0.38, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 14,
+						"phase": "return_left",
+						"physics_frame": 1694,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7183413
+					},
+					{
+						"axis_position": "(0.0, -0.38, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 15,
+						"phase": "next_line",
+						"physics_frame": 1694,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7183582
+					},
+					{
+						"axis_position": "(0.0, -0.4, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 15,
+						"phase": "next_line",
+						"physics_frame": 1697,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7183939
+					},
+					{
+						"axis_position": "(0.0, -0.4, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 15,
+						"phase": "print_line",
+						"physics_frame": 1697,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7184175
+					},
+					{
+						"axis_position": "(0.0, -0.4, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 15,
+						"phase": "print_line",
+						"physics_frame": 1700,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7184643
+					},
+					{
+						"axis_position": "(0.0, -0.4, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 15,
+						"phase": "",
+						"physics_frame": 1700,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7184775
+					},
+					{
+						"axis_position": "(0.0, -0.4, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 15,
+						"phase": "return_left",
+						"physics_frame": 1700,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7184979
+					},
+					{
+						"axis_position": "(0.0, -0.4, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 15,
+						"phase": "return_left",
+						"physics_frame": 1703,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7185487
+					},
+					{
+						"axis_position": "(0.0, -0.4, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 16,
+						"phase": "next_line",
+						"physics_frame": 1703,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7185662
+					},
+					{
+						"axis_position": "(0.0, -0.42, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 16,
+						"phase": "next_line",
+						"physics_frame": 1706,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7186048
+					},
+					{
+						"axis_position": "(0.0, -0.42, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 16,
+						"phase": "print_line",
+						"physics_frame": 1706,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7186263
+					},
+					{
+						"axis_position": "(0.0, -0.42, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 16,
+						"phase": "print_line",
+						"physics_frame": 1709,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7186748
+					},
+					{
+						"axis_position": "(0.0, -0.42, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 16,
+						"phase": "",
+						"physics_frame": 1709,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7186878
+					},
+					{
+						"axis_position": "(0.0, -0.42, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 16,
+						"phase": "return_left",
+						"physics_frame": 1709,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7187077
+					},
+					{
+						"axis_position": "(0.0, -0.42, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 16,
+						"phase": "return_left",
+						"physics_frame": 1712,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7187545
+					},
+					{
+						"axis_position": "(0.0, -0.42, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 17,
+						"phase": "next_line",
+						"physics_frame": 1712,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7187709
+					},
+					{
+						"axis_position": "(0.0, -0.44, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 17,
+						"phase": "next_line",
+						"physics_frame": 1715,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7188189
+					},
+					{
+						"axis_position": "(0.0, -0.44, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 17,
+						"phase": "print_line",
+						"physics_frame": 1715,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7188408
+					},
+					{
+						"axis_position": "(0.0, -0.44, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 17,
+						"phase": "print_line",
+						"physics_frame": 1718,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7188853
+					},
+					{
+						"axis_position": "(0.0, -0.44, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 17,
+						"phase": "",
+						"physics_frame": 1718,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7188989
+					},
+					{
+						"axis_position": "(0.0, -0.44, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 17,
+						"phase": "return_left",
+						"physics_frame": 1718,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7189187
+					},
+					{
+						"axis_position": "(0.0, -0.44, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 17,
+						"phase": "return_left",
+						"physics_frame": 1721,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7189678
+					},
+					{
+						"axis_position": "(0.0, -0.44, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 18,
+						"phase": "next_line",
+						"physics_frame": 1721,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7189847
+					},
+					{
+						"axis_position": "(0.0, -0.46, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 18,
+						"phase": "next_line",
+						"physics_frame": 1724,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7190253
+					},
+					{
+						"axis_position": "(0.0, -0.46, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 18,
+						"phase": "print_line",
+						"physics_frame": 1724,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7190431
+					},
+					{
+						"axis_position": "(0.0, -0.46, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 18,
+						"phase": "print_line",
+						"physics_frame": 1727,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7190858
+					},
+					{
+						"axis_position": "(0.0, -0.46, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 18,
+						"phase": "",
+						"physics_frame": 1727,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7191015
+					},
+					{
+						"axis_position": "(0.0, -0.46, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 18,
+						"phase": "return_left",
+						"physics_frame": 1727,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7191213
+					},
+					{
+						"axis_position": "(0.0, -0.46, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 18,
+						"phase": "return_left",
+						"physics_frame": 1730,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7191845
+					},
+					{
+						"axis_position": "(0.0, -0.46, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 19,
+						"phase": "next_line",
+						"physics_frame": 1730,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7192101
+					},
+					{
+						"axis_position": "(0.0, -0.48, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 19,
+						"phase": "next_line",
+						"physics_frame": 1733,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7192642
+					},
+					{
+						"axis_position": "(0.0, -0.48, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 19,
+						"phase": "print_line",
+						"physics_frame": 1733,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7192872
+					},
+					{
+						"axis_position": "(0.0, -0.48, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 19,
+						"phase": "print_line",
+						"physics_frame": 1736,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7193306
+					},
+					{
+						"axis_position": "(0.0, -0.48, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 19,
+						"phase": "",
+						"physics_frame": 1736,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7193438
+					},
+					{
+						"axis_position": "(0.0, -0.48, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 19,
+						"phase": "return_left",
+						"physics_frame": 1736,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7193637
+					},
+					{
+						"axis_position": "(0.0, -0.48, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 19,
+						"phase": "return_left",
+						"physics_frame": 1739,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7194166
+					},
+					{
+						"axis_position": "(0.0, -0.48, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 20,
+						"phase": "next_line",
+						"physics_frame": 1739,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7194337
+					},
+					{
+						"axis_position": "(0.0, -0.5, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 20,
+						"phase": "next_line",
+						"physics_frame": 1742,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7194711
+					},
+					{
+						"axis_position": "(0.0, -0.5, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 20,
+						"phase": "print_line",
+						"physics_frame": 1742,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7194889
+					},
+					{
+						"axis_position": "(0.0, -0.5, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 20,
+						"phase": "print_line",
+						"physics_frame": 1745,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7195301
+					},
+					{
+						"axis_position": "(0.0, -0.5, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 20,
+						"phase": "",
+						"physics_frame": 1745,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 7195434
+					},
+					{
+						"axis_position": "(0.0, -0.5, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 20,
+						"phase": "",
+						"physics_frame": 1745,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 7195495
+					},
+					{
+						"axis_position": "(0.0, -0.5, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 20,
+						"phase": "center",
+						"physics_frame": 1745,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 7195694
+					},
+					{
+						"axis_position": "(0.0, -0.5, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 20,
+						"phase": "center",
+						"physics_frame": 1748,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 7196158
+					},
+					{
+						"axis_position": "(0.0, -0.5, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 20,
+						"phase": "axis_reset",
+						"physics_frame": 1748,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 7196563
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 20,
+						"phase": "axis_reset",
+						"physics_frame": 1751,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 7197034
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 20,
+						"phase": "",
+						"physics_frame": 1751,
+						"serial": 2,
+						"state": 4,
+						"ticks_usec": 7197176
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_completed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 20,
+						"phase": "",
+						"physics_frame": 1751,
+						"serial": 2,
+						"state": 4,
+						"ticks_usec": 7197284
+					}
+				],
+				"failure": "",
+				"finished_pending": false,
+				"first_left_done": true,
+				"line": 20,
+				"mechanical_count": 21,
+				"phase": "",
+				"serial": 2,
+				"state": 4,
+				"take_token": 0
+			},
+			"机械非空行数": 21,
+			"音效快照": {
+				"choice": -1,
+				"events": [
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "first_left",
+						"physics_frame": 1559,
+						"seconds": 0.0,
+						"ticks_usec": 7142222
+					},
+					{
+						"choice": 4,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1562,
+						"seconds": 0.25,
+						"ticks_usec": 7143722
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1565,
+						"seconds": 0.0,
+						"ticks_usec": 7144819
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1565,
+						"seconds": 0.0,
+						"ticks_usec": 7144875
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1565,
+						"seconds": 0.0,
+						"ticks_usec": 7145240
+					},
+					{
+						"choice": 5,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1571,
+						"seconds": 0.4,
+						"ticks_usec": 7147995
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1574,
+						"seconds": 0.0,
+						"ticks_usec": 7149277
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1574,
+						"seconds": 0.0,
+						"ticks_usec": 7149315
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1574,
+						"seconds": 0.0,
+						"ticks_usec": 7149643
+					},
+					{
+						"choice": 4,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1580,
+						"seconds": 0.25,
+						"ticks_usec": 7152223
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1583,
+						"seconds": 0.0,
+						"ticks_usec": 7153211
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1583,
+						"seconds": 0.0,
+						"ticks_usec": 7153248
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1583,
+						"seconds": 0.0,
+						"ticks_usec": 7153564
+					},
+					{
+						"choice": 1,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1589,
+						"seconds": 0.0,
+						"ticks_usec": 7154837
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1592,
+						"seconds": 0.0,
+						"ticks_usec": 7155378
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1592,
+						"seconds": 0.0,
+						"ticks_usec": 7155417
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1592,
+						"seconds": 0.0,
+						"ticks_usec": 7155797
+					},
+					{
+						"choice": 1,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1598,
+						"seconds": 0.0,
+						"ticks_usec": 7157077
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1601,
+						"seconds": 0.0,
+						"ticks_usec": 7157542
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1601,
+						"seconds": 0.0,
+						"ticks_usec": 7157588
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1601,
+						"seconds": 0.0,
+						"ticks_usec": 7157937
+					},
+					{
+						"choice": 5,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1607,
+						"seconds": 0.4,
+						"ticks_usec": 7159442
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1610,
+						"seconds": 0.0,
+						"ticks_usec": 7159840
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1610,
+						"seconds": 0.0,
+						"ticks_usec": 7159876
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1610,
+						"seconds": 0.0,
+						"ticks_usec": 7160187
+					},
+					{
+						"choice": 2,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1616,
+						"seconds": 0.0,
+						"ticks_usec": 7161364
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1619,
+						"seconds": 0.0,
+						"ticks_usec": 7161840
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1619,
+						"seconds": 0.0,
+						"ticks_usec": 7161892
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1619,
+						"seconds": 0.0,
+						"ticks_usec": 7162208
+					},
+					{
+						"choice": 3,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1625,
+						"seconds": 0.0,
+						"ticks_usec": 7163447
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1628,
+						"seconds": 0.0,
+						"ticks_usec": 7163959
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1628,
+						"seconds": 0.0,
+						"ticks_usec": 7163994
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1628,
+						"seconds": 0.0,
+						"ticks_usec": 7164399
+					},
+					{
+						"choice": 5,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1634,
+						"seconds": 0.4,
+						"ticks_usec": 7165874
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1637,
+						"seconds": 0.0,
+						"ticks_usec": 7166268
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1637,
+						"seconds": 0.0,
+						"ticks_usec": 7166301
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1637,
+						"seconds": 0.0,
+						"ticks_usec": 7166605
+					},
+					{
+						"choice": 3,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1643,
+						"seconds": 0.0,
+						"ticks_usec": 7168522
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1646,
+						"seconds": 0.0,
+						"ticks_usec": 7169245
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1646,
+						"seconds": 0.0,
+						"ticks_usec": 7169297
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1646,
+						"seconds": 0.0,
+						"ticks_usec": 7169848
+					},
+					{
+						"choice": 2,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1652,
+						"seconds": 0.0,
+						"ticks_usec": 7171779
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1655,
+						"seconds": 0.0,
+						"ticks_usec": 7172564
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1655,
+						"seconds": 0.0,
+						"ticks_usec": 7172619
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1655,
+						"seconds": 0.0,
+						"ticks_usec": 7173242
+					},
+					{
+						"choice": 0,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1661,
+						"seconds": 0.0,
+						"ticks_usec": 7175041
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1664,
+						"seconds": 0.0,
+						"ticks_usec": 7175845
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1664,
+						"seconds": 0.0,
+						"ticks_usec": 7175893
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1664,
+						"seconds": 0.0,
+						"ticks_usec": 7176522
+					},
+					{
+						"choice": 5,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1670,
+						"seconds": 0.4,
+						"ticks_usec": 7178007
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1673,
+						"seconds": 0.0,
+						"ticks_usec": 7178394
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1673,
+						"seconds": 0.0,
+						"ticks_usec": 7178428
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1673,
+						"seconds": 0.0,
+						"ticks_usec": 7178736
+					},
+					{
+						"choice": 3,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1679,
+						"seconds": 0.0,
+						"ticks_usec": 7180041
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1682,
+						"seconds": 0.0,
+						"ticks_usec": 7180497
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1682,
+						"seconds": 0.0,
+						"ticks_usec": 7180527
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1682,
+						"seconds": 0.0,
+						"ticks_usec": 7180863
+					},
+					{
+						"choice": 5,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1688,
+						"seconds": 0.4,
+						"ticks_usec": 7182116
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1691,
+						"seconds": 0.0,
+						"ticks_usec": 7182517
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1691,
+						"seconds": 0.0,
+						"ticks_usec": 7182549
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1691,
+						"seconds": 0.0,
+						"ticks_usec": 7182852
+					},
+					{
+						"choice": 1,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1697,
+						"seconds": 0.0,
+						"ticks_usec": 7184097
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1700,
+						"seconds": 0.0,
+						"ticks_usec": 7184538
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1700,
+						"seconds": 0.0,
+						"ticks_usec": 7184572
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1700,
+						"seconds": 0.0,
+						"ticks_usec": 7184896
+					},
+					{
+						"choice": 2,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1706,
+						"seconds": 0.0,
+						"ticks_usec": 7186185
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1709,
+						"seconds": 0.0,
+						"ticks_usec": 7186626
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1709,
+						"seconds": 0.0,
+						"ticks_usec": 7186675
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1709,
+						"seconds": 0.0,
+						"ticks_usec": 7186999
+					},
+					{
+						"choice": 5,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1715,
+						"seconds": 0.4,
+						"ticks_usec": 7188314
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1718,
+						"seconds": 0.0,
+						"ticks_usec": 7188735
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1718,
+						"seconds": 0.0,
+						"ticks_usec": 7188778
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1718,
+						"seconds": 0.0,
+						"ticks_usec": 7189108
+					},
+					{
+						"choice": 5,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1724,
+						"seconds": 0.4,
+						"ticks_usec": 7190358
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1727,
+						"seconds": 0.0,
+						"ticks_usec": 7190751
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1727,
+						"seconds": 0.0,
+						"ticks_usec": 7190785
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1727,
+						"seconds": 0.0,
+						"ticks_usec": 7191136
+					},
+					{
+						"choice": 4,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1733,
+						"seconds": 0.25,
+						"ticks_usec": 7192795
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1736,
+						"seconds": 0.0,
+						"ticks_usec": 7193190
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1736,
+						"seconds": 0.0,
+						"ticks_usec": 7193234
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "return_left",
+						"physics_frame": 1736,
+						"seconds": 0.0,
+						"ticks_usec": 7193557
+					},
+					{
+						"choice": 5,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 1742,
+						"seconds": 0.4,
+						"ticks_usec": 7194819
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 1745,
+						"seconds": 0.0,
+						"ticks_usec": 7195185
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 1745,
+						"seconds": 0.0,
+						"ticks_usec": 7195227
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "center",
+						"physics_frame": 1745,
+						"seconds": 0.0,
+						"ticks_usec": 7195611
+					},
+					{
+						"choice": -1,
+						"event": "axis_return_started",
+						"phase": "axis_reset",
+						"physics_frame": 1748,
+						"seconds": 0.0,
+						"ticks_usec": 7196464
+					},
+					{
+						"choice": -1,
+						"event": "axis_return_stopped",
+						"phase": "",
+						"physics_frame": 1751,
+						"seconds": 0.0,
+						"ticks_usec": 7196964
+					}
+				],
+				"gap_remaining": 0.0,
+				"paused": false,
+				"typing_active": false
+			}
+		},
+		{
+			"名称": "两设备声音隔离与可编辑配置保持",
+			"实际可编辑配置": {
+				"325108893459": {
+					"单位距离": 2.0,
+					"声像强度": 0.400000005960464,
+					"局部变换": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 0.02, 0.01)]",
+					"总线": "SFX",
+					"方向开关": false,
+					"方向角度": 45.0,
+					"最大距离": 12.0,
+					"最大音量": -3.0,
+					"滤波频率": 5000.0,
+					"衰减方式": 0,
+					"音量": -17.0,
+					"音高": 1.0
+				},
+				"325159225318": {
+					"单位距离": 3.0,
+					"声像强度": 0.400000005960464,
+					"局部变换": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.03, 0.02, 0.01)]",
+					"总线": "SFX",
+					"方向开关": false,
+					"方向角度": 45.0,
+					"最大距离": 13.0,
+					"最大音量": -3.0,
+					"滤波频率": 5000.0,
+					"衰减方式": 0,
+					"音量": -18.0,
+					"音高": 1.0
+				},
+				"325209556877": {
+					"单位距离": 4.0,
+					"声像强度": 0.400000005960464,
+					"局部变换": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.06, 0.02, 0.01)]",
+					"总线": "SFX",
+					"方向开关": false,
+					"方向角度": 45.0,
+					"最大距离": 14.0,
+					"最大音量": -3.0,
+					"滤波频率": 5000.0,
+					"衰减方式": 0,
+					"音量": -19.0,
+					"音高": 1.0
+				},
+				"325259888620": {
+					"单位距离": 5.0,
+					"声像强度": 0.400000005960464,
+					"局部变换": "[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.09, 0.02, 0.01)]",
+					"总线": "SFX",
+					"方向开关": false,
+					"方向角度": 45.0,
+					"最大距离": 15.0,
+					"最大音量": -3.0,
+					"滤波频率": 5000.0,
+					"衰减方式": 0,
+					"音量": -20.0,
+					"音高": 1.0
+				}
+			},
+			"第一台": {
+				"choice": -1,
+				"events": [
+					{
+						"choice": -1,
+						"event": "axis_return_started",
+						"phase": "axis_reset",
+						"physics_frame": 3033,
+						"seconds": 0.0,
+						"ticks_usec": 14627247
+					},
+					{
+						"choice": -1,
+						"event": "axis_return_stopped",
+						"phase": "",
+						"physics_frame": 3033,
+						"seconds": 0.0,
+						"ticks_usec": 14649131
+					},
+					{
+						"choice": 0,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 3033,
+						"seconds": 0.0,
+						"ticks_usec": 14671477
+					},
+					{
+						"choice": -1,
+						"event": "typing_stopped",
+						"phase": "",
+						"physics_frame": 3033,
+						"seconds": 0.0,
+						"ticks_usec": 14693589
+					},
+					{
+						"choice": -1,
+						"event": "ding",
+						"phase": "print_line",
+						"physics_frame": 3033,
+						"seconds": 0.0,
+						"ticks_usec": 14693702
+					},
+					{
+						"choice": -1,
+						"event": "head_return",
+						"phase": "center",
+						"physics_frame": 3033,
+						"seconds": 0.0,
+						"ticks_usec": 14693805
+					},
+					{
+						"choice": -1,
+						"event": "axis_return_started",
+						"phase": "axis_reset",
+						"physics_frame": 3033,
+						"seconds": 0.0,
+						"ticks_usec": 14694070
+					}
+				],
+				"gap_remaining": 0.0,
+				"paused": false,
+				"typing_active": false
+			},
+			"第二台": {
+				"choice": 4,
+				"events": [
+					{
+						"choice": -1,
+						"event": "axis_return_started",
+						"phase": "axis_reset",
+						"physics_frame": 3033,
+						"seconds": 0.0,
+						"ticks_usec": 14627464
+					},
+					{
+						"choice": 4,
+						"event": "typing_choice",
+						"phase": "",
+						"physics_frame": 3033,
+						"seconds": 0.25,
+						"ticks_usec": 14671502
+					}
+				],
+				"gap_remaining": 0.25,
+				"paused": false,
+				"typing_active": true
+			}
+		},
+		{
+			"同步请求释放控制器": false,
+			"名称": "真实音流赋值观察重入",
+			"机械快照": {
+				"config": {
+					"axis_reset": "(0.0, 0.0, 0.0)",
+					"capacity": 21,
+					"center": "(0.1, 0.0, 0.0)",
+					"center_time": 0.05,
+					"first": "(0.0, -0.1, 0.0)",
+					"first_descent": 0.05,
+					"first_left": 0.05,
+					"first_wait": 0.05,
+					"left": "(-0.07, 0.0, 0.0)",
+					"minimum": -0.5,
+					"next_line": 0.05,
+					"print_line": 0.05,
+					"reset_time": 0.05,
+					"return_left": 0.05,
+					"right": "(0.27, 0.0, 0.0)",
+					"spacing": 0.02
+				},
+				"events": [
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3037,
+						"serial": 1,
+						"state": 1,
+						"ticks_usec": 14860476
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3037,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 14906264
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 3037,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 14906494
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 3039,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 14973085
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 3039,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 14973212
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 3042,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 14974854
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_left",
+						"physics_frame": 3042,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 14975116
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_left",
+						"physics_frame": 3045,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 14976926
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "print_cancelled",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3045,
+						"serial": 3,
+						"state": 6,
+						"ticks_usec": 14977076
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "cancel_center",
+						"physics_frame": 3045,
+						"serial": 3,
+						"state": 6,
+						"ticks_usec": 14977161
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "cancel_center",
+						"physics_frame": 3048,
+						"serial": 3,
+						"state": 6,
+						"ticks_usec": 14978749
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "cancel_axis_reset",
+						"physics_frame": 3048,
+						"serial": 3,
+						"state": 6,
+						"ticks_usec": 14978804
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "cancel_axis_reset",
+						"physics_frame": 3051,
+						"serial": 3,
+						"state": 6,
+						"ticks_usec": 14979954
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3051,
+						"serial": 3,
+						"state": 0,
+						"ticks_usec": 14979969
+					}
+				],
+				"failure": "真实音流属性变更观察者取消",
+				"finished_pending": false,
+				"first_left_done": true,
+				"line": 0,
+				"mechanical_count": 2,
+				"phase": "",
+				"serial": 3,
+				"state": 0,
+				"take_token": 0
+			},
+			"观察已调用": true,
+			"音源引用": "typing_player（被测播放器引用）"
+		},
+		{
+			"同步请求释放控制器": true,
+			"名称": "真实音流赋值观察重入",
+			"机械快照": {
+				"config": {
+					"axis_reset": "(0.0, 0.0, 0.0)",
+					"capacity": 21,
+					"center": "(0.1, 0.0, 0.0)",
+					"center_time": 0.05,
+					"first": "(0.0, -0.1, 0.0)",
+					"first_descent": 0.05,
+					"first_left": 0.05,
+					"first_wait": 0.05,
+					"left": "(-0.07, 0.0, 0.0)",
+					"minimum": -0.5,
+					"next_line": 0.05,
+					"print_line": 0.05,
+					"reset_time": 0.05,
+					"return_left": 0.05,
+					"right": "(0.27, 0.0, 0.0)",
+					"spacing": 0.02
+				},
+				"events": [
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3056,
+						"serial": 1,
+						"state": 1,
+						"ticks_usec": 15182651
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3056,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15228577
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 3056,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15228862
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 3058,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15295227
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 3058,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15295314
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 3061,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15296708
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_left",
+						"physics_frame": 3061,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15296958
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_left",
+						"physics_frame": 3064,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15298334
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "print_line",
+						"physics_frame": 3064,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15298572
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "print_line",
+						"physics_frame": 3067,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15300035
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3067,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15300151
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "return_left",
+						"physics_frame": 3067,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15300238
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "return_left",
+						"physics_frame": 3070,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15301268
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "next_line",
+						"physics_frame": 3070,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15301387
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "next_line",
+						"physics_frame": 3073,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15302787
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "print_line",
+						"physics_frame": 3073,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15302906
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "print_line",
+						"physics_frame": 3076,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15304147
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 3076,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15304260
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 3076,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 15304309
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "center",
+						"physics_frame": 3076,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 15304394
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "center",
+						"physics_frame": 3079,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 15305546
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "axis_reset",
+						"physics_frame": 3079,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 15305653
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "axis_reset",
+						"physics_frame": 3082,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 15306968
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 3082,
+						"serial": 2,
+						"state": 4,
+						"ticks_usec": 15307087
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_completed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 3082,
+						"serial": 2,
+						"state": 4,
+						"ticks_usec": 15307238
+					}
+				],
+				"failure": "",
+				"finished_pending": false,
+				"first_left_done": true,
+				"line": 1,
+				"mechanical_count": 2,
+				"phase": "",
+				"serial": 2,
+				"state": 4,
+				"take_token": 0
+			},
+			"观察已调用": true,
+			"音源引用": "typing_player（被测播放器引用）"
+		},
+		{
+			"同步请求释放控制器": false,
+			"名称": "真实音流赋值观察重入",
+			"机械快照": {
+				"config": {
+					"axis_reset": "(0.0, 0.0, 0.0)",
+					"capacity": 21,
+					"center": "(0.1, 0.0, 0.0)",
+					"center_time": 0.05,
+					"first": "(0.0, -0.1, 0.0)",
+					"first_descent": 0.05,
+					"first_left": 0.05,
+					"first_wait": 0.05,
+					"left": "(-0.07, 0.0, 0.0)",
+					"minimum": -0.5,
+					"next_line": 0.05,
+					"print_line": 0.05,
+					"reset_time": 0.05,
+					"return_left": 0.05,
+					"right": "(0.27, 0.0, 0.0)",
+					"spacing": 0.02
+				},
+				"events": [
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3087,
+						"serial": 1,
+						"state": 1,
+						"ticks_usec": 15404919
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3087,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15450769
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 3087,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15450987
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 3089,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15517258
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 3089,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15517332
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 3092,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15518716
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "print_cancelled",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3092,
+						"serial": 3,
+						"state": 6,
+						"ticks_usec": 15518927
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "cancel_center",
+						"physics_frame": 3092,
+						"serial": 3,
+						"state": 6,
+						"ticks_usec": 15519011
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "cancel_center",
+						"physics_frame": 3095,
+						"serial": 3,
+						"state": 6,
+						"ticks_usec": 15520293
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "cancel_axis_reset",
+						"physics_frame": 3095,
+						"serial": 3,
+						"state": 6,
+						"ticks_usec": 15520339
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "cancel_axis_reset",
+						"physics_frame": 3098,
+						"serial": 3,
+						"state": 6,
+						"ticks_usec": 15521471
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3098,
+						"serial": 3,
+						"state": 0,
+						"ticks_usec": 15521485
+					}
+				],
+				"failure": "真实音流属性变更观察者取消",
+				"finished_pending": false,
+				"first_left_done": false,
+				"line": 0,
+				"mechanical_count": 2,
+				"phase": "",
+				"serial": 3,
+				"state": 0,
+				"take_token": 0
+			},
+			"观察已调用": true,
+			"音源引用": "head_return_player（被测播放器引用）"
+		},
+		{
+			"同步请求释放控制器": true,
+			"名称": "真实音流赋值观察重入",
+			"机械快照": {
+				"config": {
+					"axis_reset": "(0.0, 0.0, 0.0)",
+					"capacity": 21,
+					"center": "(0.1, 0.0, 0.0)",
+					"center_time": 0.05,
+					"first": "(0.0, -0.1, 0.0)",
+					"first_descent": 0.05,
+					"first_left": 0.05,
+					"first_wait": 0.05,
+					"left": "(-0.07, 0.0, 0.0)",
+					"minimum": -0.5,
+					"next_line": 0.05,
+					"print_line": 0.05,
+					"reset_time": 0.05,
+					"return_left": 0.05,
+					"right": "(0.27, 0.0, 0.0)",
+					"spacing": 0.02
+				},
+				"events": [
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3103,
+						"serial": 1,
+						"state": 1,
+						"ticks_usec": 15638289
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3103,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15684146
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 3103,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15684342
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 3105,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15750558
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 3105,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15750630
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 3108,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15751731
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_left",
+						"physics_frame": 3108,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15751986
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_left",
+						"physics_frame": 3111,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15753077
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "print_line",
+						"physics_frame": 3111,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15753164
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "print_line",
+						"physics_frame": 3114,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15754188
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3114,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15754303
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "return_left",
+						"physics_frame": 3114,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15754381
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "return_left",
+						"physics_frame": 3117,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15755337
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "next_line",
+						"physics_frame": 3117,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15755450
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "next_line",
+						"physics_frame": 3120,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15756443
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "print_line",
+						"physics_frame": 3120,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15756549
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "print_line",
+						"physics_frame": 3123,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15757606
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 3123,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15757737
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 3123,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 15757787
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "center",
+						"physics_frame": 3123,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 15757864
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "center",
+						"physics_frame": 3126,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 15758921
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "axis_reset",
+						"physics_frame": 3126,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 15759005
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "axis_reset",
+						"physics_frame": 3129,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 15760216
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 3129,
+						"serial": 2,
+						"state": 4,
+						"ticks_usec": 15760375
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_completed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 3129,
+						"serial": 2,
+						"state": 4,
+						"ticks_usec": 15760502
+					}
+				],
+				"failure": "",
+				"finished_pending": false,
+				"first_left_done": true,
+				"line": 1,
+				"mechanical_count": 2,
+				"phase": "",
+				"serial": 2,
+				"state": 4,
+				"take_token": 0
+			},
+			"观察已调用": true,
+			"音源引用": "head_return_player（被测播放器引用）"
+		},
+		{
+			"同步请求释放控制器": false,
+			"名称": "真实音流赋值观察重入",
+			"机械快照": {
+				"config": {
+					"axis_reset": "(0.0, 0.0, 0.0)",
+					"capacity": 21,
+					"center": "(0.1, 0.0, 0.0)",
+					"center_time": 0.05,
+					"first": "(0.0, -0.1, 0.0)",
+					"first_descent": 0.05,
+					"first_left": 0.05,
+					"first_wait": 0.05,
+					"left": "(-0.07, 0.0, 0.0)",
+					"minimum": -0.5,
+					"next_line": 0.05,
+					"print_line": 0.05,
+					"reset_time": 0.05,
+					"return_left": 0.05,
+					"right": "(0.27, 0.0, 0.0)",
+					"spacing": 0.02
+				},
+				"events": [
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3134,
+						"serial": 1,
+						"state": 1,
+						"ticks_usec": 15849468
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3134,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15895913
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 3134,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15896231
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 3136,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15961988
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 3136,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15962069
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 3139,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15963547
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_left",
+						"physics_frame": 3139,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15963791
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_left",
+						"physics_frame": 3142,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15965501
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "print_line",
+						"physics_frame": 3142,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 15965809
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "print_cancelled",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3145,
+						"serial": 3,
+						"state": 6,
+						"ticks_usec": 15967559
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "cancel_center",
+						"physics_frame": 3145,
+						"serial": 3,
+						"state": 6,
+						"ticks_usec": 15967722
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "cancel_center",
+						"physics_frame": 3148,
+						"serial": 3,
+						"state": 6,
+						"ticks_usec": 15969328
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "cancel_axis_reset",
+						"physics_frame": 3148,
+						"serial": 3,
+						"state": 6,
+						"ticks_usec": 15969377
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "cancel_axis_reset",
+						"physics_frame": 3151,
+						"serial": 3,
+						"state": 6,
+						"ticks_usec": 15970601
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3151,
+						"serial": 3,
+						"state": 0,
+						"ticks_usec": 15970615
+					}
+				],
+				"failure": "真实音流属性变更观察者取消",
+				"finished_pending": false,
+				"first_left_done": true,
+				"line": 0,
+				"mechanical_count": 2,
+				"phase": "",
+				"serial": 3,
+				"state": 0,
+				"take_token": 0
+			},
+			"观察已调用": true,
+			"音源引用": "ding_player（被测播放器引用）"
+		},
+		{
+			"同步请求释放控制器": true,
+			"名称": "真实音流赋值观察重入",
+			"机械快照": {
+				"config": {
+					"axis_reset": "(0.0, 0.0, 0.0)",
+					"capacity": 21,
+					"center": "(0.1, 0.0, 0.0)",
+					"center_time": 0.05,
+					"first": "(0.0, -0.1, 0.0)",
+					"first_descent": 0.05,
+					"first_left": 0.05,
+					"first_wait": 0.05,
+					"left": "(-0.07, 0.0, 0.0)",
+					"minimum": -0.5,
+					"next_line": 0.05,
+					"print_line": 0.05,
+					"reset_time": 0.05,
+					"return_left": 0.05,
+					"right": "(0.27, 0.0, 0.0)",
+					"spacing": 0.02
+				},
+				"events": [
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3156,
+						"serial": 1,
+						"state": 1,
+						"ticks_usec": 16038279
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3156,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16073039
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 3156,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16073242
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 3158,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16128394
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 3158,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16128479
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 3161,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16129733
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_left",
+						"physics_frame": 3161,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16129991
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_left",
+						"physics_frame": 3164,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16131178
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "print_line",
+						"physics_frame": 3164,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16131458
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "print_line",
+						"physics_frame": 3167,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16132686
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3167,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16132800
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "return_left",
+						"physics_frame": 3167,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16132881
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "return_left",
+						"physics_frame": 3170,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16134168
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "next_line",
+						"physics_frame": 3170,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16134371
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "next_line",
+						"physics_frame": 3173,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16135381
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "print_line",
+						"physics_frame": 3173,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16135494
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "print_line",
+						"physics_frame": 3176,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16136673
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 3176,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16136829
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 3176,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 16136917
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "center",
+						"physics_frame": 3176,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 16137054
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "center",
+						"physics_frame": 3179,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 16138079
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "axis_reset",
+						"physics_frame": 3179,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 16138165
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "axis_reset",
+						"physics_frame": 3182,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 16139201
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 3182,
+						"serial": 2,
+						"state": 4,
+						"ticks_usec": 16139305
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_completed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 3182,
+						"serial": 2,
+						"state": 4,
+						"ticks_usec": 16139428
+					}
+				],
+				"failure": "",
+				"finished_pending": false,
+				"first_left_done": true,
+				"line": 1,
+				"mechanical_count": 2,
+				"phase": "",
+				"serial": 2,
+				"state": 4,
+				"take_token": 0
+			},
+			"观察已调用": true,
+			"音源引用": "ding_player（被测播放器引用）"
+		},
+		{
+			"同步请求释放控制器": false,
+			"名称": "真实音流赋值观察重入",
+			"机械快照": {
+				"config": {
+					"axis_reset": "(0.0, 0.0, 0.0)",
+					"capacity": 21,
+					"center": "(0.1, 0.0, 0.0)",
+					"center_time": 0.05,
+					"first": "(0.0, -0.1, 0.0)",
+					"first_descent": 0.05,
+					"first_left": 0.05,
+					"first_wait": 0.05,
+					"left": "(-0.07, 0.0, 0.0)",
+					"minimum": -0.5,
+					"next_line": 0.05,
+					"print_line": 0.05,
+					"reset_time": 0.05,
+					"return_left": 0.05,
+					"right": "(0.27, 0.0, 0.0)",
+					"spacing": 0.02
+				},
+				"events": [
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3187,
+						"serial": 1,
+						"state": 1,
+						"ticks_usec": 16249068
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3187,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16294727
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 3187,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16294916
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 3189,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16372418
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 3189,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16372489
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 3192,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16373727
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_left",
+						"physics_frame": 3192,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16374010
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_left",
+						"physics_frame": 3195,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16375181
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "print_line",
+						"physics_frame": 3195,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16375340
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "print_line",
+						"physics_frame": 3198,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16376482
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3198,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16376593
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "return_left",
+						"physics_frame": 3198,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16376750
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "return_left",
+						"physics_frame": 3201,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16377887
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "next_line",
+						"physics_frame": 3201,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16378031
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "next_line",
+						"physics_frame": 3204,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16379067
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "print_line",
+						"physics_frame": 3204,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16379243
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "print_line",
+						"physics_frame": 3207,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16380465
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 3207,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16380640
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 3207,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 16380713
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "center",
+						"physics_frame": 3207,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 16381107
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "center",
+						"physics_frame": 3210,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 16382222
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "print_cancelled",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 3210,
+						"serial": 3,
+						"state": 6,
+						"ticks_usec": 16382546
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "cancel_center",
+						"physics_frame": 3210,
+						"serial": 3,
+						"state": 6,
+						"ticks_usec": 16382624
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "cancel_center",
+						"physics_frame": 3213,
+						"serial": 3,
+						"state": 6,
+						"ticks_usec": 16383742
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "cancel_axis_reset",
+						"physics_frame": 3213,
+						"serial": 3,
+						"state": 6,
+						"ticks_usec": 16383780
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "cancel_axis_reset",
+						"physics_frame": 3216,
+						"serial": 3,
+						"state": 6,
+						"ticks_usec": 16384621
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 3216,
+						"serial": 3,
+						"state": 0,
+						"ticks_usec": 16384644
+					}
+				],
+				"failure": "真实音流属性变更观察者取消",
+				"finished_pending": false,
+				"first_left_done": true,
+				"line": 1,
+				"mechanical_count": 2,
+				"phase": "",
+				"serial": 3,
+				"state": 0,
+				"take_token": 0
+			},
+			"观察已调用": true,
+			"音源引用": "axis_return_player（被测播放器引用）"
+		},
+		{
+			"同步请求释放控制器": true,
+			"名称": "真实音流赋值观察重入",
+			"机械快照": {
+				"config": {
+					"axis_reset": "(0.0, 0.0, 0.0)",
+					"capacity": 21,
+					"center": "(0.1, 0.0, 0.0)",
+					"center_time": 0.05,
+					"first": "(0.0, -0.1, 0.0)",
+					"first_descent": 0.05,
+					"first_left": 0.05,
+					"first_wait": 0.05,
+					"left": "(-0.07, 0.0, 0.0)",
+					"minimum": -0.5,
+					"next_line": 0.05,
+					"print_line": 0.05,
+					"reset_time": 0.05,
+					"return_left": 0.05,
+					"right": "(0.27, 0.0, 0.0)",
+					"spacing": 0.02
+				},
+				"events": [
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3221,
+						"serial": 1,
+						"state": 1,
+						"ticks_usec": 16493590
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3221,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16539382
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 3221,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16539590
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_descent",
+						"physics_frame": 3223,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16605960
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 3223,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16606085
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_wait",
+						"physics_frame": 3226,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16607497
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_left",
+						"physics_frame": 3226,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16607746
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "first_left",
+						"physics_frame": 3229,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16609189
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "print_line",
+						"physics_frame": 3229,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16609379
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "print_line",
+						"physics_frame": 3232,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16610743
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "",
+						"physics_frame": 3232,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16610874
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 0,
+						"phase": "return_left",
+						"physics_frame": 3232,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16611039
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 0,
+						"phase": "return_left",
+						"physics_frame": 3235,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16612280
+					},
+					{
+						"axis_position": "(0.0, -0.1, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "next_line",
+						"physics_frame": 3235,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16612497
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "next_line",
+						"physics_frame": 3238,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16613744
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(-0.07, 0.0, 0.0)",
+						"line": 1,
+						"phase": "print_line",
+						"physics_frame": 3238,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16613938
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "print_line",
+						"physics_frame": 3241,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16615493
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "line_revealed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 3241,
+						"serial": 2,
+						"state": 2,
+						"ticks_usec": 16615604
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 3241,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 16615655
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.27, 0.0, 0.0)",
+						"line": 1,
+						"phase": "center",
+						"physics_frame": 3241,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 16615809
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "center",
+						"physics_frame": 3244,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 16617117
+					},
+					{
+						"axis_position": "(0.0, -0.12, 0.0)",
+						"event": "action_started",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "axis_reset",
+						"physics_frame": 3244,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 16617460
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "action_finished",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "axis_reset",
+						"physics_frame": 3247,
+						"serial": 2,
+						"state": 3,
+						"ticks_usec": 16618673
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "state_changed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 3247,
+						"serial": 2,
+						"state": 4,
+						"ticks_usec": 16618795
+					},
+					{
+						"axis_position": "(0.0, 0.0, 0.0)",
+						"event": "print_completed",
+						"head_position": "(0.1, 0.0, 0.0)",
+						"line": 1,
+						"phase": "",
+						"physics_frame": 3247,
+						"serial": 2,
+						"state": 4,
+						"ticks_usec": 16618929
+					}
+				],
+				"failure": "",
+				"finished_pending": false,
+				"first_left_done": true,
+				"line": 1,
+				"mechanical_count": 2,
+				"phase": "",
+				"serial": 2,
+				"state": 4,
+				"take_token": 0
+			},
+			"观察已调用": true,
+			"音源引用": "axis_return_player（被测播放器引用）"
+		}
+	],
+	"失败数": 0,
+	"官方机制来源": [
+		"https://docs.godotengine.org/en/4.6/classes/class_audiostreamplayer3d.html",
+		"https://docs.godotengine.org/en/4.6/classes/class_randomnumbergenerator.html",
+		"https://docs.godotengine.org/en/4.6/classes/class_tween.html"
+	],
+	"引擎": {
+		"build": "official",
+		"hash": "14d19694e0c88a3f9e82d899a0400f27a24c176e",
+		"hex": 263681,
+		"major": 4,
+		"minor": 6,
+		"patch": 1,
+		"status": "stable",
+		"string": "4.6.1-stable (official)",
+		"timestamp": 0
+	},
+	"断言": [
+		{
+			"说明": "打印音效专项只使用无图形后端",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "真实通知中心场景配置独立打印音效控制器",
+			"通过": true
+		},
+		{
+			"说明": "正式待打印事件绑定真实玩家暂停来源",
+			"通过": true
+		},
+		{
+			"说明": "实际随机源种子覆盖六选项中的第0项",
+			"通过": true
+		},
+		{
+			"说明": "敲击0播放实际指定资源的独立非循环副本",
+			"通过": true
+		},
+		{
+			"说明": "敲击0发起真实三维播放且不修改共享资源",
+			"通过": true
+		},
+		{
+			"说明": "敲击0只在真实音源自然完成一次之后选择下一项",
+			"通过": true
+		},
+		{
+			"说明": "观测实际音频混音周期而非假定物理帧同步",
+			"通过": true
+		},
+		{
+			"说明": "停止敲击后真实音频或静音旧完成不能继续选择",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "真实通知中心场景配置独立打印音效控制器",
+			"通过": true
+		},
+		{
+			"说明": "正式待打印事件绑定真实玩家暂停来源",
+			"通过": true
+		},
+		{
+			"说明": "实际随机源种子覆盖六选项中的第1项",
+			"通过": true
+		},
+		{
+			"说明": "敲击1播放实际指定资源的独立非循环副本",
+			"通过": true
+		},
+		{
+			"说明": "敲击1发起真实三维播放且不修改共享资源",
+			"通过": true
+		},
+		{
+			"说明": "敲击1只在真实音源自然完成一次之后选择下一项",
+			"通过": true
+		},
+		{
+			"说明": "观测实际音频混音周期而非假定物理帧同步",
+			"通过": true
+		},
+		{
+			"说明": "停止敲击后真实音频或静音旧完成不能继续选择",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "真实通知中心场景配置独立打印音效控制器",
+			"通过": true
+		},
+		{
+			"说明": "正式待打印事件绑定真实玩家暂停来源",
+			"通过": true
+		},
+		{
+			"说明": "实际随机源种子覆盖六选项中的第2项",
+			"通过": true
+		},
+		{
+			"说明": "敲击2播放实际指定资源的独立非循环副本",
+			"通过": true
+		},
+		{
+			"说明": "敲击2发起真实三维播放且不修改共享资源",
+			"通过": true
+		},
+		{
+			"说明": "敲击2只在真实音源自然完成一次之后选择下一项",
+			"通过": true
+		},
+		{
+			"说明": "观测实际音频混音周期而非假定物理帧同步",
+			"通过": true
+		},
+		{
+			"说明": "停止敲击后真实音频或静音旧完成不能继续选择",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "真实通知中心场景配置独立打印音效控制器",
+			"通过": true
+		},
+		{
+			"说明": "正式待打印事件绑定真实玩家暂停来源",
+			"通过": true
+		},
+		{
+			"说明": "实际随机源种子覆盖六选项中的第3项",
+			"通过": true
+		},
+		{
+			"说明": "敲击3播放实际指定资源的独立非循环副本",
+			"通过": true
+		},
+		{
+			"说明": "敲击3发起真实三维播放且不修改共享资源",
+			"通过": true
+		},
+		{
+			"说明": "敲击3只在真实音源自然完成一次之后选择下一项",
+			"通过": true
+		},
+		{
+			"说明": "观测实际音频混音周期而非假定物理帧同步",
+			"通过": true
+		},
+		{
+			"说明": "停止敲击后真实音频或静音旧完成不能继续选择",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "真实通知中心场景配置独立打印音效控制器",
+			"通过": true
+		},
+		{
+			"说明": "正式待打印事件绑定真实玩家暂停来源",
+			"通过": true
+		},
+		{
+			"说明": "实际随机源种子覆盖六选项中的第4项",
+			"通过": true
+		},
+		{
+			"说明": "静音4不请求声音并采用明确停顿时长",
+			"通过": true
+		},
+		{
+			"说明": "静音停顿通过真实有限补间继续且不伪造音频完成",
+			"通过": true
+		},
+		{
+			"说明": "静音4实际物理帧停顿符合配置",
+			"通过": true
+		},
+		{
+			"说明": "观测实际音频混音周期而非假定物理帧同步",
+			"通过": true
+		},
+		{
+			"说明": "停止敲击后真实音频或静音旧完成不能继续选择",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "真实通知中心场景配置独立打印音效控制器",
+			"通过": true
+		},
+		{
+			"说明": "正式待打印事件绑定真实玩家暂停来源",
+			"通过": true
+		},
+		{
+			"说明": "实际随机源种子覆盖六选项中的第5项",
+			"通过": true
+		},
+		{
+			"说明": "静音5不请求声音并采用明确停顿时长",
+			"通过": true
+		},
+		{
+			"说明": "静音停顿通过真实有限补间继续且不伪造音频完成",
+			"通过": true
+		},
+		{
+			"说明": "静音5实际物理帧停顿符合配置",
+			"通过": true
+		},
+		{
+			"说明": "观测实际音频混音周期而非假定物理帧同步",
+			"通过": true
+		},
+		{
+			"说明": "停止敲击后真实音频或静音旧完成不能继续选择",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "真实通知中心场景配置独立打印音效控制器",
+			"通过": true
+		},
+		{
+			"说明": "正式待打印事件绑定真实玩家暂停来源",
+			"通过": true
+		},
+		{
+			"说明": "静音停顿收到真实界面或场景树暂停",
+			"通过": true
+		},
+		{
+			"说明": "静音暂停保持准确剩余时长且不抽取新项",
+			"通过": true
+		},
+		{
+			"说明": "静音恢复只完成剩余停顿且不重新开始完整时长",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "真实通知中心场景配置独立打印音效控制器",
+			"通过": true
+		},
+		{
+			"说明": "正式待打印事件绑定真实玩家暂停来源",
+			"通过": true
+		},
+		{
+			"说明": "静音停顿收到真实界面或场景树暂停",
+			"通过": true
+		},
+		{
+			"说明": "静音暂停保持准确剩余时长且不抽取新项",
+			"通过": true
+		},
+		{
+			"说明": "静音恢复只完成剩余停顿且不重新开始完整时长",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "真实通知中心场景配置独立打印音效控制器",
+			"通过": true
+		},
+		{
+			"说明": "正式待打印事件绑定真实玩家暂停来源",
+			"通过": true
+		},
+		{
+			"说明": "静音停顿收到真实界面或场景树暂停",
+			"通过": true
+		},
+		{
+			"说明": "静音暂停保持准确剩余时长且不抽取新项",
+			"通过": true
+		},
+		{
+			"说明": "静音恢复只完成剩余停顿且不重新开始完整时长",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "真实通知中心场景配置独立打印音效控制器",
+			"通过": true
+		},
+		{
+			"说明": "正式待打印事件绑定真实玩家暂停来源",
+			"通过": true
+		},
+		{
+			"说明": "静音停顿收到真实界面或场景树暂停",
+			"通过": true
+		},
+		{
+			"说明": "静音暂停保持准确剩余时长且不抽取新项",
+			"通过": true
+		},
+		{
+			"说明": "静音恢复只完成剩余停顿且不重新开始完整时长",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "真实通知中心场景配置独立打印音效控制器",
+			"通过": true
+		},
+		{
+			"说明": "正式待打印事件绑定真实玩家暂停来源",
+			"通过": true
+		},
+		{
+			"说明": "观测实际音频混音周期而非假定物理帧同步",
+			"通过": true
+		},
+		{
+			"说明": "观测实际音频混音周期而非假定物理帧同步",
+			"通过": true
+		},
+		{
+			"说明": "真实界面暂停跨实际混音提交后冻结同一敲击资源与播放对象",
+			"通过": true
+		},
+		{
+			"说明": "敲击声音暂停不提前进入下一次随机选择",
+			"通过": true
+		},
+		{
+			"说明": "观测实际音频混音周期而非假定物理帧同步",
+			"通过": true
+		},
+		{
+			"说明": "敲击恢复续接原播放对象及进度",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "仅每个真实非空机械行自然完成鸣铃一次并停止该行敲击",
+			"通过": true
+		},
+		{
+			"说明": "首次左移、逐行回左及最终回中均播放一次打印头复位声",
+			"通过": true
+		},
+		{
+			"说明": "最终横轴真实复位开始播放且自然复位完成立即停止",
+			"通过": true
+		},
+		{
+			"说明": "完成待取阶段不继续逐行敲击",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "仅每个真实非空机械行自然完成鸣铃一次并停止该行敲击",
+			"通过": true
+		},
+		{
+			"说明": "首次左移、逐行回左及最终回中均播放一次打印头复位声",
+			"通过": true
+		},
+		{
+			"说明": "最终横轴真实复位开始播放且自然复位完成立即停止",
+			"通过": true
+		},
+		{
+			"说明": "完成待取阶段不继续逐行敲击",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "仅每个真实非空机械行自然完成鸣铃一次并停止该行敲击",
+			"通过": true
+		},
+		{
+			"说明": "首次左移、逐行回左及最终回中均播放一次打印头复位声",
+			"通过": true
+		},
+		{
+			"说明": "最终横轴真实复位开始播放且自然复位完成立即停止",
+			"通过": true
+		},
+		{
+			"说明": "完成待取阶段不继续逐行敲击",
+			"通过": true
+		},
+		{
+			"说明": "全空行只推进机械位置且不敲击或鸣铃",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "仅每个真实非空机械行自然完成鸣铃一次并停止该行敲击",
+			"通过": true
+		},
+		{
+			"说明": "首次左移、逐行回左及最终回中均播放一次打印头复位声",
+			"通过": true
+		},
+		{
+			"说明": "最终横轴真实复位开始播放且自然复位完成立即停止",
+			"通过": true
+		},
+		{
+			"说明": "完成待取阶段不继续逐行敲击",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "仅每个真实非空机械行自然完成鸣铃一次并停止该行敲击",
+			"通过": true
+		},
+		{
+			"说明": "首次左移、逐行回左及最终回中均播放一次打印头复位声",
+			"通过": true
+		},
+		{
+			"说明": "最终横轴真实复位开始播放且自然复位完成立即停止",
+			"通过": true
+		},
+		{
+			"说明": "完成待取阶段不继续逐行敲击",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "横轴复位采用独立完整采样循环以覆盖可编辑复位时长",
+			"通过": true
+		},
+		{
+			"说明": "横轴循环不修改共享导入音频资源",
+			"通过": true
+		},
+		{
+			"说明": "延长实际横轴复位后仍由自然完成停止音效",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "指定实际动作阶段受理取消",
+			"通过": true
+		},
+		{
+			"说明": "取消立即撤销敲击、行铃与横轴旧声音",
+			"通过": true
+		},
+		{
+			"说明": "取消恢复真实回中动作播放一次打印头复位声音",
+			"通过": true
+		},
+		{
+			"说明": "取消轴恢复不冒充正常完成后的横轴复位音效",
+			"通过": true
+		},
+		{
+			"说明": "观测实际音频混音周期而非假定物理帧同步",
+			"通过": true
+		},
+		{
+			"说明": "取消清理后旧自然音频与静音回调不能重启任何声音",
+			"通过": true
+		},
+		{
+			"说明": "空闲显式目标重新绑定成功",
+			"通过": true
+		},
+		{
+			"说明": "显式位置恢复不重放敲击、行铃或机械回位声音",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "取消后下一份真实打印只保留本次一行铃声",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "指定实际动作阶段受理取消",
+			"通过": true
+		},
+		{
+			"说明": "取消立即撤销敲击、行铃与横轴旧声音",
+			"通过": true
+		},
+		{
+			"说明": "取消恢复真实回中动作播放一次打印头复位声音",
+			"通过": true
+		},
+		{
+			"说明": "取消轴恢复不冒充正常完成后的横轴复位音效",
+			"通过": true
+		},
+		{
+			"说明": "观测实际音频混音周期而非假定物理帧同步",
+			"通过": true
+		},
+		{
+			"说明": "取消清理后旧自然音频与静音回调不能重启任何声音",
+			"通过": true
+		},
+		{
+			"说明": "空闲显式目标重新绑定成功",
+			"通过": true
+		},
+		{
+			"说明": "显式位置恢复不重放敲击、行铃或机械回位声音",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "取消后下一份真实打印只保留本次一行铃声",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "指定实际动作阶段受理取消",
+			"通过": true
+		},
+		{
+			"说明": "取消立即撤销敲击、行铃与横轴旧声音",
+			"通过": true
+		},
+		{
+			"说明": "取消恢复真实回中动作播放一次打印头复位声音",
+			"通过": true
+		},
+		{
+			"说明": "取消轴恢复不冒充正常完成后的横轴复位音效",
+			"通过": true
+		},
+		{
+			"说明": "观测实际音频混音周期而非假定物理帧同步",
+			"通过": true
+		},
+		{
+			"说明": "取消清理后旧自然音频与静音回调不能重启任何声音",
+			"通过": true
+		},
+		{
+			"说明": "空闲显式目标重新绑定成功",
+			"通过": true
+		},
+		{
+			"说明": "显式位置恢复不重放敲击、行铃或机械回位声音",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "取消后下一份真实打印只保留本次一行铃声",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "指定实际动作阶段受理取消",
+			"通过": true
+		},
+		{
+			"说明": "取消立即撤销敲击、行铃与横轴旧声音",
+			"通过": true
+		},
+		{
+			"说明": "取消恢复真实回中动作播放一次打印头复位声音",
+			"通过": true
+		},
+		{
+			"说明": "取消轴恢复不冒充正常完成后的横轴复位音效",
+			"通过": true
+		},
+		{
+			"说明": "观测实际音频混音周期而非假定物理帧同步",
+			"通过": true
+		},
+		{
+			"说明": "取消清理后旧自然音频与静音回调不能重启任何声音",
+			"通过": true
+		},
+		{
+			"说明": "空闲显式目标重新绑定成功",
+			"通过": true
+		},
+		{
+			"说明": "显式位置恢复不重放敲击、行铃或机械回位声音",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "取消后下一份真实打印只保留本次一行铃声",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "指定实际动作阶段受理取消",
+			"通过": true
+		},
+		{
+			"说明": "取消立即撤销敲击、行铃与横轴旧声音",
+			"通过": true
+		},
+		{
+			"说明": "取消恢复真实回中动作播放一次打印头复位声音",
+			"通过": true
+		},
+		{
+			"说明": "取消轴恢复不冒充正常完成后的横轴复位音效",
+			"通过": true
+		},
+		{
+			"说明": "观测实际音频混音周期而非假定物理帧同步",
+			"通过": true
+		},
+		{
+			"说明": "取消清理后旧自然音频与静音回调不能重启任何声音",
+			"通过": true
+		},
+		{
+			"说明": "空闲显式目标重新绑定成功",
+			"通过": true
+		},
+		{
+			"说明": "显式位置恢复不重放敲击、行铃或机械回位声音",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "取消后下一份真实打印只保留本次一行铃声",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "指定实际动作阶段受理取消",
+			"通过": true
+		},
+		{
+			"说明": "取消立即撤销敲击、行铃与横轴旧声音",
+			"通过": true
+		},
+		{
+			"说明": "取消恢复真实回中动作播放一次打印头复位声音",
+			"通过": true
+		},
+		{
+			"说明": "取消轴恢复不冒充正常完成后的横轴复位音效",
+			"通过": true
+		},
+		{
+			"说明": "观测实际音频混音周期而非假定物理帧同步",
+			"通过": true
+		},
+		{
+			"说明": "取消清理后旧自然音频与静音回调不能重启任何声音",
+			"通过": true
+		},
+		{
+			"说明": "空闲显式目标重新绑定成功",
+			"通过": true
+		},
+		{
+			"说明": "显式位置恢复不重放敲击、行铃或机械回位声音",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "取消后下一份真实打印只保留本次一行铃声",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "指定实际动作阶段受理取消",
+			"通过": true
+		},
+		{
+			"说明": "取消立即撤销敲击、行铃与横轴旧声音",
+			"通过": true
+		},
+		{
+			"说明": "取消恢复真实回中动作播放一次打印头复位声音",
+			"通过": true
+		},
+		{
+			"说明": "取消轴恢复不冒充正常完成后的横轴复位音效",
+			"通过": true
+		},
+		{
+			"说明": "观测实际音频混音周期而非假定物理帧同步",
+			"通过": true
+		},
+		{
+			"说明": "取消清理后旧自然音频与静音回调不能重启任何声音",
+			"通过": true
+		},
+		{
+			"说明": "空闲显式目标重新绑定成功",
+			"通过": true
+		},
+		{
+			"说明": "显式位置恢复不重放敲击、行铃或机械回位声音",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "取消后下一份真实打印只保留本次一行铃声",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "指定实际动作阶段受理取消",
+			"通过": true
+		},
+		{
+			"说明": "取消立即撤销敲击、行铃与横轴旧声音",
+			"通过": true
+		},
+		{
+			"说明": "取消恢复真实回中动作播放一次打印头复位声音",
+			"通过": true
+		},
+		{
+			"说明": "取消轴恢复不冒充正常完成后的横轴复位音效",
+			"通过": true
+		},
+		{
+			"说明": "观测实际音频混音周期而非假定物理帧同步",
+			"通过": true
+		},
+		{
+			"说明": "取消清理后旧自然音频与静音回调不能重启任何声音",
+			"通过": true
+		},
+		{
+			"说明": "空闲显式目标重新绑定成功",
+			"通过": true
+		},
+		{
+			"说明": "显式位置恢复不重放敲击、行铃或机械回位声音",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "取消后下一份真实打印只保留本次一行铃声",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "可选打印声音立即释放仍自然完成且允许获取原纸张：typing_player（被释放音效引用）",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "可选打印声音立即释放仍自然完成且允许获取原纸张：ding_player（被释放音效引用）",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "可选打印声音立即释放仍自然完成且允许获取原纸张：head_return_player（被释放音效引用）",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "可选打印声音立即释放仍自然完成且允许获取原纸张：axis_return_player（被释放音效引用）",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "可选打印声音立即释放仍自然完成且允许获取原纸张：print_audio（被释放音效引用）",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "敲击进行中音源立即释放只停止对应表现",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "真实通知中心场景配置独立打印音效控制器",
+			"通过": true
+		},
+		{
+			"说明": "正式待打印事件绑定真实玩家暂停来源",
+			"通过": true
+		},
+		{
+			"说明": "两个真实设备分别拥有音效控制器与随机源",
+			"通过": true
+		},
+		{
+			"说明": "两实例横轴循环使用各自音流副本",
+			"通过": true
+		},
+		{
+			"说明": "停止一台设备不停止另一台真实横轴声音",
+			"通过": true
+		},
+		{
+			"说明": "两实例六项抽取及敲击或静音状态互不覆盖",
+			"通过": true
+		},
+		{
+			"说明": "真实播放保留三维音源可编辑音量、空间属性和局部偏移：TypingPlayer（声音节点）",
+			"通过": true
+		},
+		{
+			"说明": "真实播放保留三维音源可编辑音量、空间属性和局部偏移：DingPlayer（声音节点）",
+			"通过": true
+		},
+		{
+			"说明": "真实播放保留三维音源可编辑音量、空间属性和局部偏移：HeadReturnPlayer（声音节点）",
+			"通过": true
+		},
+		{
+			"说明": "真实播放保留三维音源可编辑音量、空间属性和局部偏移：AxisReturnPlayer（声音节点）",
+			"通过": true
+		},
+		{
+			"说明": "行铃与打印头复位采用独立单次音流",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "实际音流赋值通知同步取消后清理旧来源且不伪报完成",
+			"通过": true
+		},
+		{
+			"说明": "同步声音观察取消保留真实取消回中及横轴恢复动作",
+			"通过": true
+		},
+		{
+			"说明": "同步音流赋值取消后不再发布旧打印行开始通知",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "实际音流赋值通知同步请求释放控制器，帧末实际释放后打印仍自然完成",
+			"通过": true
+		},
+		{
+			"说明": "观察请求释放可选音效控制器后保留当前完成纸张获取许可",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "实际音流赋值通知同步取消后清理旧来源且不伪报完成",
+			"通过": true
+		},
+		{
+			"说明": "同步声音观察取消保留真实取消回中及横轴恢复动作",
+			"通过": true
+		},
+		{
+			"说明": "同步音流赋值取消后不再发布旧打印行开始通知",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "实际音流赋值通知同步请求释放控制器，帧末实际释放后打印仍自然完成",
+			"通过": true
+		},
+		{
+			"说明": "观察请求释放可选音效控制器后保留当前完成纸张获取许可",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "实际音流赋值通知同步取消后清理旧来源且不伪报完成",
+			"通过": true
+		},
+		{
+			"说明": "同步声音观察取消保留真实取消回中及横轴恢复动作",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "实际音流赋值通知同步请求释放控制器，帧末实际释放后打印仍自然完成",
+			"通过": true
+		},
+		{
+			"说明": "观察请求释放可选音效控制器后保留当前完成纸张获取许可",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "实际音流赋值通知同步取消后清理旧来源且不伪报完成",
+			"通过": true
+		},
+		{
+			"说明": "同步声音观察取消保留真实取消回中及横轴恢复动作",
+			"通过": true
+		},
+		{
+			"说明": "真实场景聚焦配置有效",
+			"通过": true
+		},
+		{
+			"说明": "运行初态没有预置纸张",
+			"通过": true
+		},
+		{
+			"说明": "任务事件只建立待打印",
+			"通过": true
+		},
+		{
+			"说明": "忙碌事件不覆盖本次任务",
+			"通过": true
+		},
+		{
+			"说明": "唯一按钮入口建立一份空白纸张",
+			"通过": true
+		},
+		{
+			"说明": "开始后重复正式入口拒绝",
+			"通过": true
+		},
+		{
+			"说明": "打印开始全文隐藏",
+			"通过": true
+		},
+		{
+			"说明": "实际音流赋值通知同步请求释放控制器，帧末实际释放后打印仍自然完成",
+			"通过": true
+		},
+		{
+			"说明": "观察请求释放可选音效控制器后保留当前完成纸张获取许可",
+			"通过": true
+		},
+		{
+			"说明": "观测实际音频混音周期而非假定物理帧同步",
+			"通过": true
+		}
+	],
+	"断言数": 469,
+	"输入方式": "无图形正式场景及直接音效接口；不启动图形窗口，不注入系统指针，不伪造完成信号"
+}

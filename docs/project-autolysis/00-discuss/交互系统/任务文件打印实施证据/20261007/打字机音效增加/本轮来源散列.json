@@ -1,0 +1,42 @@
+[
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_quest_machine.gd",
+    "散列": "57404DE58DE05A90D83B6BEB911187E39651E16F57530215A295D46BB85B49FC"
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_quest_print_audio.gd",
+    "散列": "A325AF934FAF75856E17A0CDDB03D202A877A23672FCD583F3B14C5DAC2345E6"
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_quest_print_audio.gd.uid",
+    "散列": "CDD2BBA60559D6D70157510474BD392A4163A98FB20035A4134EFB5C8A3B47C7"
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_machine_0.tscn",
+    "散列": "D584C545E61C212F2111A9000B910B2038A970CA1BE2FB653CEEA9DF4250DF12"
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\machine_spatial_audio_test.gd",
+    "散列": "300B9B6ADF7A39054650935264549194EAD82E45DA0638CB3485255C99248C69"
+  },
+  {
+    "文件": "main-autolysis\\systems\\quest-print-system\\tests\\quest_machine_audio_test.gd",
+    "散列": "80151517AF00939D43AD83BB06383DDA12FFCC4CD2FB336638CEA9E90F739D08"
+  },
+  {
+    "文件": "main-autolysis\\systems\\quest-print-system\\tests\\quest_machine_audio_test.gd.uid",
+    "散列": "D0E24ACF02F4D4FA97837D02FAD9412ABE3560A23E4571802977D7EB24C18645"
+  },
+  {
+    "文件": "main-autolysis\\systems\\quest-print-system\\tests\\run_quest_print_revision_verification.ps1",
+    "散列": "FEFC8EE4B5326AD7870863EC80734F125D6F9AB356CDC6517203BB2D8DC4E050"
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\quest_paper_inventory_test.gd",
+    "散列": "0A3746CE793006CDF95A01EF32EF3F970C7937B1B747C79FB54CEF5A1706CC93"
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\quest_print_main_test.gd",
+    "散列": "0050812FCA59B48EFEDED5B3DBCDF4557AA0B85959F9141CF73F5237159D7873"
+  }
+]

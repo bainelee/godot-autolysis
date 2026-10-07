@@ -1,0 +1,284 @@
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\226\207\344\273\266\346\211\223\345\215\260\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\211\223\345\255\227\346\234\272\351\237\263\346\225\210\345\242\236\345\212\240\\\345\256\236\346\226\275\345\211\215\\autolysis_quest_machine.gd" "b/D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_quest_machine.gd"
+index f9621da..d485f27 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\226\207\344\273\266\346\211\223\345\215\260\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\211\223\345\255\227\346\234\272\351\237\263\346\225\210\345\242\236\345\212\240\\\345\256\236\346\226\275\345\211\215\\autolysis_quest_machine.gd"
++++ "b/D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_quest_machine.gd"
+@@ -52,6 +52,7 @@ enum PrintState { IDLE, PENDING, PRINTING, RESETTING, COMPLETE, TAKING, RECOVERI
+ @export var indicator_emission_maximum: float = 2.0
+ @export var notice_player: AudioStreamPlayer3D
+ @export var scanning_player: AudioStreamPlayer3D
++@export var print_audio: AutolysisQuestPrintAudio
+ @export var notice_stream: AudioStreamWAV = preload("res://main-autolysis/assets/audio/sound_fx/machine/sfx_machine_notice_0.wav")
+ @export var scanning_stream: AudioStreamWAV = preload("res://main-autolysis/assets/audio/sound_fx/machine/sfx_machine_scanning_0.wav")
+ 
+@@ -246,6 +247,8 @@ func _restore_start_failure(serial: int, reason: String) -> void:
+ 	if _serial != serial:
+ 		return
+ 	_kill_action()
++	if _live(print_audio):
++		print_audio.stop_all()
+ 	_cleanup_paper()
+ 	last_failure_reason = reason
+ 	_set_state(PrintState.PENDING)
+@@ -265,6 +268,14 @@ func _begin_motion(phase: StringName, target: Node3D, destination: Vector3, seco
+ 	_active_tween = _new_tween()
+ 	_active_tween.tween_property(target, "position", destination, seconds)
+ 	_active_tween.finished.connect(_on_action_finished.bind(serial, _action_id, phase))
++	var action: int = _action_id
++	if _live(print_audio):
++		print_audio.begin_action(phase)
++		if not _action_context_valid(serial) or action != _action_id or phase != _phase:
++			return
++		_sync_pause()
++	if not _action_context_valid(serial) or action != _action_id or phase != _phase:
++		return
+ 	_record(&"action_started", phase)
+ 	action_started.emit(serial, phase, _line)
+ 
+@@ -295,6 +306,10 @@ func _on_action_finished(serial: int, action: int, phase: StringName) -> void:
+ 		return
+ 	_active_tween = null
+ 	_finished_pending = true
++	if _live(print_audio):
++		print_audio.finish_action(phase)
++	if not _action_context_valid(serial) or action != _action_id or phase != _phase:
++		return
+ 	if not _paused():
+ 		_advance_finished_action(serial, action, phase)
+ 
+@@ -401,6 +416,8 @@ func cancel_print(serial: int, reason: String) -> bool:
+ 	var old_serial: int = _serial
+ 	_serial += 1
+ 	_kill_action()
++	if _live(print_audio):
++		print_audio.stop_all()
+ 	last_failure_reason = reason
+ 	_set_effect(0, false)
+ 	_set_effect(1, false)
+@@ -574,6 +591,8 @@ func _process(_delta: float) -> void:
+ 		return
+ 	if state == PrintState.RECOVERING and not _recovery_dependencies_valid():
+ 		_kill_action()
++		if _live(print_audio):
++			print_audio.stop_all()
+ 		_set_state(PrintState.WAITING_RECOVERY)
+ 		return
+ 	if _finished_pending and not _paused():
+@@ -668,6 +687,8 @@ func _sync_pause() -> void:
+ 	for audio: Variant in [notice_player, scanning_player]:
+ 		if _live(audio):
+ 			audio.stream_paused = get_tree().paused or local_pause
++	if _live(print_audio):
++		print_audio.set_paused(get_tree().paused or local_pause)
+ 	if _live(print_button):
+ 		print_button.set_press_paused(get_tree().paused or local_pause)
+ 
+@@ -774,6 +795,8 @@ func _effect_warning(reason: String) -> void:
+ func _exit_tree() -> void:
+ 	_serial += 1
+ 	_kill_action()
++	if is_instance_valid(print_audio):
++		print_audio.stop_all()
+ 	_disconnect_actor()
+ 	for tween: Tween in _blinks:
+ 		if is_instance_valid(tween):
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\226\207\344\273\266\346\211\223\345\215\260\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\211\223\345\255\227\346\234\272\351\237\263\346\225\210\345\242\236\345\212\240\\\345\256\236\346\226\275\345\211\215\\quest_machine_0.tscn" "b/D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_machine_0.tscn"
+index 6d89a13..c5e5784 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\226\207\344\273\266\346\211\223\345\215\260\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\211\223\345\255\227\346\234\272\351\237\263\346\225\210\345\242\236\345\212\240\\\345\256\236\346\226\275\345\211\215\\quest_machine_0.tscn"
++++ "b/D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_machine_0.tscn"
+@@ -12,6 +12,7 @@
+ [ext_resource type="Script" uid="uid://cqespumy4ua04" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_button.gd" id="10_button"]
+ [ext_resource type="Script" uid="uid://b7kdmn1qas3t1" path="res://main-autolysis/components/interactions/autolysis_interaction_component.gd" id="11_interaction"]
+ [ext_resource type="Script" uid="uid://c1pn2s683ojtr" path="res://main-autolysis/components/interactions/autolysis_focus_target.gd" id="12_focus"]
++[ext_resource type="Script" uid="uid://clkls62q8yo3i" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_audio.gd" id="13_print_audio"]
+ 
+ [sub_resource type="BoxShape3D" id="BoxShape3D_irjp0"]
+ size = Vector3(1.1999999, 0.79999995, 0.59999996)
+@@ -115,7 +116,7 @@ _data = {
+ &"button_print_quest_press": SubResource("Animation_e7760")
+ }
+ 
+-[node name="quest_machine_0" type="StaticBody3D" unique_id=1978367003 node_paths=PackedStringArray("focus_target", "reference_camera", "root_interaction", "print_button", "animation_source", "paper_anchor", "horizontal_axis", "print_head", "timing_root", "pending_indicator", "completed_indicator", "notice_player", "scanning_player") groups=["interactable"]]
++[node name="quest_machine_0" type="StaticBody3D" unique_id=1978367003 node_paths=PackedStringArray("focus_target", "reference_camera", "root_interaction", "print_button", "animation_source", "paper_anchor", "horizontal_axis", "print_head", "timing_root", "pending_indicator", "completed_indicator", "notice_player", "scanning_player", "print_audio") groups=["interactable"]]
+ collision_layer = 2
+ collision_mask = 0
+ script = ExtResource("9_machine")
+@@ -132,6 +133,7 @@ pending_indicator = NodePath("quest_machine_light_0/mesh_quest_machine_light_0")
+ completed_indicator = NodePath("quest_machine_light_1/mesh_quest_machine_light_1")
+ notice_player = NodePath("TimingRoot/NoticePlayer")
+ scanning_player = NodePath("TimingRoot/ScanningPlayer")
++print_audio = NodePath("TimingRoot/PrintAudio")
+ 
+ [node name="InteractionComponent" type="Node3D" parent="." unique_id=986436724]
+ script = ExtResource("11_interaction")
+@@ -151,6 +153,29 @@ bus = &"SFX"
+ unit_size = 3.0
+ bus = &"SFX"
+ 
++[node name="PrintAudio" type="Node3D" parent="TimingRoot" node_paths=PackedStringArray("typing_player", "ding_player", "head_return_player", "axis_return_player")]
++script = ExtResource("13_print_audio")
++typing_player = NodePath("TypingPlayer")
++ding_player = NodePath("DingPlayer")
++head_return_player = NodePath("HeadReturnPlayer")
++axis_return_player = NodePath("AxisReturnPlayer")
++
++[node name="TypingPlayer" type="AudioStreamPlayer3D" parent="TimingRoot/PrintAudio"]
++unit_size = 3.0
++bus = &"SFX"
++
++[node name="DingPlayer" type="AudioStreamPlayer3D" parent="TimingRoot/PrintAudio"]
++unit_size = 3.0
++bus = &"SFX"
++
++[node name="HeadReturnPlayer" type="AudioStreamPlayer3D" parent="TimingRoot/PrintAudio"]
++unit_size = 3.0
++bus = &"SFX"
++
++[node name="AxisReturnPlayer" type="AudioStreamPlayer3D" parent="TimingRoot/PrintAudio"]
++unit_size = 3.0
++bus = &"SFX"
++
+ [node name="focus_camera" type="Camera3D" parent="." unique_id=1424462674]
+ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.051, 0.418, 1.468)
+ fov = 55.0
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\226\207\344\273\266\346\211\223\345\215\260\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\211\223\345\255\227\346\234\272\351\237\263\346\225\210\345\242\236\345\212\240\\\345\256\236\346\226\275\345\211\215\\machine_spatial_audio_test.gd" "b/D:\\autolysis\\main-autolysis\\player\\tests\\machine_spatial_audio_test.gd"
+index 6477bb1..bf3bc73 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\226\207\344\273\266\346\211\223\345\215\260\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\211\223\345\255\227\346\234\272\351\237\263\346\225\210\345\242\236\345\212\240\\\345\256\236\346\226\275\345\211\215\\machine_spatial_audio_test.gd"
++++ "b/D:\\autolysis\\main-autolysis\\player\\tests\\machine_spatial_audio_test.gd"
+@@ -277,7 +277,7 @@ func run_checks() -> void:
+ 		await _finish_spatial()
+ 		return
+ 	_audit_scene_types(PHONE_SCENE, 4)
+-	_audit_scene_types(QUEST_SCENE, 2)
++	_audit_scene_types(QUEST_SCENE, 6)
+ 	AudioServer.add_bus()
+ 	AudioServer.set_bus_name(AudioServer.bus_count - 1, TEST_BUS)
+ 	_prepare_single_definition()
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\226\207\344\273\266\346\211\223\345\215\260\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\211\223\345\255\227\346\234\272\351\237\263\346\225\210\345\242\236\345\212\240\\\345\256\236\346\226\275\345\211\215\\quest_paper_inventory_test.gd" "b/D:\\autolysis\\main-autolysis\\player\\tests\\quest_paper_inventory_test.gd"
+index 6974616..cb73a7e 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\226\207\344\273\266\346\211\223\345\215\260\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\211\223\345\255\227\346\234\272\351\237\263\346\225\210\345\242\236\345\212\240\\\345\256\236\346\226\275\345\211\215\\quest_paper_inventory_test.gd"
++++ "b/D:\\autolysis\\main-autolysis\\player\\tests\\quest_paper_inventory_test.gd"
+@@ -42,6 +42,9 @@ var released_actor: bool = false
+ var contents_mutation_mode: StringName = &"task_id"
+ var contents_mutation_written: bool = false
+ var evidence_directory: String = preload("res://main-autolysis/systems/item-system/tests/test_evidence.gd").directory("res://docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/inventory")
++var _retiring_audio: Array[WeakRef] = []
++var _retiring_audio_sources: Array[Dictionary] = []
++var _audio_retirement_sample: Dictionary = {}
+ 
+ 
+ func _initialize() -> void:
+@@ -73,13 +76,15 @@ func run_checks() -> void:
+ 	await _display_boundaries()
+ 	await _observations_and_transfer()
+ 	await _held_text_after_transfer()
+-	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(evidence_directory))
+-	var report: FileAccess = FileAccess.open(evidence_directory.path_join("任务纸张库存断言.json"), FileAccess.WRITE)
+-	report.store_string(JSON.stringify({"失败数": failures, "断言数": records.size(), "记录": records, "射线": ray_records}, "\t"))
+-	report.close()
+ 	if is_instance_valid(world):
++		_capture_retiring_audio()
+ 		world.queue_free()
+ 	await frames(3)
++	await _wait_for_audio_retirement()
++	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(evidence_directory))
++	var report: FileAccess = FileAccess.open(evidence_directory.path_join("任务纸张库存断言.json"), FileAccess.WRITE)
++	report.store_string(JSON.stringify({"失败数": failures, "断言数": records.size(), "记录": records, "射线": ray_records, "退出音频采样": _audio_retirement_sample}, "\t"))
++	report.close()
+ 	print("任务纸张库存专项断言数：", records.size(), "；失败数：", failures)
+ 	quit(1 if failures > 0 else 0)
+ 
+@@ -90,6 +95,7 @@ func _entry_allowed() -> bool:
+ 
+ func _fixture(use_first_task: bool = false) -> void:
+ 	if is_instance_valid(world):
++		_capture_retiring_audio()
+ 		world.queue_free()
+ 		await frames(3)
+ 	world = Node3D.new()
+@@ -144,6 +150,33 @@ func _fixture(use_first_task: bool = false) -> void:
+ 	check(inventory.can_take_quest_paper(player, paper), "对应聚焦与当前空格允许取纸")
+ 
+ 
++func _capture_retiring_audio() -> void:
++	for node: Node in world.find_children("*", "AudioStreamPlayer3D", true, false):
++		var audio: AudioStreamPlayer3D = node as AudioStreamPlayer3D
++		if audio.has_stream_playback():
++			_retiring_audio.append(weakref(audio.get_stream_playback()))
++			_retiring_audio_sources.append({"音源路径": str(audio.get_path()), "播放身份": audio.get_stream_playback().get_instance_id()})
++
++
++func _audio_references_alive() -> bool:
++	for reference: WeakRef in _retiring_audio:
++		if reference.get_ref() != null:
++			return true
++	return false
++
++
++func _wait_for_audio_retirement() -> void:
++	var pending_after_frames: bool = _audio_references_alive()
++	var started: int = Time.get_ticks_usec()
++	while _audio_references_alive() and Time.get_ticks_usec() - started < 2000000:
++		# 一毫秒只让音频线程调度；实际弱引用消失决定测试退出，不能代替业务完成。
++		OS.delay_msec(1)
++		await process_frame
++	var retired: bool = not _audio_references_alive()
++	check(retired, "取纸专项退出前本次实际音频播放对象已全部退役")
++	_audio_retirement_sample = {"来源": _retiring_audio_sources.duplicate(true), "三帧后仍存活": pending_after_frames, "实际退役完成": retired, "观察微秒": Time.get_ticks_usec() - started}
++
++
+ func _ray_pixel(body: Node3D) -> Vector2:
+ 	var center: Vector2 = player.camera.unproject_position(body.global_position)
+ 	var exclusions: Array[RID] = [player.get_rid(), player._found_area.get_rid()]
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\226\207\344\273\266\346\211\223\345\215\260\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\211\223\345\255\227\346\234\272\351\237\263\346\225\210\345\242\236\345\212\240\\\345\256\236\346\226\275\345\211\215\\quest_print_main_test.gd" "b/D:\\autolysis\\main-autolysis\\player\\tests\\quest_print_main_test.gd"
+index 5059681..e4f5bce 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\226\207\344\273\266\346\211\223\345\215\260\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\211\223\345\255\227\346\234\272\351\237\263\346\225\210\345\242\236\345\212\240\\\345\256\236\346\226\275\345\211\215\\quest_print_main_test.gd"
++++ "b/D:\\autolysis\\main-autolysis\\player\\tests\\quest_print_main_test.gd"
+@@ -258,9 +258,33 @@ func run_checks() -> void:
+ 
+ func _finish() -> void:
+ 	var directory: String = EVIDENCE.directory("res://docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/主场景输入")
+-	DirAccess.make_dir_recursive_absolute(directory)
+-	var report := FileAccess.open(directory.path_join("主场景输入报告.json"), FileAccess.WRITE)
+-	report.store_string(JSON.stringify({"方式": "无图形主场景；引擎内部键盘及鼠标按钮事件；无原生输入", "引擎": Engine.get_version_info(), "断言": checks, "事件": events, "打印轨迹": machine.get_print_snapshot(), "失败数": failures}, "\t"))
++	var snapshot: Dictionary = machine.get_print_snapshot()
++	var audio_references: Array[WeakRef] = []
++	var audio_sources: Array[Dictionary] = []
++	for node: Node in world.find_children("*", "AudioStreamPlayer3D", true, false):
++		var audio: AudioStreamPlayer3D = node as AudioStreamPlayer3D
++		if audio.has_stream_playback():
++			audio_references.append(weakref(audio.get_stream_playback()))
++			audio_sources.append({"音源路径": str(audio.get_path()), "播放身份": audio.get_stream_playback().get_instance_id()})
+ 	world.queue_free()
+ 	await frames(3)
++	var pending_after_frames: bool = _audio_references_alive(audio_references)
++	var started: int = Time.get_ticks_usec()
++	while _audio_references_alive(audio_references) and Time.get_ticks_usec() - started < 2000000:
++		# 一毫秒只让音频线程调度；实际播放弱引用消失才满足测试退出条件。
++		OS.delay_msec(1)
++		await process_frame
++	var retired: bool = not _audio_references_alive(audio_references)
++	check(retired, "主场景输入专项退出前本次实际音频播放对象已全部退役")
++	DirAccess.make_dir_recursive_absolute(directory)
++	var report := FileAccess.open(directory.path_join("主场景输入报告.json"), FileAccess.WRITE)
++	report.store_string(JSON.stringify({"方式": "无图形主场景；引擎内部键盘及鼠标按钮事件；无原生输入", "引擎": Engine.get_version_info(), "断言": checks, "事件": events, "打印轨迹": snapshot, "失败数": failures, "退出音频采样": {"来源": audio_sources, "三帧后仍存活": pending_after_frames, "实际退役完成": retired, "观察微秒": Time.get_ticks_usec() - started}}, "\t"))
++	report.close()
+ 	quit(1 if failures > 0 else 0)
++
++
++func _audio_references_alive(references: Array[WeakRef]) -> bool:
++	for reference: WeakRef in references:
++		if reference.get_ref() != null:
++			return true
++	return false
+diff --git "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\226\207\344\273\266\346\211\223\345\215\260\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\211\223\345\255\227\346\234\272\351\237\263\346\225\210\345\242\236\345\212\240\\\345\256\236\346\226\275\345\211\215\\run_quest_print_revision_verification.ps1" "b/D:\\autolysis\\main-autolysis\\systems\\quest-print-system\\tests\\run_quest_print_revision_verification.ps1"
+index 329e341..d313862 100644
+--- "a/D:\\autolysis\\docs\\project-autolysis\\00-discuss\\\344\272\244\344\272\222\347\263\273\347\273\237\\\344\273\273\345\212\241\346\226\207\344\273\266\346\211\223\345\215\260\345\256\236\346\226\275\350\257\201\346\215\256\\20261007\\\346\211\223\345\255\227\346\234\272\351\237\263\346\225\210\345\242\236\345\212\240\\\345\256\236\346\226\275\345\211\215\\run_quest_print_revision_verification.ps1"
++++ "b/D:\\autolysis\\main-autolysis\\systems\\quest-print-system\\tests\\run_quest_print_revision_verification.ps1"
+@@ -21,6 +21,7 @@ $cases = @(
+     @{Name='手持文字'; Script=$playerTests+'quest_held_text_test.gd'},
+     @{Name='数据纸面'; Script='res://main-autolysis/systems/quest-print-system/tests/quest_paper_data_view_test.gd'},
+     @{Name='打印时序'; Script='res://main-autolysis/systems/quest-print-system/tests/quest_machine_behavior_test.gd'},
++    @{Name='逐行打印音效'; Script='res://main-autolysis/systems/quest-print-system/tests/quest_machine_audio_test.gd'},
+     @{Name='主场景输入'; Script=$playerTests+'quest_print_main_test.gd'},
+     @{Name='聚焦取纸'; Script=$playerTests+'quest_paper_inventory_test.gd'},
+     @{Name='展示释放边界'; Script=$playerTests+'quest_display_release_probe.gd'},

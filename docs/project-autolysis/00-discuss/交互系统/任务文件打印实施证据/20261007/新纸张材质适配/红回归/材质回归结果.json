@@ -1,0 +1,960 @@
+{
+	"原正面材质": {
+		"基础纹理": "<Object#null>",
+		"着色模式": 1,
+		"第一纹理坐标三平面": true,
+		"第二纹理坐标三平面": false,
+		"粗糙度": 1.0,
+		"透明模式": 0,
+		"颜色": "(0.67, 0.6007, 0.5159, 1.0)"
+	},
+	"原纸体材质": {
+		"基础纹理": "<Object#null>",
+		"着色模式": 1,
+		"第一纹理坐标三平面": true,
+		"第二纹理坐标三平面": false,
+		"粗糙度": 1.0,
+		"透明模式": 0,
+		"颜色": "(0.67, 0.6007, 0.5159, 1.0)"
+	},
+	"失败数": 46,
+	"实际排版测量": [
+		{
+			"实际字体排版": [
+				{
+					"data_line_index": 0,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 237.0,
+					"position": "(0.0, 0.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "日期：1944年9月12日",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 1,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 339.0,
+					"position": "(0.0, 40.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "接收方：海尔塔14号地下研究所",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 2,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 408.0,
+					"position": "(0.0, 80.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "委托方：赫铎伦北部战地医疗指挥中心",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 3,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 336.0,
+					"position": "(0.0, 120.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "接收人：马蒂亚斯·韦尔克兰特",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 4,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 227.0,
+					"position": "(0.0, 160.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "委托编号：07003141",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 5,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 216.0,
+					"position": "(0.0, 200.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "委托类型：基础委托",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 6,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 72.0,
+					"position": "(0.0, 256.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "要求：",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 7,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 216.0,
+					"position": "(0.0, 296.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "咖啡因针剂（基础）",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 8,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 144.0,
+					"position": "(0.0, 352.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "委托方简报：",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 9,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 480.0,
+					"position": "(0.0, 392.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "这是你的第一份委托，你应当查阅你的手册。",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 10,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 528.0,
+					"position": "(0.0, 432.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "你需要注意咖啡因的配置原料，最终封装为针剂。",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 11,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 384.0,
+					"position": "(0.0, 472.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "封装后通过气动传输管道提交药物。",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 12,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 288.0,
+					"position": "(0.0, 512.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "别忘了把委托单一同提交。",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				}
+			],
+			"样例": "世界纸张初始："
+		},
+		{
+			"实际字体排版": [
+				{
+					"data_line_index": 0,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 237.0,
+					"position": "(0.0, 0.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "日期：1944年9月12日",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 1,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 339.0,
+					"position": "(0.0, 40.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "接收方：海尔塔14号地下研究所",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 2,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 408.0,
+					"position": "(0.0, 80.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "委托方：赫铎伦北部战地医疗指挥中心",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 3,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 336.0,
+					"position": "(0.0, 120.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "接收人：马蒂亚斯·韦尔克兰特",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 4,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 227.0,
+					"position": "(0.0, 160.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "委托编号：07003141",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 5,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 216.0,
+					"position": "(0.0, 200.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "委托类型：基础委托",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 6,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 72.0,
+					"position": "(0.0, 256.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "要求：",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 7,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 216.0,
+					"position": "(0.0, 296.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "咖啡因针剂（基础）",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 8,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 144.0,
+					"position": "(0.0, 352.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "委托方简报：",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 9,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 480.0,
+					"position": "(0.0, 392.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "这是你的第一份委托，你应当查阅你的手册。",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 10,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 528.0,
+					"position": "(0.0, 432.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "你需要注意咖啡因的配置原料，最终封装为针剂。",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 11,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 384.0,
+					"position": "(0.0, 472.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "封装后通过气动传输管道提交药物。",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 12,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 288.0,
+					"position": "(0.0, 512.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "别忘了把委托单一同提交。",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				}
+			],
+			"样例": "第一件手持纸张："
+		},
+		{
+			"实际字体排版": [
+				{
+					"data_line_index": 0,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 168.0,
+					"position": "(0.0, 0.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "第二件独立任务",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 1,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 0.0,
+					"position": "(0.0, 40.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 2,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 48.0,
+					"position": "(0.0, 96.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "末行",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 3,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 0.0,
+					"position": "(0.0, 136.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				}
+			],
+			"样例": "第二件手持纸张："
+		},
+		{
+			"实际字体排版": [
+				{
+					"data_line_index": 0,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 144.0,
+					"position": "(0.0, 0.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "本件更新全文",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 1,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 0.0,
+					"position": "(0.0, 40.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 2,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 96.0,
+					"position": "(0.0, 96.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "分组新行",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 3,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 5.0,
+					"position": "(0.0, 136.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": " ",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 4,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "\t",
+					"natural_width": 0.0,
+					"position": "(0.0, 176.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "\t",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 5,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 0.0,
+					"position": "(0.0, 216.0)",
+					"revealed": true,
+					"size": "(648.0, 40.0)",
+					"text": "",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				}
+			],
+			"样例": "手持替换内容："
+		}
+	],
+	"断言": [
+		{
+			"说明": "真实逐件资源分别接收两份完整任务数据",
+			"通过": true
+		},
+		{
+			"说明": "世界纸张通过正式配置绑定实际来源和逐件身份",
+			"通过": true
+		},
+		{
+			"说明": "手持模型通过正式逐件适配器建立两件文字显示",
+			"通过": true
+		},
+		{
+			"说明": "世界纸张：正面继续绑定用户新正面材质资源",
+			"通过": false
+		},
+		{
+			"说明": "世界纸张：纸体继续绑定用户新纸体材质资源",
+			"通过": true
+		},
+		{
+			"说明": "世界纸张：基础正面颜色三平面等配置没有被文字绘制改写",
+			"通过": false
+		},
+		{
+			"说明": "世界纸张：两份共享用户材质资源属性保持原值",
+			"通过": true
+		},
+		{
+			"说明": "世界纸张：基础正面材质没有写入视口文字纹理",
+			"通过": false
+		},
+		{
+			"说明": "手持纸张：正面继续绑定用户新正面材质资源",
+			"通过": false
+		},
+		{
+			"说明": "手持纸张：纸体继续绑定用户新纸体材质资源",
+			"通过": false
+		},
+		{
+			"说明": "手持纸张：基础正面颜色三平面等配置没有被文字绘制改写",
+			"通过": false
+		},
+		{
+			"说明": "手持纸张：两份共享用户材质资源属性保持原值",
+			"通过": true
+		},
+		{
+			"说明": "手持纸张：基础正面材质没有写入视口文字纹理",
+			"通过": false
+		},
+		{
+			"说明": "世界纸张：建立独立文字叠加材质",
+			"通过": false
+		},
+		{
+			"说明": "世界纸张：实际纸面视口使用透明背景",
+			"通过": false
+		},
+		{
+			"说明": "世界纸张：文字叠加材质绑定本模型实际视口纹理",
+			"通过": false
+		},
+		{
+			"说明": "世界纸张：文字使用网格常规纹理坐标且不使用三平面",
+			"通过": false
+		},
+		{
+			"说明": "世界纸张：文字采用透明混合模式",
+			"通过": false
+		},
+		{
+			"说明": "世界纸张：文字纹理保持原色和完整透明度",
+			"通过": false
+		},
+		{
+			"说明": "世界纸张：文字层采用无光照且关闭纹理重复",
+			"通过": false
+		},
+		{
+			"说明": "第一件手持纸张：建立独立文字叠加材质",
+			"通过": false
+		},
+		{
+			"说明": "第一件手持纸张：实际纸面视口使用透明背景",
+			"通过": false
+		},
+		{
+			"说明": "第一件手持纸张：文字叠加材质绑定本模型实际视口纹理",
+			"通过": false
+		},
+		{
+			"说明": "第一件手持纸张：文字使用网格常规纹理坐标且不使用三平面",
+			"通过": false
+		},
+		{
+			"说明": "第一件手持纸张：文字采用透明混合模式",
+			"通过": false
+		},
+		{
+			"说明": "第一件手持纸张：文字纹理保持原色和完整透明度",
+			"通过": false
+		},
+		{
+			"说明": "第一件手持纸张：文字层采用无光照且关闭纹理重复",
+			"通过": false
+		},
+		{
+			"说明": "第二件手持纸张：建立独立文字叠加材质",
+			"通过": false
+		},
+		{
+			"说明": "第二件手持纸张：实际纸面视口使用透明背景",
+			"通过": false
+		},
+		{
+			"说明": "第二件手持纸张：文字叠加材质绑定本模型实际视口纹理",
+			"通过": false
+		},
+		{
+			"说明": "第二件手持纸张：文字使用网格常规纹理坐标且不使用三平面",
+			"通过": false
+		},
+		{
+			"说明": "第二件手持纸张：文字采用透明混合模式",
+			"通过": false
+		},
+		{
+			"说明": "第二件手持纸张：文字纹理保持原色和完整透明度",
+			"通过": false
+		},
+		{
+			"说明": "第二件手持纸张：文字层采用无光照且关闭纹理重复",
+			"通过": false
+		},
+		{
+			"说明": "世界与手持正面及纸体使用相同用户新材质",
+			"通过": false
+		},
+		{
+			"说明": "世界及两件手持模型各自持有独立文字叠加材质",
+			"通过": false
+		},
+		{
+			"说明": "世界及两件手持模型的视口和纹理身份独立",
+			"通过": true
+		},
+		{
+			"说明": "世界纸张初始：具备实际全文排版视图",
+			"通过": true
+		},
+		{
+			"说明": "世界纸张初始：保留任务标识全部原文及分组数据",
+			"通过": true
+		},
+		{
+			"说明": "世界纸张初始：共享纸面视图没有可绘制的不透明底色",
+			"通过": false
+		},
+		{
+			"说明": "世界纸张初始：真实字体为每个原始数据行建立布局",
+			"通过": true
+		},
+		{
+			"说明": "世界纸张初始：真实字体保留逐行原文且没有缺失字符",
+			"通过": true
+		},
+		{
+			"说明": "第一件手持纸张：具备实际全文排版视图",
+			"通过": true
+		},
+		{
+			"说明": "第一件手持纸张：保留任务标识全部原文及分组数据",
+			"通过": true
+		},
+		{
+			"说明": "第一件手持纸张：共享纸面视图没有可绘制的不透明底色",
+			"通过": false
+		},
+		{
+			"说明": "第一件手持纸张：真实字体为每个原始数据行建立布局",
+			"通过": true
+		},
+		{
+			"说明": "第一件手持纸张：真实字体保留逐行原文且没有缺失字符",
+			"通过": true
+		},
+		{
+			"说明": "第二件手持纸张：具备实际全文排版视图",
+			"通过": true
+		},
+		{
+			"说明": "第二件手持纸张：保留任务标识全部原文及分组数据",
+			"通过": true
+		},
+		{
+			"说明": "第二件手持纸张：共享纸面视图没有可绘制的不透明底色",
+			"通过": false
+		},
+		{
+			"说明": "第二件手持纸张：真实字体为每个原始数据行建立布局",
+			"通过": true
+		},
+		{
+			"说明": "第二件手持纸张：真实字体保留逐行原文且没有缺失字符",
+			"通过": true
+		},
+		{
+			"说明": "世界纸張打印前全部原始数据行隐藏",
+			"通过": true
+		},
+		{
+			"说明": "世界纸张真实来源逐行显示且只显示本次指定行",
+			"通过": true
+		},
+		{
+			"说明": "世界纸张正式完成后显示全部十三行原文",
+			"通过": true
+		},
+		{
+			"说明": "世界逐行打印只改变文字绘制且保持排版与文字材质身份",
+			"通过": true
+		},
+		{
+			"说明": "两件手持文字显示各自全部原文并保留空行",
+			"通过": true
+		},
+		{
+			"说明": "相同逐件内容第0次重复应用成功",
+			"通过": true
+		},
+		{
+			"说明": "相同逐件内容第1次重复应用成功",
+			"通过": true
+		},
+		{
+			"说明": "相同逐件内容第2次重复应用成功",
+			"通过": true
+		},
+		{
+			"说明": "相同逐件内容第3次重复应用成功",
+			"通过": true
+		},
+		{
+			"说明": "相同逐件内容第4次重复应用成功",
+			"通过": true
+		},
+		{
+			"说明": "相同逐件内容第5次重复应用成功",
+			"通过": true
+		},
+		{
+			"说明": "相同逐件内容第6次重复应用成功",
+			"通过": true
+		},
+		{
+			"说明": "相同逐件内容第7次重复应用成功",
+			"通过": true
+		},
+		{
+			"说明": "等值更新不重建排版或叠加材质且不积累子节点",
+			"通过": true
+		},
+		{
+			"说明": "实际逐件内容替换通过正式适配器成功应用",
+			"通过": true
+		},
+		{
+			"说明": "手持替换内容：具备实际全文排版视图",
+			"通过": true
+		},
+		{
+			"说明": "手持替换内容：保留任务标识全部原文及分组数据",
+			"通过": true
+		},
+		{
+			"说明": "手持替换内容：共享纸面视图没有可绘制的不透明底色",
+			"通过": false
+		},
+		{
+			"说明": "手持替换内容：真实字体为每个原始数据行建立布局",
+			"通过": true
+		},
+		{
+			"说明": "手持替换内容：真实字体保留逐行原文且没有缺失字符",
+			"通过": false
+		},
+		{
+			"说明": "内容更新释放旧排版且仅保留当前视图",
+			"通过": true
+		},
+		{
+			"说明": "不同内容更新保持本模型文字材质视口和纹理身份",
+			"通过": false
+		},
+		{
+			"说明": "第一件更新全部原文且没有串改第二件文字",
+			"通过": true
+		},
+		{
+			"说明": "内容更新后：正面继续绑定用户新正面材质资源",
+			"通过": false
+		},
+		{
+			"说明": "内容更新后：纸体继续绑定用户新纸体材质资源",
+			"通过": false
+		},
+		{
+			"说明": "内容更新后：基础正面颜色三平面等配置没有被文字绘制改写",
+			"通过": false
+		},
+		{
+			"说明": "内容更新后：两份共享用户材质资源属性保持原值",
+			"通过": true
+		},
+		{
+			"说明": "内容更新后：基础正面材质没有写入视口文字纹理",
+			"通过": false
+		},
+		{
+			"说明": "清空逐件内容通过正式适配器成功应用",
+			"通过": true
+		},
+		{
+			"说明": "内容清空移除文字纹理并关闭叠加层透明度且保留材质身份",
+			"通过": false
+		},
+		{
+			"说明": "清空后旧排版已释放且没有文字子节点",
+			"通过": true
+		},
+		{
+			"说明": "重复清空保持原文字材质和视口身份",
+			"通过": true
+		},
+		{
+			"说明": "恢复原任务内容通过正式适配器重新显示",
+			"通过": true
+		},
+		{
+			"说明": "清空后恢复继续使用原材质原视口纹理并显示完整原文",
+			"通过": false
+		},
+		{
+			"说明": "清空和恢复后：正面继续绑定用户新正面材质资源",
+			"通过": false
+		},
+		{
+			"说明": "清空和恢复后：纸体继续绑定用户新纸体材质资源",
+			"通过": false
+		},
+		{
+			"说明": "清空和恢复后：基础正面颜色三平面等配置没有被文字绘制改写",
+			"通过": false
+		},
+		{
+			"说明": "清空和恢复后：两份共享用户材质资源属性保持原值",
+			"通过": true
+		},
+		{
+			"说明": "清空和恢复后：基础正面材质没有写入视口文字纹理",
+			"通过": false
+		},
+		{
+			"说明": "手持内容更新与清空没有改写已打印的世界文字",
+			"通过": true
+		},
+		{
+			"说明": "测试释放世界纸张和手持排版后没有新增孤立节点",
+			"通过": true
+		}
+	],
+	"断言数": 93,
+	"通过": false,
+	"验证范围": "无图形资源配置和正式业务调用；不包含图形像素效果"
+}

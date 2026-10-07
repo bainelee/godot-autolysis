@@ -1,0 +1,36 @@
+diff --git a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd
+index c55ca51..f9621da 100644
+--- a/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd
++++ b/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd
+@@ -631,7 +631,13 @@ func _set_state(next_state: PrintState) -> void:
+ 
+ 
+ func _record(event: StringName, phase: StringName = &"") -> void:
+-	_events.append({"event": event, "serial": _serial, "state": state, "phase": phase, "line": _line, "physics_frame": Engine.get_physics_frames(), "ticks_usec": Time.get_ticks_usec(), "axis_position": horizontal_axis.position if _live(horizontal_axis) else null, "head_position": print_head.position if _live(print_head) else null})
++	var axis_position: Variant = null
++	if _live(horizontal_axis):
++		axis_position = horizontal_axis.position
++	var head_position: Variant = null
++	if _live(print_head):
++		head_position = print_head.position
++	_events.append({"event": event, "serial": _serial, "state": state, "phase": phase, "line": _line, "physics_frame": Engine.get_physics_frames(), "ticks_usec": Time.get_ticks_usec(), "axis_position": axis_position, "head_position": head_position})
+ 
+ 
+ func get_print_snapshot() -> Dictionary:
+diff --git a/main-autolysis/ui/autolysis_handset_pose_debug.gd b/main-autolysis/ui/autolysis_handset_pose_debug.gd
+index 93e7985..2177e5a 100644
+--- a/main-autolysis/ui/autolysis_handset_pose_debug.gd
++++ b/main-autolysis/ui/autolysis_handset_pose_debug.gd
+@@ -341,9 +341,9 @@ func _discard_editing() -> void:
+ 	for field: SpinBox in _fields:
+ 		field.get_line_edit().text = str(field.value)
+ 	var viewport: Viewport = get_viewport() if is_inside_tree() else null
+-	var owner: Control = viewport.gui_get_focus_owner() if is_instance_valid(viewport) else null
+-	if is_instance_valid(owner) and _panel.is_ancestor_of(owner):
+-		owner.release_focus()
++	var focus_owner: Control = viewport.gui_get_focus_owner() if is_instance_valid(viewport) else null
++	if is_instance_valid(focus_owner) and _panel.is_ancestor_of(focus_owner):
++		focus_owner.release_focus()
+ 	_refreshing = false
+ 
+ 

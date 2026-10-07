@@ -1,0 +1,13 @@
+Godot Engine v4.6.1.stable.official.14d19694e - https://godotengine.org
+
+ERROR: res://main-autolysis/scenes/prefabs/prefab_paper/quest_paper.tscn:22 - Parse Error: [ext_resource] referenced non-existent resource at: res://main-autolysis/scenes/prefabs/prefab_paper/autolysis_quest_paper.gd.
+   at: _printerr (scene/resources/resource_format_text.cpp:40)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/新纸张材质适配/material_compile_probe.gd:22)
+通过：res://main-autolysis/scenes/prefabs/prefab_paper/autolysis_quest_paper.gd；重新编译结果：0
+通过：res://main-autolysis/systems/item-system/autolysis_quest_paper_visual.gd；重新编译结果：0
+通过：res://main-autolysis/systems/quest-print-system/tests/quest_paper_material_test.gd；重新编译结果：0
+通过：res://main-autolysis/player/tests/quest_held_text_test.gd；重新编译结果：0
+通过：res://main-autolysis/player/tests/quest_paper_inventory_test.gd；重新编译结果：0
+通过：res://main-autolysis/player/tests/quest_print_main_test.gd；重新编译结果：0
+编译检查完成；脚本数：6；失败数：0

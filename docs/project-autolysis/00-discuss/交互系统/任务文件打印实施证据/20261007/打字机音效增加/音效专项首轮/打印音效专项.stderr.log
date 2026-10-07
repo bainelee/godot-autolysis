@@ -1,0 +1,65 @@
+WARNING: 逐行敲击播放器失效；停止敲击表现
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] _warn (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_audio.gd:233)
+       [1] begin_action (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_audio.gd:52)
+       [2] _begin_motion (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:273)
+       [3] _advance_finished_action (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:336)
+       [4] _on_action_finished (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:314)
+WARNING: 打印单次声音播放器或资源失效；停止对应声音表现
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] _warn (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_audio.gd:233)
+       [1] _play_once (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_audio.gd:177)
+       [2] finish_action (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_audio.gd:92)
+       [3] _on_action_finished (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:310)
+WARNING: 打印单次声音播放器或资源失效；停止对应声音表现
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] _warn (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_audio.gd:233)
+       [1] _play_once (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_audio.gd:177)
+       [2] begin_action (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_audio.gd:60)
+       [3] _begin_motion (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:273)
+       [4] _process_line (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:367)
+       [5] _advance_finished_action (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:333)
+       [6] _on_action_finished (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:314)
+WARNING: 横轴复位声音配置失效；停止对应声音表现
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] _warn (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_audio.gd:233)
+       [1] begin_action (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_audio.gd:65)
+       [2] _begin_motion (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:273)
+       [3] _advance_finished_action (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:347)
+       [4] _on_action_finished (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:314)
+WARNING: 运行中敲击播放来源失效；停止敲击表现
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] _warn (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_audio.gd:233)
+       [1] _process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_audio.gd:209)
+WARNING: 逐行敲击播放器失效；停止敲击表现
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] _warn (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_audio.gd:233)
+       [1] begin_action (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_audio.gd:52)
+       [2] _begin_motion (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:273)
+       [3] _process_line (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:369)
+       [4] _advance_finished_action (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:333)
+       [5] _on_action_finished (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:314)
+ERROR: Object is locked and can't be freed.
+   at: callp (core/object/object.cpp:890)
+   GDScript backtrace (most recent call first):
+       [0] <anonymous lambda> (res://main-autolysis/systems/quest-print-system/tests/quest_machine_audio_test.gd:296)
+       [1] _choose_typing_step (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_audio.gd:120)
+       [2] begin_action (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_audio.gd:58)
+       [3] _begin_motion (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:273)
+       [4] _advance_finished_action (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:336)
+       [5] _on_action_finished (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:314)
+SCRIPT ERROR: Attempted to free a locked object (calling or emitting).
+   at: <anonymous lambda> (res://main-autolysis/systems/quest-print-system/tests/quest_machine_audio_test.gd:296)
+   GDScript backtrace (most recent call first):
+       [0] <anonymous lambda> (res://main-autolysis/systems/quest-print-system/tests/quest_machine_audio_test.gd:296)
+       [1] _choose_typing_step (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_audio.gd:120)
+       [2] begin_action (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_audio.gd:58)
+       [3] _begin_motion (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:273)
+       [4] _advance_finished_action (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:336)
+       [5] _on_action_finished (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:314)

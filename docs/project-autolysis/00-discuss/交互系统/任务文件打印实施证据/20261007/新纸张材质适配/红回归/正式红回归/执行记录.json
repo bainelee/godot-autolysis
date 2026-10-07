@@ -1,0 +1,17 @@
+{
+  "检查": "新纸张材质适配红回归",
+  "退出码": 1,
+  "命令参数": [
+    "--headless",
+    "--path",
+    "D:\\autolysis",
+    "--log-file",
+    "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实施证据\\20261007\\新纸张材质适配\\红回归\\正式红回归\\引擎日志.log",
+    "--script",
+    "res://main-autolysis/systems/quest-print-system/tests/quest_paper_material_test.gd",
+    "--",
+    "--evidence-dir",
+    "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实施证据\\20261007\\新纸张材质适配\\红回归\\正式红回归"
+  ],
+  "标准错误": ""
+}

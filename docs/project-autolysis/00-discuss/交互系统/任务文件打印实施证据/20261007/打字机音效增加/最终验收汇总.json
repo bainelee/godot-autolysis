@@ -1,0 +1,163 @@
+{
+  "通过": true,
+  "检查项数": 6,
+  "断言数": 2640.0,
+  "检查": [
+    {
+      "检查": "导入解析",
+      "时间": "2026-10-07T18:04:36.487768+08:00",
+      "进程编号": 4676,
+      "退出码": 0,
+      "通过": true,
+      "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+      "窗口显示": "Hidden",
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--editor",
+        "--quit",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/打字机音效增加/输入与取纸退出修正验收/导入解析"
+      ],
+      "通过断言数": 0,
+      "预期错误计数": {},
+      "非预期错误": []
+    },
+    {
+      "检查": "打印时序",
+      "时间": "2026-10-07T18:02:52.2040223+08:00",
+      "进程编号": 10624,
+      "退出码": 0,
+      "通过": true,
+      "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+      "窗口显示": "Hidden",
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/systems/quest-print-system/tests/quest_machine_behavior_test.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/打字机音效增加/最终冻结验收/打印时序"
+      ],
+      "通过断言数": 1488,
+      "预期错误计数": {},
+      "非预期错误": []
+    },
+    {
+      "检查": "逐行打印音效",
+      "时间": "2026-10-07T18:03:09.4166717+08:00",
+      "进程编号": 47300,
+      "退出码": 0,
+      "通过": true,
+      "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+      "窗口显示": "Hidden",
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/systems/quest-print-system/tests/quest_machine_audio_test.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/打字机音效增加/最终冻结验收/逐行打印音效"
+      ],
+      "通过断言数": 469,
+      "预期错误计数": {},
+      "非预期错误": []
+    },
+    {
+      "检查": "主场景输入",
+      "时间": "2026-10-07T18:04:41.2394878+08:00",
+      "进程编号": 26900,
+      "退出码": 0,
+      "通过": true,
+      "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+      "窗口显示": "Hidden",
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/quest_print_main_test.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/打字机音效增加/输入与取纸退出修正验收/主场景输入"
+      ],
+      "通过断言数": 76,
+      "预期错误计数": {},
+      "非预期错误": []
+    },
+    {
+      "检查": "聚焦取纸",
+      "时间": "2026-10-07T18:04:49.3827114+08:00",
+      "进程编号": 19196,
+      "退出码": 0,
+      "通过": true,
+      "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+      "窗口显示": "Hidden",
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://main-autolysis/player/tests/quest_paper_inventory_test.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/打字机音效增加/输入与取纸退出修正验收/聚焦取纸"
+      ],
+      "通过断言数": 274,
+      "预期错误计数": {},
+      "非预期错误": []
+    },
+    {
+      "检查": "机器空间音效",
+      "时间": "2026-10-07T18:05:45.5225769+08:00",
+      "进程编号": 40400,
+      "退出码": 0,
+      "通过": true,
+      "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+      "窗口显示": "Hidden",
+      "命令参数": [
+        "--path",
+        "D:\\autolysis",
+        "--headless",
+        "--script",
+        "res://main-autolysis/player/tests/machine_spatial_audio_test.gd",
+        "--",
+        "--evidence-dir",
+        "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/打字机音效增加/输入与取纸退出修正验收/机器空间音效"
+      ],
+      "通过断言数": 333,
+      "预期错误计数": {},
+      "非预期错误": []
+    }
+  ],
+  "最终四项运行来源冻结": {
+    "通过": true,
+    "启动前文件数": 686,
+    "完成后文件数": 686,
+    "变化": []
+  },
+  "当前本轮来源核对": {
+    "通过": true,
+    "本轮文件数": 10,
+    "变化": []
+  },
+  "输入类型": "无图形；正式主场景内部键盘与鼠标事件；没有图形窗口、应用激活、系统指针定位或原生输入操作",
+  "人工试听": "未执行",
+  "来源衔接说明": "最后两轮之间仅主场景输入测试退出读取点发生变化；前两项所用打印生产、资产及专项来源相同，实际全项目散列差异另存。"
+}

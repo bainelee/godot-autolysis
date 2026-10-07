@@ -1,0 +1,50 @@
+[
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_paper/quest_paper.tscn",
+    "摘要": "A1EAC1607ED15455B87C8D8B9DBAC30071727B2E0E6F3BAC1C6480B73B6C6A91"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_paper/autolysis_quest_paper.gd",
+    "摘要": "D622CA90B4E66F2D76E9F8A927EACAE14DFAEC6D257F88D96212730D1B00BA82"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_paper/visuals/quest_paper_visual.tscn",
+    "摘要": "392399802DE09831B5105C20BD68EA1B4FA44900AC8E3C17C6ECF054FFAE4243"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_quest_paper_visual.gd",
+    "摘要": "F637099042418F06BF39CC19B3DDC83D31FB868D4889A2DABD2AC2CD1E358E88"
+  },
+  {
+    "文件": "main-autolysis/ui/quest-paper/autolysis_quest_paper_view.tscn",
+    "摘要": "B25C176472D7951E7889AF0A7BC5EA820D2A40170BB1B83603DA1FCA787DA6AE"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/paper/mat_paper_test_0.tres",
+    "摘要": "BAEB4FB2325DCE52EB058FFF82A9FE442858E0315E6309B542F7339E71242421"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/paper/mat_paper_test_1.tres",
+    "摘要": "240D8C01FE1A547607BB19CF136747AF7A97FB3B201EA68E1E415A5C6EDA4C72"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/paper/mat_quest_paper_text.tres",
+    "摘要": "B3C960394B64C7356D31D64718F3EDECD231A0F04CEE8DBFEA498EBAAE83F868"
+  },
+  {
+    "文件": "main-autolysis/systems/quest-print-system/tests/quest_paper_material_test.gd",
+    "摘要": "98CB483F4EF70B9A0440A131FDB0505BEE853B62319BD6CC86A44BB85803570F"
+  },
+  {
+    "文件": "main-autolysis/player/tests/quest_held_text_test.gd",
+    "摘要": "F9B21D68C070654AE7CF52129FD2156C4A1B47C3EA798EAFE11FD798D6D27473"
+  },
+  {
+    "文件": "main-autolysis/player/tests/quest_paper_inventory_test.gd",
+    "摘要": "ED89D7C62743342693601CF683B93985234E94115449B26C595CC705F23C62CF"
+  },
+  {
+    "文件": "main-autolysis/player/tests/quest_print_main_test.gd",
+    "摘要": "28F0F5FCD74661D8EEC9B9610BF30280F74017DCE4738ACA3372798C12B4DEFB"
+  }
+]

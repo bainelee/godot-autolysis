@@ -1,0 +1,10 @@
+[
+  {
+    "InputObject": "main-autolysis/player/tests/quest_print_main_test.gd=0050812FCA59B48EFEDED5B3DBCDF4557AA0B85959F9141CF73F5237159D7873",
+    "SideIndicator": "=>"
+  },
+  {
+    "InputObject": "main-autolysis/player/tests/quest_print_main_test.gd=28F0F5FCD74661D8EEC9B9610BF30280F74017DCE4738ACA3372798C12B4DEFB",
+    "SideIndicator": "<="
+  }
+]

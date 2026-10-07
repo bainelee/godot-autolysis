@@ -1,0 +1,22 @@
+[
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\ui\\autolysis_handset_pose_debug.gd",
+    "摘要": "F878A2AFA8A223F3EF7107F676B45EC9E57D4987E6BF18B2D68EB1F3F64B1B56"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_quest_machine.gd",
+    "摘要": "1C71A9DA184D77AFE57F4034F020AE48A39C600B1FDB27309BDD7A41D6C4B7BB"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\tests\\handset_pose_debug_test.gd",
+    "摘要": "5787614BA409FB863D57E1E570207B882408EFB9AA12A2CEDAE2870B6EC50383"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\tests\\quest_print_main_test.gd",
+    "摘要": "3EAE8FF05905A527E62155DFDD3055DA5092EAEED39DFC1965CF6FDB45727CDB"
+  },
+  {
+    "文件": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\脚本警告修复证据\\20261007\\warning_compile_probe.gd",
+    "摘要": "C9B0AAC781BA50532AB9CB5200379A026944F48F72D0F950E9F9C87615036085"
+  }
+]

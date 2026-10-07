@@ -1,0 +1,24 @@
+{
+  "检查": "聚焦取纸",
+  "时间": "2026-10-07T18:04:49.3827114+08:00",
+  "进程编号": 19196,
+  "退出码": 0,
+  "通过": true,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/player/tests/quest_paper_inventory_test.gd",
+    "--",
+    "--evidence-dir",
+    "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/打字机音效增加/输入与取纸退出修正验收/聚焦取纸"
+  ],
+  "通过断言数": 274,
+  "预期错误计数": {},
+  "非预期错误": []
+}
