@@ -33,6 +33,8 @@ $cases = @(
     @{Name='电话持物互斥回归'; Script=$playerTests+'telephone_device_test.gd'},
     @{Name='电话呼叫回归'; Script=$playerTests+'telephone_call_test.gd'; FixedFps=0},
     @{Name='电话测试入口回归'; Script=$playerTests+'telephone_call_entry_test.gd'; FixedFps=0},
+    @{Name='电话运行机会回归'; Script=$playerTests+'telephone_runtime_once_test.gd'; FixedFps=0},
+    @{Name='电话运行拒绝回归'; Script=$playerTests+'telephone_runtime_once_test.gd'; FixedFps=0; Arguments=@('--reject-request')},
     @{Name='电话内部输入回归'; Script=$playerTests+'telephone_input_test.gd'},
     @{Name='听筒显示回归'; Script=$playerTests+'telephone_handset_view_test.gd'},
     @{Name='持筒移动回归'; Script=$playerTests+'telephone_movement_test.gd'},
@@ -73,6 +75,7 @@ foreach ($case in $selected) {
     if ($case.Import) { $parameters.Import = $true }
     else { $parameters.ScriptPath = $case.Script }
     if ($case.ContainsKey('FixedFps')) { $parameters.FixedFps = $case.FixedFps }
+    if ($case.ContainsKey('Arguments')) { $parameters.UserArguments += $case.Arguments }
     Write-Output ('开始无图形检查：' + $case.Name)
     & $runner @parameters | Out-File -LiteralPath (Join-Path $EvidenceRoot ($case.Name + '.执行器.log')) -Encoding UTF8
     $recordPath = Join-Path $EvidenceRoot ($case.Name + '.json')

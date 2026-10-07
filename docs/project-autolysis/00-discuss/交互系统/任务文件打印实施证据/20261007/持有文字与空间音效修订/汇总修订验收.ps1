@@ -4,7 +4,7 @@ $ErrorActionPreference = 'Stop'
 $runRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot $RunDirectory))
 if (-not $runRoot.StartsWith($PSScriptRoot + '\', [StringComparison]::OrdinalIgnoreCase)) { throw '运行目录必须属于本轮修订证据。' }
 $records = @(Get-Content -LiteralPath (Join-Path $runRoot '检查汇总.json') -Raw -Encoding UTF8 | ConvertFrom-Json)
-if ($records.Count -ne 27 -or @($records.检查 | Sort-Object -Unique).Count -ne 27) { throw '最终统一验收必须具有27项互不重复的记录。' }
+if ($records.Count -ne 29 -or @($records.检查 | Sort-Object -Unique).Count -ne 29) { throw '最终统一验收必须具有29项互不重复的记录。' }
 $freeze = Get-Content -LiteralPath (Join-Path $runRoot '验收期间源码冻结.json') -Raw -Encoding UTF8 | ConvertFrom-Json
 $allowedWarnings = @{
     '打印时序' = @(
