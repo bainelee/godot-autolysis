@@ -1,0 +1,47 @@
+[
+  {
+    "来源": "D:\\autolysis\\main-autolysis\\components\\interactions\\autolysis_focus_target.gd",
+    "算法": "SHA256",
+    "散列": "B4324ADEF6FE2AAC83B418D9FC8199B24A1A41B95DD12164E13F6CD33FAC864C"
+  },
+  {
+    "来源": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_focus_ray_query.gd",
+    "算法": "SHA256",
+    "散列": "89B0E788799D2DBAD973D56EF33FA4887AC898076D51FD2E9BAA06FA84615DA3"
+  },
+  {
+    "来源": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+    "算法": "SHA256",
+    "散列": "1FABE990CF5DB4DE96D2D6B487D75EC99B402D5D90FC88A83B392E96DAF52D46"
+  },
+  {
+    "来源": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_held_item_presenter.gd",
+    "算法": "SHA256",
+    "散列": "350033E6B70E839BE1EDCBE3D01F574E673E7079DB3F415548BFC6983C43AC67"
+  },
+  {
+    "来源": "D:\\autolysis\\main-autolysis\\player\\tests\\quest_paper_inventory_test.gd",
+    "算法": "SHA256",
+    "散列": "FD71C3BDC4C25F6B0481A2D7D778F7460C1F93BDBFD366A65A5CDE0CF9933857"
+  },
+  {
+    "来源": "D:\\autolysis\\main-autolysis\\player\\tests\\quest_display_release_probe.gd",
+    "算法": "SHA256",
+    "散列": "14459A14DE81F6C3354B59F9B9187DE6124DECA50B24E9A63F8C672B7DFD4FB2"
+  },
+  {
+    "来源": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_paper\\autolysis_quest_paper.gd",
+    "算法": "SHA256",
+    "散列": "D336DCE4E00623E1BFD0A5A7D82EC3BA36DC047F933FEA06C490806E9B227B5E"
+  },
+  {
+    "来源": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_quest_machine.gd",
+    "算法": "SHA256",
+    "散列": "C88773979C64A4CD0FD4611EFB7DEA23B5DB0370F6B78977A01F60EC25993987"
+  },
+  {
+    "来源": "D:\\cogito\\addons\\cogito\\Components\\Interactions\\ReadableComponent.gd",
+    "算法": "SHA256",
+    "散列": "AB0A7C4A4877DC2115A325D78513301BDDB820444A4B5342CA7154D35760D363"
+  }
+]

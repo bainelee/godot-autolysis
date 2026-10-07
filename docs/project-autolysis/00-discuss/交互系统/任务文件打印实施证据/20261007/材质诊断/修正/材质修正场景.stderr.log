@@ -1,0 +1,16 @@
+ERROR: Condition "!int_resources.has(id)" is true. Returning: ERR_INVALID_PARAMETER
+   at: _parse_sub_resource (scene/resources/resource_format_text.cpp:113)
+   GDScript backtrace (most recent call first):
+       [0] run_probe (res://main-autolysis/systems/quest-print-system/tests/quest_paper_material_probe.gd:14)
+ERROR: res://main-autolysis/scenes/prefabs/prefab_paper/quest_paper.tscn:15 - Parse Error: .
+   at: _printerr (scene/resources/resource_format_text.cpp:40)
+   GDScript backtrace (most recent call first):
+       [0] run_probe (res://main-autolysis/systems/quest-print-system/tests/quest_paper_material_probe.gd:14)
+ERROR: Failed loading resource: res://main-autolysis/scenes/prefabs/prefab_paper/quest_paper.tscn.
+   at: _load (core/io/resource_loader.cpp:343)
+   GDScript backtrace (most recent call first):
+       [0] run_probe (res://main-autolysis/systems/quest-print-system/tests/quest_paper_material_probe.gd:14)
+SCRIPT ERROR: Cannot call method 'instantiate' on a null value.
+   at: run_probe (res://main-autolysis/systems/quest-print-system/tests/quest_paper_material_probe.gd:15)
+   GDScript backtrace (most recent call first):
+       [0] run_probe (res://main-autolysis/systems/quest-print-system/tests/quest_paper_material_probe.gd:15)

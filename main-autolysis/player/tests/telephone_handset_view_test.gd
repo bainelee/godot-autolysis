@@ -324,10 +324,6 @@ func _aabb(value: AABB) -> Dictionary:
 
 
 func _finish() -> void:
-	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(evidence_directory))
-	var file: FileAccess = FileAccess.open(evidence_directory.path_join("手持实际视野复现.json"), FileAccess.WRITE)
-	file.store_string(JSON.stringify({"规则读取": ["项目规则", "故障诊断技能", "交互领域上下文", "实际原项目装备与摆动"], "输入方式": "无图形；正式根和听筒交互组件；未定位或注入系统指针", "测量用途": "真实网格面顶点及六平面几何判定，仅用于不可见症状验收，不作为生产业务许可", "局限": "无图形几何复现不验证材质照明、遮挡或实际像素输出", "聚焦前实际玩家视场角": _pre_focus_projection.get("fov"), "逐面顶点投影对照": projection_comparisons, "断言": records, "失败": failures, "测量": measurements}, "\t"))
-	file.close()
 	var playback_references: Array[WeakRef] = []
 	for node: Node in world.find_children("*", "AudioStreamPlayer3D", true, false):
 		var audio: AudioStreamPlayer3D = node as AudioStreamPlayer3D
@@ -341,6 +337,11 @@ func _finish() -> void:
 	var started: int = Time.get_ticks_msec()
 	while _audio_alive(playback_references) and Time.get_ticks_msec() - started < 2000:
 		await process_frame
+	check(not _audio_alive(playback_references), "听筒视野退出前实际三维播放实例全部退役")
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(evidence_directory))
+	var file: FileAccess = FileAccess.open(evidence_directory.path_join("手持实际视野复现.json"), FileAccess.WRITE)
+	file.store_string(JSON.stringify({"规则读取": ["项目规则", "故障诊断技能", "交互领域上下文", "实际原项目装备与摆动"], "输入方式": "无图形；正式根和听筒交互组件；未定位或注入系统指针", "测量用途": "真实网格面顶点及六平面几何判定，仅用于不可见症状验收，不作为生产业务许可", "局限": "无图形几何复现不验证材质照明、遮挡或实际像素输出", "聚焦前实际玩家视场角": _pre_focus_projection.get("fov"), "逐面顶点投影对照": projection_comparisons, "断言": records, "失败": failures, "测量": measurements, "退出被测播放数": playback_references.size(), "退出播放全部退役": not _audio_alive(playback_references), "退出退役观察毫秒": Time.get_ticks_msec() - started}, "\t"))
+	file.close()
 	print("手持视野断言数：", records.size(), "；失败数：", failures)
 	quit(1 if failures > 0 else 0)
 

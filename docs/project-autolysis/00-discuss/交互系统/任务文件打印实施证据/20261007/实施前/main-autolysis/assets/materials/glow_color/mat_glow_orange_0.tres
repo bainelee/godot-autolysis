@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b8qbsbchatvc5"]
+
+[ext_resource type="Texture2D" uid="uid://pgn0ph0lqvqx" path="res://main-autolysis/assets/textures/Prototype Textures/PNG/Light/texture_12.png" id="1_f8sof"]
+
+[resource]
+albedo_color = Color(1, 0.3647059, 0, 1)
+albedo_texture = ExtResource("1_f8sof")
+emission_enabled = true
+emission = Color(1, 0.3647059, 0, 1)
+emission_energy_multiplier = 2.0
+uv1_triplanar = true

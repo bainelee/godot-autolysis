@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://main-autolysis/ui/inventory/autolysis_inventory_bar.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://main-autolysis/ui/inventory/autolysis_inventory_slot.tscn" id="2_slot"]
+[ext_resource type="AudioStream" path="res://main-autolysis/assets/ui/inventory/mouseclick1.ogg" id="3_focus_sound"]
+
+[node name="AutolysisInventoryBar" type="CanvasLayer"]
+layer = 1
+script = ExtResource("1_script")
+
+[node name="Bar" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(350, 80)
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -175.0
+offset_top = -160.0
+offset_right = 175.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+focus_mode = 0
+theme_override_constants/separation = 10
+
+[node name="Slot0" parent="Bar" instance=ExtResource("2_slot")]
+layout_mode = 2
+
+[node name="Slot1" parent="Bar" instance=ExtResource("2_slot")]
+layout_mode = 2
+
+[node name="Slot2" parent="Bar" instance=ExtResource("2_slot")]
+layout_mode = 2
+
+[node name="Slot3" parent="Bar" instance=ExtResource("2_slot")]
+layout_mode = 2
+
+[node name="FocusSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_focus_sound")

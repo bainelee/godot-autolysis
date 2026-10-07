@@ -78,6 +78,8 @@ func _lock_fixture() -> void:
 	await frames(3)
 	await _enter()
 	await _take()
+	check(is_instance_valid(phone.handset_audio) and phone.handset_audio.telephone == phone and phone.handset_audio.sound_origin.is_ancestor_of(_call().voice_player), "归还锁夹具脚本替换保留正式听筒音频与空间语音接线")
+	check(phone.handset_audio.sound_origin.global_transform.is_equal_approx(inventory.get_handset_display().global_transform), "归还锁夹具实际取筒后声源父节点跟随当前持筒显示")
 	var fixture: ReturnLockTelephone = phone as ReturnLockTelephone
 	fixture.constrained_actor = player
 	fixture.constrained_session = inventory.get_handset_session_id()
@@ -121,9 +123,13 @@ func run_checks() -> void:
 	check(DisplayServer.get_name() == "headless", "归还限制边界专项实际使用无图形后端")
 	for boundary: String in ["持续复核", "来源提交前", "来源提交后", "库存提交复核", "唯一业务最终提交"]:
 		await _test_return_boundary(boundary)
-	DirAccess.make_dir_recursive_absolute(evidence_directory)
-	var output := FileAccess.open(evidence_directory.path_join("全部归还提交边界限制.json"), FileAccess.WRITE)
-	output.store_string(JSON.stringify({"引擎": Engine.get_version_info(), "断言": records, "匹配限制边界": lock_samples, "失败数": failures}, "\t"))
+	var audio_references: Array[Dictionary] = _capture_audio_exit_refs()
+	paused = false
 	world.queue_free()
 	await frames(3)
+	await _await_audio_exit_release(audio_references)
+	DirAccess.make_dir_recursive_absolute(evidence_directory)
+	var output := FileAccess.open(evidence_directory.path_join("全部归还提交边界限制.json"), FileAccess.WRITE)
+	output.store_string(JSON.stringify({"引擎": Engine.get_version_info(), "断言": records, "匹配限制边界": lock_samples, "退出音频采样": audio_exit_samples, "失败数": failures}, "\t"))
+	output.close()
 	quit(1 if failures > 0 else 0)

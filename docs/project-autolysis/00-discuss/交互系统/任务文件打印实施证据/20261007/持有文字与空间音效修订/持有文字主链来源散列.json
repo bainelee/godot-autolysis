@@ -1,0 +1,46 @@
+{
+  "时间": "2026-10-07T16:12:12.1194635+08:00",
+  "事实": "正式库存273断言及正式主场景75断言通过后保存当前来源；两个专项退出0，错误日志0字节，原始及错误日志无引擎释放错误、警告或退出泄漏命中",
+  "来源": [
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\quest_paper_inventory_test.gd",
+      "字节数": 33199,
+      "散列": "4A46586AE9EFA1A66CFAE4AFEC95ADB95A50AF85B75968BCDEA7536A6188C354"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\quest_print_main_test.gd",
+      "字节数": 16308,
+      "散列": "3EAE8FF05905A527E62155DFDD3055DA5092EAEED39DFC1965CF6FDB45727CDB"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_held_item_presenter.gd",
+      "字节数": 11263,
+      "散列": "45E70A415E17D6EF5931CDD78B889DC7CAD68E50E04E790D60E8671493D23E7A"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\autolysis_quest_paper_visual.gd",
+      "字节数": 4256,
+      "散列": "4A12F9E628C75CDE2055ADE2A7153066E0DEC29E03E5B2D84F535E68302CB33F"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_paper\\visuals\\quest_paper_visual.tscn",
+      "字节数": 1027,
+      "散列": "EABED60C931572EF6A1ED185E90B447C25690E4F1F78D8B16B50CD8EF290FE49"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_quest_machine.gd",
+      "字节数": 33127,
+      "散列": "B8EEFDC57206D32954B737A0CBFB7DCE2B69232FD6A1F80E2AE1A5EC95CDF7B1"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\systems\\quest-print-system\\quests\\quest_test_0.tres",
+      "字节数": 900,
+      "散列": "4F1E8B9BEF725AB389C6A5D62798AE27D34149804AFC0882CE80FFD00B644CAA"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\tests\\run_item_check.ps1",
+      "字节数": 3570,
+      "散列": "5B39F580B8EFE0C7327F85F66FF208D0B5B37CC5595B863BD09DC654BABBAA4F"
+    }
+  ]
+}

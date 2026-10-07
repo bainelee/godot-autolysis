@@ -1,0 +1,28 @@
+{
+  "检查": "手持白纸失败反馈",
+  "时间": "2026-10-07T16:04:55.1645579+08:00",
+  "进程编号": 18724,
+  "退出码": 1,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/player/tests/quest_held_text_test.gd",
+    "--",
+    "--evidence-dir",
+    "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/持有文字与空间音效修订/失败反馈/手持全文"
+  ],
+  "通过断言数": 1,
+  "预期错误计数": {},
+  "非预期错误": [
+    "失败：正式库存接收逐件任务文件并提交手持展示",
+    "失败：正式手持展示可见本件全部自然行而不是白纸",
+    "SCRIPT ERROR: Cannot call method 'add_exception_rid' on a null value."
+  ]
+}

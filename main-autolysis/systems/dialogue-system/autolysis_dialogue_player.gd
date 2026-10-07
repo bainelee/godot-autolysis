@@ -33,15 +33,17 @@ var _source_exit_callback: Callable
 var _fade_tween: Tween
 var _completion_pending: StringName
 var _last_result: Dictionary = {}
+var _voice: Variant
 
 @onready var _timing: Node = $Timing
-@onready var _voice: AudioStreamPlayer = $Timing/Voice
+@onready var _default_voice: AudioStreamPlayer = $Timing/Voice
 @onready var _hold: Timer = $Timing/Hold
 @onready var _subtitle: AutolysisDialogueSubtitle = $Subtitle
 
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	_voice = _default_voice
 	if is_instance_valid(_inventory_bar):
 		_subtitle.setup(_inventory_bar)
 	_sync_pause()
@@ -63,9 +65,16 @@ func setup(player: Node, inventory_bar: CanvasLayer) -> void:
 
 
 func prepare_dialogue(definition: AutolysisDialogueDefinition, source: Node,
-		finished_callback: Callable, aborted_callback: Callable) -> Dictionary:
+		finished_callback: Callable, aborted_callback: Callable, spatial_voice: Variant = null) -> Dictionary:
 	if _token != 0:
 		return {"ok": false, "token": 0, "reason": "播放器忙碌", "busy": true}
+	if spatial_voice != null:
+		if not is_instance_valid(spatial_voice) or not spatial_voice is AudioStreamPlayer3D \
+				or not spatial_voice.is_inside_tree() or spatial_voice.is_queued_for_deletion():
+			return _prepare_failure("指定空间语音输出失效")
+		if not is_instance_valid(source) or not source.is_ancestor_of(spatial_voice):
+			return _prepare_failure("指定空间语音输出不属于当前来源")
+	_voice = spatial_voice if spatial_voice != null else _default_voice
 	var dependency_reason: String = _dependency_reason()
 	if not dependency_reason.is_empty():
 		return _prepare_failure(dependency_reason)
@@ -145,6 +154,8 @@ func get_session_snapshot() -> Dictionary:
 		"completion_pending": _completion_pending,
 		"audio_position": _voice.get_playback_position() if is_instance_valid(_voice) else 0.0,
 		"audio_playing": is_instance_valid(_voice) and _voice.playing,
+		"audio_output_id": _voice.get_instance_id() if is_instance_valid(_voice) else 0,
+		"audio_spatial": is_instance_valid(_voice) and _voice is AudioStreamPlayer3D,
 		"hold_remaining": _hold.time_left if is_instance_valid(_hold) else 0.0,
 		"subtitle_alpha": subtitle.get("alpha", 0.0),
 		"subtitle": subtitle,
@@ -154,6 +165,10 @@ func get_session_snapshot() -> Dictionary:
 
 func get_subtitle() -> AutolysisDialogueSubtitle:
 	return _subtitle if is_instance_valid(_subtitle) else null
+
+
+func get_voice_output() -> Node:
+	return _voice if is_instance_valid(_voice) else null
 
 
 func _process(_delta: float) -> void:
@@ -188,6 +203,8 @@ func _dependency_reason() -> String:
 		return "播放时序依赖失效"
 	if not is_instance_valid(_voice) or not _voice.is_inside_tree() or _voice.is_queued_for_deletion():
 		return "语音播放器失效"
+	if _token > 0 and _voice != _default_voice and (not is_instance_valid(_source) or not _source.is_ancestor_of(_voice)):
+		return "本次空间语音输出脱离来源"
 	if not is_instance_valid(_hold) or not _hold.is_inside_tree() or _hold.is_queued_for_deletion():
 		return "句后计时器失效"
 	if not is_instance_valid(_subtitle) or _subtitle.is_queued_for_deletion() or not _subtitle.is_available():
@@ -228,6 +245,9 @@ func _sync_pause() -> void:
 	if is_instance_valid(_timing):
 		# 场景树暂停由可暂停模式承担；菜单标记也禁用整棵时序子树。
 		_timing.process_mode = Node.PROCESS_MODE_DISABLED if local_paused else Node.PROCESS_MODE_PAUSABLE
+	if _token > 0 and is_instance_valid(_voice) and _voice != _default_voice:
+		# 外部空间输出保留本来场景归属；暂停只同步本次播放，不覆盖空间参数。
+		_voice.stream_paused = _is_paused()
 
 
 func _on_pause_changed(_paused: bool) -> void:
@@ -410,6 +430,7 @@ func _release_session(token: int) -> void:
 	_disconnect_source()
 	if is_instance_valid(_voice):
 		_voice.stream = null
+	_voice = _default_voice
 	_token = 0
 	_stage = IDLE
 	_index = -1
@@ -448,6 +469,8 @@ func _on_source_exiting(token: int) -> void:
 
 
 func _prepare_failure(reason: String) -> Dictionary:
+	if _token == 0:
+		_voice = _default_voice
 	return {"ok": false, "token": 0, "reason": reason, "busy": false}
 
 

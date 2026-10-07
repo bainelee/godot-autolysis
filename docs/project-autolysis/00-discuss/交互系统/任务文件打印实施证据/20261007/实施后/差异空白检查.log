@@ -1,0 +1,18 @@
+warning: in the working copy of 'main-autolysis/assets/audio/sound_fx/phone/sfx_phone_busy_busy signal_0.wav.import', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'main-autolysis/assets/audio/sound_fx/phone/sfx_phone_default_0.wav.import', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_other_side_0.wav.import', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_self_0.wav.import', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_self_1.wav.import', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'main-autolysis/assets/audio/sound_fx/phone/sfx_phone_pick_up_self_0.wav.import', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'main-autolysis/assets/audio/sound_fx/phone/sfx_phone_ring_0.wav.import', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'main-autolysis/components/interactions/autolysis_focus_target.gd', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'main-autolysis/player/components/autolysis_focus_ray_query.gd', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'main-autolysis/player/components/autolysis_held_item_presenter.gd', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'main-autolysis/player/components/autolysis_inventory_controller.gd', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'main-autolysis/scenes/01-autolysis-test.tscn', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'main-autolysis/scenes/prefabs/prefab_machines/quest_board_0.tscn', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'main-autolysis/scenes/prefabs/prefab_machines/quest_machine_0.tscn', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'main-autolysis/scenes/prefabs/prefab_paper/quest_paper.tscn', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'main-autolysis/systems/item-system/autolysis_item_instance.gd', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'project.godot', LF will be replaced by CRLF the next time Git touches it

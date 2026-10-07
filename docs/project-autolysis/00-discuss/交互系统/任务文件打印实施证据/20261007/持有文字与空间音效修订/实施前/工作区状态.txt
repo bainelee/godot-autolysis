@@ -1,0 +1,47 @@
+ M "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_busy_busy signal_0.wav"
+ M main-autolysis/assets/audio/sound_fx/phone/sfx_phone_default_0.wav
+ M main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_other_side_0.wav
+ M main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_self_0.wav
+ M main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_self_1.wav
+ M main-autolysis/assets/audio/sound_fx/phone/sfx_phone_pick_up_self_0.wav
+ M main-autolysis/assets/audio/sound_fx/phone/sfx_phone_ring_0.wav
+ M main-autolysis/components/interactions/autolysis_focus_target.gd
+ M main-autolysis/player/components/autolysis_focus_ray_query.gd
+ M main-autolysis/player/components/autolysis_held_item_presenter.gd
+ M main-autolysis/player/components/autolysis_inventory_controller.gd
+ M main-autolysis/scenes/01-autolysis-test.tscn
+ M main-autolysis/scenes/prefabs/prefab_machines/quest_board_0.tscn
+ M main-autolysis/scenes/prefabs/prefab_machines/quest_machine_0.tscn
+ M main-autolysis/scenes/prefabs/prefab_paper/quest_paper.tscn
+ M main-autolysis/systems/item-system/autolysis_item_instance.gd
+ M project.godot
+?? docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/
+?? docs/project-autolysis/00-discuss/交互系统/任务文件打印实现计划p1.md
+?? docs/project-autolysis/00-discuss/交互系统/任务文件打印讨论p1.md
+?? main-autolysis/assets/audio/sound_fx/machine/sfx_machine_notice_0.wav
+?? main-autolysis/assets/audio/sound_fx/machine/sfx_machine_notice_0.wav.import
+?? main-autolysis/assets/audio/sound_fx/machine/sfx_machine_scanning_0.wav
+?? main-autolysis/assets/audio/sound_fx/machine/sfx_machine_scanning_0.wav.import
+?? main-autolysis/assets/materials/base_color/mat_base_blue_3.tres
+?? main-autolysis/assets/ui/item-icons/quest_paper.svg
+?? main-autolysis/assets/ui/item-icons/quest_paper.svg.import
+?? main-autolysis/player/components/autolysis_quest_print_test_trigger.gd
+?? main-autolysis/player/components/autolysis_quest_print_test_trigger.gd.uid
+?? main-autolysis/player/tests/quest_display_release_probe.gd
+?? main-autolysis/player/tests/quest_display_release_probe.gd.uid
+?? main-autolysis/player/tests/quest_paper_inventory_test.gd
+?? main-autolysis/player/tests/quest_paper_inventory_test.gd.uid
+?? main-autolysis/player/tests/quest_print_main_test.gd
+?? main-autolysis/player/tests/quest_print_main_test.gd.uid
+?? main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd
+?? main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd.uid
+?? main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_button.gd
+?? main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_button.gd.uid
+?? main-autolysis/scenes/prefabs/prefab_paper/autolysis_quest_paper.gd
+?? main-autolysis/scenes/prefabs/prefab_paper/autolysis_quest_paper.gd.uid
+?? main-autolysis/scenes/prefabs/prefab_paper/quest_paper_blank.tscn
+?? main-autolysis/scenes/prefabs/prefab_paper/visuals/
+?? main-autolysis/systems/item-system/items/quest_paper.tres
+?? main-autolysis/systems/quest-print-system/
+?? main-autolysis/ui/quest-paper/
+?? output/

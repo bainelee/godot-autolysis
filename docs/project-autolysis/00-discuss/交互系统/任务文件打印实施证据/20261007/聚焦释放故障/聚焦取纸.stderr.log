@@ -1,0 +1,128 @@
+ERROR: Condition "!int_resources.has(id)" is true. Returning: ERR_INVALID_PARAMETER
+   at: _parse_sub_resource (scene/resources/resource_format_text.cpp:113)
+ERROR: res://main-autolysis/scenes/prefabs/prefab_paper/quest_paper.tscn:15 - Parse Error: .
+   at: _printerr (scene/resources/resource_format_text.cpp:40)
+ERROR: Failed loading resource: res://main-autolysis/scenes/prefabs/prefab_paper/quest_paper.tscn.
+   at: _load (core/io/resource_loader.cpp:343)
+SCRIPT ERROR: Parse Error: Could not preload resource file "res://main-autolysis/scenes/prefabs/prefab_paper/quest_paper.tscn".
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:26)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/player/components/autolysis_inventory_controller.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/systems/item-system/autolysis_raw_material_shelf.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/systems/item-system/autolysis_raw_material.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/components/interactions/autolysis_focus_target.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/player/components/interaction_raycast.gd:0)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://main-autolysis/player/autolysis_player.gd:0)
+ERROR: Failed to load script "res://main-autolysis/player/autolysis_player.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+ERROR: Condition "!int_resources.has(id)" is true. Returning: ERR_INVALID_PARAMETER
+   at: _parse_sub_resource (scene/resources/resource_format_text.cpp:113)
+ERROR: res://main-autolysis/scenes/prefabs/prefab_paper/quest_paper.tscn:15 - Parse Error: .
+   at: _printerr (scene/resources/resource_format_text.cpp:40)
+ERROR: Failed loading resource: res://main-autolysis/scenes/prefabs/prefab_paper/quest_paper.tscn.
+   at: _load (core/io/resource_loader.cpp:343)
+ERROR: res://main-autolysis/scenes/prefabs/prefab_machines/quest_machine_0.tscn:132 - Parse Error: [ext_resource] referenced non-existent resource at: res://main-autolysis/scenes/prefabs/prefab_paper/quest_paper.tscn.
+   at: _printerr (scene/resources/resource_format_text.cpp:40)
+SCRIPT ERROR: Cannot call method 'set' on a null value.
+   at: _fixture (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:105)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:105)
+       [1] _gates_and_source_identity (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:152)
+       [2] run_checks (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:64)
+SCRIPT ERROR: Invalid access to property or key 'global_position' on a base object of type 'Nil'.
+   at: _ray_pixel (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:140)
+   GDScript backtrace (most recent call first):
+       [0] _ray_pixel (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:140)
+       [1] _gates_and_source_identity (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:153)
+       [2] run_checks (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:64)
+SCRIPT ERROR: Invalid access to property or key 'print_button' on a base object of type 'Nil'.
+   at: _gates_and_source_identity (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:154)
+   GDScript backtrace (most recent call first):
+       [0] _gates_and_source_identity (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:154)
+       [1] run_checks (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:64)
+SCRIPT ERROR: Cannot call method 'set' on a null value.
+   at: _fixture (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:105)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:105)
+       [1] frames (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:55)
+SCRIPT ERROR: Invalid call. Nonexistent function 'get_current_paper' in base 'Nil'.
+   at: _preparation_failures (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:237)
+   GDScript backtrace (most recent call first):
+       [0] _preparation_failures (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:237)
+       [1] _fixture (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:105)
+       [2] frames (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:55)
+SCRIPT ERROR: Cannot call method 'set' on a null value.
+   at: _fixture (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:105)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:105)
+       [1] frames (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:55)
+SCRIPT ERROR: Invalid call. Nonexistent function 'get_current_paper' in base 'Nil'.
+   at: _display_boundaries (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:294)
+   GDScript backtrace (most recent call first):
+       [0] _display_boundaries (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:294)
+       [1] _fixture (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:105)
+       [2] frames (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:55)
+SCRIPT ERROR: Cannot call method 'set' on a null value.
+   at: _fixture (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:105)
+   GDScript backtrace (most recent call first):
+       [0] _fixture (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:105)
+       [1] frames (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:55)
+SCRIPT ERROR: Invalid access to property or key 'quest_paper_contents' on a base object of type 'Nil'.
+   at: _observations_and_transfer (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:346)
+   GDScript backtrace (most recent call first):
+       [0] _observations_and_transfer (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:346)
+       [1] _fixture (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:105)
+       [2] frames (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:55)
+ERROR: 2 RID allocations of type 'P11JoltShape3D' were leaked at exit.
+ERROR: 8 RID allocations of type 'P10JoltBody3D' were leaked at exit.
+ERROR: Pages in use exist at exit in PagedAllocator: N20RasterizerSceneDummy21GeometryInstanceDummyE
+   at: ~PagedAllocator (./core/templates/paged_allocator.h:169)
+ERROR: 1 RID allocations of type 'PN13RendererDummy14TextureStorage12DummyTextureE' were leaked at exit.
+ERROR: 14 RID allocations of type 'N13RendererDummy9DummyMeshE' were leaked at exit.
+WARNING: Leaked instance dependency: Bug - did not call instance_notify_deleted when freeing.
+   at: ~Dependency (servers/rendering/storage/utilities.cpp:56)
+WARNING: Leaked instance dependency: Bug - did not call instance_notify_deleted when freeing.
+   at: ~Dependency (servers/rendering/storage/utilities.cpp:56)
+WARNING: Leaked instance dependency: Bug - did not call instance_notify_deleted when freeing.
+   at: ~Dependency (servers/rendering/storage/utilities.cpp:56)
+WARNING: Leaked instance dependency: Bug - did not call instance_notify_deleted when freeing.
+   at: ~Dependency (servers/rendering/storage/utilities.cpp:56)
+WARNING: Leaked instance dependency: Bug - did not call instance_notify_deleted when freeing.
+   at: ~Dependency (servers/rendering/storage/utilities.cpp:56)
+WARNING: Leaked instance dependency: Bug - did not call instance_notify_deleted when freeing.
+   at: ~Dependency (servers/rendering/storage/utilities.cpp:56)
+WARNING: Leaked instance dependency: Bug - did not call instance_notify_deleted when freeing.
+   at: ~Dependency (servers/rendering/storage/utilities.cpp:56)
+WARNING: Leaked instance dependency: Bug - did not call instance_notify_deleted when freeing.
+   at: ~Dependency (servers/rendering/storage/utilities.cpp:56)
+WARNING: Leaked instance dependency: Bug - did not call instance_notify_deleted when freeing.
+   at: ~Dependency (servers/rendering/storage/utilities.cpp:56)
+WARNING: Leaked instance dependency: Bug - did not call instance_notify_deleted when freeing.
+   at: ~Dependency (servers/rendering/storage/utilities.cpp:56)
+WARNING: Leaked instance dependency: Bug - did not call instance_notify_deleted when freeing.
+   at: ~Dependency (servers/rendering/storage/utilities.cpp:56)
+WARNING: Leaked instance dependency: Bug - did not call instance_notify_deleted when freeing.
+   at: ~Dependency (servers/rendering/storage/utilities.cpp:56)
+WARNING: Leaked instance dependency: Bug - did not call instance_notify_deleted when freeing.
+   at: ~Dependency (servers/rendering/storage/utilities.cpp:56)
+WARNING: Leaked instance dependency: Bug - did not call instance_notify_deleted when freeing.
+   at: ~Dependency (servers/rendering/storage/utilities.cpp:56)
+ERROR: 9 RID allocations of type 'N13RendererDummy15MaterialStorage13DummyMaterialE' were leaked at exit.
+ERROR: 2 RID allocations of type 'N13RendererDummy15MaterialStorage11DummyShaderE' were leaked at exit.
+ERROR: 68 RID allocations of type 'N17RendererSceneCull8InstanceE' were leaked at exit.
+ERROR: 4 RID allocations of type 'N17RendererSceneCull6CameraE' were leaked at exit.
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object/object.cpp:2641)
+ERROR: 35 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:810)

@@ -1,0 +1,14 @@
+WARNING: 铃声播放器或指定资源失效
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] _start_ring (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_call_controller.gd:389)
+       [1] _activate_call (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_call_controller.gd:280)
+       [2] _resolve_request (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_call_controller.gd:272)
+       [3] request_call (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_call_controller.gd:75)
+       [4] request_call (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd:104)
+       [5] _test_optional_ring_and_source_failure (res://main-autolysis/player/tests/telephone_call_test.gd:240)
+       [6] _enter (res://main-autolysis/player/tests/telephone_device_test.gd:171)
+       [7] _wait (res://main-autolysis/player/tests/telephone_device_test.gd:163)
+       [8] frames (res://main-autolysis/player/tests/player_smoke_test.gd:18)
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object/object.cpp:2641)

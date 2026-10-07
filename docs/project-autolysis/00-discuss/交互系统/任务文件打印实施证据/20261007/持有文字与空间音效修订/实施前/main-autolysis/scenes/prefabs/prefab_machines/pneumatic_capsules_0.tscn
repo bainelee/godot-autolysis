@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b4vm18lqyk67u"]
+
+[ext_resource type="Script" path="res://main-autolysis/systems/item-system/autolysis_pneumatic_capsule.gd" id="1_capsule"]
+[ext_resource type="Resource" path="res://main-autolysis/systems/item-system/items/pneumatic_capsule.tres" id="2_definition"]
+[ext_resource type="PackedScene" path="res://main-autolysis/scenes/prefabs/prefab_machines/visuals/pneumatic_capsule_visual.tscn" id="3_visual"]
+[ext_resource type="PackedScene" path="res://main-autolysis/components/interactions/autolysis_interaction_component.tscn" id="4_interaction"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4giwy"]
+size = Vector3(0.24, 0.79999995, 0.24)
+
+[node name="pneumatic_capsules_0" type="StaticBody3D" unique_id=1479518667 groups=["interactable"]]
+collision_layer = 3
+script = ExtResource("1_capsule")
+item_definition = ExtResource("2_definition")
+metadata/_edit_group_ = true
+
+[node name="mesh" parent="." unique_id=867372818 instance=ExtResource("3_visual")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=408769357]
+shape = SubResource("BoxShape3D_4giwy")
+
+[node name="InteractionComponent" parent="." instance=ExtResource("4_interaction")]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.gd" id="1_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_background"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_chinese"]
+font_names = PackedStringArray("Noto Sans SC", "Microsoft YaHei")
+
+[node name="AutolysisDialogueSubtitle" type="CanvasLayer"]
+process_mode = 3
+layer = 2
+script = ExtResource("1_script")
+subtitle_font = SubResource("SystemFont_chinese")
+
+[node name="Display" type="Panel" parent="."]
+visible = false
+mouse_filter = 2
+focus_mode = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_background")
+
+[node name="Text" type="Label" parent="Display"]
+mouse_filter = 2
+focus_mode = 0
+auto_translate_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

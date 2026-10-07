@@ -1,0 +1,81 @@
+{
+  "时间": "2026-10-07T16:18:14.0211630+08:00",
+  "事实": "最终投影源冻结后库存273及主场景75断言通过；随后只读复核新增生产边界及旧兼容测试；没有修改生产源码",
+  "来源": [
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\quest_paper_inventory_test.gd",
+      "字节数": 33199,
+      "散列": "4A46586AE9EFA1A66CFAE4AFEC95ADB95A50AF85B75968BCDEA7536A6188C354"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\quest_print_main_test.gd",
+      "字节数": 16308,
+      "散列": "3EAE8FF05905A527E62155DFDD3055DA5092EAEED39DFC1965CF6FDB45727CDB"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_held_item_presenter.gd",
+      "字节数": 11372,
+      "散列": "D1420C36E3D966206B36A62EBBEDE5976EE6A4674C0CE3B9F4566F475F4D02BF"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\autolysis_quest_paper_visual.gd",
+      "字节数": 4256,
+      "散列": "4A12F9E628C75CDE2055ADE2A7153066E0DEC29E03E5B2D84F535E68302CB33F"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_paper\\visuals\\quest_paper_visual.tscn",
+      "字节数": 1027,
+      "散列": "EABED60C931572EF6A1ED185E90B447C25690E4F1F78D8B16B50CD8EF290FE49"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\systems\\dialogue-system\\autolysis_dialogue_player.gd",
+      "字节数": 18077,
+      "散列": "33F6F72D6C157027E096CC4F144CC9C08DF929FDA55EA0391ADCBB6E383935F0"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone_call_controller.gd",
+      "字节数": 20122,
+      "散列": "A65967F47B38C0CC2C449DFFAFA5A36565E4AF0E0294935B6FE42A22CD0C1559"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone_audio_controller.gd",
+      "字节数": 12870,
+      "散列": "EA58CA43EC4042B9CEB82221091784CA4C90AA9FEDCC91018871952CDB5D288B"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\quest_held_text_test.gd",
+      "字节数": 23073,
+      "散列": "4B6A7655AFCB67AC4E6DABB16601054578A314ECA7FE2D55108C4B909BFAF19D"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\machine_spatial_audio_test.gd",
+      "字节数": 16694,
+      "散列": "BCC072E0320B4D91F4C727FB7063735699C557B4A8B3C02A42B117F5073EC248"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\focus_interaction_test.gd",
+      "字节数": 44653,
+      "散列": "F430CF62004CAB069FBB49C5602C638089550DDC9D8CBEB1FA86D466D97CBA5D"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_handset_view_test.gd",
+      "字节数": 21681,
+      "散列": "131F09C192765B0AC5B34253441894EC50A8CAC841C142E37CA81F64A5B64A80"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_call_test.gd",
+      "字节数": 16828,
+      "散列": "D2403D43247E6EB6D7BA4E794ED35AE1DA226BF34AEF57E9FDA66014E4A4DB11"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\dialogue_system_test.gd",
+      "字节数": 16135,
+      "散列": "8D787894C6D5D2303027DDC691EFA432BEABC22DB2A02650C9F87981CF3082B0"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\dialogue_boundary_test.gd",
+      "字节数": 11249,
+      "散列": "0D3A8A44B1ED321867037D24378B7EEC0B2C034CD34E392BCCE42A33A9272B36"
+    }
+  ]
+}

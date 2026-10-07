@@ -1,0 +1,64 @@
+main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn:127:tracks/0/type = "value"
+main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn:139:tracks/1/type = "value"
+main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn:151:tracks/2/type = "value"
+main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn:163:tracks/3/type = "value"
+main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn:175:tracks/4/type = "value"
+main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn:191:tracks/0/type = "value"
+main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn:207:tracks/0/type = "value"
+main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn:223:tracks/0/type = "value"
+main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn:239:tracks/0/type = "value"
+main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn:255:tracks/0/type = "value"
+main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn:126:tracks/0/type = "value"
+main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn:138:tracks/1/type = "value"
+main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn:150:tracks/2/type = "value"
+main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn:162:tracks/3/type = "value"
+main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn:178:tracks/0/type = "value"
+main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn:194:tracks/0/type = "value"
+main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn:210:tracks/0/type = "value"
+main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn:226:tracks/0/type = "value"
+main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd:567:		if properties.track_get_type(track) in [Animation.TYPE_METHOD, Animation.TYPE_AUDIO, Animation.TYPE_ANIMATION]:
+main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn:53:tracks/0/type = "value"
+main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn:69:tracks/0/type = "value"
+main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_waste_liquid_storage_tank.gd:408:		if properties.track_get_type(track) in [Animation.TYPE_METHOD, Animation.TYPE_AUDIO, Animation.TYPE_ANIMATION]:
+D:/cogito/addons/cogito/CogitoObjects/cogito_button.gd:24:@export var press_sound : AudioStream
+D:/cogito/addons/cogito/CogitoObjects/cogito_button.gd:113:	Audio.play_sound_3d(press_sound).global_position = global_position
+D:/cogito/addons/quick_audio/Audio.gd:8:func _play_sound(sound: AudioStream, player, autoplay := true):
+D:/cogito/addons/quick_audio/Audio.gd:16:func play_sound(sound: AudioStream, autoplay := true) -> AudioStreamPlayer:
+D:/cogito/addons/quick_audio/Audio.gd:17:	var player := AudioStreamPlayer.new()
+D:/cogito/addons/quick_audio/Audio.gd:20:	return _play_sound(sound, player, autoplay)
+D:/cogito/addons/quick_audio/Audio.gd:24:func play_sound_2d(sound: AudioStream, autoplay := true) -> AudioStreamPlayer2D:
+D:/cogito/addons/quick_audio/Audio.gd:25:	return _play_sound(sound, AudioStreamPlayer2D.new(), autoplay)
+D:/cogito/addons/quick_audio/Audio.gd:29:func play_sound_3d(sound: AudioStream, autoplay := true) -> AudioStreamPlayer3D:
+D:/cogito/addons/quick_audio/Audio.gd:30:	return _play_sound(sound, AudioStreamPlayer3D.new(), autoplay)
+D:/cogito/addons/quick_audio/Audio.gd:38:	if not (audio_stream_player is AudioStreamPlayer or audio_stream_player is AudioStreamPlayer2D or audio_stream_player is AudioStreamPlayer3D):
+D:/cogito/addons/quick_audio/Audio.gd:39:		push_error("Non-AudioStreamPlayer[XD] provided to Audio.fade_in(...)")
+D:/cogito/addons/quick_audio/Audio.gd:41:	tween.tween_method(func(x): audio_stream_player.volume_db = linear_to_db(x), db_to_linear(audio_stream_player.volume_db), 1.0, seconds)
+D:/cogito/addons/quick_audio/Audio.gd:45:	if not (audio_stream_player is AudioStreamPlayer or audio_stream_player is AudioStreamPlayer2D or audio_stream_player is AudioStreamPlayer3D):
+D:/cogito/addons/quick_audio/Audio.gd:46:		push_error("Non-AudioStreamPlayer[XD] provided to Audio.fade_out(...)")
+D:/cogito/addons/quick_audio/Audio.gd:48:	tween.tween_method(func(x): audio_stream_player.volume_db = linear_to_db(x), db_to_linear(audio_stream_player.volume_db), 0.0, seconds)
+D:/cogito/addons/quick_audio/Audio.gd:53:	if not (audio_stream_player_out is AudioStreamPlayer or audio_stream_player_out is AudioStreamPlayer2D or audio_stream_player_out is AudioStreamPlayer3D):
+D:/cogito/addons/quick_audio/Audio.gd:54:		push_error("Non-AudioStreamPlayer[XD] provided to Audio.cross_fade(...) as audio_stream_player_out")
+D:/cogito/addons/quick_audio/Audio.gd:56:	if not (audio_stream_player_in is AudioStreamPlayer or audio_stream_player_in is AudioStreamPlayer2D or audio_stream_player_in is AudioStreamPlayer3D):
+D:/cogito/addons/quick_audio/Audio.gd:57:		push_error("Non-AudioStreamPlayer[XD] provided to Audio.cross_fade(...) as audio_stream_player_in")
+D:/cogito/addons/quick_audio/Audio.gd:63:	if not (audio_stream_player_out is AudioStreamPlayer or audio_stream_player_out is AudioStreamPlayer2D or audio_stream_player_out is AudioStreamPlayer3D):
+D:/cogito/addons/quick_audio/Audio.gd:64:		push_error("Non-AudioStreamPlayer[XD] provided to Audio.sequential_fade(...) as audio_stream_player_out")
+D:/cogito/addons/quick_audio/Audio.gd:66:	if not (audio_stream_player_in is AudioStreamPlayer or audio_stream_player_in is AudioStreamPlayer2D or audio_stream_player_in is AudioStreamPlayer3D):
+D:/cogito/addons/quick_audio/Audio.gd:67:		push_error("Non-AudioStreamPlayer[XD] provided to Audio.sequential_fade(...) as audio_stream_player_in")
+main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:53:@export var notice_player: AudioStreamPlayer3D
+main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:54:@export var scanning_player: AudioStreamPlayer3D
+main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:55:@export var notice_stream: AudioStreamWAV = preload("res://main-autolysis/assets/audio/sound_fx/machine/sfx_machine_notice_0.wav")
+main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:56:@export var scanning_stream: AudioStreamWAV = preload("res://main-autolysis/assets/audio/sound_fx/machine/sfx_machine_scanning_0.wav")
+main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:82:var _audio_copies: Array[AudioStreamWAV] = []
+main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:690:	var player: AudioStreamPlayer3D = notice_player if index == 0 else scanning_player
+main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:708:		var stream: AudioStreamWAV = _copy_loop_stream(notice_stream if index == 0 else scanning_stream)
+main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:718:func _copy_loop_stream(source: AudioStreamWAV) -> AudioStreamWAV:
+main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:722:	var stream: AudioStreamWAV = source.duplicate() as AudioStreamWAV
+main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:731:	stream.loop_mode = AudioStreamWAV.LOOP_FORWARD
+main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:753:		var player: AudioStreamPlayer3D = notice_player if index == 0 else scanning_player
+main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd:306:		if pose_animation.track_get_type(track) in [Animation.TYPE_METHOD, Animation.TYPE_AUDIO, Animation.TYPE_ANIMATION]:
+main-autolysis/scenes/prefabs/prefab_machines/quest_machine_0.tscn:84:tracks/0/type = "value"
+main-autolysis/scenes/prefabs/prefab_machines/quest_machine_0.tscn:100:tracks/0/type = "value"
+main-autolysis/scenes/prefabs/prefab_machines/quest_machine_0.tscn:148:[node name="NoticePlayer" type="AudioStreamPlayer3D" parent="TimingRoot"]
+main-autolysis/scenes/prefabs/prefab_machines/quest_machine_0.tscn:151:[node name="ScanningPlayer" type="AudioStreamPlayer3D" parent="TimingRoot"]
+main-autolysis/scenes/prefabs/prefab_machines/waste_liquid_storage_tank_0.tscn:45:tracks/0/type = "value"
+main-autolysis/scenes/prefabs/prefab_machines/waste_liquid_storage_tank_0.tscn:61:tracks/0/type = "value"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AutolysisItemDefinition" format=3]
+
+[ext_resource type="Script" path="res://main-autolysis/systems/item-system/autolysis_item_definition.gd" id="1_definition"]
+[ext_resource type="PackedScene" path="res://main-autolysis/scenes/prefabs/prefab_paper/visuals/quest_paper_visual.tscn" id="2_visual"]
+[ext_resource type="Texture2D" path="res://main-autolysis/assets/ui/item-icons/quest_paper.svg" id="3_icon"]
+
+[resource]
+script = ExtResource("1_definition")
+item_id = &"quest_paper"
+display_name = "任务文件"
+is_raw_material = false
+icon = ExtResource("3_icon")
+visual_scene = ExtResource("2_visual")
+world_scene_path = "res://main-autolysis/scenes/prefabs/prefab_paper/quest_paper.tscn"
+held_position = Vector3(0.24, -0.23, -0.48)
+held_rotation_degrees = Vector3(-8, -18, 12)

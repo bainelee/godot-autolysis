@@ -1,0 +1,1454 @@
+[
+  {
+    "文件": "main-autolysis\\ui\\inventory\\autolysis_liquid_contents_panel.tscn",
+    "实施前散列": "CCEFD6A2E15735E93C8AAC9B7FE09917BCA0D676A4C8A2886B8363D6779646C6",
+    "实施后散列": "CCEFD6A2E15735E93C8AAC9B7FE09917BCA0D676A4C8A2886B8363D6779646C6",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\ui\\inventory\\autolysis_liquid_contents_panel.gd",
+    "实施前散列": "477D0416764AF4F83EE751C85870D40B9DE6CE0BDF8C1178C155AB47655B3EEE",
+    "实施后散列": "477D0416764AF4F83EE751C85870D40B9DE6CE0BDF8C1178C155AB47655B3EEE",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\ui\\inventory\\autolysis_inventory_slot.tscn",
+    "实施前散列": "ED1C218D76A3FC60BBE7C9589B0E2078F7213741CFEDE510775E92A668A88322",
+    "实施后散列": "ED1C218D76A3FC60BBE7C9589B0E2078F7213741CFEDE510775E92A668A88322",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\ui\\inventory\\autolysis_inventory_bar.tscn",
+    "实施前散列": "DAB4AB54ACDAB540D856A09ADB366AB3817DBA1231C30F5CD13A2A14DEBA7E6D",
+    "实施后散列": "DAB4AB54ACDAB540D856A09ADB366AB3817DBA1231C30F5CD13A2A14DEBA7E6D",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\ui\\inventory\\autolysis_inventory_bar.gd",
+    "实施前散列": "233B302CF6763D100F25BA51D6DA05624F303944DCA54308E6D26657996CC6D3",
+    "实施后散列": "233B302CF6763D100F25BA51D6DA05624F303944DCA54308E6D26657996CC6D3",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\tests\\prefab_node_path_test.gd",
+    "实施前散列": "E9B4AFE729C63E1E22CBC00E3CF2C91131B1663F764CE9B7B4AA99A42CFE58C2",
+    "实施后散列": "E9B4AFE729C63E1E22CBC00E3CF2C91131B1663F764CE9B7B4AA99A42CFE58C2",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_timing_probe.gd",
+    "实施前散列": "0F06B7764DA81FF3853CE09F7530CAFAEBE20AE959648F7E4E991A6A619C6639",
+    "实施后散列": "0F06B7764DA81FF3853CE09F7530CAFAEBE20AE959648F7E4E991A6A619C6639",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_runtime_once_test.gd",
+    "实施前散列": "924A4AB4EC64ED227269A4F57F4354DF75898A68FFAF131BF5AC118E32AB5327",
+    "实施后散列": "924A4AB4EC64ED227269A4F57F4354DF75898A68FFAF131BF5AC118E32AB5327",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_ring_start_probe.gd",
+    "实施前散列": "22ACD6D4783FA3B8C24AC2E4A921371B9ACA5F0A726F0FB5D581006B6DC37C4C",
+    "实施后散列": "22ACD6D4783FA3B8C24AC2E4A921371B9ACA5F0A726F0FB5D581006B6DC37C4C",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_return_lock_boundary_test.gd",
+    "实施前散列": "4FFE7E27023D8A8D5D04FDB6B1A78B832FC5C3B1656BCEB8114984BC486A40AE",
+    "实施后散列": "4FFE7E27023D8A8D5D04FDB6B1A78B832FC5C3B1656BCEB8114984BC486A40AE",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_return_cancel_dependency_audit.gd",
+    "实施前散列": "B08834E5F071CA381917551683085EA79C2BFF6337650126643AB2C4C918D418",
+    "实施后散列": "B08834E5F071CA381917551683085EA79C2BFF6337650126643AB2C4C918D418",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_pose_observer_input_audit.gd",
+    "实施前散列": "693919196893D4496966606E2AE6EFCC10033AB4B1AEEC6E5607164C0FB23C2E",
+    "实施后散列": "693919196893D4496966606E2AE6EFCC10033AB4B1AEEC6E5607164C0FB23C2E",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_movement_test.gd",
+    "实施前散列": "D393FA206CD05EAE2799BA09AB9307AEF4DF7F88DDEEEAB4F140FE37B6134D0E",
+    "实施后散列": "D393FA206CD05EAE2799BA09AB9307AEF4DF7F88DDEEEAB4F140FE37B6134D0E",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_movement_resource_audit.gd",
+    "实施前散列": "82BF6E8B946379C885BC65FD32E2B1D4D4EFC0EEB0A481819489888D2A237DC0",
+    "实施后散列": "82BF6E8B946379C885BC65FD32E2B1D4D4EFC0EEB0A481819489888D2A237DC0",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_movement_leak_probe.gd",
+    "实施前散列": "933CB0FF5CEBF6923D8F5D0B543510BA910BA56F4FEC76325DE1564EC68A42C6",
+    "实施后散列": "933CB0FF5CEBF6923D8F5D0B543510BA910BA56F4FEC76325DE1564EC68A42C6",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_limit_sync_probe.gd",
+    "实施前散列": "98A541104CBD7D5FABD606D275793C307C7EA7AF339A122F84034994F5C90C83",
+    "实施后散列": "98A541104CBD7D5FABD606D275793C307C7EA7AF339A122F84034994F5C90C83",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_input_test.gd",
+    "实施前散列": "270CF84E983ACD5D1B23DB84335FCE3374ABD18863E395846E4E4EF20B67C191",
+    "实施后散列": "270CF84E983ACD5D1B23DB84335FCE3374ABD18863E395846E4E4EF20B67C191",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_handset_view_test.gd",
+    "实施前散列": "131F09C192765B0AC5B34253441894EC50A8CAC841C142E37CA81F64A5B64A80",
+    "实施后散列": "131F09C192765B0AC5B34253441894EC50A8CAC841C142E37CA81F64A5B64A80",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_focus_dependency_audit.gd",
+    "实施前散列": "D8AE138407702AAACE8C66240498C0B463641E8A52ACCE6A79175727C13E6AAC",
+    "实施后散列": "D8AE138407702AAACE8C66240498C0B463641E8A52ACCE6A79175727C13E6AAC",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_display_entry_audit.gd",
+    "实施前散列": "37A94D87D5EE3F9A3D20DBD36BB92259CCE4364A20D4D9E73960238E0F3261BA",
+    "实施后散列": "37A94D87D5EE3F9A3D20DBD36BB92259CCE4364A20D4D9E73960238E0F3261BA",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_device_test.gd",
+    "实施前散列": "53E75D40D63E7C582468CE70F85013C2FE1D4921200A77C2ADD7CDAE3913B327",
+    "实施后散列": "53E75D40D63E7C582468CE70F85013C2FE1D4921200A77C2ADD7CDAE3913B327",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_dependency_audit.gd",
+    "实施前散列": "713BDD5B81FAD21A1BC2117951DE21238C2B745467716F9EE5A54A00BFDC8B1D",
+    "实施后散列": "713BDD5B81FAD21A1BC2117951DE21238C2B745467716F9EE5A54A00BFDC8B1D",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_commit_observer_audit.gd",
+    "实施前散列": "526F3C4C190C5AE9F9ADA0087B5F95DE7F77E79579173DDFC8B16607EE473979",
+    "实施后散列": "526F3C4C190C5AE9F9ADA0087B5F95DE7F77E79579173DDFC8B16607EE473979",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_call_test.gd",
+    "实施前散列": "9A6CD9365F141E1527F87066DD2C0F33F39B6906D79F62F5D447D8C1F426596A",
+    "实施后散列": "9A6CD9365F141E1527F87066DD2C0F33F39B6906D79F62F5D447D8C1F426596A",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_call_gameplay_test.gd",
+    "实施前散列": "49A11DA1DADEA410501F21FCCA901F3E0E613740C1BFD4F0E4FFFC4713252463",
+    "实施后散列": "49A11DA1DADEA410501F21FCCA901F3E0E613740C1BFD4F0E4FFFC4713252463",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_call_entry_test.gd",
+    "实施前散列": "6A27EDF2BB6CCEDBC93F69A440CDCCC172F4D903133163EDD7AD5792AD17D92F",
+    "实施后散列": "6A27EDF2BB6CCEDBC93F69A440CDCCC172F4D903133163EDD7AD5792AD17D92F",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_call_boundary_test.gd",
+    "实施前散列": "9AFEF045B1746472AA00745820F9B08486A18B2F83EB4786DC2F449A933D5ABF",
+    "实施后散列": "9AFEF045B1746472AA00745820F9B08486A18B2F83EB4786DC2F449A933D5ABF",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_boundary_probe.gd",
+    "实施前散列": "D49D5A79A7878DA903233B8BA013B1164887D647E4713DB573B830D97A274312",
+    "实施后散列": "D49D5A79A7878DA903233B8BA013B1164887D647E4713DB573B830D97A274312",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\telephone_audio_cleanup_audit.gd",
+    "实施前散列": "3583527EDA1D5414C6012E2EA6F8790AE498BA23ED1B24E3828DE8CEBD57F0B3",
+    "实施后散列": "3583527EDA1D5414C6012E2EA6F8790AE498BA23ED1B24E3828DE8CEBD57F0B3",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\player_smoke_test.gd",
+    "实施前散列": "3314A86E043902F342BD023959DEF85C68A87FCD657587651F626B1655E768ED",
+    "实施后散列": "3314A86E043902F342BD023959DEF85C68A87FCD657587651F626B1655E768ED",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\handset_pose_debug_test.gd",
+    "实施前散列": "5787614BA409FB863D57E1E570207B882408EFB9AA12A2CEDAE2870B6EC50383",
+    "实施后散列": "5787614BA409FB863D57E1E570207B882408EFB9AA12A2CEDAE2870B6EC50383",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\handset_inventory_test.gd",
+    "实施前散列": "0F4C5B4B2473B18D54C3D81FC1CBC4F4D010FC0B80438820AFAC5461EEA27941",
+    "实施后散列": "0F4C5B4B2473B18D54C3D81FC1CBC4F4D010FC0B80438820AFAC5461EEA27941",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\footstep_smoke_test.gd",
+    "实施前散列": "20FE108A04F75A6029F3D2C92263D14CAE5F19E16DCEB053EAEC5F901EAC1005",
+    "实施后散列": "20FE108A04F75A6029F3D2C92263D14CAE5F19E16DCEB053EAEC5F901EAC1005",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\focus_interaction_test.gd",
+    "实施前散列": "F430CF62004CAB069FBB49C5602C638089550DDC9D8CBEB1FA86D466D97CBA5D",
+    "实施后散列": "F430CF62004CAB069FBB49C5602C638089550DDC9D8CBEB1FA86D466D97CBA5D",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\focus_interaction_demo.tscn",
+    "实施前散列": "9B01C231C2CBAE74B5B2A71E37C46EC65465B3213958527C4B126650331ADB39",
+    "实施后散列": "9B01C231C2CBAE74B5B2A71E37C46EC65465B3213958527C4B126650331ADB39",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\ui\\dialogue\\autolysis_dialogue_subtitle.tscn",
+    "实施前散列": "206725AC0E48C5A6F9EDB18EBD8417A8F71FDF753968730443F9A0E94B9D8CBF",
+    "实施后散列": "206725AC0E48C5A6F9EDB18EBD8417A8F71FDF753968730443F9A0E94B9D8CBF",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\ui\\dialogue\\autolysis_dialogue_subtitle.gd",
+    "实施前散列": "B52F22887328E66196B2F31E43841C8E07A4DFEBE2F2D3E6D7363BC238F3D9DC",
+    "实施后散列": "B52F22887328E66196B2F31E43841C8E07A4DFEBE2F2D3E6D7363BC238F3D9DC",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\ui\\autolysis_handset_pose_debug.tscn",
+    "实施前散列": "4FB2A43F5A80F659E3E12CB0F6FE639AA268E2CC085CAA32BF73567735645196",
+    "实施后散列": "4FB2A43F5A80F659E3E12CB0F6FE639AA268E2CC085CAA32BF73567735645196",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\ui\\autolysis_handset_pose_debug.gd",
+    "实施前散列": "4E787CE16794A83F22F6CF443284CB78A76D37B1F74C88B3967CED025483CF55",
+    "实施后散列": "4E787CE16794A83F22F6CF443284CB78A76D37B1F74C88B3967CED025483CF55",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\ui\\autolysis_crosshair.tscn",
+    "实施前散列": "9958375E76C1E95F6C4248F6FB015DBC265464B7968D06F6D5842F48309FD05B",
+    "实施后散列": "9958375E76C1E95F6C4248F6FB015DBC265464B7968D06F6D5842F48309FD05B",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\ui\\autolysis_crosshair.gd",
+    "实施前散列": "027707EA3F5D526DBDBAF7C0379B0B18487F3E60F14C596C91F4108589BF606D",
+    "实施后散列": "027707EA3F5D526DBDBAF7C0379B0B18487F3E60F14C596C91F4108589BF606D",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\fixtures\\direct_interaction_demo.gd",
+    "实施前散列": "66691B37EDF2D266549713267CDE36E4F258BAC2ED2667BD8C4473D883393E70",
+    "实施后散列": "66691B37EDF2D266549713267CDE36E4F258BAC2ED2667BD8C4473D883393E70",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\direct_interaction_test.gd",
+    "实施前散列": "F3DC471240A8E69F6DA1966EF08DBEBD22FA3CBCFC6F8B9D20EDECD78F0982F7",
+    "实施后散列": "F3DC471240A8E69F6DA1966EF08DBEBD22FA3CBCFC6F8B9D20EDECD78F0982F7",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\direct_interaction_demo.tscn",
+    "实施前散列": "1196550395D4BA224F160D681BB2E3D841F4B4A148AFF0301E48A6ED450C07E0",
+    "实施后散列": "1196550395D4BA224F160D681BB2E3D841F4B4A148AFF0301E48A6ED450C07E0",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\dialogue_system_test.gd",
+    "实施前散列": "8D787894C6D5D2303027DDC691EFA432BEABC22DB2A02650C9F87981CF3082B0",
+    "实施后散列": "8D787894C6D5D2303027DDC691EFA432BEABC22DB2A02650C9F87981CF3082B0",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\dialogue_boundary_test.gd",
+    "实施前散列": "0D3A8A44B1ED321867037D24378B7EEC0B2C034CD34E392BCCE42A33A9272B36",
+    "实施后散列": "0D3A8A44B1ED321867037D24378B7EEC0B2C034CD34E392BCCE42A33A9272B36",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\component_migration_test.gd",
+    "实施前散列": "28D239EC27325C222F69BAEAE4D848583D334E1051EB2BC41D2A7613DFEE2323",
+    "实施后散列": "28D239EC27325C222F69BAEAE4D848583D334E1051EB2BC41D2A7613DFEE2323",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\blend_handle_warp_probe.gd",
+    "实施前散列": "88303CA1EC8CE431FD323A23236B1590C0FF221F6E5F8CA3DD029A4BDCAB82F4",
+    "实施后散列": "88303CA1EC8CE431FD323A23236B1590C0FF221F6E5F8CA3DD029A4BDCAB82F4",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\blend_handle_native_loop_test.gd",
+    "实施前散列": "10BD49CBB1C9D89994CF034EA09746DBB59CD79004B3DBEF4BEA52971E8D7DAF",
+    "实施后散列": "10BD49CBB1C9D89994CF034EA09746DBB59CD79004B3DBEF4BEA52971E8D7DAF",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\blend_handle_drag_test.gd",
+    "实施前散列": "FF3CCD7ADC6FA75B0A1D6ADD703B004EA2F7079215020BB73B7A09725F5EF1E6",
+    "实施后散列": "FF3CCD7ADC6FA75B0A1D6ADD703B004EA2F7079215020BB73B7A09725F5EF1E6",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\tests\\blend_collision_follow_test.gd",
+    "实施前散列": "CF6AB63DD09EB6AFC202EDF1EFB6C0DF167C6ABF577E86F046AEBD596AC2DB2A",
+    "实施后散列": "CF6AB63DD09EB6AFC202EDF1EFB6C0DF167C6ABF577E86F046AEBD596AC2DB2A",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\runtime-session\\autolysis_runtime_session.gd",
+    "实施前散列": "1DCAB3FF9B36104ECFA6852E5A76E33234B41AF38A70DB7E8916F3685C05A93E",
+    "实施后散列": "1DCAB3FF9B36104ECFA6852E5A76E33234B41AF38A70DB7E8916F3685C05A93E",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\components\\wieldables_sway.gd",
+    "实施前散列": "26C9EC6363551E822D8FA356195C9F8E8D68D9BB1353DB8132EE9891367421FD",
+    "实施后散列": "26C9EC6363551E822D8FA356195C9F8E8D68D9BB1353DB8132EE9891367421FD",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\components\\item_drop_shape_cast.gd",
+    "实施前散列": "095B48259CC0F1FCA27733A01CE91A24AC330FFF82860DC939FC28A16EC6BAC9",
+    "实施后散列": "095B48259CC0F1FCA27733A01CE91A24AC330FFF82860DC939FC28A16EC6BAC9",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\components\\interaction_raycast.tscn",
+    "实施前散列": "564A4F1B594A16390AC5BA088010B400F8CA14F2A1A6FB437C24611E9CF9435F",
+    "实施后散列": "564A4F1B594A16390AC5BA088010B400F8CA14F2A1A6FB437C24611E9CF9435F",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\components\\interaction_raycast.gd",
+    "实施前散列": "40CBC621CAFCED645A9995395E9CBAD4261A3E9E8C5C4CE11AB639B6347CBBC8",
+    "实施后散列": "40CBC621CAFCED645A9995395E9CBAD4261A3E9E8C5C4CE11AB639B6347CBBC8",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\components\\autolysis_telephone_call_test_trigger.gd",
+    "实施前散列": "E693FB85374A4D8B79F42A978BEC95504CBE776DF2A103B23DD3BC424E82EB31",
+    "实施后散列": "E693FB85374A4D8B79F42A978BEC95504CBE776DF2A103B23DD3BC424E82EB31",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+    "实施前散列": "D9647DA624327B35FC6B932F4FFCC5220D5F246A48C911848558368AAE9E7F2C",
+    "实施后散列": "1FABE990CF5DB4DE96D2D6B487D75EC99B402D5D90FC88A83B392E96DAF52D46",
+    "字节保持一致": false
+  },
+  {
+    "文件": "main-autolysis\\player\\components\\autolysis_interaction_controller.gd",
+    "实施前散列": "13CA6AA890A3C2160BA759D1936E445211E61A87C59221CFA636BD48C2B55179",
+    "实施后散列": "13CA6AA890A3C2160BA759D1936E445211E61A87C59221CFA636BD48C2B55179",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\components\\autolysis_held_item_presenter.gd",
+    "实施前散列": "83E442720EA448DA1B858761F003877A4F1ED4BFBD8A40B6741F5D22C8C32A14",
+    "实施后散列": "350033E6B70E839BE1EDCBE3D01F574E673E7079DB3F415548BFC6983C43AC67",
+    "字节保持一致": false
+  },
+  {
+    "文件": "main-autolysis\\player\\components\\autolysis_focus_ray_query.gd",
+    "实施前散列": "9CD1DAEC39D2D4F2CB651592ADA1ECC713FD4BE19289A53EDBCD0D049751E13F",
+    "实施后散列": "89B0E788799D2DBAD973D56EF33FA4887AC898076D51FD2E9BAA06FA84615DA3",
+    "字节保持一致": false
+  },
+  {
+    "文件": "main-autolysis\\player\\components\\autolysis_focus_controller.gd",
+    "实施前散列": "9502411F8099C37B4F1390B96D5A954853C6E36776687424D634C78EB14EB47C",
+    "实施后散列": "9502411F8099C37B4F1390B96D5A954853C6E36776687424D634C78EB14EB47C",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\autolysis_player.tscn",
+    "实施前散列": "DE47A6E95E53E9F2CE16EA240629630BAC72B056170AEE584A68475EB6BC19AC",
+    "实施后散列": "DE47A6E95E53E9F2CE16EA240629630BAC72B056170AEE584A68475EB6BC19AC",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\autolysis_player.gd",
+    "实施前散列": "BCDCE1020514E40B7D04BEC909634235ADAD6C49227CB88387F3529097541FB9",
+    "实施后散列": "BCDCE1020514E40B7D04BEC909634235ADAD6C49227CB88387F3529097541FB9",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\visuals\\rm_sodium_benzoate_visual.tscn",
+    "实施前散列": "F88B642590C1C5ACD99A3170B9182CF7455158AE540C03774975955FC44A7CCA",
+    "实施后散列": "F88B642590C1C5ACD99A3170B9182CF7455158AE540C03774975955FC44A7CCA",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\player\\assets\\player_eyes.tres",
+    "实施前散列": "40E155AE4C5735A0AC837CF71B4B9A0CB19CB125375419760687D64350A743D1",
+    "实施后散列": "40E155AE4C5735A0AC837CF71B4B9A0CB19CB125375419760687D64350A743D1",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\visuals\\rm_caffeine_visual.tscn",
+    "实施前散列": "4BEF48B7322A1089C8CD4B5C4B53A72549E8F75163217A8DC8B64E3DB324D0EE",
+    "实施后散列": "4BEF48B7322A1089C8CD4B5C4B53A72549E8F75163217A8DC8B64E3DB324D0EE",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_group_0.tscn",
+    "实施前散列": "B23C3312E1775BF00DFE42908BCCA85DB4E735DFB1E9A4E852D9E0D7A7265747",
+    "实施后散列": "B23C3312E1775BF00DFE42908BCCA85DB4E735DFB1E9A4E852D9E0D7A7265747",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_0.tscn",
+    "实施前散列": "57F96A7E2497FA90CADF6BCAF076394A388B05C73A93F8EA03A5AB999164161F",
+    "实施后散列": "57F96A7E2497FA90CADF6BCAF076394A388B05C73A93F8EA03A5AB999164161F",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_group_0.tscn",
+    "实施前散列": "050E16ED01CB18C569F7A6E04F09CD8F1B2197C8897B01A1D21CE296B99A13A9",
+    "实施后散列": "050E16ED01CB18C569F7A6E04F09CD8F1B2197C8897B01A1D21CE296B99A13A9",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_0.tscn",
+    "实施前散列": "96DEBF163F7408F8B369BC7C04D9753E6E656E15F8064CCA4A74D8CE347A1870",
+    "实施后散列": "96DEBF163F7408F8B369BC7C04D9753E6E656E15F8064CCA4A74D8CE347A1870",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\shelf_penumatic_capsules.tscn",
+    "实施前散列": "D1E4FD492AE8474C9DC290EEDCA152FCA436CB5E5ECC4EAD36E3102571F2C75E",
+    "实施后散列": "D1E4FD492AE8474C9DC290EEDCA152FCA436CB5E5ECC4EAD36E3102571F2C75E",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\place_shelf_workroom_rm_0.tscn",
+    "实施前散列": "681D7FF294509B1E00EFABA2AA6BD2AA934331A0F7FE310D3886F3443599D999",
+    "实施后散列": "681D7FF294509B1E00EFABA2AA6BD2AA934331A0F7FE310D3886F3443599D999",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\place_shelf_workroom_bottle_0.tscn",
+    "实施前散列": "3ABA2ED976209C3A2E02E9676510076D8C3863CC99AF9A596D2F20D185E486DA",
+    "实施后散列": "3ABA2ED976209C3A2E02E9676510076D8C3863CC99AF9A596D2F20D185E486DA",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\cabinet_workroom_0.tscn",
+    "实施前散列": "E823D9794A42E3EE8A99D70969F39DB457564882CFB289D3FCFB893922FF1FFE",
+    "实施后散列": "E823D9794A42E3EE8A99D70969F39DB457564882CFB289D3FCFB893922FF1FFE",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_paper\\quest_paper.tscn",
+    "实施前散列": "6F8AF0D82C7392ED565F18921C2BBED3E258B5652C954FD53DEB491E614DFD30",
+    "实施后散列": "5A508E4F6605738433D7470D455B5D7F4A391ED9F6A545AB2E3F41A94DEAD47F",
+    "字节保持一致": false
+  },
+  {
+    "文件": "main-autolysis\\components\\interactions\\autolysis_interaction_component.tscn",
+    "实施前散列": "A4F12CB6ADDE0F4343C438C3076CC4AA7E5A0528CABECF29DE825EA2FD38727F",
+    "实施后散列": "A4F12CB6ADDE0F4343C438C3076CC4AA7E5A0528CABECF29DE825EA2FD38727F",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_furnitures\\wall_air_vent_0.tscn",
+    "实施前散列": "2F79C6481B58F40E4441737FF58302EC3F611FE9B0036A400F892E1BB8F986B8",
+    "实施后散列": "2F79C6481B58F40E4441737FF58302EC3F611FE9B0036A400F892E1BB8F986B8",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\components\\interactions\\autolysis_interaction_component.gd",
+    "实施前散列": "FB38CBAA492FAA58F62AC9E4C28CEDB3E9AD918C9641D49E7A56B0DF037BA961",
+    "实施后散列": "FB38CBAA492FAA58F62AC9E4C28CEDB3E9AD918C9641D49E7A56B0DF037BA961",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\components\\interactions\\autolysis_focus_target.gd",
+    "实施前散列": "A3C2C75F0F81434FB99336B9E1EE71A6EBB54E9DB1C4B4D4B24EED7C3445B032",
+    "实施后散列": "B4324ADEF6FE2AAC83B418D9FC8199B24A1A41B95DD12164E13F6CD33FAC864C",
+    "字节保持一致": false
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_furnitures\\store_shelf_warehouse_0.tscn",
+    "实施前散列": "DC510E16B0F511E424958B4D1AFAE1E50030662C9EE1166B072552EFF8F55389",
+    "实施后散列": "DC510E16B0F511E424958B4D1AFAE1E50030662C9EE1166B072552EFF8F55389",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_furnitures\\light_prefab_uplight_0.tscn",
+    "实施前散列": "8C3A31C9C98C36BDA22289F8CE086A439810512FCA5C7CA727C618A5C189566D",
+    "实施后散列": "8C3A31C9C98C36BDA22289F8CE086A439810512FCA5C7CA727C618A5C189566D",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_furnitures\\light_prefab_small_wall_0.tscn",
+    "实施前散列": "D09B66067422E2969FABBDEC6D3B623431B4C78E66230644E2CF175C9EAB19A0",
+    "实施后散列": "D09B66067422E2969FABBDEC6D3B623431B4C78E66230644E2CF175C9EAB19A0",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_furnitures\\bed_0.tscn",
+    "实施前散列": "C32C2AB084F46BE0E7224BA496B22F8ED8A91F33F3ED51124B57C0CCAD1EC2E7",
+    "实施后散列": "C32C2AB084F46BE0E7224BA496B22F8ED8A91F33F3ED51124B57C0CCAD1EC2E7",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\confessional_and_trade_0.tscn",
+    "实施前散列": "CE93D191CFD2025207E687B549F67925D9F098593FE72AE69613958884DDED93",
+    "实施后散列": "CE93D191CFD2025207E687B549F67925D9F098593FE72AE69613958884DDED93",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\01-autolysis-test.tscn",
+    "实施前散列": "F59883C2B4B19D5B98A87A3526A40F9DD46160FEEDB107852EE63C1D32F57350",
+    "实施后散列": "349A2C71CB190C3511E5F7E6F1822DFC32855B3D6C4E2B0B0815299620AB6FA2",
+    "字节保持一致": false
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\capsule_data_behavior_test.gd",
+    "实施前散列": "A5D81E28BB16896E8DF4B32EB84A5C3F148E33B92C90F1FC04EBA4A7D443CB52",
+    "实施后散列": "A5D81E28BB16896E8DF4B32EB84A5C3F148E33B92C90F1FC04EBA4A7D443CB52",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\blend_slot_transfer_test.gd",
+    "实施前散列": "743B9DBD95EB730BE89EF888BCD828490655620ECFB392D0CD476F5820F44914",
+    "实施后散列": "743B9DBD95EB730BE89EF888BCD828490655620ECFB392D0CD476F5820F44914",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\blend_indicator_test.gd",
+    "实施前散列": "BE4D8F60FF6EBDC26B2EE7F1CB9C9B706C4A18CED30FE24E9773FD7703061392",
+    "实施后散列": "BE4D8F60FF6EBDC26B2EE7F1CB9C9B706C4A18CED30FE24E9773FD7703061392",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\blend_animation_variants_test.gd",
+    "实施前散列": "B2198949D520DB5AE7B52BEE0A712BC8167F7B96DEC9849D8FD4034B207A127D",
+    "实施后散列": "B2198949D520DB5AE7B52BEE0A712BC8167F7B96DEC9849D8FD4034B207A127D",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\waste_liquid_tank_behavior_test.gd",
+    "实施前散列": "3B192015D7A26DA20564BD363E1357AF69D67306B4B6F352C859E7CA961D3A73",
+    "实施后散列": "3B192015D7A26DA20564BD363E1357AF69D67306B4B6F352C859E7CA961D3A73",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\test_evidence.gd",
+    "实施前散列": "57BEFD315C701D2571DAF08671C7352E067D71939DC93967FA504DD35BC27309",
+    "实施后散列": "57BEFD315C701D2571DAF08671C7352E067D71939DC93967FA504DD35BC27309",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\shelf_layers_test.gd",
+    "实施前散列": "F100E44BB1005497D54828A175CF50E6B62EB5D5262BB16BE63751115A57F088",
+    "实施后散列": "F100E44BB1005497D54828A175CF50E6B62EB5D5262BB16BE63751115A57F088",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\shelf_clearance_test.gd",
+    "实施前散列": "6B9220B43E7E968D4660F58DC8B7BEDFB9051A2B221D6D7701DDFC32315A01BF",
+    "实施后散列": "6B9220B43E7E968D4660F58DC8B7BEDFB9051A2B221D6D7701DDFC32315A01BF",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\render_pneumatic_capsule_icon.gd",
+    "实施前散列": "010E9811C904A0AAF27DE802401E41045759339942BF779042BB1555CDE38925",
+    "实施后散列": "010E9811C904A0AAF27DE802401E41045759339942BF779042BB1555CDE38925",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\render_liquid_tank_icon.gd",
+    "实施前散列": "BDEA6ED42A05C971850C84315B28708FBEB5C2701B83DDBBD238BDCA8256BC4C",
+    "实施后散列": "BDEA6ED42A05C971850C84315B28708FBEB5C2701B83DDBBD238BDCA8256BC4C",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\render_item_icons.gd",
+    "实施前散列": "94F0DE442CA099A5D30E9AA4591E2E1AAD687F9A1623CA16C5513521428AB6E6",
+    "实施后散列": "94F0DE442CA099A5D30E9AA4591E2E1AAD687F9A1623CA16C5513521428AB6E6",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\packing_switch_repeat_test.gd",
+    "实施前散列": "4567E79CD6A227667269E3485D12B55C97AB0AA787BD3D9EE3675CB15199CEF6",
+    "实施后散列": "4567E79CD6A227667269E3485D12B55C97AB0AA787BD3D9EE3675CB15199CEF6",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\packing_motion_physics_test.gd",
+    "实施前散列": "11A1095DB4DFB35513B16730DF6E3CF7031AE291241848CF21BFC800B61B9057",
+    "实施后散列": "11A1095DB4DFB35513B16730DF6E3CF7031AE291241848CF21BFC800B61B9057",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\packing_machine_demo.tscn",
+    "实施前散列": "D5A8259D58454789BF2D9148BADAE0262F76411917FF70D18AA8EA37BB87D7BE",
+    "实施后散列": "D5A8259D58454789BF2D9148BADAE0262F76411917FF70D18AA8EA37BB87D7BE",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\packing_machine_behavior_test.gd",
+    "实施前散列": "B957659911781F4CF884EE617CABEBBD75FAC707B506B972A7566459CEAF07FA",
+    "实施后散列": "B957659911781F4CF884EE617CABEBBD75FAC707B506B972A7566459CEAF07FA",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\packing_indicator_test.gd",
+    "实施前散列": "2AD9FE92F7489A121C58EB2BD17E8FA4908FCFC708A5575043D2960DA3022D30",
+    "实施后散列": "2AD9FE92F7489A121C58EB2BD17E8FA4908FCFC708A5575043D2960DA3022D30",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\packing_batch_atomic_test.gd",
+    "实施前散列": "B01FDBB93003A32FB066E5848BC35EE0B2D7F580AE73DB3115FBA05037DC0DE6",
+    "实施后散列": "B01FDBB93003A32FB066E5848BC35EE0B2D7F580AE73DB3115FBA05037DC0DE6",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\packing_asset_isolation_test.gd",
+    "实施前散列": "C6C16CFDF4B5AC7C0BBD0EA55100DF5AF037848CDBB633554E2A1182148A7A89",
+    "实施后散列": "C6C16CFDF4B5AC7C0BBD0EA55100DF5AF037848CDBB633554E2A1182148A7A89",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\machine_batch_atomic_test.gd",
+    "实施前散列": "BC1D9A44BEFBB73FB38EC76C650ECC9933D189CCB00DF0B228EC10E50BE10140",
+    "实施后散列": "BC1D9A44BEFBB73FB38EC76C650ECC9933D189CCB00DF0B228EC10E50BE10140",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\liquid_tank_transaction_test.gd",
+    "实施前散列": "80C6C35FE6E0BCC25F58E9CD86268154C679E0B4ED6D5836D379FAF8C46F7BBD",
+    "实施后散列": "80C6C35FE6E0BCC25F58E9CD86268154C679E0B4ED6D5836D379FAF8C46F7BBD",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\liquid_tank_cabinet_rendered_test.gd",
+    "实施前散列": "EAA05E2D852C193EEA7D63698A7D33FEA0E5675200BC565943523DE5FA60C6E1",
+    "实施后散列": "EAA05E2D852C193EEA7D63698A7D33FEA0E5675200BC565943523DE5FA60C6E1",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\liquid_tank_cabinet_behavior_test.gd",
+    "实施前散列": "B19964571A515DC2EBACC37B7A14F87B6836D266D97409B592325D1DC9333926",
+    "实施后散列": "B19964571A515DC2EBACC37B7A14F87B6836D266D97409B592325D1DC9333926",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\liquid_contents_main_rendered_test.gd",
+    "实施前散列": "744119F17223B89E9D7557C90EC2111469CD00700A29CE6A6D00B035A031B115",
+    "实施后散列": "744119F17223B89E9D7557C90EC2111469CD00700A29CE6A6D00B035A031B115",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\liquid_contents_blend_test.gd",
+    "实施前散列": "83265E84AC049CEDF666DC72748ED35E1ABC749BA43756E2ED74E6AF30B5FCE7",
+    "实施后散列": "83265E84AC049CEDF666DC72748ED35E1ABC749BA43756E2ED74E6AF30B5FCE7",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\item_system_test.gd",
+    "实施前散列": "948A594752F52E0D3DB589F80CD1952EBC6FF9BF56DD981B6150B103346F0B28",
+    "实施后散列": "948A594752F52E0D3DB589F80CD1952EBC6FF9BF56DD981B6150B103346F0B28",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\item_system_rendered_test.gd",
+    "实施前散列": "539267521B4A5DC5C843A43FE875F033C5AFFAC37385529522DBD4D320BC3E4C",
+    "实施后散列": "539267521B4A5DC5C843A43FE875F033C5AFFAC37385529522DBD4D320BC3E4C",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\item_system_demo.tscn",
+    "实施前散列": "3139F0A9D62558D781B845C6C5A95F1D11A8A8C7B29E967242F321251AEC3978",
+    "实施后散列": "3139F0A9D62558D781B845C6C5A95F1D11A8A8C7B29E967242F321251AEC3978",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\hand_pose_render_test.gd",
+    "实施前散列": "B284CDEF898A56B5B1239733710CB7A103872A51CAB5C629FD1457FCFB267462",
+    "实施后散列": "B284CDEF898A56B5B1239733710CB7A103872A51CAB5C629FD1457FCFB267462",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\container_animation_timing_probe.gd",
+    "实施前散列": "DFB240FE79CBB23F2D7F84D29AA60C80D17AC5C1253F300B42671769241DA6A6",
+    "实施后散列": "DFB240FE79CBB23F2D7F84D29AA60C80D17AC5C1253F300B42671769241DA6A6",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\tests\\container_animation_asset_test.gd",
+    "实施前散列": "629094E18EA457FFAFE473393BCBAFDAE15D0BD282D54447D1B7387EFAF87032",
+    "实施后散列": "629094E18EA457FFAFE473393BCBAFDAE15D0BD282D54447D1B7387EFAF87032",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_items\\tincture_bottle_group_0.tscn",
+    "实施前散列": "25DE9B8CC028F32DBDE213F7473336D0DDA8FFEE32A136510D39B148483D8AF6",
+    "实施后散列": "25DE9B8CC028F32DBDE213F7473336D0DDA8FFEE32A136510D39B148483D8AF6",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\waste_liquid_storage_tank_0.tscn",
+    "实施前散列": "4DF71FED4AE71510ABEEE6762B1C19C21FE1516D3A72300F2B40FD62B23E77F2",
+    "实施后散列": "4DF71FED4AE71510ABEEE6762B1C19C21FE1516D3A72300F2B40FD62B23E77F2",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\items\\sodium_benzoate.tres",
+    "实施前散列": "E1BCB9420622E8DFC5D0546ECFBB02D8E3709F9969BD50C2FD62C505D97E0210",
+    "实施后散列": "E1BCB9420622E8DFC5D0546ECFBB02D8E3709F9969BD50C2FD62C505D97E0210",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_items\\tincture_bottle_0.tscn",
+    "实施前散列": "4BD21ABD9554615347382EEF907283B7356CDFAD1FC786FB96B37C112C950396",
+    "实施后散列": "4BD21ABD9554615347382EEF907283B7356CDFAD1FC786FB96B37C112C950396",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\items\\pneumatic_capsule.tres",
+    "实施前散列": "F4DAEB93C67724EA26A2183E53D49928397181D2B5CFB1A8F37976B6F4B211CC",
+    "实施后散列": "F4DAEB93C67724EA26A2183E53D49928397181D2B5CFB1A8F37976B6F4B211CC",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_items\\syringe_group_0.tscn",
+    "实施前散列": "A76DF9FD546E2D95A376E949DE993F3DC81BF7BBC3E49E65F37823F179961781",
+    "实施后散列": "A76DF9FD546E2D95A376E949DE993F3DC81BF7BBC3E49E65F37823F179961781",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\items\\liquid_tank.tres",
+    "实施前散列": "74EE98EEBA9888785BDD8A49DE3DEABD039099806DDEB74B25577448E71E2CA9",
+    "实施后散列": "74EE98EEBA9888785BDD8A49DE3DEABD039099806DDEB74B25577448E71E2CA9",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_items\\syringe_0.tscn",
+    "实施前散列": "461F0AA9D2A7A5525E78D0E9317A162A27EC18213F891E1822D614E96E231320",
+    "实施后散列": "461F0AA9D2A7A5525E78D0E9317A162A27EC18213F891E1822D614E96E231320",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\items\\caffeine.tres",
+    "实施前散列": "128E7B6C7BD9DCA6BE0D6B374BF057F40302B8222775E134D57D9DA5DC0A2446",
+    "实施后散列": "128E7B6C7BD9DCA6BE0D6B374BF057F40302B8222775E134D57D9DA5DC0A2446",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_ration_0.tscn",
+    "实施前散列": "BF4195E6848E1A1B23C15DBFD18AE06875E2E3581FD4520DDC6A3220B4C73624",
+    "实施后散列": "BF4195E6848E1A1B23C15DBFD18AE06875E2E3581FD4520DDC6A3220B4C73624",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_pneumatic_tube_0.tscn",
+    "实施前散列": "FBBF30F7E3D6E77F42F1E4546440070CE511CEE49D841A3F7CF033D9A71DEB5D",
+    "实施后散列": "FBBF30F7E3D6E77F42F1E4546440070CE511CEE49D841A3F7CF033D9A71DEB5D",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_phase_separator_0.tscn",
+    "实施前散列": "605ABD03943F6AF3026CA44A71584173EE50A5B91B6BFC26E0D242EEB681E333",
+    "实施后散列": "605ABD03943F6AF3026CA44A71584173EE50A5B91B6BFC26E0D242EEB681E333",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_packing_0.tscn",
+    "实施前散列": "6E824739E0ACE0009787086776B15730893D96B31D105E5FDC63C2CF813E577D",
+    "实施后散列": "6E824739E0ACE0009787086776B15730893D96B31D105E5FDC63C2CF813E577D",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_extraction_tank_0.tscn",
+    "实施前散列": "0BBC98A6E5EA6E67DD8DD64160AF4C3D43483DD41CAECDBB23B1EEAC1E39FDD8",
+    "实施后散列": "0BBC98A6E5EA6E67DD8DD64160AF4C3D43483DD41CAECDBB23B1EEAC1E39FDD8",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_daily_test_0.tscn",
+    "实施前散列": "DEF9ABE6AD269FCB1BF6912C6A6BBECEA276016314C1D908D9F19D9351FC5519",
+    "实施后散列": "DEF9ABE6AD269FCB1BF6912C6A6BBECEA276016314C1D908D9F19D9351FC5519",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_blend_0.tscn",
+    "实施前散列": "F8B92CC9106AB57254B0F5CE5016B6FC1617C44E305A4A57037A151230EC134A",
+    "实施后散列": "F8B92CC9106AB57254B0F5CE5016B6FC1617C44E305A4A57037A151230EC134A",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\liquid_tank_0.tscn",
+    "实施前散列": "9A8FB1FD9B1D491541121F943B9D390606B93BD15E9BF195CAEE2B5E0A98179E",
+    "实施后散列": "9A8FB1FD9B1D491541121F943B9D390606B93BD15E9BF195CAEE2B5E0A98179E",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\autolysis_raw_material_shelf.gd",
+    "实施前散列": "E47FF00B22CAFFCBC43F288C8F73CF2F4A038EDFBE8ED96E5B1B6C687586BD5C",
+    "实施后散列": "E47FF00B22CAFFCBC43F288C8F73CF2F4A038EDFBE8ED96E5B1B6C687586BD5C",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\autolysis_raw_material_group.gd",
+    "实施前散列": "FE5D05DE12050EF9F550BA6C5DC821E1F789856573E53005AE90809DFE0CF30C",
+    "实施后散列": "FE5D05DE12050EF9F550BA6C5DC821E1F789856573E53005AE90809DFE0CF30C",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\autolysis_raw_material.gd",
+    "实施前散列": "B59E2409AB98C5D005D64E829D65FBFD87BAC851A1B872C1215EF20E648283D9",
+    "实施后散列": "B59E2409AB98C5D005D64E829D65FBFD87BAC851A1B872C1215EF20E648283D9",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\autolysis_pneumatic_capsule_visual.gd",
+    "实施前散列": "1C1423C433E5242C61A16BD58A55E2084EC33BDB61E3E50AB6817739107D8F77",
+    "实施后散列": "1C1423C433E5242C61A16BD58A55E2084EC33BDB61E3E50AB6817739107D8F77",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\pneumatic_capsules_0.tscn",
+    "实施前散列": "00DEE8663955A515452C549971CA28D8C4092B5210C7D688464B7A4A385551B3",
+    "实施后散列": "00DEE8663955A515452C549971CA28D8C4092B5210C7D688464B7A4A385551B3",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\autolysis_pneumatic_capsule_shelf.gd",
+    "实施前散列": "0B60EE7A334E1ABEAC605B255A64B78806455233092CE004B5DDAB28AEBF3D4E",
+    "实施后散列": "0B60EE7A334E1ABEAC605B255A64B78806455233092CE004B5DDAB28AEBF3D4E",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\manual_shelf_0.tscn",
+    "实施前散列": "576EFEB129FAEAA5A607A46D34853D7D1B09D186BFC6F5028A2662A15290FA08",
+    "实施后散列": "576EFEB129FAEAA5A607A46D34853D7D1B09D186BFC6F5028A2662A15290FA08",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\autolysis_pneumatic_capsule.gd",
+    "实施前散列": "61B399A244EB1832B7EE351A557DDF7959900368905373E3A3E742459D6FD065",
+    "实施后散列": "61B399A244EB1832B7EE351A557DDF7959900368905373E3A3E742459D6FD065",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_wave_rebuilder_0.tscn",
+    "实施前散列": "BF9FFF1DB8318D995A0C63CB877BB9636B1E346FD95E736DBD05BCB3CF24BC4E",
+    "实施后散列": "BF9FFF1DB8318D995A0C63CB877BB9636B1E346FD95E736DBD05BCB3CF24BC4E",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\autolysis_packing_contents.gd",
+    "实施前散列": "11D62A989670C77173AEFA1EEDC1BF7F5F29D6CBAF82AB454A7C1731B312D831",
+    "实施后散列": "11D62A989670C77173AEFA1EEDC1BF7F5F29D6CBAF82AB454A7C1731B312D831",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+    "实施前散列": "95B707EC99F2192A8978BC4F39F125B8E35B00551D90A7DFBEDBB055CBC62400",
+    "实施后散列": "95B707EC99F2192A8978BC4F39F125B8E35B00551D90A7DFBEDBB055CBC62400",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\autolysis_liquid_tank_visual.gd",
+    "实施前散列": "9EB1C287F97C96338245BA3B2BA2A6778E5CB2DDFC515D74C31C432D16CF58F8",
+    "实施后散列": "9EB1C287F97C96338245BA3B2BA2A6778E5CB2DDFC515D74C31C432D16CF58F8",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\autolysis_liquid_tank_cabinet.gd",
+    "实施前散列": "503C4D7C45869C766A5AC015C31B61A813E88ACDCF0D7B3A3D8A480AD01ADE98",
+    "实施后散列": "503C4D7C45869C766A5AC015C31B61A813E88ACDCF0D7B3A3D8A480AD01ADE98",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_machine_0.tscn",
+    "实施前散列": "7900C8C3126EE4554311D3481E2D66BADF23A7CCC7A716C0D1125FAFBF5678A0",
+    "实施后散列": "8057D399D6496A0882A1BA328B9E5DB94F00D29E117EBE7F0CF5CB3490F969D7",
+    "字节保持一致": false
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\autolysis_liquid_tank.gd",
+    "实施前散列": "175741CF9834C3AC7A4B868465721E86924F7EE0DEB79C6B7291B1D2191CC840",
+    "实施后散列": "175741CF9834C3AC7A4B868465721E86924F7EE0DEB79C6B7291B1D2191CC840",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_board_0.tscn",
+    "实施前散列": "5B59ABC3D9BC5CB2C634663A68C186A2EA50B9F01C159F9E6CDF25E7D3FEB5AA",
+    "实施后散列": "7F735CB3E020BBAC7D998BFA673B0A8A03C4FD42F8AA3180567AFF979BEBDD83",
+    "字节保持一致": false
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\autolysis_liquid_contents.gd",
+    "实施前散列": "7C91B3547D92C1012295298E30BE8E39F167DADD59815FBFCA1C6E9B7D7A422A",
+    "实施后散列": "7C91B3547D92C1012295298E30BE8E39F167DADD59815FBFCA1C6E9B7D7A422A",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\autolysis_item_instance.gd",
+    "实施前散列": "3E3D3A0D7FCFE9B000D2A6E6E063F50969734426AFAD5DE035ED3B67E9D197C5",
+    "实施后散列": "5C42EF022F951D04EDB864A46F490C0FF5F444C6666DE4FD9F3F903F2DA5AC23",
+    "字节保持一致": false
+  },
+  {
+    "文件": "main-autolysis\\systems\\item-system\\autolysis_item_definition.gd",
+    "实施前散列": "0B351468E056185CAFD4DC12318EACDC164F66D8E1E6681E6AF7536CB7561191",
+    "实施后散列": "0B351468E056185CAFD4DC12318EACDC164F66D8E1E6681E6AF7536CB7561191",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_surface_detector.gd",
+    "实施前散列": "61FF789A1AA640A2505D087B4C11FD165AD17F7F72474FD8803F87B0D3259552",
+    "实施后散列": "61FF789A1AA640A2505D087B4C11FD165AD17F7F72474FD8803F87B0D3259552",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_surface.gd",
+    "实施前散列": "6346CBD1020A16B186326155179D7ABE1C79BE6807BC87D47F4A7E43B1399703",
+    "实施后散列": "6346CBD1020A16B186326155179D7ABE1C79BE6807BC87D47F4A7E43B1399703",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_material_profile.gd",
+    "实施前散列": "B36F723AE97F1340556DD9C5B0491AA63737604717833D2D21689D660A54E82D",
+    "实施后散列": "B36F723AE97F1340556DD9C5B0491AA63737604717833D2D21689D660A54E82D",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_material_library.gd",
+    "实施前散列": "55F6C68FA5BD83A154A1FF9C230C81F5B9ABD7E4F9A8E58BF9856EC9BDD2DC25",
+    "实施后散列": "55F6C68FA5BD83A154A1FF9C230C81F5B9ABD7E4F9A8E58BF9856EC9BDD2DC25",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\visuals\\telephone_handset_visual.tscn",
+    "实施前散列": "1A17500A3074EAF1E11757E80DD050CA24ABDCE74EA6BE45BD4D8764929CCFB1",
+    "实施后散列": "1A17500A3074EAF1E11757E80DD050CA24ABDCE74EA6BE45BD4D8764929CCFB1",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\visuals\\pneumatic_capsule_visual.tscn",
+    "实施前散列": "1C44A8AB0053B66456A974BB268284619C247541C6DB7DD7C51DABBCE2E2B634",
+    "实施后散列": "1C44A8AB0053B66456A974BB268284619C247541C6DB7DD7C51DABBCE2E2B634",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\visuals\\liquid_tank_visual.tscn",
+    "实施前散列": "3CEAEE667D9E439FE7BFD233D58F3A0DE5273F4895593BE4EEC1CCC24D08059F",
+    "实施后散列": "3CEAEE667D9E439FE7BFD233D58F3A0DE5273F4895593BE4EEC1CCC24D08059F",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_handle.gd",
+    "实施前散列": "87A16986B21542636BDF82B17A0022E95E9D72F39B0EF0949E9E6D38EC98F578",
+    "实施后散列": "87A16986B21542636BDF82B17A0022E95E9D72F39B0EF0949E9E6D38EC98F578",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_machine.gd",
+    "实施前散列": "70A48987715B02922BC5200368208BC98D0EAF412D8A54A46FBA4ACFEE3B36A9",
+    "实施后散列": "70A48987715B02922BC5200368208BC98D0EAF412D8A54A46FBA4ACFEE3B36A9",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_slot.gd",
+    "实施前散列": "F682A942242A9184FC3D12723926456B798344C0A3B2F42B9ADBC103E7DDACFE",
+    "实施后散列": "F682A942242A9184FC3D12723926456B798344C0A3B2F42B9ADBC103E7DDACFE",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\dynamic_footstep_demo_scene.tscn",
+    "实施前散列": "38E68274EC4EB4024685B341635A1E4B8FD3CA98FD81DB361168A99F4D7202B0",
+    "实施后散列": "38E68274EC4EB4024685B341635A1E4B8FD3CA98FD81DB361168A99F4D7202B0",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_door.gd",
+    "实施前散列": "5A551D7E1588F3CB7FA54C965F78F90AED59C9E3D695426DEA452C78FA4A6C5E",
+    "实施后散列": "5A551D7E1588F3CB7FA54C965F78F90AED59C9E3D695426DEA452C78FA4A6C5E",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_capsule_place.gd",
+    "实施前散列": "DABA3A7005BD614BB33945FFDFDFDF219357D3627BA3D437EDC0B79F49871E67",
+    "实施后散列": "DABA3A7005BD614BB33945FFDFDFDF219357D3627BA3D437EDC0B79F49871E67",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_tank_place.gd",
+    "实施前散列": "27C8F29B181F0ED6AC79A7D37718E32516C1AE3A84E8774C5E78883348B783A4",
+    "实施后散列": "27C8F29B181F0ED6AC79A7D37718E32516C1AE3A84E8774C5E78883348B783A4",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\grass_footstep_profile.tres",
+    "实施前散列": "5B61A29366F3A19D7426218875FBB1E2AD6EEC42F9B0342348C01B22F4CCD384",
+    "实施后散列": "5B61A29366F3A19D7426218875FBB1E2AD6EEC42F9B0342348C01B22F4CCD384",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\wood_footstep_profile.tres",
+    "实施前散列": "F4FEB344F9A20D2716253BC1BACC0E0E22F2EA0094DED8192C6094091F27054D",
+    "实施后散列": "F4FEB344F9A20D2716253BC1BACC0E0E22F2EA0094DED8192C6094091F27054D",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\generic_footstep_profile.tres",
+    "实施前散列": "9F7E38AF65B1CD7949A9BC482EA988A2712669E9523835A20FF3A8F486FA8673",
+    "实施后散列": "9F7E38AF65B1CD7949A9BC482EA988A2712669E9523835A20FF3A8F486FA8673",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\dirt_footstep_profile.tres",
+    "实施前散列": "1655C6EB425866C2B8C446DA240C02035A86F93CB0D26147F649E29FC85921AA",
+    "实施后散列": "1655C6EB425866C2B8C446DA240C02035A86F93CB0D26147F649E29FC85921AA",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\stone_footstep_profile.tres",
+    "实施前散列": "4F31FC21D414A7EEE163A1BB5C902F29D60C15C9AC346AFBC4C4646412E0E50A",
+    "实施后散列": "4F31FC21D414A7EEE163A1BB5C902F29D60C15C9AC346AFBC4C4646412E0E50A",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\metal_footstep_hard_profile.tres",
+    "实施前散列": "8BAD28F2E518596D41BC4255F131EFBA18FC9D7AC2E8A8FCDB84D7B00B4E6431",
+    "实施后散列": "8BAD28F2E518596D41BC4255F131EFBA18FC9D7AC2E8A8FCDB84D7B00B4E6431",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\metal_footstep_light_profile.tres",
+    "实施前散列": "4846E40AD4F8BD2D94AA51C3421C5A4B507A4852B28E5206F4B0011585D0F3A4",
+    "实施后散列": "4846E40AD4F8BD2D94AA51C3421C5A4B507A4852B28E5206F4B0011585D0F3A4",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_start_button.gd",
+    "实施前散列": "37E7223D7091A23CCC36A508A684B8DBAB6828800C6DD50D47A0A0787682D450",
+    "实施后散列": "37E7223D7091A23CCC36A508A684B8DBAB6828800C6DD50D47A0A0787682D450",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_tank_place.gd",
+    "实施前散列": "71A2E8CC7CC210272A2C19F5D83BFD2A2235300992029A2F69B3EC16303137BF",
+    "实施后散列": "71A2E8CC7CC210272A2C19F5D83BFD2A2235300992029A2F69B3EC16303137BF",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_motion.gd",
+    "实施前散列": "9DD67DAE13C6BCCF06B69D03570307C49B7C0EF90CC950BD315AD832CC66DA17",
+    "实施后散列": "9DD67DAE13C6BCCF06B69D03570307C49B7C0EF90CC950BD315AD832CC66DA17",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_type_switch.gd",
+    "实施前散列": "3C978B0A4A88A6576EEB267E79457382F55B7B95F435996220895DC21E38B33F",
+    "实施后散列": "3C978B0A4A88A6576EEB267E79457382F55B7B95F435996220895DC21E38B33F",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_machine.gd",
+    "实施前散列": "F5F6E7E5CB5A9A7DD6BEE9E2AEDBEF6EE17E43B355C982F78BDBC157F18771BC",
+    "实施后散列": "F5F6E7E5CB5A9A7DD6BEE9E2AEDBEF6EE17E43B355C982F78BDBC157F18771BC",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_waste_liquid_storage_tank.gd",
+    "实施前散列": "3A1DED658009A33D2B2E52AE1F4C46BD7D8531D6685ECE8F05E2DBD68502D4B0",
+    "实施后散列": "3A1DED658009A33D2B2E52AE1F4C46BD7D8531D6685ECE8F05E2DBD68502D4B0",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone_call_controller.gd",
+    "实施前散列": "1B14BEC0839870757766727EF08CF9FB1E6A52D7F95F700F7E73D87AA683FBF8",
+    "实施后散列": "1B14BEC0839870757766727EF08CF9FB1E6A52D7F95F700F7E73D87AA683FBF8",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone_audio_controller.gd",
+    "实施前散列": "4C6E6816B9A6D48F3BCAB476C0610450969A0B46925871E94FF38592773A4682",
+    "实施后散列": "4C6E6816B9A6D48F3BCAB476C0610450969A0B46925871E94FF38592773A4682",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+    "实施前散列": "4A80BD30D95FE63369218A35EDF95427EB0AD50D74586E4917E58FA680A78A59",
+    "实施后散列": "4A80BD30D95FE63369218A35EDF95427EB0AD50D74586E4917E58FA680A78A59",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-material-library\\sample_footstep_material_library.tres",
+    "实施前散列": "D0F62A1D04CBC4897D68311C3E29F5DB37DA9365D9FABACF96762BA03C7AFC30",
+    "实施后散列": "D0F62A1D04CBC4897D68311C3E29F5DB37DA9365D9FABACF96762BA03C7AFC30",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\liquid_tank\\liquid_tank_filled.tres",
+    "实施前散列": "28E0C2E709F8E66D39DEC060DCE7389E1FB79D10ED0AA754C2EDB2F02DA82F72",
+    "实施后散列": "28E0C2E709F8E66D39DEC060DCE7389E1FB79D10ED0AA754C2EDB2F02DA82F72",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\liquid_tank\\liquid_tank_empty.tres",
+    "实施前散列": "178F46CECCCCD965C5A3F389AA6C8E97DB5294B6C6C66135DF39362CBA792EFF",
+    "实施后散列": "178F46CECCCCD965C5A3F389AA6C8E97DB5294B6C6C66135DF39362CBA792EFF",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_orange.tres",
+    "实施前散列": "4DD34B83CFD29B6FD596F1E2FBA369E80F412D5164E39B10A1AEC5C2CEBA955C",
+    "实施后散列": "4DD34B83CFD29B6FD596F1E2FBA369E80F412D5164E39B10A1AEC5C2CEBA955C",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_light_grey.tres",
+    "实施前散列": "354CDF329FC5F54724B2619CC180EA3A6997A294A8318BADCE0E7EBC49DF84F8",
+    "实施后散列": "354CDF329FC5F54724B2619CC180EA3A6997A294A8318BADCE0E7EBC49DF84F8",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_green.tres",
+    "实施前散列": "931D1C8212F1387ABDAEB593563E027796DD0434A6524AF2B406D46F280268BF",
+    "实施后散列": "931D1C8212F1387ABDAEB593563E027796DD0434A6524AF2B406D46F280268BF",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_dark_grey.tres",
+    "实施前散列": "F29DBB94EA76F2761EFDE42212F466351DCA7EA03259E299385C5076317AF505",
+    "实施后散列": "F29DBB94EA76F2761EFDE42212F466351DCA7EA03259E299385C5076317AF505",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_brown.tres",
+    "实施前散列": "FB889FCC689F0323EB5B1EBC04C07B8D61044EAAD55D56CE773FCB674BCB86FA",
+    "实施后散列": "FB889FCC689F0323EB5B1EBC04C07B8D61044EAAD55D56CE773FCB674BCB86FA",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_wood.tres",
+    "实施前散列": "714FC73BE2D43613B554F2B601BD2CD9FA801EB65D96CDA76A3438A42ED1A7F4",
+    "实施后散列": "714FC73BE2D43613B554F2B601BD2CD9FA801EB65D96CDA76A3438A42ED1A7F4",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_stone.tres",
+    "实施前散列": "846E07893FC25D50FD56E9FC2D5A4C3D5ABD86186ECECBC231B9DDC9986420C7",
+    "实施后散列": "846E07893FC25D50FD56E9FC2D5A4C3D5ABD86186ECECBC231B9DDC9986420C7",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_grass.tres",
+    "实施前散列": "DBED9DEF9153F3B32FC348CA89A8386FA2773D99161AC70792CC554274F2EC26",
+    "实施后散列": "DBED9DEF9153F3B32FC348CA89A8386FA2773D99161AC70792CC554274F2EC26",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_dirt.tres",
+    "实施前散列": "57443A5549DEA011FD1F52CC50DFD4D3E36C0499407FA955B6A90AF95D19A221",
+    "实施后散列": "57443A5549DEA011FD1F52CC50DFD4D3E36C0499407FA955B6A90AF95D19A221",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\audio\\buses\\default_bus_layout.tres",
+    "实施前散列": "1D9C2AE1F24CDA404461DB643CFE412234B20FEAC477ACDCEF47C27E6D1F34A3",
+    "实施后散列": "1D9C2AE1F24CDA404461DB643CFE412234B20FEAC477ACDCEF47C27E6D1F34A3",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\glow_color\\mat_glow_white_0.tres",
+    "实施前散列": "030D0B2F149F4D173343DCA345F0B62D2C44E6CA139013182391818B906D753A",
+    "实施后散列": "030D0B2F149F4D173343DCA345F0B62D2C44E6CA139013182391818B906D753A",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\glow_color\\mat_glow_orange_0.tres",
+    "实施前散列": "908E8C6D3345E2FA840B5766FB8B6F6FBB716ED9B43F48F44C69B764C279F560",
+    "实施后散列": "908E8C6D3345E2FA840B5766FB8B6F6FBB716ED9B43F48F44C69B764C279F560",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\glow_color\\mat_glow_green_0.tres",
+    "实施前散列": "ABFE9C4F2C5B31468BC4A579EE899D723C7F1B293E7C1C4B6AB9E6ED6D894D6F",
+    "实施后散列": "ABFE9C4F2C5B31468BC4A579EE899D723C7F1B293E7C1C4B6AB9E6ED6D894D6F",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\glow_color\\mat_glow_blue_1.tres",
+    "实施前散列": "960DBBC3544A672BF17BE2044CB51AAE8DBC1F7FB296836ACD077FCB717B8289",
+    "实施后散列": "960DBBC3544A672BF17BE2044CB51AAE8DBC1F7FB296836ACD077FCB717B8289",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\glow_color\\mat_glow_blue_0.tres",
+    "实施前散列": "3A6DD0BFBE7E633753E931A4C92CF4BCA6C1FA9A17EAD104F74561FFB57DD42F",
+    "实施后散列": "3A6DD0BFBE7E633753E931A4C92CF4BCA6C1FA9A17EAD104F74561FFB57DD42F",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dialogue-system\\tests\\dialogue_visibility_boundary_test.gd",
+    "实施前散列": "B141B1FC9DFB897563BD2384BAB736739BF51527CA67E305BA628E703ABF8C5A",
+    "实施后散列": "B141B1FC9DFB897563BD2384BAB736739BF51527CA67E305BA628E703ABF8C5A",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_translucent\\mat_trans_white_0.tres",
+    "实施前散列": "67DF2E81A8C52032E86496EEAA0A74B7F21B3FE5577B5EE87CF08DCCE308358A",
+    "实施后散列": "67DF2E81A8C52032E86496EEAA0A74B7F21B3FE5577B5EE87CF08DCCE308358A",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dialogue-system\\tests\\dialogue_configuration_check.gd",
+    "实施前散列": "53E7280686C5523EDAB087AC7918175659D49154A5D95C004DEC0B492DACA55E",
+    "实施后散列": "53E7280686C5523EDAB087AC7918175659D49154A5D95C004DEC0B492DACA55E",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dialogue-system\\chat_0.tres",
+    "实施前散列": "FDFC86C6D1C193F3E0815E153980BB05A98F284000B92DC318D4AAA70B35B024",
+    "实施后散列": "FDFC86C6D1C193F3E0815E153980BB05A98F284000B92DC318D4AAA70B35B024",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dialogue-system\\autolysis_dialogue_player.tscn",
+    "实施前散列": "EC8E7954E537D5462AEE8C795CD90B5E6759CF89A11026E2E784F5116B3DD167",
+    "实施后散列": "EC8E7954E537D5462AEE8C795CD90B5E6759CF89A11026E2E784F5116B3DD167",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dialogue-system\\autolysis_dialogue_player.gd",
+    "实施前散列": "B40411208E3A91628031D97F584D29D3BE6463225EC8E3C98A12615172510B3D",
+    "实施后散列": "B40411208E3A91628031D97F584D29D3BE6463225EC8E3C98A12615172510B3D",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\systems\\dialogue-system\\autolysis_dialogue_definition.gd",
+    "实施前散列": "3CAFCD0072CC466DB638D938297B0E53235792A37E5C624CA2EBF77530CDD3B8",
+    "实施后散列": "3CAFCD0072CC466DB638D938297B0E53235792A37E5C624CA2EBF77530CDD3B8",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_white_1.tres",
+    "实施前散列": "D4D5B9E0D5A76C00F85710BECF6D5D07468E6678CB7374F3AD4E2A8DB9352D76",
+    "实施后散列": "D4D5B9E0D5A76C00F85710BECF6D5D07468E6678CB7374F3AD4E2A8DB9352D76",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_white_0.tres",
+    "实施前散列": "210A7E6A205C5C18211D4FE69E199F9CFA9C77AB7AD7C80916A0EDD5761918C0",
+    "实施后散列": "210A7E6A205C5C18211D4FE69E199F9CFA9C77AB7AD7C80916A0EDD5761918C0",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_red_3.tres",
+    "实施前散列": "36FEB008DC3A0355C0582E188D8F0A23DAD52BC1BC126E1B7224985844135EB9",
+    "实施后散列": "36FEB008DC3A0355C0582E188D8F0A23DAD52BC1BC126E1B7224985844135EB9",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_red_2.tres",
+    "实施前散列": "2B956E95C8789E9EAEDD2FC9DB69630DE8028ED772C6EFFEBF77AA61320D8F30",
+    "实施后散列": "2B956E95C8789E9EAEDD2FC9DB69630DE8028ED772C6EFFEBF77AA61320D8F30",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_red_1.tres",
+    "实施前散列": "A5D81F68C04B2BF3BB8D303A24B7600ECA33C9A278904F4D35C7ABE30DC58768",
+    "实施后散列": "A5D81F68C04B2BF3BB8D303A24B7600ECA33C9A278904F4D35C7ABE30DC58768",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_red_0.tres",
+    "实施前散列": "C1D33DA642850376D6755331C5987EB1070C26D03D39FCAA7F9A6FD2012A5D67",
+    "实施后散列": "C1D33DA642850376D6755331C5987EB1070C26D03D39FCAA7F9A6FD2012A5D67",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_orange_1.tres",
+    "实施前散列": "0078071B1F79797E35596ECD030AF2E945269B49A604A2AFC29D94DD3ED88C7F",
+    "实施后散列": "0078071B1F79797E35596ECD030AF2E945269B49A604A2AFC29D94DD3ED88C7F",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_orange_0.tres",
+    "实施前散列": "084587A4A0B45CC2621B127E431BE22633C0D4A2CA1A0D45BCFB44FF51E07DAE",
+    "实施后散列": "084587A4A0B45CC2621B127E431BE22633C0D4A2CA1A0D45BCFB44FF51E07DAE",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_grey_4.tres",
+    "实施前散列": "8219517EFE79E0627DD686974C2AF8E3B93419CD0F65BE24D986BF595F5504D0",
+    "实施后散列": "8219517EFE79E0627DD686974C2AF8E3B93419CD0F65BE24D986BF595F5504D0",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_grey_3.tres",
+    "实施前散列": "01908DE7C1DB8FE5A5D4A7217B5D6AEECAFB90AA7A3A2489D5620B5F10905DA6",
+    "实施后散列": "01908DE7C1DB8FE5A5D4A7217B5D6AEECAFB90AA7A3A2489D5620B5F10905DA6",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_grey_2.tres",
+    "实施前散列": "F2FC94256509361694B85AA3C95A6DABDA9CE0656CDBBCE50C972ADDAE5F08AA",
+    "实施后散列": "F2FC94256509361694B85AA3C95A6DABDA9CE0656CDBBCE50C972ADDAE5F08AA",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_grey_1.tres",
+    "实施前散列": "3102FC42495CFED10B8AAFCD8EA1A09D468CDDB9E8BF0E0168269B693C637755",
+    "实施后散列": "3102FC42495CFED10B8AAFCD8EA1A09D468CDDB9E8BF0E0168269B693C637755",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_grey_0.tres",
+    "实施前散列": "30BCF9CD9F944626A4993739EE82F583D7D5127A3138E291FFC553FBCEBCC3D1",
+    "实施后散列": "30BCF9CD9F944626A4993739EE82F583D7D5127A3138E291FFC553FBCEBCC3D1",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_green_4.tres",
+    "实施前散列": "F9DB619BA397A2D4F6A738D49B818AB1F1A352A69F037D44336D89C0CB7C9209",
+    "实施后散列": "F9DB619BA397A2D4F6A738D49B818AB1F1A352A69F037D44336D89C0CB7C9209",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_green_3.tres",
+    "实施前散列": "C57473DCA97A92130BB88B4AD5548224534AA0BAB6976F7338DA218425253CF4",
+    "实施后散列": "C57473DCA97A92130BB88B4AD5548224534AA0BAB6976F7338DA218425253CF4",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_green_2.tres",
+    "实施前散列": "CB8924130CDCF6C507D44DDF1433A8F3C479B97510C2BD79CCA5A73B2299AB84",
+    "实施后散列": "CB8924130CDCF6C507D44DDF1433A8F3C479B97510C2BD79CCA5A73B2299AB84",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_green_1.tres",
+    "实施前散列": "962E4FD39C506C8922A01B660F9F16103675936A5D74E1B896184A05E1751D62",
+    "实施后散列": "962E4FD39C506C8922A01B660F9F16103675936A5D74E1B896184A05E1751D62",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_green_0.tres",
+    "实施前散列": "66C496022926E5B7CFB16CEE37A4723545737B615CA76CD98745B12291A0C77E",
+    "实施后散列": "66C496022926E5B7CFB16CEE37A4723545737B615CA76CD98745B12291A0C77E",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_darkblue_1.tres",
+    "实施前散列": "955596A23A98D7389C524E4AA7170E4A606F1C4691A6D1034415E231E123FC13",
+    "实施后散列": "955596A23A98D7389C524E4AA7170E4A606F1C4691A6D1034415E231E123FC13",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_darkblue_0.tres",
+    "实施前散列": "5C856012B9B8FA9180B1A64D2735E63613716670A244896C0469EE9D2EF7694A",
+    "实施后散列": "5C856012B9B8FA9180B1A64D2735E63613716670A244896C0469EE9D2EF7694A",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_brown_2.tres",
+    "实施前散列": "E2CED69540324AC3385362D915A7EEE33AE709C7C36AD6C181D39273F851862E",
+    "实施后散列": "E2CED69540324AC3385362D915A7EEE33AE709C7C36AD6C181D39273F851862E",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_brown_1.tres",
+    "实施前散列": "4BF9748E54A5F1A264201ADA96D933E9875B595DEFAF424262816D724EDA415B",
+    "实施后散列": "4BF9748E54A5F1A264201ADA96D933E9875B595DEFAF424262816D724EDA415B",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_brown_0.tres",
+    "实施前散列": "688788B1867A722168039FB4895FF81C2DA22EEE0E84CCA373F964E56808819B",
+    "实施后散列": "688788B1867A722168039FB4895FF81C2DA22EEE0E84CCA373F964E56808819B",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_blue_3.tres",
+    "实施前散列": "12C8E5251659805C1BE68C83A9864CB6546AE73DF769F5186F93F2B0C2027A1C",
+    "实施后散列": "12C8E5251659805C1BE68C83A9864CB6546AE73DF769F5186F93F2B0C2027A1C",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_blue_2.tres",
+    "实施前散列": "646D8F6C9AAE112CF50EEF155D9D5A1C8303F29A86CAD86DC0A505EADD12529C",
+    "实施后散列": "646D8F6C9AAE112CF50EEF155D9D5A1C8303F29A86CAD86DC0A505EADD12529C",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_blue_1.tres",
+    "实施前散列": "752A1B04F07C6B77B7EA0A3A9F5655DC496F10CD0A9107CC4983E2BDA79AAA5E",
+    "实施后散列": "752A1B04F07C6B77B7EA0A3A9F5655DC496F10CD0A9107CC4983E2BDA79AAA5E",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_blue_0.tres",
+    "实施前散列": "59CC8AB4318260AA1F3AA5A305A73B1AC5E6804C13EE1F48B41763657315DEE3",
+    "实施后散列": "59CC8AB4318260AA1F3AA5A305A73B1AC5E6804C13EE1F48B41763657315DEE3",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_black_1.tres",
+    "实施前散列": "4D559BC3A3517DAB9ECCA77C7834EA46FBC48F08A03351797E29145EE4463A36",
+    "实施后散列": "4D559BC3A3517DAB9ECCA77C7834EA46FBC48F08A03351797E29145EE4463A36",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\materials\\base_color\\mat_base_black_0.tres",
+    "实施前散列": "28A72D5F853E6BEB549FEDE54351C8EDD4B33B3B553449B4E79C09AFD83AFF1D",
+    "实施后散列": "28A72D5F853E6BEB549FEDE54351C8EDD4B33B3B553449B4E79C09AFD83AFF1D",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\audio\\sound_fx\\machine\\sfx_machine_scanning_0.wav.import",
+    "实施前散列": "6B801C3B806AA0140D7C20C48E6DB0D917240F28CDC66F4BFF26EAA51C67C761",
+    "实施后散列": "6B801C3B806AA0140D7C20C48E6DB0D917240F28CDC66F4BFF26EAA51C67C761",
+    "字节保持一致": true
+  },
+  {
+    "文件": "main-autolysis\\assets\\audio\\sound_fx\\machine\\sfx_machine_notice_0.wav.import",
+    "实施前散列": "9A470307187D596B3B2FC8C0852BB6362809D1CD763D2273709273879B56B4BA",
+    "实施后散列": "9A470307187D596B3B2FC8C0852BB6362809D1CD763D2273709273879B56B4BA",
+    "字节保持一致": true
+  },
+  {
+    "文件": "AGENTS.md",
+    "实施前散列": "37858D04A7074AFEC6ED8DDCBF8044B3FD615B05D9B342D8C90081788D93AA99",
+    "实施后散列": "37858D04A7074AFEC6ED8DDCBF8044B3FD615B05D9B342D8C90081788D93AA99",
+    "字节保持一致": true
+  },
+  {
+    "文件": "project.godot",
+    "实施前散列": "9F77E1BAAD4F69F203505C8892286BDEB99343D87A8277FFA488E1904CC75704",
+    "实施后散列": "8B3D40BE8C27B2D811A8385ECAD55CFC0B9D055DC2ABDD80055112927D91C2FB",
+    "字节保持一致": false
+  },
+  {
+    "文件": "docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实现计划p1.md",
+    "实施前散列": "AFABDFE5478B8C54E3A32FB37717CC43CCEB0206A5D60D6FE9E4D4AC50812136",
+    "实施后散列": "ADFF7A62476FF7D19D201A53EBF0CD48B84EFEF2697CA39ED50CBB3D416E9611",
+    "字节保持一致": false
+  },
+  {
+    "文件": "docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印讨论p1.md",
+    "实施前散列": "FD734FD2D0F33EB34CA6AC0DF23AAE20EB48349D32D254BC2A455D813AD20CCD",
+    "实施后散列": "FD734FD2D0F33EB34CA6AC0DF23AAE20EB48349D32D254BC2A455D813AD20CCD",
+    "字节保持一致": true
+  }
+]

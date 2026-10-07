@@ -1,0 +1,26 @@
+[
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_held_item_presenter.gd",
+    "散列": "D1420C36E3D966206B36A62EBBEDE5976EE6A4674C0CE3B9F4566F475F4D02BF",
+    "字节": 11372,
+    "行数": 304
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\systems\\item-system\\autolysis_quest_paper_visual.gd",
+    "散列": "4A12F9E628C75CDE2055ADE2A7153066E0DEC29E03E5B2D84F535E68302CB33F",
+    "字节": 4256,
+    "行数": 100
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_paper\\visuals\\quest_paper_visual.tscn",
+    "散列": "EABED60C931572EF6A1ED185E90B447C25690E4F1F78D8B16B50CD8EF290FE49",
+    "字节": 1027,
+    "行数": 34
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\tests\\quest_held_text_test.gd",
+    "散列": "86518CC522D0950998408A44C5165AF7B12149298E1B9175D1E3909D3FF506AF",
+    "字节": 27241,
+    "行数": 405
+  }
+]

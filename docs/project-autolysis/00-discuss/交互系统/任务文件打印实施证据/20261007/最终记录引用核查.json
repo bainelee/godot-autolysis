@@ -1,0 +1,962 @@
+[
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/最终混音边界验收/打印时序.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/最终混音边界验收/打印时序/打印设备专项报告.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/打印设备最终来源散列.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:170",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_button.gd:29",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:195",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:302",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:658",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:398",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:421",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:461",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:718",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_button.gd:113",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/quest_machine_0.tscn",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/cogito/addons/cogito/CogitoObjects/cogito_door.gd:299",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/cogito/addons/cogito/CogitoObjects/cogito_door.gd:392",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/cogito/main-degauss/scripts/animated_interaction_sequencer.gd:155",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/systems/quest-print-system/tests/quest_machine_behavior_test.gd",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/machine-first/stderr.log",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/machine-second/打印设备专项报告.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/machine-third/打印设备专项报告.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/machine-fourth/打印设备专项报告.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/machine-leak-probe/打印设备专项报告.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/最终专项/打印时序.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/最终来源与配置验收/打印时序.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/实际混音暂停专项/打印设备专项报告.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/最终混音边界验收/打印时序.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "打印设备实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/异步音源暂停诊断/打印设备专项报告.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实现计划p1.md",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/道具系统/容器开闭动画控制修正实现计划.md",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/道具系统/容器开闭动画控制实施证据/20261004/实施记录.md",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/components/interactions/autolysis_focus_target.gd:116",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/player/components/autolysis_focus_ray_query.gd:29",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:1169",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:1246",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:1213",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:1267",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_paper/autolysis_quest_paper.gd:88",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:449",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/player/components/autolysis_held_item_presenter.gd:87",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:1563",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/cogito/addons/cogito/Components/Interactions/ReadableComponent.gd:57",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:1098",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/player/tests/quest_paper_inventory_test.gd",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/专项首轮/聚焦取纸.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/聚焦修正一/聚焦取纸.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/聚焦修正二/聚焦取纸.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/聚焦修正三/聚焦取纸.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/聚焦释放故障/聚焦取纸.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/展示释放故障/展示释放探针.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/聚焦最终专项/聚焦取纸.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/聚焦最终修正/聚焦取纸.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/聚焦最终修正/inventory/任务纸张库存断言.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/展示释放最终/展示释放探针.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/聚焦内容完整性最终/聚焦取纸.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/聚焦内容完整性最终/inventory/任务纸张库存断言.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/player/tests/quest_paper_inventory_test.gd:262",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/systems/item-system/tests/run_item_check.ps1",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/player/tests/quest_paper_inventory_test.gd",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/player/tests/quest_display_release_probe.gd",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/聚焦库存来源散列.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "聚焦库存实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/聚焦内容完整性来源散列.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实现计划p1.md",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/project.godot:124",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/main-autolysis/scenes/01-autolysis-test.tscn:298",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_quest_print_test_trigger.gd:14",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/main-autolysis/systems/quest-print-system/quests/quest_test_0.tres:7",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/main-autolysis/systems/quest-print-system/autolysis_quest_print_definition.gd",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/main-autolysis/systems/quest-print-system/autolysis_quest_paper_contents.gd",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/main-autolysis/scenes/prefabs/prefab_paper/autolysis_quest_paper.gd:20",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/main-autolysis/ui/quest-paper/autolysis_quest_paper_view.gd:33",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/main-autolysis/components/interactions/autolysis_focus_target.gd:116",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_focus_ray_query.gd:29",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:1169",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/main-autolysis/scenes/prefabs/prefab_paper/autolysis_quest_paper.gd:88",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/main-autolysis/player/components/autolysis_held_item_presenter.gd:87",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/cogito/addons/cogito/Components/Interactions/ReadableComponent.gd:57",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/cogito/main-degauss/recorder/ui/tape_timeline_display.gd:35",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/cogito/main-degauss/recorder/ui/tape_timeline_viewport.tscn:6",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/实施前/工作区状态.txt",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/实施前/原有差异.patch",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/实施前/来源散列.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/原有电话音频差异保留核查.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/main-autolysis/scenes/prefabs/prefab_paper/quest_paper_blank.tscn",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/main-autolysis/scenes/prefabs/prefab_paper/visuals/quest_paper_visual.tscn",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/音频来源补采/来源散列.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/官方来源核实.md",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/main-autolysis/systems/quest-print-system/tests/run_quest_print_verification.ps1",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/最终检查状态.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/最终来源与配置验收/导入解析.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/最终专项/数据纸面.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/最终混音边界验收/打印时序.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/最终混音边界验收/主场景输入.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/聚焦内容完整性最终/聚焦取纸.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/最终回归/展示释放边界.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/最终回归/道具回归.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/最终回归/直接交互回归.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/最终回归/组件迁移回归.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/最终回归/聚焦回归.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/最终混音边界验收/电话持物互斥回归.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/最终回归/电话测试入口回归.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/最终混音边界验收/主场景输入/主场景输入报告.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/最终混音边界验收/打印时序/打印设备专项报告.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/实施后/来源散列.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/实施后/已有来源前后对照.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/数据纸张实施记录.md",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/聚焦库存实施记录.md",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/打印设备实施记录.md",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/数据代理独立复核.md",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/电话泄漏诊断/诊断记录.md",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/电话历史警告审计.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/最终来源与配置验收/打印时序.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "实施记录.md",
+    "引用": "/D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/异步音源暂停诊断",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据代理独立复核.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:293",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据代理独立复核.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:302",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据代理独立复核.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:341",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据代理独立复核.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:654",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据代理独立复核.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:398",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据代理独立复核.md",
+    "引用": "D:/autolysis/main-autolysis/components/interactions/autolysis_focus_target.gd:155",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据代理独立复核.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:684",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据代理独立复核.md",
+    "引用": "D:/autolysis/main-autolysis/player/components/autolysis_focus_ray_query.gd:25",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据代理独立复核.md",
+    "引用": "D:/autolysis/main-autolysis/components/interactions/autolysis_focus_target.gd:133",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据代理独立复核.md",
+    "引用": "D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:1180",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据代理独立复核.md",
+    "引用": "D:/autolysis/main-autolysis/player/components/autolysis_inventory_controller.gd:1246",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据代理独立复核.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:514",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据代理独立复核.md",
+    "引用": "D:/autolysis/main-autolysis/player/tests/quest_display_release_probe.gd:1",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据代理独立复核.md",
+    "引用": "D:/autolysis/main-autolysis/player/components/autolysis_held_item_presenter.gd:87",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据代理独立复核.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/聚焦最终修正/聚焦取纸.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据代理独立复核.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_paper/autolysis_quest_paper.gd:88",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据代理独立复核.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/完整来源配对修正/数据纸面.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/systems/quest-print-system/autolysis_quest_print_definition.gd:10",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/systems/quest-print-system/autolysis_quest_paper_contents.gd:31",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/systems/quest-print-system/quests/quest_test_0.tres:7",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/systems/item-system/autolysis_item_instance.gd:16",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/systems/item-system/items/quest_paper.tres:9",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_paper/quest_paper.tscn:1",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_paper/visuals/quest_paper_visual.tscn:1",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/assets/ui/item-icons/quest_paper.svg:1",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_paper/autolysis_quest_paper.gd:20",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_paper/autolysis_quest_paper.gd:104",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/ui/quest-paper/autolysis_quest_paper_view.gd:41",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/ui/quest-paper/autolysis_quest_paper_view.tscn:1",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/cogito/addons/cogito/Components/Interactions/ReadableComponent.gd:57",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/cogito/main-degauss/recorder/ui/tape_timeline_display.gd:35",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/cogito/main-degauss/recorder/ui/tape_timeline_viewport.tscn:6",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn:8",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/quest_machine_0.tscn:154",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/player/components/autolysis_focus_ray_query.gd:6",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/systems/quest-print-system/tests/quest_paper_data_view_test.gd:1",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/数据纸张来源散列.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/完整来源配对修正/数据纸面.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/完整来源配对修正/数据纸面/数据纸面结果.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/材质诊断/材质释放探针.gd:9",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/材质诊断/覆盖方式/quad-global.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/材质诊断/最终场景/材质最终场景.json",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_machines/quest_board_0.tscn:7",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_paper/quest_paper_blank.tscn:1",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_paper/autolysis_quest_paper.gd:120",
+    "目标存在": true,
+    "行号范围有效": true
+  },
+  {
+    "文档": "数据纸张实施记录.md",
+    "引用": "D:/autolysis/main-autolysis/scenes/prefabs/prefab_paper/autolysis_quest_paper.gd:88",
+    "目标存在": true,
+    "行号范围有效": true
+  }
+]

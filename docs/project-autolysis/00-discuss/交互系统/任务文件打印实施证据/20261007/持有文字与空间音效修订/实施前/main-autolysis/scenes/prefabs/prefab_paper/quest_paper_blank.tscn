@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_paper"]
+size = Vector3(0.36, 0.48, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_paper"]
+size = Vector3(0.36, 0.48, 0.01)
+
+[node name="quest_paper" type="StaticBody3D"]
+
+[node name="collision_quest_paper" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_paper")
+
+[node name="mesh_quest_paper" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_paper")

@@ -1,0 +1,37 @@
+[
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_busy_busy signal_0.wav",
+    "原有二进制差异保持一致": true,
+    "当前散列": "029FBCC53F6A78805A83311A5D6C313DB62414AB40F32F71CD3C6E5C78CF4524"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_default_0.wav",
+    "原有二进制差异保持一致": true,
+    "当前散列": "9ECC60A5EAC0254362FA250B74BC0EEE3A236C365283CB7A5A5905F3F7B73EC5"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_other_side_0.wav",
+    "原有二进制差异保持一致": true,
+    "当前散列": "C29FFC1341D16FD877D99DF321A784B903F75FBBA86DDE95CB51CBF08BF34E36"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_self_0.wav",
+    "原有二进制差异保持一致": true,
+    "当前散列": "7581202DBDF16608FE903E5DD577CEE98290C68C28B3FFD84BE5DDB747445442"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_self_1.wav",
+    "原有二进制差异保持一致": true,
+    "当前散列": "5433E4A7C00B9F4A2365DD07132478D742B929C19B62ADE99DB6C400E85740A0"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_pick_up_self_0.wav",
+    "原有二进制差异保持一致": true,
+    "当前散列": "9F102D3AC52559AE1082B60AEB59AB9ED3B3F0EAC784DEA453F69988A917956D"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_ring_0.wav",
+    "原有二进制差异保持一致": true,
+    "当前散列": "BC006A77EB881A4EB1A6B8D486689BAAD0A5122B1A4E54D084DF77730B3C99B8"
+  }
+]

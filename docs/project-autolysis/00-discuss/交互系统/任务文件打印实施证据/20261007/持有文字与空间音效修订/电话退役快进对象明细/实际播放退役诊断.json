@@ -1,0 +1,61 @@
+{
+	"失败数": 1,
+	"断言": [
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "原收尾必须真正释放实际服务器播放实例",
+			"通过": false
+		}
+	],
+	"退役采样": [
+		{
+			"墙钟微秒": 5825734,
+			"播放": [
+				{
+					"临时查询在内的引用数": 3,
+					"播放类型": "AudioStreamPlaybackWAV",
+					"播放身份": -9223371922383826764,
+					"来源": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/HandsetAudio/Timing/HandsetSoundOrigin/ActionPlayer",
+					"残留": true,
+					"资源路径": ""
+				}
+			],
+			"混音时钟": 0.076415,
+			"阶段": "整链结束且场景仍存活"
+		},
+		{
+			"墙钟微秒": 5832596,
+			"播放": [
+				{
+					"临时查询在内的引用数": 2,
+					"播放类型": "AudioStreamPlaybackWAV",
+					"播放身份": -9223371922383826764,
+					"来源": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/HandsetAudio/Timing/HandsetSoundOrigin/ActionPlayer",
+					"残留": true,
+					"资源路径": ""
+				}
+			],
+			"混音时钟": 0.083276,
+			"阶段": "原三帧收尾后"
+		}
+	]
+}

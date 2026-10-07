@@ -1,0 +1,7 @@
+ERROR: 任务纸张必须由有效设备绑定完整逐件内容后入树。
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://main-autolysis/scenes/prefabs/prefab_paper/autolysis_quest_paper.gd:40)
+       [1] run_checks (res://main-autolysis/player/tests/quest_print_main_test.gd:109)
+ERROR: Parameter "material" is null.
+   at: material_get_instance_shader_parameters (servers/rendering/dummy/storage/material_storage.cpp:265)

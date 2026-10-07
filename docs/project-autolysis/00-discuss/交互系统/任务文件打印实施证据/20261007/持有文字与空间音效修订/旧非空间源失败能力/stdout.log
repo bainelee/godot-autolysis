@@ -1,0 +1,9 @@
+Godot Engine v4.6.1.stable.official.14d19694e - https://godotengine.org
+
+通过：机器空间音效专项使用无图形后端
+通过：机器场景实际音源均为三维：./StaticBody3D/CallController/Timing/RingPlayer（节点路径）
+失败：机器场景实际音源均为三维：./StaticBody3D/HandsetAudio/Timing/ActionPlayer（节点路径）
+失败：机器场景实际音源均为三维：./StaticBody3D/HandsetAudio/Timing/ReceiverPlayer（节点路径）
+失败：机器场景实际空间输出数量完整：4
+通过：探针观察指定数量的实际混音完成边界
+机器空间音效断言数：6；失败数：3

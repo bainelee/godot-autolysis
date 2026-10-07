@@ -1,0 +1,5 @@
+SCRIPT ERROR: Cannot call method 'show' on a previously freed instance.
+   at: AutolysisHeldItemPresenter.commit_prepared (res://main-autolysis/player/components/autolysis_held_item_presenter.gd:99)
+   GDScript backtrace (most recent call first):
+       [0] commit_prepared (res://main-autolysis/player/components/autolysis_held_item_presenter.gd:99)
+       [1] run_probe (res://main-autolysis/player/tests/quest_display_release_probe.gd:28)

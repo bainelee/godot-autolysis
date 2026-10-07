@@ -1,0 +1,76 @@
+{
+  "时间": "2026-10-07T16:08:36.9597069+08:00",
+  "范围": "混合、封装、废液、柜、通知中心、直属控制器与原项目空间播放参考；只读；未启动引擎",
+  "来源": [
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_blend_0.tscn",
+      "字节数": 36092,
+      "散列": "F8B92CC9106AB57254B0F5CE5016B6FC1617C44E305A4A57037A151230EC134A"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_packing_0.tscn",
+      "字节数": 28251,
+      "散列": "6E824739E0ACE0009787086776B15730893D96B31D105E5FDC63C2CF813E577D"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\waste_liquid_storage_tank_0.tscn",
+      "字节数": 7326,
+      "散列": "4DF71FED4AE71510ABEEE6762B1C19C21FE1516D3A72300F2B40FD62B23E77F2"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_machine_0.tscn",
+      "字节数": 13325,
+      "散列": "8057D399D6496A0882A1BA328B9E5DB94F00D29E117EBE7F0CF5CB3490F969D7"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_machine.gd",
+      "字节数": 22768,
+      "散列": "70A48987715B02922BC5200368208BC98D0EAF412D8A54A46FBA4ACFEE3B36A9"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_machine.gd",
+      "字节数": 26446,
+      "散列": "F5F6E7E5CB5A9A7DD6BEE9E2AEDBEF6EE17E43B355C982F78BDBC157F18771BC"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_motion.gd",
+      "字节数": 14883,
+      "散列": "9DD67DAE13C6BCCF06B69D03570307C49B7C0EF90CC950BD315AD832CC66DA17"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_waste_liquid_storage_tank.gd",
+      "字节数": 15512,
+      "散列": "3A1DED658009A33D2B2E52AE1F4C46BD7D8531D6685ECE8F05E2DBD68502D4B0"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_quest_machine.gd",
+      "字节数": 33127,
+      "散列": "B8EEFDC57206D32954B737A0CBFB7DCE2B69232FD6A1F80E2AE1A5EC95CDF7B1"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\cabinet_workroom_0.tscn",
+      "字节数": 9911,
+      "散列": "E823D9794A42E3EE8A99D70969F39DB457564882CFB289D3FCFB893922FF1FFE"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\systems\\item-system\\autolysis_liquid_tank_cabinet.gd",
+      "字节数": 21704,
+      "散列": "503C4D7C45869C766A5AC015C31B61A813E88ACDCF0D7B3A3D8A480AD01ADE98"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\components\\interactions\\autolysis_interaction_component.gd",
+      "字节数": 5188,
+      "散列": "FB38CBAA492FAA58F62AC9E4C28CEDB3E9AD918C9641D49E7A56B0DF037BA961"
+    },
+    {
+      "路径": "D:\\cogito\\addons\\cogito\\CogitoObjects\\cogito_button.gd",
+      "字节数": 6589,
+      "散列": "E2B720B62E1076CFA1BBDF9BB8CFD9B68EB333628D26FFC799DC1C708E98380F"
+    },
+    {
+      "路径": "D:\\cogito\\addons\\quick_audio\\Audio.gd",
+      "字节数": 4202,
+      "散列": "E8F92904BA70B89352E74D73C4B79FF7F7057C1AD02341895FBBE0B05980A5E6"
+    }
+  ]
+}

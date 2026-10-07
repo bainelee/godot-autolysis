@@ -41,6 +41,8 @@
 [ext_resource type="PackedScene" uid="uid://dtsjcbeaeibks" path="res://main-autolysis/player/autolysis_player.tscn" id="99_autolysis_player"]
 [ext_resource type="Script" uid="uid://b6jg6k621te1q" path="res://main-autolysis/player/components/autolysis_telephone_call_test_trigger.gd" id="100_call_trigger"]
 [ext_resource type="Resource" path="res://main-autolysis/systems/dialogue-system/chat_0.tres" id="101_dialogue"]
+[ext_resource type="Script" uid="uid://cv8l3mq4735tv" path="res://main-autolysis/player/components/autolysis_quest_print_test_trigger.gd" id="102_quest_trigger"]
+[ext_resource type="Resource" path="res://main-autolysis/systems/quest-print-system/quests/quest_test_0.tres" id="103_quest_test"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4jecm"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -292,6 +294,12 @@ script = ExtResource("100_call_trigger")
 telephone = NodePath("../interaction_prefabs/machines/MachineTelephone0/StaticBody3D")
 player = NodePath("../autolysis_player")
 dialogue_definition = ExtResource("101_dialogue")
+
+[node name="QuestPrintTestTrigger" type="Node" parent="." unique_id=155111072 node_paths=PackedStringArray("machine", "player")]
+script = ExtResource("102_quest_trigger")
+machine = NodePath("../interaction_prefabs/machines/quest_machine_0")
+player = NodePath("../autolysis_player")
+task_definition = ExtResource("103_quest_test")
 
 [node name="world" type="Node3D" parent="." unique_id=1128936372]
 

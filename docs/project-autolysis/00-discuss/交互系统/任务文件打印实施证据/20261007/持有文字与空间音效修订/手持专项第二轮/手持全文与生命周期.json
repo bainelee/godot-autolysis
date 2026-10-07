@@ -1,0 +1,27 @@
+{
+  "检查": "手持全文与生命周期",
+  "时间": "2026-10-07T16:09:37.2313119+08:00",
+  "进程编号": 34584,
+  "退出码": 1,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/player/tests/quest_held_text_test.gd",
+    "--",
+    "--evidence-dir",
+    "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/持有文字与空间音效修订/手持专项第二轮/手持全文"
+  ],
+  "通过断言数": 39,
+  "预期错误计数": {},
+  "非预期错误": [
+    "失败：同件重复绑定仍只保留一个呈现监听",
+    "失败：全文更新没有增加资源监听"
+  ]
+}

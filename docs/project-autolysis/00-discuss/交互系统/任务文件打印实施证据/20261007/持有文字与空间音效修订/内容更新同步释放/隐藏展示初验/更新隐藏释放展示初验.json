@@ -1,0 +1,29 @@
+{
+  "检查": "更新隐藏释放展示初验",
+  "时间": "2026-10-07T16:21:34.6955697+08:00",
+  "进程编号": 9244,
+  "退出码": 1,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/player/tests/quest_held_text_test.gd",
+    "--",
+    "--held-update-release-case",
+    "hide_display",
+    "--evidence-dir",
+    "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/持有文字与空间音效修订/内容更新同步释放/隐藏展示初验/内部报告"
+  ],
+  "通过断言数": 5,
+  "预期错误计数": {},
+  "非预期错误": [
+    "失败：显示释放后呈现器断开逐件监听并不保留旧显示",
+    "ERROR: Object '<Object#57780733816>' was freed or unreferenced while a signal is being emitted from it. Try connecting to the signal using 'CONNECT_DEFERRED' flag, or use queue_free() to free the object (if this object is a Node) to avoid this error and potential crashes."
+  ]
+}

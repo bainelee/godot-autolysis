@@ -1,0 +1,49 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://main-autolysis/ui/quest-paper/autolysis_quest_paper_view.gd" id="1_view"]
+
+[sub_resource type="SystemFont" id="SystemFont_chinese"]
+font_names = PackedStringArray("Noto Sans SC", "Microsoft YaHei")
+
+[node name="QuestPaperView" type="Control" node_paths=PackedStringArray("lines_container", "clip_area")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_view")
+paper_font = SubResource("SystemFont_chinese")
+lines_container = NodePath("ClipArea/DataLines")
+clip_area = NodePath("ClipArea")
+
+[node name="PaperBackground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.94, 0.925, 0.865, 1)
+
+[node name="ClipArea" type="Control" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = 36.0
+offset_right = -36.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DataLines" type="VBoxContainer" parent="ClipArea"]
+layout_mode = 0
+offset_right = 648.0
+mouse_filter = 2
+theme_override_constants/separation = 0

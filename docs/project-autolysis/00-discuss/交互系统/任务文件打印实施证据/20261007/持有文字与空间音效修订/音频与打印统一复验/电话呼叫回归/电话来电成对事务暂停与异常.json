@@ -1,0 +1,1482 @@
+{
+	"失败数": 0,
+	"引擎": {
+		"build": "official",
+		"hash": "14d19694e0c88a3f9e82d899a0400f27a24c176e",
+		"hex": 263681,
+		"major": 4,
+		"minor": 6,
+		"patch": 1,
+		"status": "stable",
+		"string": "4.6.1-stable (official)",
+		"timestamp": 0
+	},
+	"断言": [
+		{
+			"说明": "专项实际使用无图形后端",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "持筒时公开请求受理一次来电",
+			"通过": true
+		},
+		{
+			"说明": "真实已提交持筒请求保存等待且不响铃",
+			"通过": true
+		},
+		{
+			"说明": "持筒等待期间持续保持电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "等待阶段开始归还取消用例",
+			"通过": true
+		},
+		{
+			"说明": "归还取消不当作正常归还且不创建延后计时",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "成对成功归还后才开始完整两秒",
+			"通过": true
+		},
+		{
+			"说明": "来电延后菜单暂停真实菜单输入同步统一暂停事实",
+			"通过": true
+		},
+		{
+			"说明": "来电延后菜单暂停保留原延后剩余时间",
+			"通过": true
+		},
+		{
+			"说明": "来电延后菜单暂停第二次真实菜单输入恢复",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "延后成功重取废弃旧计时且不算接听",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "再次成对归还建立新序号并重新等待完整两秒",
+			"通过": true
+		},
+		{
+			"说明": "新的延后未累计此前已耗时间",
+			"通过": true
+		},
+		{
+			"说明": "外部场景树暂停保留原延后进度",
+			"通过": true
+		},
+		{
+			"说明": "恢复场景树但菜单仍暂停时计时不推进",
+			"通过": true
+		},
+		{
+			"说明": "完整两秒自然到期在持续聚焦下激活空间铃声",
+			"通过": true
+		},
+		{
+			"说明": "循环铃声菜单暂停真实菜单输入同步统一暂停事实",
+			"通过": true
+		},
+		{
+			"说明": "循环铃声菜单暂停保留循环铃声音频位置",
+			"通过": true
+		},
+		{
+			"说明": "循环铃声菜单暂停第二次真实菜单输入恢复",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "稳定挂机立即请求来电",
+			"通过": true
+		},
+		{
+			"说明": "稳定挂机直接激活铃声没有两秒延后",
+			"通过": true
+		},
+		{
+			"说明": "开始双方暂时提交后业务取下拒绝用例",
+			"通过": true
+		},
+		{
+			"说明": "业务取下拒绝后来源与库存展示占用及限位成对恢复",
+			"通过": true
+		},
+		{
+			"说明": "取下业务失败不接听不开始对话并释放仅本次准备令牌",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "最早持物观察已经读取归还限制且重入归还被拒绝",
+			"通过": true
+		},
+		{
+			"说明": "成对接听成功才停止铃声并建立通话归属",
+			"通过": true
+		},
+		{
+			"说明": "接听成功不自动退出原电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "电话归还许可与公开请求均拒绝通话期间归还",
+			"通过": true
+		},
+		{
+			"说明": "库存归还许可与独立准备均不能绕过限制",
+			"通过": true
+		},
+		{
+			"说明": "限制仅匹配原持有会话而不使用新归还事务令牌",
+			"通过": true
+		},
+		{
+			"说明": "另一电话不能读取或解除当前电话通话限制",
+			"通过": true
+		},
+		{
+			"说明": "通话时保留听筒道具切换锁",
+			"通过": true
+		},
+		{
+			"说明": "旧播放令牌完成回调注入不解锁当前持有",
+			"通过": true
+		},
+		{
+			"说明": "真实语音菜单暂停真实菜单输入同步统一暂停事实",
+			"通过": true
+		},
+		{
+			"说明": "真实语音菜单暂停保留当前真实语音位置及句身份",
+			"通过": true
+		},
+		{
+			"说明": "真实语音菜单暂停第二次真实菜单输入恢复",
+			"通过": true
+		},
+		{
+			"说明": "树与界面叠加仅恢复界面时原语音仍冻结",
+			"通过": true
+		},
+		{
+			"说明": "电话聚焦可以正常退出",
+			"通过": true
+		},
+		{
+			"说明": "主动退出聚焦保留通话听筒锁及真实限位",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "句后保留菜单暂停真实菜单输入同步统一暂停事实",
+			"通过": true
+		},
+		{
+			"说明": "句后保留菜单暂停保留句后剩余时间",
+			"通过": true
+		},
+		{
+			"说明": "句后保留菜单暂停第二次真实菜单输入恢复",
+			"通过": true
+		},
+		{
+			"说明": "字幕渐隐菜单暂停真实菜单输入同步统一暂停事实",
+			"通过": true
+		},
+		{
+			"说明": "字幕渐隐菜单暂停保留本次渐隐透明度",
+			"通过": true
+		},
+		{
+			"说明": "字幕渐隐菜单暂停第二次真实菜单输入恢复",
+			"通过": true
+		},
+		{
+			"说明": "最后渐隐暂停期间仍保持原通话限制",
+			"通过": true
+		},
+		{
+			"说明": "末句字幕全部隐藏后才解除匹配归还限制",
+			"通过": true
+		},
+		{
+			"说明": "正常对话完成仍持筒而不自动挂机",
+			"通过": true
+		},
+		{
+			"说明": "普通归还双方暂时提交后业务拒绝用例",
+			"通过": true
+		},
+		{
+			"说明": "归还业务拒绝恢复原持有展示与实际限位",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "自然语音完成当帧暂停只保存待同步而不推进或解锁",
+			"通过": true
+		},
+		{
+			"说明": "暂停中待同步自然完成保留原令牌",
+			"通过": true
+		},
+		{
+			"说明": "恢复自然结束的语音不重播",
+			"通过": true
+		},
+		{
+			"说明": "显式取消结束本次来电并清除匹配对话归还限制",
+			"通过": true
+		},
+		{
+			"说明": "显式取消仅对话后仍保持有效听筒持有与限位",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		},
+		{
+			"说明": "取消本次来电不自动重新等待或重播",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "铃声资源失效仍激活来电业务",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "可选铃声失效不影响有效接听与通话锁",
+			"通过": true
+		},
+		{
+			"说明": "聚焦参照相机释放保留仍有效通话及听筒限位",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "必要语音播放器释放异常结束来电且有效听筒继续持有",
+			"通过": true
+		},
+		{
+			"说明": "播放依赖失效记录真实异常原因且只清匹配通话锁",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发归还请求",
+			"通过": true
+		},
+		{
+			"说明": "归还提交完成后两侧占用清除",
+			"通过": true
+		}
+	],
+	"暂停采样": [
+		{
+			"场景树暂停": false,
+			"墙钟微秒": 2085093,
+			"播放": {
+				"audio_output_id": 81587603851,
+				"audio_playing": false,
+				"audio_position": 0.0,
+				"audio_spatial": false,
+				"completion_pending": "",
+				"dialogue_id": "",
+				"hold_remaining": 0.0,
+				"index": -1,
+				"last_result": {
+
+				},
+				"paused": true,
+				"source_id": 0,
+				"stage": "idle",
+				"subtitle": {
+					"alpha": 1.0,
+					"index": -1,
+					"text": "",
+					"token": 0,
+					"visible": false
+				},
+				"subtitle_alpha": 1.0,
+				"token": 0
+			},
+			"来电": {
+				"answer_delay_expired": false,
+				"answer_delay_remaining": 0.0,
+				"answer_waiting": false,
+				"call_serial": 1,
+				"delay_expired": false,
+				"delay_remaining": 1.54614666666667,
+				"holder_session": 0,
+				"pending_effects": false,
+				"playback_token": 0,
+				"stage": 3,
+				"wait_serial": 1
+			},
+			"菜单暂停": true,
+			"说明": "来电延后菜单暂停暂停后",
+			"铃声位置": 0.0,
+			"铃声暂停": false
+		},
+		{
+			"场景树暂停": false,
+			"墙钟微秒": 2436620,
+			"播放": {
+				"audio_output_id": 81587603851,
+				"audio_playing": false,
+				"audio_position": 0.0,
+				"audio_spatial": false,
+				"completion_pending": "",
+				"dialogue_id": "",
+				"hold_remaining": 0.0,
+				"index": -1,
+				"last_result": {
+
+				},
+				"paused": true,
+				"source_id": 0,
+				"stage": "idle",
+				"subtitle": {
+					"alpha": 1.0,
+					"index": -1,
+					"text": "",
+					"token": 0,
+					"visible": false
+				},
+				"subtitle_alpha": 1.0,
+				"token": 0
+			},
+			"来电": {
+				"answer_delay_expired": false,
+				"answer_delay_remaining": 0.0,
+				"answer_waiting": false,
+				"call_serial": 1,
+				"delay_expired": false,
+				"delay_remaining": 1.54614666666667,
+				"holder_session": 0,
+				"pending_effects": false,
+				"playback_token": 0,
+				"stage": 3,
+				"wait_serial": 1
+			},
+			"菜单暂停": true,
+			"说明": "来电延后菜单暂停保持",
+			"铃声位置": 0.0,
+			"铃声暂停": false
+		},
+		{
+			"场景树暂停": true,
+			"墙钟微秒": 3631953,
+			"播放": {
+				"audio_output_id": 81587603851,
+				"audio_playing": false,
+				"audio_position": 0.0,
+				"audio_spatial": false,
+				"completion_pending": "",
+				"dialogue_id": "",
+				"hold_remaining": 0.0,
+				"index": -1,
+				"last_result": {
+
+				},
+				"paused": true,
+				"source_id": 0,
+				"stage": "idle",
+				"subtitle": {
+					"alpha": 1.0,
+					"index": -1,
+					"text": "",
+					"token": 0,
+					"visible": false
+				},
+				"subtitle_alpha": 1.0,
+				"token": 0
+			},
+			"来电": {
+				"answer_delay_expired": false,
+				"answer_delay_remaining": 0.0,
+				"answer_waiting": false,
+				"call_serial": 1,
+				"delay_expired": false,
+				"delay_remaining": 1.29746000000001,
+				"holder_session": 0,
+				"pending_effects": false,
+				"playback_token": 0,
+				"stage": 3,
+				"wait_serial": 3
+			},
+			"菜单暂停": false,
+			"说明": "延后场景树暂停",
+			"铃声位置": 0.0,
+			"铃声暂停": false
+		},
+		{
+			"场景树暂停": true,
+			"墙钟微秒": 3873523,
+			"播放": {
+				"audio_output_id": 81587603851,
+				"audio_playing": false,
+				"audio_position": 0.0,
+				"audio_spatial": false,
+				"completion_pending": "",
+				"dialogue_id": "",
+				"hold_remaining": 0.0,
+				"index": -1,
+				"last_result": {
+
+				},
+				"paused": true,
+				"source_id": 0,
+				"stage": "idle",
+				"subtitle": {
+					"alpha": 1.0,
+					"index": -1,
+					"text": "",
+					"token": 0,
+					"visible": false
+				},
+				"subtitle_alpha": 1.0,
+				"token": 0
+			},
+			"来电": {
+				"answer_delay_expired": false,
+				"answer_delay_remaining": 0.0,
+				"answer_waiting": false,
+				"call_serial": 1,
+				"delay_expired": false,
+				"delay_remaining": 1.29746000000001,
+				"holder_session": 0,
+				"pending_effects": false,
+				"playback_token": 0,
+				"stage": 3,
+				"wait_serial": 3
+			},
+			"菜单暂停": false,
+			"说明": "延后场景树暂停保持",
+			"铃声位置": 0.0,
+			"铃声暂停": false
+		},
+		{
+			"场景树暂停": false,
+			"墙钟微秒": 3913010,
+			"播放": {
+				"audio_output_id": 81587603851,
+				"audio_playing": false,
+				"audio_position": 0.0,
+				"audio_spatial": false,
+				"completion_pending": "",
+				"dialogue_id": "",
+				"hold_remaining": 0.0,
+				"index": -1,
+				"last_result": {
+
+				},
+				"paused": true,
+				"source_id": 0,
+				"stage": "idle",
+				"subtitle": {
+					"alpha": 1.0,
+					"index": -1,
+					"text": "",
+					"token": 0,
+					"visible": false
+				},
+				"subtitle_alpha": 1.0,
+				"token": 0
+			},
+			"来电": {
+				"answer_delay_expired": false,
+				"answer_delay_remaining": 0.0,
+				"answer_waiting": false,
+				"call_serial": 1,
+				"delay_expired": false,
+				"delay_remaining": 1.29746000000001,
+				"holder_session": 0,
+				"pending_effects": false,
+				"playback_token": 0,
+				"stage": 3,
+				"wait_serial": 3
+			},
+			"菜单暂停": true,
+			"说明": "只恢复场景树",
+			"铃声位置": 0.0,
+			"铃声暂停": false
+		},
+		{
+			"场景树暂停": false,
+			"墙钟微秒": 4154323,
+			"播放": {
+				"audio_output_id": 81587603851,
+				"audio_playing": false,
+				"audio_position": 0.0,
+				"audio_spatial": false,
+				"completion_pending": "",
+				"dialogue_id": "",
+				"hold_remaining": 0.0,
+				"index": -1,
+				"last_result": {
+
+				},
+				"paused": true,
+				"source_id": 0,
+				"stage": "idle",
+				"subtitle": {
+					"alpha": 1.0,
+					"index": -1,
+					"text": "",
+					"token": 0,
+					"visible": false
+				},
+				"subtitle_alpha": 1.0,
+				"token": 0
+			},
+			"来电": {
+				"answer_delay_expired": false,
+				"answer_delay_remaining": 0.0,
+				"answer_waiting": false,
+				"call_serial": 1,
+				"delay_expired": false,
+				"delay_remaining": 1.29746000000001,
+				"holder_session": 0,
+				"pending_effects": false,
+				"playback_token": 0,
+				"stage": 3,
+				"wait_serial": 3
+			},
+			"菜单暂停": true,
+			"说明": "菜单仍暂停",
+			"铃声位置": 0.0,
+			"铃声暂停": false
+		},
+		{
+			"场景树暂停": false,
+			"墙钟微秒": 5764036,
+			"播放": {
+				"audio_output_id": 81587603851,
+				"audio_playing": false,
+				"audio_position": 0.0,
+				"audio_spatial": false,
+				"completion_pending": "",
+				"dialogue_id": "",
+				"hold_remaining": 0.0,
+				"index": -1,
+				"last_result": {
+
+				},
+				"paused": true,
+				"source_id": 0,
+				"stage": "idle",
+				"subtitle": {
+					"alpha": 1.0,
+					"index": -1,
+					"text": "",
+					"token": 0,
+					"visible": false
+				},
+				"subtitle_alpha": 1.0,
+				"token": 0
+			},
+			"来电": {
+				"answer_delay_expired": false,
+				"answer_delay_remaining": 0.0,
+				"answer_waiting": false,
+				"call_serial": 1,
+				"delay_expired": false,
+				"delay_remaining": 0.0,
+				"holder_session": 0,
+				"pending_effects": false,
+				"playback_token": 0,
+				"stage": 4,
+				"wait_serial": 3
+			},
+			"菜单暂停": true,
+			"说明": "循环铃声菜单暂停暂停后",
+			"铃声位置": 0.28154194355011,
+			"铃声暂停": true
+		},
+		{
+			"场景树暂停": false,
+			"墙钟微秒": 6109345,
+			"播放": {
+				"audio_output_id": 81587603851,
+				"audio_playing": false,
+				"audio_position": 0.0,
+				"audio_spatial": false,
+				"completion_pending": "",
+				"dialogue_id": "",
+				"hold_remaining": 0.0,
+				"index": -1,
+				"last_result": {
+
+				},
+				"paused": true,
+				"source_id": 0,
+				"stage": "idle",
+				"subtitle": {
+					"alpha": 1.0,
+					"index": -1,
+					"text": "",
+					"token": 0,
+					"visible": false
+				},
+				"subtitle_alpha": 1.0,
+				"token": 0
+			},
+			"来电": {
+				"answer_delay_expired": false,
+				"answer_delay_remaining": 0.0,
+				"answer_waiting": false,
+				"call_serial": 1,
+				"delay_expired": false,
+				"delay_remaining": 0.0,
+				"holder_session": 0,
+				"pending_effects": false,
+				"playback_token": 0,
+				"stage": 4,
+				"wait_serial": 3
+			},
+			"菜单暂停": true,
+			"说明": "循环铃声菜单暂停保持",
+			"铃声位置": 0.293151915073395,
+			"铃声暂停": true
+		},
+		{
+			"场景树暂停": false,
+			"墙钟微秒": 6831322,
+			"播放": {
+				"audio_output_id": 142908329553,
+				"audio_playing": false,
+				"audio_position": 0.0,
+				"audio_spatial": true,
+				"completion_pending": "",
+				"dialogue_id": "telephone_single_test",
+				"hold_remaining": 0.0,
+				"index": 0,
+				"last_result": {
+					"dialogue_id": "telephone_single_test",
+					"index": 0,
+					"outcome": "异常终止",
+					"reason": "听筒取下事务取消或回滚",
+					"source_id": 142623116864,
+					"token": 1
+				},
+				"paused": true,
+				"source_id": 142623116864,
+				"stage": "prepared",
+				"subtitle": {
+					"alpha": 1.0,
+					"background_rect": "[P: (16.0, -400.0), S: (32.0, 296.0)]",
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+					"font_size": 24,
+					"horizontal_padding": 15.5,
+					"index": 0,
+					"inventory_rect": "[P: (-143.0, -96.0), S: (350.0, 80.0)]",
+					"line_count": 9,
+					"natural_size": "(192.0, 29.0)",
+					"text": "你很快会习惯的。",
+					"text_height": 285.0,
+					"text_rect": "[P: (31.5, -394.5), S: (1.0, 285.0)]",
+					"token": 2,
+					"vertical_padding": 5.5,
+					"viewport_rect": "[P: (0.0, 0.0), S: (64.0, 64.0)]",
+					"visible": false
+				},
+				"subtitle_alpha": 1.0,
+				"token": 2
+			},
+			"来电": {
+				"answer_delay_expired": false,
+				"answer_delay_remaining": 0.5,
+				"answer_waiting": true,
+				"call_serial": 1,
+				"delay_expired": false,
+				"delay_remaining": 0.0,
+				"holder_session": 2,
+				"pending_effects": false,
+				"playback_token": 2,
+				"stage": 5,
+				"wait_serial": 0
+			},
+			"菜单暂停": true,
+			"说明": "真实语音菜单暂停暂停后",
+			"铃声位置": 0.0,
+			"铃声暂停": false
+		},
+		{
+			"场景树暂停": false,
+			"墙钟微秒": 7040515,
+			"播放": {
+				"audio_output_id": 142908329553,
+				"audio_playing": false,
+				"audio_position": 0.0,
+				"audio_spatial": true,
+				"completion_pending": "",
+				"dialogue_id": "telephone_single_test",
+				"hold_remaining": 0.0,
+				"index": 0,
+				"last_result": {
+					"dialogue_id": "telephone_single_test",
+					"index": 0,
+					"outcome": "异常终止",
+					"reason": "听筒取下事务取消或回滚",
+					"source_id": 142623116864,
+					"token": 1
+				},
+				"paused": true,
+				"source_id": 142623116864,
+				"stage": "prepared",
+				"subtitle": {
+					"alpha": 1.0,
+					"background_rect": "[P: (16.0, -400.0), S: (32.0, 296.0)]",
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+					"font_size": 24,
+					"horizontal_padding": 15.5,
+					"index": 0,
+					"inventory_rect": "[P: (-143.0, -96.0), S: (350.0, 80.0)]",
+					"line_count": 9,
+					"natural_size": "(192.0, 29.0)",
+					"text": "你很快会习惯的。",
+					"text_height": 285.0,
+					"text_rect": "[P: (31.5, -394.5), S: (1.0, 285.0)]",
+					"token": 2,
+					"vertical_padding": 5.5,
+					"viewport_rect": "[P: (0.0, 0.0), S: (64.0, 64.0)]",
+					"visible": false
+				},
+				"subtitle_alpha": 1.0,
+				"token": 2
+			},
+			"来电": {
+				"answer_delay_expired": false,
+				"answer_delay_remaining": 0.5,
+				"answer_waiting": true,
+				"call_serial": 1,
+				"delay_expired": false,
+				"delay_remaining": 0.0,
+				"holder_session": 2,
+				"pending_effects": false,
+				"playback_token": 2,
+				"stage": 5,
+				"wait_serial": 0
+			},
+			"菜单暂停": true,
+			"说明": "真实语音菜单暂停保持",
+			"铃声位置": 0.0,
+			"铃声暂停": false
+		},
+		{
+			"场景树暂停": true,
+			"墙钟微秒": 7168206,
+			"播放": {
+				"audio_output_id": 142908329553,
+				"audio_playing": false,
+				"audio_position": 0.0,
+				"audio_spatial": true,
+				"completion_pending": "",
+				"dialogue_id": "telephone_single_test",
+				"hold_remaining": 0.0,
+				"index": 0,
+				"last_result": {
+					"dialogue_id": "telephone_single_test",
+					"index": 0,
+					"outcome": "异常终止",
+					"reason": "听筒取下事务取消或回滚",
+					"source_id": 142623116864,
+					"token": 1
+				},
+				"paused": true,
+				"source_id": 142623116864,
+				"stage": "prepared",
+				"subtitle": {
+					"alpha": 1.0,
+					"background_rect": "[P: (16.0, -400.0), S: (32.0, 296.0)]",
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+					"font_size": 24,
+					"horizontal_padding": 15.5,
+					"index": 0,
+					"inventory_rect": "[P: (-143.0, -96.0), S: (350.0, 80.0)]",
+					"line_count": 9,
+					"natural_size": "(192.0, 29.0)",
+					"text": "你很快会习惯的。",
+					"text_height": 285.0,
+					"text_rect": "[P: (31.5, -394.5), S: (1.0, 285.0)]",
+					"token": 2,
+					"vertical_padding": 5.5,
+					"viewport_rect": "[P: (0.0, 0.0), S: (64.0, 64.0)]",
+					"visible": false
+				},
+				"subtitle_alpha": 1.0,
+				"token": 2
+			},
+			"来电": {
+				"answer_delay_expired": false,
+				"answer_delay_remaining": 0.5,
+				"answer_waiting": true,
+				"call_serial": 1,
+				"delay_expired": false,
+				"delay_remaining": 0.0,
+				"holder_session": 2,
+				"pending_effects": false,
+				"playback_token": 2,
+				"stage": 5,
+				"wait_serial": 0
+			},
+			"菜单暂停": false,
+			"说明": "语音树与界面叠加暂停",
+			"铃声位置": 0.0,
+			"铃声暂停": false
+		},
+		{
+			"场景树暂停": true,
+			"墙钟微秒": 7458019,
+			"播放": {
+				"audio_output_id": 142908329553,
+				"audio_playing": false,
+				"audio_position": 0.0,
+				"audio_spatial": true,
+				"completion_pending": "",
+				"dialogue_id": "telephone_single_test",
+				"hold_remaining": 0.0,
+				"index": 0,
+				"last_result": {
+					"dialogue_id": "telephone_single_test",
+					"index": 0,
+					"outcome": "异常终止",
+					"reason": "听筒取下事务取消或回滚",
+					"source_id": 142623116864,
+					"token": 1
+				},
+				"paused": true,
+				"source_id": 142623116864,
+				"stage": "prepared",
+				"subtitle": {
+					"alpha": 1.0,
+					"background_rect": "[P: (16.0, -400.0), S: (32.0, 296.0)]",
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+					"font_size": 24,
+					"horizontal_padding": 15.5,
+					"index": 0,
+					"inventory_rect": "[P: (-143.0, -96.0), S: (350.0, 80.0)]",
+					"line_count": 9,
+					"natural_size": "(192.0, 29.0)",
+					"text": "你很快会习惯的。",
+					"text_height": 285.0,
+					"text_rect": "[P: (31.5, -394.5), S: (1.0, 285.0)]",
+					"token": 2,
+					"vertical_padding": 5.5,
+					"viewport_rect": "[P: (0.0, 0.0), S: (64.0, 64.0)]",
+					"visible": false
+				},
+				"subtitle_alpha": 1.0,
+				"token": 2
+			},
+			"来电": {
+				"answer_delay_expired": false,
+				"answer_delay_remaining": 0.5,
+				"answer_waiting": true,
+				"call_serial": 1,
+				"delay_expired": false,
+				"delay_remaining": 0.0,
+				"holder_session": 2,
+				"pending_effects": false,
+				"playback_token": 2,
+				"stage": 5,
+				"wait_serial": 0
+			},
+			"菜单暂停": false,
+			"说明": "只恢复界面仍树暂停",
+			"铃声位置": 0.0,
+			"铃声暂停": false
+		},
+		{
+			"场景树暂停": false,
+			"墙钟微秒": 10380699,
+			"播放": {
+				"audio_output_id": 142908329553,
+				"audio_playing": false,
+				"audio_position": 0.0,
+				"audio_spatial": true,
+				"completion_pending": "",
+				"dialogue_id": "telephone_single_test",
+				"hold_remaining": 0.5,
+				"index": 0,
+				"last_result": {
+					"dialogue_id": "telephone_single_test",
+					"index": 0,
+					"outcome": "异常终止",
+					"reason": "听筒取下事务取消或回滚",
+					"source_id": 142623116864,
+					"token": 1
+				},
+				"paused": true,
+				"source_id": 142623116864,
+				"stage": "hold",
+				"subtitle": {
+					"alpha": 1.0,
+					"background_rect": "[P: (16.0, -400.0), S: (32.0, 296.0)]",
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+					"font_size": 24,
+					"horizontal_padding": 15.5,
+					"index": 0,
+					"inventory_rect": "[P: (-143.0, -96.0), S: (350.0, 80.0)]",
+					"line_count": 9,
+					"natural_size": "(192.0, 29.0)",
+					"text": "你很快会习惯的。",
+					"text_height": 285.0,
+					"text_rect": "[P: (31.5, -394.5), S: (1.0, 285.0)]",
+					"token": 2,
+					"vertical_padding": 5.5,
+					"viewport_rect": "[P: (0.0, 0.0), S: (64.0, 64.0)]",
+					"visible": true
+				},
+				"subtitle_alpha": 1.0,
+				"token": 2
+			},
+			"来电": {
+				"answer_delay_expired": false,
+				"answer_delay_remaining": 0.0,
+				"answer_waiting": false,
+				"call_serial": 1,
+				"delay_expired": false,
+				"delay_remaining": 0.0,
+				"holder_session": 2,
+				"pending_effects": false,
+				"playback_token": 2,
+				"stage": 5,
+				"wait_serial": 0
+			},
+			"菜单暂停": true,
+			"说明": "句后保留菜单暂停暂停后",
+			"铃声位置": 0.0,
+			"铃声暂停": false
+		},
+		{
+			"场景树暂停": false,
+			"墙钟微秒": 10725287,
+			"播放": {
+				"audio_output_id": 142908329553,
+				"audio_playing": false,
+				"audio_position": 0.0,
+				"audio_spatial": true,
+				"completion_pending": "",
+				"dialogue_id": "telephone_single_test",
+				"hold_remaining": 0.5,
+				"index": 0,
+				"last_result": {
+					"dialogue_id": "telephone_single_test",
+					"index": 0,
+					"outcome": "异常终止",
+					"reason": "听筒取下事务取消或回滚",
+					"source_id": 142623116864,
+					"token": 1
+				},
+				"paused": true,
+				"source_id": 142623116864,
+				"stage": "hold",
+				"subtitle": {
+					"alpha": 1.0,
+					"background_rect": "[P: (16.0, -400.0), S: (32.0, 296.0)]",
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+					"font_size": 24,
+					"horizontal_padding": 15.5,
+					"index": 0,
+					"inventory_rect": "[P: (-143.0, -96.0), S: (350.0, 80.0)]",
+					"line_count": 9,
+					"natural_size": "(192.0, 29.0)",
+					"text": "你很快会习惯的。",
+					"text_height": 285.0,
+					"text_rect": "[P: (31.5, -394.5), S: (1.0, 285.0)]",
+					"token": 2,
+					"vertical_padding": 5.5,
+					"viewport_rect": "[P: (0.0, 0.0), S: (64.0, 64.0)]",
+					"visible": true
+				},
+				"subtitle_alpha": 1.0,
+				"token": 2
+			},
+			"来电": {
+				"answer_delay_expired": false,
+				"answer_delay_remaining": 0.0,
+				"answer_waiting": false,
+				"call_serial": 1,
+				"delay_expired": false,
+				"delay_remaining": 0.0,
+				"holder_session": 2,
+				"pending_effects": false,
+				"playback_token": 2,
+				"stage": 5,
+				"wait_serial": 0
+			},
+			"菜单暂停": true,
+			"说明": "句后保留菜单暂停保持",
+			"铃声位置": 0.0,
+			"铃声暂停": false
+		},
+		{
+			"场景树暂停": false,
+			"墙钟微秒": 11250740,
+			"播放": {
+				"audio_output_id": 142908329553,
+				"audio_playing": false,
+				"audio_position": 0.0,
+				"audio_spatial": true,
+				"completion_pending": "",
+				"dialogue_id": "telephone_single_test",
+				"hold_remaining": 0.0,
+				"index": 0,
+				"last_result": {
+					"dialogue_id": "telephone_single_test",
+					"index": 0,
+					"outcome": "异常终止",
+					"reason": "听筒取下事务取消或回滚",
+					"source_id": 142623116864,
+					"token": 1
+				},
+				"paused": true,
+				"source_id": 142623116864,
+				"stage": "fade",
+				"subtitle": {
+					"alpha": 0.965499997138977,
+					"background_rect": "[P: (16.0, -400.0), S: (32.0, 296.0)]",
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+					"font_size": 24,
+					"horizontal_padding": 15.5,
+					"index": 0,
+					"inventory_rect": "[P: (-143.0, -96.0), S: (350.0, 80.0)]",
+					"line_count": 9,
+					"natural_size": "(192.0, 29.0)",
+					"text": "你很快会习惯的。",
+					"text_height": 285.0,
+					"text_rect": "[P: (31.5, -394.5), S: (1.0, 285.0)]",
+					"token": 2,
+					"vertical_padding": 5.5,
+					"viewport_rect": "[P: (0.0, 0.0), S: (64.0, 64.0)]",
+					"visible": true
+				},
+				"subtitle_alpha": 0.965499997138977,
+				"token": 2
+			},
+			"来电": {
+				"answer_delay_expired": false,
+				"answer_delay_remaining": 0.0,
+				"answer_waiting": false,
+				"call_serial": 1,
+				"delay_expired": false,
+				"delay_remaining": 0.0,
+				"holder_session": 2,
+				"pending_effects": false,
+				"playback_token": 2,
+				"stage": 5,
+				"wait_serial": 0
+			},
+			"菜单暂停": true,
+			"说明": "字幕渐隐菜单暂停暂停后",
+			"铃声位置": 0.0,
+			"铃声暂停": false
+		},
+		{
+			"场景树暂停": false,
+			"墙钟微秒": 11595298,
+			"播放": {
+				"audio_output_id": 142908329553,
+				"audio_playing": false,
+				"audio_position": 0.0,
+				"audio_spatial": true,
+				"completion_pending": "",
+				"dialogue_id": "telephone_single_test",
+				"hold_remaining": 0.0,
+				"index": 0,
+				"last_result": {
+					"dialogue_id": "telephone_single_test",
+					"index": 0,
+					"outcome": "异常终止",
+					"reason": "听筒取下事务取消或回滚",
+					"source_id": 142623116864,
+					"token": 1
+				},
+				"paused": true,
+				"source_id": 142623116864,
+				"stage": "fade",
+				"subtitle": {
+					"alpha": 0.965499997138977,
+					"background_rect": "[P: (16.0, -400.0), S: (32.0, 296.0)]",
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+					"font_size": 24,
+					"horizontal_padding": 15.5,
+					"index": 0,
+					"inventory_rect": "[P: (-143.0, -96.0), S: (350.0, 80.0)]",
+					"line_count": 9,
+					"natural_size": "(192.0, 29.0)",
+					"text": "你很快会习惯的。",
+					"text_height": 285.0,
+					"text_rect": "[P: (31.5, -394.5), S: (1.0, 285.0)]",
+					"token": 2,
+					"vertical_padding": 5.5,
+					"viewport_rect": "[P: (0.0, 0.0), S: (64.0, 64.0)]",
+					"visible": true
+				},
+				"subtitle_alpha": 0.965499997138977,
+				"token": 2
+			},
+			"来电": {
+				"answer_delay_expired": false,
+				"answer_delay_remaining": 0.0,
+				"answer_waiting": false,
+				"call_serial": 1,
+				"delay_expired": false,
+				"delay_remaining": 0.0,
+				"holder_session": 2,
+				"pending_effects": false,
+				"playback_token": 2,
+				"stage": 5,
+				"wait_serial": 0
+			},
+			"菜单暂停": true,
+			"说明": "字幕渐隐菜单暂停保持",
+			"铃声位置": 0.0,
+			"铃声暂停": false
+		}
+	],
+	"来电采样": [
+		{
+			"answer_delay_expired": false,
+			"answer_delay_remaining": 0.0,
+			"answer_waiting": false,
+			"call_serial": 1,
+			"delay_expired": false,
+			"delay_remaining": 0.0,
+			"holder_session": 0,
+			"pending_effects": false,
+			"playback_token": 0,
+			"stage": 4,
+			"wait_serial": 3,
+			"墙钟微秒": 5480183,
+			"对话": {
+				"audio_output_id": 81587603851,
+				"audio_playing": false,
+				"audio_position": 0.0,
+				"audio_spatial": false,
+				"completion_pending": "",
+				"dialogue_id": "",
+				"hold_remaining": 0.0,
+				"index": -1,
+				"last_result": {
+
+				},
+				"paused": false,
+				"source_id": 0,
+				"stage": "idle",
+				"subtitle": {
+					"alpha": 1.0,
+					"index": -1,
+					"text": "",
+					"token": 0,
+					"visible": false
+				},
+				"subtitle_alpha": 1.0,
+				"token": 0
+			},
+			"库存持有会话": 0,
+			"电话持有会话": 0,
+			"说明": "延后与成功重取重置",
+			"铃声播放": true
+		},
+		{
+			"answer_delay_expired": false,
+			"answer_delay_remaining": 0.0,
+			"answer_waiting": false,
+			"call_serial": 1,
+			"delay_expired": false,
+			"delay_remaining": 0.0,
+			"holder_session": 0,
+			"pending_effects": false,
+			"playback_token": 0,
+			"stage": 6,
+			"wait_serial": 0,
+			"墙钟微秒": 11824512,
+			"对话": {
+				"audio_output_id": 121769036168,
+				"audio_playing": false,
+				"audio_position": 0.0,
+				"audio_spatial": false,
+				"completion_pending": "",
+				"dialogue_id": "",
+				"hold_remaining": 0.0,
+				"index": -1,
+				"last_result": {
+					"dialogue_id": "telephone_single_test",
+					"index": 0,
+					"outcome": "正常完成",
+					"reason": "",
+					"source_id": 142623116864,
+					"token": 2
+				},
+				"paused": false,
+				"source_id": 0,
+				"stage": "idle",
+				"subtitle": {
+					"alpha": 1.0,
+					"background_rect": "[P: (16.0, -400.0), S: (32.0, 296.0)]",
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+					"font_size": 24,
+					"horizontal_padding": 15.5,
+					"index": -1,
+					"inventory_rect": "[P: (-143.0, -96.0), S: (350.0, 80.0)]",
+					"line_count": 9,
+					"natural_size": "(192.0, 29.0)",
+					"text": "",
+					"text_height": 285.0,
+					"text_rect": "[P: (31.5, -394.5), S: (1.0, 285.0)]",
+					"token": 0,
+					"vertical_padding": 5.5,
+					"viewport_rect": "[P: (0.0, 0.0), S: (64.0, 64.0)]",
+					"visible": false
+				},
+				"subtitle_alpha": 1.0,
+				"token": 0
+			},
+			"库存持有会话": 2,
+			"电话持有会话": 2,
+			"说明": "成对接听归还封锁与五阶段菜单暂停",
+			"铃声播放": false
+		},
+		{
+			"answer_delay_expired": false,
+			"answer_delay_remaining": 0.0,
+			"answer_waiting": false,
+			"call_serial": 1,
+			"delay_expired": false,
+			"delay_remaining": 0.0,
+			"holder_session": 0,
+			"pending_effects": false,
+			"playback_token": 0,
+			"stage": 7,
+			"wait_serial": 1,
+			"墙钟微秒": 15513378,
+			"对话": {
+				"audio_output_id": 182401894791,
+				"audio_playing": false,
+				"audio_position": 0.0,
+				"audio_spatial": false,
+				"completion_pending": "",
+				"dialogue_id": "",
+				"hold_remaining": 0.0,
+				"index": -1,
+				"last_result": {
+					"dialogue_id": "telephone_single_test",
+					"index": 0,
+					"outcome": "异常终止",
+					"reason": "专项显式取消仍有效听筒",
+					"source_id": 203255975454,
+					"token": 1
+				},
+				"paused": false,
+				"source_id": 0,
+				"stage": "idle",
+				"subtitle": {
+					"alpha": 1.0,
+					"background_rect": "[P: (16.0, -400.0), S: (32.0, 296.0)]",
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+					"font_size": 24,
+					"horizontal_padding": 15.5,
+					"index": -1,
+					"inventory_rect": "[P: (-143.0, -96.0), S: (350.0, 80.0)]",
+					"line_count": 9,
+					"natural_size": "(192.0, 29.0)",
+					"text": "",
+					"text_height": 285.0,
+					"text_rect": "[P: (31.5, -394.5), S: (1.0, 285.0)]",
+					"token": 0,
+					"vertical_padding": 5.5,
+					"viewport_rect": "[P: (0.0, 0.0), S: (64.0, 64.0)]",
+					"visible": false
+				},
+				"subtitle_alpha": 1.0,
+				"token": 0
+			},
+			"库存持有会话": 0,
+			"电话持有会话": 0,
+			"说明": "自然完成当帧暂停与普通取消",
+			"铃声播放": false
+		},
+		{
+			"answer_delay_expired": false,
+			"answer_delay_remaining": 0.0,
+			"answer_waiting": false,
+			"call_serial": 1,
+			"delay_expired": false,
+			"delay_remaining": 0.0,
+			"holder_session": 0,
+			"pending_effects": false,
+			"playback_token": 0,
+			"stage": 7,
+			"wait_serial": 1,
+			"墙钟微秒": 16569009,
+			"对话": {
+				"audio_output_id": 268536121726,
+				"audio_playing": false,
+				"audio_position": 0.0,
+				"audio_spatial": false,
+				"completion_pending": "",
+				"dialogue_id": "",
+				"hold_remaining": 0.0,
+				"index": -1,
+				"last_result": {
+					"dialogue_id": "telephone_single_test",
+					"index": 0,
+					"outcome": "异常终止",
+					"reason": "语音播放器失效",
+					"source_id": 289390202347,
+					"token": 1
+				},
+				"paused": false,
+				"source_id": 0,
+				"stage": "idle",
+				"subtitle": {
+					"alpha": 1.0,
+					"background_rect": "[P: (16.0, -400.0), S: (32.0, 296.0)]",
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+					"font_size": 24,
+					"horizontal_padding": 15.5,
+					"index": -1,
+					"inventory_rect": "[P: (-143.0, -96.0), S: (350.0, 80.0)]",
+					"line_count": 9,
+					"natural_size": "(192.0, 29.0)",
+					"text": "",
+					"text_height": 285.0,
+					"text_rect": "[P: (31.5, -394.5), S: (1.0, 285.0)]",
+					"token": 0,
+					"vertical_padding": 5.5,
+					"viewport_rect": "[P: (0.0, 0.0), S: (64.0, 64.0)]",
+					"visible": false
+				},
+				"subtitle_alpha": 1.0,
+				"token": 0
+			},
+			"库存持有会话": 0,
+			"电话持有会话": 0,
+			"说明": "可选铃声与必要播放依赖隔离",
+			"铃声播放": false
+		}
+	]
+}

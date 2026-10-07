@@ -9,6 +9,7 @@ enum Stage { IDLE, RESOLVING, WAIT_RETURN, DELAYED, ACTIVE, TALKING, COMPLETED, 
 @export var deferred_timer: Timer
 @export var answer_delay_timer: Timer
 @export var ring_player: AudioStreamPlayer3D
+@export var voice_player: AudioStreamPlayer3D
 @export var ring_stream: AudioStreamWAV
 @export var deferred_ring_delay: float = 2.0
 @export var answer_delay_seconds: float = 0.5
@@ -99,7 +100,10 @@ func prepare_handset_business_transfer(actor: Node3D, returning: bool, session: 
 			cancel_call("接听准备时播放上下文失效")
 		return false
 	var serial: int = _call_serial
-	var prepared: Dictionary = _player.prepare_dialogue(_definition, telephone, _on_dialogue_finished.bind(serial), _on_dialogue_aborted.bind(serial))
+	if not _live(voice_player) or not telephone.is_ancestor_of(voice_player):
+		cancel_call("接听准备时本电话空间语音输出失效")
+		return false
+	var prepared: Dictionary = _player.prepare_dialogue(_definition, telephone, _on_dialogue_finished.bind(serial), _on_dialogue_aborted.bind(serial), voice_player)
 	if not _live(self) or _call_serial != serial or _stage != Stage.ACTIVE:
 		if _live(_player) and prepared.get("ok", false):
 			_player.cancel_dialogue(int(prepared.get("token", 0)), "来电接听准备期间来源失效")

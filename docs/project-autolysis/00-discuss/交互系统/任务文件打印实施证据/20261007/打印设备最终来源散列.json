@@ -1,0 +1,59 @@
+{
+  "采样时间": "2026-10-07T15:23:10.5651550+08:00",
+  "范围": "最终机械验收通过后冻结来源及唯一最终机械记录，非实施前快照",
+  "最终机械记录": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实施证据\\20261007\\最终混音边界验收\\打印时序.json",
+  "通过断言数": 1486,
+  "退出码": 0,
+  "当前来源": [
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_quest_machine.gd",
+      "长度": 33127,
+      "算法": "SHA256",
+      "散列": "6B42FD1F33786B0361393E6C37F669E3A5402DDD3EC001B0DF51177809E6AFAF"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_quest_print_button.gd",
+      "长度": 7189,
+      "算法": "SHA256",
+      "散列": "38D2EE4F5E3A1B532498ACF6301BE18B81FC39ADB81A5C0331DA41441EC32D98"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_machine_0.tscn",
+      "长度": 13325,
+      "算法": "SHA256",
+      "散列": "8057D399D6496A0882A1BA328B9E5DB94F00D29E117EBE7F0CF5CB3490F969D7"
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\systems\\quest-print-system\\tests\\quest_machine_behavior_test.gd",
+      "长度": 34879,
+      "算法": "SHA256",
+      "散列": "BB1A14DB5C6EC6BE6C57209B324D0A317898CCC9B44247F03DB1F6913381FA9F"
+    }
+  ],
+  "最终记录": [
+    {
+      "路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实施证据\\20261007\\最终混音边界验收\\打印时序.json",
+      "长度": 740,
+      "算法": "SHA256",
+      "散列": "76038BF5E84E5FF9537B293EA44403AEACF98DAFA318AB12623749062BFAC8C4"
+    },
+    {
+      "路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实施证据\\20261007\\最终混音边界验收\\打印时序\\打印设备专项报告.json",
+      "长度": 535765,
+      "算法": "SHA256",
+      "散列": "185D552B1F4757B4D7611A08783FBF5D63B69FB57F971F870FBB7C5AC2C87A76"
+    },
+    {
+      "路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实施证据\\20261007\\最终混音边界验收\\打印时序.stdout.log",
+      "长度": 71280,
+      "算法": "SHA256",
+      "散列": "C0512455D9A3B1DE88A2282B8B2F97369ED20379CB08DD8CE117A186C41DA80D"
+    },
+    {
+      "路径": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实施证据\\20261007\\最终混音边界验收\\打印时序.stderr.log",
+      "长度": 2937,
+      "算法": "SHA256",
+      "散列": "40EC69A27328769C97B1E371B8A76D0C7C77C07337D721F12AD8F92A3B79C00A"
+    }
+  ]
+}

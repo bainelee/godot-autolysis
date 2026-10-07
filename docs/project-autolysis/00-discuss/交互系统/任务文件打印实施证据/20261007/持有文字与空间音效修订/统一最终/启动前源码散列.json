@@ -1,0 +1,2654 @@
+[
+  {
+    "文件": "main-autolysis/assets/audio/bgm/degauss_chasing.wav",
+    "散列": "30E2E83FB7760B067D63E8F1439E7A8CBF195BA4D888044BC18F3FAB65458DA5"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/bgm/degauss_chasing.wav.import",
+    "散列": "515D110080500E8612FB18E386C8923411BC60DF0DCACD5729592333AADCF39E"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/bgm/degauss_saferoom.ogg.import",
+    "散列": "51D4DC0F1293CBBD35A1A4CB63F2782BC6DA24B8AE016D817E111EEDFEA3862F"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/buses/default_bus_layout.tres",
+    "散列": "1D9C2AE1F24CDA404461DB643CFE412234B20FEAC477ACDCEF47C27E6D1F34A3"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/lfs_radio/F-04-LOCKDOWN-180Y-日高法子.wav",
+    "散列": "3050B4DDFCC68B2A6EFE7E6A0DE516A3614C868A27687398E61228AB5D0B4854"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/lfs_radio/F-04-LOCKDOWN-180Y-日高法子.wav.import",
+    "散列": "5A21E81D2411C649BC5AD8D1821EF449EC1636492F4A368ACF20E5C4B325D738"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/lfs_radio/morning_redio.wav",
+    "散列": "190908CE1A170887B168550ED1F6D7A0E94CCBACB56BF5D5607AC0B4B56B3B5E"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/lfs_radio/morning_redio.wav.import",
+    "散列": "F5F99A69CABF91A63708DC59E768755C4366B8DA4AB30CA2242730BECB0B1256"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/lfs_radio/sa0-a.wav",
+    "散列": "625728B33274DB91CF09F0AAEFE8FD49764AC2492A5B2BFA91644860147626C8"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/lfs_radio/sa0-a.wav.import",
+    "散列": "528A18F02AFE76112A0512133792BCE60221FB785354268689E01C6C02968426"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/lfs_radio/sa0-b.wav",
+    "散列": "CF6EB38521FCD0B702A130FD4D720278AFD4ED51931EC412153CEF6C3EC50EFF"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/lfs_radio/sa0-b.wav.import",
+    "散列": "EED9086C658F1C18C4F8E4CA04B23517C857227B7A09BEDB35F36BB96ECDF8B5"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/lfs_radio/sa0-c.wav",
+    "散列": "0E1A4FD26E30DF7A633B67E7E34958F4C8B590818BE21A27D632AAF4370FA24D"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/lfs_radio/sa0-c.wav.import",
+    "散列": "748DB358C7C410D8CFDE3A12E8B1E68F69947F8982349F47F84C320E645FF9C8"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/lfs_radio/sa0-d.wav",
+    "散列": "6BABC9D28F0D6E86DDE694C9512ECB9259FB5A00D1360B0A8E00EF7526BA3C3D"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/lfs_radio/sa0-d.wav.import",
+    "散列": "FEDEB487067C572EF56535E01B64D8BB92B5ED094A20B492D88F504291DCBFF1"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/atmosphere/mysterious_atmosphere_00.WAV.import",
+    "散列": "280F2B36A04DA0FBF7AD9B74855ACB1C32C1DA8C8C1C362F2B021DE8EEDDA595"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/atmosphere/Pressure_Atmosphere_2.WAV.import",
+    "散列": "A715D28F1C3B315D51F6403FCBF4AD6C335CA3274AD6BADE7D68209B4C0F87F7"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/atmosphere/Scary_atmosphere_1.WAV.import",
+    "散列": "569574AF8EF446DB8B95F7F60B180442CB755C06E401933088795A31F103DC35"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/atmosphere/Scary_atmosphere_5.WAV.import",
+    "散列": "4218689B679179205DBF247A1671CAF50BFD1BDD84C65EDBF110864B0D779B40"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/atmosphere/simple_horror.ogg.import",
+    "散列": "CB1B2D2D01EF742DC715A9D8F011AFD6FDA2314DE861FA5DE518D95B9304266E"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/beam_gun_shot_01.ogg.import",
+    "散列": "D970C8912F4180E81D8F5777A2277CED200458F2FC9A6C7F7FE189AD43606C8D"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/beam_shot_short_01.ogg.import",
+    "散列": "B3FD28F72D63970DF48470D35491922BE6DB81F51332A136743F6724A4EB4B5E"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/beam_shot_short.ogg.import",
+    "散列": "E30AD1A6AB6FE3EBF536F5D864890BF31C68AB4EAD5A5849DD1D9B56A773E638"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/change_tape.ogg.import",
+    "散列": "E9CA014F6463D8A8280C2FDE4E466990305E5A329F1D2A5B5F815582B90B4046"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/charge_full_loop.wav",
+    "散列": "4B0D1B9A7724C9F729E20FC9A728DC2EF9D4E18D4F554E73A92B6ED505DE4D15"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/charge_full_loop.wav.import",
+    "散列": "CD48E72FBAD38B0972B80BCBF1478B0CC4C3102BB7B8F7293BC77BD65D77CC1D"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/charge_in_00.wav",
+    "散列": "D109E65ADA8A5FCFD52F7BD7B9710B22125BF0B191CCFD8F927339DC8DF69682"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/charge_in_00.wav.import",
+    "散列": "DD7A39875361CFDEA601B2E65D37EE7233F26FF0FA29E89E56CFF32D77295D02"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/door/DOOR_Metal_Close_Gently_Short_mono.WAV.import",
+    "散列": "07EFBA2A6416F7BC1C2FA75BF4C154EFA6D3A6FF8092F095C4D35BFF6649B031"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/door/DOOR_Metal_Open_Creak_mono.WAV.import",
+    "散列": "0A849C8077DFB6D8172204255BECEE897756D7BBC50242B31F3835F75D6E6195"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/door/door_sliding_close.wav",
+    "散列": "0DE376EAB17013CC7C88A841E7500A46639CDBD591DDCE90519AE4014FF67971"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/door/door_sliding_close.wav.import",
+    "散列": "747D3CB4EA41453FC928117487C5911D36F0A1813971272B2817A074FFFC9F84"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/door/door_sliding_open.wav",
+    "散列": "AA545634841DF687134ADAFBDAF420B85A3DA2C8FA3E9DFC3135C41431F7C87E"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/door/door_sliding_open.wav.import",
+    "散列": "0233BFF46D441555B4822F011F426B4B9F4F29075F02A6F7F70674EEAC7CB250"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/empty_tape_load.ogg.import",
+    "散列": "E0D96D8247244A5401A728EFED645798D4E7E874F1C1B8CE7863AEE4DDF0E98C"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/enemy_anim/Error_2.WAV.import",
+    "散列": "2BDF546C6E1C5FEF82EA3FB2DD8411BB9EA3FFE784A51A29B885A29EDC6D5B00"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/enemy_anim/Error_6.WAV.import",
+    "散列": "3B60B1694322F5B74FBBFF23240EFE75D8447B24AD3F41A00AC03DF0F8856135"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/enemy_anim/ROBOTIC_Servo_Electric_Surge_loop_mono.WAV.import",
+    "散列": "17D3C2030DDDF4273920289AEDE83572D8D9C84EB9D5D8BD43C77E47F65BF0D4"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/enemy_anim/ROBOTIC_Servo_Large_Dual_Servos_Open_mono.WAV.import",
+    "散列": "DCB730F735C49DDFC840F8BE7ACB7A11C310C9FAA39562EFD598E929785EE59F"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/enemy_anim/ROBOTIC_Servo_Medium_Dirty_Hum_mono.WAV.import",
+    "散列": "81F252E08AFE19304281526406E2227CA429B7F895F78C9FA5C2EAB6965F329E"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/enemy_anim/ROBOTIC_Servo_Small_One_Long_Two_Short_mono.WAV.import",
+    "散列": "DFEC4395979E307220B94BD16D65F8BED7C154D42CB02E35FD2889FF3CFFA0F5"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/enemy_anim/ROBOTIC_Servo_Small_Reset_Movement_mono.WAV.import",
+    "散列": "F924EB39FE6DCA394014E3B6A4485CFCFE6B1718C691E2548BCBE65D7962EECB"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/enemy_anim/ROBOTIC_Servo_Small_Servo_High_Pitch_Off_mono.WAV.import",
+    "散列": "68918AFC0398EFB6B028F703F6EDF6494E1DFC987AB3B04AF1C3989221CC4260"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/enemy_anim/ROBOTIC_Servo_Surge_Fail_Start_mono.WAV.import",
+    "散列": "B96888E90983377A9A064CA609A9B57CDE631F41118CFE6B78506BBF418F575C"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/enemy_anim/ROBOTIC_Short_Burst_11_Crop_Metallic_stereo.WAV.import",
+    "散列": "56EDF7CEC932518A88FCF6354A44C8BDEB0A098CB26634715A4A26A521C30AFE"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/enemy_anim/ROBOTIC_Short_Burst_12_Digital_Air_Lock_stereo.WAV.import",
+    "散列": "130BB11F390E775BFE4B6079D60495D91DE02AD33C30E8F7D4F9ADB71E5D1953"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/enemy_anim/ROBOTIC_Short_Burst_30_Shut_Down_Sharp_stereo.WAV.import",
+    "散列": "F7461892887839F8E08A7CE185F2BB0E6F075614ED175204C097FBAE6254E3F4"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/enemy_anim/ROBOTIC_Short_Burst_42_Shut_Down_Deep_stereo.WAV.import",
+    "散列": "19B8DE3CFBA441B5FB02EFC34327AB5C3B2C50C98DE645641C119F7BB8A94A8D"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/enemy_anim/ROBOTIC_Transformation_Insect_01_Servos_Clicks_Digital_stereo.WAV.import",
+    "散列": "DE6C9F20B3AADBDB023DB011C2351680341979BFB51FC6135C5F8C413E64B0AD"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/enemy_anim/ROBOTIC_Transformation_Large_3_Step_Servo_Metal_Rythmic_stereo.WAV.import",
+    "散列": "E77D94D12F884D85771040B4623E042A92AEB4CD4B259C8278D02982CA3017E4"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/enemy_anim/ROBOTIC_Transformation_Large_4_Step_Fast_Deep_stereo.WAV.import",
+    "散列": "D1C15E313B1F92DF3DB5EB9DBC5ABFFF3900A97774E96E8115CC2949BA8A8936"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/enemy_anim/ROBOTIC_Transformation_Large_7_Step_Deep_Complex_stereo.WAV.import",
+    "散列": "9885488328BE7FF1EFC8000A0D3D0F2D68D676B5BA1DB909ECB0392458C402A5"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/enemy_anim/ROBOTIC_Transformation_Sweep_01_Down_stereo.WAV.import",
+    "散列": "A776C98C8050375FE3588F65CC8C6B871C95FF04DBED3AADAA526D19178A72C1"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/enemy_step/ROBOTIC_Mech_Movement_01_Footstep_stereo.WAV.import",
+    "散列": "84227118AEE29DFF8C8E187E761A600AD034DA362E7826D61D32CE3147C8D9F6"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/enemy_step/ROBOTIC_Mech_Movement_04_Leg_Fast_stereo.WAV.import",
+    "散列": "D1DED2AF10D9F5AF6D2C466EBAB5391912DF12978E98707246A5AB4239028054"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/monster/monster01.wav",
+    "散列": "D0DF747D9952037B7B1A8DE08F30D71135FC62461F2C7919A1D501B613E7988C"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/monster/monster01.wav.import",
+    "散列": "D43CD68D3E82BAA2106B098F6DB3A68632A7C636720DA359738221A59122A474"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/monster/monster02.wav",
+    "散列": "C2507F1FC25FA2029F016E33C7B7608AFDE184399EF1B4ABD06C8EA4A512AD60"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/monster/monster02.wav.import",
+    "散列": "1DCB78B7861ACF72D152BADAB7B558C8E4F780AA76FF2DA1AB24034F89A32589"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/monster/monster03.wav",
+    "散列": "D5CBB7522258E558D50213425A80C5C6601FBA29CD6124CCF8D59A1DB3F97B9A"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/enemy/monster/monster03.wav.import",
+    "散列": "FE03537B36359E7543B838FF5B866031DE5C0F5E7886809EE258CDD8DD81F422"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/footsteps/metal/Barefoot_Metal_footsteps_1.WAV.import",
+    "散列": "B9AFD6DF08F68B77EDA5A45C91F81DDE0CF819225B20B641CEC137833CDC8D9F"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/footsteps/metal/Barefoot_Metal_footsteps_2.WAV.import",
+    "散列": "B6AC6B61CB8324F417573AAF403FCC6B5EEE2223FADDA19A537D80A1C3602555"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/footsteps/metal/Barefoot_Metal_footsteps_3.WAV.import",
+    "散列": "1298C4400CAE6126724A179716A7C5121984C92BCB2B4D2319690A4D278668BB"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/footsteps/metal/Barefoot_Metal_footsteps_4.WAV.import",
+    "散列": "34B046FEA6CFA18AE2E5C396C8DDCF3504D4F5EC5A9BD9293DE51E188E33A922"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/footsteps/metal/Barefoot_Metal_footsteps_5.WAV.import",
+    "散列": "7C6B236B085F1409071518CDBE54B647A4D1933F004CB48DD6918E52B277DE91"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/gun_aim_00.ogg.import",
+    "散列": "FD7D2AB263DFE7688A7DD4BF5D0A3FFCBDFF7E3BF86F88F86D3F962AC78B41DD"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/items/FOLEY_Spray_Can_Spray_Medium_01_mono.WAV.import",
+    "散列": "920392D840D7621DEF181C6464A96915C2A57899BB151D00BDBC04420AF164F8"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/items/FOLEY_Spray_Can_Spray_Medium_02_mono.WAV.import",
+    "散列": "8F940A56DFDB88592373272F9BA28DE444E2BFDA6A7E73B35E64BA270BC3AC03"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/lock_and_switch/door_hatch_squeak_close_01.WAV.import",
+    "散列": "CE4E1D8211C5F960339292A445B2688564E5D067CB5C1390EE8A4BC30A8B90B2"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/lock_and_switch/door_hatch_squeak_close_02.WAV.import",
+    "散列": "981F090D31FBEBC50FDC12B4A3860F7022F05C3D981138D59E32EBD80EE11D99"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/lock_and_switch/door_hatch_squeak_open_01.WAV.import",
+    "散列": "9D55C14C74C9C6D481E34209CD8DA3A15F74BA3FA0BE511010F0C614CBE15113"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/lock_and_switch/DOOR_Microwave_Open_mono.WAV.import",
+    "散列": "F8CA81DDCFCC1828F452B59FE4056096E373B425B26EF67C4DD7A693ED0E2B9D"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/lock_and_switch/ELEVATOR_Stop_01_mono.WAV.import",
+    "散列": "1ACB406D28174A27FA958F0D8B46BBBEC466F2F9CDAC0CA46EA39F0A9634DE5E"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/machine_sound_00.ogg.import",
+    "散列": "3111ECD1B4E9D1C4D11AFA32592C475460F2ECEC3FB1D48A5A6BD0FB8A34D04F"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/machine/FOLEY_Spray_Can_Spray_Medium_01_mono.WAV.import",
+    "散列": "137C8F7A0682AE99DA7C20787DE9ABFE2F6BD6FCCF393D8A2C6B71A4A7C19502"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/machine/MACHINE_Factory_Machine_Medium_loop_mono.WAV.import",
+    "散列": "37B27F91C5C8C78E5D0FE2BA368D6A1D6C7C131D6A7F277ED11C1F431C98605D"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/machine/machine_medium_loop.ogg.import",
+    "散列": "73B6E5B920589690214FC6E83AA8D7A84A4A8711B737144EC70801D668268B71"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/machine/sfx_machine_notice_0.wav",
+    "散列": "39C0829FD04FCD1C5061CCAFBD830AB1E0E593135D32F7040A0D8B819DE1791D"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/machine/sfx_machine_notice_0.wav.import",
+    "散列": "9A470307187D596B3B2FC8C0852BB6362809D1CD763D2273709273879B56B4BA"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/machine/sfx_machine_scanning_0.wav",
+    "散列": "6A3D3CC5E1EAF807A7FFF0FB50F3233A915F810FD7C9BE4345E70C34ADF3D83D"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/machine/sfx_machine_scanning_0.wav.import",
+    "散列": "6B801C3B806AA0140D7C20C48E6DB0D917240F28CDC66F4BFF26EAA51C67C761"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_busy_busy signal_0.wav",
+    "散列": "029FBCC53F6A78805A83311A5D6C313DB62414AB40F32F71CD3C6E5C78CF4524"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_busy_busy signal_0.wav.import",
+    "散列": "8092CFCB8A945D0F13A3BB210472D329B8B275E4C6280198C2F32D8C278A0352"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_default_0.wav",
+    "散列": "9ECC60A5EAC0254362FA250B74BC0EEE3A236C365283CB7A5A5905F3F7B73EC5"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_default_0.wav.import",
+    "散列": "800AD5E46A38BD6C6FD716C495201DB0260B898DA91ECEB9140F887750D361BA"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_other_side_0.wav",
+    "散列": "C29FFC1341D16FD877D99DF321A784B903F75FBBA86DDE95CB51CBF08BF34E36"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_other_side_0.wav.import",
+    "散列": "B55C38EC311407BBACC31AD93958FF012257456A1147C4FE0410E57AA102628F"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_self_0.wav",
+    "散列": "7581202DBDF16608FE903E5DD577CEE98290C68C28B3FFD84BE5DDB747445442"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_self_0.wav.import",
+    "散列": "2CF754BFFB6F56E782FDB057BE2DB89DA6488CED08E7B2B7213CBAAF21861579"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_self_1.wav",
+    "散列": "5433E4A7C00B9F4A2365DD07132478D742B929C19B62ADE99DB6C400E85740A0"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_self_1.wav.import",
+    "散列": "AE52B12F163BE7DD5CA3E940C27143C76E0321F0E4D0CE9B2281351E18F5197D"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_pick_up_self_0.wav",
+    "散列": "9F102D3AC52559AE1082B60AEB59AB9ED3B3F0EAC784DEA453F69988A917956D"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_pick_up_self_0.wav.import",
+    "散列": "CB72723F7D4AE28131369303D643F6E58D40C5273D9886110A5A54C225801C53"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_ring_0.wav",
+    "散列": "BC006A77EB881A4EB1A6B8D486689BAAD0A5122B1A4E54D084DF77730B3C99B8"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/phone/sfx_phone_ring_0.wav.import",
+    "散列": "1629EA9553A483B23E9523C53C215614AF9B1A86D04F535CC0AC716F91C9C1EE"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/ui_and_sci_lock/Error_1.WAV.import",
+    "散列": "1F0DB64B5C800335BAEFF4D6182CB017B8529C6B3A4B4A8760C0593CD1ACF1D0"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/ui_and_sci_lock/Error_5.WAV.import",
+    "散列": "0F2007F2947BF2A4E34BE2DD52CD769FCF00EB4B2C0B114C54829A1923F8832F"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/ui_and_sci_lock/Success_1.WAV.import",
+    "散列": "0DAD74A2271BB9AF79EBA3A27EEF95CE98D43937BBC326AEAEE89DAC49084559"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/ui_and_sci_lock/Success_2.WAV.import",
+    "散列": "EF58D2A0B16E2C83D5EBDD9A1C7C4483FE4768B86E8A99202D86468CA7081713"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/ui_and_sci_lock/Success_3.WAV.import",
+    "散列": "D791BDCDD884A921DFB86D18B8129569F95605981B9527D7754E4B332D83DB80"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/ui_and_sci_lock/Success_4.WAV.import",
+    "散列": "A4CA453D86E52A5D81BDC4165C402193111B81D6730629FC2E3BD939A34AC738"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/ui_and_sci_lock/Success_9.WAV.import",
+    "散列": "7124FEDC40E0DB946F63B05FD056DA670786B9B81B99C54563F9CE953E366D48"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/sound_fx/unload_tape.ogg.import",
+    "散列": "9E4384F2CDDFF43E8A87C26AD4734B55E3E66270C8C73DEEEA008CD6F535FDC2"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/speech/chat_0/chat_0_0.wav",
+    "散列": "FBE19B3BA02257781C4F9F21139CDA472DAEC47AC020DB3F4FAFF1347884BD33"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/speech/chat_0/chat_0_0.wav.import",
+    "散列": "F178EE8644A9887420018A27B89488590CED09B1D81D88E79C7D3C6A42E01E55"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/speech/chat_0/chat_0_1.wav",
+    "散列": "DFE496DD0F4AF39A37D6ED7ABDAB17C9CD35F15F9836FFA2F45C0EC22E5D729A"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/speech/chat_0/chat_0_1.wav.import",
+    "散列": "3823D375E8C7DAE965C501AC172F13B102494FD654F589E3324FC9646FD722A5"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/speech/chat_0/chat_0_2.wav",
+    "散列": "6AD69671CBE43FABA041EBC930326705A2C71A4EA887C4417831869EBD5A0DEA"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/speech/chat_0/chat_0_2.wav.import",
+    "散列": "482BFB74072EB979BE061E4C31C2F85F1E1E8667ADDD2D37A7F971DE0129C446"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/speech/chat_0/chat_0_3.wav",
+    "散列": "3B0BB949D9A5F7359DA88B25DBACA633B0F8F381121BE46F5AFD64C083201625"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/speech/chat_0/chat_0_3.wav.import",
+    "散列": "C83C78FD0803CBDFD9F068643167003EFC8875C67048188CF7CC3B55EEBECE53"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/speech/chat_0/chat_0_4.wav",
+    "散列": "BC31BAA1CAC82D421D9248036B229ABFE32B52332A121BAB0E91427F2DA95380"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/speech/chat_0/chat_0_4.wav.import",
+    "散列": "17340F1C2E4D98FB15B42C27CD5A30CD377888A5154F88BB5ED50D2FB466AF06"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/speech/chat_0/chat_0_5.wav",
+    "散列": "A4465ABA7EB688568D1C7A212A6E040CFE1E4832511A99ABDA0E7E31047FCF57"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/speech/chat_0/chat_0_5.wav.import",
+    "散列": "9572E045412A76E407FF0CAD633BF3DF5CCA2D47604B16B54C764111DD0FF8DD"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/speech/chat_0/chat_0_6.wav",
+    "散列": "B90AC274BADEB3B5AE4A2A29B5DAD195968BCEB4F30023ADDD61854490EEC17A"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/speech/chat_0/chat_0_6.wav.import",
+    "散列": "7BFBA1E7D39CF3AC03EDA1C15087FEC26DB13362948BC7C66A2547DB102B3524"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/speech/chat_0/chat_0_7.wav",
+    "散列": "2EC96AD784A1DBD3B78619E8F4BC573D97977FEDE74BFD96F536ED382FC8EB01"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/speech/chat_0/chat_0_7.wav.import",
+    "散列": "D76AB57F846456CC8DE2FA0C60E5734C76A6B8277CEBFDB54339B2D6D0FE6D87"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/speech/chat_0/chat_0_8.wav",
+    "散列": "CAE8E82CF37087D8464BCBAB9E796671C11B6619A9C99105A9868BC9B02A188D"
+  },
+  {
+    "文件": "main-autolysis/assets/audio/speech/chat_0/chat_0_8.wav.import",
+    "散列": "4C65C46A5C91D4846AF8EE75EAB9CBFED6EF70D0367D6E55E769ADEA1124CCAD"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_black_0.tres",
+    "散列": "28A72D5F853E6BEB549FEDE54351C8EDD4B33B3B553449B4E79C09AFD83AFF1D"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_black_1.tres",
+    "散列": "4D559BC3A3517DAB9ECCA77C7834EA46FBC48F08A03351797E29145EE4463A36"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_blue_0.tres",
+    "散列": "59CC8AB4318260AA1F3AA5A305A73B1AC5E6804C13EE1F48B41763657315DEE3"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_blue_1.tres",
+    "散列": "752A1B04F07C6B77B7EA0A3A9F5655DC496F10CD0A9107CC4983E2BDA79AAA5E"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_blue_2.tres",
+    "散列": "646D8F6C9AAE112CF50EEF155D9D5A1C8303F29A86CAD86DC0A505EADD12529C"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_blue_3.tres",
+    "散列": "12C8E5251659805C1BE68C83A9864CB6546AE73DF769F5186F93F2B0C2027A1C"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_brown_0.tres",
+    "散列": "688788B1867A722168039FB4895FF81C2DA22EEE0E84CCA373F964E56808819B"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_brown_1.tres",
+    "散列": "4BF9748E54A5F1A264201ADA96D933E9875B595DEFAF424262816D724EDA415B"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_brown_2.tres",
+    "散列": "E2CED69540324AC3385362D915A7EEE33AE709C7C36AD6C181D39273F851862E"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_darkblue_0.tres",
+    "散列": "5C856012B9B8FA9180B1A64D2735E63613716670A244896C0469EE9D2EF7694A"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_darkblue_1.tres",
+    "散列": "955596A23A98D7389C524E4AA7170E4A606F1C4691A6D1034415E231E123FC13"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_green_0.tres",
+    "散列": "66C496022926E5B7CFB16CEE37A4723545737B615CA76CD98745B12291A0C77E"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_green_1.tres",
+    "散列": "962E4FD39C506C8922A01B660F9F16103675936A5D74E1B896184A05E1751D62"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_green_2.tres",
+    "散列": "CB8924130CDCF6C507D44DDF1433A8F3C479B97510C2BD79CCA5A73B2299AB84"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_green_3.tres",
+    "散列": "C57473DCA97A92130BB88B4AD5548224534AA0BAB6976F7338DA218425253CF4"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_green_4.tres",
+    "散列": "F9DB619BA397A2D4F6A738D49B818AB1F1A352A69F037D44336D89C0CB7C9209"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_grey_0.tres",
+    "散列": "30BCF9CD9F944626A4993739EE82F583D7D5127A3138E291FFC553FBCEBCC3D1"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_grey_1.tres",
+    "散列": "3102FC42495CFED10B8AAFCD8EA1A09D468CDDB9E8BF0E0168269B693C637755"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_grey_2.tres",
+    "散列": "F2FC94256509361694B85AA3C95A6DABDA9CE0656CDBBCE50C972ADDAE5F08AA"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_grey_3.tres",
+    "散列": "01908DE7C1DB8FE5A5D4A7217B5D6AEECAFB90AA7A3A2489D5620B5F10905DA6"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_grey_4.tres",
+    "散列": "8219517EFE79E0627DD686974C2AF8E3B93419CD0F65BE24D986BF595F5504D0"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_orange_0.tres",
+    "散列": "084587A4A0B45CC2621B127E431BE22633C0D4A2CA1A0D45BCFB44FF51E07DAE"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_orange_1.tres",
+    "散列": "0078071B1F79797E35596ECD030AF2E945269B49A604A2AFC29D94DD3ED88C7F"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_red_0.tres",
+    "散列": "C1D33DA642850376D6755331C5987EB1070C26D03D39FCAA7F9A6FD2012A5D67"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_red_1.tres",
+    "散列": "A5D81F68C04B2BF3BB8D303A24B7600ECA33C9A278904F4D35C7ABE30DC58768"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_red_2.tres",
+    "散列": "2B956E95C8789E9EAEDD2FC9DB69630DE8028ED772C6EFFEBF77AA61320D8F30"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_red_3.tres",
+    "散列": "36FEB008DC3A0355C0582E188D8F0A23DAD52BC1BC126E1B7224985844135EB9"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_white_0.tres",
+    "散列": "210A7E6A205C5C18211D4FE69E199F9CFA9C77AB7AD7C80916A0EDD5761918C0"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_color/mat_base_white_1.tres",
+    "散列": "D4D5B9E0D5A76C00F85710BECF6D5D07468E6678CB7374F3AD4E2A8DB9352D76"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/base_translucent/mat_trans_white_0.tres",
+    "散列": "67DF2E81A8C52032E86496EEAA0A74B7F21B3FE5577B5EE87CF08DCCE308358A"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/glow_color/mat_glow_blue_0.tres",
+    "散列": "3A6DD0BFBE7E633753E931A4C92CF4BCA6C1FA9A17EAD104F74561FFB57DD42F"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres",
+    "散列": "960DBBC3544A672BF17BE2044CB51AAE8DBC1F7FB296836ACD077FCB717B8289"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/glow_color/mat_glow_green_0.tres",
+    "散列": "ABFE9C4F2C5B31468BC4A579EE899D723C7F1B293E7C1C4B6AB9E6ED6D894D6F"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/glow_color/mat_glow_orange_0.tres",
+    "散列": "908E8C6D3345E2FA840B5766FB8B6F6FBB716ED9B43F48F44C69B764C279F560"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/glow_color/mat_glow_white_0.tres",
+    "散列": "030D0B2F149F4D173343DCA345F0B62D2C44E6CA139013182391818B906D753A"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/liquid_tank/liquid_tank_empty.tres",
+    "散列": "178F46CECCCCD965C5A3F389AA6C8E97DB5294B6C6C66135DF39362CBA792EFF"
+  },
+  {
+    "文件": "main-autolysis/assets/materials/liquid_tank/liquid_tank_filled.tres",
+    "散列": "28E0C2E709F8E66D39DEC060DCE7389E1FB79D10ED0AA754C2EDB2F02DA82F72"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/CameraDamageVignette.png.import",
+    "散列": "BCBFBC05850F1EEDCABA74E5837435904DA11F147DF3FD6C47D2FFF1277A5D13"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Dark/texture_01.png.import",
+    "散列": "E5B8B190CB8656DC9E5FC5F48A38124E6FFB82D00A10DAF40DA02D121A7C0C67"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Dark/texture_02.png.import",
+    "散列": "BE1A4BA73D5528AE32C0B519F7F4D676082D7D146A59E952B585999C07B4A7A7"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Dark/texture_03.png.import",
+    "散列": "FAB5D0ED626A5EE781D5634AD0491C9040EAB7442C122F4DCEE77CD77BA30096"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Dark/texture_04.png.import",
+    "散列": "3BE3CF4CD807AE6FA891D07D32A161BAFCBBB3F002781991A297A97A6BB883E2"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Dark/texture_05.png.import",
+    "散列": "4677220FD35E9107DE4E1393E1F2670CB3B203E0F2BB1AB3BDEC57F7382218F7"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Dark/texture_06.png.import",
+    "散列": "232862D3D1E2434684A7D2CF9D3747AD7B90A109ED8689002496C8791DC80584"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Dark/texture_07.png.import",
+    "散列": "ADD6F6A5E97AEB13A97E4038D7247A3BA647A6A5DF8A7E52A0C1B2E41D00E03D"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Dark/texture_08.png.import",
+    "散列": "424783772A03359649574C85AA7E9D0B61796C1E0B9684CC511F305ABD6FF7D3"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Dark/texture_09.png.import",
+    "散列": "3AAA67621BC744C6B04BA31D63734D5D1717BE0CBE1096FE2C36A90D0C4DA049"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Dark/texture_10.png.import",
+    "散列": "6F4C2375548851FA32C778D8D08FAA156C3F3E04B5A60830D24CD940CF94BF9B"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Dark/texture_11.png.import",
+    "散列": "D606CD78EB047507122B188C5C13F7D38C62884C8FD7E76ADD49AAEDED377AA2"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Dark/texture_12.png.import",
+    "散列": "52633607D22793E935DD35325AB2F1C021DE803B268FEF140E9DC8D854DAA3B6"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Dark/texture_13.png.import",
+    "散列": "C754815F3AC0A31590D6012D44EAFC14E45C6FEC7E4C42443EF47F2281987E6F"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Green/texture_01.png.import",
+    "散列": "16FC61B620C66CC043B62DCB8418552C035AF1B24700799BC26B12C16B780D73"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Green/texture_02.png.import",
+    "散列": "C45FD3E8AC27AFA87639F4134FFDEDE57BF60F7E4A5FDCC234F0A99A05FD137A"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Green/texture_03.png.import",
+    "散列": "D90D0259504425603EA54D4C5DAB4B9E1CA1D7B09FDF43C2E410AD77262618B9"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Green/texture_04.png.import",
+    "散列": "1549EB5B4EA28A37BE83F3AD4158BC64DBBF51B1205591E394B7FD4192FA03A3"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Green/texture_05.png.import",
+    "散列": "8B2BE51C0C08243412E4B46C2B97102F3740F1830D520B307A4F80A832D7D1AC"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Green/texture_06.png.import",
+    "散列": "6514C7EFCB7E4E7BE0C917FE695BEE8D67C49ED019C672AC8F2CAA840E1A19EF"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Green/texture_07.png.import",
+    "散列": "2274442A71D25FC51F8027F33D74240F1F1D52493A19BBA4BA8B684D5914BA8D"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Green/texture_08.png.import",
+    "散列": "2958DFFF0D527811F7A1B3716AF7137623C475D766228D34A2F57E23D514DA1F"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Green/texture_09.png.import",
+    "散列": "A5745811545332C6EC674CE5147BD7B873C1D9590264110077588DC84FCDEEEF"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Green/texture_10.png.import",
+    "散列": "52A189ED432638DC8C89145437F12FC6C11847B1972EA1938595CCE54F5E26F3"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Green/texture_11.png.import",
+    "散列": "186A8AA992B3A42258830437EDD399E2266AD656A7117B0431E79CABA1695B3A"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Green/texture_12.png.import",
+    "散列": "24FB310A9C3367DE0F58E84D7F8DB52247D483BDE6C034A14B7DE218A101E91C"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Green/texture_13.png.import",
+    "散列": "819F3A9630CA6A20EF56C4E2575224B20081511EF51681FDF78CE11AFC762D36"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Light/texture_01.png.import",
+    "散列": "E2561BA4165DFA47648F2A365A1AC94B64EDAC89FA35854733820D9172DEDCAB"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Light/texture_02.png.import",
+    "散列": "37C1027BCFA3AE1D1A3540E8152BAA06F01E488AAEDCA317577F268E562D9D27"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Light/texture_03.png.import",
+    "散列": "F966204ED2DF0616350F7C23295143D0E5AB510FE1A22F88059AC14C8E632C8E"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Light/texture_04.png.import",
+    "散列": "266A7B4C1F2C717F7D743A7195FEC1723036D89D3D1A1CDD11D66BB3C57B41B9"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Light/texture_05.png.import",
+    "散列": "C2DE9EEB174B7C7292F678D287FF811554C503848385981B24643DAC369F6F9D"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Light/texture_06.png.import",
+    "散列": "7990F674E2619589B6C8698171918D095965BD92C9D4B76445B6920E4A51A6D9"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Light/texture_07.png.import",
+    "散列": "306EE78878B6893D10BE7EDD4A3044EAC7EE7D472EB76B8F83677266FB2C4D3D"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Light/texture_08.png.import",
+    "散列": "3AA84B47B5AAB937F79BCE1C9689D409411F9157BDF0A27EF7D7588ED0639AED"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Light/texture_09.png.import",
+    "散列": "78AB1BD23CF137973E486283439F8DE5AF5895C531DA3AC04634BB95B8926B70"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Light/texture_10.png.import",
+    "散列": "87C9A855EFF7F53F393AE27B32903B35EC3B91F5E5B4B485CEF75798766C3453"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Light/texture_11.png.import",
+    "散列": "16D20431CA4B567F15020D134B72397017EF881E5F582F2DBF8431C9F53E9A0A"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Light/texture_12.png.import",
+    "散列": "F018FA91B13FA02009A0E5980C1897D739E76F9F3DCC05E5561E11643C8218E4"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Light/texture_13.png.import",
+    "散列": "D3B5EC62AA0E1D174E183BA6182521C5410FDA2920A0DCDBA36315581AF69B5A"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Orange/texture_01.png.import",
+    "散列": "E2ED2FC76732C83773C69E39187D7143E7DA180249A2AE75B6351A457EC1F6AA"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Orange/texture_02.png.import",
+    "散列": "6148245DE9E7CF5940790A1496F5225BBF8FF06045DCABD160A33A5A271DD807"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Orange/texture_03.png.import",
+    "散列": "30755436EF6397FCDBC9C12EEF246BA4868FEB069A49A741853DFF5E612F9CFB"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Orange/texture_04.png.import",
+    "散列": "9108354E969CC696014CABFAEDA98039C61D5E784F1346C78E3F6998191E4AFA"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Orange/texture_05.png.import",
+    "散列": "8AAFEDF6E98663D3151F6F18C4C6FF4C3A3853508D72C08508BB182D061EA2D5"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Orange/texture_06.png.import",
+    "散列": "D1458C4B82DF17B5704754E08C76158F1E29B25C44B491477FB1F4A8BA3225D5"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Orange/texture_07.png.import",
+    "散列": "2D1DF283487FD81ED28C1194CB30000BFA17053EFD85A14A12D31FFF8253784C"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Orange/texture_08.png.import",
+    "散列": "AFE4EC2071E450DB33B0A259EC42F8FC9FEC4714D4B4A61EB09B8954D3F1FC51"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Orange/texture_09.png.import",
+    "散列": "F33BD538BBB5BD3C40F21763972F4BBD40E2293591B5EEEDE31A7BDDE8922361"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Orange/texture_10.png.import",
+    "散列": "C83CB44FE516591F851361536CA822C37287271D66BC3DE21626710268E31A29"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Orange/texture_11.png.import",
+    "散列": "EE50BE796FA7C27B4E8CFB868C368664C9888CD2A7B74032AE398D9A5F96843D"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Orange/texture_12.png.import",
+    "散列": "25912B3D7D7081CAED9ECEE9D7B2E7A7037F1766F8179009EDE508B3F044FDD7"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Orange/texture_13.png.import",
+    "散列": "FA9C93375B0C7B560152629DB7F0E4CF749245D9D81A37A5576922FBE3BDD08F"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Purple/texture_01.png.import",
+    "散列": "1C3339B6D1DB08FE876683B2F48F0E53C89A7AC8252DAA0C5FEC0EC901D061D7"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Purple/texture_02.png.import",
+    "散列": "E460211C7A567CFA2B03AC7A3AF42926EDEE7C676E7FBCD76719C267D055B88D"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Purple/texture_03.png.import",
+    "散列": "4467C287AF680EC7B97A53ABD0888483ABCB773AB121A6BFC81DC1A48B01885A"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Purple/texture_04.png.import",
+    "散列": "107AD6D383B267D11A3D4C11DCA0CA675B3855F1F2B67D85BC054E097CDC2425"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Purple/texture_05.png.import",
+    "散列": "6056DCAE09F260875173845FB8373C1AB243DC9B2C889755E05F188BB9B2A091"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Purple/texture_06.png.import",
+    "散列": "AAC0329CF20E30E128E4F4ECEA5E7B7DEB3A68E78D43F562BD4B8A6E99104F94"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Purple/texture_07.png.import",
+    "散列": "25BD3742E4DBC3AE5D3B7932E5F3E23D0E65E7960195C350E0A342F758003518"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Purple/texture_08.png.import",
+    "散列": "7B3782AA2A12AA7AA8E3A2420E0D500F4608A3362BC0FD7629B47B6498CA4A6C"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Purple/texture_09.png.import",
+    "散列": "27156B8BCD1C403218331E7FE343633057B021A12FA9065F6AEF14B73BFF20EB"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Purple/texture_10.png.import",
+    "散列": "0D8104A0D49F4C920A485DADACABE00E86D48307764B2FF634139ACF24A0A452"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Purple/texture_11.png.import",
+    "散列": "34709D98EC144EF2C7CCDB1E97C9F75E73F1986520969F092E41F8E08C220D4E"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Purple/texture_12.png.import",
+    "散列": "2E75DC71859A2CEBD820BAA3D6ECBC69D66456F54F376D600053CD542B508AF4"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Purple/texture_13.png.import",
+    "散列": "983026F74AD343652C6B7C0112AD06DBC2FD7282187B52666DA06CBF15D47838"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Red/texture_01.png.import",
+    "散列": "CDC5D1143615000EE28FA11F9C9854B2D7FD96A3D5D30CC5716F69175EC98B47"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Red/texture_02.png.import",
+    "散列": "457B6DA383A251F28AF18F5F1F57B54568FD58115B8014283FEE4AF2F56797D6"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Red/texture_03.png.import",
+    "散列": "AAA1DC4EFC87277C06DC628B12615677EECD3C41FD3DAE7245BF322AE859E159"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Red/texture_04.png.import",
+    "散列": "6B6463B963DAB06941AD84DDF68892B520F06B63F04A641AC737F3470D90AC19"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Red/texture_05.png.import",
+    "散列": "605CA8250557C16F1D109792FD6CCC0E0CA060D542686B49FD4CF8D3221A2FD5"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Red/texture_06.png.import",
+    "散列": "CF857F61C8BFC2D6E3918B8980B06C3680FA878069DE2BDEAC952EA421F4A661"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Red/texture_07.png.import",
+    "散列": "6A3B926F5FA303416B5F745630C1238771938316A7CCEA22D6CF45E9FE2C3B63"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Red/texture_08.png.import",
+    "散列": "1B9490355D1E4CA7EC1381BA752B00DB4CFE59A07857ED393697E6786D191550"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Red/texture_09.png.import",
+    "散列": "9894553D9BF04429BA9E4A6B99FFEF3F4B488D6DE62B24E065A07233ECAE2D3B"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Red/texture_10.png.import",
+    "散列": "6E41F15E47A93B1EEB134078CD446A35EC9CBA8D2B7F79DC997FA9480B02044D"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Red/texture_11.png.import",
+    "散列": "1CB4C2AD6BE2389B1261452B9D5A120C0113C2C0AC487B6D26C05559195022F5"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Red/texture_12.png.import",
+    "散列": "FD9B37CDD3B85641E34A6717EE31055ECC61D6AB447458A7939359E47D3D3D45"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/PNG/Red/texture_13.png.import",
+    "散列": "16DBB98C9847ACAB662E2FD8B09395A21367B3FEDFB8234F5C0D837FF978E4DC"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/Preview.png.import",
+    "散列": "46DEDDE7BF8C4B65903806AB0A30B3791AAFF69AFF900130788D2C98DEB6E49F"
+  },
+  {
+    "文件": "main-autolysis/assets/textures/Prototype Textures/Sample.png.import",
+    "散列": "793FC931AE54B5D0BCC229AA3196700E01748DF8A15A1EA27E0C80B26D6CC003"
+  },
+  {
+    "文件": "main-autolysis/assets/ui/inventory/degauss_inventory_slot_border.png.import",
+    "散列": "837EC01B1D4355433FA7297CEAB1151E385D73AAE4296A31F403AFFD6D6825D0"
+  },
+  {
+    "文件": "main-autolysis/assets/ui/inventory/mouseclick1.ogg.import",
+    "散列": "481EC49101C11229AB7B3B83D4162EC79D80746282D51B6002263FFC1CF43B58"
+  },
+  {
+    "文件": "main-autolysis/assets/ui/item-icons/caffeine.png.import",
+    "散列": "BDFD54B2A29C973AA03EB815803019591671502FC1058F6FCC4B1BAD3B45D1FD"
+  },
+  {
+    "文件": "main-autolysis/assets/ui/item-icons/liquid_tank.png.import",
+    "散列": "6975C1C733BE72C29BBFD21D74CEED65AE683C7E2DA30E563680AD79D40F6255"
+  },
+  {
+    "文件": "main-autolysis/assets/ui/item-icons/pneumatic_capsule.png.import",
+    "散列": "19323C6D680415123E2AF1DB7626398B2B91EBA267635536269523F010FCA64F"
+  },
+  {
+    "文件": "main-autolysis/assets/ui/item-icons/quest_paper.svg",
+    "散列": "2CAA65A2122E92FB9C732F6D71A6277CC2B8131CF5D3FC311860F7A3EAB7BDFD"
+  },
+  {
+    "文件": "main-autolysis/assets/ui/item-icons/quest_paper.svg.import",
+    "散列": "C697C50F4E660972D57A476F86A83AF9CD6630F6326BD4AFCAE9129FCA80EF06"
+  },
+  {
+    "文件": "main-autolysis/assets/ui/item-icons/sodium_benzoate.png.import",
+    "散列": "BFE142FF0F708CDAE38B7959D03A2D6A0376923A04AC852AE627F6EA007C43DF"
+  },
+  {
+    "文件": "main-autolysis/components/interactions/autolysis_focus_target.gd",
+    "散列": "B4324ADEF6FE2AAC83B418D9FC8199B24A1A41B95DD12164E13F6CD33FAC864C"
+  },
+  {
+    "文件": "main-autolysis/components/interactions/autolysis_focus_target.gd.uid",
+    "散列": "8439CD2E966E9C42937E697F789871B870481B4B52D90A2F2E5DD06D508C8681"
+  },
+  {
+    "文件": "main-autolysis/components/interactions/autolysis_interaction_component.gd",
+    "散列": "FB38CBAA492FAA58F62AC9E4C28CEDB3E9AD918C9641D49E7A56B0DF037BA961"
+  },
+  {
+    "文件": "main-autolysis/components/interactions/autolysis_interaction_component.gd.uid",
+    "散列": "8917423A4F45E86A29FF125958BAE09833C1842992AFB1599C88A3CBCEF07AB7"
+  },
+  {
+    "文件": "main-autolysis/components/interactions/autolysis_interaction_component.tscn",
+    "散列": "A4F12CB6ADDE0F4343C438C3076CC4AA7E5A0528CABECF29DE825EA2FD38727F"
+  },
+  {
+    "文件": "main-autolysis/player/assets/player_eyes.tres",
+    "散列": "40E155AE4C5735A0AC837CF71B4B9A0CB19CB125375419760687D64350A743D1"
+  },
+  {
+    "文件": "main-autolysis/player/autolysis_player.gd",
+    "散列": "BCDCE1020514E40B7D04BEC909634235ADAD6C49227CB88387F3529097541FB9"
+  },
+  {
+    "文件": "main-autolysis/player/autolysis_player.gd.uid",
+    "散列": "A9379A4B02792A659C29244CB8452A6BC1FA0CFCA18E0BDF5929DF4864E58DDA"
+  },
+  {
+    "文件": "main-autolysis/player/autolysis_player.tscn",
+    "散列": "DE47A6E95E53E9F2CE16EA240629630BAC72B056170AEE584A68475EB6BC19AC"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_focus_controller.gd",
+    "散列": "9502411F8099C37B4F1390B96D5A954853C6E36776687424D634C78EB14EB47C"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_focus_controller.gd.uid",
+    "散列": "400B92B7B6B408A1800ADDA72C19F0757838128247FB38097609D65A3DF2DF30"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_focus_ray_query.gd",
+    "散列": "89B0E788799D2DBAD973D56EF33FA4887AC898076D51FD2E9BAA06FA84615DA3"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_focus_ray_query.gd.uid",
+    "散列": "04FE2B08FBC4660F04BCD3F451D30A78983551ED74A6FC0E95071E087BBE19C0"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_held_item_presenter.gd",
+    "散列": "D1420C36E3D966206B36A62EBBEDE5976EE6A4674C0CE3B9F4566F475F4D02BF"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_held_item_presenter.gd.uid",
+    "散列": "5E43D37F35D5887E3A4F18ABC0FAC077EFDFFE131BF628FA8AB2C82247A17DFA"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_interaction_controller.gd",
+    "散列": "13CA6AA890A3C2160BA759D1936E445211E61A87C59221CFA636BD48C2B55179"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_interaction_controller.gd.uid",
+    "散列": "AF4661A9ED220A5097168D2CD02685C46F628FA39EA6E13E3D169B1EF1566FBF"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_inventory_controller.gd",
+    "散列": "1FABE990CF5DB4DE96D2D6B487D75EC99B402D5D90FC88A83B392E96DAF52D46"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_inventory_controller.gd.uid",
+    "散列": "AA29B503F88AC62BBDA73C3F3E0B7D3837166D7995EF8FF1A783BE131F515371"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_quest_print_test_trigger.gd",
+    "散列": "81AF0606427AF7001EC26F09CB0815B49915FE29206E54407DFD2E3B48FB29A1"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_quest_print_test_trigger.gd.uid",
+    "散列": "E29D900D465601105A81E3AD0AA549A21C7F01EC7EA2621E03A9C8EF4F225F42"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_telephone_call_test_trigger.gd",
+    "散列": "E693FB85374A4D8B79F42A978BEC95504CBE776DF2A103B23DD3BC424E82EB31"
+  },
+  {
+    "文件": "main-autolysis/player/components/autolysis_telephone_call_test_trigger.gd.uid",
+    "散列": "F2F9030906EC83A35D05D5A24DEDD9792572A702E0F928C1E468F2B0D2825D5F"
+  },
+  {
+    "文件": "main-autolysis/player/components/interaction_raycast.gd",
+    "散列": "40CBC621CAFCED645A9995395E9CBAD4261A3E9E8C5C4CE11AB639B6347CBBC8"
+  },
+  {
+    "文件": "main-autolysis/player/components/interaction_raycast.gd.uid",
+    "散列": "CB6C85A265F89DE0117D772314A30123D678046D988F3DA36B2EAB29950E5031"
+  },
+  {
+    "文件": "main-autolysis/player/components/interaction_raycast.tscn",
+    "散列": "564A4F1B594A16390AC5BA088010B400F8CA14F2A1A6FB437C24611E9CF9435F"
+  },
+  {
+    "文件": "main-autolysis/player/components/item_drop_shape_cast.gd",
+    "散列": "095B48259CC0F1FCA27733A01CE91A24AC330FFF82860DC939FC28A16EC6BAC9"
+  },
+  {
+    "文件": "main-autolysis/player/components/item_drop_shape_cast.gd.uid",
+    "散列": "735772EA1147BFF077E63A4FBE005C44B7DC673F3813C44C13ADC646ED2B24C2"
+  },
+  {
+    "文件": "main-autolysis/player/components/wieldables_sway.gd",
+    "散列": "26C9EC6363551E822D8FA356195C9F8E8D68D9BB1353DB8132EE9891367421FD"
+  },
+  {
+    "文件": "main-autolysis/player/components/wieldables_sway.gd.uid",
+    "散列": "D7E15FF204CE90040D9E2F7ED35A0E279930D19452C8B4DE0D392C9276ED30E7"
+  },
+  {
+    "文件": "main-autolysis/player/tests/blend_collision_follow_test.gd",
+    "散列": "CF6AB63DD09EB6AFC202EDF1EFB6C0DF167C6ABF577E86F046AEBD596AC2DB2A"
+  },
+  {
+    "文件": "main-autolysis/player/tests/blend_collision_follow_test.gd.uid",
+    "散列": "7A076FCD854E2D7299A3CCCA9C60E4B5306941578A55B0ECBC7AAA9CE0892B8C"
+  },
+  {
+    "文件": "main-autolysis/player/tests/blend_handle_drag_test.gd",
+    "散列": "FF3CCD7ADC6FA75B0A1D6ADD703B004EA2F7079215020BB73B7A09725F5EF1E6"
+  },
+  {
+    "文件": "main-autolysis/player/tests/blend_handle_drag_test.gd.uid",
+    "散列": "9498DC923D2A9280D1A78ADCE49772941A8DA00BD2344630BCA9BB43093831AA"
+  },
+  {
+    "文件": "main-autolysis/player/tests/blend_handle_native_loop_test.gd",
+    "散列": "10BD49CBB1C9D89994CF034EA09746DBB59CD79004B3DBEF4BEA52971E8D7DAF"
+  },
+  {
+    "文件": "main-autolysis/player/tests/blend_handle_native_loop_test.gd.uid",
+    "散列": "5C68AEAABC086A223A2D0B83EED653AD3135264FFC311400479C7B9377877CD5"
+  },
+  {
+    "文件": "main-autolysis/player/tests/blend_handle_warp_probe.gd",
+    "散列": "88303CA1EC8CE431FD323A23236B1590C0FF221F6E5F8CA3DD029A4BDCAB82F4"
+  },
+  {
+    "文件": "main-autolysis/player/tests/blend_handle_warp_probe.gd.uid",
+    "散列": "0CBDAA50FAA05281E64CF02A04EFB1945CE69250825CC13477741AF0B5652777"
+  },
+  {
+    "文件": "main-autolysis/player/tests/component_migration_test.gd",
+    "散列": "28D239EC27325C222F69BAEAE4D848583D334E1051EB2BC41D2A7613DFEE2323"
+  },
+  {
+    "文件": "main-autolysis/player/tests/component_migration_test.gd.uid",
+    "散列": "D094F9C8CA70B2A9A910D1E186CD487C5DE20C4CFE673A0B64CDF2BD7F70E5A8"
+  },
+  {
+    "文件": "main-autolysis/player/tests/dialogue_boundary_test.gd",
+    "散列": "0D3A8A44B1ED321867037D24378B7EEC0B2C034CD34E392BCCE42A33A9272B36"
+  },
+  {
+    "文件": "main-autolysis/player/tests/dialogue_boundary_test.gd.uid",
+    "散列": "97FC3B82B7735FC211CEACEA8959860F8159E18647AED0AA2BE6B5FA6DFA5C30"
+  },
+  {
+    "文件": "main-autolysis/player/tests/dialogue_system_test.gd",
+    "散列": "8D787894C6D5D2303027DDC691EFA432BEABC22DB2A02650C9F87981CF3082B0"
+  },
+  {
+    "文件": "main-autolysis/player/tests/dialogue_system_test.gd.uid",
+    "散列": "1A7B0889F1C22A2FA64F8012FAA0FE9C6B6E9B653C6B532975419D432F65E219"
+  },
+  {
+    "文件": "main-autolysis/player/tests/direct_interaction_demo.tscn",
+    "散列": "1196550395D4BA224F160D681BB2E3D841F4B4A148AFF0301E48A6ED450C07E0"
+  },
+  {
+    "文件": "main-autolysis/player/tests/direct_interaction_test.gd",
+    "散列": "F3DC471240A8E69F6DA1966EF08DBEBD22FA3CBCFC6F8B9D20EDECD78F0982F7"
+  },
+  {
+    "文件": "main-autolysis/player/tests/direct_interaction_test.gd.uid",
+    "散列": "6634444557A72434D61184ED4DA3A32812079CC4E8CCAB2C61B49357D875C8AA"
+  },
+  {
+    "文件": "main-autolysis/player/tests/fixtures/direct_interaction_demo.gd",
+    "散列": "66691B37EDF2D266549713267CDE36E4F258BAC2ED2667BD8C4473D883393E70"
+  },
+  {
+    "文件": "main-autolysis/player/tests/fixtures/direct_interaction_demo.gd.uid",
+    "散列": "C4039C08F0007CAB3E05CC60782897F1464BDDB779351C2DCEBE00FB043B4336"
+  },
+  {
+    "文件": "main-autolysis/player/tests/focus_interaction_demo.tscn",
+    "散列": "9B01C231C2CBAE74B5B2A71E37C46EC65465B3213958527C4B126650331ADB39"
+  },
+  {
+    "文件": "main-autolysis/player/tests/focus_interaction_test.gd",
+    "散列": "F430CF62004CAB069FBB49C5602C638089550DDC9D8CBEB1FA86D466D97CBA5D"
+  },
+  {
+    "文件": "main-autolysis/player/tests/focus_interaction_test.gd.uid",
+    "散列": "1FAEF0E02EC5CB0E2C8F2A630D759FB86C61B6B4C6EF61BB99DB1DEA86B79F80"
+  },
+  {
+    "文件": "main-autolysis/player/tests/footstep_smoke_test.gd",
+    "散列": "20FE108A04F75A6029F3D2C92263D14CAE5F19E16DCEB053EAEC5F901EAC1005"
+  },
+  {
+    "文件": "main-autolysis/player/tests/footstep_smoke_test.gd.uid",
+    "散列": "4215D97CE59CBC165686CE85BA9D58573F4C81D52A8EFFB4A7EEAB52B3CCD9CF"
+  },
+  {
+    "文件": "main-autolysis/player/tests/handset_inventory_test.gd",
+    "散列": "0F4C5B4B2473B18D54C3D81FC1CBC4F4D010FC0B80438820AFAC5461EEA27941"
+  },
+  {
+    "文件": "main-autolysis/player/tests/handset_inventory_test.gd.uid",
+    "散列": "9340E6F3F969383C6179227CA906BF53EDD0465CFAC465D66EE17944FC8D7941"
+  },
+  {
+    "文件": "main-autolysis/player/tests/handset_pose_debug_test.gd",
+    "散列": "5787614BA409FB863D57E1E570207B882408EFB9AA12A2CEDAE2870B6EC50383"
+  },
+  {
+    "文件": "main-autolysis/player/tests/handset_pose_debug_test.gd.uid",
+    "散列": "01A5B832A55A90992F7FF8669422234C9758B8B221B1ECDC058AAC22A916594D"
+  },
+  {
+    "文件": "main-autolysis/player/tests/machine_spatial_audio_test.gd",
+    "散列": "BCC072E0320B4D91F4C727FB7063735699C557B4A8B3C02A42B117F5073EC248"
+  },
+  {
+    "文件": "main-autolysis/player/tests/machine_spatial_audio_test.gd.uid",
+    "散列": "DF0921CC111A65BCD481D0FD17B2C94A837EE45ABD39DC49A922C7D81C690E1A"
+  },
+  {
+    "文件": "main-autolysis/player/tests/player_smoke_test.gd",
+    "散列": "3314A86E043902F342BD023959DEF85C68A87FCD657587651F626B1655E768ED"
+  },
+  {
+    "文件": "main-autolysis/player/tests/player_smoke_test.gd.uid",
+    "散列": "641819E95A5E1C7CF373283BF75B525E8078EFA2DEE6B283DA6F1993A9BF03D6"
+  },
+  {
+    "文件": "main-autolysis/player/tests/quest_display_release_probe.gd",
+    "散列": "14459A14DE81F6C3354B59F9B9187DE6124DECA50B24E9A63F8C672B7DFD4FB2"
+  },
+  {
+    "文件": "main-autolysis/player/tests/quest_display_release_probe.gd.uid",
+    "散列": "07548E5850E1E82C8C50176AE3DF841323616335DA4E4F1D3C9FB8E8350EB378"
+  },
+  {
+    "文件": "main-autolysis/player/tests/quest_held_text_test.gd",
+    "散列": "86518CC522D0950998408A44C5165AF7B12149298E1B9175D1E3909D3FF506AF"
+  },
+  {
+    "文件": "main-autolysis/player/tests/quest_held_text_test.gd.uid",
+    "散列": "70D5211F2D7384B7ECFFA9F6847572F3E2FA99C4244CF89F065E46C30F14457C"
+  },
+  {
+    "文件": "main-autolysis/player/tests/quest_paper_inventory_test.gd",
+    "散列": "4A46586AE9EFA1A66CFAE4AFEC95ADB95A50AF85B75968BCDEA7536A6188C354"
+  },
+  {
+    "文件": "main-autolysis/player/tests/quest_paper_inventory_test.gd.uid",
+    "散列": "AC0FAC4FA4D1031A4FAAF322C92BFE3EF931FC05B3656EE850C10B08AA8B562D"
+  },
+  {
+    "文件": "main-autolysis/player/tests/quest_print_main_test.gd",
+    "散列": "3EAE8FF05905A527E62155DFDD3055DA5092EAEED39DFC1965CF6FDB45727CDB"
+  },
+  {
+    "文件": "main-autolysis/player/tests/quest_print_main_test.gd.uid",
+    "散列": "AA5D2D11CF8F1686CEA183368263CFEAED695BB1FB99180517B168884C653AD3"
+  },
+  {
+    "文件": "main-autolysis/player/tests/run_interaction_verification.ps1",
+    "散列": "203BD88002F8A34B7F301792E563124B42B22A1154D44F1F813BB44965630860"
+  },
+  {
+    "文件": "main-autolysis/player/tests/run_telephone_verification.ps1",
+    "散列": "30586497F88FDB1BAB3725CCD692EF3CBB2BD26E280AF586CD5742E6F6F6793D"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_audio_cleanup_audit.gd",
+    "散列": "3583527EDA1D5414C6012E2EA6F8790AE498BA23ED1B24E3828DE8CEBD57F0B3"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_audio_cleanup_audit.gd.uid",
+    "散列": "6ECAB0A7BE96B37ED31985ABC0F57157A40786C2356F62E929E3E450C5CAA5C5"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_boundary_probe.gd",
+    "散列": "D49D5A79A7878DA903233B8BA013B1164887D647E4713DB573B830D97A274312"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_boundary_probe.gd.uid",
+    "散列": "3E7955A344DBDAFB18A80C7682406475FC0F7ABBD610088BF8A35CA01075D0A9"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_call_boundary_test.gd",
+    "散列": "9AFEF045B1746472AA00745820F9B08486A18B2F83EB4786DC2F449A933D5ABF"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_call_boundary_test.gd.uid",
+    "散列": "1BC4702E70BD92C190A22ED99B4DF6F1EE3876121DE2768144402F3B97AAF75B"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_call_entry_test.gd",
+    "散列": "6A27EDF2BB6CCEDBC93F69A440CDCCC172F4D903133163EDD7AD5792AD17D92F"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_call_entry_test.gd.uid",
+    "散列": "0BA5154B69B4B146A5973943124A2D093465F70A02EF8A6B66834C0D5F3C5C10"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_call_gameplay_test.gd",
+    "散列": "49A11DA1DADEA410501F21FCCA901F3E0E613740C1BFD4F0E4FFFC4713252463"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_call_gameplay_test.gd.uid",
+    "散列": "911EE02AE76F2F55692A67DAC6E8DC7E05FE55A636607FB7D6B8109E0A992D5D"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_call_test.gd",
+    "散列": "B9859D2F844DDD7ED9710758529B725B8670DF4EAFF2C6FD5FB8023F4087312F"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_call_test.gd.uid",
+    "散列": "55331F365D2B36AC471BE662245F683160AF1D2C1FB21DC8BD94AADB68B469AA"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_commit_observer_audit.gd",
+    "散列": "526F3C4C190C5AE9F9ADA0087B5F95DE7F77E79579173DDFC8B16607EE473979"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_commit_observer_audit.gd.uid",
+    "散列": "9E36DBEA658F771308199C444A87614C2C5D464FFA1B0C969FBBC4CE64DEA6AC"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_dependency_audit.gd",
+    "散列": "713BDD5B81FAD21A1BC2117951DE21238C2B745467716F9EE5A54A00BFDC8B1D"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_dependency_audit.gd.uid",
+    "散列": "53B424D17EE26FBCD402C53E63586AFB4ECA4BD95E372B05494DEC2E484A8307"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_device_test.gd",
+    "散列": "53E75D40D63E7C582468CE70F85013C2FE1D4921200A77C2ADD7CDAE3913B327"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_device_test.gd.uid",
+    "散列": "CBEE5DACFA986388C47BAF9DA0E1631032D90D79696DBBBF62894A39416D0981"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_display_entry_audit.gd",
+    "散列": "37A94D87D5EE3F9A3D20DBD36BB92259CCE4364A20D4D9E73960238E0F3261BA"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_display_entry_audit.gd.uid",
+    "散列": "F373520EC70EA7876734C6ED925C1154906A55F842B63D144FF99C9DBDFCA42D"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_focus_dependency_audit.gd",
+    "散列": "D8AE138407702AAACE8C66240498C0B463641E8A52ACCE6A79175727C13E6AAC"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_focus_dependency_audit.gd.uid",
+    "散列": "69A22D66C7ECF122D36AB12B1A29864CC4BDA78B2A012A25B4F13B8036F798B2"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_handset_view_test.gd",
+    "散列": "131F09C192765B0AC5B34253441894EC50A8CAC841C142E37CA81F64A5B64A80"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_handset_view_test.gd.uid",
+    "散列": "606DBB796718AC83108969935119950E7E0FC080EBD347162EDE6766B7815A49"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_input_test.gd",
+    "散列": "270CF84E983ACD5D1B23DB84335FCE3374ABD18863E395846E4E4EF20B67C191"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_input_test.gd.uid",
+    "散列": "293E160CBB37687B1B10991383F88FDBA26A2D3280155980C4A25BF4449795EE"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_limit_sync_probe.gd",
+    "散列": "98A541104CBD7D5FABD606D275793C307C7EA7AF339A122F84034994F5C90C83"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_limit_sync_probe.gd.uid",
+    "散列": "F70112F02EB144839286E08872FF06E001488CDC5E1AC002C9B5A8CF4ACE5721"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_movement_leak_probe.gd",
+    "散列": "933CB0FF5CEBF6923D8F5D0B543510BA910BA56F4FEC76325DE1564EC68A42C6"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_movement_leak_probe.gd.uid",
+    "散列": "9F80069B518663AA09064606DA219132A9DBFF1FF63AF5D93E84F93F6AD68224"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_movement_resource_audit.gd",
+    "散列": "82BF6E8B946379C885BC65FD32E2B1D4D4EFC0EEB0A481819489888D2A237DC0"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_movement_resource_audit.gd.uid",
+    "散列": "9825CCBC885605970616C6BB28620DDB1E197A33465BE5BAB5B3B7F512579394"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_movement_test.gd",
+    "散列": "D393FA206CD05EAE2799BA09AB9307AEF4DF7F88DDEEEAB4F140FE37B6134D0E"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_movement_test.gd.uid",
+    "散列": "E8755ABC79BC21F4A8E56F462899831483821021D27C81787415E2C589BA64F3"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_pose_observer_input_audit.gd",
+    "散列": "693919196893D4496966606E2AE6EFCC10033AB4B1AEEC6E5607164C0FB23C2E"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_pose_observer_input_audit.gd.uid",
+    "散列": "63999ED029C823F4EFF99867924E2338E1531604CBC74F7E7472C865E0E413C4"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_return_cancel_dependency_audit.gd",
+    "散列": "B08834E5F071CA381917551683085EA79C2BFF6337650126643AB2C4C918D418"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_return_cancel_dependency_audit.gd.uid",
+    "散列": "D9AC3995BE1CF03ACB35F28F62D8B3FF1C0B164B47BE846883B2C1766E4F31DC"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_return_lock_boundary_test.gd",
+    "散列": "4FFE7E27023D8A8D5D04FDB6B1A78B832FC5C3B1656BCEB8114984BC486A40AE"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_return_lock_boundary_test.gd.uid",
+    "散列": "90B514DB933DB71017F1193A3CF300806D69DB526C2C12738E29D35A0165DC0A"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_ring_start_probe.gd",
+    "散列": "22ACD6D4783FA3B8C24AC2E4A921371B9ACA5F0A726F0FB5D581006B6DC37C4C"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_ring_start_probe.gd.uid",
+    "散列": "5587B7025D57D5D72C8FBC68FB4614DF18613BAF91D269712D518E05CBBF0873"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_runtime_once_test.gd",
+    "散列": "924A4AB4EC64ED227269A4F57F4354DF75898A68FFAF131BF5AC118E32AB5327"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_runtime_once_test.gd.uid",
+    "散列": "579CCB897DAA98609AF199FEF3DC35E60367C08010AE68E2B0C5FF444A47DFCB"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_timing_probe.gd",
+    "散列": "0F06B7764DA81FF3853CE09F7530CAFAEBE20AE959648F7E4E991A6A619C6639"
+  },
+  {
+    "文件": "main-autolysis/player/tests/telephone_timing_probe.gd.uid",
+    "散列": "5062B6913CFE7FF147D70C73066A4BF205F9BA10B883476D7B0EA1FEB22CB59F"
+  },
+  {
+    "文件": "main-autolysis/scenes/01-autolysis-test.tscn",
+    "散列": "349A2C71CB190C3511E5F7E6F1822DFC32855B3D6C4E2B0B0815299620AB6FA2"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/confessional_and_trade_0.tscn",
+    "散列": "CE93D191CFD2025207E687B549F67925D9F098593FE72AE69613958884DDED93"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_furnitures/bed_0.tscn",
+    "散列": "C32C2AB084F46BE0E7224BA496B22F8ED8A91F33F3ED51124B57C0CCAD1EC2E7"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_furnitures/light_prefab_small_wall_0.tscn",
+    "散列": "D09B66067422E2969FABBDEC6D3B623431B4C78E66230644E2CF175C9EAB19A0"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_furnitures/light_prefab_uplight_0.tscn",
+    "散列": "8C3A31C9C98C36BDA22289F8CE086A439810512FCA5C7CA727C618A5C189566D"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_furnitures/store_shelf_warehouse_0.tscn",
+    "散列": "DC510E16B0F511E424958B4D1AFAE1E50030662C9EE1166B072552EFF8F55389"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_furnitures/wall_air_vent_0.tscn",
+    "散列": "2F79C6481B58F40E4441737FF58302EC3F611FE9B0036A400F892E1BB8F986B8"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_items/syringe_0.tscn",
+    "散列": "461F0AA9D2A7A5525E78D0E9317A162A27EC18213F891E1822D614E96E231320"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_items/syringe_group_0.tscn",
+    "散列": "A76DF9FD546E2D95A376E949DE993F3DC81BF7BBC3E49E65F37823F179961781"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_items/tincture_bottle_0.tscn",
+    "散列": "4BD21ABD9554615347382EEF907283B7356CDFAD1FC786FB96B37C112C950396"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_items/tincture_bottle_group_0.tscn",
+    "散列": "25DE9B8CC028F32DBDE213F7473336D0DDA8FFEE32A136510D39B148483D8AF6"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/liquid_tank_0.tscn",
+    "散列": "9A8FB1FD9B1D491541121F943B9D390606B93BD15E9BF195CAEE2B5E0A98179E"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/machine_blend_0.tscn",
+    "散列": "F8B92CC9106AB57254B0F5CE5016B6FC1617C44E305A4A57037A151230EC134A"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/machine_daily_test_0.tscn",
+    "散列": "DEF9ABE6AD269FCB1BF6912C6A6BBECEA276016314C1D908D9F19D9351FC5519"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/machine_extraction_tank_0.tscn",
+    "散列": "0BBC98A6E5EA6E67DD8DD64160AF4C3D43483DD41CAECDBB23B1EEAC1E39FDD8"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/machine_packing_0.tscn",
+    "散列": "6E824739E0ACE0009787086776B15730893D96B31D105E5FDC63C2CF813E577D"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/machine_phase_separator_0.tscn",
+    "散列": "605ABD03943F6AF3026CA44A71584173EE50A5B91B6BFC26E0D242EEB681E333"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/machine_pneumatic_tube_0.tscn",
+    "散列": "FBBF30F7E3D6E77F42F1E4546440070CE511CEE49D841A3F7CF033D9A71DEB5D"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/machine_ration_0.tscn",
+    "散列": "BF4195E6848E1A1B23C15DBFD18AE06875E2E3581FD4520DDC6A3220B4C73624"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn",
+    "散列": "B2798703DCB70675816CA0BC80E10D6D3394E0C085D9DD0F2734E9AE8CB2BCA2"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/machine_wave_rebuilder_0.tscn",
+    "散列": "BF9FFF1DB8318D995A0C63CB877BB9636B1E346FD95E736DBD05BCB3CF24BC4E"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/manual_shelf_0.tscn",
+    "散列": "576EFEB129FAEAA5A607A46D34853D7D1B09D186BFC6F5028A2662A15290FA08"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/pneumatic_capsules_0.tscn",
+    "散列": "00DEE8663955A515452C549971CA28D8C4092B5210C7D688464B7A4A385551B3"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/quest_board_0.tscn",
+    "散列": "7F735CB3E020BBAC7D998BFA673B0A8A03C4FD42F8AA3180567AFF979BEBDD83"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/quest_machine_0.tscn",
+    "散列": "8057D399D6496A0882A1BA328B9E5DB94F00D29E117EBE7F0CF5CB3490F969D7"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd",
+    "散列": "87A16986B21542636BDF82B17A0022E95E9D72F39B0EF0949E9E6D38EC98F578"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_handle.gd.uid",
+    "散列": "BA733FAFF295AADB2D591B1C462E7BFBAAE8CE06EBC5D7867ED3EC69DEFC2280"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd",
+    "散列": "70A48987715B02922BC5200368208BC98D0EAF412D8A54A46FBA4ACFEE3B36A9"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_machine.gd.uid",
+    "散列": "8F473C3081E142517C48CF264AFD18ECEB5DEEE0EE68E1472406451FF9298040"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd",
+    "散列": "F682A942242A9184FC3D12723926456B798344C0A3B2F42B9ADBC103E7DDACFE"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_slot.gd.uid",
+    "散列": "379D6BE54CD9B03270A74A75ED18D8785C9789479CA26755EA35DCEA6EB07EBB"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_tank_place.gd",
+    "散列": "27C8F29B181F0ED6AC79A7D37718E32516C1AE3A84E8774C5E78883348B783A4"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_blend_tank_place.gd.uid",
+    "散列": "F7191B9F620271CA600DF7B350A8A486CECDFC2562B3FA5CBB4FDD039A9BFDD5"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_capsule_place.gd",
+    "散列": "DABA3A7005BD614BB33945FFDFDFDF219357D3627BA3D437EDC0B79F49871E67"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_capsule_place.gd.uid",
+    "散列": "0FB35C1665C996F5F92DECFB096347B5E3515DAE7DC89D3DB72C467E6619B7AC"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_door.gd",
+    "散列": "5A551D7E1588F3CB7FA54C965F78F90AED59C9E3D695426DEA452C78FA4A6C5E"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_door.gd.uid",
+    "散列": "E41CC8AF3C64E8BE79791FD6C9F66066B3165FEB16BD60D8EAD1EA1E1E76D99D"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd",
+    "散列": "F5F6E7E5CB5A9A7DD6BEE9E2AEDBEF6EE17E43B355C982F78BDBC157F18771BC"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_machine.gd.uid",
+    "散列": "F241D8D85AB3CEA62E496BD4B0990ADE5BCA2DBA89355B09EE00750A99898D64"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd",
+    "散列": "9DD67DAE13C6BCCF06B69D03570307C49B7C0EF90CC950BD315AD832CC66DA17"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_motion.gd.uid",
+    "散列": "15DC2603CA3325EA915BF3A766CB38C562CD4739875A127421A479447A82C923"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_start_button.gd",
+    "散列": "37E7223D7091A23CCC36A508A684B8DBAB6828800C6DD50D47A0A0787682D450"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_start_button.gd.uid",
+    "散列": "51AD52120D5BD06019338B616FA8CB03B0730D46C0651BE57C420C38E02B90A8"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_tank_place.gd",
+    "散列": "71A2E8CC7CC210272A2C19F5D83BFD2A2235300992029A2F69B3EC16303137BF"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_tank_place.gd.uid",
+    "散列": "C1A2F9B8F48373369EC5BBD869F8FE581CAC593DA40B5B19966ACA3984F0ED41"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_type_switch.gd",
+    "散列": "3C978B0A4A88A6576EEB267E79457382F55B7B95F435996220895DC21E38B33F"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_packing_type_switch.gd.uid",
+    "散列": "0EA44CB2743E437D1B1ADF6386A8D45FF87FFF8CF44DD5D8EF909266C54637F5"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd",
+    "散列": "B8EEFDC57206D32954B737A0CBFB7DCE2B69232FD6A1F80E2AE1A5EC95CDF7B1"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd.uid",
+    "散列": "5EE1C68223EC60A3A9950913FF0ED1DC1C2B5C0DC7E95A462459698371256CB5"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_button.gd",
+    "散列": "38D2EE4F5E3A1B532498ACF6301BE18B81FC39ADB81A5C0331DA41441EC32D98"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_button.gd.uid",
+    "散列": "3DA64DFC6916B0AFE5CE8DEF2CC7775D3543D24A6FC1E16102608BAAD3955FD8"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_audio_controller.gd",
+    "散列": "EA58CA43EC4042B9CEB82221091784CA4C90AA9FEDCC91018871952CDB5D288B"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_audio_controller.gd.uid",
+    "散列": "E4DDFA0AA096048CFE5F249B44AC5D4828CEC3A83030449556BA1FDC9668A93F"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_call_controller.gd",
+    "散列": "A65967F47B38C0CC2C449DFFAFA5A36565E4AF0E0294935B6FE42A22CD0C1559"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_call_controller.gd.uid",
+    "散列": "DDEB475562B8D9D83BB4F867A6B9C4868CE1F8D0CD5A1E9373FD83EE4D719255"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd",
+    "散列": "4A80BD30D95FE63369218A35EDF95427EB0AD50D74586E4917E58FA680A78A59"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd.uid",
+    "散列": "DBAD27C9A5DEEA0E0B47E30C614F4BD70C435C77BD3E77CEF77C46A083CE9F50"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_waste_liquid_storage_tank.gd",
+    "散列": "3A1DED658009A33D2B2E52AE1F4C46BD7D8531D6685ECE8F05E2DBD68502D4B0"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_waste_liquid_storage_tank.gd.uid",
+    "散列": "052AB31BC4138B2939775B400DC33191F0BE0B886F8992A90909F59C705B5BB2"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/visuals/liquid_tank_visual.tscn",
+    "散列": "3CEAEE667D9E439FE7BFD233D58F3A0DE5273F4895593BE4EEC1CCC24D08059F"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/visuals/pneumatic_capsule_visual.tscn",
+    "散列": "1C44A8AB0053B66456A974BB268284619C247541C6DB7DD7C51DABBCE2E2B634"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/visuals/telephone_handset_visual.tscn",
+    "散列": "1A17500A3074EAF1E11757E80DD050CA24ABDCE74EA6BE45BD4D8764929CCFB1"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_machines/waste_liquid_storage_tank_0.tscn",
+    "散列": "4DF71FED4AE71510ABEEE6762B1C19C21FE1516D3A72300F2B40FD62B23E77F2"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_paper/autolysis_quest_paper.gd",
+    "散列": "D336DCE4E00623E1BFD0A5A7D82EC3BA36DC047F933FEA06C490806E9B227B5E"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_paper/autolysis_quest_paper.gd.uid",
+    "散列": "9A6FEA29418D4EFFDF4092D655AFF8EF8C39EB4EDDE5994E4271914651EAB6C1"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_paper/quest_paper_blank.tscn",
+    "散列": "C9ABAAED7C7CDF207A90CAF3C81EB844A05499EE887905D4D978283ED7469ECD"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_paper/quest_paper.tscn",
+    "散列": "5A508E4F6605738433D7470D455B5D7F4A391ED9F6A545AB2E3F41A94DEAD47F"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_paper/visuals/quest_paper_visual.tscn",
+    "散列": "EABED60C931572EF6A1ED185E90B447C25690E4F1F78D8B16B50CD8EF290FE49"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_place_shelf/cabinet_workroom_0.tscn",
+    "散列": "E823D9794A42E3EE8A99D70969F39DB457564882CFB289D3FCFB893922FF1FFE"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_place_shelf/place_shelf_workroom_bottle_0.tscn",
+    "散列": "3ABA2ED976209C3A2E02E9676510076D8C3863CC99AF9A596D2F20D185E486DA"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_place_shelf/place_shelf_workroom_rm_0.tscn",
+    "散列": "681D7FF294509B1E00EFABA2AA6BD2AA934331A0F7FE310D3886F3443599D999"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_place_shelf/shelf_penumatic_capsules.tscn",
+    "散列": "D1E4FD492AE8474C9DC290EEDCA152FCA436CB5E5ECC4EAD36E3102571F2C75E"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_raw_materials/rm_caffeine_0.tscn",
+    "散列": "96DEBF163F7408F8B369BC7C04D9753E6E656E15F8064CCA4A74D8CE347A1870"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_raw_materials/rm_caffeine_group_0.tscn",
+    "散列": "050E16ED01CB18C569F7A6E04F09CD8F1B2197C8897B01A1D21CE296B99A13A9"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_raw_materials/rm_sodium_benzoate_0.tscn",
+    "散列": "57F96A7E2497FA90CADF6BCAF076394A388B05C73A93F8EA03A5AB999164161F"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_raw_materials/rm_sodium_benzoate_group_0.tscn",
+    "散列": "B23C3312E1775BF00DFE42908BCCA85DB4E735DFB1E9A4E852D9E0D7A7265747"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_raw_materials/visuals/rm_caffeine_visual.tscn",
+    "散列": "4BEF48B7322A1089C8CD4B5C4B53A72549E8F75163217A8DC8B64E3DB324D0EE"
+  },
+  {
+    "文件": "main-autolysis/scenes/prefabs/prefab_raw_materials/visuals/rm_sodium_benzoate_visual.tscn",
+    "散列": "F88B642590C1C5ACD99A3170B9182CF7455158AE540C03774975955FC44A7CCA"
+  },
+  {
+    "文件": "main-autolysis/scenes/tests/prefab_node_path_test.gd",
+    "散列": "E9B4AFE729C63E1E22CBC00E3CF2C91131B1663F764CE9B7B4AA99A42CFE58C2"
+  },
+  {
+    "文件": "main-autolysis/scenes/tests/prefab_node_path_test.gd.uid",
+    "散列": "2B21D5968ED8D92AB24F7F23D87B9C7FEE9C496D7367E4771AC2ABF274F778E2"
+  },
+  {
+    "文件": "main-autolysis/systems/dialogue-system/autolysis_dialogue_definition.gd",
+    "散列": "3CAFCD0072CC466DB638D938297B0E53235792A37E5C624CA2EBF77530CDD3B8"
+  },
+  {
+    "文件": "main-autolysis/systems/dialogue-system/autolysis_dialogue_definition.gd.uid",
+    "散列": "7F95F2D62DBBB4F9338D2AB22B3A69C7F97AB1A7E7882E84427C309821814AEE"
+  },
+  {
+    "文件": "main-autolysis/systems/dialogue-system/autolysis_dialogue_player.gd",
+    "散列": "33F6F72D6C157027E096CC4F144CC9C08DF929FDA55EA0391ADCBB6E383935F0"
+  },
+  {
+    "文件": "main-autolysis/systems/dialogue-system/autolysis_dialogue_player.gd.uid",
+    "散列": "276486CB678BCBF1853D7E9F5EB207A4C8A86D8D14FD4A12DE9B7CFC538263A2"
+  },
+  {
+    "文件": "main-autolysis/systems/dialogue-system/autolysis_dialogue_player.tscn",
+    "散列": "EC8E7954E537D5462AEE8C795CD90B5E6759CF89A11026E2E784F5116B3DD167"
+  },
+  {
+    "文件": "main-autolysis/systems/dialogue-system/chat_0.tres",
+    "散列": "FDFC86C6D1C193F3E0815E153980BB05A98F284000B92DC318D4AAA70B35B024"
+  },
+  {
+    "文件": "main-autolysis/systems/dialogue-system/dialogue_zh.csv.import",
+    "散列": "F9A7C7ED3B2EA4B366C75A7F5FAC81405248F8382E1A41D872B658046366512F"
+  },
+  {
+    "文件": "main-autolysis/systems/dialogue-system/tests/dialogue_configuration_check.gd",
+    "散列": "53E7280686C5523EDAB087AC7918175659D49154A5D95C004DEC0B492DACA55E"
+  },
+  {
+    "文件": "main-autolysis/systems/dialogue-system/tests/dialogue_configuration_check.gd.uid",
+    "散列": "2802D362F775B03BDC26ED8580EA62681F16EDAF843D06D251CB0179605CCB3F"
+  },
+  {
+    "文件": "main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd",
+    "散列": "B141B1FC9DFB897563BD2384BAB736739BF51527CA67E305BA628E703ABF8C5A"
+  },
+  {
+    "文件": "main-autolysis/systems/dialogue-system/tests/dialogue_visibility_boundary_test.gd.uid",
+    "散列": "FF8B3CDF685CEB789021F400932DC8E98F5BD4E48D64056CA8516748379C633C"
+  },
+  {
+    "文件": "main-autolysis/systems/dialogue-system/tests/run_dialogue_localization_isolation.ps1",
+    "散列": "6C244FC838392A61719F4AF8D0248DA49120743E39D62DB0636A956A185BF97D"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/dirt/footstep_dirt_01.ogg.import",
+    "散列": "D325BAF90EA26F990FA07BA01E80CD7649AAEA07EDC2D90D842CBB5A41CEC4E1"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/dirt/footstep_dirt_02.ogg.import",
+    "散列": "607AF7B1F1AF5C974045D0BE95ABA7EEAD39AE1B1B9E3BF003A9BA341284B288"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/dirt/footstep_dirt_03.ogg.import",
+    "散列": "2F6152CC2E500DC8C20F5EECABB916D131107A4069CA3C1264C506A8231186CE"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/dirt/footstep_dirt_04.ogg.import",
+    "散列": "7A3167E584155D35B61847232FF99E2149CBF4EE9C2E13AFF818F3C9A72485AC"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/generic/footstep_generic_00.ogg.import",
+    "散列": "C3F8BB7203276DA63DE8E44A07B923BBD86F52B411EA21F7AE571E90842892E1"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/generic/footstep_generic_01.ogg.import",
+    "散列": "B1EC3A25EFFF543240D8AE87CA57BFED5D458DB2083C0658177B774525E5F35E"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/generic/footstep_generic_02.ogg.import",
+    "散列": "C1CE6005AAD56906E88399A69008B98877CC5BD286738E4136575F6545D95C03"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/generic/footstep_generic_03.ogg.import",
+    "散列": "5C4E7A639E4A1C8ECD9E629B27B6847ECACE9A48981E7C8E43C51422F521AD28"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/generic/footstep_generic_04.ogg.import",
+    "散列": "2A1EE3C6B89D1F20E288CC6648B146EB0071515D9E48282A4B104CD517CC12F0"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/grass/footstep_grass_01.ogg.import",
+    "散列": "5E604246A02F975A34F96B3434DD40B25FE90F2FA0CEC3CE528F058364952637"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/grass/footstep_grass_02.ogg.import",
+    "散列": "5C3148273B778F75BABF8D9764E6FACA349FF7F0DDBE2B7B2FE7C3C92DAC3C54"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/grass/footstep_grass_03.ogg.import",
+    "散列": "9D265F3AEE7A6F9D53A8699515DBE88D8D8050EC7F9C67A2089BF834C9E12B8A"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/grass/footstep_grass_04.ogg.import",
+    "散列": "3C8BBFB728C8C7473B2BB043046C4418CF1D5096BD9304631880589066F5A913"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/light_metal_footsteps_1.wav",
+    "散列": "04CA56F210DEE3DEC737F6B50AA6904FD1718D2ABAF6BD3FC3797BFB5BAE245E"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/light_metal_footsteps_1.wav.import",
+    "散列": "E46BB78B6D5E8102B912C8B62265C0EA731B0337475CF1689617FE9919ADCF06"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/light_metal_footsteps_2.wav",
+    "散列": "747428AB13A411DE67758EC0B598464DADBC1B311A436F58658549140D1BFF3F"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/light_metal_footsteps_2.wav.import",
+    "散列": "759F5BBF159348936CC8778EF4531D34BF785DAFC4252AA9A921498B82F29976"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/light_metal_footsteps_3.wav",
+    "散列": "394AE3692058E14B5017B9E7E02CDAFB6D84BEDFC3D9044852A7DC986DE90795"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/light_metal_footsteps_3.wav.import",
+    "散列": "971D6921A51706260F3399FCC34826AB7351D3E48FC84C7CDDA61747425666D3"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/light_metal_footsteps_4.wav",
+    "散列": "1927E0AFAF65E6B3977E221551FE6D5B8D51F77697F01763E5AA56C6530033E0"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/light_metal_footsteps_4.wav.import",
+    "散列": "2ED921F62F9DF03EC7F17A4ED3A4BE93BFE204817E9AABCE9E0C1D20A3EDB5D7"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/light_metal_footsteps_5.wav",
+    "散列": "420834ED6A7A0819E1D3E5D619FE95E4A5E0C9FCCD16B605B62F24C8C67868B1"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/light_metal_footsteps_5.wav.import",
+    "散列": "1BD03227FD6C7FA288A8975DAB832CD93ACAB26C8D6FB0B76F2D9D637E85D323"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/metal_footsteps_1.wav",
+    "散列": "DC191B008273404A8DBE2C7AD8AA9C6E04EB7DA7C0BF84A2F483823BDCB2311E"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/metal_footsteps_1.wav.import",
+    "散列": "DF5297EBCFA2965928A00DFAED8678E1BB2E4DFF694592C5EEC64F8CD004B402"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/metal_footsteps_10.wav",
+    "散列": "5FA5AA8936DFAC46F946CC421FBAF3972C7AE3987FF3CCF49EAD1E6E72359461"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/metal_footsteps_10.wav.import",
+    "散列": "08077D382BAD01CDCAB1D3F7C1234870205019CAD73B1F6937FD7E14C20B6959"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/metal_footsteps_2.wav",
+    "散列": "BAE7B330053AA03846690BA03E0C43ABE8F89991E7E1D1F324C48D6F6250DD39"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/metal_footsteps_2.wav.import",
+    "散列": "E3873CE784E7E7F5E819A8E0D8BCB22D1B8000C5FA8CA4A4BB310EF44BB23DAA"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/metal_footsteps_3.wav",
+    "散列": "809F04618C3BD09824371A969ED59293CA2444A19A094F0917B6C921DE2A5D89"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/metal_footsteps_3.wav.import",
+    "散列": "38822433CE0D9748858E14F3E1ECC71BA3D6BDCD2BE7F1D19A7AEF688060A3AA"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/metal_footsteps_4.wav",
+    "散列": "2DD820375FBAB887D4C437346B6330FC4C5A962364C943FE244A90D43ECBDBE9"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/metal_footsteps_4.wav.import",
+    "散列": "3EBCC8391E3C4DD16A2A386849D9C124440715E45C7F0C05FD48E721F646DDF3"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/metal_footsteps_5.wav",
+    "散列": "8B9821096CF32D2B08CDA0C8D3A7C12354FD47CDBD940D5A44CC6660A51A69F5"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/metal_footsteps_5.wav.import",
+    "散列": "ECE4A0580023192B64680A9B9D2CB7B97AAAD2293ACE118DD65B2CE9BC6635AC"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/metal_footsteps_6.wav",
+    "散列": "886B0CA60F71E62BA5D2A43F257D0DE4DF349C70F7848EB36CF0AA12CC9F82D2"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/metal_footsteps_6.wav.import",
+    "散列": "F7BF25CAB8663D2A1E34874EB03A13E75ABD81E0E78D65D9A9DABF1DAD733FDA"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/metal_footsteps_7.wav",
+    "散列": "5C8D6A6C69052164D7CFE70AD8EA8C71A6DA961786FC573B2BC64A62B42B4242"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/metal_footsteps_7.wav.import",
+    "散列": "109A128DF35ECAC78FE8B0B72A6A13666941E8FCA943DD95CCC40054E5A130C9"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/metal_footsteps_8.wav",
+    "散列": "5AB88FB3C05F6B5906A4B1028CAFB416858BA064CAACC6AB8AE1F267CB923F9D"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/metal_footsteps_8.wav.import",
+    "散列": "1F44ED4B4FF7D0F2036FF3D7FD9261280F78D7967830275C90162938FB2CACEE"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/metal_footsteps_9.wav",
+    "散列": "A64DF2549E9705649C6E696983DB761077F218C742735D96673EF50D5EB1E134"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/metal/metal_footsteps_9.wav.import",
+    "散列": "497A121107AB3AA329071E6792E87C5078238C8EF6B2D31BC086B436A4684DF8"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/stone/footstep_stone_01.ogg.import",
+    "散列": "91FC0E1B142CA0C60CBAB4BA041A13BAE3F91B7075406A83D8AE204AE1B75E72"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/stone/footstep_stone_02.ogg.import",
+    "散列": "4362088B9E58305A6D55778E08579002F28424F7AC2FB824EAA4AFD435E0AA0C"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/stone/footstep_stone_03.ogg.import",
+    "散列": "7BDC31DED2D8290EE0E644FFDA53857EF47F586F189CD6A20993ACE130C47C22"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/stone/footstep_stone_04.ogg.import",
+    "散列": "C1E8C9BBE50D6F12F0F543556E350906D17B42FA5EC20FF5C194CFDFDE04944B"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/wood/footstep_wood_01.ogg.import",
+    "散列": "47995DD18E68EAEA948A5E1E3A606E38E6D4BC8F2ABCD0314FAFF0AB87AD09D1"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/wood/footstep_wood_02.ogg.import",
+    "散列": "AFB0A913420592430823D02E2A31158D48BFBF29EBE8E3AEE5E0D36B6632E79E"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/wood/footstep_wood_03.ogg.import",
+    "散列": "F9ACBC69A53D1DD882CC94D289F5A1FB2AFD2E1D966B53C20CD54C109AF8A411"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/audio/wood/footstep_wood_04.ogg.import",
+    "散列": "9BBAEB9B99845156D7B58D5E24B69ED14818C4AA46F986D895CAC1753868D968"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/materials/example_dirt.tres",
+    "散列": "57443A5549DEA011FD1F52CC50DFD4D3E36C0499407FA955B6A90AF95D19A221"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/materials/example_grass.tres",
+    "散列": "DBED9DEF9153F3B32FC348CA89A8386FA2773D99161AC70792CC554274F2EC26"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/materials/example_stone.tres",
+    "散列": "846E07893FC25D50FD56E9FC2D5A4C3D5ABD86186ECECBC231B9DDC9986420C7"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/materials/example_wood.tres",
+    "散列": "714FC73BE2D43613B554F2B601BD2CD9FA801EB65D96CDA76A3438A42ED1A7F4"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/materials/prototype_brown.tres",
+    "散列": "FB889FCC689F0323EB5B1EBC04C07B8D61044EAAD55D56CE773FCB674BCB86FA"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/materials/prototype_dark_grey.tres",
+    "散列": "F29DBB94EA76F2761EFDE42212F466351DCA7EA03259E299385C5076317AF505"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/materials/prototype_green.tres",
+    "散列": "931D1C8212F1387ABDAEB593563E027796DD0434A6524AF2B406D46F280268BF"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/materials/prototype_light_grey.tres",
+    "散列": "354CDF329FC5F54724B2619CC180EA3A6997A294A8318BADCE0E7EBC49DF84F8"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/assets/materials/prototype_orange.tres",
+    "散列": "4DD34B83CFD29B6FD596F1E2FBA369E80F412D5164E39B10A1AEC5C2CEBA955C"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/dynamic_footstep_demo_scene.tscn",
+    "散列": "38E68274EC4EB4024685B341635A1E4B8FD3CA98FD81DB361168A99F4D7202B0"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/footstep-material-library/sample_footstep_material_library.tres",
+    "散列": "D0F62A1D04CBC4897D68311C3E29F5DB37DA9365D9FABACF96762BA03C7AFC30"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/footstep-profiles/dirt_footstep_profile.tres",
+    "散列": "1655C6EB425866C2B8C446DA240C02035A86F93CB0D26147F649E29FC85921AA"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/footstep-profiles/generic_footstep_profile.tres",
+    "散列": "9F7E38AF65B1CD7949A9BC482EA988A2712669E9523835A20FF3A8F486FA8673"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/footstep-profiles/grass_footstep_profile.tres",
+    "散列": "5B61A29366F3A19D7426218875FBB1E2AD6EEC42F9B0342348C01B22F4CCD384"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/footstep-profiles/metal_footstep_hard_profile.tres",
+    "散列": "8BAD28F2E518596D41BC4255F131EFBA18FC9D7AC2E8A8FCDB84D7B00B4E6431"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/footstep-profiles/metal_footstep_light_profile.tres",
+    "散列": "4846E40AD4F8BD2D94AA51C3421C5A4B507A4852B28E5206F4B0011585D0F3A4"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/footstep-profiles/stone_footstep_profile.tres",
+    "散列": "4F31FC21D414A7EEE163A1BB5C902F29D60C15C9AC346AFBC4C4646412E0E50A"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/footstep-profiles/wood_footstep_profile.tres",
+    "散列": "F4FEB344F9A20D2716253BC1BACC0E0E22F2EA0094DED8192C6094091F27054D"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/scripts/footstep_material_library.gd",
+    "散列": "55F6C68FA5BD83A154A1FF9C230C81F5B9ABD7E4F9A8E58BF9856EC9BDD2DC25"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/scripts/footstep_material_library.gd.uid",
+    "散列": "EE8278B23FCAFA916A87942B9F073F982E9A26A973662681FC290952D48BB64E"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/scripts/footstep_material_profile.gd",
+    "散列": "B36F723AE97F1340556DD9C5B0491AA63737604717833D2D21689D660A54E82D"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/scripts/footstep_material_profile.gd.uid",
+    "散列": "3272525EBFFF883D38989E3E71BFB34BE0C84FDCD8AFDBD5B7B600FA1BC56502"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/scripts/footstep_surface_detector.gd",
+    "散列": "61FF789A1AA640A2505D087B4C11FD165AD17F7F72474FD8803F87B0D3259552"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/scripts/footstep_surface_detector.gd.uid",
+    "散列": "1C2CB4D648A333EC17D09588FBEE1DDE23171BDFD6C57A9715A3ED9D4D5F635C"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/scripts/footstep_surface.gd",
+    "散列": "6346CBD1020A16B186326155179D7ABE1C79BE6807BC87D47F4A7E43B1399703"
+  },
+  {
+    "文件": "main-autolysis/systems/dynamic-footstep-system/scripts/footstep_surface.gd.uid",
+    "散列": "9EF8E2637550D98267FF86C57611167984794B73CCC1953AA60CC25C806B8AE6"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_item_definition.gd",
+    "散列": "0B351468E056185CAFD4DC12318EACDC164F66D8E1E6681E6AF7536CB7561191"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_item_definition.gd.uid",
+    "散列": "2B7981E55A649ABD090AD672685BFD5E57D17BBDA0E6F158F9FE469187090FB1"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_item_instance.gd",
+    "散列": "5C42EF022F951D04EDB864A46F490C0FF5F444C6666DE4FD9F3F903F2DA5AC23"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_item_instance.gd.uid",
+    "散列": "5BC6C53089E20CAE4E58C31BCF53A5429A9820B5B87F2BB6367DFA0E6B892598"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_liquid_contents.gd",
+    "散列": "7C91B3547D92C1012295298E30BE8E39F167DADD59815FBFCA1C6E9B7D7A422A"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_liquid_contents.gd.uid",
+    "散列": "0A912A2F9D0E3475B7C9B5EAA7341DF5BEA343193B213237EB9001C58F81234C"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd",
+    "散列": "503C4D7C45869C766A5AC015C31B61A813E88ACDCF0D7B3A3D8A480AD01ADE98"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_liquid_tank_cabinet.gd.uid",
+    "散列": "BAF598B99900109631FC2BBAAF498927A4DF8724DEF8FC546F36FA2FBC109D6A"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_liquid_tank_visual.gd",
+    "散列": "9EB1C287F97C96338245BA3B2BA2A6778E5CB2DDFC515D74C31C432D16CF58F8"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_liquid_tank_visual.gd.uid",
+    "散列": "A255557CCE4DF6904C7C5D94F8A5812F2740C1920A2F257A17C72F3CB63A2F2E"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_liquid_tank.gd",
+    "散列": "175741CF9834C3AC7A4B868465721E86924F7EE0DEB79C6B7291B1D2191CC840"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_liquid_tank.gd.uid",
+    "散列": "A379E2AFE631AD1739E345DCAEB4A5613155FBE69F5C0CDA7E1975091450BA3E"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_packing_contents.gd",
+    "散列": "11D62A989670C77173AEFA1EEDC1BF7F5F29D6CBAF82AB454A7C1731B312D831"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_packing_contents.gd.uid",
+    "散列": "70CA11CB6A44F369D4E7AE767C9BA178C40C15C6BEA17A36FE3EE5E40C5C8543"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_pneumatic_capsule_shelf.gd",
+    "散列": "0B60EE7A334E1ABEAC605B255A64B78806455233092CE004B5DDAB28AEBF3D4E"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_pneumatic_capsule_shelf.gd.uid",
+    "散列": "B55B15CCB38DBDC389D1F1A148108E74807ED5F6DD65E355B3E2EDC83A06C616"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_pneumatic_capsule_visual.gd",
+    "散列": "1C1423C433E5242C61A16BD58A55E2084EC33BDB61E3E50AB6817739107D8F77"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_pneumatic_capsule_visual.gd.uid",
+    "散列": "032D2E8379C40FD3A995F9C3BE6B531880DBBCD3882C3EC90E8FBF4F7EDBDACE"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_pneumatic_capsule.gd",
+    "散列": "61B399A244EB1832B7EE351A557DDF7959900368905373E3A3E742459D6FD065"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_pneumatic_capsule.gd.uid",
+    "散列": "6C3B60E9512D75282586C5B6230B2E0FFF7DAEED154EE0A98562D90A6874151D"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_quest_paper_visual.gd",
+    "散列": "4A12F9E628C75CDE2055ADE2A7153066E0DEC29E03E5B2D84F535E68302CB33F"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_quest_paper_visual.gd.uid",
+    "散列": "F0F490789251C07305F8D3CBEE165B2ADA7786C80074BD4D6C34A125628A1940"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_raw_material_group.gd",
+    "散列": "FE5D05DE12050EF9F550BA6C5DC821E1F789856573E53005AE90809DFE0CF30C"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_raw_material_group.gd.uid",
+    "散列": "C341E89801D71E5175AAA655876AB6ACD74547752C54C75274B9D5106710C050"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_raw_material_shelf.gd",
+    "散列": "E47FF00B22CAFFCBC43F288C8F73CF2F4A038EDFBE8ED96E5B1B6C687586BD5C"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_raw_material_shelf.gd.uid",
+    "散列": "3AD1EF8A364A7FF078CA51D446DFCC208F08C6C5665E2658AC10E4E1CBCD1176"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_raw_material.gd",
+    "散列": "B59E2409AB98C5D005D64E829D65FBFD87BAC851A1B872C1215EF20E648283D9"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/autolysis_raw_material.gd.uid",
+    "散列": "4D61D1EBAF46B8C48C442B06C36BAAAEB3A62FD2ECF81B5ADA9B2C5FB464AD9B"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/items/caffeine.tres",
+    "散列": "128E7B6C7BD9DCA6BE0D6B374BF057F40302B8222775E134D57D9DA5DC0A2446"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/items/liquid_tank.tres",
+    "散列": "74EE98EEBA9888785BDD8A49DE3DEABD039099806DDEB74B25577448E71E2CA9"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/items/pneumatic_capsule.tres",
+    "散列": "F4DAEB93C67724EA26A2183E53D49928397181D2B5CFB1A8F37976B6F4B211CC"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/items/quest_paper.tres",
+    "散列": "C271874261806C722D8F53A4496BB195B43ACB7689204B0479AB4F61C27AD330"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/items/sodium_benzoate.tres",
+    "散列": "E1BCB9420622E8DFC5D0546ECFBB02D8E3709F9969BD50C2FD62C505D97E0210"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/blend_animation_variants_test.gd",
+    "散列": "B2198949D520DB5AE7B52BEE0A712BC8167F7B96DEC9849D8FD4034B207A127D"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/blend_animation_variants_test.gd.uid",
+    "散列": "06ED522608BC56CB881306A03AFF14C218F8BCD16E05713DDD336E58C95DD419"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/blend_indicator_test.gd",
+    "散列": "BE4D8F60FF6EBDC26B2EE7F1CB9C9B706C4A18CED30FE24E9773FD7703061392"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/blend_indicator_test.gd.uid",
+    "散列": "6CEADE9D03C3E73588BE433E12EE74F818375302F4AD84EACD8422D01FF244A1"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd",
+    "散列": "743B9DBD95EB730BE89EF888BCD828490655620ECFB392D0CD476F5820F44914"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd.uid",
+    "散列": "8220FE189FE22B8B0BC505A4E6296321140C58BECB55C22B002921C57EE98970"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/capsule_data_behavior_test.gd",
+    "散列": "A5D81E28BB16896E8DF4B32EB84A5C3F148E33B92C90F1FC04EBA4A7D443CB52"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/capsule_data_behavior_test.gd.uid",
+    "散列": "DAE18A8A58CDE06DD1802DC3160194D5DC17C29CC16A324DDEB5AFF326990725"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/container_animation_asset_test.gd",
+    "散列": "629094E18EA457FFAFE473393BCBAFDAE15D0BD282D54447D1B7387EFAF87032"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/container_animation_asset_test.gd.uid",
+    "散列": "AD3AA4016034A51352054565E09AD1C0AB05E470A46838E7C7B34BDEB60255C1"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/container_animation_timing_probe.gd",
+    "散列": "DFB240FE79CBB23F2D7F84D29AA60C80D17AC5C1253F300B42671769241DA6A6"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/container_animation_timing_probe.gd.uid",
+    "散列": "1AE810FA6DE3B6D09B4E8A0E8D305189C35948945BEB95F8BCCA0CB492B8AC91"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/hand_pose_render_test.gd",
+    "散列": "B284CDEF898A56B5B1239733710CB7A103872A51CAB5C629FD1457FCFB267462"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/hand_pose_render_test.gd.uid",
+    "散列": "EA8FAD2417C1D5B025C3CEC2CF1E7100DC2C264DAB238B9A1A5CEA7874D10ABB"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/item_system_demo.tscn",
+    "散列": "3139F0A9D62558D781B845C6C5A95F1D11A8A8C7B29E967242F321251AEC3978"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/item_system_rendered_test.gd",
+    "散列": "539267521B4A5DC5C843A43FE875F033C5AFFAC37385529522DBD4D320BC3E4C"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/item_system_rendered_test.gd.uid",
+    "散列": "C9369BECBA98800644AB6B4E25ACB1753D4F85FD3B8EEB656330BF073C152D9C"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/item_system_test.gd",
+    "散列": "948A594752F52E0D3DB589F80CD1952EBC6FF9BF56DD981B6150B103346F0B28"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/item_system_test.gd.uid",
+    "散列": "63ECDE6613AC81C086B123049147E0EF3AE9E8F9F4E1A49E16A4555E8B92193C"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/liquid_contents_blend_test.gd",
+    "散列": "83265E84AC049CEDF666DC72748ED35E1ABC749BA43756E2ED74E6AF30B5FCE7"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/liquid_contents_blend_test.gd.uid",
+    "散列": "4254D714752E3E1C6B4D3117A2A7D11E373DA67E0B9757CB1B8487C1BF25111F"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/liquid_contents_main_rendered_test.gd",
+    "散列": "744119F17223B89E9D7557C90EC2111469CD00700A29CE6A6D00B035A031B115"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/liquid_contents_main_rendered_test.gd.uid",
+    "散列": "62CAFE4C1209B3D48A94E55A750425C5515204625179FA0E15AA62D342B676D0"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd",
+    "散列": "B19964571A515DC2EBACC37B7A14F87B6836D266D97409B592325D1DC9333926"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/liquid_tank_cabinet_behavior_test.gd.uid",
+    "散列": "000497BAFD11CB541483FD84EF569AD7560E7B2D3BC72A018A0CC3F1451A43D4"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/liquid_tank_cabinet_rendered_test.gd",
+    "散列": "EAA05E2D852C193EEA7D63698A7D33FEA0E5675200BC565943523DE5FA60C6E1"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/liquid_tank_cabinet_rendered_test.gd.uid",
+    "散列": "6ED3F721153FE0CB90BAC5E7FA48D3DAFFB1937F573BBDCBA49A979185D1C967"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd",
+    "散列": "80C6C35FE6E0BCC25F58E9CD86268154C679E0B4ED6D5836D379FAF8C46F7BBD"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/liquid_tank_transaction_test.gd.uid",
+    "散列": "F283A328C4DD0275BE6856C6AF726AD7AF8D05AD8F537742C88C016B5DAE9E19"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/machine_batch_atomic_test.gd",
+    "散列": "BC1D9A44BEFBB73FB38EC76C650ECC9933D189CCB00DF0B228EC10E50BE10140"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/machine_batch_atomic_test.gd.uid",
+    "散列": "94D431C4AD0BA7E6C0ABF0373048B3D8910D7218A5C934A64E3BFF00F00F70D6"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/packing_asset_isolation_test.gd",
+    "散列": "C6C16CFDF4B5AC7C0BBD0EA55100DF5AF037848CDBB633554E2A1182148A7A89"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/packing_asset_isolation_test.gd.uid",
+    "散列": "C951E770A795EA371F342821597F6CA70836CD39B8CD4AF029D59C51FAA7AE49"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/packing_batch_atomic_test.gd",
+    "散列": "B01FDBB93003A32FB066E5848BC35EE0B2D7F580AE73DB3115FBA05037DC0DE6"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/packing_batch_atomic_test.gd.uid",
+    "散列": "FB7B49EDE756DDDD399D602828DF9A61CA38326CE1EAAA80D1826BC6F932C7DD"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/packing_indicator_test.gd",
+    "散列": "2AD9FE92F7489A121C58EB2BD17E8FA4908FCFC708A5575043D2960DA3022D30"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/packing_indicator_test.gd.uid",
+    "散列": "A866DA302D26AC3F9CC1BDDEB03E52076FD50F2F827CF2F190A4D673638A1B29"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd",
+    "散列": "B957659911781F4CF884EE617CABEBBD75FAC707B506B972A7566459CEAF07FA"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/packing_machine_behavior_test.gd.uid",
+    "散列": "E41B5DC654081A4560530151CAE7A5FF9B139FEAB9C11499E80B45DBBDB1BC8F"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/packing_machine_demo.tscn",
+    "散列": "D5A8259D58454789BF2D9148BADAE0262F76411917FF70D18AA8EA37BB87D7BE"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/packing_motion_physics_test.gd",
+    "散列": "11A1095DB4DFB35513B16730DF6E3CF7031AE291241848CF21BFC800B61B9057"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/packing_motion_physics_test.gd.uid",
+    "散列": "B686807D85F42DAF142F8C412F364CAA2E9DF92F6B92476D7712F0C74D0546A3"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/packing_switch_repeat_test.gd",
+    "散列": "4567E79CD6A227667269E3485D12B55C97AB0AA787BD3D9EE3675CB15199CEF6"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/packing_switch_repeat_test.gd.uid",
+    "散列": "D18CA75909CFBEB350F59467A281115987EBB8BCE38C7695C223597D2B4FA54F"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/render_item_icons.gd",
+    "散列": "94F0DE442CA099A5D30E9AA4591E2E1AAD687F9A1623CA16C5513521428AB6E6"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/render_item_icons.gd.uid",
+    "散列": "ACBFA8E15A8063DB25FAAE051EFE6A7385E5952E3CD2447B486ACFB8C7AA5914"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/render_liquid_tank_icon.gd",
+    "散列": "BDEA6ED42A05C971850C84315B28708FBEB5C2701B83DDBBD238BDCA8256BC4C"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/render_liquid_tank_icon.gd.uid",
+    "散列": "5BBD38F79BF6C274B9AB8BF19E189CBB2821F6A0ABC3C6AB9F7FF288E7005220"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/render_pneumatic_capsule_icon.gd",
+    "散列": "010E9811C904A0AAF27DE802401E41045759339942BF779042BB1555CDE38925"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/render_pneumatic_capsule_icon.gd.uid",
+    "散列": "CF88E7A0157A623858CD332F18033A6370B646C03C15E201677F303F53C7B73D"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/run_blend_animation_verification.ps1",
+    "散列": "E9CEEEA6D764673219DC432E6D91FE22063602786ACD6978827506B8B28C2F93"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/run_container_animation_verification.ps1",
+    "散列": "0366F5DA7E8587AE55E340E1F12441078A2310F80A0A30A0C2FF78BCC1610510"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/run_item_check.ps1",
+    "散列": "5B39F580B8EFE0C7327F85F66FF208D0B5B37CC5595B863BD09DC654BABBAA4F"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/shelf_clearance_test.gd",
+    "散列": "6B9220B43E7E968D4660F58DC8B7BEDFB9051A2B221D6D7701DDFC32315A01BF"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/shelf_clearance_test.gd.uid",
+    "散列": "28510D510C31BD33BEA26AB3CE2885BB8FDFA6E5E43FDBB64BA3CB7CB27BA9CA"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/shelf_layers_test.gd",
+    "散列": "F100E44BB1005497D54828A175CF50E6B62EB5D5262BB16BE63751115A57F088"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/shelf_layers_test.gd.uid",
+    "散列": "D02F2F6769A18F0AF8A69D0A5D57221E5388E91264A9825DD7FCF18518D50344"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/test_evidence.gd",
+    "散列": "57BEFD315C701D2571DAF08671C7352E067D71939DC93967FA504DD35BC27309"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/test_evidence.gd.uid",
+    "散列": "115B403AD6286ECB1382F8C55BC1B307B813772B59CD819D3705D48509A4328B"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/waste_liquid_tank_behavior_test.gd",
+    "散列": "3B192015D7A26DA20564BD363E1357AF69D67306B4B6F352C859E7CA961D3A73"
+  },
+  {
+    "文件": "main-autolysis/systems/item-system/tests/waste_liquid_tank_behavior_test.gd.uid",
+    "散列": "EF2B8D8DEB5DF5DAD4AC39D4F825BBA7BB2FE4267AE9D77922D97086543E0CE6"
+  },
+  {
+    "文件": "main-autolysis/systems/quest-print-system/autolysis_quest_paper_contents.gd",
+    "散列": "3471BFC8F1956A5C7B165D370FAB0D1486ADC29F72973BD02E93FF6AFF827B14"
+  },
+  {
+    "文件": "main-autolysis/systems/quest-print-system/autolysis_quest_paper_contents.gd.uid",
+    "散列": "845ED9BB363D2A6E7C5BAACE21A1DB473AB99DA62E14C68546B5B63DBB47F5C1"
+  },
+  {
+    "文件": "main-autolysis/systems/quest-print-system/autolysis_quest_print_definition.gd",
+    "散列": "0F1F71C63765886862D1BB05D9FB47637D561FF554EAFA50D320FB1C38C42198"
+  },
+  {
+    "文件": "main-autolysis/systems/quest-print-system/autolysis_quest_print_definition.gd.uid",
+    "散列": "944DBC5AE0323C2561CFEB712CE5EDA72DA00B9DEB88D28E24AB721CC4EB8DC7"
+  },
+  {
+    "文件": "main-autolysis/systems/quest-print-system/quests/quest_test_0.tres",
+    "散列": "4F1E8B9BEF725AB389C6A5D62798AE27D34149804AFC0882CE80FFD00B644CAA"
+  },
+  {
+    "文件": "main-autolysis/systems/quest-print-system/tests/quest_machine_behavior_test.gd",
+    "散列": "BD19222799F2E0ED8AB98E5BD353D54794A1181FB0418231C38F462ED8921569"
+  },
+  {
+    "文件": "main-autolysis/systems/quest-print-system/tests/quest_machine_behavior_test.gd.uid",
+    "散列": "9A48310F84E9EC8257B32E445488246BD596753956CDF94BF79D5E53B2EE8916"
+  },
+  {
+    "文件": "main-autolysis/systems/quest-print-system/tests/quest_paper_data_view_test.gd",
+    "散列": "33BC63C76FD039392FA9A4E770CCA021C957DBCDC50F7594AD6647C28F2756C2"
+  },
+  {
+    "文件": "main-autolysis/systems/quest-print-system/tests/quest_paper_data_view_test.gd.uid",
+    "散列": "A2E326231B988BB7A17B02568EEEBAD73E6DE350E03C2F33D388768E7608B3D6"
+  },
+  {
+    "文件": "main-autolysis/systems/quest-print-system/tests/run_quest_print_revision_verification.ps1",
+    "散列": "3F7DE0FF8DD73F726FBCF41C5299FB2EC4E7C9A50A4CB0BBE3C737FC18526240"
+  },
+  {
+    "文件": "main-autolysis/systems/quest-print-system/tests/run_quest_print_verification.ps1",
+    "散列": "70D1F7C43C2FB72CBE204B3F5E61ED10795D87A267CB1E1BDE96036CAE485444"
+  },
+  {
+    "文件": "main-autolysis/systems/runtime-session/autolysis_runtime_session.gd",
+    "散列": "1DCAB3FF9B36104ECFA6852E5A76E33234B41AF38A70DB7E8916F3685C05A93E"
+  },
+  {
+    "文件": "main-autolysis/systems/runtime-session/autolysis_runtime_session.gd.uid",
+    "散列": "9283B187B4A299D8F3E41ACA12700724AE4572C7220C18CC66CB8279C79AC763"
+  },
+  {
+    "文件": "main-autolysis/ui/autolysis_crosshair.gd",
+    "散列": "027707EA3F5D526DBDBAF7C0379B0B18487F3E60F14C596C91F4108589BF606D"
+  },
+  {
+    "文件": "main-autolysis/ui/autolysis_crosshair.gd.uid",
+    "散列": "611BC7D7FC8DB1EC3E447651C7CFEB1771A897D06BFD32A08527731D479F3F39"
+  },
+  {
+    "文件": "main-autolysis/ui/autolysis_crosshair.tscn",
+    "散列": "9958375E76C1E95F6C4248F6FB015DBC265464B7968D06F6D5842F48309FD05B"
+  },
+  {
+    "文件": "main-autolysis/ui/autolysis_handset_pose_debug.gd",
+    "散列": "4E787CE16794A83F22F6CF443284CB78A76D37B1F74C88B3967CED025483CF55"
+  },
+  {
+    "文件": "main-autolysis/ui/autolysis_handset_pose_debug.gd.uid",
+    "散列": "9798B466B466B122E466FA5F18244BA9C07D6B649380423B40B4794BB8899BB3"
+  },
+  {
+    "文件": "main-autolysis/ui/autolysis_handset_pose_debug.tscn",
+    "散列": "4FB2A43F5A80F659E3E12CB0F6FE639AA268E2CC085CAA32BF73567735645196"
+  },
+  {
+    "文件": "main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.gd",
+    "散列": "B52F22887328E66196B2F31E43841C8E07A4DFEBE2F2D3E6D7363BC238F3D9DC"
+  },
+  {
+    "文件": "main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.gd.uid",
+    "散列": "C5DBFF6FAADCEE243F95B7525465237EC2C220A1447F73490670E3B47F64C47E"
+  },
+  {
+    "文件": "main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn",
+    "散列": "206725AC0E48C5A6F9EDB18EBD8417A8F71FDF753968730443F9A0E94B9D8CBF"
+  },
+  {
+    "文件": "main-autolysis/ui/inventory/autolysis_inventory_bar.gd",
+    "散列": "233B302CF6763D100F25BA51D6DA05624F303944DCA54308E6D26657996CC6D3"
+  },
+  {
+    "文件": "main-autolysis/ui/inventory/autolysis_inventory_bar.gd.uid",
+    "散列": "51B968F4B04EFF6BAAA863BADF634CEEC25216724054817620BE66745D2777E3"
+  },
+  {
+    "文件": "main-autolysis/ui/inventory/autolysis_inventory_bar.tscn",
+    "散列": "DAB4AB54ACDAB540D856A09ADB366AB3817DBA1231C30F5CD13A2A14DEBA7E6D"
+  },
+  {
+    "文件": "main-autolysis/ui/inventory/autolysis_inventory_slot.tscn",
+    "散列": "ED1C218D76A3FC60BBE7C9589B0E2078F7213741CFEDE510775E92A668A88322"
+  },
+  {
+    "文件": "main-autolysis/ui/inventory/autolysis_liquid_contents_panel.gd",
+    "散列": "477D0416764AF4F83EE751C85870D40B9DE6CE0BDF8C1178C155AB47655B3EEE"
+  },
+  {
+    "文件": "main-autolysis/ui/inventory/autolysis_liquid_contents_panel.gd.uid",
+    "散列": "ABF26AC976EC75DD894C61E7F457C1A3201F8E17B177166CB8B4E7F74FA1B198"
+  },
+  {
+    "文件": "main-autolysis/ui/inventory/autolysis_liquid_contents_panel.tscn",
+    "散列": "CCEFD6A2E15735E93C8AAC9B7FE09917BCA0D676A4C8A2886B8363D6779646C6"
+  },
+  {
+    "文件": "main-autolysis/ui/quest-paper/autolysis_quest_paper_view.gd",
+    "散列": "F2A9C2217764D27D92BD552D69C9F4860058540961822192C5F80D790F6D8058"
+  },
+  {
+    "文件": "main-autolysis/ui/quest-paper/autolysis_quest_paper_view.gd.uid",
+    "散列": "53630DF2188FF1242391CC376A7A139CA699133E98A50FE965A08ECE3708F716"
+  },
+  {
+    "文件": "main-autolysis/ui/quest-paper/autolysis_quest_paper_view.tscn",
+    "散列": "A360DD39452236AB45D397196580C5BB2198A815D25ACA26DE99F37D55ED3F39"
+  },
+  {
+    "文件": "project.godot",
+    "散列": "8B3D40BE8C27B2D811A8385ECAD55CFC0B9D055DC2ABDD80055112927D91C2FB"
+  }
+]

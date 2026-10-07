@@ -1,0 +1,14 @@
+[
+  {
+    "path": "D:\\cogito\\addons\\cogito\\Components\\Interactions\\ReadableComponent.gd",
+    "sha256": "AB0A7C4A4877DC2115A325D78513301BDDB820444A4B5342CA7154D35760D363"
+  },
+  {
+    "path": "D:\\cogito\\main-degauss\\recorder\\ui\\tape_timeline_display.gd",
+    "sha256": "CC3E1E0C04E1385286F22F59AAC77A4AB1D3949500CA0044BB79D2EACCE2C3BA"
+  },
+  {
+    "path": "D:\\cogito\\main-degauss\\recorder\\ui\\tape_timeline_viewport.tscn",
+    "sha256": "BA3522C5774B2E0BEA8B8D77CF79A3C967BEEF3B44E66D77C41637DBD75CC30C"
+  }
+]

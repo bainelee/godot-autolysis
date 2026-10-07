@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ckecp5cgmdrww"]
+
+[ext_resource type="Script" path="res://main-autolysis/systems/item-system/autolysis_raw_material.gd" id="1_raw_material"]
+[ext_resource type="Resource" path="res://main-autolysis/systems/item-system/items/caffeine.tres" id="2_item"]
+[ext_resource type="PackedScene" path="res://main-autolysis/scenes/prefabs/prefab_raw_materials/visuals/rm_caffeine_visual.tscn" id="3_visual"]
+[ext_resource type="PackedScene" path="res://main-autolysis/components/interactions/autolysis_interaction_component.tscn" id="4_interaction"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0qxi6"]
+size = Vector3(0.08, 0.17999999, 0.08)
+
+[node name="rm_caffeine_0" type="StaticBody3D" unique_id=1003444052 groups=["interactable"]]
+script = ExtResource("1_raw_material")
+item_definition = ExtResource("2_item")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1738432019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.450581e-09, 0.09, 1.4901161e-08)
+shape = SubResource("BoxShape3D_0qxi6")
+
+[node name="mesh" parent="." unique_id=832619275 instance=ExtResource("3_visual")]
+
+[node name="InteractionComponent" parent="." instance=ExtResource("4_interaction")]

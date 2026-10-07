@@ -1,0 +1,970 @@
+[
+  {
+    "path": "main-autolysis\\ui\\inventory\\autolysis_liquid_contents_panel.tscn",
+    "sha256": "CCEFD6A2E15735E93C8AAC9B7FE09917BCA0D676A4C8A2886B8363D6779646C6"
+  },
+  {
+    "path": "main-autolysis\\ui\\inventory\\autolysis_liquid_contents_panel.gd",
+    "sha256": "477D0416764AF4F83EE751C85870D40B9DE6CE0BDF8C1178C155AB47655B3EEE"
+  },
+  {
+    "path": "main-autolysis\\ui\\inventory\\autolysis_inventory_slot.tscn",
+    "sha256": "ED1C218D76A3FC60BBE7C9589B0E2078F7213741CFEDE510775E92A668A88322"
+  },
+  {
+    "path": "main-autolysis\\ui\\inventory\\autolysis_inventory_bar.tscn",
+    "sha256": "DAB4AB54ACDAB540D856A09ADB366AB3817DBA1231C30F5CD13A2A14DEBA7E6D"
+  },
+  {
+    "path": "main-autolysis\\ui\\inventory\\autolysis_inventory_bar.gd",
+    "sha256": "233B302CF6763D100F25BA51D6DA05624F303944DCA54308E6D26657996CC6D3"
+  },
+  {
+    "path": "main-autolysis\\scenes\\tests\\prefab_node_path_test.gd",
+    "sha256": "E9B4AFE729C63E1E22CBC00E3CF2C91131B1663F764CE9B7B4AA99A42CFE58C2"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_timing_probe.gd",
+    "sha256": "0F06B7764DA81FF3853CE09F7530CAFAEBE20AE959648F7E4E991A6A619C6639"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_runtime_once_test.gd",
+    "sha256": "924A4AB4EC64ED227269A4F57F4354DF75898A68FFAF131BF5AC118E32AB5327"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_ring_start_probe.gd",
+    "sha256": "22ACD6D4783FA3B8C24AC2E4A921371B9ACA5F0A726F0FB5D581006B6DC37C4C"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_return_lock_boundary_test.gd",
+    "sha256": "4FFE7E27023D8A8D5D04FDB6B1A78B832FC5C3B1656BCEB8114984BC486A40AE"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_return_cancel_dependency_audit.gd",
+    "sha256": "B08834E5F071CA381917551683085EA79C2BFF6337650126643AB2C4C918D418"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_pose_observer_input_audit.gd",
+    "sha256": "693919196893D4496966606E2AE6EFCC10033AB4B1AEEC6E5607164C0FB23C2E"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_movement_test.gd",
+    "sha256": "D393FA206CD05EAE2799BA09AB9307AEF4DF7F88DDEEEAB4F140FE37B6134D0E"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_movement_resource_audit.gd",
+    "sha256": "82BF6E8B946379C885BC65FD32E2B1D4D4EFC0EEB0A481819489888D2A237DC0"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_movement_leak_probe.gd",
+    "sha256": "933CB0FF5CEBF6923D8F5D0B543510BA910BA56F4FEC76325DE1564EC68A42C6"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_limit_sync_probe.gd",
+    "sha256": "98A541104CBD7D5FABD606D275793C307C7EA7AF339A122F84034994F5C90C83"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_input_test.gd",
+    "sha256": "270CF84E983ACD5D1B23DB84335FCE3374ABD18863E395846E4E4EF20B67C191"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_handset_view_test.gd",
+    "sha256": "131F09C192765B0AC5B34253441894EC50A8CAC841C142E37CA81F64A5B64A80"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_focus_dependency_audit.gd",
+    "sha256": "D8AE138407702AAACE8C66240498C0B463641E8A52ACCE6A79175727C13E6AAC"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_display_entry_audit.gd",
+    "sha256": "37A94D87D5EE3F9A3D20DBD36BB92259CCE4364A20D4D9E73960238E0F3261BA"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_device_test.gd",
+    "sha256": "53E75D40D63E7C582468CE70F85013C2FE1D4921200A77C2ADD7CDAE3913B327"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_dependency_audit.gd",
+    "sha256": "713BDD5B81FAD21A1BC2117951DE21238C2B745467716F9EE5A54A00BFDC8B1D"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_commit_observer_audit.gd",
+    "sha256": "526F3C4C190C5AE9F9ADA0087B5F95DE7F77E79579173DDFC8B16607EE473979"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_call_test.gd",
+    "sha256": "9A6CD9365F141E1527F87066DD2C0F33F39B6906D79F62F5D447D8C1F426596A"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_call_gameplay_test.gd",
+    "sha256": "49A11DA1DADEA410501F21FCCA901F3E0E613740C1BFD4F0E4FFFC4713252463"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_call_entry_test.gd",
+    "sha256": "6A27EDF2BB6CCEDBC93F69A440CDCCC172F4D903133163EDD7AD5792AD17D92F"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_call_boundary_test.gd",
+    "sha256": "9AFEF045B1746472AA00745820F9B08486A18B2F83EB4786DC2F449A933D5ABF"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_boundary_probe.gd",
+    "sha256": "D49D5A79A7878DA903233B8BA013B1164887D647E4713DB573B830D97A274312"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\telephone_audio_cleanup_audit.gd",
+    "sha256": "3583527EDA1D5414C6012E2EA6F8790AE498BA23ED1B24E3828DE8CEBD57F0B3"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\player_smoke_test.gd",
+    "sha256": "3314A86E043902F342BD023959DEF85C68A87FCD657587651F626B1655E768ED"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\handset_pose_debug_test.gd",
+    "sha256": "5787614BA409FB863D57E1E570207B882408EFB9AA12A2CEDAE2870B6EC50383"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\handset_inventory_test.gd",
+    "sha256": "0F4C5B4B2473B18D54C3D81FC1CBC4F4D010FC0B80438820AFAC5461EEA27941"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\footstep_smoke_test.gd",
+    "sha256": "20FE108A04F75A6029F3D2C92263D14CAE5F19E16DCEB053EAEC5F901EAC1005"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\focus_interaction_test.gd",
+    "sha256": "F430CF62004CAB069FBB49C5602C638089550DDC9D8CBEB1FA86D466D97CBA5D"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\focus_interaction_demo.tscn",
+    "sha256": "9B01C231C2CBAE74B5B2A71E37C46EC65465B3213958527C4B126650331ADB39"
+  },
+  {
+    "path": "main-autolysis\\ui\\dialogue\\autolysis_dialogue_subtitle.tscn",
+    "sha256": "206725AC0E48C5A6F9EDB18EBD8417A8F71FDF753968730443F9A0E94B9D8CBF"
+  },
+  {
+    "path": "main-autolysis\\ui\\dialogue\\autolysis_dialogue_subtitle.gd",
+    "sha256": "B52F22887328E66196B2F31E43841C8E07A4DFEBE2F2D3E6D7363BC238F3D9DC"
+  },
+  {
+    "path": "main-autolysis\\ui\\autolysis_handset_pose_debug.tscn",
+    "sha256": "4FB2A43F5A80F659E3E12CB0F6FE639AA268E2CC085CAA32BF73567735645196"
+  },
+  {
+    "path": "main-autolysis\\ui\\autolysis_handset_pose_debug.gd",
+    "sha256": "4E787CE16794A83F22F6CF443284CB78A76D37B1F74C88B3967CED025483CF55"
+  },
+  {
+    "path": "main-autolysis\\ui\\autolysis_crosshair.tscn",
+    "sha256": "9958375E76C1E95F6C4248F6FB015DBC265464B7968D06F6D5842F48309FD05B"
+  },
+  {
+    "path": "main-autolysis\\ui\\autolysis_crosshair.gd",
+    "sha256": "027707EA3F5D526DBDBAF7C0379B0B18487F3E60F14C596C91F4108589BF606D"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\fixtures\\direct_interaction_demo.gd",
+    "sha256": "66691B37EDF2D266549713267CDE36E4F258BAC2ED2667BD8C4473D883393E70"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\direct_interaction_test.gd",
+    "sha256": "F3DC471240A8E69F6DA1966EF08DBEBD22FA3CBCFC6F8B9D20EDECD78F0982F7"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\direct_interaction_demo.tscn",
+    "sha256": "1196550395D4BA224F160D681BB2E3D841F4B4A148AFF0301E48A6ED450C07E0"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\dialogue_system_test.gd",
+    "sha256": "8D787894C6D5D2303027DDC691EFA432BEABC22DB2A02650C9F87981CF3082B0"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\dialogue_boundary_test.gd",
+    "sha256": "0D3A8A44B1ED321867037D24378B7EEC0B2C034CD34E392BCCE42A33A9272B36"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\component_migration_test.gd",
+    "sha256": "28D239EC27325C222F69BAEAE4D848583D334E1051EB2BC41D2A7613DFEE2323"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\blend_handle_warp_probe.gd",
+    "sha256": "88303CA1EC8CE431FD323A23236B1590C0FF221F6E5F8CA3DD029A4BDCAB82F4"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\blend_handle_native_loop_test.gd",
+    "sha256": "10BD49CBB1C9D89994CF034EA09746DBB59CD79004B3DBEF4BEA52971E8D7DAF"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\blend_handle_drag_test.gd",
+    "sha256": "FF3CCD7ADC6FA75B0A1D6ADD703B004EA2F7079215020BB73B7A09725F5EF1E6"
+  },
+  {
+    "path": "main-autolysis\\player\\tests\\blend_collision_follow_test.gd",
+    "sha256": "CF6AB63DD09EB6AFC202EDF1EFB6C0DF167C6ABF577E86F046AEBD596AC2DB2A"
+  },
+  {
+    "path": "main-autolysis\\systems\\runtime-session\\autolysis_runtime_session.gd",
+    "sha256": "1DCAB3FF9B36104ECFA6852E5A76E33234B41AF38A70DB7E8916F3685C05A93E"
+  },
+  {
+    "path": "main-autolysis\\player\\components\\wieldables_sway.gd",
+    "sha256": "26C9EC6363551E822D8FA356195C9F8E8D68D9BB1353DB8132EE9891367421FD"
+  },
+  {
+    "path": "main-autolysis\\player\\components\\item_drop_shape_cast.gd",
+    "sha256": "095B48259CC0F1FCA27733A01CE91A24AC330FFF82860DC939FC28A16EC6BAC9"
+  },
+  {
+    "path": "main-autolysis\\player\\components\\interaction_raycast.tscn",
+    "sha256": "564A4F1B594A16390AC5BA088010B400F8CA14F2A1A6FB437C24611E9CF9435F"
+  },
+  {
+    "path": "main-autolysis\\player\\components\\interaction_raycast.gd",
+    "sha256": "40CBC621CAFCED645A9995395E9CBAD4261A3E9E8C5C4CE11AB639B6347CBBC8"
+  },
+  {
+    "path": "main-autolysis\\player\\components\\autolysis_telephone_call_test_trigger.gd",
+    "sha256": "E693FB85374A4D8B79F42A978BEC95504CBE776DF2A103B23DD3BC424E82EB31"
+  },
+  {
+    "path": "main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+    "sha256": "D9647DA624327B35FC6B932F4FFCC5220D5F246A48C911848558368AAE9E7F2C"
+  },
+  {
+    "path": "main-autolysis\\player\\components\\autolysis_interaction_controller.gd",
+    "sha256": "13CA6AA890A3C2160BA759D1936E445211E61A87C59221CFA636BD48C2B55179"
+  },
+  {
+    "path": "main-autolysis\\player\\components\\autolysis_held_item_presenter.gd",
+    "sha256": "83E442720EA448DA1B858761F003877A4F1ED4BFBD8A40B6741F5D22C8C32A14"
+  },
+  {
+    "path": "main-autolysis\\player\\components\\autolysis_focus_ray_query.gd",
+    "sha256": "9CD1DAEC39D2D4F2CB651592ADA1ECC713FD4BE19289A53EDBCD0D049751E13F"
+  },
+  {
+    "path": "main-autolysis\\player\\components\\autolysis_focus_controller.gd",
+    "sha256": "9502411F8099C37B4F1390B96D5A954853C6E36776687424D634C78EB14EB47C"
+  },
+  {
+    "path": "main-autolysis\\player\\autolysis_player.tscn",
+    "sha256": "DE47A6E95E53E9F2CE16EA240629630BAC72B056170AEE584A68475EB6BC19AC"
+  },
+  {
+    "path": "main-autolysis\\player\\autolysis_player.gd",
+    "sha256": "BCDCE1020514E40B7D04BEC909634235ADAD6C49227CB88387F3529097541FB9"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\visuals\\rm_sodium_benzoate_visual.tscn",
+    "sha256": "F88B642590C1C5ACD99A3170B9182CF7455158AE540C03774975955FC44A7CCA"
+  },
+  {
+    "path": "main-autolysis\\player\\assets\\player_eyes.tres",
+    "sha256": "40E155AE4C5735A0AC837CF71B4B9A0CB19CB125375419760687D64350A743D1"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\visuals\\rm_caffeine_visual.tscn",
+    "sha256": "4BEF48B7322A1089C8CD4B5C4B53A72549E8F75163217A8DC8B64E3DB324D0EE"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_group_0.tscn",
+    "sha256": "B23C3312E1775BF00DFE42908BCCA85DB4E735DFB1E9A4E852D9E0D7A7265747"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_sodium_benzoate_0.tscn",
+    "sha256": "57F96A7E2497FA90CADF6BCAF076394A388B05C73A93F8EA03A5AB999164161F"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_group_0.tscn",
+    "sha256": "050E16ED01CB18C569F7A6E04F09CD8F1B2197C8897B01A1D21CE296B99A13A9"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_raw_materials\\rm_caffeine_0.tscn",
+    "sha256": "96DEBF163F7408F8B369BC7C04D9753E6E656E15F8064CCA4A74D8CE347A1870"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\shelf_penumatic_capsules.tscn",
+    "sha256": "D1E4FD492AE8474C9DC290EEDCA152FCA436CB5E5ECC4EAD36E3102571F2C75E"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\place_shelf_workroom_rm_0.tscn",
+    "sha256": "681D7FF294509B1E00EFABA2AA6BD2AA934331A0F7FE310D3886F3443599D999"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\place_shelf_workroom_bottle_0.tscn",
+    "sha256": "3ABA2ED976209C3A2E02E9676510076D8C3863CC99AF9A596D2F20D185E486DA"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_place_shelf\\cabinet_workroom_0.tscn",
+    "sha256": "E823D9794A42E3EE8A99D70969F39DB457564882CFB289D3FCFB893922FF1FFE"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_paper\\quest_paper.tscn",
+    "sha256": "6F8AF0D82C7392ED565F18921C2BBED3E258B5652C954FD53DEB491E614DFD30"
+  },
+  {
+    "path": "main-autolysis\\components\\interactions\\autolysis_interaction_component.tscn",
+    "sha256": "A4F12CB6ADDE0F4343C438C3076CC4AA7E5A0528CABECF29DE825EA2FD38727F"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_furnitures\\wall_air_vent_0.tscn",
+    "sha256": "2F79C6481B58F40E4441737FF58302EC3F611FE9B0036A400F892E1BB8F986B8"
+  },
+  {
+    "path": "main-autolysis\\components\\interactions\\autolysis_interaction_component.gd",
+    "sha256": "FB38CBAA492FAA58F62AC9E4C28CEDB3E9AD918C9641D49E7A56B0DF037BA961"
+  },
+  {
+    "path": "main-autolysis\\components\\interactions\\autolysis_focus_target.gd",
+    "sha256": "A3C2C75F0F81434FB99336B9E1EE71A6EBB54E9DB1C4B4D4B24EED7C3445B032"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_furnitures\\store_shelf_warehouse_0.tscn",
+    "sha256": "DC510E16B0F511E424958B4D1AFAE1E50030662C9EE1166B072552EFF8F55389"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_furnitures\\light_prefab_uplight_0.tscn",
+    "sha256": "8C3A31C9C98C36BDA22289F8CE086A439810512FCA5C7CA727C618A5C189566D"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_furnitures\\light_prefab_small_wall_0.tscn",
+    "sha256": "D09B66067422E2969FABBDEC6D3B623431B4C78E66230644E2CF175C9EAB19A0"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_furnitures\\bed_0.tscn",
+    "sha256": "C32C2AB084F46BE0E7224BA496B22F8ED8A91F33F3ED51124B57C0CCAD1EC2E7"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\confessional_and_trade_0.tscn",
+    "sha256": "CE93D191CFD2025207E687B549F67925D9F098593FE72AE69613958884DDED93"
+  },
+  {
+    "path": "main-autolysis\\scenes\\01-autolysis-test.tscn",
+    "sha256": "F59883C2B4B19D5B98A87A3526A40F9DD46160FEEDB107852EE63C1D32F57350"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\capsule_data_behavior_test.gd",
+    "sha256": "A5D81E28BB16896E8DF4B32EB84A5C3F148E33B92C90F1FC04EBA4A7D443CB52"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\blend_slot_transfer_test.gd",
+    "sha256": "743B9DBD95EB730BE89EF888BCD828490655620ECFB392D0CD476F5820F44914"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\blend_indicator_test.gd",
+    "sha256": "BE4D8F60FF6EBDC26B2EE7F1CB9C9B706C4A18CED30FE24E9773FD7703061392"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\blend_animation_variants_test.gd",
+    "sha256": "B2198949D520DB5AE7B52BEE0A712BC8167F7B96DEC9849D8FD4034B207A127D"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\waste_liquid_tank_behavior_test.gd",
+    "sha256": "3B192015D7A26DA20564BD363E1357AF69D67306B4B6F352C859E7CA961D3A73"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\test_evidence.gd",
+    "sha256": "57BEFD315C701D2571DAF08671C7352E067D71939DC93967FA504DD35BC27309"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\shelf_layers_test.gd",
+    "sha256": "F100E44BB1005497D54828A175CF50E6B62EB5D5262BB16BE63751115A57F088"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\shelf_clearance_test.gd",
+    "sha256": "6B9220B43E7E968D4660F58DC8B7BEDFB9051A2B221D6D7701DDFC32315A01BF"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\render_pneumatic_capsule_icon.gd",
+    "sha256": "010E9811C904A0AAF27DE802401E41045759339942BF779042BB1555CDE38925"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\render_liquid_tank_icon.gd",
+    "sha256": "BDEA6ED42A05C971850C84315B28708FBEB5C2701B83DDBBD238BDCA8256BC4C"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\render_item_icons.gd",
+    "sha256": "94F0DE442CA099A5D30E9AA4591E2E1AAD687F9A1623CA16C5513521428AB6E6"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\packing_switch_repeat_test.gd",
+    "sha256": "4567E79CD6A227667269E3485D12B55C97AB0AA787BD3D9EE3675CB15199CEF6"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\packing_motion_physics_test.gd",
+    "sha256": "11A1095DB4DFB35513B16730DF6E3CF7031AE291241848CF21BFC800B61B9057"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\packing_machine_demo.tscn",
+    "sha256": "D5A8259D58454789BF2D9148BADAE0262F76411917FF70D18AA8EA37BB87D7BE"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\packing_machine_behavior_test.gd",
+    "sha256": "B957659911781F4CF884EE617CABEBBD75FAC707B506B972A7566459CEAF07FA"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\packing_indicator_test.gd",
+    "sha256": "2AD9FE92F7489A121C58EB2BD17E8FA4908FCFC708A5575043D2960DA3022D30"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\packing_batch_atomic_test.gd",
+    "sha256": "B01FDBB93003A32FB066E5848BC35EE0B2D7F580AE73DB3115FBA05037DC0DE6"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\packing_asset_isolation_test.gd",
+    "sha256": "C6C16CFDF4B5AC7C0BBD0EA55100DF5AF037848CDBB633554E2A1182148A7A89"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\machine_batch_atomic_test.gd",
+    "sha256": "BC1D9A44BEFBB73FB38EC76C650ECC9933D189CCB00DF0B228EC10E50BE10140"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\liquid_tank_transaction_test.gd",
+    "sha256": "80C6C35FE6E0BCC25F58E9CD86268154C679E0B4ED6D5836D379FAF8C46F7BBD"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\liquid_tank_cabinet_rendered_test.gd",
+    "sha256": "EAA05E2D852C193EEA7D63698A7D33FEA0E5675200BC565943523DE5FA60C6E1"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\liquid_tank_cabinet_behavior_test.gd",
+    "sha256": "B19964571A515DC2EBACC37B7A14F87B6836D266D97409B592325D1DC9333926"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\liquid_contents_main_rendered_test.gd",
+    "sha256": "744119F17223B89E9D7557C90EC2111469CD00700A29CE6A6D00B035A031B115"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\liquid_contents_blend_test.gd",
+    "sha256": "83265E84AC049CEDF666DC72748ED35E1ABC749BA43756E2ED74E6AF30B5FCE7"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\item_system_test.gd",
+    "sha256": "948A594752F52E0D3DB589F80CD1952EBC6FF9BF56DD981B6150B103346F0B28"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\item_system_rendered_test.gd",
+    "sha256": "539267521B4A5DC5C843A43FE875F033C5AFFAC37385529522DBD4D320BC3E4C"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\item_system_demo.tscn",
+    "sha256": "3139F0A9D62558D781B845C6C5A95F1D11A8A8C7B29E967242F321251AEC3978"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\hand_pose_render_test.gd",
+    "sha256": "B284CDEF898A56B5B1239733710CB7A103872A51CAB5C629FD1457FCFB267462"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\container_animation_timing_probe.gd",
+    "sha256": "DFB240FE79CBB23F2D7F84D29AA60C80D17AC5C1253F300B42671769241DA6A6"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\tests\\container_animation_asset_test.gd",
+    "sha256": "629094E18EA457FFAFE473393BCBAFDAE15D0BD282D54447D1B7387EFAF87032"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_items\\tincture_bottle_group_0.tscn",
+    "sha256": "25DE9B8CC028F32DBDE213F7473336D0DDA8FFEE32A136510D39B148483D8AF6"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\waste_liquid_storage_tank_0.tscn",
+    "sha256": "4DF71FED4AE71510ABEEE6762B1C19C21FE1516D3A72300F2B40FD62B23E77F2"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\items\\sodium_benzoate.tres",
+    "sha256": "E1BCB9420622E8DFC5D0546ECFBB02D8E3709F9969BD50C2FD62C505D97E0210"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_items\\tincture_bottle_0.tscn",
+    "sha256": "4BD21ABD9554615347382EEF907283B7356CDFAD1FC786FB96B37C112C950396"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\items\\pneumatic_capsule.tres",
+    "sha256": "F4DAEB93C67724EA26A2183E53D49928397181D2B5CFB1A8F37976B6F4B211CC"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_items\\syringe_group_0.tscn",
+    "sha256": "A76DF9FD546E2D95A376E949DE993F3DC81BF7BBC3E49E65F37823F179961781"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\items\\liquid_tank.tres",
+    "sha256": "74EE98EEBA9888785BDD8A49DE3DEABD039099806DDEB74B25577448E71E2CA9"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_items\\syringe_0.tscn",
+    "sha256": "461F0AA9D2A7A5525E78D0E9317A162A27EC18213F891E1822D614E96E231320"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\items\\caffeine.tres",
+    "sha256": "128E7B6C7BD9DCA6BE0D6B374BF057F40302B8222775E134D57D9DA5DC0A2446"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_ration_0.tscn",
+    "sha256": "BF4195E6848E1A1B23C15DBFD18AE06875E2E3581FD4520DDC6A3220B4C73624"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_pneumatic_tube_0.tscn",
+    "sha256": "FBBF30F7E3D6E77F42F1E4546440070CE511CEE49D841A3F7CF033D9A71DEB5D"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_phase_separator_0.tscn",
+    "sha256": "605ABD03943F6AF3026CA44A71584173EE50A5B91B6BFC26E0D242EEB681E333"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_packing_0.tscn",
+    "sha256": "6E824739E0ACE0009787086776B15730893D96B31D105E5FDC63C2CF813E577D"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_extraction_tank_0.tscn",
+    "sha256": "0BBC98A6E5EA6E67DD8DD64160AF4C3D43483DD41CAECDBB23B1EEAC1E39FDD8"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_daily_test_0.tscn",
+    "sha256": "DEF9ABE6AD269FCB1BF6912C6A6BBECEA276016314C1D908D9F19D9351FC5519"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_blend_0.tscn",
+    "sha256": "F8B92CC9106AB57254B0F5CE5016B6FC1617C44E305A4A57037A151230EC134A"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\liquid_tank_0.tscn",
+    "sha256": "9A8FB1FD9B1D491541121F943B9D390606B93BD15E9BF195CAEE2B5E0A98179E"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\autolysis_raw_material_shelf.gd",
+    "sha256": "E47FF00B22CAFFCBC43F288C8F73CF2F4A038EDFBE8ED96E5B1B6C687586BD5C"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\autolysis_raw_material_group.gd",
+    "sha256": "FE5D05DE12050EF9F550BA6C5DC821E1F789856573E53005AE90809DFE0CF30C"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\autolysis_raw_material.gd",
+    "sha256": "B59E2409AB98C5D005D64E829D65FBFD87BAC851A1B872C1215EF20E648283D9"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\autolysis_pneumatic_capsule_visual.gd",
+    "sha256": "1C1423C433E5242C61A16BD58A55E2084EC33BDB61E3E50AB6817739107D8F77"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\pneumatic_capsules_0.tscn",
+    "sha256": "00DEE8663955A515452C549971CA28D8C4092B5210C7D688464B7A4A385551B3"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\autolysis_pneumatic_capsule_shelf.gd",
+    "sha256": "0B60EE7A334E1ABEAC605B255A64B78806455233092CE004B5DDAB28AEBF3D4E"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\manual_shelf_0.tscn",
+    "sha256": "576EFEB129FAEAA5A607A46D34853D7D1B09D186BFC6F5028A2662A15290FA08"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\autolysis_pneumatic_capsule.gd",
+    "sha256": "61B399A244EB1832B7EE351A557DDF7959900368905373E3A3E742459D6FD065"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_wave_rebuilder_0.tscn",
+    "sha256": "BF9FFF1DB8318D995A0C63CB877BB9636B1E346FD95E736DBD05BCB3CF24BC4E"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\autolysis_packing_contents.gd",
+    "sha256": "11D62A989670C77173AEFA1EEDC1BF7F5F29D6CBAF82AB454A7C1731B312D831"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+    "sha256": "95B707EC99F2192A8978BC4F39F125B8E35B00551D90A7DFBEDBB055CBC62400"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\autolysis_liquid_tank_visual.gd",
+    "sha256": "9EB1C287F97C96338245BA3B2BA2A6778E5CB2DDFC515D74C31C432D16CF58F8"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\autolysis_liquid_tank_cabinet.gd",
+    "sha256": "503C4D7C45869C766A5AC015C31B61A813E88ACDCF0D7B3A3D8A480AD01ADE98"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_machine_0.tscn",
+    "sha256": "7900C8C3126EE4554311D3481E2D66BADF23A7CCC7A716C0D1125FAFBF5678A0"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\autolysis_liquid_tank.gd",
+    "sha256": "175741CF9834C3AC7A4B868465721E86924F7EE0DEB79C6B7291B1D2191CC840"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\quest_board_0.tscn",
+    "sha256": "5B59ABC3D9BC5CB2C634663A68C186A2EA50B9F01C159F9E6CDF25E7D3FEB5AA"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\autolysis_liquid_contents.gd",
+    "sha256": "7C91B3547D92C1012295298E30BE8E39F167DADD59815FBFCA1C6E9B7D7A422A"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\autolysis_item_instance.gd",
+    "sha256": "3E3D3A0D7FCFE9B000D2A6E6E063F50969734426AFAD5DE035ED3B67E9D197C5"
+  },
+  {
+    "path": "main-autolysis\\systems\\item-system\\autolysis_item_definition.gd",
+    "sha256": "0B351468E056185CAFD4DC12318EACDC164F66D8E1E6681E6AF7536CB7561191"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_surface_detector.gd",
+    "sha256": "61FF789A1AA640A2505D087B4C11FD165AD17F7F72474FD8803F87B0D3259552"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_surface.gd",
+    "sha256": "6346CBD1020A16B186326155179D7ABE1C79BE6807BC87D47F4A7E43B1399703"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_material_profile.gd",
+    "sha256": "B36F723AE97F1340556DD9C5B0491AA63737604717833D2D21689D660A54E82D"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\scripts\\footstep_material_library.gd",
+    "sha256": "55F6C68FA5BD83A154A1FF9C230C81F5B9ABD7E4F9A8E58BF9856EC9BDD2DC25"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\visuals\\telephone_handset_visual.tscn",
+    "sha256": "1A17500A3074EAF1E11757E80DD050CA24ABDCE74EA6BE45BD4D8764929CCFB1"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\visuals\\pneumatic_capsule_visual.tscn",
+    "sha256": "1C44A8AB0053B66456A974BB268284619C247541C6DB7DD7C51DABBCE2E2B634"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\visuals\\liquid_tank_visual.tscn",
+    "sha256": "3CEAEE667D9E439FE7BFD233D58F3A0DE5273F4895593BE4EEC1CCC24D08059F"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_handle.gd",
+    "sha256": "87A16986B21542636BDF82B17A0022E95E9D72F39B0EF0949E9E6D38EC98F578"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_machine.gd",
+    "sha256": "70A48987715B02922BC5200368208BC98D0EAF412D8A54A46FBA4ACFEE3B36A9"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_slot.gd",
+    "sha256": "F682A942242A9184FC3D12723926456B798344C0A3B2F42B9ADBC103E7DDACFE"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\dynamic_footstep_demo_scene.tscn",
+    "sha256": "38E68274EC4EB4024685B341635A1E4B8FD3CA98FD81DB361168A99F4D7202B0"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_door.gd",
+    "sha256": "5A551D7E1588F3CB7FA54C965F78F90AED59C9E3D695426DEA452C78FA4A6C5E"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_capsule_place.gd",
+    "sha256": "DABA3A7005BD614BB33945FFDFDFDF219357D3627BA3D437EDC0B79F49871E67"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_blend_tank_place.gd",
+    "sha256": "27C8F29B181F0ED6AC79A7D37718E32516C1AE3A84E8774C5E78883348B783A4"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\grass_footstep_profile.tres",
+    "sha256": "5B61A29366F3A19D7426218875FBB1E2AD6EEC42F9B0342348C01B22F4CCD384"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\wood_footstep_profile.tres",
+    "sha256": "F4FEB344F9A20D2716253BC1BACC0E0E22F2EA0094DED8192C6094091F27054D"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\generic_footstep_profile.tres",
+    "sha256": "9F7E38AF65B1CD7949A9BC482EA988A2712669E9523835A20FF3A8F486FA8673"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\dirt_footstep_profile.tres",
+    "sha256": "1655C6EB425866C2B8C446DA240C02035A86F93CB0D26147F649E29FC85921AA"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\stone_footstep_profile.tres",
+    "sha256": "4F31FC21D414A7EEE163A1BB5C902F29D60C15C9AC346AFBC4C4646412E0E50A"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\metal_footstep_hard_profile.tres",
+    "sha256": "8BAD28F2E518596D41BC4255F131EFBA18FC9D7AC2E8A8FCDB84D7B00B4E6431"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-profiles\\metal_footstep_light_profile.tres",
+    "sha256": "4846E40AD4F8BD2D94AA51C3421C5A4B507A4852B28E5206F4B0011585D0F3A4"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_start_button.gd",
+    "sha256": "37E7223D7091A23CCC36A508A684B8DBAB6828800C6DD50D47A0A0787682D450"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_tank_place.gd",
+    "sha256": "71A2E8CC7CC210272A2C19F5D83BFD2A2235300992029A2F69B3EC16303137BF"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_motion.gd",
+    "sha256": "9DD67DAE13C6BCCF06B69D03570307C49B7C0EF90CC950BD315AD832CC66DA17"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_type_switch.gd",
+    "sha256": "3C978B0A4A88A6576EEB267E79457382F55B7B95F435996220895DC21E38B33F"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_packing_machine.gd",
+    "sha256": "F5F6E7E5CB5A9A7DD6BEE9E2AEDBEF6EE17E43B355C982F78BDBC157F18771BC"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_waste_liquid_storage_tank.gd",
+    "sha256": "3A1DED658009A33D2B2E52AE1F4C46BD7D8531D6685ECE8F05E2DBD68502D4B0"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone_call_controller.gd",
+    "sha256": "1B14BEC0839870757766727EF08CF9FB1E6A52D7F95F700F7E73D87AA683FBF8"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone_audio_controller.gd",
+    "sha256": "4C6E6816B9A6D48F3BCAB476C0610450969A0B46925871E94FF38592773A4682"
+  },
+  {
+    "path": "main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+    "sha256": "4A80BD30D95FE63369218A35EDF95427EB0AD50D74586E4917E58FA680A78A59"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\footstep-material-library\\sample_footstep_material_library.tres",
+    "sha256": "D0F62A1D04CBC4897D68311C3E29F5DB37DA9365D9FABACF96762BA03C7AFC30"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\liquid_tank\\liquid_tank_filled.tres",
+    "sha256": "28E0C2E709F8E66D39DEC060DCE7389E1FB79D10ED0AA754C2EDB2F02DA82F72"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\liquid_tank\\liquid_tank_empty.tres",
+    "sha256": "178F46CECCCCD965C5A3F389AA6C8E97DB5294B6C6C66135DF39362CBA792EFF"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_orange.tres",
+    "sha256": "4DD34B83CFD29B6FD596F1E2FBA369E80F412D5164E39B10A1AEC5C2CEBA955C"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_light_grey.tres",
+    "sha256": "354CDF329FC5F54724B2619CC180EA3A6997A294A8318BADCE0E7EBC49DF84F8"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_green.tres",
+    "sha256": "931D1C8212F1387ABDAEB593563E027796DD0434A6524AF2B406D46F280268BF"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_dark_grey.tres",
+    "sha256": "F29DBB94EA76F2761EFDE42212F466351DCA7EA03259E299385C5076317AF505"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\prototype_brown.tres",
+    "sha256": "FB889FCC689F0323EB5B1EBC04C07B8D61044EAAD55D56CE773FCB674BCB86FA"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_wood.tres",
+    "sha256": "714FC73BE2D43613B554F2B601BD2CD9FA801EB65D96CDA76A3438A42ED1A7F4"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_stone.tres",
+    "sha256": "846E07893FC25D50FD56E9FC2D5A4C3D5ABD86186ECECBC231B9DDC9986420C7"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_grass.tres",
+    "sha256": "DBED9DEF9153F3B32FC348CA89A8386FA2773D99161AC70792CC554274F2EC26"
+  },
+  {
+    "path": "main-autolysis\\systems\\dynamic-footstep-system\\assets\\materials\\example_dirt.tres",
+    "sha256": "57443A5549DEA011FD1F52CC50DFD4D3E36C0499407FA955B6A90AF95D19A221"
+  },
+  {
+    "path": "main-autolysis\\assets\\audio\\buses\\default_bus_layout.tres",
+    "sha256": "1D9C2AE1F24CDA404461DB643CFE412234B20FEAC477ACDCEF47C27E6D1F34A3"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\glow_color\\mat_glow_white_0.tres",
+    "sha256": "030D0B2F149F4D173343DCA345F0B62D2C44E6CA139013182391818B906D753A"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\glow_color\\mat_glow_orange_0.tres",
+    "sha256": "908E8C6D3345E2FA840B5766FB8B6F6FBB716ED9B43F48F44C69B764C279F560"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\glow_color\\mat_glow_green_0.tres",
+    "sha256": "ABFE9C4F2C5B31468BC4A579EE899D723C7F1B293E7C1C4B6AB9E6ED6D894D6F"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\glow_color\\mat_glow_blue_1.tres",
+    "sha256": "960DBBC3544A672BF17BE2044CB51AAE8DBC1F7FB296836ACD077FCB717B8289"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\glow_color\\mat_glow_blue_0.tres",
+    "sha256": "3A6DD0BFBE7E633753E931A4C92CF4BCA6C1FA9A17EAD104F74561FFB57DD42F"
+  },
+  {
+    "path": "main-autolysis\\systems\\dialogue-system\\tests\\dialogue_visibility_boundary_test.gd",
+    "sha256": "B141B1FC9DFB897563BD2384BAB736739BF51527CA67E305BA628E703ABF8C5A"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_translucent\\mat_trans_white_0.tres",
+    "sha256": "67DF2E81A8C52032E86496EEAA0A74B7F21B3FE5577B5EE87CF08DCCE308358A"
+  },
+  {
+    "path": "main-autolysis\\systems\\dialogue-system\\tests\\dialogue_configuration_check.gd",
+    "sha256": "53E7280686C5523EDAB087AC7918175659D49154A5D95C004DEC0B492DACA55E"
+  },
+  {
+    "path": "main-autolysis\\systems\\dialogue-system\\chat_0.tres",
+    "sha256": "FDFC86C6D1C193F3E0815E153980BB05A98F284000B92DC318D4AAA70B35B024"
+  },
+  {
+    "path": "main-autolysis\\systems\\dialogue-system\\autolysis_dialogue_player.tscn",
+    "sha256": "EC8E7954E537D5462AEE8C795CD90B5E6759CF89A11026E2E784F5116B3DD167"
+  },
+  {
+    "path": "main-autolysis\\systems\\dialogue-system\\autolysis_dialogue_player.gd",
+    "sha256": "B40411208E3A91628031D97F584D29D3BE6463225EC8E3C98A12615172510B3D"
+  },
+  {
+    "path": "main-autolysis\\systems\\dialogue-system\\autolysis_dialogue_definition.gd",
+    "sha256": "3CAFCD0072CC466DB638D938297B0E53235792A37E5C624CA2EBF77530CDD3B8"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_white_1.tres",
+    "sha256": "D4D5B9E0D5A76C00F85710BECF6D5D07468E6678CB7374F3AD4E2A8DB9352D76"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_white_0.tres",
+    "sha256": "210A7E6A205C5C18211D4FE69E199F9CFA9C77AB7AD7C80916A0EDD5761918C0"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_red_3.tres",
+    "sha256": "36FEB008DC3A0355C0582E188D8F0A23DAD52BC1BC126E1B7224985844135EB9"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_red_2.tres",
+    "sha256": "2B956E95C8789E9EAEDD2FC9DB69630DE8028ED772C6EFFEBF77AA61320D8F30"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_red_1.tres",
+    "sha256": "A5D81F68C04B2BF3BB8D303A24B7600ECA33C9A278904F4D35C7ABE30DC58768"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_red_0.tres",
+    "sha256": "C1D33DA642850376D6755331C5987EB1070C26D03D39FCAA7F9A6FD2012A5D67"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_orange_1.tres",
+    "sha256": "0078071B1F79797E35596ECD030AF2E945269B49A604A2AFC29D94DD3ED88C7F"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_orange_0.tres",
+    "sha256": "084587A4A0B45CC2621B127E431BE22633C0D4A2CA1A0D45BCFB44FF51E07DAE"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_grey_4.tres",
+    "sha256": "8219517EFE79E0627DD686974C2AF8E3B93419CD0F65BE24D986BF595F5504D0"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_grey_3.tres",
+    "sha256": "01908DE7C1DB8FE5A5D4A7217B5D6AEECAFB90AA7A3A2489D5620B5F10905DA6"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_grey_2.tres",
+    "sha256": "F2FC94256509361694B85AA3C95A6DABDA9CE0656CDBBCE50C972ADDAE5F08AA"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_grey_1.tres",
+    "sha256": "3102FC42495CFED10B8AAFCD8EA1A09D468CDDB9E8BF0E0168269B693C637755"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_grey_0.tres",
+    "sha256": "30BCF9CD9F944626A4993739EE82F583D7D5127A3138E291FFC553FBCEBCC3D1"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_green_4.tres",
+    "sha256": "F9DB619BA397A2D4F6A738D49B818AB1F1A352A69F037D44336D89C0CB7C9209"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_green_3.tres",
+    "sha256": "C57473DCA97A92130BB88B4AD5548224534AA0BAB6976F7338DA218425253CF4"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_green_2.tres",
+    "sha256": "CB8924130CDCF6C507D44DDF1433A8F3C479B97510C2BD79CCA5A73B2299AB84"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_green_1.tres",
+    "sha256": "962E4FD39C506C8922A01B660F9F16103675936A5D74E1B896184A05E1751D62"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_green_0.tres",
+    "sha256": "66C496022926E5B7CFB16CEE37A4723545737B615CA76CD98745B12291A0C77E"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_darkblue_1.tres",
+    "sha256": "955596A23A98D7389C524E4AA7170E4A606F1C4691A6D1034415E231E123FC13"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_darkblue_0.tres",
+    "sha256": "5C856012B9B8FA9180B1A64D2735E63613716670A244896C0469EE9D2EF7694A"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_brown_2.tres",
+    "sha256": "E2CED69540324AC3385362D915A7EEE33AE709C7C36AD6C181D39273F851862E"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_brown_1.tres",
+    "sha256": "4BF9748E54A5F1A264201ADA96D933E9875B595DEFAF424262816D724EDA415B"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_brown_0.tres",
+    "sha256": "688788B1867A722168039FB4895FF81C2DA22EEE0E84CCA373F964E56808819B"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_blue_3.tres",
+    "sha256": "12C8E5251659805C1BE68C83A9864CB6546AE73DF769F5186F93F2B0C2027A1C"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_blue_2.tres",
+    "sha256": "646D8F6C9AAE112CF50EEF155D9D5A1C8303F29A86CAD86DC0A505EADD12529C"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_blue_1.tres",
+    "sha256": "752A1B04F07C6B77B7EA0A3A9F5655DC496F10CD0A9107CC4983E2BDA79AAA5E"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_blue_0.tres",
+    "sha256": "59CC8AB4318260AA1F3AA5A305A73B1AC5E6804C13EE1F48B41763657315DEE3"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_black_1.tres",
+    "sha256": "4D559BC3A3517DAB9ECCA77C7834EA46FBC48F08A03351797E29145EE4463A36"
+  },
+  {
+    "path": "main-autolysis\\assets\\materials\\base_color\\mat_base_black_0.tres",
+    "sha256": "28A72D5F853E6BEB549FEDE54351C8EDD4B33B3B553449B4E79C09AFD83AFF1D"
+  },
+  {
+    "path": "main-autolysis\\assets\\audio\\sound_fx\\machine\\sfx_machine_scanning_0.wav.import",
+    "sha256": "6B801C3B806AA0140D7C20C48E6DB0D917240F28CDC66F4BFF26EAA51C67C761"
+  },
+  {
+    "path": "main-autolysis\\assets\\audio\\sound_fx\\machine\\sfx_machine_notice_0.wav.import",
+    "sha256": "9A470307187D596B3B2FC8C0852BB6362809D1CD763D2273709273879B56B4BA"
+  },
+  {
+    "path": "AGENTS.md",
+    "sha256": "37858D04A7074AFEC6ED8DDCBF8044B3FD615B05D9B342D8C90081788D93AA99"
+  },
+  {
+    "path": "project.godot",
+    "sha256": "9F77E1BAAD4F69F203505C8892286BDEB99343D87A8277FFA488E1904CC75704"
+  },
+  {
+    "path": "docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实现计划p1.md",
+    "sha256": "AFABDFE5478B8C54E3A32FB37717CC43CCEB0206A5D60D6FE9E4D4AC50812136"
+  },
+  {
+    "path": "docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印讨论p1.md",
+    "sha256": "FD734FD2D0F33EB34CA6AC0DF23AAE20EB48349D32D254BC2A455D813AD20CCD"
+  }
+]

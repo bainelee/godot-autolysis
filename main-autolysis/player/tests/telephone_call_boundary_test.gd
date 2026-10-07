@@ -19,6 +19,9 @@ func _sample_boundary(label: String) -> void:
 		sample["限位停用"] = phone.move_limit_shape.disabled if is_instance_valid(phone.move_limit_shape) else null
 	if is_instance_valid(inventory):
 		sample["库存持有"] = inventory.get_handset_session_id()
+	if is_instance_valid(player) and is_instance_valid(_dialogue()):
+		sample["对话"] = _dialogue().get_session_snapshot()
+	sample["实际开始句数"] = boundary_lines
 	boundary_samples.append(sample)
 
 
@@ -148,7 +151,13 @@ func _test_necessary_handset_and_limit_release() -> void:
 		phone.request_call(single_definition, player)
 		await _take()
 		var session: int = inventory.get_handset_session_id()
+		check(is_instance_valid(phone.handset_audio) and phone.handset_audio.telephone == phone and phone.handset_audio.sound_origin.is_ancestor_of(_call().voice_player), dependency + "脚本替换夹具保留正式听筒音频与语音输出接线")
+		check(is_instance_valid(_call().voice_player) and phone.is_ancestor_of(_call().voice_player) and _dialogue().get_voice_output() == _call().voice_player, dependency + "本次准备已选择同一电话的实际空间语音输出")
+		_sample_boundary(dependency + "取筒提交后真实接听等待读取点")
+		await _wait_realtime(func() -> bool: return boundary_lines == 1, dependency + "等待实际接听计时自然完成与首句开始观察")
 		check(session > 0 and boundary_lines == 1, dependency + "生命周期用例已经实际开始本次对话")
+		check(phone.handset_audio.sound_origin.global_transform.is_equal_approx(inventory.get_handset_display().global_transform), dependency + "实际对话开始时听筒声源父节点跟随当前持筒显示")
+		_sample_boundary(dependency + "接听等待自然完成后真实首句读取点")
 		var other_actor: AutolysisPlayer = load("res://main-autolysis/player/autolysis_player.tscn").instantiate() as AutolysisPlayer
 		other_actor.set_physics_process(false)
 		other_actor.set_process_input(false)
@@ -244,11 +253,14 @@ func run_checks() -> void:
 	await _test_necessary_handset_and_limit_release()
 	await _test_after_business_completion_rejection()
 	await _test_last_fade_frame_matching_lock()
-	DirAccess.make_dir_recursive_absolute(evidence_directory)
-	var report := FileAccess.open(evidence_directory.path_join("来电到期提交观察与来源生命周期.json"), FileAccess.WRITE)
-	report.store_string(JSON.stringify({"引擎": Engine.get_version_info(), "失败数": failures, "断言": records, "边界采样": boundary_samples, "图形验收": false, "原生输入": false, "内部输入": "真实菜单动作由引擎输入解析；真实计时自然完成，无人工完成信号"}, "\t"))
+	var audio_references: Array[Dictionary] = _capture_audio_exit_refs()
 	paused = false
 	if is_instance_valid(world):
 		world.queue_free()
 	await frames(3)
+	await _await_audio_exit_release(audio_references)
+	DirAccess.make_dir_recursive_absolute(evidence_directory)
+	var report := FileAccess.open(evidence_directory.path_join("来电到期提交观察与来源生命周期.json"), FileAccess.WRITE)
+	report.store_string(JSON.stringify({"引擎": Engine.get_version_info(), "失败数": failures, "断言": records, "边界采样": boundary_samples, "退出音频采样": audio_exit_samples, "图形验收": false, "原生输入": false, "内部输入": "真实菜单动作由引擎输入解析；真实计时自然完成，无人工完成信号"}, "\t"))
+	report.close()
 	quit(1 if failures > 0 else 0)

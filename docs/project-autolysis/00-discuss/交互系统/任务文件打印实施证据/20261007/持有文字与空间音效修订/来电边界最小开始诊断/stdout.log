@@ -1,0 +1,8 @@
+Godot Engine v4.6.1.stable.official.14d19694e - https://godotengine.org
+
+通过：正式根组件分发进入电话聚焦
+通过：正式听筒组件分发取下请求
+通过：取筒提交完成后两侧占用一致
+失败：原读取点要求实际语音已开始
+电话来电异常终止：{"原因":"边界开始读取点诊断清理","原持有会话":1,"对话编号":"telephone_single_test","当前句索引":0,"播放令牌":1,"来源":"/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D","来源实例身份":102961778281,"来电序号":1}
+通过：退出前实际声音播放实例已解除全部引用

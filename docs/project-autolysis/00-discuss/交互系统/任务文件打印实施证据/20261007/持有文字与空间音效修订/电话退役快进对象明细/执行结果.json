@@ -1,0 +1,19 @@
+{
+  "退出码": 1,
+  "进程编号": 35792,
+  "结束时间": "2026-10-07T16:23:25.8489038+08:00",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--verbose",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/持有文字与空间音效修订/telephone_exit_retirement_probe.gd",
+    "--",
+    "--evidence-dir",
+    "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/持有文字与空间音效修订/电话退役快进对象明细",
+    "--minimal-retirement"
+  ]
+}

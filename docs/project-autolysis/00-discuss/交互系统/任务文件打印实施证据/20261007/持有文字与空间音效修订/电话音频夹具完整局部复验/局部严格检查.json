@@ -1,0 +1,163 @@
+[
+  {
+    "专项": "设备",
+    "断言数": 275,
+    "失败断言": 0,
+    "退出码": 0,
+    "错误日志字节": 0,
+    "未预期消息": [],
+    "报告": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实施证据\\20261007\\持有文字与空间音效修订\\电话音频夹具完整局部复验\\设备\\电话设备报告.json",
+    "退出音频采样": [
+      {
+        "墙钟微秒": 13297243,
+        "播放": [],
+        "混音时钟": 0.026362,
+        "阶段": "原两帧清理后"
+      },
+      {
+        "墙钟微秒": 13297252,
+        "播放": [],
+        "混音时钟": 0.02637,
+        "阶段": "实际播放退役完成"
+      }
+    ]
+  },
+  {
+    "专项": "输入",
+    "断言数": 31,
+    "失败断言": 0,
+    "退出码": 0,
+    "错误日志字节": 0,
+    "未预期消息": [],
+    "报告": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实施证据\\20261007\\持有文字与空间音效修订\\电话音频夹具完整局部复验\\输入\\电话输入结果.json",
+    "退出音频采样": {
+      "原三帧后仍存活": true,
+      "实际退役完成": true,
+      "播放来源": [
+        {
+          "播放身份": -9223371953086134411,
+          "来源": "/root/@Node3D@2/machine_telephone_0/StaticBody3D/HandsetAudio/Timing/HandsetSoundOrigin/ActionPlayer"
+        }
+      ],
+      "混音时钟前": 0.007775,
+      "混音时钟后": 0.026053
+    }
+  },
+  {
+    "专项": "来电边界",
+    "断言数": 137,
+    "失败断言": 0,
+    "退出码": 0,
+    "错误日志字节": 0,
+    "未预期消息": [],
+    "报告": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实施证据\\20261007\\持有文字与空间音效修订\\电话音频夹具完整局部复验\\来电边界\\来电到期提交观察与来源生命周期.json",
+    "退出音频采样": [
+      {
+        "墙钟微秒": 27217784,
+        "播放": [
+          {
+            "临时查询在内的引用数": 0,
+            "仍存活": false,
+            "播放类型": "AudioStreamPlaybackWAV",
+            "播放身份": -9223371382560124731,
+            "来源": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/HandsetAudio/Timing/HandsetSoundOrigin/ActionPlayer"
+          }
+        ],
+        "混音时钟": 0.074567,
+        "阶段": "原三帧清理后"
+      },
+      {
+        "墙钟微秒": 27217801,
+        "播放": [
+          {
+            "临时查询在内的引用数": 0,
+            "仍存活": false,
+            "播放类型": "AudioStreamPlaybackWAV",
+            "播放身份": -9223371382560124731,
+            "来源": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/HandsetAudio/Timing/HandsetSoundOrigin/ActionPlayer"
+          }
+        ],
+        "混音时钟": 0.074584,
+        "阶段": "实际播放退役完成"
+      }
+    ]
+  },
+  {
+    "专项": "归还锁",
+    "断言数": 78,
+    "失败断言": 0,
+    "退出码": 0,
+    "错误日志字节": 0,
+    "未预期消息": [],
+    "报告": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实施证据\\20261007\\持有文字与空间音效修订\\电话音频夹具完整局部复验\\归还锁\\全部归还提交边界限制.json",
+    "退出音频采样": [
+      {
+        "墙钟微秒": 9038774,
+        "播放": [
+          {
+            "临时查询在内的引用数": 0,
+            "仍存活": false,
+            "播放类型": "AudioStreamPlaybackWAV",
+            "播放身份": -9223371791638982570,
+            "来源": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/HandsetAudio/Timing/HandsetSoundOrigin/ActionPlayer"
+          }
+        ],
+        "混音时钟": 0.007429,
+        "阶段": "原三帧清理后"
+      },
+      {
+        "墙钟微秒": 9038799,
+        "播放": [
+          {
+            "临时查询在内的引用数": 0,
+            "仍存活": false,
+            "播放类型": "AudioStreamPlaybackWAV",
+            "播放身份": -9223371791638982570,
+            "来源": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/HandsetAudio/Timing/HandsetSoundOrigin/ActionPlayer"
+          }
+        ],
+        "混音时钟": 0.007453,
+        "阶段": "实际播放退役完成"
+      }
+    ]
+  },
+  {
+    "专项": "通话移动",
+    "断言数": 28,
+    "失败断言": 0,
+    "退出码": 0,
+    "错误日志字节": 0,
+    "未预期消息": [],
+    "报告": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实施证据\\20261007\\持有文字与空间音效修订\\电话音频夹具完整局部复验\\通话移动\\通话真实移动与容量忙碌.json",
+    "退出音频采样": [
+      {
+        "墙钟微秒": 8321397,
+        "播放": [
+          {
+            "临时查询在内的引用数": 0,
+            "仍存活": false,
+            "播放类型": "AudioStreamPlaybackWAV",
+            "播放身份": -9223371873360801601,
+            "来源": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/HandsetAudio/Timing/HandsetSoundOrigin/ActionPlayer"
+          }
+        ],
+        "混音时钟": 0.003443,
+        "阶段": "原三帧清理后"
+      },
+      {
+        "墙钟微秒": 8321416,
+        "播放": [
+          {
+            "临时查询在内的引用数": 0,
+            "仍存活": false,
+            "播放类型": "AudioStreamPlaybackWAV",
+            "播放身份": -9223371873360801601,
+            "来源": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/HandsetAudio/Timing/HandsetSoundOrigin/ActionPlayer"
+          }
+        ],
+        "混音时钟": 0.003461,
+        "阶段": "实际播放退役完成"
+      }
+    ]
+  }
+]

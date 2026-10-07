@@ -1,0 +1,17 @@
+{
+  "退出码": 1,
+  "进程编号": 23024,
+  "结束时间": "2026-10-07T16:10:52.2430345+08:00",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://main-autolysis/player/tests/machine_spatial_audio_test.gd",
+    "--",
+    "--evidence-dir",
+    "D:/autolysis/docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/持有文字与空间音效修订/六音源完整空间复验"
+  ]
+}

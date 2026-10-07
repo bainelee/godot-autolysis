@@ -1,0 +1,23 @@
+{
+  "检查": "材质最小复现",
+  "时间": "2026-10-07T15:01:46.0839740+08:00",
+  "进程编号": 19680,
+  "退出码": 0,
+  "通过": false,
+  "引擎文件": "D:\\GODOT\\Godot_v4.6.1\\Godot_v4.6.1-stable_win64.exe",
+  "窗口显示": "Hidden",
+  "命令参数": [
+    "--path",
+    "D:\\autolysis",
+    "--headless",
+    "--script",
+    "res://main-autolysis/systems/quest-print-system/tests/quest_paper_material_probe.gd",
+    "--",
+    "scene"
+  ],
+  "通过断言数": 0,
+  "预期错误计数": {},
+  "非预期错误": [
+    "ERROR: Parameter \"material\" is null."
+  ]
+}

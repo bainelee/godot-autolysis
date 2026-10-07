@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ceioxflw48sba"]
+
+[ext_resource type="Texture2D" uid="uid://pgn0ph0lqvqx" path="res://main-autolysis/assets/textures/Prototype Textures/PNG/Light/texture_12.png" id="1_ovtp8"]
+
+[resource]
+albedo_color = Color(1.0829419e-06, 0.31352308, 0.33277074, 1)
+albedo_texture = ExtResource("1_ovtp8")
+uv1_triplanar = true

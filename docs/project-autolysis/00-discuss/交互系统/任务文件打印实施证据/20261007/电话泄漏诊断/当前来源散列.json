@@ -1,0 +1,26 @@
+[
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_device_test.gd",
+    "散列": "53E75D40D63E7C582468CE70F85013C2FE1D4921200A77C2ADD7CDAE3913B327"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\tests\\player_smoke_test.gd",
+    "散列": "3314A86E043902F342BD023959DEF85C68A87FCD657587651F626B1655E768ED"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_held_item_presenter.gd",
+    "散列": "350033E6B70E839BE1EDCBE3D01F574E673E7079DB3F415548BFC6983C43AC67"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_inventory_controller.gd",
+    "散列": "1FABE990CF5DB4DE96D2D6B487D75EC99B402D5D90FC88A83B392E96DAF52D46"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone.gd",
+    "散列": "4A80BD30D95FE63369218A35EDF95427EB0AD50D74586E4917E58FA680A78A59"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+    "散列": "95B707EC99F2192A8978BC4F39F125B8E35B00551D90A7DFBEDBB055CBC62400"
+  }
+]

@@ -1,0 +1,166 @@
+WorkerThreadPool: 32 threads, 9 max low-priority.
+Godot Engine v4.6.1.stable.official.14d19694e - https://godotengine.org
+TextServer: Added interface "Dummy"
+TextServer: Added interface "ICU / HarfBuzz / Graphite (Built-in)"
+Unrecognized output string "misc2" in mapping:
+030000000d0f00000202000000000000,Horipad O Nintendo Switch 2 Controller,a:b1,b:b0,back:b8,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b12,leftshoulder:b4,leftstick:b10,lefttrigger:b6,leftx:a0,lefty:a1,misc1:b13,misc2:b14,rightshoulder:b5,rightstick:b11,righttrigger:b7,rightx:a2,righty:a3,start:b9,x:b3,y:b2,platform:Windows,
+Unrecognized output string "misc2" in mapping:
+030000000d0f00009601000000000000,Horipad Steam,a:b0,b:b1,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b12,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,misc2:b2,paddle1:b5,paddle2:b15,paddle3:b18,paddle4:b19,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a3,righty:a4,start:b11,x:b3,y:b4,platform:Windows,
+Unrecognized output string "misc2" in mapping:
+030000007e0500006920000000000000,Nintendo Switch 2 Pro Controller,a:b0,b:b1,back:b14,dpdown:b8,dpleft:b10,dpright:b9,dpup:b11,guide:b16,leftshoulder:b12,leftstick:b15,lefttrigger:b13,leftx:a0,lefty:a1~,misc1:b17,misc2:b20,paddle1:b18,paddle2:b19,rightshoulder:b4,rightstick:b7,righttrigger:b5,rightx:a2,righty:a3~,start:b6,x:b2,y:b3,platform:Windows,
+Using "default" pen tablet driver...
+
+TextServer: Primary interface set to: "ICU / HarfBuzz / Graphite (Built-in)".
+Loading resource: res://main-autolysis/assets/audio/buses/default_bus_layout.tres
+CORE API HASH: 75400357
+EDITOR API HASH: 3012763406
+Loading resource: res://docs/project-autolysis/00-discuss/交互系统/任务文件打印实施证据/20261007/持有文字与空间音效修订/telephone_input_retirement_probe.gd
+Loading resource: res://main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn
+Loading resource: res://main-autolysis/components/interactions/autolysis_focus_target.gd
+Loading resource: res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres
+Loading resource: res://main-autolysis/assets/textures/Prototype Textures/PNG/Light/texture_12.png
+Loading resource: res://.godot/imported/texture_12.png-771e394572f4066038cc73708a23b404.s3tc.ctex
+Loading resource: res://main-autolysis/assets/materials/glow_color/mat_glow_orange_0.tres
+Loading resource: res://main-autolysis/assets/materials/glow_color/mat_glow_green_0.tres
+Loading resource: res://main-autolysis/ui/quest-paper/autolysis_quest_paper_view.tscn
+Loading resource: res://main-autolysis/ui/quest-paper/autolysis_quest_paper_view.gd
+Loading resource: res://main-autolysis/assets/materials/liquid_tank/liquid_tank_empty.tres
+Loading resource: res://main-autolysis/assets/materials/liquid_tank/liquid_tank_filled.tres
+Loading resource: res://main-autolysis/assets/materials/base_color/mat_base_grey_1.tres
+Loading resource: res://main-autolysis/assets/materials/glow_color/mat_glow_blue_1.tres
+Loading resource: res://main-autolysis/assets/materials/glow_color/mat_glow_blue_0.tres
+Loading resource: res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres
+Loading resource: res://main-autolysis/scenes/prefabs/prefab_paper/quest_paper.tscn
+Loading resource: res://main-autolysis/systems/item-system/items/quest_paper.tres
+Loading resource: res://main-autolysis/scenes/prefabs/prefab_paper/visuals/quest_paper_visual.tscn
+Loading resource: res://main-autolysis/assets/ui/item-icons/quest_paper.svg
+Loading resource: res://.godot/imported/quest_paper.svg-9c3bec35dc768d1a115353406b13d3de.ctex
+Loading resource: res://main-autolysis/assets/materials/base_color/mat_base_red_3.tres
+Loading resource: res://main-autolysis/assets/audio/sound_fx/machine/sfx_machine_notice_0.wav
+Loading resource: res://.godot/imported/sfx_machine_notice_0.wav-1bb299026bbcd927e4b03179381e9dc8.sample
+Loading resource: res://main-autolysis/assets/audio/sound_fx/machine/sfx_machine_scanning_0.wav
+Loading resource: res://.godot/imported/sfx_machine_scanning_0.wav-ab7bce7dbb20a8bb6092accc1101b92d.sample
+Loading resource: res://main-autolysis/scenes/prefabs/prefab_machines/visuals/telephone_handset_visual.tscn
+Loading resource: res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres
+Loading resource: res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_call_controller.gd
+Loading resource: res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_ring_0.wav
+Loading resource: res://.godot/imported/sfx_phone_ring_0.wav-a7a561e1c34906960dcb65914a392181.sample
+Loading resource: res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_audio_controller.gd
+Loading resource: res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_pick_up_self_0.wav
+Loading resource: res://.godot/imported/sfx_phone_pick_up_self_0.wav-477619f8d549bd221b335a8b8b2c1f50.sample
+Loading resource: res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_self_0.wav
+Loading resource: res://.godot/imported/sfx_phone_hang_up_self_0.wav-0dc46661c49ddcac3d16af20a442021b.sample
+Loading resource: res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_default_0.wav
+Loading resource: res://.godot/imported/sfx_phone_default_0.wav-a14b5752f8731cc98873a4079a146249.sample
+Loading resource: res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_other_side_0.wav
+Loading resource: res://.godot/imported/sfx_phone_hang_up_other_side_0.wav-43fdfefe2c418e7188a2dce8b410895b.sample
+Loading resource: res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_busy_busy signal_0.wav
+Loading resource: res://.godot/imported/sfx_phone_busy_busy signal_0.wav-51c95299c3a42d7115e92a3656860e37.sample
+Loading resource: res://main-autolysis/assets/materials/base_color/mat_base_grey_2.tres
+Loading resource: res://main-autolysis/assets/materials/base_color/mat_base_grey_0.tres
+Loading resource: res://main-autolysis/player/autolysis_player.tscn
+Loading resource: res://main-autolysis/player/components/interaction_raycast.tscn
+Loading resource: res://main-autolysis/player/assets/player_eyes.tres
+Loading resource: res://main-autolysis/player/components/wieldables_sway.gd
+Loading resource: res://main-autolysis/player/components/item_drop_shape_cast.gd
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/generic_footstep_profile.tres
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/audio/generic/footstep_generic_00.ogg
+Loading resource: res://.godot/imported/footstep_generic_00.ogg-406d831c101e89af1fd18656d91359e3.oggvorbisstr
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/audio/generic/footstep_generic_01.ogg
+Loading resource: res://.godot/imported/footstep_generic_01.ogg-5a2b376721df6af80fc9de7916de0e05.oggvorbisstr
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/audio/generic/footstep_generic_02.ogg
+Loading resource: res://.godot/imported/footstep_generic_02.ogg-7258b4a54fb68d487aeebf29138a3d30.oggvorbisstr
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/audio/generic/footstep_generic_03.ogg
+Loading resource: res://.godot/imported/footstep_generic_03.ogg-cec6ed35a6fe04980d7cc8a2b08c2f92.oggvorbisstr
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/audio/generic/footstep_generic_04.ogg
+Loading resource: res://.godot/imported/footstep_generic_04.ogg-f21f1aff59313f675ccec29d4f323cfa.oggvorbisstr
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/footstep-material-library/sample_footstep_material_library.tres
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/dirt_footstep_profile.tres
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/audio/dirt/footstep_dirt_01.ogg
+Loading resource: res://.godot/imported/footstep_dirt_01.ogg-a934df5959cb7be86f9e64fcb9953a71.oggvorbisstr
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/audio/dirt/footstep_dirt_02.ogg
+Loading resource: res://.godot/imported/footstep_dirt_02.ogg-87a8bae8415ab96ecaaa35eec030ad03.oggvorbisstr
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/audio/dirt/footstep_dirt_03.ogg
+Loading resource: res://.godot/imported/footstep_dirt_03.ogg-4c37a6bdfcdd11867c9c73d422913850.oggvorbisstr
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/audio/dirt/footstep_dirt_04.ogg
+Loading resource: res://.godot/imported/footstep_dirt_04.ogg-abb56dca3961c7e6aabd069f004ec8c4.oggvorbisstr
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/materials/example_dirt.tres
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/grass_footstep_profile.tres
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/audio/grass/footstep_grass_01.ogg
+Loading resource: res://.godot/imported/footstep_grass_01.ogg-68854118bd527ba1a6b7dfbce3ce7f79.oggvorbisstr
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/audio/grass/footstep_grass_02.ogg
+Loading resource: res://.godot/imported/footstep_grass_02.ogg-2042e36181b91a10ded4d27b5ee50cc9.oggvorbisstr
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/audio/grass/footstep_grass_03.ogg
+Loading resource: res://.godot/imported/footstep_grass_03.ogg-41d94c100f745103b905f13e4cfdba97.oggvorbisstr
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/audio/grass/footstep_grass_04.ogg
+Loading resource: res://.godot/imported/footstep_grass_04.ogg-80452a2fbb182b910eccbf86fc02d49b.oggvorbisstr
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/materials/example_grass.tres
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/stone_footstep_profile.tres
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/audio/stone/footstep_stone_01.ogg
+Loading resource: res://.godot/imported/footstep_stone_01.ogg-047737e2a65bef0c4c528796cb798cfe.oggvorbisstr
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/audio/stone/footstep_stone_02.ogg
+Loading resource: res://.godot/imported/footstep_stone_02.ogg-29899d22ed8c32abcaaf5d57a1421a87.oggvorbisstr
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/audio/stone/footstep_stone_03.ogg
+Loading resource: res://.godot/imported/footstep_stone_03.ogg-c4ed96d1d04f347165a8fe5a84ee6501.oggvorbisstr
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/audio/stone/footstep_stone_04.ogg
+Loading resource: res://.godot/imported/footstep_stone_04.ogg-ab5443861f034c9dbc74b093ae99f88c.oggvorbisstr
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/materials/example_stone.tres
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/footstep-profiles/wood_footstep_profile.tres
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/audio/wood/footstep_wood_01.ogg
+Loading resource: res://.godot/imported/footstep_wood_01.ogg-7ad9ab5bb020f5c53f91407183306fee.oggvorbisstr
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/audio/wood/footstep_wood_02.ogg
+Loading resource: res://.godot/imported/footstep_wood_02.ogg-93e7109cf5de292ae15e8fa44e36e1c9.oggvorbisstr
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/audio/wood/footstep_wood_03.ogg
+Loading resource: res://.godot/imported/footstep_wood_03.ogg-4e509849283a8fa5fb78449d86081dff.oggvorbisstr
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/audio/wood/footstep_wood_04.ogg
+Loading resource: res://.godot/imported/footstep_wood_04.ogg-33e1903b14acc88f55827b75423f671c.oggvorbisstr
+Loading resource: res://main-autolysis/systems/dynamic-footstep-system/assets/materials/example_wood.tres
+Loading resource: res://main-autolysis/ui/autolysis_crosshair.tscn
+Loading resource: res://main-autolysis/ui/inventory/autolysis_inventory_bar.tscn
+Loading resource: res://main-autolysis/ui/inventory/autolysis_inventory_slot.tscn
+Loading resource: res://main-autolysis/assets/ui/inventory/degauss_inventory_slot_border.png
+Loading resource: res://.godot/imported/degauss_inventory_slot_border.png-5688a966d13c996c67c9c213a42fa554.ctex
+Loading resource: res://main-autolysis/assets/ui/inventory/mouseclick1.ogg
+Loading resource: res://.godot/imported/mouseclick1.ogg-bbaf75cc7dc4f6ff57faa2d63f790b22.oggvorbisstr
+Loading resource: res://main-autolysis/ui/inventory/autolysis_liquid_contents_panel.tscn
+Loading resource: res://main-autolysis/ui/autolysis_handset_pose_debug.tscn
+Loading resource: res://main-autolysis/systems/dialogue-system/autolysis_dialogue_player.tscn
+Loading resource: res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn
+SceneTreeFTI: traversal method DEFAULT
+Loading resource: res://main-autolysis/systems/runtime-session/autolysis_runtime_session.gd
+Loaded system CA certificates
+电话输入进入前实际状态：{"玩家交互许可":false,"玩家位置":"(0.0, 0.800469, 1.0)","玩家基础许可":true,"电话配置错误":"","着地":true,"聚焦可进入":true,"聚焦描述有效":true,"聚焦状态":0,"落地眩晕":false,"鼠标模式":0}
+通过：真实电话可进入聚焦
+通过：稳定聚焦实际空手可取筒
+通过：取筒同步完成后来源与玩家成对持有
+通过：持有后正式右侧面板显示并布局
+通过：面板左右键与滚轮不穿透取放或聚焦退出
+通过：面板滚轮不切换库存
+通过：实际面板具有六项数值编辑
+通过：字段焦点阻断世界交互入队
+通过：文本占用时交互快捷请求不入队
+通过：旧持物序号点击不得发起归还
+通过：持筒可正常退出聚焦
+通过：退出聚焦保留听筒及活动限位
+通过：实际快捷动作开放鼠标调节
+通过：普通调节态暂停移动及视角
+通过：普通调节态保留独占与限位
+通过：文本焦点期间再次快捷动作仍恢复普通输入许可
+通过：关闭面板自身测试开关后不可进入隐藏调节态
+通过：菜单状态结束编辑并保留持筒
+通过：场景暂停结束编辑但不解除持有
+通过：暂停恢复须再次显式开启编辑
+通过：窗口失焦结束编辑保留持有
+通过：窗口恢复不自动继续编辑
+通过：同一持有会话可重新聚焦原电话
+通过：重入后原玩家可以归还
+通过：实际听筒点击像素位于面板矩形外
+通过：面板外业务点击先提交草稿并释放字段焦点
+通过：归还后面板隐藏并释放独占及限位
+通过：整个持筒过程选中索引保持
+通过：调节面板移除后仍可取筒
+通过：调节面板移除后仍可归还
+失败：原三帧读点被测实际播放实例已经全部退役
+XR: Clearing primary interface
+XR: Removed interface "Native mobile"
+XR: Removed interface "OpenXR"

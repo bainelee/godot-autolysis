@@ -1,0 +1,143 @@
+{
+	"失败数": 1,
+	"断言": [
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "原读取点要求实际语音已开始",
+			"通过": false
+		},
+		{
+			"说明": "退出前实际声音播放实例已解除全部引用",
+			"通过": true
+		}
+	],
+	"采样": [
+		{
+			"墙钟微秒": 1105693,
+			"声音控制器引用存活": false,
+			"实际语音输出相同": true,
+			"对白": {
+				"audio_output_id": 103246990970,
+				"audio_playing": false,
+				"audio_position": 0.0,
+				"audio_spatial": true,
+				"completion_pending": "",
+				"dialogue_id": "telephone_single_test",
+				"hold_remaining": 0.0,
+				"index": 0,
+				"last_result": {
+
+				},
+				"paused": false,
+				"source_id": 102961778281,
+				"stage": "prepared",
+				"subtitle": {
+					"alpha": 1.0,
+					"background_rect": "[P: (16.0, -400.0), S: (32.0, 296.0)]",
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+					"font_size": 24,
+					"horizontal_padding": 15.5,
+					"index": 0,
+					"inventory_rect": "[P: (-143.0, -96.0), S: (350.0, 80.0)]",
+					"line_count": 9,
+					"natural_size": "(192.0, 29.0)",
+					"text": "你很快会习惯的。",
+					"text_height": 285.0,
+					"text_rect": "[P: (31.5, -394.5), S: (1.0, 285.0)]",
+					"token": 1,
+					"vertical_padding": 5.5,
+					"viewport_rect": "[P: (0.0, 0.0), S: (64.0, 64.0)]",
+					"visible": false
+				},
+				"subtitle_alpha": 1.0,
+				"token": 1
+			},
+			"开始句数": 0,
+			"来电": {
+				"answer_delay_expired": false,
+				"answer_delay_remaining": 0.5,
+				"answer_waiting": true,
+				"call_serial": 1,
+				"delay_expired": false,
+				"delay_remaining": 0.0,
+				"holder_session": 1,
+				"pending_effects": false,
+				"playback_token": 1,
+				"stage": 5,
+				"wait_serial": 0
+			},
+			"语音引用存活": true,
+			"语音归属": true,
+			"阶段": "原失败读取点"
+		},
+		{
+			"墙钟微秒": 1529712,
+			"对白": {
+				"audio_output_id": 103246990970,
+				"audio_playing": true,
+				"audio_position": 0.0,
+				"audio_spatial": true,
+				"completion_pending": "",
+				"dialogue_id": "telephone_single_test",
+				"hold_remaining": 0.0,
+				"index": 0,
+				"last_result": {
+
+				},
+				"paused": false,
+				"source_id": 102961778281,
+				"stage": "voice",
+				"subtitle": {
+					"alpha": 1.0,
+					"background_rect": "[P: (16.0, -400.0), S: (32.0, 296.0)]",
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_resource": "res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn::SystemFont_chinese",
+					"font_size": 24,
+					"horizontal_padding": 15.5,
+					"index": 0,
+					"inventory_rect": "[P: (-143.0, -96.0), S: (350.0, 80.0)]",
+					"line_count": 9,
+					"natural_size": "(192.0, 29.0)",
+					"text": "你很快会习惯的。",
+					"text_height": 285.0,
+					"text_rect": "[P: (31.5, -394.5), S: (1.0, 285.0)]",
+					"token": 1,
+					"vertical_padding": 5.5,
+					"viewport_rect": "[P: (0.0, 0.0), S: (64.0, 64.0)]",
+					"visible": true
+				},
+				"subtitle_alpha": 1.0,
+				"token": 1
+			},
+			"开始句数": 1,
+			"来电": {
+				"answer_delay_expired": false,
+				"answer_delay_remaining": 0.0,
+				"answer_waiting": false,
+				"call_serial": 1,
+				"delay_expired": false,
+				"delay_remaining": 0.0,
+				"holder_session": 1,
+				"pending_effects": false,
+				"playback_token": 1,
+				"stage": 5,
+				"wait_serial": 0
+			},
+			"阶段": "真实等待自然完成后"
+		}
+	]
+}

@@ -1,0 +1,4 @@
+ERROR: Parameter "material" is null.
+   at: material_get_instance_shader_parameters (servers/rendering/dummy/storage/material_storage.cpp:265)
+   GDScript backtrace (most recent call first):
+       [0] run_probe (res://main-autolysis/systems/quest-print-system/tests/quest_paper_material_probe.gd:28)

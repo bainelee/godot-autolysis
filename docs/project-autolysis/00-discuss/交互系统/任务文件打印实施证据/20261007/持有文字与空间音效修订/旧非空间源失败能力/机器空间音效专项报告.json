@@ -1,0 +1,42 @@
+{
+	"失败数": 3,
+	"引擎": {
+		"build": "official",
+		"hash": "14d19694e0c88a3f9e82d899a0400f27a24c176e",
+		"hex": 263681,
+		"major": 4,
+		"minor": 6,
+		"patch": 1,
+		"status": "stable",
+		"string": "4.6.1-stable (official)",
+		"timestamp": 0
+	},
+	"断言": [
+		{
+			"说明": "机器空间音效专项使用无图形后端",
+			"通过": true
+		},
+		{
+			"说明": "机器场景实际音源均为三维：./StaticBody3D/CallController/Timing/RingPlayer（节点路径）",
+			"通过": true
+		},
+		{
+			"说明": "机器场景实际音源均为三维：./StaticBody3D/HandsetAudio/Timing/ActionPlayer（节点路径）",
+			"通过": false
+		},
+		{
+			"说明": "机器场景实际音源均为三维：./StaticBody3D/HandsetAudio/Timing/ReceiverPlayer（节点路径）",
+			"通过": false
+		},
+		{
+			"说明": "机器场景实际空间输出数量完整：4",
+			"通过": false
+		},
+		{
+			"说明": "探针观察指定数量的实际混音完成边界",
+			"通过": true
+		}
+	],
+	"来源采样": [],
+	"输入方式": "无图形引擎内部输入，未调用系统指针"
+}

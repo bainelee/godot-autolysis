@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://brkrki24ps4u7"]
 
+[ext_resource type="AudioStream" uid="uid://6wn2p527n83" path="res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_busy_busy signal_0.wav" id="1_busy"]
+[ext_resource type="Script" uid="uid://csd58ir2lorag" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_call_controller.gd" id="1_call"]
+[ext_resource type="AudioStream" uid="uid://b1pq7h1u7keig" path="res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_default_0.wav" id="1_default"]
 [ext_resource type="Script" uid="uid://c1pn2s683ojtr" path="res://main-autolysis/components/interactions/autolysis_focus_target.gd" id="1_focus"]
 [ext_resource type="PackedScene" path="res://main-autolysis/scenes/prefabs/prefab_machines/visuals/telephone_handset_visual.tscn" id="1_handset"]
+[ext_resource type="Script" uid="uid://dqxnkd4iyusuw" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_audio_controller.gd" id="1_handset_audio"]
+[ext_resource type="AudioStream" uid="uid://b3whjxkrjl22q" path="res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_self_0.wav" id="1_hangup"]
 [ext_resource type="Script" uid="uid://b7kdmn1qas3t1" path="res://main-autolysis/components/interactions/autolysis_interaction_component.gd" id="1_interaction"]
+[ext_resource type="AudioStream" uid="uid://dd8q6xw0gqc0t" path="res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_pick_up_self_0.wav" id="1_pickup"]
+[ext_resource type="AudioStream" uid="uid://8ijb7kojn424" path="res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_other_side_0.wav" id="1_remote_hangup"]
+[ext_resource type="AudioStream" uid="uid://00b2truiefba" path="res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_ring_0.wav" id="1_ring"]
 [ext_resource type="Script" uid="uid://gv44yp6wcbel" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone.gd" id="1_telephone"]
-[ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_call_controller.gd" id="1_call"]
-[ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_ring_0.wav" id="1_ring"]
-[ext_resource type="Script" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_telephone_audio_controller.gd" id="1_handset_audio"]
-[ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_pick_up_self_0.wav" id="1_pickup"]
-[ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_self_0.wav" id="1_hangup"]
-[ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_default_0.wav" id="1_default"]
-[ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_hang_up_other_side_0.wav" id="1_remote_hangup"]
-[ext_resource type="AudioStream" path="res://main-autolysis/assets/audio/sound_fx/phone/sfx_phone_busy_busy signal_0.wav" id="1_busy"]
 [ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="2_41drs"]
 [ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="2_t2mr4"]
 [ext_resource type="Material" uid="uid://blu42xw7rpe7b" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_2.tres" id="3_41drs"]
@@ -87,47 +87,56 @@ handset_audio = NodePath("HandsetAudio")
 handset_held_position = Vector3(0.33, -0.12, -0.27)
 handset_held_rotation_degrees = Vector3(16, 125, 12)
 
-[node name="CallController" type="Node3D" parent="StaticBody3D" node_paths=PackedStringArray("telephone", "timing_root", "deferred_timer", "answer_delay_timer", "ring_player")]
+[node name="CallController" type="Node3D" parent="StaticBody3D" unique_id=21322239 node_paths=PackedStringArray("telephone", "timing_root", "deferred_timer", "answer_delay_timer", "ring_player", "voice_player")]
 script = ExtResource("1_call")
 telephone = NodePath("..")
 timing_root = NodePath("Timing")
 deferred_timer = NodePath("Timing/DeferredRingTimer")
 answer_delay_timer = NodePath("Timing/AnswerDelayTimer")
 ring_player = NodePath("Timing/RingPlayer")
+voice_player = NodePath("../HandsetAudio/Timing/HandsetSoundOrigin/VoicePlayer")
 ring_stream = ExtResource("1_ring")
-answer_delay_seconds = 0.5
 
-[node name="Timing" type="Node3D" parent="StaticBody3D/CallController"]
+[node name="Timing" type="Node3D" parent="StaticBody3D/CallController" unique_id=174348161]
 process_mode = 1
 
-[node name="DeferredRingTimer" type="Timer" parent="StaticBody3D/CallController/Timing"]
+[node name="DeferredRingTimer" type="Timer" parent="StaticBody3D/CallController/Timing" unique_id=227974771]
 one_shot = true
 
-[node name="AnswerDelayTimer" type="Timer" parent="StaticBody3D/CallController/Timing"]
+[node name="AnswerDelayTimer" type="Timer" parent="StaticBody3D/CallController/Timing" unique_id=1248751108]
 one_shot = true
 
-[node name="RingPlayer" type="AudioStreamPlayer3D" parent="StaticBody3D/CallController/Timing"]
+[node name="RingPlayer" type="AudioStreamPlayer3D" parent="StaticBody3D/CallController/Timing" unique_id=424201154]
 bus = &"SFX"
 
-[node name="HandsetAudio" type="Node" parent="StaticBody3D" node_paths=PackedStringArray("telephone", "timing_root", "action_player", "receiver_player")]
+[node name="HandsetAudio" type="Node" parent="StaticBody3D" unique_id=1425615092 node_paths=PackedStringArray("telephone", "timing_root", "sound_origin", "action_player", "receiver_player")]
 script = ExtResource("1_handset_audio")
 telephone = NodePath("..")
 timing_root = NodePath("Timing")
-action_player = NodePath("Timing/ActionPlayer")
-receiver_player = NodePath("Timing/ReceiverPlayer")
+sound_origin = NodePath("Timing/HandsetSoundOrigin")
+action_player = NodePath("Timing/HandsetSoundOrigin/ActionPlayer")
+receiver_player = NodePath("Timing/HandsetSoundOrigin/ReceiverPlayer")
 pickup_stream = ExtResource("1_pickup")
 hangup_stream = ExtResource("1_hangup")
 default_stream = ExtResource("1_default")
 remote_hangup_stream = ExtResource("1_remote_hangup")
 busy_stream = ExtResource("1_busy")
 
-[node name="Timing" type="Node" parent="StaticBody3D/HandsetAudio"]
+[node name="Timing" type="Node3D" parent="StaticBody3D/HandsetAudio" unique_id=1141239400]
 process_mode = 1
 
-[node name="ActionPlayer" type="AudioStreamPlayer" parent="StaticBody3D/HandsetAudio/Timing"]
+[node name="HandsetSoundOrigin" type="Node3D" parent="StaticBody3D/HandsetAudio/Timing" unique_id=849985146]
+
+[node name="ActionPlayer" type="AudioStreamPlayer3D" parent="StaticBody3D/HandsetAudio/Timing/HandsetSoundOrigin" unique_id=958874406]
+unit_size = 3.0
 bus = &"SFX"
 
-[node name="ReceiverPlayer" type="AudioStreamPlayer" parent="StaticBody3D/HandsetAudio/Timing"]
+[node name="ReceiverPlayer" type="AudioStreamPlayer3D" parent="StaticBody3D/HandsetAudio/Timing/HandsetSoundOrigin" unique_id=1783913015]
+unit_size = 3.0
+bus = &"SFX"
+
+[node name="VoicePlayer" type="AudioStreamPlayer3D" parent="StaticBody3D/HandsetAudio/Timing/HandsetSoundOrigin" unique_id=1712474786]
+unit_size = 3.0
 bus = &"SFX"
 
 [node name="focus_camera" type="Camera3D" parent="StaticBody3D" unique_id=1215350079]

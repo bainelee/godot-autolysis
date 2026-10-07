@@ -1,0 +1,30 @@
+ERROR: Parameter "get_viewport()" is null.
+   at: _notification (scene/main/node.cpp:187)
+   GDScript backtrace (most recent call first):
+       [0] _free_candidate_during_display_entry (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:277)
+       [1] commit_prepared (res://main-autolysis/player/components/autolysis_held_item_presenter.gd:108)
+       [2] _commit_visual (res://main-autolysis/player/components/autolysis_inventory_controller.gd:1567)
+       [3] try_take_quest_paper (res://main-autolysis/player/components/autolysis_inventory_controller.gd:1222)
+       [4] _display_boundaries (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:306)
+       [5] _fixture (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:136)
+       [6] frames (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:55)
+ERROR: Object is locked and can't be freed.
+   at: callp (core/object/object.cpp:890)
+   GDScript backtrace (most recent call first):
+       [0] _release_machine_when_world_hidden (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:336)
+       [1] finish_pickup (res://main-autolysis/scenes/prefabs/prefab_paper/autolysis_quest_paper.gd:122)
+       [2] finish_paper_take (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:504)
+       [3] try_take_quest_paper (res://main-autolysis/player/components/autolysis_inventory_controller.gd:1230)
+       [4] _observations_and_transfer (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:367)
+       [5] _fixture (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:136)
+       [6] frames (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:55)
+SCRIPT ERROR: Attempted to free a locked object (calling or emitting).
+   at: _release_machine_when_world_hidden (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:336)
+   GDScript backtrace (most recent call first):
+       [0] _release_machine_when_world_hidden (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:336)
+       [1] finish_pickup (res://main-autolysis/scenes/prefabs/prefab_paper/autolysis_quest_paper.gd:122)
+       [2] finish_paper_take (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:504)
+       [3] try_take_quest_paper (res://main-autolysis/player/components/autolysis_inventory_controller.gd:1230)
+       [4] _observations_and_transfer (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:367)
+       [5] _fixture (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:136)
+       [6] frames (res://main-autolysis/player/tests/quest_paper_inventory_test.gd:55)

@@ -1,0 +1,56 @@
+[
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\components\\autolysis_held_item_presenter.gd",
+    "散列": "D1420C36E3D966206B36A62EBBEDE5976EE6A4674C0CE3B9F4566F475F4D02BF",
+    "字节": 11372,
+    "行数": 304
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\systems\\item-system\\autolysis_quest_paper_visual.gd",
+    "散列": "4A12F9E628C75CDE2055ADE2A7153066E0DEC29E03E5B2D84F535E68302CB33F",
+    "字节": 4256,
+    "行数": 100
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_paper\\visuals\\quest_paper_visual.tscn",
+    "散列": "EABED60C931572EF6A1ED185E90B447C25690E4F1F78D8B16B50CD8EF290FE49",
+    "字节": 1027,
+    "行数": 34
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\player\\tests\\quest_held_text_test.gd",
+    "散列": "4B6A7655AFCB67AC4E6DABB16601054578A314ECA7FE2D55108C4B909BFAF19D",
+    "字节": 23073,
+    "行数": 333
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\systems\\item-system\\autolysis_item_definition.gd",
+    "散列": "0B351468E056185CAFD4DC12318EACDC164F66D8E1E6681E6AF7536CB7561191",
+    "字节": 1932,
+    "行数": 44
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\ui\\quest-paper\\autolysis_quest_paper_view.gd",
+    "散列": "F2A9C2217764D27D92BD552D69C9F4860058540961822192C5F80D790F6D8058",
+    "字节": 4806,
+    "行数": 129
+  },
+  {
+    "文件": "D:\\cogito\\main-degauss\\recorder\\ui\\tape_timeline_display.gd",
+    "散列": "CC3E1E0C04E1385286F22F59AAC77A4AB1D3949500CA0044BB79D2EACCE2C3BA",
+    "字节": 1960,
+    "行数": 61
+  },
+  {
+    "文件": "D:\\cogito\\main-degauss\\recorder\\ui\\tape_timeline_viewport.tscn",
+    "散列": "BA3522C5774B2E0BEA8B8D77CF79A3C967BEEF3B44E66D77C41637DBD75CC30C",
+    "字节": 1695,
+    "行数": 45
+  },
+  {
+    "文件": "D:\\cogito\\addons\\cogito\\Components\\Interactions\\ReadableComponent.gd",
+    "散列": "AB0A7C4A4877DC2115A325D78513301BDDB820444A4B5342CA7154D35760D363",
+    "字节": 3269,
+    "行数": 93
+  }
+]

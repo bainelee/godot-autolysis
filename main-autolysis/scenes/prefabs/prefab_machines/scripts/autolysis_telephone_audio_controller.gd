@@ -6,8 +6,10 @@ enum ReceiverStage { IDLE, DEFAULT, DIALOGUE, REMOTE_HANG_UP, BUSY }
 
 @export var telephone: AutolysisTelephone
 @export var timing_root: Node
-@export var action_player: AudioStreamPlayer
-@export var receiver_player: AudioStreamPlayer
+## 此定位父节点跟随实际听筒；各三维音源子节点的局部偏移由编辑器配置。
+@export var sound_origin: Node3D
+@export var action_player: AudioStreamPlayer3D
+@export var receiver_player: AudioStreamPlayer3D
 @export var pickup_stream: AudioStreamWAV
 @export var hangup_stream: AudioStreamWAV
 @export var default_stream: AudioStreamWAV
@@ -23,9 +25,9 @@ var _action_serial: int = 0
 var _receiver_finished_pending: bool = false
 var _receiver_callback: Callable
 var _action_callback: Callable
-var _receiver_owner: AudioStreamPlayer
+var _receiver_owner: AudioStreamPlayer3D
 var _receiver_stream: AudioStreamWAV
-var _action_owner: AudioStreamPlayer
+var _action_owner: AudioStreamPlayer3D
 var _last_taken_actor_id: int = 0
 var _last_taken_session: int = 0
 var _last_completion_transaction: int = 0
@@ -39,6 +41,7 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	if _live(timing_root):
 		timing_root.process_mode = Node.PROCESS_MODE_PAUSABLE
+	_sync_sound_origin()
 
 
 func activate_handset_completion_effects(returning: bool, actor: Node3D, session: int, transaction: int) -> void:
@@ -105,6 +108,7 @@ func stop_handset_audio(_reason: String) -> void:
 	_disconnect_actor()
 	_actor = null
 	_session = 0
+	_sync_sound_origin()
 
 
 func _process(_delta: float) -> void:
@@ -114,6 +118,7 @@ func _process(_delta: float) -> void:
 		stop_handset_audio("听筒声音来源、玩家或时序依赖失效")
 		return
 	_sync_pause()
+	_sync_sound_origin()
 	if _receiver_stage != ReceiverStage.IDLE and not _held_session_valid(_actor, _session):
 		stop_handset_audio("听筒声音原持有会话或必要显示失效")
 		return
@@ -140,7 +145,22 @@ func _bind_actor(actor: Node3D, session: int) -> void:
 	_session = session
 	if actor.has_signal("dialogue_pause_changed"):
 		actor.connect("dialogue_pause_changed", _on_pause_changed)
+	_sync_sound_origin()
 	_sync_pause()
+
+
+func _sync_sound_origin() -> void:
+	if not _live(telephone) or not _live(sound_origin) or not is_ancestor_of(sound_origin):
+		return
+	var anchor: Node3D = telephone.handset_anchor
+	if _session > 0 and _live(_actor) and telephone.owns_handset(_actor, _session):
+		var inventory: AutolysisInventoryController = _actor.get_node_or_null("InventoryController") as AutolysisInventoryController
+		var display: Node3D = inventory.get_handset_display() if _live(inventory) else null
+		if _live(display) and inventory.is_handset_display_session(telephone, display, _session):
+			anchor = display
+	if _live(anchor):
+		# 只定位输送父节点；音源自身的可编辑局部变换与空间参数保持不变。
+		sound_origin.global_transform = anchor.global_transform
 
 
 func _disconnect_actor() -> void:
@@ -267,8 +287,8 @@ func _timing_valid() -> bool:
 	return _live(timing_root) and is_ancestor_of(timing_root)
 
 
-func _player_valid(player: AudioStreamPlayer) -> bool:
-	return _timing_valid() and _live(player) and timing_root.is_ancestor_of(player)
+func _player_valid(player: Variant) -> bool:
+	return _timing_valid() and _live(player) and player is AudioStreamPlayer3D and timing_root.is_ancestor_of(player)
 
 
 func _receiver_playback_valid() -> bool:

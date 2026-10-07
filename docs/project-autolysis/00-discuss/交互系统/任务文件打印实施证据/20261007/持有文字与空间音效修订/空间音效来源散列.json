@@ -1,0 +1,93 @@
+{
+  "采样时间": "2026-10-07T16:40:10.4898113+08:00",
+  "范围": "接听读取点、共享夹具及派生实际退出读点修正后的音频负责源；生产保持既有实现",
+  "局部严格复验": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实施证据\\20261007\\持有文字与空间音效修订\\电话音频夹具完整局部复验\\局部严格检查.json",
+  "最小接听红色证据": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实施证据\\20261007\\持有文字与空间音效修订\\来电边界最小开始诊断\\边界真实开始读取点.json",
+  "输入退出红色证据": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实施证据\\20261007\\持有文字与空间音效修订\\电话输入实际退役诊断\\输入退出实际退役探针.json",
+  "生产守恒": [
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone_audio_controller.gd",
+      "保持既有生产源": true
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone_call_controller.gd",
+      "保持既有生产源": true
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+      "保持既有生产源": false
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\systems\\dialogue-system\\autolysis_dialogue_player.gd",
+      "保持既有生产源": true
+    }
+  ],
+  "来源": [
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone_audio_controller.gd",
+      "算法": "SHA256",
+      "散列": "EA58CA43EC4042B9CEB82221091784CA4C90AA9FEDCC91018871952CDB5D288B",
+      "长度": 12870
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone_call_controller.gd",
+      "算法": "SHA256",
+      "散列": "A65967F47B38C0CC2C449DFFAFA5A36565E4AF0E0294935B6FE42A22CD0C1559",
+      "长度": 20122
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+      "算法": "SHA256",
+      "散列": "0E90B0EC91D65903DDE11D74CCF97F474567946837ECEC7AB7A48EFDD86A3A7B",
+      "长度": 22443
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\systems\\dialogue-system\\autolysis_dialogue_player.gd",
+      "算法": "SHA256",
+      "散列": "33F6F72D6C157027E096CC4F144CC9C08DF929FDA55EA0391ADCBB6E383935F0",
+      "长度": 18077
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_call_test.gd",
+      "算法": "SHA256",
+      "散列": "D143081F979292429F4C93367180F29F4D15B5461EE72189850658A901CA2C4B",
+      "长度": 17007
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\machine_spatial_audio_test.gd",
+      "算法": "SHA256",
+      "散列": "BCC072E0320B4D91F4C727FB7063735699C557B4A8B3C02A42B117F5073EC248",
+      "长度": 16694
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_device_test.gd",
+      "算法": "SHA256",
+      "散列": "0AD909CF1847BF1571BC588F0B5127DCC400B02021CD412D00FB86B483C7B2A8",
+      "长度": 46195
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_call_boundary_test.gd",
+      "算法": "SHA256",
+      "散列": "1A4F203D980447D76786536A34665AF1F1E32EE5B8C751679E1323D2CC4DE09E",
+      "长度": 17540
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_return_lock_boundary_test.gd",
+      "算法": "SHA256",
+      "散列": "F72742E2E795076C6A0834E1D9A15C0932BFDCCC5A2B225C61CEC1460C5E91B3",
+      "长度": 8633
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_call_gameplay_test.gd",
+      "算法": "SHA256",
+      "散列": "70560F9046D2F84644FB01F1401A134084D7F9A38B23189A5E0AC2D523F4A009",
+      "长度": 6822
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_input_test.gd",
+      "算法": "SHA256",
+      "散列": "AD012CBF96A12E42C24E53988BCB5F2A7059EE32790F5DE118A917A1A009FCCD",
+      "长度": 12571
+    }
+  ]
+}

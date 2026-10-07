@@ -1,0 +1,4 @@
+SCRIPT ERROR: Invalid call. Nonexistent function 'get_instance_shader_parameter_list' in base 'MeshInstance3D'.
+   at: run_probe (res://main-autolysis/systems/quest-print-system/tests/quest_paper_material_probe.gd:27)
+   GDScript backtrace (most recent call first):
+       [0] run_probe (res://main-autolysis/systems/quest-print-system/tests/quest_paper_material_probe.gd:27)

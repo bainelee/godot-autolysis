@@ -1,0 +1,808 @@
+{
+	"失败数": 0,
+	"实际字体排版": [
+		{
+			"样例": "首份十三行",
+			"行测量": [
+				{
+					"data_line_index": 0,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 237.0,
+					"position": "(0.0, 0.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "日期：1944年9月12日",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 1,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 339.0,
+					"position": "(0.0, 40.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "接收方：海尔塔14号地下研究所",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 2,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 408.0,
+					"position": "(0.0, 80.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "委托方：赫铎伦北部战地医疗指挥中心",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 3,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 336.0,
+					"position": "(0.0, 120.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "接收人：马蒂亚斯·韦尔克兰特",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 4,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 227.0,
+					"position": "(0.0, 160.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "委托编号：07003141",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 5,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 216.0,
+					"position": "(0.0, 200.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "委托类型：基础委托",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 6,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 72.0,
+					"position": "(0.0, 256.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "要求：",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 7,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 216.0,
+					"position": "(0.0, 296.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "咖啡因针剂（基础）",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 8,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 144.0,
+					"position": "(0.0, 352.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "委托方简报：",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 9,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 480.0,
+					"position": "(0.0, 392.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "这是你的第一份委托，你应当查阅你的手册。",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 10,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 528.0,
+					"position": "(0.0, 432.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "你需要注意咖啡因的配置原料，最终封装为针剂。",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 11,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 384.0,
+					"position": "(0.0, 472.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "封装后通过气动传输管道提交药物。",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 12,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 40.0)",
+					"missing_characters": "",
+					"natural_width": 288.0,
+					"position": "(0.0, 512.0)",
+					"revealed": false,
+					"size": "(648.0, 40.0)",
+					"text": "别忘了把委托单一同提交。",
+					"visual_line_count": 1,
+					"visual_line_height": 29
+				}
+			]
+		},
+		{
+			"样例": "二十五个长数据行",
+			"行测量": [
+				{
+					"data_line_index": 0,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 0.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 1,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 109.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 2,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 202.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 3,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 295.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 4,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 388.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 5,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 481.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 6,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 574.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 7,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 667.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 8,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 760.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 9,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 853.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 10,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 946.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 11,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 1039.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 12,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 1132.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 13,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 1225.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 14,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 1318.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 15,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 1411.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 16,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 1504.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 17,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 1597.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 18,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 1690.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 19,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 1783.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 20,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 1876.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 21,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 1969.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 22,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 2062.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 23,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 2155.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				},
+				{
+					"data_line_index": 24,
+					"font_height": 29.0,
+					"font_name": "Noto Sans SC",
+					"font_size": 24,
+					"minimum_size": "(1.0, 93.0)",
+					"missing_characters": "",
+					"natural_width": 1584.0,
+					"position": "(0.0, 2248.0)",
+					"revealed": false,
+					"size": "(648.0, 93.0)",
+					"text": "长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。长行正文用于核实真实中文自动折行，保留完整原文并且不增加机械行数。",
+					"visual_line_count": 3,
+					"visual_line_height": 29
+				}
+			]
+		}
+	],
+	"断言": [
+		{
+			"说明": "首份任务使用用户指定独立字符串标识",
+			"通过": true
+		},
+		{
+			"说明": "首份任务严格包含十三个原始数据行",
+			"通过": true
+		},
+		{
+			"说明": "委托编号保留前导零且独立于任务标识",
+			"通过": true
+		},
+		{
+			"说明": "受理快照不随共享任务、全文和分组编辑改变",
+			"通过": true
+		},
+		{
+			"说明": "复制和数组读取均隔离可变内容",
+			"通过": true
+		},
+		{
+			"说明": "统一换行时保留中间空行与末尾空行",
+			"通过": true
+		},
+		{
+			"说明": "空格与制表符不被修剪且独立回车被规范化",
+			"通过": true
+		},
+		{
+			"说明": "拒绝空任务标识",
+			"通过": true
+		},
+		{
+			"说明": "拒绝零元素数据",
+			"通过": true
+		},
+		{
+			"说明": "数组元素必须是单个原始换行数据行",
+			"通过": true
+		},
+		{
+			"说明": "二十一个全空数据行有效且保留完整容量",
+			"通过": true
+		},
+		{
+			"说明": "任务文件定义为非原料且手持展示无脚本无碰撞",
+			"通过": true
+		},
+		{
+			"说明": "两个逐件实例分别接收完整任务副本",
+			"通过": true
+		},
+		{
+			"说明": "逐件身份不同且读取修改不污染任一任务原文",
+			"通过": true
+		},
+		{
+			"说明": "原料不能接收任务纸张内容",
+			"通过": true
+		},
+		{
+			"说明": "完整快照建立纸面布局",
+			"通过": true
+		},
+		{
+			"说明": "真实画布七百二十乘九百六十且四边三十六像素留白",
+			"通过": true
+		},
+		{
+			"说明": "单页裁剪启用且初始文字全部隐藏",
+			"通过": true
+		},
+		{
+			"说明": "第0自然行由真实字体排版且保持基础占位",
+			"通过": true
+		},
+		{
+			"说明": "第1自然行由真实字体排版且保持基础占位",
+			"通过": true
+		},
+		{
+			"说明": "第2自然行由真实字体排版且保持基础占位",
+			"通过": true
+		},
+		{
+			"说明": "第3自然行由真实字体排版且保持基础占位",
+			"通过": true
+		},
+		{
+			"说明": "第4自然行由真实字体排版且保持基础占位",
+			"通过": true
+		},
+		{
+			"说明": "第5自然行由真实字体排版且保持基础占位",
+			"通过": true
+		},
+		{
+			"说明": "第6自然行由真实字体排版且保持基础占位",
+			"通过": true
+		},
+		{
+			"说明": "第7自然行由真实字体排版且保持基础占位",
+			"通过": true
+		},
+		{
+			"说明": "第8自然行由真实字体排版且保持基础占位",
+			"通过": true
+		},
+		{
+			"说明": "第9自然行由真实字体排版且保持基础占位",
+			"通过": true
+		},
+		{
+			"说明": "第10自然行由真实字体排版且保持基础占位",
+			"通过": true
+		},
+		{
+			"说明": "第11自然行由真实字体排版且保持基础占位",
+			"通过": true
+		},
+		{
+			"说明": "第12自然行由真实字体排版且保持基础占位",
+			"通过": true
+		},
+		{
+			"说明": "当前实际系统字体支持首份全部字符",
+			"通过": true
+		},
+		{
+			"说明": "指定自然行一次完整显示且重复显示幂等",
+			"通过": true
+		},
+		{
+			"说明": "隐藏与显示只改变绘制而不改变布局位置和尺寸",
+			"通过": true
+		},
+		{
+			"说明": "越界自然行显示被拒绝",
+			"通过": true
+		},
+		{
+			"说明": "完成补全所有原始数据行",
+			"通过": true
+		},
+		{
+			"说明": "完整快照建立纸面布局",
+			"通过": true
+		},
+		{
+			"说明": "真实长行自动折行且增加对应视觉行高度",
+			"通过": true
+		},
+		{
+			"说明": "超出单页的末行位于实际裁剪区域外",
+			"通过": true
+		},
+		{
+			"说明": "裁剪后仍保存和补全全部二十五个原始数据行",
+			"通过": true
+		},
+		{
+			"说明": "完整快照建立纸面布局",
+			"通过": true
+		},
+		{
+			"说明": "全空数据行保留二十一个排版位置",
+			"通过": true
+		},
+		{
+			"说明": "全空数据行可以正常完成显示",
+			"通过": true
+		},
+		{
+			"说明": "世界纸张入树前绑定设备、序号和同一逐件实例",
+			"通过": true
+		},
+		{
+			"说明": "世界纸张保留逐件身份并绑定实际纸面子视口",
+			"通过": true
+		},
+		{
+			"说明": "纸张拒绝旧序号且本次序号可显示原始行",
+			"通过": true
+		},
+		{
+			"说明": "来源匹配时世界纸张可补全全文",
+			"通过": true
+		},
+		{
+			"说明": "同一逐件实例可以注入不同有效任务来源变体",
+			"通过": true
+		},
+		{
+			"说明": "同一逐件身份中的任务标识或全文替换不能冒用本次纸面来源",
+			"通过": true
+		},
+		{
+			"说明": "恢复原始任务全文后纸张来源再次匹配",
+			"通过": true
+		},
+		{
+			"说明": "同一逐件身份替换为不同完整排版快照不能冒用当前来源",
+			"通过": true
+		},
+		{
+			"说明": "原始标识全文和分组快照复原后来源完整匹配",
+			"通过": true
+		},
+		{
+			"说明": "设备已撤销来源后旧纸张无法继续推进",
+			"通过": true
+		},
+		{
+			"说明": "清理世界表现立即撤销纸张自身来源且完整逐件内容不丢失",
+			"通过": true
+		},
+		{
+			"说明": "世界纸张排队释放完成",
+			"通过": true
+		}
+	],
+	"通过": true
+}

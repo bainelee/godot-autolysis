@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://deae5wclmti8s"]
+
+[ext_resource type="Script" uid="uid://dvc0qy8ufao2d" path="res://main-degauss/recorder/ui/tape_timeline_display.gd" id="1_display"]
+[ext_resource type="PackedScene" uid="uid://c1sx06belhahd" path="res://main-degauss/recorder/ui/tape_timeline_ui.tscn" id="2_ui"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_timeline"]
+size = Vector2(0.18, 0.072)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_w1fbf"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w1fbf"]
+resource_local_to_scene = true
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1.8247963, 1.8247963, 1.8247963, 1)
+albedo_texture = SubResource("ViewportTexture_w1fbf")
+texture_filter = 0
+texture_repeat = false
+
+[node name="TapeTimelineDisplay" type="Node3D" unique_id=1784428133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0.045)
+script = ExtResource("1_display")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=598139498]
+transparent_bg = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(100, 40)
+render_target_update_mode = 4
+
+[node name="TapeTimelineUI" parent="SubViewport" unique_id=1336861801 instance=ExtResource("2_ui")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TimelineQuad" type="MeshInstance3D" parent="." unique_id=1642450013]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.001778435)
+mesh = SubResource("QuadMesh_timeline")
+surface_material_override/0 = SubResource("StandardMaterial3D_w1fbf")

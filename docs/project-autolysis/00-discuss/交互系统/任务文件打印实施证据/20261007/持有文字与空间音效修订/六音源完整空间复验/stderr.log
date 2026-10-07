@@ -1,0 +1,8 @@
+SCRIPT ERROR: Parse Error: Too few arguments for "cancel_print()" call. Expected at least 2 but received 1.
+   at: GDScript::reload (res://main-autolysis/player/tests/machine_spatial_audio_test.gd:239)
+SCRIPT ERROR: Parse Error: Cannot pass a value of type "String" as "int".
+   at: GDScript::reload (res://main-autolysis/player/tests/machine_spatial_audio_test.gd:239)
+SCRIPT ERROR: Parse Error: Invalid argument for "cancel_print()" function: argument 1 should be "int" but is "String".
+   at: GDScript::reload (res://main-autolysis/player/tests/machine_spatial_audio_test.gd:239)
+ERROR: Failed to load script "res://main-autolysis/player/tests/machine_spatial_audio_test.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)

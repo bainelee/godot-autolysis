@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cmlou7r2h7uf0"]
+
+[ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="1_qkbdp"]
+[ext_resource type="Material" uid="uid://2ojxp1wvlajt" path="res://main-autolysis/assets/materials/glow_color/mat_glow_white_0.tres" id="2_8cbix"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3brsp"]
+size = Vector3(0.6, 0.2, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_myrie"]
+size = Vector3(0.4, 0.1, 0.04)
+
+[node name="LightPrefabUplight0" type="Node3D" unique_id=145906239]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1476040077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05)
+material_override = ExtResource("1_qkbdp")
+mesh = SubResource("BoxMesh_3brsp")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1548326937]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.10000001)
+material_override = ExtResource("2_8cbix")
+mesh = SubResource("BoxMesh_myrie")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D6" unique_id=722861476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1175871e-08, 0.25)
+light_color = Color(1, 0.7403333, 0.62, 1)
+light_energy = 0.2
+light_size = 0.283
+light_specular = 0.0
+shadow_enabled = true
+omni_range = 6.459
+omni_attenuation = 0.2

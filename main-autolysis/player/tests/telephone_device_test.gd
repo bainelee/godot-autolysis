@@ -6,7 +6,7 @@ const PHONE_SCENE: PackedScene = preload("res://main-autolysis/scenes/prefabs/pr
 const BASELINE_PHONE: PackedScene = preload("res://docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/baseline/main-autolysis/scenes/prefabs/prefab_machines/machine_telephone_0.tscn")
 const BASELINE_MAIN: PackedScene = preload("res://docs/project-autolysis/00-discuss/交互系统/电话聚焦交互实施证据/20261004/baseline/main-autolysis/scenes/01-autolysis-test.tscn")
 const CAFFEINE: AutolysisItemDefinition = preload("res://main-autolysis/systems/item-system/items/caffeine.tres")
-const PHONE_EXPORTS: Array[StringName] = [&"reference_camera", &"root_interaction", &"focus_target", &"handset_body", &"handset_interaction", &"handset_anchor", &"handset_visual", &"handset_visual_scene", &"move_limit_body", &"move_limit_shape", &"additional_move_limit_shapes", &"handset_held_position", &"handset_held_rotation_degrees", &"handset_held_scale", &"call_controller"]
+const PHONE_EXPORTS: Array[StringName] = [&"reference_camera", &"root_interaction", &"focus_target", &"handset_body", &"handset_interaction", &"handset_anchor", &"handset_visual", &"handset_visual_scene", &"move_limit_body", &"move_limit_shape", &"additional_move_limit_shapes", &"handset_held_position", &"handset_held_rotation_degrees", &"handset_held_scale", &"call_controller", &"handset_audio"]
 ## 删除前场景明确配置的区域，仅证明样本在旧区域外，不参与任何取筒许可。
 const REMOVED_TAKE_BOUNDS: AABB = AABB(Vector3(-0.43, -1.3, 0), Vector3(2.28, 3.1, 2))
 
@@ -46,6 +46,7 @@ var inventory: AutolysisInventoryController
 var focus: AutolysisFocusController
 var ray: AutolysisFocusRayQuery = AutolysisFocusRayQuery.new()
 var records: Array[Dictionary] = []
+var audio_exit_samples: Array[Dictionary] = []
 var snapshots: Array[Dictionary] = []
 var sync_events: Array[Dictionary] = []
 var motion_records: Array[Dictionary] = []
@@ -83,15 +84,53 @@ func run_checks() -> void:
 		await _test_local_dependency_lifecycle()
 		await _test_asset_variants()
 		await _test_observer_release()
-	_save_report()
+	var audio_references: Array[Dictionary] = _capture_audio_exit_refs()
 	for action: StringName in [&"forward", &"back", &"left", &"right", &"sprint", &"crouch"]:
 		Input.action_release(action)
 	paused = false
 	if is_instance_valid(world):
 		world.queue_free()
 	await frames(2)
+	await _await_audio_exit_release(audio_references, "原两帧清理后")
+	_save_report()
 	print("电话设备断言数：", records.size(), "；失败数：", failures)
 	quit(1 if failures > 0 else 0)
+
+
+func _capture_audio_exit_refs() -> Array[Dictionary]:
+	var result: Array[Dictionary] = []
+	for node: Node in world.find_children("*", "", true, false):
+		if (node is AudioStreamPlayer or node is AudioStreamPlayer3D) and node.has_stream_playback():
+			var playback: AudioStreamPlayback = node.get_stream_playback()
+			result.append({"source": str(node.get_path()), "id": playback.get_instance_id(), "class": playback.get_class(), "reference": weakref(playback)})
+	return result
+
+
+func _audio_exit_state(references: Array[Dictionary]) -> Array[Dictionary]:
+	var result: Array[Dictionary] = []
+	for info: Dictionary in references:
+		# 临时强查询只在同步函数内存活，不跨等待保留播放实例。
+		var playback: RefCounted = (info.reference as WeakRef).get_ref()
+		result.append({"来源": info.source, "播放身份": info.id, "播放类型": info["class"], "仍存活": is_instance_valid(playback), "临时查询在内的引用数": playback.get_reference_count() if is_instance_valid(playback) else 0})
+	return result
+
+
+func _audio_exit_pending(references: Array[Dictionary]) -> bool:
+	for info: Dictionary in references:
+		if is_instance_valid((info.reference as WeakRef).get_ref()):
+			return true
+	return false
+
+
+func _await_audio_exit_release(references: Array[Dictionary], cleanup_label: String = "原三帧清理后") -> void:
+	audio_exit_samples.append({"阶段": cleanup_label, "墙钟微秒": Time.get_ticks_usec(), "混音时钟": AudioServer.get_time_since_last_mix(), "播放": _audio_exit_state(references)})
+	var deadline: int = Time.get_ticks_usec() + 2000000
+	while _audio_exit_pending(references) and Time.get_ticks_usec() < deadline:
+		# 退出只观察实际服务器引用解除；一毫秒让线程调度，两秒仅是验收超时。
+		OS.delay_msec(1)
+		await process_frame
+	audio_exit_samples.append({"阶段": "实际播放退役完成", "墙钟微秒": Time.get_ticks_usec(), "混音时钟": AudioServer.get_time_since_last_mix(), "播放": _audio_exit_state(references)})
+	check(not _audio_exit_pending(references), "退出前实际声音播放实例已解除全部引用")
 
 
 func _new_scene(fixture: bool = false) -> void:
@@ -707,4 +746,4 @@ func _save_report() -> void:
 	var directory: String = ProjectSettings.globalize_path(evidence_directory)
 	DirAccess.make_dir_recursive_absolute(directory)
 	var file: FileAccess = FileAccess.open(directory.path_join("电话设备报告.json"), FileAccess.WRITE)
-	file.store_string(JSON.stringify({"断言": records, "失败数": failures, "业务快照": snapshots, "站位无门禁样本": position_records, "限位同步事件": sync_events, "正式玩家运动轨迹": motion_records, "图形验收": false, "原生系统输入": false}, "\t"))
+	file.store_string(JSON.stringify({"断言": records, "失败数": failures, "业务快照": snapshots, "站位无门禁样本": position_records, "限位同步事件": sync_events, "正式玩家运动轨迹": motion_records, "退出音频采样": audio_exit_samples, "图形验收": false, "原生系统输入": false}, "\t"))

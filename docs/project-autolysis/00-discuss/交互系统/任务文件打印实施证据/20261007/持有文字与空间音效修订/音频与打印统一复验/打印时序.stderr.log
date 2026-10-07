@@ -1,0 +1,30 @@
+WARNING: 提示灯0运行引用或材质失效；停止对应灯表现
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] _effect_warning (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:765)
+       [1] _update_effect_dependencies (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:752)
+       [2] _process (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:568)
+WARNING: 通知中心按压停止更新：打印按钮可选按压播放器或动画失效
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] _disable_press (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_button.gd:175)
+       [1] play_press (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_button.gd:138)
+       [2] try_start_print (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:239)
+       [3] _test_optional_effects_and_instances (res://main-autolysis/systems/quest-print-system/tests/quest_machine_behavior_test.gd:477)
+       [4] frames (res://main-autolysis/systems/quest-print-system/tests/quest_machine_behavior_test.gd:645)
+WARNING: 提示灯1配置失效；停止对应灯表现
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] _effect_warning (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:765)
+       [1] _set_effect (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:706)
+       [2] _complete_print (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:393)
+       [3] _advance_finished_action (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:334)
+       [4] _on_action_finished (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:299)
+WARNING: 提示音1播放器失效；停止对应声音表现
+   at: push_warning (core/variant/variant_utility.cpp:1034)
+   GDScript backtrace (most recent call first):
+       [0] _effect_warning (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:765)
+       [1] _set_effect (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:715)
+       [2] _complete_print (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:393)
+       [3] _advance_finished_action (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:334)
+       [4] _on_action_finished (res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd:299)

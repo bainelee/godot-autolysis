@@ -1,48 +1,71 @@
 [gd_scene format=3 uid="uid://cme1jllyseg04"]
 
-[ext_resource type="Material" uid="uid://3as3koaxu70e" path="res://main-autolysis/assets/materials/base_color/mat_base_red_2.tres" id="1_iu4jk"]
+[ext_resource type="Material" uid="uid://ceioxflw48sba" path="res://main-autolysis/assets/materials/base_color/mat_base_blue_3.tres" id="1_irjp0"]
+[ext_resource type="Material" uid="uid://k82d3m3s3npx" path="res://main-autolysis/assets/materials/base_color/mat_base_blue_2.tres" id="1_qj36a"]
 [ext_resource type="Material" uid="uid://blu42xw7rpe7b" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_2.tres" id="1_vyxq7"]
 [ext_resource type="Material" uid="uid://v2cw5dvy875j" path="res://main-autolysis/assets/materials/base_color/mat_base_red_3.tres" id="2_irjp0"]
 [ext_resource type="Material" uid="uid://crqrmivk2bi6u" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_3.tres" id="2_iu4jk"]
-[ext_resource type="Material" uid="uid://bp35cd3s1kb3t" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_0.tres" id="2_qj36a"]
+[ext_resource type="Material" uid="uid://daymgxnkqk8gy" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_4.tres" id="3_e7760"]
 [ext_resource type="Material" uid="uid://5yjf2yjo2u7l" path="res://main-autolysis/assets/materials/base_color/mat_base_grey_1.tres" id="3_qj36a"]
-[ext_resource type="Material" uid="uid://d238nmu8fostl" path="res://main-autolysis/assets/materials/base_color/mat_base_black_0.tres" id="4_irjp0"]
-[ext_resource type="Material" uid="uid://c0hhcbbjw5rir" path="res://main-autolysis/assets/materials/base_color/mat_base_green_2.tres" id="5_qj36a"]
+[ext_resource type="Material" uid="uid://dl8t4wdj7gtig" path="res://main-autolysis/assets/materials/base_color/mat_base_white_1.tres" id="7_3fwip"]
+[ext_resource type="Script" uid="uid://d2vyad2d1l73j" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_machine.gd" id="9_machine"]
+[ext_resource type="Script" uid="uid://cqespumy4ua04" path="res://main-autolysis/scenes/prefabs/prefab_machines/scripts/autolysis_quest_print_button.gd" id="10_button"]
+[ext_resource type="Script" uid="uid://b7kdmn1qas3t1" path="res://main-autolysis/components/interactions/autolysis_interaction_component.gd" id="11_interaction"]
+[ext_resource type="Script" uid="uid://c1pn2s683ojtr" path="res://main-autolysis/components/interactions/autolysis_focus_target.gd" id="12_focus"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_irjp0"]
-size = Vector3(1.5, 0.7, 0.47)
+size = Vector3(1.1999999, 0.79999995, 0.59999996)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4qoi"]
 albedo_color = Color(0.68, 0.7, 0.66, 1)
 roughness = 0.72
 
-[sub_resource type="BoxMesh" id="BoxMesh_1wyxf"]
+[sub_resource type="BoxMesh" id="BoxMesh_go7og"]
 material = SubResource("StandardMaterial3D_u4qoi")
-size = Vector3(1.5, 0.6, 0.4)
+size = Vector3(0.6, 0.06, 0.06)
 
-[sub_resource type="BoxMesh" id="BoxMesh_wcdud"]
+[sub_resource type="BoxMesh" id="BoxMesh_2xqdn"]
 material = SubResource("StandardMaterial3D_u4qoi")
-size = Vector3(1.5, 0.1, 0.46)
+size = Vector3(0.4, 0.1, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r8qg7"]
+material = SubResource("StandardMaterial3D_u4qoi")
+size = Vector3(0.2, 0.1, 0.04)
 
 [sub_resource type="BoxMesh" id="BoxMesh_irjp0"]
 material = SubResource("StandardMaterial3D_u4qoi")
-size = Vector3(0.6, 0.5, 0.02)
+size = Vector3(1, 0.6, 0.4)
 
-[sub_resource type="BoxMesh" id="BoxMesh_8ivqi"]
-material = ExtResource("2_iu4jk")
-size = Vector3(0.6, 0.04, 0.05)
-
-[sub_resource type="BoxMesh" id="BoxMesh_iu4jk"]
-material = ExtResource("2_iu4jk")
-size = Vector3(0.04, 0.42, 0.05)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ywlwq"]
+[sub_resource type="BoxMesh" id="BoxMesh_nhlww"]
 material = SubResource("StandardMaterial3D_u4qoi")
-size = Vector3(0.4, 0.04, 0.05)
+size = Vector3(1, 0.1, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1q0ml"]
+material = SubResource("StandardMaterial3D_u4qoi")
+size = Vector3(1.2, 0.1, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wcdud"]
+material = SubResource("StandardMaterial3D_u4qoi")
+size = Vector3(0.1, 0.6, 0.2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_8mwvv"]
 material = SubResource("StandardMaterial3D_u4qoi")
-size = Vector3(0.36, 0.01, 0.02)
+size = Vector3(0.04, 0.6, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mw2q1"]
+material = SubResource("StandardMaterial3D_u4qoi")
+size = Vector3(0.36, 0.48, 0.06)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qj36a"]
+material = SubResource("StandardMaterial3D_u4qoi")
+size = Vector3(0.1, 0.1, 0.04)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hwwen"]
+size = Vector3(0.3, 0.1, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_e7760"]
+material = SubResource("StandardMaterial3D_u4qoi")
+size = Vector3(0.06, 0.06, 0.02)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ojdrm"]
 material = SubResource("StandardMaterial3D_u4qoi")
@@ -52,165 +75,208 @@ size = Vector3(0.1, 0.1, 0.04)
 material = SubResource("StandardMaterial3D_u4qoi")
 size = Vector3(0.08, 0.08, 0.04)
 
-[sub_resource type="BoxMesh" id="BoxMesh_31j6e"]
-material = SubResource("StandardMaterial3D_u4qoi")
-size = Vector3(0.4, 0.1, 0.04)
+[sub_resource type="BoxShape3D" id="BoxShape3D_nhlww"]
+size = Vector3(0.099999994, 0.099999994, 0.07)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_qj36a"]
-top_radius = 0.04
-bottom_radius = 0.04
-height = 0.03
-radial_segments = 16
+[sub_resource type="Animation" id="Animation_nhlww"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("button_print_quest/button_print_quest_press:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.02000001)]
+}
 
-[sub_resource type="BoxMesh" id="BoxMesh_nhlww"]
-material = SubResource("StandardMaterial3D_u4qoi")
-size = Vector3(0.1, 0.06, 0.02)
+[sub_resource type="Animation" id="Animation_e7760"]
+resource_name = "button_print_quest_press"
+length = 0.16
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("button_print_quest/button_print_quest_press:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.16),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.02000001), Vector3(0, 0, 0.001), Vector3(0, 0, 0.02)]
+}
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_e7760"]
-top_radius = 0.03
-bottom_radius = 0.03
-height = 0.02
-radial_segments = 16
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3fwip"]
+_data = {
+&"RESET": SubResource("Animation_nhlww"),
+&"button_print_quest_press": SubResource("Animation_e7760")
+}
 
-[sub_resource type="BoxMesh" id="BoxMesh_1q0ml"]
-material = SubResource("StandardMaterial3D_u4qoi")
-size = Vector3(0.06, 0.01, 0.01)
+[node name="quest_machine_0" type="StaticBody3D" unique_id=1978367003 node_paths=PackedStringArray("focus_target", "reference_camera", "root_interaction", "print_button", "animation_source", "paper_anchor", "horizontal_axis", "print_head", "timing_root", "pending_indicator", "completed_indicator", "notice_player", "scanning_player") groups=["interactable"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("9_machine")
+focus_target = NodePath("FocusTarget")
+reference_camera = NodePath("focus_camera")
+root_interaction = NodePath("InteractionComponent")
+print_button = NodePath("button_print_quest")
+animation_source = NodePath("AnimationPlayer")
+paper_anchor = NodePath("quest_paper_slot")
+horizontal_axis = NodePath("print_bar/print_bar_horizontal_axis")
+print_head = NodePath("print_bar/print_bar_horizontal_axis/print_bar_main")
+timing_root = NodePath("TimingRoot")
+pending_indicator = NodePath("quest_machine_light_0/mesh_quest_machine_light_0")
+completed_indicator = NodePath("quest_machine_light_1/mesh_quest_machine_light_1")
+notice_player = NodePath("TimingRoot/NoticePlayer")
+scanning_player = NodePath("TimingRoot/ScanningPlayer")
 
-[sub_resource type="BoxMesh" id="BoxMesh_qj36a"]
-material = SubResource("StandardMaterial3D_u4qoi")
-size = Vector3(0.1, 0.1, 0.04)
+[node name="InteractionComponent" type="Node3D" parent="." unique_id=986436724]
+script = ExtResource("11_interaction")
+interaction_mode = 1
 
-[sub_resource type="BoxMesh" id="BoxMesh_e7760"]
-material = SubResource("StandardMaterial3D_u4qoi")
-size = Vector3(0.06, 0.06, 0.02)
+[node name="FocusTarget" type="Node3D" parent="." unique_id=1085907601]
+script = ExtResource("12_focus")
 
-[node name="quest_machine_0" type="StaticBody3D" unique_id=1978367003]
+[node name="TimingRoot" type="Node3D" parent="." unique_id=1157493265]
+process_mode = 1
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1488360454]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35000005, 0.23600002)
+[node name="NoticePlayer" type="AudioStreamPlayer3D" parent="TimingRoot" unique_id=1114907546]
+unit_size = 3.0
+bus = &"SFX"
+
+[node name="ScanningPlayer" type="AudioStreamPlayer3D" parent="TimingRoot" unique_id=2062207033]
+unit_size = 3.0
+bus = &"SFX"
+
+[node name="focus_camera" type="Camera3D" parent="." unique_id=1424462674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.051, 0.418, 1.468)
+fov = 55.0
+
+[node name="collision_quest_machine_base" type="CollisionShape3D" parent="." unique_id=1488360454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.099999964, 0.40000004, 0.301)
 shape = SubResource("BoxShape3D_irjp0")
 
-[node name="mesh_quest_machine_base" type="MeshInstance3D" parent="." unique_id=781199591]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0.20100002)
-material_override = ExtResource("1_iu4jk")
-mesh = SubResource("BoxMesh_1wyxf")
+[node name="quest_paper_slot" type="Node3D" parent="." unique_id=1284554616]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28, 0.33999997, 0.47)
 
-[node name="mesh_quest_machine_base2" type="MeshInstance3D" parent="mesh_quest_machine_base" unique_id=296213646]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35000002, 0.030000001)
-material_override = ExtResource("2_irjp0")
-mesh = SubResource("BoxMesh_wcdud")
-skeleton = NodePath("../..")
-
-[node name="mesh_quest_machine_monitor" type="MeshInstance3D" parent="." unique_id=900201924]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.3, 0.41)
-material_override = ExtResource("2_qj36a")
-mesh = SubResource("BoxMesh_irjp0")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="mesh_quest_machine_monitor" unique_id=1712201509]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22999996, 0.035000026)
-material_override = ExtResource("2_iu4jk")
-mesh = SubResource("BoxMesh_8ivqi")
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="mesh_quest_machine_monitor" unique_id=950561616]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23000005, 0.035000026)
-material_override = ExtResource("2_iu4jk")
-mesh = SubResource("BoxMesh_8ivqi")
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="mesh_quest_machine_monitor" unique_id=54131873]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28, 0, 0.034999996)
-material_override = ExtResource("2_iu4jk")
-mesh = SubResource("BoxMesh_iu4jk")
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="mesh_quest_machine_monitor" unique_id=1543548797]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27999997, 0, 0.034999996)
-material_override = ExtResource("2_iu4jk")
-mesh = SubResource("BoxMesh_iu4jk")
-skeleton = NodePath("../..")
-
-[node name="mesh_quest_machine_paper_outer" type="MeshInstance3D" parent="." unique_id=271626411]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14999981, 0.53000003, 0.42499962)
-material_override = ExtResource("4_irjp0")
-mesh = SubResource("BoxMesh_ywlwq")
+[node name="print_bar" type="Node3D" parent="." unique_id=1349102517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 0.65, 0.55)
 metadata/_edit_group_ = true
 
-[node name="mesh_test0" type="MeshInstance3D" parent="mesh_quest_machine_paper_outer" unique_id=1608450937]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02000001)
-material_override = ExtResource("2_qj36a")
+[node name="print_bar_horizontal_axis" type="MeshInstance3D" parent="print_bar" unique_id=538440115]
+material_override = ExtResource("2_iu4jk")
+mesh = SubResource("BoxMesh_go7og")
+
+[node name="print_bar_main" type="MeshInstance3D" parent="print_bar/print_bar_horizontal_axis" unique_id=750123316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.099999964, 0, 0)
+material_override = ExtResource("1_vyxq7")
+mesh = SubResource("BoxMesh_2xqdn")
+
+[node name="mesh_quest_machine_base6" type="MeshInstance3D" parent="print_bar/print_bar_horizontal_axis/print_bar_main" unique_id=812844359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.099999964, 0.029999971)
+material_override = ExtResource("1_vyxq7")
+mesh = SubResource("BoxMesh_r8qg7")
+
+[node name="mesh" type="Node3D" parent="." unique_id=283046435]
+
+[node name="mesh_quest_machine_base" type="MeshInstance3D" parent="mesh" unique_id=781199591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0.20100002)
+material_override = ExtResource("1_irjp0")
+mesh = SubResource("BoxMesh_irjp0")
+
+[node name="mesh_quest_machine_base2" type="MeshInstance3D" parent="mesh/mesh_quest_machine_base" unique_id=617314215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24999999, 0.3)
+material_override = ExtResource("1_qj36a")
+mesh = SubResource("BoxMesh_nhlww")
+
+[node name="mesh_quest_machine_base3" type="MeshInstance3D" parent="mesh/mesh_quest_machine_base" unique_id=306278590]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.099999994, 0.35000002, 0.2)
+material_override = ExtResource("3_e7760")
+mesh = SubResource("BoxMesh_1q0ml")
+
+[node name="mesh_quest_machine_base5" type="MeshInstance3D" parent="mesh/mesh_quest_machine_base" unique_id=1589977978]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.65, 2.9802322e-08, 0.2)
+material_override = ExtResource("3_e7760")
+mesh = SubResource("BoxMesh_wcdud")
+
+[node name="mesh_quest_machine_base6" type="MeshInstance3D" parent="mesh/mesh_quest_machine_base" unique_id=727465780]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.65, 0.050000012, 0.31)
+material_override = ExtResource("2_irjp0")
 mesh = SubResource("BoxMesh_8mwvv")
+
+[node name="mesh_quest_machine_base5" type="MeshInstance3D" parent="mesh" unique_id=1767994210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28, 0.34000003, 0.431)
+material_override = ExtResource("7_3fwip")
+mesh = SubResource("BoxMesh_mw2q1")
+
+[node name="mesh_quest_machine_light_0_base" type="MeshInstance3D" parent="mesh" unique_id=444884108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3999998, 0.50000006, 0.41999963)
+material_override = ExtResource("3_qj36a")
+mesh = SubResource("BoxMesh_qj36a")
+
+[node name="mesh_quest_machine_light_1_base" type="MeshInstance3D" parent="mesh" unique_id=2096542957]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3999998, 0.35000008, 0.41999963)
+material_override = ExtResource("3_qj36a")
+mesh = SubResource("BoxMesh_qj36a")
+
+[node name="light_tip_0" type="MeshInstance3D" parent="." unique_id=573495226]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15999985, 0.50000006, 0.41999963)
+material_override = ExtResource("3_qj36a")
+mesh = SubResource("BoxMesh_hwwen")
+
+[node name="light_tip_1" type="MeshInstance3D" parent="." unique_id=278372691]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15999985, 0.35000008, 0.41999963)
+material_override = ExtResource("3_qj36a")
+mesh = SubResource("BoxMesh_hwwen")
+
+[node name="quest_machine_light_0" type="Node3D" parent="." unique_id=949630074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3999998, 0.50000006, 0.44999963)
+
+[node name="mesh_quest_machine_light_0" type="MeshInstance3D" parent="quest_machine_light_0" unique_id=387953202]
+material_override = ExtResource("2_irjp0")
+mesh = SubResource("BoxMesh_e7760")
 skeleton = NodePath("../..")
 
-[node name="mesh_quest_machine_paper_outer_button" type="MeshInstance3D" parent="." unique_id=1492181314]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3841858e-07, 0.42000005, 0.41999984)
-material_override = ExtResource("2_iu4jk")
-mesh = SubResource("BoxMesh_ojdrm")
+[node name="quest_machine_light_1" type="Node3D" parent="." unique_id=1957822891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3999998, 0.35000008, 0.44999963)
 
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="mesh_quest_machine_paper_outer_button" unique_id=806396819]
+[node name="mesh_quest_machine_light_1" type="MeshInstance3D" parent="quest_machine_light_1" unique_id=1791986099]
+material_override = ExtResource("2_irjp0")
+mesh = SubResource("BoxMesh_e7760")
+skeleton = NodePath("../..")
+
+[node name="button_print_quest" type="StaticBody3D" parent="." unique_id=1294513362 node_paths=PackedStringArray("print_interaction", "collision_shape") groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.059999816, 0.19, 0.41999984)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("10_button")
+print_interaction = NodePath("InteractionComponent")
+collision_shape = NodePath("collision_button_print_quest")
+metadata/_edit_group_ = true
+
+[node name="InteractionComponent" type="Node3D" parent="button_print_quest" unique_id=1302383071]
+script = ExtResource("11_interaction")
+
+[node name="button_print_quest_base" type="MeshInstance3D" parent="button_print_quest" unique_id=1382920853]
+material_override = ExtResource("3_e7760")
+mesh = SubResource("BoxMesh_ojdrm")
+metadata/_edit_group_ = true
+
+[node name="button_print_quest_press" type="MeshInstance3D" parent="button_print_quest" unique_id=806396819]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02000001)
-material_override = ExtResource("5_qj36a")
+material_override = ExtResource("3_qj36a")
 mesh = SubResource("BoxMesh_3fwip")
 skeleton = NodePath("../..")
 
-[node name="mesh_quest_machine_chat_speaker" type="MeshInstance3D" parent="." unique_id=1832068697]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2999997, 0.10000009, 0.41999945)
-material_override = ExtResource("2_iu4jk")
-mesh = SubResource("BoxMesh_31j6e")
+[node name="collision_button_print_quest" type="CollisionShape3D" parent="button_print_quest" unique_id=1009764452]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.450581e-09, -1.4901161e-08, 0.014999986)
+shape = SubResource("BoxShape3D_nhlww")
+debug_color = Color(0.9391562, 1.0299981e-05, 0.62275, 0.41960785)
 
-[node name="mesh_quest_machine_chat_roll_button" type="MeshInstance3D" parent="." unique_id=767995062]
-transform = Transform3D(1, 0, 0, 0, 7.54979e-08, -1, 0, 1, 7.54979e-08, -2.933666e-07, 0.09000008, 0.41999945)
-material_override = ExtResource("2_qj36a")
-mesh = SubResource("CylinderMesh_qj36a")
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="mesh_quest_machine_chat_roll_button" unique_id=272220116]
-transform = Transform3D(1, 0, 0, 0, 7.54979e-08, 1, 0, -1, 7.54979e-08, 0, -0.004999995, -0.030000001)
-material_override = ExtResource("2_qj36a")
-mesh = SubResource("BoxMesh_nhlww")
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D10" type="MeshInstance3D" parent="mesh_quest_machine_chat_roll_button" unique_id=1679645375]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025000006, 1.4901161e-08)
-material_override = ExtResource("1_vyxq7")
-mesh = SubResource("CylinderMesh_e7760")
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D11" type="MeshInstance3D" parent="mesh_quest_machine_chat_roll_button/MeshInstance3D10" unique_id=2068326446]
-transform = Transform3D(-0.7071068, 0.7071067, 0, -5.3385072e-08, -5.3385083e-08, 1, 0.7071067, 0.7071068, 7.5497894e-08, 0, 0.014999986, 0)
-material_override = ExtResource("2_iu4jk")
-mesh = SubResource("BoxMesh_1q0ml")
-skeleton = NodePath("../../..")
-
-[node name="mesh_quest_machine_light_0" type="MeshInstance3D" parent="." unique_id=444884108]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6499998, 0.50000006, 0.41999963)
-material_override = ExtResource("3_qj36a")
-mesh = SubResource("BoxMesh_qj36a")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="mesh_quest_machine_light_0" unique_id=387953202]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.030000001)
-material_override = ExtResource("2_iu4jk")
-mesh = SubResource("BoxMesh_e7760")
-skeleton = NodePath("../..")
-
-[node name="mesh_quest_machine_light_1" type="MeshInstance3D" parent="." unique_id=2096542957]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6499998, 0.35000008, 0.41999963)
-material_override = ExtResource("3_qj36a")
-mesh = SubResource("BoxMesh_qj36a")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="mesh_quest_machine_light_1" unique_id=1791986099]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.030000001)
-material_override = ExtResource("2_iu4jk")
-mesh = SubResource("BoxMesh_e7760")
-skeleton = NodePath("../..")
-
-[node name="mesh_quest_machine_light_2" type="MeshInstance3D" parent="." unique_id=1523877279]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6499998, 0.20000009, 0.41999963)
-material_override = ExtResource("3_qj36a")
-mesh = SubResource("BoxMesh_qj36a")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="mesh_quest_machine_light_2" unique_id=1826389108]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.030000001)
-material_override = ExtResource("2_iu4jk")
-mesh = SubResource("BoxMesh_e7760")
-skeleton = NodePath("../..")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=366266243]
+process_mode = 1
+callback_mode_process = 2
+libraries/ = SubResource("AnimationLibrary_3fwip")

@@ -151,16 +151,38 @@ func run_checks() -> void:
 	telephone.request_handset_transfer(actor)
 	await _settle_transfer()
 	check(not inventory.has_exclusive_handset(), "调节面板移除后仍可归还")
-	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(evidence_directory))
-	var report: FileAccess = FileAccess.open(evidence_directory.path_join("电话输入结果.json"), FileAccess.WRITE)
-	report.store_string(JSON.stringify({"断言": records, "失败": failures, "输入方式": "无图形引擎内部事件及明确故障调用；没有系统指针操作"}, "\t"))
-	report.close()
 	InputMap.action_erase_events(actor.handset_pose_debug_action)
 	for binding: InputEvent in original_pose_bindings:
 		InputMap.action_add_event(actor.handset_pose_debug_action, binding)
+	var audio_references: Array[WeakRef] = []
+	var audio_sources: Array[Dictionary] = []
+	for node: Node in world.find_children("*", "AudioStreamPlayer3D", true, false):
+		var audio: AudioStreamPlayer3D = node as AudioStreamPlayer3D
+		if audio.has_stream_playback():
+			audio_references.append(weakref(audio.get_stream_playback()))
+			audio_sources.append({"来源": str(audio.get_path()), "播放身份": audio.get_stream_playback().get_instance_id()})
 	world.queue_free()
 	await frames(3)
+	var pending_after_frames: bool = _audio_references_alive(audio_references)
+	var deadline: int = Time.get_ticks_usec() + 2000000
+	var before_mix: float = AudioServer.get_time_since_last_mix()
+	while _audio_references_alive(audio_references) and Time.get_ticks_usec() < deadline:
+		# 一毫秒只让线程调度；退役由本次实际弱引用消失决定。
+		OS.delay_msec(1)
+		await process_frame
+	check(not _audio_references_alive(audio_references), "电话输入专项退出前本次实际声音播放实例已解除引用")
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(evidence_directory))
+	var report: FileAccess = FileAccess.open(evidence_directory.path_join("电话输入结果.json"), FileAccess.WRITE)
+	report.store_string(JSON.stringify({"断言": records, "失败": failures, "退出音频采样": {"播放来源": audio_sources, "原三帧后仍存活": pending_after_frames, "实际退役完成": not _audio_references_alive(audio_references), "混音时钟前": before_mix, "混音时钟后": AudioServer.get_time_since_last_mix()}, "输入方式": "无图形引擎内部事件及明确故障调用；没有系统指针操作"}, "\t"))
+	report.close()
 	quit(1 if failures > 0 else 0)
+
+
+func _audio_references_alive(references: Array[WeakRef]) -> bool:
+	for reference: WeakRef in references:
+		if reference.get_ref() != null:
+			return true
+	return false
 
 
 func _settle_transfer() -> void:

@@ -1,0 +1,9 @@
+ERROR: The object does not have any 'meta' values with the key 'quest_paper_display_instance'.
+   at: get_meta (core/object/object.cpp:1155)
+   GDScript backtrace (most recent call first):
+       [0] get_instance (res://main-autolysis/systems/item-system/autolysis_quest_paper_visual.gd:38)
+       [1] apply_instance (res://main-autolysis/systems/item-system/autolysis_quest_paper_visual.gd:86)
+       [2] prepare_instance (res://main-autolysis/player/components/autolysis_held_item_presenter.gd:86)
+       [3] _prepare_visual (res://main-autolysis/player/components/autolysis_inventory_controller.gd:1560)
+       [4] try_receive_instance (res://main-autolysis/player/components/autolysis_inventory_controller.gd:575)
+       [5] run_checks (res://main-autolysis/player/tests/quest_held_text_test.gd:48)

@@ -1,0 +1,11 @@
+{
+  "历史记录": "最终回归/电话持物互斥回归.json",
+  "原退出码": 0,
+  "原断言通过数": 274,
+  "原执行器标记通过": true,
+  "严格警告审计通过": false,
+  "历史警告": [
+    "WARNING: ObjectDB instances leaked at exit (run with --verbose for details)."
+  ],
+  "处理": "原记录与原日志保留；此轮不纳入最终有效通过计数；依据新复验记录判定当前状态，未宣称修复历史根因"
+}

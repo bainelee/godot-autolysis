@@ -212,7 +212,7 @@ func _first_held_observer() -> void:
 func _test_completion_pending_and_cancel() -> void:
 	await _new_scene()
 	await _enter()
-	var voice: AudioStreamPlayer = _dialogue().get_node("Timing/Voice")
+	var voice: AudioStreamPlayer3D = _call().voice_player
 	# 先注册观察，在原生音频自然完成当帧经真实菜单输入暂停。
 	voice.finished.connect(_menu, CONNECT_ONE_SHOT)
 	phone.request_call(single_definition, player)
@@ -250,7 +250,7 @@ func _test_optional_ring_and_source_failure() -> void:
 	phone.request_call(single_definition, player)
 	await _take()
 	var original: int = inventory.get_handset_session_id()
-	_dialogue().get_node("Timing/Voice").queue_free()
+	_call().voice_player.queue_free()
 	await frames(4)
 	check(_call_stage() == CallController.Stage.ABORTED and inventory.get_handset_session_id() == original and not phone.move_limit_shape.disabled, "必要语音播放器释放异常结束来电且有效听筒继续持有")
 	check(not _call().last_abort_record.is_empty() and not phone.is_handset_return_blocked(player, original), "播放依赖失效记录真实异常原因且只清匹配通话锁")
@@ -265,10 +265,13 @@ func run_checks() -> void:
 	await _test_take_business_rollback_and_locks()
 	await _test_completion_pending_and_cancel()
 	await _test_optional_ring_and_source_failure()
-	DirAccess.make_dir_recursive_absolute(evidence_directory)
-	var output := FileAccess.open(evidence_directory.path_join("电话来电成对事务暂停与异常.json"), FileAccess.WRITE)
-	output.store_string(JSON.stringify({"引擎": Engine.get_version_info(), "断言": records, "来电采样": call_records, "暂停采样": pause_records, "失败数": failures}, "\t"))
+	var audio_references: Array[Dictionary] = _capture_audio_exit_refs()
 	paused = false
 	world.queue_free()
 	await frames(3)
+	await _await_audio_exit_release(audio_references)
+	DirAccess.make_dir_recursive_absolute(evidence_directory)
+	var output := FileAccess.open(evidence_directory.path_join("电话来电成对事务暂停与异常.json"), FileAccess.WRITE)
+	output.store_string(JSON.stringify({"引擎": Engine.get_version_info(), "断言": records, "来电采样": call_records, "暂停采样": pause_records, "退出音频采样": audio_exit_samples, "失败数": failures}, "\t"))
+	output.close()
 	quit(1 if failures > 0 else 0)

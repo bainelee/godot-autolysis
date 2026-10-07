@@ -1,0 +1,939 @@
+{
+	"事件": [
+		{
+			"事件": "实际射线命中",
+			"像素": "(713.2465, 510.4525)",
+			"物体": "/root/01-autolysis-test/interaction_prefabs/machines/quest_machine_0/button_print_quest"
+		},
+		{
+			"事件": "打印开始",
+			"帧": 26,
+			"序号": 2
+		},
+		{
+			"事件": "实际射线命中",
+			"像素": "(481.317, 414.0493)",
+			"物体": "/root/01-autolysis-test/interaction_prefabs/machines/quest_machine_0/quest_paper_slot/quest_paper"
+		},
+		{
+			"事件": "行显示",
+			"帧": 233,
+			"序号": 2,
+			"行索引": 0
+		},
+		{
+			"事件": "行显示",
+			"帧": 422,
+			"序号": 2,
+			"行索引": 1
+		},
+		{
+			"事件": "行显示",
+			"帧": 611,
+			"序号": 2,
+			"行索引": 2
+		},
+		{
+			"事件": "行显示",
+			"帧": 800,
+			"序号": 2,
+			"行索引": 3
+		},
+		{
+			"事件": "行显示",
+			"帧": 989,
+			"序号": 2,
+			"行索引": 4
+		},
+		{
+			"事件": "行显示",
+			"帧": 1178,
+			"序号": 2,
+			"行索引": 5
+		},
+		{
+			"事件": "行显示",
+			"帧": 1367,
+			"序号": 2,
+			"行索引": 6
+		},
+		{
+			"事件": "行显示",
+			"帧": 1556,
+			"序号": 2,
+			"行索引": 7
+		},
+		{
+			"事件": "行显示",
+			"帧": 1745,
+			"序号": 2,
+			"行索引": 8
+		},
+		{
+			"事件": "行显示",
+			"帧": 1934,
+			"序号": 2,
+			"行索引": 9
+		},
+		{
+			"事件": "行显示",
+			"帧": 2123,
+			"序号": 2,
+			"行索引": 10
+		},
+		{
+			"事件": "行显示",
+			"帧": 2312,
+			"序号": 2,
+			"行索引": 11
+		},
+		{
+			"事件": "行显示",
+			"帧": 2501,
+			"序号": 2,
+			"行索引": 12
+		},
+		{
+			"事件": "打印完成",
+			"帧": 2574,
+			"序号": 2
+		},
+		{
+			"事件": "纸张取走",
+			"帧": 2575,
+			"序号": 2,
+			"逐件身份": -9223371927802867731
+		},
+		{
+			"事件": "打印开始",
+			"帧": 2663,
+			"序号": 6
+		},
+		{
+			"事件": "行显示",
+			"帧": 2870,
+			"序号": 6,
+			"行索引": 0
+		},
+		{
+			"事件": "行显示",
+			"帧": 3059,
+			"序号": 6,
+			"行索引": 1
+		},
+		{
+			"事件": "行显示",
+			"帧": 3248,
+			"序号": 6,
+			"行索引": 2
+		},
+		{
+			"事件": "行显示",
+			"帧": 3437,
+			"序号": 6,
+			"行索引": 3
+		},
+		{
+			"事件": "打印完成",
+			"帧": 3510,
+			"序号": 6
+		},
+		{
+			"事件": "实际射线命中",
+			"像素": "(481.317, 414.0493)",
+			"物体": "/root/01-autolysis-test/interaction_prefabs/machines/quest_machine_0/quest_paper_slot/quest_paper"
+		},
+		{
+			"事件": "纸张取走",
+			"帧": 3511,
+			"序号": 6,
+			"逐件身份": -9223371698189889527
+		}
+	],
+	"失败数": 0,
+	"引擎": {
+		"build": "official",
+		"hash": "14d19694e0c88a3f9e82d899a0400f27a24c176e",
+		"hex": 263681,
+		"major": 4,
+		"minor": 6,
+		"patch": 1,
+		"status": "stable",
+		"string": "4.6.1-stable (official)",
+		"timestamp": 0
+	},
+	"打印轨迹": {
+		"config": {
+			"axis_reset": "(0.0, 0.0, 0.0)",
+			"capacity": 21,
+			"center": "(0.1, 0.0, 0.0)",
+			"center_time": 0.2,
+			"first": "(0.0, -0.1, 0.0)",
+			"first_descent": 0.2,
+			"first_left": 0.2,
+			"first_wait": 0.5,
+			"left": "(-0.07, 0.0, 0.0)",
+			"minimum": -0.5,
+			"next_line": 0.2,
+			"print_line": 2.5,
+			"reset_time": 1.0,
+			"return_left": 0.4,
+			"right": "(0.27, 0.0, 0.0)",
+			"spacing": 0.02
+		},
+		"events": [
+			{
+				"axis_position": "(0.0, 0.0, 0.0)",
+				"event": "state_changed",
+				"head_position": "(0.1, 0.0, 0.0)",
+				"line": 12,
+				"phase": "",
+				"physics_frame": 2663,
+				"serial": 5,
+				"state": 1,
+				"ticks_usec": 3292381
+			},
+			{
+				"axis_position": "(0.0, 0.0, 0.0)",
+				"event": "print_started",
+				"head_position": "(0.1, 0.0, 0.0)",
+				"line": 0,
+				"phase": "",
+				"physics_frame": 2664,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3317633
+			},
+			{
+				"axis_position": "(0.0, 0.0, 0.0)",
+				"event": "action_started",
+				"head_position": "(0.1, 0.0, 0.0)",
+				"line": 0,
+				"phase": "first_descent",
+				"physics_frame": 2664,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3317782
+			},
+			{
+				"axis_position": "(0.0, -0.1, 0.0)",
+				"event": "action_finished",
+				"head_position": "(0.1, 0.0, 0.0)",
+				"line": 0,
+				"phase": "first_descent",
+				"physics_frame": 2676,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3352967
+			},
+			{
+				"axis_position": "(0.0, -0.1, 0.0)",
+				"event": "action_started",
+				"head_position": "(0.1, 0.0, 0.0)",
+				"line": 0,
+				"phase": "first_wait",
+				"physics_frame": 2676,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3353032
+			},
+			{
+				"axis_position": "(0.0, -0.1, 0.0)",
+				"event": "action_finished",
+				"head_position": "(0.1, 0.0, 0.0)",
+				"line": 0,
+				"phase": "first_wait",
+				"physics_frame": 2707,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3367211
+			},
+			{
+				"axis_position": "(0.0, -0.1, 0.0)",
+				"event": "action_started",
+				"head_position": "(0.1, 0.0, 0.0)",
+				"line": 0,
+				"phase": "first_left",
+				"physics_frame": 2707,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3367305
+			},
+			{
+				"axis_position": "(0.0, -0.1, 0.0)",
+				"event": "action_finished",
+				"head_position": "(-0.07, 0.0, 0.0)",
+				"line": 0,
+				"phase": "first_left",
+				"physics_frame": 2720,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3373111
+			},
+			{
+				"axis_position": "(0.0, -0.1, 0.0)",
+				"event": "action_started",
+				"head_position": "(-0.07, 0.0, 0.0)",
+				"line": 0,
+				"phase": "print_line",
+				"physics_frame": 2720,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3373176
+			},
+			{
+				"axis_position": "(0.0, -0.1, 0.0)",
+				"event": "action_finished",
+				"head_position": "(0.27, 0.0, 0.0)",
+				"line": 0,
+				"phase": "print_line",
+				"physics_frame": 2871,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3438502
+			},
+			{
+				"axis_position": "(0.0, -0.1, 0.0)",
+				"event": "line_revealed",
+				"head_position": "(0.27, 0.0, 0.0)",
+				"line": 0,
+				"phase": "",
+				"physics_frame": 2871,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3438622
+			},
+			{
+				"axis_position": "(0.0, -0.1, 0.0)",
+				"event": "action_started",
+				"head_position": "(0.27, 0.0, 0.0)",
+				"line": 0,
+				"phase": "return_left",
+				"physics_frame": 2871,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3438690
+			},
+			{
+				"axis_position": "(0.0, -0.1, 0.0)",
+				"event": "action_finished",
+				"head_position": "(-0.07, 0.0, 0.0)",
+				"line": 0,
+				"phase": "return_left",
+				"physics_frame": 2896,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3449590
+			},
+			{
+				"axis_position": "(0.0, -0.1, 0.0)",
+				"event": "action_started",
+				"head_position": "(-0.07, 0.0, 0.0)",
+				"line": 1,
+				"phase": "next_line",
+				"physics_frame": 2896,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3449686
+			},
+			{
+				"axis_position": "(0.0, -0.12, 0.0)",
+				"event": "action_finished",
+				"head_position": "(-0.07, 0.0, 0.0)",
+				"line": 1,
+				"phase": "next_line",
+				"physics_frame": 2909,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3456335
+			},
+			{
+				"axis_position": "(0.0, -0.12, 0.0)",
+				"event": "action_started",
+				"head_position": "(-0.07, 0.0, 0.0)",
+				"line": 1,
+				"phase": "print_line",
+				"physics_frame": 2909,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3456477
+			},
+			{
+				"axis_position": "(0.0, -0.12, 0.0)",
+				"event": "action_finished",
+				"head_position": "(0.27, 0.0, 0.0)",
+				"line": 1,
+				"phase": "print_line",
+				"physics_frame": 3060,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3525992
+			},
+			{
+				"axis_position": "(0.0, -0.12, 0.0)",
+				"event": "line_revealed",
+				"head_position": "(0.27, 0.0, 0.0)",
+				"line": 1,
+				"phase": "",
+				"physics_frame": 3060,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3526107
+			},
+			{
+				"axis_position": "(0.0, -0.12, 0.0)",
+				"event": "action_started",
+				"head_position": "(0.27, 0.0, 0.0)",
+				"line": 1,
+				"phase": "return_left",
+				"physics_frame": 3060,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3526177
+			},
+			{
+				"axis_position": "(0.0, -0.12, 0.0)",
+				"event": "action_finished",
+				"head_position": "(-0.07, 0.0, 0.0)",
+				"line": 1,
+				"phase": "return_left",
+				"physics_frame": 3085,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3537044
+			},
+			{
+				"axis_position": "(0.0, -0.12, 0.0)",
+				"event": "action_started",
+				"head_position": "(-0.07, 0.0, 0.0)",
+				"line": 2,
+				"phase": "next_line",
+				"physics_frame": 3085,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3537140
+			},
+			{
+				"axis_position": "(0.0, -0.14, 0.0)",
+				"event": "action_finished",
+				"head_position": "(-0.07, 0.0, 0.0)",
+				"line": 2,
+				"phase": "next_line",
+				"physics_frame": 3098,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3542874
+			},
+			{
+				"axis_position": "(0.0, -0.14, 0.0)",
+				"event": "action_started",
+				"head_position": "(-0.07, 0.0, 0.0)",
+				"line": 2,
+				"phase": "print_line",
+				"physics_frame": 3098,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3542967
+			},
+			{
+				"axis_position": "(0.0, -0.14, 0.0)",
+				"event": "action_finished",
+				"head_position": "(0.27, 0.0, 0.0)",
+				"line": 2,
+				"phase": "print_line",
+				"physics_frame": 3249,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3611034
+			},
+			{
+				"axis_position": "(0.0, -0.14, 0.0)",
+				"event": "line_revealed",
+				"head_position": "(0.27, 0.0, 0.0)",
+				"line": 2,
+				"phase": "",
+				"physics_frame": 3249,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3611158
+			},
+			{
+				"axis_position": "(0.0, -0.14, 0.0)",
+				"event": "action_started",
+				"head_position": "(0.27, 0.0, 0.0)",
+				"line": 2,
+				"phase": "return_left",
+				"physics_frame": 3249,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3611240
+			},
+			{
+				"axis_position": "(0.0, -0.14, 0.0)",
+				"event": "action_finished",
+				"head_position": "(-0.07, 0.0, 0.0)",
+				"line": 2,
+				"phase": "return_left",
+				"physics_frame": 3274,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3623186
+			},
+			{
+				"axis_position": "(0.0, -0.14, 0.0)",
+				"event": "action_started",
+				"head_position": "(-0.07, 0.0, 0.0)",
+				"line": 3,
+				"phase": "next_line",
+				"physics_frame": 3274,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3623283
+			},
+			{
+				"axis_position": "(0.0, -0.16, 0.0)",
+				"event": "action_finished",
+				"head_position": "(-0.07, 0.0, 0.0)",
+				"line": 3,
+				"phase": "next_line",
+				"physics_frame": 3287,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3629353
+			},
+			{
+				"axis_position": "(0.0, -0.16, 0.0)",
+				"event": "action_started",
+				"head_position": "(-0.07, 0.0, 0.0)",
+				"line": 3,
+				"phase": "print_line",
+				"physics_frame": 3287,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3629444
+			},
+			{
+				"axis_position": "(0.0, -0.16, 0.0)",
+				"event": "action_finished",
+				"head_position": "(0.27, 0.0, 0.0)",
+				"line": 3,
+				"phase": "print_line",
+				"physics_frame": 3438,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3700336
+			},
+			{
+				"axis_position": "(0.0, -0.16, 0.0)",
+				"event": "line_revealed",
+				"head_position": "(0.27, 0.0, 0.0)",
+				"line": 3,
+				"phase": "",
+				"physics_frame": 3438,
+				"serial": 6,
+				"state": 2,
+				"ticks_usec": 3700456
+			},
+			{
+				"axis_position": "(0.0, -0.16, 0.0)",
+				"event": "state_changed",
+				"head_position": "(0.27, 0.0, 0.0)",
+				"line": 3,
+				"phase": "",
+				"physics_frame": 3438,
+				"serial": 6,
+				"state": 3,
+				"ticks_usec": 3700511
+			},
+			{
+				"axis_position": "(0.0, -0.16, 0.0)",
+				"event": "action_started",
+				"head_position": "(0.27, 0.0, 0.0)",
+				"line": 3,
+				"phase": "center",
+				"physics_frame": 3438,
+				"serial": 6,
+				"state": 3,
+				"ticks_usec": 3700574
+			},
+			{
+				"axis_position": "(0.0, -0.16, 0.0)",
+				"event": "action_finished",
+				"head_position": "(0.1, 0.0, 0.0)",
+				"line": 3,
+				"phase": "center",
+				"physics_frame": 3451,
+				"serial": 6,
+				"state": 3,
+				"ticks_usec": 3707002
+			},
+			{
+				"axis_position": "(0.0, -0.16, 0.0)",
+				"event": "action_started",
+				"head_position": "(0.1, 0.0, 0.0)",
+				"line": 3,
+				"phase": "axis_reset",
+				"physics_frame": 3451,
+				"serial": 6,
+				"state": 3,
+				"ticks_usec": 3707126
+			},
+			{
+				"axis_position": "(0.0, 0.0, 0.0)",
+				"event": "action_finished",
+				"head_position": "(0.1, 0.0, 0.0)",
+				"line": 3,
+				"phase": "axis_reset",
+				"physics_frame": 3511,
+				"serial": 6,
+				"state": 3,
+				"ticks_usec": 3733365
+			},
+			{
+				"axis_position": "(0.0, 0.0, 0.0)",
+				"event": "state_changed",
+				"head_position": "(0.1, 0.0, 0.0)",
+				"line": 3,
+				"phase": "",
+				"physics_frame": 3511,
+				"serial": 6,
+				"state": 4,
+				"ticks_usec": 3733481
+			},
+			{
+				"axis_position": "(0.0, 0.0, 0.0)",
+				"event": "print_completed",
+				"head_position": "(0.1, 0.0, 0.0)",
+				"line": 3,
+				"phase": "",
+				"physics_frame": 3511,
+				"serial": 6,
+				"state": 4,
+				"ticks_usec": 3733653
+			},
+			{
+				"axis_position": "(0.0, 0.0, 0.0)",
+				"event": "paper_taken",
+				"head_position": "(0.1, 0.0, 0.0)",
+				"line": 3,
+				"phase": "",
+				"physics_frame": 3512,
+				"serial": 6,
+				"state": 0,
+				"ticks_usec": 3784309
+			}
+		],
+		"failure": "",
+		"finished_pending": false,
+		"first_left_done": true,
+		"line": 3,
+		"mechanical_count": 4,
+		"phase": "",
+		"serial": 6,
+		"state": 0,
+		"take_token": 0
+	},
+	"断言": [
+		{
+			"说明": "主场景专项使用无图形后端",
+			"通过": true
+		},
+		{
+			"说明": "主场景测试入口显式绑定当前通知中心与玩家",
+			"通过": true
+		},
+		{
+			"说明": "首份资源采用用户指定的独立字符串标识",
+			"通过": true
+		},
+		{
+			"说明": "正式主场景采用新修订的每行两秒半默认打印时长",
+			"通过": true
+		},
+		{
+			"说明": "首份十三行全文及委托编号前导零准确",
+			"通过": true
+		},
+		{
+			"说明": "通知测试动作只绑定指定物理字母键",
+			"通过": true
+		},
+		{
+			"说明": "空闲通知中心通过正式聚焦入口建立会话",
+			"通过": true
+		},
+		{
+			"说明": "键盘重复事件不建立待打印任务",
+			"通过": true
+		},
+		{
+			"说明": "引擎内部通知键只建立待打印且没有自动创建纸张",
+			"通过": true
+		},
+		{
+			"说明": "已有待打印任务拒绝再次请求且不排队",
+			"通过": true
+		},
+		{
+			"说明": "真实界面暂停拒绝通知和打印入口",
+			"通过": true
+		},
+		{
+			"说明": "主场景相机正式射线能够命中打印按钮",
+			"通过": true
+		},
+		{
+			"说明": "真实聚焦点击建立唯一空白纸张并开始一轮打印",
+			"通过": true
+		},
+		{
+			"说明": "本次纸面初始全部原始数据行隐藏",
+			"通过": true
+		},
+		{
+			"说明": "打印刚开始的纸张不可获取",
+			"通过": true
+		},
+		{
+			"说明": "打印中的重复通知不覆盖本次身份",
+			"通过": true
+		},
+		{
+			"说明": "主场景动态纸张在正式相机射线中可达",
+			"通过": true
+		},
+		{
+			"说明": "打印期间真实纸张点击保持来源和库存不变",
+			"通过": true
+		},
+		{
+			"说明": "默认首份打印全部十三行后自然完成一次",
+			"通过": true
+		},
+		{
+			"说明": "完成未取纸时拒绝新打印和通知替换",
+			"通过": true
+		},
+		{
+			"说明": "全部复位完成后正式库存查询开放聚焦取纸",
+			"通过": true
+		},
+		{
+			"说明": "最早取纸观察者读取库存与设备一致的提交结果",
+			"通过": true
+		},
+		{
+			"说明": "真实纸张点击只转移一次且保留同一逐件资源身份",
+			"通过": true
+		},
+		{
+			"说明": "取得文件继续保存独立任务标识和全部原始数据",
+			"通过": true
+		},
+		{
+			"说明": "首件世界纸张自然清理后实际释放",
+			"通过": true
+		},
+		{
+			"说明": "主场景首件来源释放后：正式呈现器提供手持纸面只读查询",
+			"通过": true
+		},
+		{
+			"说明": "主场景首件来源释放后：文字与携带栏绑定同一逐件身份",
+			"通过": true
+		},
+		{
+			"说明": "主场景首件来源释放后：全文视图、视口与正面属于当前手持展示",
+			"通过": true
+		},
+		{
+			"说明": "主场景首件来源释放后：手持纸张正面使用有效的当前视口纹理",
+			"通过": true
+		},
+		{
+			"说明": "主场景首件来源释放后：保留原任务标识、全文与分组",
+			"通过": true
+		},
+		{
+			"说明": "主场景首件来源释放后：全部自然行实际文字与可见状态匹配",
+			"通过": true
+		},
+		{
+			"说明": "主场景首件来源释放后：实际排版保持各组空白",
+			"通过": true
+		},
+		{
+			"说明": "主场景正式切入另一空格",
+			"通过": true
+		},
+		{
+			"说明": "主场景空格没有残留首件文字或绑定",
+			"通过": true
+		},
+		{
+			"说明": "主场景正式切回首件",
+			"通过": true
+		},
+		{
+			"说明": "主场景首次切回首件：正式呈现器提供手持纸面只读查询",
+			"通过": true
+		},
+		{
+			"说明": "主场景首次切回首件：文字与携带栏绑定同一逐件身份",
+			"通过": true
+		},
+		{
+			"说明": "主场景首次切回首件：全文视图、视口与正面属于当前手持展示",
+			"通过": true
+		},
+		{
+			"说明": "主场景首次切回首件：手持纸张正面使用有效的当前视口纹理",
+			"通过": true
+		},
+		{
+			"说明": "主场景首次切回首件：保留原任务标识、全文与分组",
+			"通过": true
+		},
+		{
+			"说明": "主场景首次切回首件：全部自然行实际文字与可见状态匹配",
+			"通过": true
+		},
+		{
+			"说明": "主场景首次切回首件：实际排版保持各组空白",
+			"通过": true
+		},
+		{
+			"说明": "旧纸张像素再次点击不重复取得文件",
+			"通过": true
+		},
+		{
+			"说明": "取纸完成后再次受理测试事件",
+			"通过": true
+		},
+		{
+			"说明": "待打印重复测试通过正式取消入口清理",
+			"通过": true
+		},
+		{
+			"说明": "主场景第二件选择不同空格",
+			"通过": true
+		},
+		{
+			"说明": "主场景实际受理不同全文的第二份任务",
+			"通过": true
+		},
+		{
+			"说明": "主场景第二次真实打印按钮点击启动第二件",
+			"通过": true
+		},
+		{
+			"说明": "第二件动态来源仍由正式相机射线命中",
+			"通过": true
+		},
+		{
+			"说明": "最早取纸观察者读取库存与设备一致的提交结果",
+			"通过": true
+		},
+		{
+			"说明": "第二次真实取纸将独立身份转移到另一携带格",
+			"通过": true
+		},
+		{
+			"说明": "主场景两件世界来源均完成实际释放",
+			"通过": true
+		},
+		{
+			"说明": "主场景第二件来源释放后：正式呈现器提供手持纸面只读查询",
+			"通过": true
+		},
+		{
+			"说明": "主场景第二件来源释放后：文字与携带栏绑定同一逐件身份",
+			"通过": true
+		},
+		{
+			"说明": "主场景第二件来源释放后：全文视图、视口与正面属于当前手持展示",
+			"通过": true
+		},
+		{
+			"说明": "主场景第二件来源释放后：手持纸张正面使用有效的当前视口纹理",
+			"通过": true
+		},
+		{
+			"说明": "主场景第二件来源释放后：保留原任务标识、全文与分组",
+			"通过": true
+		},
+		{
+			"说明": "主场景第二件来源释放后：全部自然行实际文字与可见状态匹配",
+			"通过": true
+		},
+		{
+			"说明": "主场景第二件来源释放后：实际排版保持各组空白",
+			"通过": true
+		},
+		{
+			"说明": "主场景两件之间切回首件",
+			"通过": true
+		},
+		{
+			"说明": "主场景两件之间切回首件：正式呈现器提供手持纸面只读查询",
+			"通过": true
+		},
+		{
+			"说明": "主场景两件之间切回首件：文字与携带栏绑定同一逐件身份",
+			"通过": true
+		},
+		{
+			"说明": "主场景两件之间切回首件：全文视图、视口与正面属于当前手持展示",
+			"通过": true
+		},
+		{
+			"说明": "主场景两件之间切回首件：手持纸张正面使用有效的当前视口纹理",
+			"通过": true
+		},
+		{
+			"说明": "主场景两件之间切回首件：保留原任务标识、全文与分组",
+			"通过": true
+		},
+		{
+			"说明": "主场景两件之间切回首件：全部自然行实际文字与可见状态匹配",
+			"通过": true
+		},
+		{
+			"说明": "主场景两件之间切回首件：实际排版保持各组空白",
+			"通过": true
+		},
+		{
+			"说明": "主场景两件之间再切回第二件",
+			"通过": true
+		},
+		{
+			"说明": "主场景两件之间再切回第二件：正式呈现器提供手持纸面只读查询",
+			"通过": true
+		},
+		{
+			"说明": "主场景两件之间再切回第二件：文字与携带栏绑定同一逐件身份",
+			"通过": true
+		},
+		{
+			"说明": "主场景两件之间再切回第二件：全文视图、视口与正面属于当前手持展示",
+			"通过": true
+		},
+		{
+			"说明": "主场景两件之间再切回第二件：手持纸张正面使用有效的当前视口纹理",
+			"通过": true
+		},
+		{
+			"说明": "主场景两件之间再切回第二件：保留原任务标识、全文与分组",
+			"通过": true
+		},
+		{
+			"说明": "主场景两件之间再切回第二件：全部自然行实际文字与可见状态匹配",
+			"通过": true
+		},
+		{
+			"说明": "主场景两件之间再切回第二件：实际排版保持各组空白",
+			"通过": true
+		}
+	],
+	"方式": "无图形主场景；引擎内部键盘及鼠标按钮事件；无原生输入"
+}

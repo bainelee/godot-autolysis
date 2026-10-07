@@ -1,0 +1,5 @@
+SCRIPT ERROR: Cannot call method 'add_exception_rid' on a null value.
+   at: TestPlayer._ready (res://main-autolysis/player/autolysis_player.gd:168)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://main-autolysis/player/autolysis_player.gd:168)
+       [1] run_checks (res://main-autolysis/player/tests/quest_held_text_test.gd:45)

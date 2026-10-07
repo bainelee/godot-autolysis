@@ -1,0 +1,43 @@
+{
+  "采样时间": "2026-10-07T16:13:18.0004044+08:00",
+  "范围": "六音源专项通过后的冻结生产与专项来源，不冒充修订前快照",
+  "专项记录": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实施证据\\20261007\\持有文字与空间音效修订\\六音源接口修正复验\\执行结果.json",
+  "来源": [
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone_audio_controller.gd",
+      "算法": "SHA256",
+      "散列": "EA58CA43EC4042B9CEB82221091784CA4C90AA9FEDCC91018871952CDB5D288B",
+      "长度": 12870
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\scripts\\autolysis_telephone_call_controller.gd",
+      "算法": "SHA256",
+      "散列": "A65967F47B38C0CC2C449DFFAFA5A36565E4AF0E0294935B6FE42A22CD0C1559",
+      "长度": 20122
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_machines\\machine_telephone_0.tscn",
+      "算法": "SHA256",
+      "散列": "B2798703DCB70675816CA0BC80E10D6D3394E0C085D9DD0F2734E9AE8CB2BCA2",
+      "长度": 21994
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\systems\\dialogue-system\\autolysis_dialogue_player.gd",
+      "算法": "SHA256",
+      "散列": "EDE698BBF062BA5D8854F8BE0D463A2A0608F866F909D5AD0E0AC88DB1DB543B",
+      "长度": 18047
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_call_test.gd",
+      "算法": "SHA256",
+      "散列": "D2403D43247E6EB6D7BA4E794ED35AE1DA226BF34AEF57E9FDA66014E4A4DB11",
+      "长度": 16828
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\machine_spatial_audio_test.gd",
+      "算法": "SHA256",
+      "散列": "2A24044A92EA99BD3D8F906E38E6B65EF369BFB88DDC3FF35ECA6A16A6779C8B",
+      "长度": 15697
+    }
+  ]
+}

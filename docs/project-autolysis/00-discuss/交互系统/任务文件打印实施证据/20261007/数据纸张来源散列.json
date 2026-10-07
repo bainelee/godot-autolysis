@@ -1,0 +1,66 @@
+[
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\systems\\quest-print-system\\autolysis_quest_print_definition.gd",
+    "散列": "0F1F71C63765886862D1BB05D9FB47637D561FF554EAFA50D320FB1C38C42198"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\systems\\quest-print-system\\autolysis_quest_paper_contents.gd",
+    "散列": "3471BFC8F1956A5C7B165D370FAB0D1486ADC29F72973BD02E93FF6AFF827B14"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\systems\\quest-print-system\\quests\\quest_test_0.tres",
+    "散列": "4F1E8B9BEF725AB389C6A5D62798AE27D34149804AFC0882CE80FFD00B644CAA"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\systems\\quest-print-system\\tests\\quest_paper_data_view_test.gd",
+    "散列": "33BC63C76FD039392FA9A4E770CCA021C957DBCDC50F7594AD6647C28F2756C2"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\systems\\item-system\\autolysis_item_instance.gd",
+    "散列": "5C42EF022F951D04EDB864A46F490C0FF5F444C6666DE4FD9F3F903F2DA5AC23"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\systems\\item-system\\items\\quest_paper.tres",
+    "散列": "C271874261806C722D8F53A4496BB195B43ACB7689204B0479AB4F61C27AD330"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_paper\\autolysis_quest_paper.gd",
+    "散列": "D336DCE4E00623E1BFD0A5A7D82EC3BA36DC047F933FEA06C490806E9B227B5E"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_paper\\quest_paper.tscn",
+    "散列": "5A508E4F6605738433D7470D455B5D7F4A391ED9F6A545AB2E3F41A94DEAD47F"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_paper\\quest_paper_blank.tscn",
+    "散列": "C9ABAAED7C7CDF207A90CAF3C81EB844A05499EE887905D4D978283ED7469ECD"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\scenes\\prefabs\\prefab_paper\\visuals\\quest_paper_visual.tscn",
+    "散列": "4F82D51282DAF59C798F38CA73660EC2160B4650579158AF9B97539F1EA20CB2"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\ui\\quest-paper\\autolysis_quest_paper_view.gd",
+    "散列": "F2A9C2217764D27D92BD552D69C9F4860058540961822192C5F80D790F6D8058"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\ui\\quest-paper\\autolysis_quest_paper_view.tscn",
+    "散列": "A360DD39452236AB45D397196580C5BB2198A815D25ACA26DE99F37D55ED3F39"
+  },
+  {
+    "文件": "D:\\autolysis\\main-autolysis\\assets\\ui\\item-icons\\quest_paper.svg",
+    "散列": "2CAA65A2122E92FB9C732F6D71A6277CC2B8131CF5D3FC311860F7A3EAB7BDFD"
+  },
+  {
+    "文件": "D:\\cogito\\addons\\cogito\\Components\\Interactions\\ReadableComponent.gd",
+    "散列": "AB0A7C4A4877DC2115A325D78513301BDDB820444A4B5342CA7154D35760D363"
+  },
+  {
+    "文件": "D:\\cogito\\main-degauss\\recorder\\ui\\tape_timeline_display.gd",
+    "散列": "CC3E1E0C04E1385286F22F59AAC77A4AB1D3949500CA0044BB79D2EACCE2C3BA"
+  },
+  {
+    "文件": "D:\\cogito\\main-degauss\\recorder\\ui\\tape_timeline_viewport.tscn",
+    "散列": "BA3522C5774B2E0BEA8B8D77CF79A3C967BEEF3B44E66D77C41637DBD75CC30C"
+  }
+]

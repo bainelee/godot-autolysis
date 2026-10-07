@@ -1,0 +1,26 @@
+[
+  {
+    "path": "main-autolysis\\assets\\audio\\sound_fx\\machine\\sfx_machine_notice_0.wav",
+    "sampled_at": "2026-10-07T15:05:06.9747187+08:00",
+    "sha256": "39C0829FD04FCD1C5061CCAFBD830AB1E0E593135D32F7040A0D8B819DE1791D",
+    "purpose": "实际用于运行时复制循环配置；本次未修改音频原文件"
+  },
+  {
+    "path": "main-autolysis\\assets\\audio\\sound_fx\\machine\\sfx_machine_scanning_0.wav",
+    "sampled_at": "2026-10-07T15:05:06.9875697+08:00",
+    "sha256": "6A3D3CC5E1EAF807A7FFF0FB50F3233A915F810FD7C9BE4345E70C34ADF3D83D",
+    "purpose": "实际用于运行时复制循环配置；本次未修改音频原文件"
+  },
+  {
+    "path": "main-autolysis\\assets\\audio\\sound_fx\\machine\\sfx_machine_notice_0.wav.import",
+    "sampled_at": "2026-10-07T15:05:06.9930228+08:00",
+    "sha256": "9A470307187D596B3B2FC8C0852BB6362809D1CD763D2273709273879B56B4BA",
+    "purpose": "实际用于运行时复制循环配置；本次未修改音频原文件"
+  },
+  {
+    "path": "main-autolysis\\assets\\audio\\sound_fx\\machine\\sfx_machine_scanning_0.wav.import",
+    "sampled_at": "2026-10-07T15:05:06.9974068+08:00",
+    "sha256": "6B801C3B806AA0140D7C20C48E6DB0D917240F28CDC66F4BFF26EAA51C67C761",
+    "purpose": "实际用于运行时复制循环配置；本次未修改音频原文件"
+  }
+]

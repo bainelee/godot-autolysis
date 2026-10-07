@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://main-autolysis/systems/dialogue-system/autolysis_dialogue_player.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://main-autolysis/ui/dialogue/autolysis_dialogue_subtitle.tscn" id="2_subtitle"]
+
+[node name="AutolysisDialoguePlayer" type="Node"]
+process_mode = 3
+script = ExtResource("1_script")
+
+[node name="Timing" type="Node" parent="."]
+process_mode = 1
+
+[node name="Voice" type="AudioStreamPlayer" parent="Timing"]
+bus = &"SFX"
+
+[node name="Hold" type="Timer" parent="Timing"]
+one_shot = true
+
+[node name="Subtitle" parent="." instance=ExtResource("2_subtitle")]
