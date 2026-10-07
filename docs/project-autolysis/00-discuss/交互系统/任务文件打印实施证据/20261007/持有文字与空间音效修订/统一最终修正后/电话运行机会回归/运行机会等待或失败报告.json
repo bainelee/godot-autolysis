@@ -1,0 +1,109 @@
+{
+	"失败数": 0,
+	"引擎": {
+		"build": "official",
+		"hash": "14d19694e0c88a3f9e82d899a0400f27a24c176e",
+		"hex": 263681,
+		"major": 4,
+		"minor": 6,
+		"patch": 1,
+		"status": "stable",
+		"string": "4.6.1-stable (official)",
+		"timestamp": 0
+	},
+	"断言": [
+		{
+			"说明": "运行机会专项实际使用无图形后端",
+			"通过": true
+		},
+		{
+			"说明": "本独立游戏进程重新获得初次运行机会",
+			"通过": true
+		},
+		{
+			"说明": "正式根组件分发进入电话聚焦",
+			"通过": true
+		},
+		{
+			"说明": "正式听筒组件分发取下请求",
+			"通过": true
+		},
+		{
+			"说明": "取筒提交完成后两侧占用一致",
+			"通过": true
+		},
+		{
+			"说明": "真实成对持筒时测试入口请求来电",
+			"通过": true
+		},
+		{
+			"说明": "测试入口持筒请求进入等待放回且不响铃",
+			"通过": true
+		},
+		{
+			"说明": "请求进入等待或受理失败均已消耗本进程机会",
+			"通过": true
+		},
+		{
+			"说明": "取消或具体受理失败不退还运行机会",
+			"通过": true
+		},
+		{
+			"说明": "重新创建电话及主场景仍不能重复测试请求",
+			"通过": true
+		},
+		{
+			"说明": "重建电话保持未请求且不自动恢复旧来电",
+			"通过": true
+		},
+		{
+			"说明": "退出前实际声音播放实例已解除全部引用",
+			"通过": true
+		}
+	],
+	"模式": "持筒等待",
+	"退出音频采样": [
+		{
+			"墙钟微秒": 1556349,
+			"播放": [
+				{
+					"临时查询在内的引用数": 0,
+					"仍存活": false,
+					"播放类型": "AudioStreamPlaybackWAV",
+					"播放身份": -9223371923138801497,
+					"来源": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/HandsetAudio/Timing/HandsetSoundOrigin/ActionPlayer"
+				},
+				{
+					"临时查询在内的引用数": 0,
+					"仍存活": false,
+					"播放类型": "AudioStreamPlaybackWAV",
+					"播放身份": -9223371923088469838,
+					"来源": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/HandsetAudio/Timing/HandsetSoundOrigin/ReceiverPlayer"
+				}
+			],
+			"混音时钟": 0.090466,
+			"阶段": "原三帧清理后"
+		},
+		{
+			"墙钟微秒": 1556369,
+			"播放": [
+				{
+					"临时查询在内的引用数": 0,
+					"仍存活": false,
+					"播放类型": "AudioStreamPlaybackWAV",
+					"播放身份": -9223371923138801497,
+					"来源": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/HandsetAudio/Timing/HandsetSoundOrigin/ActionPlayer"
+				},
+				{
+					"临时查询在内的引用数": 0,
+					"仍存活": false,
+					"播放类型": "AudioStreamPlaybackWAV",
+					"播放身份": -9223371923088469838,
+					"来源": "/root/01-autolysis-test/interaction_prefabs/machines/MachineTelephone0/StaticBody3D/HandsetAudio/Timing/HandsetSoundOrigin/ReceiverPlayer"
+				}
+			],
+			"混音时钟": 0.090485,
+			"阶段": "实际播放退役完成"
+		}
+	]
+}

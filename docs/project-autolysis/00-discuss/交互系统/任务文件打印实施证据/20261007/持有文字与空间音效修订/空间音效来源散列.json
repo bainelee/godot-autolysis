@@ -1,6 +1,6 @@
 {
-  "采样时间": "2026-10-07T16:40:10.4898113+08:00",
-  "范围": "接听读取点、共享夹具及派生实际退出读点修正后的音频负责源；生产保持既有实现",
+  "采样时间": "2026-10-07T16:44:26.8231274+08:00",
+  "范围": "接听读取点、共享夹具及实际声音跨场景退役修正后的13项音频负责源；当前实际源冻结供根完整29项验收",
   "局部严格复验": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实施证据\\20261007\\持有文字与空间音效修订\\电话音频夹具完整局部复验\\局部严格检查.json",
   "最小接听红色证据": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实施证据\\20261007\\持有文字与空间音效修订\\来电边界最小开始诊断\\边界真实开始读取点.json",
   "输入退出红色证据": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实施证据\\20261007\\持有文字与空间音效修订\\电话输入实际退役诊断\\输入退出实际退役探针.json",
@@ -88,6 +88,19 @@
       "算法": "SHA256",
       "散列": "AD012CBF96A12E42C24E53988BCB5F2A7059EE32790F5DE118A917A1A009FCCD",
       "长度": 12571
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_call_entry_test.gd",
+      "算法": "SHA256",
+      "散列": "A874F52117FF27073B675D541A86360A3EB8B9BDF1C0B69C2BBB2CF55C71199C",
+      "长度": 5495
+    },
+    {
+      "路径": "D:\\autolysis\\main-autolysis\\player\\tests\\telephone_runtime_once_test.gd",
+      "算法": "SHA256",
+      "散列": "C2FA5FBA6E0B08B615A8CBD2FAAF8FE3CBFC74078A930824457A347E2A6FDD73",
+      "长度": 2587
     }
-  ]
+  ],
+  "场景切换补验": "D:\\autolysis\\docs\\project-autolysis\\00-discuss\\交互系统\\任务文件打印实施证据\\20261007\\持有文字与空间音效修订\\电话场景切换音频退役补验\\局部严格检查.json"
 }
