@@ -76,11 +76,11 @@ func run_checks() -> void:
 	var instance: AutolysisItemInstance = AutolysisItemInstance.create(PAPER)
 	check(instance.set_quest_paper_contents(FIRST_TASK.create_contents()), "真实任务逐件资源保存用户指定任务全文")
 	check(actor.inventory_controller.try_receive_instance(instance), "正式库存接收逐件任务文件并提交手持展示")
-	check(actor.inventory_controller.get_focused_instance() == instance and instance.quest_paper_contents.get_data_lines() == FIRST_TASK.data_lines, "正式接收保留同一逐件身份和全文")
+	check(actor.inventory_controller.get_focused_instance() == instance and instance.quest_paper_contents.get_data_lines() == PackedStringArray(FIRST_TASK.data_lines), "正式接收保留同一逐件身份和全文")
 	await process_frame
 	var display: Node3D = actor.held_item_presenter.get_display()
 	var actual_lines: PackedStringArray = _visible_text(display) if display != null else PackedStringArray()
-	check(actual_lines == FIRST_TASK.data_lines, "正式手持展示可见本件全部自然行而不是白纸")
+	check(actual_lines == PackedStringArray(FIRST_TASK.data_lines), "正式手持展示可见本件全部自然行而不是白纸")
 	await process_frame
 	await _test_display_contents(actor, instance)
 	await _test_focus_projection(actor)
@@ -261,7 +261,7 @@ func _test_take_after_focus_projection() -> void:
 	await process_frame
 	await process_frame
 	check(not is_instance_valid(paper) and actor.held_item_presenter.get_quest_paper_instance() == instance, "世界来源实际释放后手持文字仍绑定原逐件身份")
-	check(_visible_text(actor.held_item_presenter.get_display()) == FIRST_TASK.data_lines, "真实取纸后的手持子树继续显示十三行全部原文")
+	check(_visible_text(actor.held_item_presenter.get_display()) == PackedStringArray(FIRST_TASK.data_lines), "真实取纸后的手持子树继续显示十三行全部原文")
 	var taken: Dictionary = _projected_paper(actor)
 	check(taken["完整可见"] and taken["朝向点积"] > 0.0 and actor.camera.fov == machine.reference_camera.fov, "完成聚焦后才取到的文件全文区域完整位于实际画面内")
 	measurements.append({"名称": "正式聚焦取纸后的全文投影", "测量": taken})
@@ -269,7 +269,7 @@ func _test_take_after_focus_projection() -> void:
 	check(actor.inventory_controller.cycle_focus(-1) and actor.held_item_presenter.get_quest_paper_instance() == instance, "真实聚焦中切回文件恢复对应逐件显示")
 	await process_frame
 	var returned: Dictionary = _projected_paper(actor)
-	check(returned["完整可见"] and _visible_text(actor.held_item_presenter.get_display()) == FIRST_TASK.data_lines, "聚焦中重新选中文件仍显示全部原文且没有屏外裁剪")
+	check(returned["完整可见"] and _visible_text(actor.held_item_presenter.get_display()) == PackedStringArray(FIRST_TASK.data_lines), "聚焦中重新选中文件仍显示全部原文且没有屏外裁剪")
 	check(actor.focus_controller.request_exit(), "实际取纸后通过正式退出入口恢复普通玩家视角")
 	for index: int in 30:
 		await physics_frame
@@ -303,13 +303,13 @@ func _test_display_contents(actor: AutolysisPlayer, instance: AutolysisItemInsta
 	if view == null or viewport == null or front == null:
 		return
 	check(presenter.get_quest_paper_instance() == instance, "手持文字绑定同一逐件资源身份")
-	check(view.get_contents().get_task_id() == FIRST_TASK.task_id and view.get_contents().get_data_lines() == FIRST_TASK.data_lines and view.get_contents().get_group_gap_before_lines() == FIRST_TASK.group_gap_before_lines, "手持纸面保留完整任务标识原文与分组")
+	check(view.get_contents().get_task_id() == FIRST_TASK.task_id and view.get_contents().get_data_lines() == PackedStringArray(FIRST_TASK.data_lines) and view.get_contents().get_group_gap_before_lines() == PackedInt32Array(FIRST_TASK.group_gap_before_lines), "手持纸面保留完整任务标识原文与分组")
 	check(view.get_visible_data_line_indices().size() == FIRST_TASK.data_lines.size(), "拿起后的所有自然行立即显示")
 	check(front.material_overlay is StandardMaterial3D and front.material_overlay.albedo_texture == viewport.get_texture(), "正面文字叠加材质实际绑定当前独立纸面纹理")
 	check(PAPER.is_valid_definition() and presenter._is_display_scene_state(PAPER.visual_scene.get_state()), "纯展示源仍无脚本碰撞或交互组")
 	var copy: PackedStringArray = view.get_contents().get_data_lines()
 	copy[0] = "读取副本被改写"
-	check(view.get_contents().get_data_lines() == FIRST_TASK.data_lines and instance.quest_paper_contents.get_data_lines() == FIRST_TASK.data_lines, "手持视图读取副本不能改写逐件原文")
+	check(view.get_contents().get_data_lines() == PackedStringArray(FIRST_TASK.data_lines) and instance.quest_paper_contents.get_data_lines() == PackedStringArray(FIRST_TASK.data_lines), "手持视图读取副本不能改写逐件原文")
 	var layout: Array[Dictionary] = view.get_layout_report()
 	var missing: String = ""
 	var projected_points: PackedVector2Array = []
@@ -370,13 +370,13 @@ func _test_resource_lifecycle(actor: AutolysisPlayer, first: AutolysisItemInstan
 	check(inventory.try_receive_instance(second), "另一个格正式接收第二份不同任务文件")
 	check(presenter.get_quest_paper_instance() == second and presenter.get_quest_paper_view().get_contents().get_data_lines() == second_lines, "第二份文字只绑定第二件全文和末尾空行")
 	check(inventory.cycle_focus(-1), "正式切回第一份任务文件")
-	check(presenter.get_quest_paper_instance() == first and presenter.get_quest_paper_view().get_contents().get_data_lines() == FIRST_TASK.data_lines and second.changed.get_connections().is_empty(), "切回原文正确且解绑第二件监听")
+	check(presenter.get_quest_paper_instance() == first and presenter.get_quest_paper_view().get_contents().get_data_lines() == PackedStringArray(FIRST_TASK.data_lines) and second.changed.get_connections().is_empty(), "切回原文正确且解绑第二件监听")
 	var view: AutolysisQuestPaperView = presenter.get_quest_paper_view()
 	var viewport: SubViewport = presenter.get_quest_paper_viewport()
 	var material: StandardMaterial3D = presenter.get_quest_paper_front().material_overlay as StandardMaterial3D
 	var texture: Texture2D = viewport.get_texture()
 	second.set_quest_paper_contents(_new_contents("other_changed", PackedStringArray(["未选中文件变化"])))
-	check(presenter.get_quest_paper_view() == view and view.get_contents().get_data_lines() == FIRST_TASK.data_lines, "未选中另一件更新不串改当前文字")
+	check(presenter.get_quest_paper_view() == view and view.get_contents().get_data_lines() == PackedStringArray(FIRST_TASK.data_lines), "未选中另一件更新不串改当前文字")
 	var updated_lines: PackedStringArray = PackedStringArray(["本件更新全文", "", "分组新行", " ", "\t", ""])
 	check(first.set_quest_paper_contents(_new_contents("updated_task", updated_lines, PackedInt32Array([2]))), "当前逐件任务内容更新可形成有效全文")
 	var updated: AutolysisQuestPaperView = presenter.get_quest_paper_view()
@@ -391,7 +391,7 @@ func _test_resource_lifecycle(actor: AutolysisPlayer, first: AutolysisItemInstan
 	first.set_quest_paper_contents(null)
 	check(presenter.get_quest_paper_view() == null and presenter.get_quest_paper_front().material_overlay == material and material.albedo_texture == null and material.albedo_color.a == 0.0, "清空本件内容保持同一文字叠加材质完全透明且不遗留已失效的旧任务文字")
 	first.set_quest_paper_contents(FIRST_TASK.create_contents())
-	check(presenter.get_quest_paper_view().get_contents().get_data_lines() == FIRST_TASK.data_lines, "恢复逐件内容重新建立完整文字")
+	check(presenter.get_quest_paper_view().get_contents().get_data_lines() == PackedStringArray(FIRST_TASK.data_lines), "恢复逐件内容重新建立完整文字")
 	check(inventory.cycle_focus(1), "正式换格显示第二件更新后的内容")
 	check(presenter.get_quest_paper_instance() == second and presenter.get_quest_paper_view().get_contents().get_task_id() == "other_changed", "换格后读取第二件独立最新快照")
 	check(inventory.cycle_focus(1), "正式切至后续空格清空手持展示")

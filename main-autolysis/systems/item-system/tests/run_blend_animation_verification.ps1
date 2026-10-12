@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$EvidenceRoot = '',
     [string[]]$Only = @('variants', 'transfer', 'liquid', 'indicator', 'handle', 'collision'),
     [switch]$Rendered
@@ -6,9 +6,8 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $projectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..\..\..'))
-if (-not $EvidenceRoot) {
-    $EvidenceRoot = Join-Path $projectRoot 'docs\project-autolysis\00-discuss\道具系统\容器开闭动画控制实施证据\20261004\blend-checks'
-}
+. (Join-Path $PSScriptRoot 'autolysis_test_evidence_paths.ps1')
+$EvidenceRoot = Resolve-AutolysisTestEvidenceRoot -EvidenceRoot $EvidenceRoot -SystemDirectory '道具系统\配药动画'
 $checks = @{
     variants = 'res://main-autolysis/systems/item-system/tests/blend_animation_variants_test.gd'
     transfer = 'res://main-autolysis/systems/item-system/tests/blend_slot_transfer_test.gd'

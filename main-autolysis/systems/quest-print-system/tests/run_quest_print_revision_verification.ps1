@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$EvidenceRoot = '',
     [string[]]$Checks = @()
 )
@@ -7,10 +7,8 @@ param(
 $ErrorActionPreference = 'Stop'
 $projectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..\..\..'))
 $runner = Join-Path $projectRoot 'main-autolysis\systems\item-system\tests\run_item_check.ps1'
-if (-not $EvidenceRoot) {
-    $EvidenceRoot = Join-Path $projectRoot ('docs\project-autolysis\00-discuss\交互系统\任务文件打印实施证据\20261007\持有文字与空间音效修订\复验-' + (Get-Date -Format 'yyyyMMdd-HHmmss'))
-}
-$EvidenceRoot = [IO.Path]::GetFullPath($EvidenceRoot)
+. (Join-Path $projectRoot 'main-autolysis\systems\item-system\tests\autolysis_test_evidence_paths.ps1')
+$EvidenceRoot = Resolve-AutolysisTestEvidenceRoot -EvidenceRoot $EvidenceRoot -SystemDirectory '任务文件打印系统\修订验证'
 if ((Test-Path -LiteralPath $EvidenceRoot) -and @(Get-ChildItem -LiteralPath $EvidenceRoot -Force).Count -gt 0) {
     throw '证据目录非空，请指定新目录以保留历史运行。'
 }

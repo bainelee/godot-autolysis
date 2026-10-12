@@ -34,7 +34,7 @@ class MotionRecorder extends Node:
 
 var _recorder: MotionRecorder
 var _original_accumulation: bool
-var _evidence_dir: String = "res://docs/project-autolysis/00-discuss/交互系统/原药混合器拉杆交互实施证据/鼠标定位探针"
+var _evidence_dir: String = preload("res://main-autolysis/systems/item-system/tests/test_evidence.gd").directory("res://docs/project-autolysis/00-discuss/交互系统/原药混合器拉杆交互实施证据/鼠标定位探针")
 var _manual: bool = false
 var _pump_native: bool = false
 var _wait_for_key: bool = false
@@ -48,9 +48,7 @@ var _label: Label
 
 func _initialize() -> void:
 	for argument: String in OS.get_cmdline_user_args():
-		if argument.begins_with("--evidence-dir="):
-			_evidence_dir = argument.trim_prefix("--evidence-dir=")
-		elif argument == "--manual":
+		if argument == "--manual":
 			_manual = true
 		elif argument == "--pump-native":
 			_pump_native = true

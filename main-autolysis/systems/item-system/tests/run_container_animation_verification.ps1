@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$EvidenceRoot = '',
     [string[]]$Checks = @(),
     [switch]$HeadlessOnly,
@@ -10,10 +10,8 @@ param(
 $ErrorActionPreference = 'Stop'
 $projectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..\..\..'))
 $runner = Join-Path $PSScriptRoot 'run_item_check.ps1'
-if (-not $EvidenceRoot) {
-    $EvidenceRoot = Join-Path $projectRoot ('docs\project-autolysis\00-discuss\道具系统\容器开闭动画控制复验\' + (Get-Date -Format 'yyyyMMdd-HHmmss'))
-}
-$EvidenceRoot = [IO.Path]::GetFullPath($EvidenceRoot)
+. (Join-Path $PSScriptRoot 'autolysis_test_evidence_paths.ps1')
+$EvidenceRoot = Resolve-AutolysisTestEvidenceRoot -EvidenceRoot $EvidenceRoot -SystemDirectory '道具系统\容器动画'
 if ((Test-Path -LiteralPath $EvidenceRoot) -and @(Get-ChildItem -LiteralPath $EvidenceRoot -Force).Count -gt 0) {
     throw '证据目录已包含文件；请指定新目录，以保留既有检查记录。'
 }

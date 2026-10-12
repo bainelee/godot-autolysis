@@ -1,10 +1,11 @@
-param(
-    [Parameter(Mandatory=$true)][string]$EvidenceRoot
+﻿param(
+    [string]$EvidenceRoot = ''
 )
 
 $ErrorActionPreference = 'Stop'
 $isolationProductionRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..\..\..'))
-$isolationEvidenceRoot = [IO.Path]::GetFullPath($EvidenceRoot)
+. (Join-Path $isolationProductionRoot 'main-autolysis\systems\item-system\tests\autolysis_test_evidence_paths.ps1')
+$isolationEvidenceRoot = Resolve-AutolysisTestEvidenceRoot -EvidenceRoot $EvidenceRoot -SystemDirectory '对话系统\中文导入隔离'
 if (Test-Path -LiteralPath $isolationEvidenceRoot) { throw '隔离证据目录已经存在，禁止覆盖' }
 New-Item -ItemType Directory -Path $isolationEvidenceRoot | Out-Null
 $isolationProjectRoot = Join-Path $isolationEvidenceRoot 'isolated-project'
@@ -65,7 +66,7 @@ function Invoke-IsolationEngine {
     param([string]$Name, [string[]]$EngineArguments)
     $isolationStdout = Join-Path $isolationEvidenceRoot ($Name + '.stdout.log')
     $isolationStderr = Join-Path $isolationEvidenceRoot ($Name + '.stderr.log')
-    $isolationProcess = Start-Process -FilePath 'D:\GODOT\Godot_v4.6.1\Godot_v4.6.1-stable_win64.exe' -ArgumentList $EngineArguments -WindowStyle Hidden -PassThru -RedirectStandardOutput $isolationStdout -RedirectStandardError $isolationStderr
+    $isolationProcess = Start-Process -FilePath 'D:\GODOT\Godot_v4.6.1\Godot_v4.6.1-stable_win64.exe' -ArgumentList (ConvertTo-AutolysisProcessArgumentLine -Arguments $EngineArguments) -WindowStyle Hidden -PassThru -RedirectStandardOutput $isolationStdout -RedirectStandardError $isolationStderr
     if (-not $isolationProcess.WaitForExit(60000)) { Stop-Process -Id $isolationProcess.Id; throw '隔离引擎超时' }
     $isolationProcess.Refresh()
     $isolationOutput = [IO.File]::ReadAllText($isolationStdout) + [IO.File]::ReadAllText($isolationStderr)

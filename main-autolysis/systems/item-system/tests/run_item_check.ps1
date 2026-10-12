@@ -1,4 +1,4 @@
-param(
+﻿param(
     [Parameter(Mandatory=$true)][string]$CheckName,
     [string]$ScriptPath = '',
     [string]$ScenePath = '',
@@ -16,11 +16,17 @@ param(
 # 必须在具备引擎用户目录访问权限的进程中运行，单项失败立即退出。
 $ErrorActionPreference = 'Stop'
 $projectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..\..\..\..'))
-if (-not $EvidenceRoot) {
-    $EvidenceRoot = Join-Path $projectRoot 'docs\project-autolysis\00-discuss\道具系统\道具系统p1实施证据\checks'
-}
-$evidenceRoot = [IO.Path]::GetFullPath($EvidenceRoot)
+. (Join-Path $PSScriptRoot 'autolysis_test_evidence_paths.ps1')
+$evidenceRoot = Resolve-AutolysisTestEvidenceRoot -EvidenceRoot $EvidenceRoot -SystemDirectory '道具系统\单项检查'
 New-Item -ItemType Directory -Force -Path $evidenceRoot | Out-Null
+$hasEvidenceArgument = @($UserArguments | Where-Object {
+    $_ -ceq '--evidence-dir' -or $_.StartsWith('--evidence-dir=', [StringComparison]::Ordinal)
+}).Count -gt 0
+if (-not $Import -and ($ScriptPath -or $ScenePath) -and -not $hasEvidenceArgument) {
+    $detailsDirectory = Join-Path $evidenceRoot $CheckName
+    New-Item -ItemType Directory -Force -Path $detailsDirectory | Out-Null
+    $UserArguments += @('--evidence-dir', $detailsDirectory.Replace('\', '/'))
+}
 $engineFile = 'D:\GODOT\Godot_v4.6.1\Godot_v4.6.1-stable_win64.exe'
 $engineArgs = @('--path', $projectRoot)
 if (-not $Rendered) { $engineArgs += '--headless' }
@@ -34,7 +40,7 @@ $outputFile = Join-Path $evidenceRoot ($CheckName + '.stdout.log')
 $errorFile = Join-Path $evidenceRoot ($CheckName + '.stderr.log')
 # 真实鼠标验收需要可见窗口；自动检查仍使用隐藏窗口。
 $checkWindowStyle = if ($Visible -and $Rendered) { 'Normal' } else { 'Hidden' }
-$checkProcess = Start-Process -FilePath $engineFile -ArgumentList $engineArgs -WindowStyle $checkWindowStyle -PassThru -RedirectStandardOutput $outputFile -RedirectStandardError $errorFile
+$checkProcess = Start-Process -FilePath $engineFile -ArgumentList (ConvertTo-AutolysisProcessArgumentLine -Arguments $engineArgs) -WindowStyle $checkWindowStyle -PassThru -RedirectStandardOutput $outputFile -RedirectStandardError $errorFile
 if (-not $checkProcess.WaitForExit($TimeoutSeconds * 1000)) {
     Stop-Process -Id $checkProcess.Id -Force
     throw "检查超时，已停止本次启动的进程：$CheckName"
